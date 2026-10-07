@@ -159,24 +159,40 @@ KNOWN_NBA_TEAMS = {
     "pistons": {"off_rating": 110.5, "def_rating": 118.0, "pace": 100.2},
 }
 
-def calculate_team_ratings_from_recent_matches(team_name: str, matches: list) -> dict:
+def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
     """
     Calcula la fuerza ofensiva (ataque) y defensiva (defensa) empírica de un equipo
     a partir de sus últimos partidos jugados (Rolling Form Model).
-    - attack: promedio de goles anotados por partido (goles a favor / partidos)
-    - defense: promedio de goles encajados por partido (goles en contra / partidos)
-    Garantiza valores objetivos, estables y basados en el rendimiento real.
+    - venue_role: 'home'/'Local' para filtrar partidos jugados de local,
+                  'away'/'Visitante' para filtrar partidos jugados de visita.
+    - attack: promedio de goles anotados según la condición (local/visita).
+    - defense: promedio de goles recibidos según la condición (local/visita).
+    - attack_gen: promedio general de goles anotados en todos los últimos partidos.
+    - defense_gen: promedio general de goles recibidos en todos los últimos partidos.
     """
     if not matches:
-        return {"attack": 1.50, "defense": 1.10}
+        return {
+            "attack": 1.50, "defense": 1.10,
+            "attack_gen": 1.50, "defense_gen": 1.10,
+            "avg_scored": 1.50, "avg_conceded": 1.10,
+            "avg_scored_gen": 1.50, "avg_conceded_gen": 1.10,
+            "sample_size": 0, "sample_size_gen": 0,
+            "venue_role": venue_role or "General"
+        }
 
     t_clean = (team_name or "").lower().strip()
-    goals_scored = 0
-    goals_conceded = 0
-    count = 0
+    gen_scored = 0
+    gen_conceded = 0
+    gen_count = 0
+
+    venue_scored = 0
+    venue_conceded = 0
+    venue_count = 0
+
+    is_seeking_home = (venue_role in ("home", "Local", "local")) if venue_role else None
+    is_seeking_away = (venue_role in ("away", "Visitante", "visita", "visitante")) if venue_role else None
 
     for m in matches:
-        count += 1
         is_home = False
         m_home = (m.get("match_home") or "").lower().strip()
         m_venue = m.get("venue", "")
@@ -195,38 +211,82 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list) ->
             scored = a_sc
             conceded = h_sc
 
-        goals_scored += scored
-        goals_conceded += conceded
+        gen_scored += scored
+        gen_conceded += conceded
+        gen_count += 1
 
-    if count == 0:
-        return {"attack": 1.50, "defense": 1.10}
+        if is_seeking_home is not None and is_seeking_home and is_home:
+            venue_scored += scored
+            venue_conceded += conceded
+            venue_count += 1
+        elif is_seeking_away is not None and is_seeking_away and (not is_home):
+            venue_scored += scored
+            venue_conceded += conceded
+            venue_count += 1
 
-    avg_scored = round(goals_scored / float(count), 2)
-    avg_conceded = round(goals_conceded / float(count), 2)
+    if gen_count == 0:
+        return {
+            "attack": 1.50, "defense": 1.10,
+            "attack_gen": 1.50, "defense_gen": 1.10,
+            "avg_scored": 1.50, "avg_conceded": 1.10,
+            "avg_scored_gen": 1.50, "avg_conceded_gen": 1.10,
+            "sample_size": 0, "sample_size_gen": 0,
+            "venue_role": venue_role or "General"
+        }
 
-    # Margen técnico seguro para Poisson
-    attack = max(0.40, min(3.80, avg_scored))
-    defense = max(0.35, min(3.50, avg_conceded))
+    avg_gen_scored = round(gen_scored / float(gen_count), 2)
+    avg_gen_conceded = round(gen_conceded / float(gen_count), 2)
+    attack_gen = max(0.40, min(3.80, avg_gen_scored))
+    defense_gen = max(0.35, min(3.50, avg_gen_conceded))
+
+    if venue_count > 0:
+        avg_venue_scored = round(venue_scored / float(venue_count), 2)
+        avg_venue_conceded = round(venue_conceded / float(venue_count), 2)
+        attack_venue = max(0.40, min(3.80, avg_venue_scored))
+        defense_venue = max(0.35, min(3.50, avg_venue_conceded))
+        sample_venue = venue_count
+    else:
+        avg_venue_scored = avg_gen_scored
+        avg_venue_conceded = avg_gen_conceded
+        attack_venue = attack_gen
+        defense_venue = defense_gen
+        sample_venue = gen_count
 
     return {
-        "attack": attack,
-        "defense": defense,
-        "avg_scored": avg_scored,
-        "avg_conceded": avg_conceded,
-        "sample_size": count
+        "attack": attack_venue,
+        "defense": defense_venue,
+        "attack_gen": attack_gen,
+        "defense_gen": defense_gen,
+        "avg_scored": avg_venue_scored,
+        "avg_conceded": avg_venue_conceded,
+        "avg_scored_gen": avg_gen_scored,
+        "avg_conceded_gen": avg_gen_conceded,
+        "sample_size": sample_venue,
+        "sample_size_gen": gen_count,
+        "venue_role": venue_role or "General"
     }
 
-def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list) -> dict:
+def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
     if not matches:
-        return {"off_rating": 115.0, "def_rating": 113.0, "pace": 100.0}
+        return {
+            "off_rating": 115.0, "def_rating": 113.0,
+            "off_rating_gen": 115.0, "def_rating_gen": 113.0,
+            "pace": 100.0, "venue_role": venue_role or "General"
+        }
 
     t_clean = (team_name or "").lower().strip()
-    pts_scored = 0
-    pts_conceded = 0
-    count = 0
+    gen_scored = 0
+    gen_conceded = 0
+    gen_count = 0
+
+    venue_scored = 0
+    venue_conceded = 0
+    venue_count = 0
+
+    is_seeking_home = (venue_role in ("home", "Local", "local")) if venue_role else None
+    is_seeking_away = (venue_role in ("away", "Visitante", "visita", "visitante")) if venue_role else None
 
     for m in matches:
-        count += 1
         is_home = False
         m_home = (m.get("match_home") or "").lower().strip()
         m_venue = m.get("venue", "")
@@ -239,58 +299,157 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
         a_sc = int(m.get("away_score", 0) or 0)
 
         if is_home:
-            pts_scored += h_sc
-            pts_conceded += a_sc
+            scored = h_sc
+            conceded = a_sc
         else:
-            pts_scored += a_sc
-            pts_conceded += h_sc
+            scored = a_sc
+            conceded = h_sc
 
-    if count == 0:
-        return {"off_rating": 115.0, "def_rating": 113.0, "pace": 100.0}
+        gen_scored += scored
+        gen_conceded += conceded
+        gen_count += 1
 
-    avg_scored = round(pts_scored / float(count), 1)
-    avg_conceded = round(pts_conceded / float(count), 1)
+        if is_seeking_home is not None and is_seeking_home and is_home:
+            venue_scored += scored
+            venue_conceded += conceded
+            venue_count += 1
+        elif is_seeking_away is not None and is_seeking_away and (not is_home):
+            venue_scored += scored
+            venue_conceded += conceded
+            venue_count += 1
+
+    if gen_count == 0:
+        return {
+            "off_rating": 115.0, "def_rating": 113.0,
+            "off_rating_gen": 115.0, "def_rating_gen": 113.0,
+            "pace": 100.0, "venue_role": venue_role or "General"
+        }
+
+    avg_gen_scored = round(gen_scored / float(gen_count), 1)
+    avg_gen_conceded = round(gen_conceded / float(gen_count), 1)
+    off_gen = max(98.0, min(135.0, avg_gen_scored))
+    def_gen = max(98.0, min(135.0, avg_gen_conceded))
+
+    if venue_count > 0:
+        avg_venue_scored = round(venue_scored / float(venue_count), 1)
+        avg_venue_conceded = round(venue_conceded / float(venue_count), 1)
+        off_venue = max(98.0, min(135.0, avg_venue_scored))
+        def_venue = max(98.0, min(135.0, avg_venue_conceded))
+    else:
+        off_venue = off_gen
+        def_venue = def_gen
+
     pace = round(99.0 + (deterministic_hash(team_name) % 4), 1)
 
     return {
-        "off_rating": max(98.0, min(135.0, avg_scored)),
-        "def_rating": max(98.0, min(135.0, avg_conceded)),
-        "pace": pace
+        "off_rating": off_venue,
+        "def_rating": def_venue,
+        "off_rating_gen": off_gen,
+        "def_rating_gen": def_gen,
+        "pace": pace,
+        "venue_role": venue_role or "General"
     }
 
-def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None) -> dict:
+def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None, venue_role: str = None) -> dict:
     if recent_matches and len(recent_matches) > 0:
-        return calculate_team_ratings_from_recent_matches(team_name, recent_matches)
+        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
 
     try:
         verified = find_verified_matches_for_team(team_name)
         if verified and len(verified) > 0:
-            return calculate_team_ratings_from_recent_matches(team_name, verified)
+            return calculate_team_ratings_from_recent_matches(team_name, verified, venue_role=venue_role)
     except Exception:
         pass
 
     t_clean = (team_name or "").lower().strip()
     for k, v in KNOWN_FOOTBALL_TEAMS.items():
         if k in t_clean or t_clean in k:
-            return v
-    h = deterministic_hash(t_clean)
-    att = 1.15 + ((h % 95) / 100.0)
-    deff = 0.85 + (((h // 100) % 85) / 100.0)
-    return {"attack": round(att, 2), "defense": round(deff, 2)}
+            base_att = v["attack"]
+            base_def = v["defense"]
+            if venue_role in ("home", "Local"):
+                v_att = round(base_att * 1.08, 2)
+                v_def = round(base_def * 0.94, 2)
+            elif venue_role in ("away", "Visitante"):
+                v_att = round(base_att * 0.93, 2)
+                v_def = round(base_def * 1.06, 2)
+            else:
+                v_att = base_att
+                v_def = base_def
+            return {
+                "attack": v_att,
+                "defense": v_def,
+                "attack_gen": base_att,
+                "defense_gen": base_def,
+                "venue_role": venue_role or "General"
+            }
 
-def get_nba_team_ratings(team_name: str, recent_matches: list = None) -> dict:
+    h = deterministic_hash(t_clean)
+    att = round(1.15 + ((h % 95) / 100.0), 2)
+    deff = round(0.85 + (((h // 100) % 85) / 100.0), 2)
+    if venue_role in ("home", "Local"):
+        v_att = round(att * 1.08, 2)
+        v_def = round(deff * 0.94, 2)
+    elif venue_role in ("away", "Visitante"):
+        v_att = round(att * 0.93, 2)
+        v_def = round(deff * 1.06, 2)
+    else:
+        v_att = att
+        v_def = deff
+    return {
+        "attack": v_att,
+        "defense": v_def,
+        "attack_gen": att,
+        "defense_gen": deff,
+        "venue_role": venue_role or "General"
+    }
+
+def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None) -> dict:
     if recent_matches and len(recent_matches) > 0:
-        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches)
+        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
 
     t_clean = (team_name or "").lower().strip()
     for k, v in KNOWN_NBA_TEAMS.items():
         if k in t_clean or t_clean in k or any(word in t_clean for word in k.split()):
-            return v
+            base_off = v["off_rating"]
+            base_def = v["def_rating"]
+            if venue_role in ("home", "Local"):
+                v_off = round(base_off + 2.5, 1)
+                v_def = round(base_def - 1.5, 1)
+            elif venue_role in ("away", "Visitante"):
+                v_off = round(base_off - 2.5, 1)
+                v_def = round(base_def + 1.5, 1)
+            else:
+                v_off = base_off
+                v_def = base_def
+            return {
+                "off_rating": v_off,
+                "def_rating": v_def,
+                "off_rating_gen": base_off,
+                "def_rating_gen": base_def,
+                "pace": v.get("pace", 100.0),
+                "venue_role": venue_role or "General"
+            }
+
     h = deterministic_hash(t_clean)
+    base_off = round(112.0 + ((h % 80) / 10.0), 1)
+    base_def = round(110.0 + (((h // 10) % 80) / 10.0), 1)
+    pace = round(98.0 + (((h // 100) % 50) / 10.0), 1)
+    if venue_role in ("home", "Local"):
+        v_off = round(base_off + 2.5, 1)
+        v_def = round(base_def - 1.5, 1)
+    elif venue_role in ("away", "Visitante"):
+        v_off = round(base_off - 2.5, 1)
+        v_def = round(base_def + 1.5, 1)
+    else:
+        v_off = base_off
+        v_def = base_def
     return {
-        "off_rating": round(112.0 + ((h % 80) / 10.0), 1),
-        "def_rating": round(110.0 + (((h // 10) % 80) / 10.0), 1),
-        "pace": round(98.0 + (((h // 100) % 50) / 10.0), 1)
+        "off_rating": v_off,
+        "def_rating": v_def,
+        "off_rating_gen": base_off,
+        "def_rating_gen": base_def,
+        "pace": pace,
+        "venue_role": venue_role or "General"
     }
 
 def generate_four_picks_football(home_team: str, away_team: str, pct_h: float, pct_d: float, pct_a: float, pct_over: float, pct_under: float, pct_btts: float, lam_h: float, mu_a: float) -> list:

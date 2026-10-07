@@ -561,8 +561,8 @@ def fetch_espn_live_soccer():
                         flag = "🇲🇽"
 
                     h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
-                    h_ratings = get_football_team_ratings(home_name, league_title, recent_matches=h2h_data.get("home_last_5"))
-                    a_ratings = get_football_team_ratings(away_name, league_title, recent_matches=h2h_data.get("away_last_5"))
+                    h_ratings = get_football_team_ratings(home_name, league_title, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                    a_ratings = get_football_team_ratings(away_name, league_title, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
                     live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
 
                     pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
@@ -632,8 +632,8 @@ def fetch_espn_live_nba():
                         q_scores[f"{i}Q"] = f"{h_q}-{a_q}"
 
                     h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
-                    h_ratings = get_nba_team_ratings(home_name, recent_matches=h2h_data.get("home_last_5"))
-                    a_ratings = get_nba_team_ratings(away_name, recent_matches=h2h_data.get("away_last_5"))
+                    h_ratings = get_nba_team_ratings(home_name, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                    a_ratings = get_nba_team_ratings(away_name, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
                     h_hash = deterministic_hash(home_name)
                     fg_h = round(44.0 + (score_h / 25.0) + ((h_hash % 5) * 0.8), 1)
                     fg_a = round(43.0 + (score_a / 25.0) + (((h_hash // 5) % 5) * 0.8), 1)
@@ -727,8 +727,8 @@ def try_fetch_external_live_football():
                 minute = item.get("minute", 45) or 45
 
                 h2h_data = generate_match_h2h(home_name, away_name, "football", comp)
-                h_ratings = get_football_team_ratings(home_name, comp, recent_matches=h2h_data.get("home_last_5"))
-                a_ratings = get_football_team_ratings(away_name, comp, recent_matches=h2h_data.get("away_last_5"))
+                h_ratings = get_football_team_ratings(home_name, comp, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                a_ratings = get_football_team_ratings(away_name, comp, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
                 live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
                 pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
                 ai_resp = generate_live_ai_analysis({"home_team": home_name, "away_team": away_name, "league": comp}, pred, live_stats)
@@ -813,8 +813,8 @@ def try_fetch_external_football(date_from=None, date_to=None):
 
                 league_clean, country_name, flag = get_league_and_country_info(comp, "football")
                 h2h_data = generate_match_h2h(home_name, away_name, "football", league_clean, country=country_name)
-                home_stats = get_football_team_ratings(home_name, league_clean, recent_matches=h2h_data.get("home_last_5"))
-                away_stats = get_football_team_ratings(away_name, league_clean, recent_matches=h2h_data.get("away_last_5"))
+                home_stats = get_football_team_ratings(home_name, league_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                away_stats = get_football_team_ratings(away_name, league_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
                 pred = calculate_match_probabilities(home_stats, away_stats, home_team=home_name, away_team=away_name)
                 analysis = generate_ai_analysis({"home_team": home_name, "away_team": away_name, "league": league_clean}, pred)
 
@@ -883,8 +883,8 @@ def try_fetch_external_football(date_from=None, date_to=None):
                                     p_date = f"{d_iso} {t_str}"
 
                                 e_h2h = generate_match_h2h(h_name, a_name, "football", l_clean, country=c_name)
-                                h_stats = get_football_team_ratings(h_name, l_clean, recent_matches=e_h2h.get("home_last_5"))
-                                a_stats = get_football_team_ratings(a_name, l_clean, recent_matches=e_h2h.get("away_last_5"))
+                                h_stats = get_football_team_ratings(h_name, l_clean, recent_matches=e_h2h.get("home_last_5"), venue_role="home")
+                                a_stats = get_football_team_ratings(a_name, l_clean, recent_matches=e_h2h.get("away_last_5"), venue_role="away")
                                 e_pred = calculate_match_probabilities(h_stats, a_stats, home_team=h_name, away_team=a_name)
                                 e_analysis = generate_ai_analysis({"home_team": h_name, "away_team": a_name, "league": l_clean}, e_pred)
 
@@ -959,8 +959,8 @@ def try_fetch_external_nba():
                     pretty_date = date_iso
 
                 h2h_data = generate_match_h2h(home_team, away_team, "nba", "NBA", country="Estados Unidos")
-                home_stats = get_nba_team_ratings(home_team, recent_matches=h2h_data.get("home_last_5"))
-                away_stats = get_nba_team_ratings(away_team, recent_matches=h2h_data.get("away_last_5"))
+                home_stats = get_nba_team_ratings(home_team, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                away_stats = get_nba_team_ratings(away_team, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
                 pred = calculate_nba_probabilities(home_stats, away_stats, home_team=home_team, away_team=away_team)
                 nba_matches.append({
                     "id": f"nba_ext_{g.get('id')}",
@@ -1020,8 +1020,8 @@ def fetch_live_matches_data(sport_filter="all"):
         for item in SOCCER_LIVE_MATCHES:
             l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football")
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
-            home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"))
-            away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"))
+            home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+            away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
             pred = calculate_live_probabilities(
                 current_h=item["score_home"],
                 current_a=item["score_away"],
@@ -1055,8 +1055,8 @@ def fetch_live_matches_data(sport_filter="all"):
     if sport_filter in ("all", "nba"):
         for item in NBA_LIVE_MATCHES:
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "nba", "NBA", country="Estados Unidos")
-            home_stats = get_nba_team_ratings(item["home_team"], recent_matches=h2h_data.get("home_last_5"))
-            away_stats = get_nba_team_ratings(item["away_team"], recent_matches=h2h_data.get("away_last_5"))
+            home_stats = get_nba_team_ratings(item["home_team"], recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+            away_stats = get_nba_team_ratings(item["away_team"], recent_matches=h2h_data.get("away_last_5"), venue_role="away")
             pred = calculate_nba_live_probabilities(
                 current_h=item["score_home"],
                 current_a=item["score_away"],
@@ -1116,8 +1116,8 @@ def fetch_matches_data(sport_filter="all"):
         for item in SOCCER_UPCOMING_MATCHES:
             l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football")
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
-            home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"))
-            away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"))
+            home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+            away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
             pred = calculate_match_probabilities(home_stats, away_stats, home_team=item["home_team"], away_team=item["away_team"])
             analysis = generate_ai_analysis(item, pred)
             results.append({
@@ -1143,8 +1143,8 @@ def fetch_matches_data(sport_filter="all"):
     if sport_filter in ("all", "nba"):
         for item in NBA_UPCOMING_MATCHES:
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "nba", "NBA", country="Estados Unidos")
-            home_stats = get_nba_team_ratings(item["home_team"], recent_matches=h2h_data.get("home_last_5"))
-            away_stats = get_nba_team_ratings(item["away_team"], recent_matches=h2h_data.get("away_last_5"))
+            home_stats = get_nba_team_ratings(item["home_team"], recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+            away_stats = get_nba_team_ratings(item["away_team"], recent_matches=h2h_data.get("away_last_5"), venue_role="away")
             pred = calculate_nba_probabilities(home_stats, away_stats, home_team=item["home_team"], away_team=item["away_team"])
             analysis = generate_nba_ai_analysis(item, pred)
             results.append({
