@@ -2,55 +2,71 @@ import os
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify, request
 from data_provider import fetch_matches_data, fetch_live_matches_data, get_config
-
-app = Flask(__name__)
+base_dir = os.path.dirname(os.path.abspath(__file__))
+template_dir = os.path.join(base_dir, "templates") if os.path.isdir(os.path.join(base_dir, "templates")) else base_dir
+app = Flask(__name__, template_folder=template_dir)
 
 @app.route("/")
 def index():
-    cfg = get_config()
-    live_api_active = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
-    live_matches = fetch_live_matches_data()
-    upcoming_matches = fetch_matches_data()
-    all_matches = live_matches + upcoming_matches
+    try:
+        cfg = get_config()
+        live_api_active = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
+        live_matches = fetch_live_matches_data() or []
+        upcoming_matches = fetch_matches_data() or []
+        all_matches = live_matches + upcoming_matches
 
-    football_total = sum(1 for m in all_matches if m.get("sport") == "football")
-    nba_total = sum(1 for m in all_matches if m.get("sport") == "nba")
-    value_picks = sum(1 for m in all_matches if m["prediction"]["is_value_bet"])
-    low_risk = sum(1 for m in all_matches if m["prediction"]["risk_level"] == "Bajo")
+        football_total = sum(1 for m in all_matches if m.get("sport") == "football")
+        nba_total = sum(1 for m in all_matches if m.get("sport") == "nba")
+        value_picks = sum(1 for m in all_matches if m.get("prediction", {}).get("is_value_bet", False))
+        low_risk = sum(1 for m in all_matches if m.get("prediction", {}).get("risk_level") == "Bajo")
 
-    stats_summary = {
-        "total_analyzed": len(all_matches),
-        "football_count": football_total,
-        "nba_count": nba_total,
-        "live_count": len(live_matches),
-        "value_picks": value_picks,
-        "low_risk": low_risk,
-        "historical_accuracy": "78.4%"
-    }
-    today_dt = datetime.now()
-    tomorrow_dt = today_dt + timedelta(days=1)
-    today_iso = today_dt.strftime("%Y-%m-%d")
-    tomorrow_iso = tomorrow_dt.strftime("%Y-%m-%d")
-    today_str = today_dt.strftime("%d/%m")
-    tomorrow_str = tomorrow_dt.strftime("%d/%m")
+        stats_summary = {
+            "total_analyzed": len(all_matches),
+            "football_count": football_total,
+            "nba_count": nba_total,
+            "live_count": len(live_matches),
+            "value_picks": value_picks,
+            "low_risk": low_risk,
+            "historical_accuracy": "78.4%"
+        }
+        today_dt = datetime.now()
+        tomorrow_dt = today_dt + timedelta(days=1)
+        today_iso = today_dt.strftime("%Y-%m-%d")
+        tomorrow_iso = tomorrow_dt.strftime("%Y-%m-%d")
+        today_str = today_dt.strftime("%d/%m")
+        tomorrow_str = tomorrow_dt.strftime("%d/%m")
 
-    unique_countries = sorted(list(set(m.get("country", "Internacional") for m in all_matches if m.get("country"))))
-    unique_leagues = sorted(list(set(m.get("league", "") for m in all_matches if m.get("league"))))
+        unique_countries = sorted(list(set(m.get("country", "Internacional") for m in all_matches if m.get("country"))))
+        unique_leagues = sorted(list(set(m.get("league", "") for m in all_matches if m.get("league"))))
 
-    return render_template(
-        "index.html",
-        live_matches=live_matches,
-        upcoming_matches=upcoming_matches,
-        all_matches=all_matches,
-        stats=stats_summary,
-        live_api_active=live_api_active,
-        today_iso=today_iso,
-        tomorrow_iso=tomorrow_iso,
-        today_str=today_str,
-        tomorrow_str=tomorrow_str,
-        countries=unique_countries,
-        leagues=unique_leagues
-    )
+        context = dict(
+            live_matches=live_matches,
+            upcoming_matches=upcoming_matches,
+            all_matches=all_matches,
+            stats=stats_summary,
+            live_api_active=live_api_active,
+            today_iso=today_iso,
+            tomorrow_iso=tomorrow_iso,
+            today_str=today_str,
+            tomorrow_str=tomorrow_str,
+            countries=unique_countries,
+            leagues=unique_leagues
+        )
+
+        try:
+            return render_template("index.html", **context)
+        except Exception:
+            from flask import render_template_string
+            for loc in ["index.html", os.path.join(base_dir, "index.html"), os.path.join(base_dir, "templates", "index.html")]:
+                if os.path.exists(loc):
+                    with open(loc, "r", encoding="utf-8") as f:
+                        return render_template_string(f.read(), **context)
+            raise
+    except Exception as e:
+        import traceback
+        err_msg = traceback.format_exc()
+        print(f"[ERROR /]: {err_msg}")
+        return f"<pre style='color:#ff5555;background:#1e1e2e;padding:20px;border-radius:8px;font-family:monospace;'><b>Error en el servidor:</b><br><br>{err_msg}</pre>", 500
 
 @app.route("/api/live")
 def api_live():
