@@ -576,23 +576,31 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             is_loc = (i % 2 == 0)
             if outcome_val < 5:
                 res = "W"
-                sc_h = 2 + (outcome_val % 2)
-                sc_a = outcome_val % 2
+                my_goals = 2 + (outcome_val % 2)
+                opp_goals = outcome_val % 2
             elif outcome_val < 7:
                 res = "D"
-                sc_h = 1
-                sc_a = 1
+                my_goals = 1
+                opp_goals = 1
             else:
                 res = "L"
-                sc_h = 0
-                sc_a = 1 + (outcome_val % 2)
+                my_goals = 0
+                opp_goals = 1 + (outcome_val % 2)
 
-            score_str = f"{sc_h} - {sc_a}" if is_loc else f"{sc_a} - {sc_h}"
+            m_home = home_team if is_loc else opp
+            m_away = opp if is_loc else home_team
+            sc_home = my_goals if is_loc else opp_goals
+            sc_away = opp_goals if is_loc else my_goals
+
             home_last_5.append({
                 "date": recent_dates_home[i],
                 "opponent": opp,
                 "venue": "Local" if is_loc else "Visitante",
-                "score": score_str,
+                "match_home": m_home,
+                "match_away": m_away,
+                "home_score": sc_home,
+                "away_score": sc_away,
+                "score": f"{sc_home} - {sc_away}",
                 "result": res,
                 "competition": comp_name
             })
@@ -613,60 +621,76 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             is_loc = (i % 2 == 1)
             if outcome_val < 4:
                 res = "W"
-                sc_a = 2 + (outcome_val % 2)
-                sc_h = outcome_val % 2
+                my_goals = 2 + (outcome_val % 2)
+                opp_goals = outcome_val % 2
             elif outcome_val < 7:
                 res = "D"
-                sc_a = 1
-                sc_h = 1
+                my_goals = 1
+                opp_goals = 1
             else:
                 res = "L"
-                sc_a = 0
-                sc_h = 1 + (outcome_val % 2)
+                my_goals = 0
+                opp_goals = 1 + (outcome_val % 2)
 
-            score_str = f"{sc_h} - {sc_a}" if is_loc else f"{sc_a} - {sc_h}"
+            m_home = away_team if is_loc else opp
+            m_away = opp if is_loc else away_team
+            sc_home = my_goals if is_loc else opp_goals
+            sc_away = opp_goals if is_loc else my_goals
+
             away_last_5.append({
                 "date": recent_dates_away[i],
                 "opponent": opp,
                 "venue": "Local" if is_loc else "Visitante",
-                "score": score_str,
+                "match_home": m_home,
+                "match_away": m_away,
+                "home_score": sc_home,
+                "away_score": sc_away,
+                "score": f"{sc_home} - {sc_away}",
                 "result": res,
                 "competition": comp_name
             })
 
         # 3. Cara a Cara Directo entre ellos (5 partidos)
         head_to_head = []
-        w_h = 0
-        w_d = 0
-        w_a = 0
-        total_g = 0
         for i in range(5):
             val = (combined_hash + i * 19) % 10
-            if val < 4:
-                winner = home_team
-                w_h += 1
-                sc_1 = 2 + (val % 2)
-                sc_2 = val % 2
-            elif val < 7:
-                winner = "Empate"
-                w_d += 1
-                sc_1 = 1
-                sc_2 = 1
-            else:
-                winner = away_team
-                w_a += 1
-                sc_1 = val % 2
-                sc_2 = 2 + (val % 2)
+            clash_home = home_team if (i % 2 == 0) else away_team
+            clash_away = away_team if (i % 2 == 0) else home_team
 
-            total_g += (sc_1 + sc_2)
+            if val < 4:
+                # El equipo local de este choque gana
+                sc_home = 2 + (val % 2)
+                sc_away = val % 2
+                winner = clash_home
+            elif val < 7:
+                # Empate
+                sc_home = 1
+                sc_away = 1
+                winner = "Empate"
+            else:
+                # El equipo visitante de este choque gana
+                sc_home = val % 2
+                sc_away = 2 + (val % 2)
+                winner = clash_away
+
             head_to_head.append({
                 "date": h2h_dates[i],
                 "competition": comp_name,
-                "score": f"{sc_1} - {sc_2}",
+                "tournament": comp_name,
+                "match_home": clash_home,
+                "match_away": clash_away,
+                "home_score": sc_home,
+                "away_score": sc_away,
+                "score": f"{sc_home} - {sc_away}",
                 "winner": winner,
-                "home_team": home_team,
-                "away_team": away_team
+                "home_team": clash_home,
+                "away_team": clash_away
             })
+
+        w_h = sum(1 for m in head_to_head if m["winner"] == home_team)
+        w_d = sum(1 for m in head_to_head if m["winner"] == "Empate")
+        w_a = sum(1 for m in head_to_head if m["winner"] == away_team)
+        total_g = sum(m["home_score"] + m["away_score"] for m in head_to_head)
 
         return {
             "home_last_5": home_last_5,
@@ -696,14 +720,23 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
 
             val = (h_hash + i * 13) % 10
             res = "W" if val < 6 else "L"
-            sc_h = 112 + (val * 2)
-            sc_a = 106 + ((10 - val) * 2)
-            if res == "L":
-                sc_h, sc_a = sc_a, sc_h
+            is_loc = (i % 2 == 0)
+            my_pts = 112 + (val * 2) if res == "W" else 106 + ((10 - val) * 2)
+            opp_pts = 106 + ((10 - val) * 2) if res == "W" else 112 + (val * 2)
+
+            m_home = home_team if is_loc else opp
+            m_away = opp if is_loc else home_team
+            sc_h = my_pts if is_loc else opp_pts
+            sc_a = opp_pts if is_loc else my_pts
+
             home_last_5.append({
                 "date": recent_dates_home[i],
                 "opponent": opp,
-                "venue": "Local" if i % 2 == 0 else "Visitante",
+                "venue": "Local" if is_loc else "Visitante",
+                "match_home": m_home,
+                "match_away": m_away,
+                "home_score": sc_h,
+                "away_score": sc_a,
                 "score": f"{sc_h} - {sc_a}",
                 "result": res,
                 "competition": "NBA"
@@ -722,43 +755,61 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
 
             val = (a_hash + i * 17) % 10
             res = "W" if val < 5 else "L"
-            sc_a = 110 + (val * 2)
-            sc_h = 108 + ((10 - val) * 2)
-            if res == "L":
-                sc_a, sc_h = sc_h, sc_a
+            is_loc = (i % 2 == 1)
+            my_pts = 110 + (val * 2) if res == "W" else 108 + ((10 - val) * 2)
+            opp_pts = 108 + ((10 - val) * 2) if res == "W" else 110 + (val * 2)
+
+            m_home = away_team if is_loc else opp
+            m_away = opp if is_loc else away_team
+            sc_h = my_pts if is_loc else opp_pts
+            sc_a = opp_pts if is_loc else my_pts
+
             away_last_5.append({
                 "date": recent_dates_away[i],
                 "opponent": opp,
-                "venue": "Visitante" if i % 2 == 0 else "Local",
+                "venue": "Local" if is_loc else "Visitante",
+                "match_home": m_home,
+                "match_away": m_away,
+                "home_score": sc_h,
+                "away_score": sc_a,
                 "score": f"{sc_h} - {sc_a}",
                 "result": res,
                 "competition": "NBA"
             })
 
         head_to_head = []
-        w_h = 0
-        w_a = 0
         for i in range(5):
             val = (combined_hash + i * 19) % 10
+            clash_h = home_team if (i % 2 == 0) else away_team
+            clash_a = away_team if (i % 2 == 0) else home_team
+
             if val < 5:
-                winner = home_team
-                w_h += 1
-                sc_1 = 115 + (val * 2)
-                sc_2 = 108 + (val % 4)
+                # clash_h gana
+                winner = clash_h
+                sc_h = 115 + (val * 2)
+                sc_a = 108 + (val % 4)
             else:
-                winner = away_team
-                w_a += 1
-                sc_1 = 107 + (val % 4)
-                sc_2 = 116 + (val * 2)
+                # clash_a gana
+                winner = clash_a
+                sc_h = 107 + (val % 4)
+                sc_a = 116 + (val * 2)
 
             head_to_head.append({
                 "date": h2h_dates[i],
                 "competition": "NBA",
-                "score": f"{sc_1} - {sc_2}",
+                "tournament": "NBA",
+                "match_home": clash_h,
+                "match_away": clash_a,
+                "home_score": sc_h,
+                "away_score": sc_a,
+                "score": f"{sc_h} - {sc_a}",
                 "winner": winner,
-                "home_team": home_team,
-                "away_team": away_team
+                "home_team": clash_h,
+                "away_team": clash_a
             })
+
+        w_h = sum(1 for m in head_to_head if m["winner"] == home_team)
+        w_a = sum(1 for m in head_to_head if m["winner"] == away_team)
 
         return {
             "home_last_5": home_last_5,
@@ -1241,6 +1292,7 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
     prob_h = normal_cdf(diff_rem / sigma_rem)
     pct_h = round(prob_h * 100, 1)
     pct_a = round((1.0 - prob_h) * 100, 1)
+    pct_away = pct_a
 
     proj_total = round(final_proj_h + final_proj_a)
 

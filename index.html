@@ -43,33 +43,38 @@
 <body class="min-h-screen pb-16">
 
     <!-- Top Navigation -->
-    <header class="border-b border-gray-800 bg-gray-900/90 backdrop-blur sticky top-0 z-30">
-        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <header class="border-b border-gray-800 bg-gray-900/95 backdrop-blur sticky top-0 z-30 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
                     <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
                 </div>
                 <div>
                     <h1 class="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
                         Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
                     </h1>
-                    <p class="text-xs text-gray-400">Catálogo: Clubes, Selecciones Nacionales & NBA</p>
+                    <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
                 </div>
             </div>
 
-            <!-- Sport Switcher Tabs -->
-            <div class="flex items-center bg-gray-950 p-1 rounded-xl border border-gray-800 text-xs">
-                <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn px-2.5 py-1 rounded-lg font-bold bg-gray-800 text-gray-300">
-                    🌟 Todos
+            <!-- Sport Switcher Tabs: Justo abajo del título en móviles, responsive con 4 columnas limpias -->
+            <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-xs w-full sm:w-auto">
+                <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow">
+                    <span>🌟</span>
+                    <span>Todos</span>
                 </button>
-                <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white">
-                    ⚽ Clubes
+                <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <span>⚽</span>
+                    <span>Clubes</span>
                 </button>
-                <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white">
-                    🌎 Selecciones
+                <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <span>🌎</span>
+                    <span class="hidden sm:inline">Selecciones</span>
+                    <span class="sm:hidden">Selecc.</span>
                 </button>
-                <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white">
-                    🏀 NBA
+                <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <span>🏀</span>
+                    <span>NBA</span>
                 </button>
             </div>
         </div>
@@ -1010,6 +1015,101 @@
             }
         }
 
+        function updateDynamicFilters() {
+            const cards = document.querySelectorAll('#upcoming-grid .match-card');
+            const countrySelect = document.getElementById('country-select');
+            const leagueSelect = document.getElementById('league-select');
+            if (!countrySelect || !leagueSelect) return;
+
+            const countryCounts = {};
+            const leagueCounts = {};
+            let totalAvailable = 0;
+
+            cards.forEach(card => {
+                const sport = card.dataset.sport;
+                const isNat = card.dataset.isNational === 'true';
+                const cardDate = card.dataset.date;
+                const isValue = card.dataset.valueBet === 'true';
+
+                // Categoría
+                let matchCat = false;
+                if (currentCategory === 'all') matchCat = true;
+                else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
+                else if (currentCategory === 'national' && isNat) matchCat = true;
+                else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+
+                // Fecha
+                let matchDate = (currentDateFilter === 'all') || (cardDate === currentDateFilter);
+
+                // Picks de valor
+                let matchVal = (!onlyValuePicks) || isValue;
+
+                if (matchCat && matchDate && matchVal) {
+                    totalAvailable++;
+                    const c = card.dataset.country || 'Internacional';
+                    countryCounts[c] = (countryCounts[c] || 0) + 1;
+
+                    // Si coincide con el país seleccionado (o si está en 'all')
+                    if (currentCountryFilter === 'all' || card.dataset.country === currentCountryFilter) {
+                        const l = card.dataset.league;
+                        if (l) leagueCounts[l] = (leagueCounts[l] || 0) + 1;
+                    }
+                }
+            });
+
+            // Si el país que estaba seleccionado ya no tiene partidos en esta vista, restablecer a 'all'
+            if (currentCountryFilter !== 'all' && (!countryCounts[currentCountryFilter] || countryCounts[currentCountryFilter] === 0)) {
+                currentCountryFilter = 'all';
+            }
+
+            // Si la liga que estaba seleccionada ya no tiene partidos, restablecer a 'all'
+            if (currentLeagueFilter !== 'all' && (!leagueCounts[currentLeagueFilter] || leagueCounts[currentLeagueFilter] === 0)) {
+                currentLeagueFilter = 'all';
+            }
+
+            const flagsMap = {
+                'España': '🇪🇸',
+                'Inglaterra': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+                'Italia': '🇮🇹',
+                'Alemania': '🇩🇪',
+                'Francia': '🇫🇷',
+                'Portugal': '🇵🇹',
+                'Países Bajos': '🇳🇱',
+                'Holanda': '🇳🇱',
+                'Estados Unidos': '🇺🇸',
+                'México': '🇲🇽',
+                'Brasil': '🇧🇷',
+                'Argentina': '🇦🇷',
+                'Colombia': '🇨🇴',
+                'Chile': '🇨🇱',
+                'Uruguay': '🇺🇾',
+                'Arabia Saudita': '🇸🇦',
+                'Internacional': '🌎'
+            };
+
+            // Reconstruir selector de País: SOLO mostrar los países que sí tienen partidos disponibles
+            const sortedCountries = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b));
+            let countryHtml = `<option value="all" class="bg-gray-900 text-gray-200">🌍 Todos los Países (${totalAvailable})</option>`;
+            sortedCountries.forEach(c => {
+                const flag = flagsMap[c] || '🌍';
+                const count = countryCounts[c];
+                countryHtml += `<option value="${c}" class="bg-gray-900 text-gray-200">${flag} ${c} (${count})</option>`;
+            });
+            countrySelect.innerHTML = countryHtml;
+            countrySelect.value = currentCountryFilter;
+
+            // Reconstruir selector de Liga: SOLO mostrar ligas que sí tienen partidos
+            const sortedLeagues = Object.keys(leagueCounts).sort((a, b) => a.localeCompare(b));
+            const totalLeaguesMatches = Object.values(leagueCounts).reduce((a, b) => a + b, 0);
+            let leagueHtml = `<option value="all" class="bg-gray-900 text-gray-200">🏆 Todas las Ligas (${totalLeaguesMatches})</option>`;
+            sortedLeagues.forEach(l => {
+                const count = leagueCounts[l];
+                leagueHtml += `<option value="${l}" class="bg-gray-900 text-gray-200">${l} (${count})</option>`;
+            });
+            leagueSelect.innerHTML = leagueHtml;
+            leagueSelect.value = currentLeagueFilter;
+        }
+
         function setCategoryFilter(category) {
             currentCategory = category;
             document.querySelectorAll('.cat-btn').forEach(b => {
@@ -1019,7 +1119,9 @@
             if (activeBtn) {
                 activeBtn.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
             }
+            updateDynamicFilters();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function setDateFilter(dateVal) {
@@ -1048,20 +1150,23 @@
                 if (picker) picker.value = dateVal;
             }
 
-            updateFilterStatusText();
+            updateDynamicFilters();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function setCountryFilter(country) {
             currentCountryFilter = country;
-            updateFilterStatusText();
+            currentLeagueFilter = 'all'; // Al filtrar país, resetear liga para mostrar las de ese país
+            updateDynamicFilters();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function setLeagueFilter(league) {
             currentLeagueFilter = league;
-            updateFilterStatusText();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function toggleValuePicks() {
@@ -1075,8 +1180,9 @@
                 }
             }
             switchTab('upcoming');
-            updateFilterStatusText();
+            updateDynamicFilters();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function resetAllFilters() {
@@ -1086,10 +1192,6 @@
             currentLeagueFilter = 'all';
             onlyValuePicks = false;
 
-            const cSelect = document.getElementById('country-select');
-            if (cSelect) cSelect.value = 'all';
-            const lSelect = document.getElementById('league-select');
-            if (lSelect) lSelect.value = 'all';
             const dateInput = document.getElementById('date-picker-input');
             if (dateInput) dateInput.value = '';
 
@@ -1102,7 +1204,7 @@
                 b.className = "cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white";
             });
             const catAll = document.getElementById('cat-tab-all');
-            if (catAll) catAll.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-gray-800 text-white shadow";
+            if (catAll) catAll.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
 
             document.querySelectorAll('.date-filter-btn').forEach(b => {
                 b.className = "date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white";
@@ -1110,8 +1212,9 @@
             const dateAll = document.getElementById('date-btn-all');
             if (dateAll) dateAll.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
 
-            updateFilterStatusText();
+            updateDynamicFilters();
             applyAllFilters();
+            updateFilterStatusText();
         }
 
         function switchTab(tab) {
@@ -1235,7 +1338,7 @@
             document.getElementById('h2h-home-title').innerText = `${match.home_team}`;
             document.getElementById('h2h-away-title').innerText = `${match.away_team}`;
 
-            const renderTeamMatches = (container, matches) => {
+            const renderTeamMatches = (container, matches, targetTeam) => {
                 if (!container) return;
                 container.innerHTML = '';
                 if (!matches || matches.length === 0) {
@@ -1243,19 +1346,38 @@
                     return;
                 }
                 matches.forEach(m => {
+                    let resCode = m.result || "W";
+                    let resLabel = (resCode === "W" || resCode === "V") ? "Victoria" : ((resCode === "D" || resCode === "E") ? "Empate" : "Derrota");
                     let badgeClass = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
-                    if (m.result === "E") badgeClass = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
-                    if (m.result === "D") badgeClass = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+                    if (resLabel === "Empate") badgeClass = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                    if (resLabel === "Derrota") badgeClass = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+
+                    // Determinar qué equipo jugó de local y cuál de visitante
+                    let localTeam = m.match_home;
+                    let awayTeam = m.match_away;
+                    if (!localTeam || !awayTeam) {
+                        const isTargetLoc = (m.venue === "Local");
+                        localTeam = isTargetLoc ? targetTeam : m.opponent;
+                        awayTeam = isTargetLoc ? m.opponent : targetTeam;
+                    }
+
+                    const scoreText = m.score || `${m.home_score || 0} - ${m.away_score || 0}`;
 
                     const itemHtml = `
-                        <div class="flex items-center justify-between p-2 rounded-lg bg-gray-900/80 border border-gray-800/80 text-[11px]">
-                            <div class="truncate mr-2">
-                                <span class="text-gray-400 text-[10px] block font-mono">${m.date}</span>
-                                <span class="text-gray-200 font-semibold truncate">${m.opponent} (${m.venue})</span>
+                        <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
+                                <span>${m.date} • ${m.competition || ''}</span>
+                                <span class="px-2 py-0.5 rounded-full font-bold ${badgeClass}">${resLabel}</span>
                             </div>
-                            <div class="flex items-center gap-1.5 shrink-0 font-mono">
-                                <span class="font-bold text-gray-100">${m.score}</span>
-                                <span class="w-5 h-5 rounded flex items-center justify-center font-bold text-[10px] ${badgeClass}">${m.result}</span>
+                            <div class="flex items-center justify-between font-sans">
+                                <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
+                                    <span class="${localTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${localTeam}</span>
+                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
+                                    <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
+                                    <span class="${awayTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${awayTeam}</span>
+                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                                </div>
+                                <span class="font-mono font-bold text-emerald-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${scoreText}</span>
                             </div>
                         </div>
                     `;
@@ -1263,8 +1385,8 @@
                 });
             };
 
-            renderTeamMatches(homeList, h2h.home_last_5);
-            renderTeamMatches(awayList, h2h.away_last_5);
+            renderTeamMatches(homeList, h2h.home_last_5, match.home_team);
+            renderTeamMatches(awayList, h2h.away_last_5, match.away_team);
 
             if (directList) {
                 directList.innerHTML = '';
@@ -1273,18 +1395,32 @@
                     directList.innerHTML = `<span class="text-gray-500 text-[10px] block text-center py-2">Sin enfrentamientos previos</span>`;
                 } else {
                     directs.forEach(d => {
+                        let winText = d.winner || "Empate";
                         let winBadge = "bg-gray-800 text-gray-300 border border-gray-700";
-                        if (d.winner && d.winner.includes(match.home_team)) winBadge = "bg-blue-500/20 text-blue-400 border border-blue-500/40";
-                        else if (d.winner && d.winner.includes(match.away_team)) winBadge = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
-                        else if (d.winner === "Empate") winBadge = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                        if (winText.includes(match.home_team)) winBadge = "bg-blue-500/20 text-blue-400 border border-blue-500/40";
+                        else if (winText.includes(match.away_team)) winBadge = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+                        else if (winText === "Empate") winBadge = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+
+                        const lTeam = d.match_home || d.home_team || match.home_team;
+                        const vTeam = d.match_away || d.away_team || match.away_team;
+                        const score = d.score || "0 - 0";
 
                         const directHtml = `
-                            <div class="flex items-center justify-between p-2 rounded-lg bg-gray-900/80 border border-gray-800/80 text-[11px]">
-                                <div class="truncate mr-2">
-                                    <span class="text-gray-400 text-[10px] block font-mono">${d.date} • ${d.tournament}</span>
-                                    <span class="text-gray-100 font-bold">${d.score}</span>
+                            <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
+                                    <span>${d.date} • ${d.tournament || d.competition || ''}</span>
+                                    <span class="px-2 py-0.5 rounded-full font-bold ${winBadge}">${winText === 'Empate' ? 'Empate' : 'Ganó ' + winText}</span>
                                 </div>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${winBadge} shrink-0">${d.winner}</span>
+                                <div class="flex items-center justify-between font-sans">
+                                    <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
+                                        <span class="text-gray-200 font-semibold truncate">${lTeam}</span>
+                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
+                                        <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
+                                        <span class="text-gray-200 font-semibold truncate">${vTeam}</span>
+                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                                    </div>
+                                    <span class="font-mono font-bold text-blue-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${score}</span>
+                                </div>
                             </div>
                         `;
                         directList.insertAdjacentHTML('beforeend', directHtml);
@@ -1431,16 +1567,16 @@
             if (e.target.id === 'ai-modal') closeAiModal();
         });
 
-        // Gestión inteligente de pestañas al cargar
-        {% if live_matches|length > 0 %}
+        // Gestión inteligente de pestañas y filtros al cargar
         document.addEventListener("DOMContentLoaded", () => {
+            updateDynamicFilters();
+            applyAllFilters();
+            {% if live_matches|length > 0 %}
             switchTab('live');
-        });
-        {% elif live_api_active %}
-        document.addEventListener("DOMContentLoaded", () => {
+            {% elif live_api_active %}
             switchTab('upcoming');
+            {% endif %}
         });
-        {% endif %}
     </script>
 </body>
 </html>
