@@ -269,16 +269,28 @@
                             </div>
                             <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1 border-t border-gray-800/50">
                                 <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block">Tiros a Puerta</span>
-                                    <span class="font-mono font-bold text-white">{{ m.live_stats.shots_on_target_home }} - {{ m.live_stats.shots_on_target_away }}</span>
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros a Puerta</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.shots_on_target_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.shots_on_target_away }}</span>
+                                    </div>
                                 </div>
                                 <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block">Tiros Totales</span>
-                                    <span class="font-mono font-bold text-white">{{ m.live_stats.total_shots_home }} - {{ m.live_stats.total_shots_away }}</span>
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros Totales</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.total_shots_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.total_shots_away }}</span>
+                                    </div>
                                 </div>
                                 <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block">Córners</span>
-                                    <span class="font-mono font-bold text-white">{{ m.live_stats.corners_home }} - {{ m.live_stats.corners_away }}</span>
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Córners</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.corners_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.corners_away }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -590,16 +602,20 @@
                                     <div class="bg-rose-500 prob-bar-fill" style="width: {{ m.prediction.prob_away }}%"></div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-3 gap-2 mt-4 text-center">
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mt-4 text-center">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">+1.5 Goles</span>
+                                    <span class="text-xs font-bold text-cyan-400">{{ m.prediction.prob_over_15 }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">+2.5 Goles</span>
                                     <span class="text-xs font-bold text-emerald-400">{{ m.prediction.prob_over_25 }}%</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">Ambos Marcan</span>
                                     <span class="text-xs font-bold text-gray-300">{{ m.prediction.prob_btts }}%</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">Marcador IA</span>
                                     <span class="text-xs font-bold text-amber-400 font-mono">{{ m.prediction.top_scores[0].score }}</span>
                                 </div>

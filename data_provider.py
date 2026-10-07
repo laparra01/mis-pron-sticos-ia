@@ -457,6 +457,71 @@ def get_league_and_country_info(comp_name, sport="football"):
         return "UEFA Nations League", "Europa", "🇪🇺"
     return comp_name, "Internacional", "⚽"
 
+def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, score_a: int, minute: int, h_ratings: dict = None, a_ratings: dict = None) -> dict:
+    """
+    Genera estadísticas de partido en vivo completamente dinámicas, asimétricas y realistas
+    para tiros a puerta, tiros totales, córners, faltas y posesión.
+    Garantiza que tiros a puerta >= goles, tiros totales > tiros a puerta, y que ambos
+    equipos tengan cifras diferenciadas y coherentes con el flujo del juego.
+    """
+    h_hash = abs(hash(home_name))
+    a_hash = abs(hash(away_name))
+    comb_hash = abs(hash(f"{home_name}_{away_name}_{minute}"))
+
+    h_att = h_ratings.get("attack", 2.1) if h_ratings else 2.1
+    a_att = a_ratings.get("attack", 1.8) if a_ratings else 1.8
+
+    diff = score_h - score_a
+    base_poss = 51 + (diff * 2) + int((h_att - a_att) * 7) + ((h_hash % 7) - 3)
+    poss_h = max(36, min(68, base_poss))
+    poss_a = 100 - poss_h
+
+    m_factor = max(0.15, minute / 90.0)
+
+    # Tiros a puerta: garantizado mayor o igual a los goles anotados
+    shots_h = max(score_h, round(m_factor * (h_att * 2.7 + (poss_h / 12.0) + (h_hash % 3))))
+    shots_a = max(score_a, round(m_factor * (a_att * 2.4 + (poss_a / 13.0) + (a_hash % 3))))
+    if shots_h == shots_a:
+        if poss_h >= poss_a:
+            shots_h += 1
+        else:
+            shots_a += 1
+
+    # Tiros totales: siempre mayor a tiros a puerta
+    extra_h = max(2, round(shots_h * 1.25) + (comb_hash % 4))
+    extra_a = max(2, round(shots_a * 1.15) + ((comb_hash // 4) % 4))
+    total_shots_h = shots_h + extra_h
+    total_shots_a = shots_a + extra_a
+
+    # Córners: asimétricos y crecientes con el minuto
+    corners_h = max(1, round(m_factor * (3.8 + (poss_h / 14.0) + (h_hash % 3))))
+    corners_a = max(0, round(m_factor * (2.7 + (poss_a / 16.0) + (a_hash % 3))))
+    if corners_h == corners_a:
+        corners_h += 1
+
+    # Faltas y tarjetas
+    fouls_h = max(2, round(m_factor * (7 + (a_hash % 5))))
+    fouls_a = max(3, round(m_factor * (8 + (h_hash % 5))))
+    yellows_h = 1 if minute > 28 and (h_hash % 3 == 0) else (2 if minute > 70 else 0)
+    yellows_a = 1 if minute > 32 else (2 if minute > 65 and (a_hash % 2 == 0) else 0)
+
+    return {
+        "possession_home": poss_h,
+        "possession_away": poss_a,
+        "shots_on_target_home": shots_h,
+        "shots_on_target_away": shots_a,
+        "total_shots_home": total_shots_h,
+        "total_shots_away": total_shots_a,
+        "corners_home": corners_h,
+        "corners_away": corners_a,
+        "fouls_home": fouls_h,
+        "fouls_away": fouls_a,
+        "yellow_cards_home": yellows_h,
+        "yellow_cards_away": yellows_a,
+        "dangerous_attacks_home": round(poss_h * 0.88 + (minute * 0.18)),
+        "dangerous_attacks_away": round(poss_a * 0.82 + (minute * 0.14))
+    }
+
 def fetch_espn_live_soccer():
     """
     Obtiene partidos de fútbol en vivo transmitidos por ESPN (incluye selecciones como México, Concacaf, Conmebol, etc.).
@@ -494,35 +559,10 @@ def fetch_espn_live_soccer():
                         country_name = "México"
                         flag = "🇲🇽"
 
-                    # Estadísticas dinámicas realistas e individuales según el marcador y minuto
-                    diff = score_h - score_a
-                    h_hash = abs(hash(home_name))
-                    poss_h = max(38, min(66, 50 + (diff * 3) + ((h_hash % 9) - 4)))
-                    poss_a = 100 - poss_h
-                    shots_h = max(1, round((minute / 90.0) * (4 + (poss_h / 14.0))))
-                    shots_a = max(1, round((minute / 90.0) * (4 + (poss_a / 14.0))))
-                    corners_h = max(1, round(shots_h * 0.75))
-                    corners_a = max(1, round(shots_a * 0.70))
-
-                    live_stats = {
-                        "possession_home": poss_h,
-                        "possession_away": poss_a,
-                        "shots_on_target_home": shots_h,
-                        "shots_on_target_away": shots_a,
-                        "total_shots_home": round(shots_h * 2.3),
-                        "total_shots_away": round(shots_a * 2.3),
-                        "corners_home": corners_h,
-                        "corners_away": corners_a,
-                        "fouls_home": round(6 + (minute / 11)),
-                        "fouls_away": round(7 + (minute / 10)),
-                        "yellow_cards_home": 1 if minute > 30 else 0,
-                        "yellow_cards_away": 2 if minute > 50 else 1,
-                        "dangerous_attacks_home": round(poss_h * 0.85),
-                        "dangerous_attacks_away": round(poss_a * 0.85)
-                    }
-
                     h_ratings = get_football_team_ratings(home_name, league_title)
                     a_ratings = get_football_team_ratings(away_name, league_title)
+                    live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
+
                     pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
                     h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
                     ai_resp = generate_live_ai_analysis({"home_team": home_name, "away_team": away_name, "league": league_title}, pred, live_stats)
@@ -685,23 +725,10 @@ def try_fetch_external_live_football():
                 score_a = score.get("away") if score.get("away") is not None else 0
                 minute = item.get("minute", 45) or 45
 
-                live_stats = {
-                    "possession_home": 54,
-                    "possession_away": 46,
-                    "shots_on_target_home": 5,
-                    "shots_on_target_away": 3,
-                    "total_shots_home": 11,
-                    "total_shots_away": 8,
-                    "corners_home": 5,
-                    "corners_away": 3,
-                    "fouls_home": 8,
-                    "fouls_away": 10,
-                    "yellow_cards_home": 1,
-                    "yellow_cards_away": 2,
-                    "dangerous_attacks_home": 42,
-                    "dangerous_attacks_away": 36
-                }
-                pred = calculate_live_probabilities(score_h, score_a, minute, {"attack": 2.1, "defense": 1.0}, {"attack": 1.7, "defense": 1.1}, live_stats)
+                h_ratings = get_football_team_ratings(home_name, comp)
+                a_ratings = get_football_team_ratings(away_name, comp)
+                live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
+                pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
                 ai_resp = generate_live_ai_analysis({"home_team": home_name, "away_team": away_name, "league": comp}, pred, live_stats)
                 live_matches.append({
                     "id": f"ext_live_{item.get('id')}",
@@ -981,7 +1008,8 @@ def fetch_live_matches_data(sport_filter="all"):
         if sport_filter in ("all", "nba"):
             # Trae partidos de la NBA en vivo (incluye Lakers vs Warriors)
             live_results.extend(fetch_espn_live_nba())
-        return live_results
+        if live_results:
+            return live_results
 
     # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
     results = []
