@@ -45,36 +45,52 @@
     <!-- Top Navigation -->
     <header class="border-b border-gray-800 bg-gray-900/95 backdrop-blur sticky top-0 z-30 shadow-md">
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
-                    <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
+                            Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
+                        </h1>
+                        <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
+                    </div>
                 </div>
-                <div>
-                    <h1 class="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
-                        Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
-                    </h1>
-                    <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
-                </div>
+                <!-- Botón Refrescar en móvil (lado derecho del logo) -->
+                <button onclick="refreshApp()" class="sm:hidden btn-refresh-trigger flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs cursor-pointer" title="Actualizar datos">
+                    <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Actualizar</span>
+                </button>
             </div>
 
-            <!-- Sport Switcher Tabs: Justo abajo del título en móviles, responsive con 4 columnas limpias -->
-            <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-xs w-full sm:w-auto">
-                <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow">
-                    <span>🌟</span>
-                    <span>Todos</span>
-                </button>
-                <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
-                    <span>⚽</span>
-                    <span>Clubes</span>
-                </button>
-                <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
-                    <span>🌎</span>
-                    <span class="hidden sm:inline">Selecciones</span>
-                    <span class="sm:hidden">Selecc.</span>
-                </button>
-                <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
-                    <span>🏀</span>
-                    <span>NBA</span>
+            <!-- Controles derecha: Categorías + Botón Refrescar Desktop -->
+            <div class="flex items-center gap-2">
+                <!-- Sport Switcher Tabs -->
+                <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-xs flex-1 sm:flex-none">
+                    <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow">
+                        <span>🌟</span>
+                        <span>Todos</span>
+                    </button>
+                    <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>⚽</span>
+                        <span>Clubes</span>
+                    </button>
+                    <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>🌎</span>
+                        <span class="hidden sm:inline">Selecciones</span>
+                        <span class="sm:hidden">Selecc.</span>
+                    </button>
+                    <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>🏀</span>
+                        <span>NBA</span>
+                    </button>
+                </div>
+
+                <!-- Botón Refrescar en Desktop -->
+                <button onclick="refreshApp()" class="hidden sm:flex btn-refresh-trigger items-center gap-1.5 px-3 py-2 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs shrink-0 cursor-pointer" title="Actualizar partidos y estadísticas en tiempo real">
+                    <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Actualizar</span>
                 </button>
             </div>
         </div>
@@ -151,17 +167,23 @@
         </section>
 
         <!-- Secondary Section Switcher: EN VIVO vs PRÓXIMOS -->
-        <section class="flex border-b border-gray-800 mb-6 gap-2">
-            <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition">
-                <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-live"></span>
-                <span>Partidos En Vivo ({{ live_matches|length }})</span>
-            </button>
-            <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition">
-                <i data-lucide="calendar" class="w-4 h-4"></i>
-                <span>Próximos Partidos ({{ upcoming_matches|length }})</span>
-                {% if live_api_active %}
-                <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold ml-1">Partidos Reales</span>
-                {% endif %}
+        <section class="flex items-center justify-between border-b border-gray-800 mb-6 gap-2">
+            <div class="flex items-center gap-2 overflow-x-auto">
+                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-live"></span>
+                    <span>Partidos En Vivo ({{ live_matches|length }})</span>
+                </button>
+                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Próximos Partidos ({{ upcoming_matches|length }})</span>
+                    {% if live_api_active %}
+                    <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold ml-1">Partidos Reales</span>
+                    {% endif %}
+                </button>
+            </div>
+            <button onclick="refreshApp()" class="btn-refresh-trigger mb-3 px-3 py-1.5 bg-gray-900/90 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700/80 hover:border-emerald-500/60 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm shrink-0 cursor-pointer" title="Actualizar cartelera y marcadores">
+                <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                <span class="hidden sm:inline">Refrescar</span>
             </button>
         </section>
 
@@ -873,6 +895,13 @@
                         </div>
                     </div>
 
+                    <div id="modal-corners-shots-box" class="hidden bg-cyan-950/30 border border-cyan-800/50 p-3.5 rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider flex items-center gap-1 mb-1.5">
+                            <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400"></i> Análisis de Córners y Remates
+                        </span>
+                        <p id="modal-corners-shots" class="text-gray-200 leading-relaxed font-sans"></p>
+                    </div>
+
                     <div>
                         <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1 mb-1.5">
                             <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-400"></i> Advertencia de Riesgo
@@ -1471,6 +1500,15 @@
             document.getElementById('modal-risk-warning').innerText = ai.advertencia_riesgo || "";
             document.getElementById('modal-score').innerText = ai.marcador_sugerido || "";
 
+            const csBox = document.getElementById('modal-corners-shots-box');
+            const csEl = document.getElementById('modal-corners-shots');
+            if (ai.analisis_corners_remates && csBox && csEl) {
+                csBox.classList.remove('hidden');
+                csEl.innerText = ai.analisis_corners_remates;
+            } else if (csBox) {
+                csBox.classList.add('hidden');
+            }
+
             const badge = document.getElementById('modal-gemini-badge');
             const badgeText = document.getElementById('modal-gemini-badge-text');
             const provTitle = document.getElementById('modal-gemini-provider-title');
@@ -1487,6 +1525,19 @@
                 provTitle.innerText = "Análisis Predictivo Cuantitativo";
                 provDesc.innerText = "Modelo de Poisson y calificaciones tácticas de equipo.";
             }
+        }
+
+        function refreshApp() {
+            const btns = document.querySelectorAll('.btn-refresh-trigger');
+            const icons = document.querySelectorAll('.icon-refresh-trigger');
+            icons.forEach(ic => ic.classList.add('animate-spin'));
+            btns.forEach(b => {
+                b.classList.add('opacity-60');
+                b.disabled = true;
+            });
+            setTimeout(() => {
+                window.location.reload();
+            }, 300);
         }
 
         function requestGeminiRefresh() {

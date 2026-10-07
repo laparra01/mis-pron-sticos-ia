@@ -62,6 +62,9 @@ def generate_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool 
     """
     Análisis Pre-Match para Fútbol con Google Gemini AI.
     """
+    proj_corners = prediction.get('projected_corners', 9.5)
+    prob_corners = prediction.get('pct_corners_over', 55.0)
+
     if force_gemini:
         prompt = f"""
 Actúa como analista deportivo experto para predicciones de fútbol (estilo 'Mis Pronósticos AI').
@@ -70,12 +73,14 @@ Partido: {match_data.get('home_team')} vs {match_data.get('away_team')} (Liga: {
 Goles esperados: Local {prediction.get('lambda_home')} - Visitante {prediction.get('mu_away')}
 Probabilidades: Local {prediction.get('prob_home')}%, Empate {prediction.get('prob_draw')}%, Visitante {prediction.get('prob_away')}%
 Over 2.5: {prediction.get('prob_over_25')}%, Ambos marcan: {prediction.get('prob_btts')}%
+Córners proyectados: {proj_corners} (Probabilidad Más de 8.5 Córners: {prob_corners}%)
 Pronóstico Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence')}%)
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 {{
   "resumen": "Resumen ejecutivo táctico en 1 frase directa",
   "justificacion_estadistica": "Explicación del xG, ritmo de posesión y probabilidades",
+  "analisis_corners_remates": "Proyección y lectura táctica del mercado de córners ({proj_corners} córners esperados) y volumen de remates",
   "factor_clave": "Duelo individual o clave táctica en la cancha",
   "advertencia_riesgo": "Escenario específico que complicaría el pronóstico",
   "marcador_sugerido": "{prediction.get('top_scores', [{}])[0].get('score', '2-1') if prediction.get('top_scores') else '2-1'}"
@@ -91,6 +96,8 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
     pick = prediction.get('recommended_pick', 'Victoria Local')
     conf = prediction.get('confidence', 60.0)
     top_score = prediction.get('top_scores', [{}])[0].get('score', '2-1') if prediction.get('top_scores') else "2-1"
+
+    analisis_cr = f"El modelo proyecta una línea de {proj_corners} tiros de esquina totales ({prob_corners}% para Más de 8.5 córners), impulsado por la vocación ofensiva por bandas de {home} y las transiciones de {away}."
 
     if "Victoria Local" in pick or "Gana Local" in pick:
         resumen = f"Alta probabilidad para {home} aprovechando el factor localía y mayor producción ofensiva ({prediction.get('lambda_home', 2.1)} goles esperados)."
@@ -116,6 +123,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
     return {
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
+        "analisis_corners_remates": analisis_cr,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "marcador_sugerido": top_score,
@@ -126,6 +134,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dict, force_gemini: bool = False) -> dict:
     """
     Análisis En Vivo para Fútbol con Google Gemini AI.
+    Incluye diagnóstico en tiempo real de tiros a puerta, tiros totales y córners.
     """
     home = match_data.get('home_team', 'Local')
     away = match_data.get('away_team', 'Visitante')
@@ -135,18 +144,28 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
     poss_h = live_stats.get('possession_home', 50)
     shots_h = live_stats.get('shots_on_target_home', 3)
     shots_a = live_stats.get('shots_on_target_away', 3)
+    tot_shots_h = live_stats.get('total_shots_home', max(shots_h + 3, 6))
+    tot_shots_a = live_stats.get('total_shots_away', max(shots_a + 2, 5))
+    corners_h = live_stats.get('corners_home', 4)
+    corners_a = live_stats.get('corners_away', 3)
+    tot_corners = corners_h + corners_a
 
     if force_gemini:
         prompt = f"""
-Actúa como analista deportivo en vivo (estilo 'Mis Pronósticos AI').
+Actúa como analista deportivo experto en apuestas y táctica en vivo (estilo 'Mis Pronósticos AI').
 Partido en juego: {home} vs {away} (Marcador {score}, Minuto {minute}')
-Posesión: {home} {poss_h}% vs {away} {100-poss_h}%. Tiros a puerta: {shots_h} vs {shots_a}.
-Pick en vivo: {pick} ({live_pred.get('confidence', 60)}%).
+Estadísticas oficiales en tiempo real:
+- Posesión: {home} {poss_h}% vs {away} {100-poss_h}%
+- Tiros a puerta: {home} {shots_h} vs {away} {shots_a}
+- Tiros totales: {home} {tot_shots_h} vs {away} {tot_shots_a}
+- Córners: {home} {corners_h} vs {away} {corners_a} (Total acumulado: {tot_corners} córners)
+- Pick principal en vivo: {pick} ({live_pred.get('confidence', 60)}%)
 
-Devuelve ÚNICAMENTE este JSON:
+Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 {{
-  "resumen": "Diagnóstico en 1 frase del minuto actual",
-  "justificacion_estadistica": "Explicación del ritmo en juego y expectativa restante",
+  "resumen": "Diagnóstico en 1 frase directa del momento del juego",
+  "justificacion_estadistica": "Explicación del ritmo en juego, xG y expectativa restante",
+  "analisis_corners_remates": "Lectura táctica profunda: efectividad y puntería de tiros ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a}), asedio por bandas ({corners_h} vs {corners_a} córners) y proyección de córners o peligro de gol en los minutos restantes",
   "factor_clave": "Quién domina el momentum táctico y control del juego",
   "advertencia_riesgo": "Riesgo en el cierre del partido",
   "marcador_sugerido": "{score}"
@@ -156,18 +175,38 @@ Devuelve ÚNICAMENTE este JSON:
         if ai_result:
             return ai_result
 
+    # Fallback analítico cuantitativo en vivo
+    eff_h = round((shots_h / max(tot_shots_h, 1)) * 100)
+    eff_a = round((shots_a / max(tot_shots_a, 1)) * 100)
+
+    if corners_h > corners_a:
+        corner_read = f"{home} vuelca su juego por las bandas generando {corners_h} saques de esquina (vs {corners_a} de {away})."
+    elif corners_a > corners_h:
+        corner_read = f"{away} gana profundidad en tres cuartos de cancha sumando {corners_a} córners a favor (vs {corners_h} de {home})."
+    else:
+        corner_read = f"Juego disputado en el carril central con paridad en tiros de esquina ({corners_h} vs {corners_a})."
+
+    proj_corners = round(tot_corners + max(1.5, ((90 - minute) / 90.0) * 4.5), 1)
+
+    analisis_cr = (
+        f"{corner_read} "
+        f"En remates, {home} registra {shots_h}/{tot_shots_h} a puerta ({eff_h}% de puntería) frente a {shots_a}/{tot_shots_a} ({eff_a}%) de {away}. "
+        f"Con {tot_corners} córners acumulados al minuto {minute}', el modelo proyecta una línea final de {proj_corners} córners."
+    )
+
     resumen = f"Minuto {minute}' ({score}): {pick} con {live_pred.get('confidence', 60)}% de probabilidad restante calculada."
     justificacion = (
         f"Con el marcador en {score} y {max(1, 90 - minute)} minutos por disputar, el modelo recalculó la expectativa de goles. "
         f"{home} registra {poss_h}% de posesión y {shots_h} remates a puerta (vs {shots_a} de {away}). "
         f"La probabilidad en vivo para victoria local es de {live_pred.get('prob_home', 50)}%, empate {live_pred.get('prob_draw', 25)}% y visitante {live_pred.get('prob_away', 25)}%."
     )
-    factor = f"Momentum ofensivo: {home if poss_h >= 50 else away} domina el mediocampo y la presión alta."
+    factor = f"Momentum ofensivo: {home if poss_h >= 50 else away} domina el mediocampo y la presión alta ({tot_corners} córners combinados)."
     advertencia = f"En los últimos minutos aumenta el riesgo por desorden físico. Probabilidad de no más goles: {live_pred.get('prob_no_more_goals', 40)}%."
 
     return {
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
+        "analisis_corners_remates": analisis_cr,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "marcador_sugerido": f"Actual {score}",
