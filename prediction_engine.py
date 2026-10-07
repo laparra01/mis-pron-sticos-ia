@@ -1,4 +1,12 @@
 import math
+import hashlib
+
+def deterministic_hash(text: str) -> int:
+    """
+    Devuelve un entero determinista y fijo basado en MD5.
+    Garantiza que el valor sea IDÉNTICO en cualquier máquina, proceso o reinicio de servidor.
+    """
+    return int(hashlib.md5((text or "").strip().lower().encode("utf-8")).hexdigest()[:8], 16)
 
 def factorial(n: int) -> int:
     """Calcula el factorial de n."""
@@ -151,22 +159,134 @@ KNOWN_NBA_TEAMS = {
     "pistons": {"off_rating": 110.5, "def_rating": 118.0, "pace": 100.2},
 }
 
-def get_football_team_ratings(team_name: str, league_name: str = "") -> dict:
-    t_clean = team_name.lower().strip()
+def calculate_team_ratings_from_recent_matches(team_name: str, matches: list) -> dict:
+    """
+    Calcula la fuerza ofensiva (ataque) y defensiva (defensa) empírica de un equipo
+    a partir de sus últimos partidos jugados (Rolling Form Model).
+    - attack: promedio de goles anotados por partido (goles a favor / partidos)
+    - defense: promedio de goles encajados por partido (goles en contra / partidos)
+    Garantiza valores objetivos, estables y basados en el rendimiento real.
+    """
+    if not matches:
+        return {"attack": 1.50, "defense": 1.10}
+
+    t_clean = (team_name or "").lower().strip()
+    goals_scored = 0
+    goals_conceded = 0
+    count = 0
+
+    for m in matches:
+        count += 1
+        is_home = False
+        m_home = (m.get("match_home") or "").lower().strip()
+        m_venue = m.get("venue", "")
+        if m_home and (t_clean in m_home or m_home in t_clean):
+            is_home = True
+        elif m_venue == "Local":
+            is_home = True
+
+        h_sc = int(m.get("home_score", 0) or 0)
+        a_sc = int(m.get("away_score", 0) or 0)
+
+        if is_home:
+            scored = h_sc
+            conceded = a_sc
+        else:
+            scored = a_sc
+            conceded = h_sc
+
+        goals_scored += scored
+        goals_conceded += conceded
+
+    if count == 0:
+        return {"attack": 1.50, "defense": 1.10}
+
+    avg_scored = round(goals_scored / float(count), 2)
+    avg_conceded = round(goals_conceded / float(count), 2)
+
+    # Margen técnico seguro para Poisson
+    attack = max(0.40, min(3.80, avg_scored))
+    defense = max(0.35, min(3.50, avg_conceded))
+
+    return {
+        "attack": attack,
+        "defense": defense,
+        "avg_scored": avg_scored,
+        "avg_conceded": avg_conceded,
+        "sample_size": count
+    }
+
+def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list) -> dict:
+    if not matches:
+        return {"off_rating": 115.0, "def_rating": 113.0, "pace": 100.0}
+
+    t_clean = (team_name or "").lower().strip()
+    pts_scored = 0
+    pts_conceded = 0
+    count = 0
+
+    for m in matches:
+        count += 1
+        is_home = False
+        m_home = (m.get("match_home") or "").lower().strip()
+        m_venue = m.get("venue", "")
+        if m_home and (t_clean in m_home or m_home in t_clean):
+            is_home = True
+        elif m_venue == "Local":
+            is_home = True
+
+        h_sc = int(m.get("home_score", 0) or 0)
+        a_sc = int(m.get("away_score", 0) or 0)
+
+        if is_home:
+            pts_scored += h_sc
+            pts_conceded += a_sc
+        else:
+            pts_scored += a_sc
+            pts_conceded += h_sc
+
+    if count == 0:
+        return {"off_rating": 115.0, "def_rating": 113.0, "pace": 100.0}
+
+    avg_scored = round(pts_scored / float(count), 1)
+    avg_conceded = round(pts_conceded / float(count), 1)
+    pace = round(99.0 + (deterministic_hash(team_name) % 4), 1)
+
+    return {
+        "off_rating": max(98.0, min(135.0, avg_scored)),
+        "def_rating": max(98.0, min(135.0, avg_conceded)),
+        "pace": pace
+    }
+
+def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None) -> dict:
+    if recent_matches and len(recent_matches) > 0:
+        return calculate_team_ratings_from_recent_matches(team_name, recent_matches)
+
+    try:
+        verified = find_verified_matches_for_team(team_name)
+        if verified and len(verified) > 0:
+            return calculate_team_ratings_from_recent_matches(team_name, verified)
+    except Exception:
+        pass
+
+    t_clean = (team_name or "").lower().strip()
     for k, v in KNOWN_FOOTBALL_TEAMS.items():
         if k in t_clean or t_clean in k:
             return v
-    h = abs(hash(t_clean))
+    h = deterministic_hash(t_clean)
     att = 1.15 + ((h % 95) / 100.0)
     deff = 0.85 + (((h // 100) % 85) / 100.0)
     return {"attack": round(att, 2), "defense": round(deff, 2)}
 
-def get_nba_team_ratings(team_name: str) -> dict:
-    t_clean = team_name.lower().strip()
+def get_nba_team_ratings(team_name: str, recent_matches: list = None) -> dict:
+    if recent_matches and len(recent_matches) > 0:
+        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches)
+
+    t_clean = (team_name or "").lower().strip()
     for k, v in KNOWN_NBA_TEAMS.items():
         if k in t_clean or t_clean in k or any(word in t_clean for word in k.split()):
             return v
-    h = abs(hash(t_clean))
+    h = deterministic_hash(t_clean)
     return {
         "off_rating": round(112.0 + ((h % 80) / 10.0), 1),
         "def_rating": round(110.0 + (((h // 10) % 80) / 10.0), 1),
@@ -2594,9 +2714,9 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
     verified_a = find_verified_matches_for_team(away_team)
     verified_dir = find_verified_direct_h2h(home_team, away_team)
 
-    h_hash = abs(hash(home_team))
-    a_hash = abs(hash(away_team))
-    combined_hash = abs(hash(f"{home_team}_{away_team}"))
+    h_hash = deterministic_hash(home_team)
+    a_hash = deterministic_hash(away_team)
+    combined_hash = deterministic_hash(f"{home_team}_{away_team}")
 
     recent_dates_home = ["28 Sep", "21 Sep", "14 Sep", "31 Ago", "24 Ago"]
     recent_dates_away = ["29 Sep", "22 Sep", "15 Sep", "01 Sep", "25 Ago"]
