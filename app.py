@@ -36,7 +36,34 @@ def index():
         today_str = today_dt.strftime("%d/%m")
         tomorrow_str = tomorrow_dt.strftime("%d/%m")
 
-        unique_countries = sorted(list(set(m.get("country", "Internacional") for m in all_matches if m.get("country"))))
+        country_flags = {
+            "Brasil": "🇧🇷", "España": "🇪🇸", "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Italia": "🇮🇹",
+            "Alemania": "🇩🇪", "Francia": "🇫🇷", "Portugal": "🇵🇹", "Países Bajos": "🇳🇱",
+            "Holanda": "🇳🇱", "Estados Unidos": "🇺🇸", "México": "🇲🇽", "Argentina": "🇦🇷",
+            "Colombia": "🇨🇴", "Guatemala": "🇬🇹", "Noruega": "🇳🇴", "Dinamarca": "🇩🇰",
+            "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Internacional": "🌍"
+        }
+        country_codes = {
+            "Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it",
+            "Alemania": "de", "Francia": "fr", "Portugal": "pt", "Países Bajos": "nl",
+            "Holanda": "nl", "Estados Unidos": "us", "México": "mx", "Argentina": "ar",
+            "Colombia": "co", "Guatemala": "gt", "Noruega": "no", "Dinamarca": "dk",
+            "Europa": "eu", "Chile": "cl", "Uruguay": "uy"
+        }
+        country_map = {}
+        country_code_map = {}
+        for m in all_matches:
+            c_name = m.get("country", "Internacional")
+            c_flag = m.get("country_flag") or m.get("league_flag") or country_flags.get(c_name, "🌍")
+            c_code = m.get("country_code") or country_codes.get(c_name, "")
+            if c_name and c_name not in country_map:
+                country_map[c_name] = c_flag
+                country_code_map[c_name] = c_code
+
+        unique_countries = [
+            {"name": c, "flag": country_map[c], "code": country_code_map.get(c, "")}
+            for c in sorted(country_map.keys())
+        ]
         unique_leagues = sorted(list(set(m.get("league", "") for m in all_matches if m.get("league"))))
 
         context = dict(

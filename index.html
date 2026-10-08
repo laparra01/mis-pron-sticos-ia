@@ -218,10 +218,15 @@
                      data-value-bet="{{ 'true' if m.prediction.is_value_bet else 'false' }}">
                     
                     <div>
-                        <!-- Header Liga & Minuto/Cuarto -->
                         <div class="flex items-center justify-between pb-3 border-b border-gray-800 text-xs">
                             <span class="flex items-center gap-1.5 text-gray-300 font-medium flex-wrap">
+                                {% if m.country == 'Brasil' or 'Brasileir' in m.league or m.country_code == 'br' %}
+                                <img src="https://flagcdn.com/20x15/br.png" alt="Brasil" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.country_code %}
+                                <img src="https://flagcdn.com/20x15/{{ m.country_code }}.png" alt="{{ m.country }}" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.league_flag %}
                                 <span>{{ m.league_flag }}</span>
+                                {% endif %}
                                 <span>{{ m.league }}</span>
                                 {% if m.country and m.country != 'Internacional' %}
                                 <span class="text-gray-400 text-[11px]">({{ m.country }})</span>
@@ -472,7 +477,13 @@
                             <i data-lucide="calendar-days" class="w-5 h-5"></i>
                         </div>
                         <div>
-                            <span class="text-xs font-bold text-gray-200 block">Filtros de Cartelera</span>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-xs font-bold text-gray-200 block">Filtros de Cartelera</span>
+                                <span class="text-[10px] text-emerald-300 font-mono bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 rounded-full flex items-center gap-1 font-semibold shadow-xs">
+                                    <i data-lucide="clock" class="w-3 h-3 text-emerald-400"></i>
+                                    <span>Hora Guatemala (GMT-6)</span>
+                                </span>
+                            </div>
                             <span class="text-[11px] text-gray-400" id="filter-status-text">Mostrando todos los partidos oficiales</span>
                         </div>
                     </div>
@@ -504,16 +515,25 @@
                     </div>
                 </div>
 
-                <!-- Fila 2: Selectores de País y Liga + Botón Restablecer -->
+                <!-- Fila 2: Selectores de País, Liga, Orden por Hora + Botón Restablecer -->
                 <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-3 border-t border-gray-800/80 text-xs">
                     <div class="flex flex-wrap items-center gap-2.5 flex-1">
-                        <!-- Selector País -->
-                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[170px]">
-                            <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
-                            <select id="country-select" onchange="setCountryFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer">
-                                <option value="all" class="bg-gray-900 text-gray-200">🌍 Todos los Países</option>
+                        <!-- Selector País con Banderas Reales -->
+                        <div class="relative flex-1 sm:flex-none min-w-[190px]" id="country-dropdown-wrapper">
+                            <button type="button" id="country-dropdown-btn" onclick="toggleCountryDropdown(event)" class="w-full flex items-center justify-between gap-2 bg-gray-950 border border-gray-800 hover:border-gray-700 rounded-xl px-3 py-1.5 text-xs text-gray-200 transition focus:outline-none cursor-pointer">
+                                <div class="flex items-center gap-2 truncate" id="country-selected-label">
+                                    <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                                    <span class="truncate">Todos los Países</span>
+                                </div>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gray-400 shrink-0 transition-transform duration-200" id="country-dropdown-arrow"></i>
+                            </button>
+                            <div id="country-dropdown-menu" class="hidden absolute left-0 top-full mt-1.5 w-60 bg-gray-950/95 backdrop-blur-md border border-gray-800 rounded-xl shadow-2xl py-1 z-50 max-h-64 overflow-y-auto">
+                                <!-- Opciones generadas dinámicamente con banderas reales -->
+                            </div>
+                            <select id="country-select" onchange="setCountryFilter(this.value)" class="hidden">
+                                <option value="all">Todos los Países</option>
                                 {% for c in countries %}
-                                <option value="{{ c }}" class="bg-gray-900 text-gray-200">{{ c }}</option>
+                                <option value="{{ c.name if c.name is defined else c }}">{{ c.name if c.name is defined else c }}</option>
                                 {% endfor %}
                             </select>
                         </div>
@@ -526,6 +546,17 @@
                                 {% for l in leagues %}
                                 <option value="{{ l }}" class="bg-gray-900 text-gray-200">{{ l }}</option>
                                 {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Selector Orden por Hora / Criterio -->
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[200px]">
+                            <i data-lucide="arrow-up-down" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                            <select id="sort-select" onchange="setSortOrder(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer font-medium">
+                                <option value="time-asc" class="bg-gray-900 text-gray-200">⏰ Hora más próxima (GT)</option>
+                                <option value="time-desc" class="bg-gray-900 text-gray-200">⏳ Hora más lejana (GT)</option>
+                                <option value="prob-desc" class="bg-gray-900 text-gray-200">💎 Mayor Probabilidad</option>
+                                <option value="league" class="bg-gray-900 text-gray-200">🏆 Por Liga</option>
                             </select>
                         </div>
                     </div>
@@ -561,12 +592,21 @@
                      data-league="{{ m.league }}"
                      data-country="{{ m.country }}"
                      data-value-bet="{{ 'true' if m.prediction.is_value_bet else 'false' }}"
-                     data-date="{{ m.date_iso }}">
+                     data-date="{{ m.date_iso }}"
+                     data-timestamp="{{ m.timestamp or 0 }}"
+                     data-time="{{ m.time or '00:00' }}"
+                     data-prob="{{ m.prediction.prob_home if (m.prediction and m.prediction.prob_home is defined and m.prediction.prob_home > m.prediction.prob_away) else (m.prediction.prob_away if (m.prediction and m.prediction.prob_away is defined) else 50) }}">
                     
                     <div>
                         <div class="flex items-center justify-between pb-3 border-b border-gray-800 text-xs text-gray-400">
                             <span class="flex items-center gap-1.5 font-medium text-gray-300 flex-wrap">
+                                {% if m.country == 'Brasil' or 'Brasileir' in m.league or m.country_code == 'br' %}
+                                <img src="https://flagcdn.com/20x15/br.png" alt="Brasil" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.country_code %}
+                                <img src="https://flagcdn.com/20x15/{{ m.country_code }}.png" alt="{{ m.country }}" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.league_flag %}
                                 <span>{{ m.league_flag }}</span>
+                                {% endif %}
                                 <span>{{ m.league }}</span>
                                 {% if m.country and m.country != 'Internacional' %}
                                 <span class="text-gray-400 text-[11px]">({{ m.country }})</span>
@@ -588,8 +628,10 @@
                                 <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
                                 {% endif %}
                             </span>
-                            <span class="bg-gray-800 px-2 py-0.5 rounded text-[11px] font-mono text-gray-300 shrink-0">
-                                {{ m.date }}
+                            <span class="bg-gray-800/90 border border-gray-700/70 px-2.5 py-1 rounded-lg text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1.5 shadow-xs" title="Hora local de Guatemala (GMT-6)">
+                                <i data-lucide="clock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
+                                <span>{{ m.date }}</span>
+                                <span class="text-[9px] text-emerald-300 font-bold bg-emerald-950/90 border border-emerald-700/60 px-1 py-0.2 rounded font-sans tracking-wide">GT</span>
                             </span>
                         </div>
 
@@ -598,14 +640,14 @@
                                 <div class="flex-1 text-left">
                                     <span class="font-bold text-base text-white block">{{ m.home_team }}</span>
                                     {% if m.home_stats %}
-                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Loc: {{ m.home_stats.corners }} (Gen: {{ m.home_stats.corners_gen or m.home_stats.corners }})</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
                                     {% endif %}
                                 </div>
                                 <span class="text-xs font-mono font-bold text-gray-500 px-3">vs</span>
                                 <div class="flex-1 text-right">
                                     <span class="font-bold text-base text-white block">{{ m.away_team }}</span>
                                     {% if m.away_stats %}
-                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Vis: {{ m.away_stats.corners }} (Gen: {{ m.away_stats.corners_gen or m.away_stats.corners }})</span>{% endif %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -624,7 +666,7 @@
                                     <div class="bg-rose-500 prob-bar-fill" style="width: {{ m.prediction.prob_away }}%"></div>
                                 </div>
                             </div>
-                            <div class="grid grid-cols-4 gap-1.5 sm:gap-2 mt-4 text-center">
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2 mt-4 text-center">
                                 <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">+1.5 Goles</span>
                                     <span class="text-xs font-bold text-cyan-400">{{ m.prediction.prob_over_15 }}%</span>
@@ -636,6 +678,10 @@
                                 <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">Ambos Marcan</span>
                                     <span class="text-xs font-bold text-gray-300">{{ m.prediction.prob_btts }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Córners IA</span>
+                                    <span class="text-xs font-bold text-cyan-300 font-mono">{{ m.prediction.projected_corners or 9.5 }}</span>
                                 </div>
                                 <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
                                     <span class="text-[10px] text-gray-400 block">Marcador IA</span>
@@ -716,7 +762,7 @@
 
                         <button onclick="openAiModal('{{ m.id }}')" class="w-full py-2.5 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-emerald-950/70 hover:to-blue-950/70 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition border border-gray-700 hover:border-emerald-500/50 shadow">
                             <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                            <span>Ver 4 Pronósticos, H2H y Gemini AI</span>
+                            <span>Ver Pronósticos IA, Córners, H2H y Gemini AI</span>
                         </button>
                     </div>
                 </div>
@@ -755,11 +801,11 @@
             <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-4 text-xs font-bold overflow-x-auto">
                 <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="target" class="w-4 h-4"></i>
-                    <span>🎯 4 Pronósticos del Partido</span>
+                    <span>🎯 Pronósticos y Córners</span>
                 </button>
                 <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="history" class="w-4 h-4"></i>
-                    <span>📊 Historial H2H (15 Partidos)</span>
+                    <span>📊 Historial H2H y Córners</span>
                 </button>
                 <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="bot" class="w-4 h-4"></i>
@@ -770,12 +816,12 @@
             <!-- Modal Scrollable Body -->
             <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs">
 
-                <!-- SECCIÓN TAB 1: 4 PRONÓSTICOS DETALLADOS -->
+                <!-- SECCIÓN TAB 1: PRONÓSTICOS DETALLADOS -->
                 <div id="modal-content-picks" class="space-y-4">
                     <div class="flex items-center justify-between pb-1">
                         <div>
-                            <h4 class="font-bold text-sm text-white">4 Pronósticos Calculados por Inteligencia Artificial</h4>
-                            <p class="text-gray-400 text-[11px]">Mercados principales con probabilidad porcentual, cuota justa y nivel de riesgo.</p>
+                            <h4 class="font-bold text-sm text-white">Pronósticos Calculados por Inteligencia Artificial</h4>
+                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan y Córners con cuota justa y nivel de riesgo.</p>
                         </div>
                     </div>
                     <div id="modal-picks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
@@ -943,6 +989,7 @@
         let currentCountryFilter = 'all';
         let currentLeagueFilter = 'all';
         let onlyValuePicks = false;
+        let currentSortOrder = 'time-asc';
 
         function updateFilterStatusText() {
             const statusEl = document.getElementById('filter-status-text');
@@ -1112,6 +1159,29 @@
                 currentLeagueFilter = 'all';
             }
 
+            const countryCodesMap = {
+                'Brasil': 'br',
+                'España': 'es',
+                'Inglaterra': 'gb-eng',
+                'Italia': 'it',
+                'Alemania': 'de',
+                'Francia': 'fr',
+                'Portugal': 'pt',
+                'Países Bajos': 'nl',
+                'Holanda': 'nl',
+                'Estados Unidos': 'us',
+                'México': 'mx',
+                'Argentina': 'ar',
+                'Colombia': 'co',
+                'Guatemala': 'gt',
+                'Noruega': 'no',
+                'Dinamarca': 'dk',
+                'Europa': 'eu',
+                'Chile': 'cl',
+                'Uruguay': 'uy',
+                'Arabia Saudita': 'sa'
+            };
+
             const flagsMap = {
                 'España': '🇪🇸',
                 'Inglaterra': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
@@ -1126,11 +1196,24 @@
                 'Brasil': '🇧🇷',
                 'Argentina': '🇦🇷',
                 'Colombia': '🇨🇴',
+                'Guatemala': '🇬🇹',
+                'Noruega': '🇳🇴',
+                'Dinamarca': '🇩🇰',
+                'Europa': '🏆',
                 'Chile': '🇨🇱',
                 'Uruguay': '🇺🇾',
                 'Arabia Saudita': '🇸🇦',
                 'Internacional': '🌎'
             };
+
+            function getCountryFlagHtml(countryName) {
+                const code = countryCodesMap[countryName];
+                if (code) {
+                    return `<img src="https://flagcdn.com/20x15/${code}.png" alt="${countryName}" class="w-4 h-3 rounded-xs object-cover border border-white/10 shadow-xs inline-block align-middle shrink-0">`;
+                }
+                const emoji = flagsMap[countryName] || '🌍';
+                return `<span class="inline-block text-xs">${emoji}</span>`;
+            }
 
             // Reconstruir selector de País: SOLO mostrar los países que sí tienen partidos disponibles
             const sortedCountries = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b));
@@ -1142,6 +1225,52 @@
             });
             countrySelect.innerHTML = countryHtml;
             countrySelect.value = currentCountryFilter;
+
+            // Reconstruir menú desplegable visual con banderas reales
+            const menuEl = document.getElementById('country-dropdown-menu');
+            if (menuEl) {
+                let menuHtml = `
+                    <button type="button" onclick="selectCountryOption('all')" class="w-full text-left px-3 py-2 flex items-center justify-between text-xs hover:bg-gray-800/80 transition cursor-pointer ${currentCountryFilter === 'all' ? 'text-emerald-400 font-bold bg-gray-800/50' : 'text-gray-200'}">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                            <span>Todos los Países</span>
+                        </span>
+                        <span class="font-mono text-gray-500 text-[10px]">(${totalAvailable})</span>
+                    </button>
+                `;
+                sortedCountries.forEach(c => {
+                    const flagImg = getCountryFlagHtml(c);
+                    const count = countryCounts[c];
+                    const isSelected = (currentCountryFilter === c);
+                    menuHtml += `
+                        <button type="button" onclick="selectCountryOption('${c}')" class="w-full text-left px-3 py-2 flex items-center justify-between text-xs hover:bg-gray-800/80 transition cursor-pointer ${isSelected ? 'text-emerald-400 font-bold bg-gray-800/50' : 'text-gray-200'}">
+                            <span class="flex items-center gap-2">
+                                ${flagImg}
+                                <span>${c}</span>
+                            </span>
+                            <span class="font-mono text-gray-500 text-[10px]">(${count})</span>
+                        </button>
+                    `;
+                });
+                menuEl.innerHTML = menuHtml;
+            }
+
+            // Actualizar etiqueta del botón principal con la bandera real
+            const labelEl = document.getElementById('country-selected-label');
+            if (labelEl) {
+                if (currentCountryFilter === 'all') {
+                    labelEl.innerHTML = `
+                        <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                        <span class="truncate">Todos los Países</span>
+                    `;
+                } else {
+                    labelEl.innerHTML = `
+                        ${getCountryFlagHtml(currentCountryFilter)}
+                        <span class="truncate font-semibold text-white">${currentCountryFilter}</span>
+                    `;
+                }
+            }
+            if (window.lucide) lucide.createIcons();
 
             // Reconstruir selector de Liga: SOLO mostrar ligas que sí tienen partidos
             const sortedLeagues = Object.keys(leagueCounts).sort((a, b) => a.localeCompare(b));
@@ -1200,6 +1329,41 @@
             updateFilterStatusText();
         }
 
+        function toggleCountryDropdown(e) {
+            if (e) e.stopPropagation();
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (!menu) return;
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function selectCountryOption(country) {
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (menu) menu.classList.add('hidden');
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+            const sel = document.getElementById('country-select');
+            if (sel) sel.value = country;
+            setCountryFilter(country);
+        }
+
+        document.addEventListener('click', function(e) {
+            const wrapper = document.getElementById('country-dropdown-wrapper');
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (wrapper && !wrapper.contains(e.target) && menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+        });
+
         function setCountryFilter(country) {
             currentCountryFilter = country;
             currentLeagueFilter = 'all'; // Al filtrar país, resetear liga para mostrar las de ese país
@@ -1230,12 +1394,59 @@
             updateFilterStatusText();
         }
 
+        function setSortOrder(order) {
+            currentSortOrder = order;
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect && sortSelect.value !== order) {
+                sortSelect.value = order;
+            }
+            const grid = document.getElementById('upcoming-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.match-card'));
+
+            cards.sort((a, b) => {
+                const tsA = parseInt(a.dataset.timestamp || '0', 10);
+                const tsB = parseInt(b.dataset.timestamp || '0', 10);
+                const dateA = a.dataset.date || '';
+                const dateB = b.dataset.date || '';
+                const timeA = a.dataset.time || '';
+                const timeB = b.dataset.time || '';
+
+                if (order === 'time-asc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsA - tsB;
+                    if (dateA !== dateB) return dateA.localeCompare(dateB);
+                    return timeA.localeCompare(timeB);
+                } else if (order === 'time-desc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsB - tsA;
+                    if (dateA !== dateB) return dateB.localeCompare(dateA);
+                    return timeB.localeCompare(timeA);
+                } else if (order === 'prob-desc') {
+                    const pA = parseFloat(a.dataset.prob || '0');
+                    const pB = parseFloat(b.dataset.prob || '0');
+                    if (pA !== pB) return pB - pA;
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                } else if (order === 'league') {
+                    const lA = (a.dataset.league || '').toLowerCase();
+                    const lB = (b.dataset.league || '').toLowerCase();
+                    if (lA !== lB) return lA.localeCompare(lB);
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                }
+                return 0;
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
         function resetAllFilters() {
             currentCategory = 'all';
             currentDateFilter = 'all';
             currentCountryFilter = 'all';
             currentLeagueFilter = 'all';
             onlyValuePicks = false;
+            currentSortOrder = 'time-asc';
+
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) sortSelect.value = 'time-asc';
 
             const dateInput = document.getElementById('date-picker-input');
             if (dateInput) dateInput.value = '';
@@ -1257,6 +1468,7 @@
             const dateAll = document.getElementById('date-btn-all');
             if (dateAll) dateAll.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
 
+            setSortOrder('time-asc');
             updateDynamicFilters();
             applyAllFilters();
             updateFilterStatusText();
@@ -1389,14 +1601,24 @@
             const awayStreakEl = document.getElementById('h2h-away-streak');
             if (homeStreakEl) {
                 if (match.sport === 'football') {
-                    homeStreakEl.innerHTML = `<span class="text-emerald-400 font-bold">Loc: ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span>`;
+                    homeStreakEl.innerHTML = `
+                        <div class="flex flex-col items-end gap-0.5">
+                            <div><span class="text-emerald-400 font-bold">Goles Loc: ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Loc: ${hs.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.corners_gen || hs.corners || 0}</span></div>
+                        </div>
+                    `;
                 } else {
                     homeStreakEl.innerHTML = `<span class="text-emerald-400 font-bold">Loc: ${hs.off_rating || 0}/${hs.def_rating || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.off_rating_gen || hs.off_rating || 0}/${hs.def_rating_gen || hs.def_rating || 0}</span>`;
                 }
             }
             if (awayStreakEl) {
                 if (match.sport === 'football') {
-                    awayStreakEl.innerHTML = `<span class="text-rose-400 font-bold">Vis: ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span>`;
+                    awayStreakEl.innerHTML = `
+                        <div class="flex flex-col items-end gap-0.5">
+                            <div><span class="text-rose-400 font-bold">Goles Vis: ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Vis: ${as.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.corners_gen || as.corners || 0}</span></div>
+                        </div>
+                    `;
                 } else {
                     awayStreakEl.innerHTML = `<span class="text-rose-400 font-bold">Vis: ${as.off_rating || 0}/${as.def_rating || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.off_rating_gen || as.off_rating || 0}/${as.def_rating_gen || as.def_rating || 0}</span>`;
                 }
@@ -1427,6 +1649,18 @@
 
                     const scoreText = m.score || `${m.home_score || 0} - ${m.away_score || 0}`;
 
+                    let extraStatsHtml = '';
+                    if (m.corners_for !== undefined && m.corners_for !== null) {
+                        const totCorn = m.total_corners !== undefined ? m.total_corners : (m.corners_for + (m.corners_against || 0));
+                        const sot = m.shots_on_target !== undefined ? m.shots_on_target : '-';
+                        extraStatsHtml = `
+                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1">
+                                <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 Córners: ${m.corners_for} <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
+                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 Tiros al arco: ${sot}</span>
+                            </div>
+                        `;
+                    }
+
                     const itemHtml = `
                         <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
                             <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
@@ -1443,6 +1677,7 @@
                                 </div>
                                 <span class="font-mono font-bold text-emerald-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${scoreText}</span>
                             </div>
+                            ${extraStatsHtml}
                         </div>
                     `;
                     container.insertAdjacentHTML('beforeend', itemHtml);
@@ -1571,10 +1806,13 @@
             activeMatchId = matchId;
             const match = allMatchesData.find(m => m.id === matchId);
             if (!match) return;
-
             document.getElementById('modal-match-title').innerText = `${match.home_team} vs ${match.away_team}`;
-            const sub = match.is_live ? `${match.league_flag} ${match.league} • ${match.quarter || match.minute + "'"} EN VIVO (${match.score_home}-${match.score_away})` : `${match.league_flag} ${match.league} • ${match.date}`;
-            document.getElementById('modal-league').innerText = sub;
+            const isBrazil = match.country === 'Brasil' || (match.league && match.league.includes('Brasileir')) || match.country_code === 'br';
+            const flagMarkup = isBrazil 
+                ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`
+                : (match.country_code ? `<img src="https://flagcdn.com/20x15/${match.country_code}.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="${match.country}">` : `${match.league_flag} `);
+            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${match.quarter || match.minute + "'"} EN VIVO (${match.score_home}-${match.score_away})` : `${flagMarkup} ${match.league} • ${match.date}`;
+            document.getElementById('modal-league').innerHTML = sub;
 
             // Renderizar las 3 secciones
             renderModalPicks(match);
@@ -1655,6 +1893,7 @@
 
         // Gestión inteligente de pestañas y filtros al cargar
         document.addEventListener("DOMContentLoaded", () => {
+            setSortOrder('time-asc');
             updateDynamicFilters();
             applyAllFilters();
             {% if live_matches|length > 0 %}

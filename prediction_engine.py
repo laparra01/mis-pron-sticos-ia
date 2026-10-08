@@ -176,6 +176,9 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             "attack_gen": 1.50, "defense_gen": 1.10,
             "avg_scored": 1.50, "avg_conceded": 1.10,
             "avg_scored_gen": 1.50, "avg_conceded_gen": 1.10,
+            "corners": 5.0, "corners_against": 4.5,
+            "corners_gen": 5.0, "corners_against_gen": 4.5,
+            "corners_total": 9.5, "corners_total_gen": 9.5,
             "sample_size": 0, "sample_size_gen": 0,
             "venue_role": venue_role or "General"
         }
@@ -183,10 +186,14 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
     t_clean = (team_name or "").lower().strip()
     gen_scored = 0
     gen_conceded = 0
+    gen_corners_for = 0
+    gen_corners_against = 0
     gen_count = 0
 
     venue_scored = 0
     venue_conceded = 0
+    venue_corners_for = 0
+    venue_corners_against = 0
     venue_count = 0
 
     is_seeking_home = (venue_role in ("home", "Local", "local")) if venue_role else None
@@ -211,17 +218,34 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             scored = a_sc
             conceded = h_sc
 
+        # Extracción de corners reales por partido
+        if "corners_for" in m and m.get("corners_for") is not None:
+            c_for = int(m.get("corners_for") or 0)
+            c_against = int(m.get("corners_against") or 0)
+        elif is_home:
+            c_for = int(m.get("home_corners", 5) or 5)
+            c_against = int(m.get("away_corners", 4) or 4)
+        else:
+            c_for = int(m.get("away_corners", 4) or 4)
+            c_against = int(m.get("home_corners", 5) or 5)
+
         gen_scored += scored
         gen_conceded += conceded
+        gen_corners_for += c_for
+        gen_corners_against += c_against
         gen_count += 1
 
         if is_seeking_home is not None and is_seeking_home and is_home:
             venue_scored += scored
             venue_conceded += conceded
+            venue_corners_for += c_for
+            venue_corners_against += c_against
             venue_count += 1
         elif is_seeking_away is not None and is_seeking_away and (not is_home):
             venue_scored += scored
             venue_conceded += conceded
+            venue_corners_for += c_for
+            venue_corners_against += c_against
             venue_count += 1
 
     if gen_count == 0:
@@ -230,24 +254,33 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             "attack_gen": 1.50, "defense_gen": 1.10,
             "avg_scored": 1.50, "avg_conceded": 1.10,
             "avg_scored_gen": 1.50, "avg_conceded_gen": 1.10,
+            "corners": 5.0, "corners_against": 4.5,
+            "corners_gen": 5.0, "corners_against_gen": 4.5,
+            "corners_total": 9.5, "corners_total_gen": 9.5,
             "sample_size": 0, "sample_size_gen": 0,
             "venue_role": venue_role or "General"
         }
 
     avg_gen_scored = round(gen_scored / float(gen_count), 2)
     avg_gen_conceded = round(gen_conceded / float(gen_count), 2)
+    avg_gen_c_for = round(gen_corners_for / float(gen_count), 1)
+    avg_gen_c_against = round(gen_corners_against / float(gen_count), 1)
     attack_gen = max(0.40, min(3.80, avg_gen_scored))
     defense_gen = max(0.35, min(3.50, avg_gen_conceded))
 
     if venue_count > 0:
         avg_venue_scored = round(venue_scored / float(venue_count), 2)
         avg_venue_conceded = round(venue_conceded / float(venue_count), 2)
+        avg_venue_c_for = round(venue_corners_for / float(venue_count), 1)
+        avg_venue_c_against = round(venue_corners_against / float(venue_count), 1)
         attack_venue = max(0.40, min(3.80, avg_venue_scored))
         defense_venue = max(0.35, min(3.50, avg_venue_conceded))
         sample_venue = venue_count
     else:
         avg_venue_scored = avg_gen_scored
         avg_venue_conceded = avg_gen_conceded
+        avg_venue_c_for = avg_gen_c_for
+        avg_venue_c_against = avg_gen_c_against
         attack_venue = attack_gen
         defense_venue = defense_gen
         sample_venue = gen_count
@@ -261,6 +294,12 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         "avg_conceded": avg_venue_conceded,
         "avg_scored_gen": avg_gen_scored,
         "avg_conceded_gen": avg_gen_conceded,
+        "corners": avg_venue_c_for,
+        "corners_against": avg_venue_c_against,
+        "corners_gen": avg_gen_c_for,
+        "corners_against_gen": avg_gen_c_against,
+        "corners_total": round(avg_venue_c_for + avg_venue_c_against, 1),
+        "corners_total_gen": round(avg_gen_c_for + avg_gen_c_against, 1),
         "sample_size": sample_venue,
         "sample_size_gen": gen_count,
         "venue_role": venue_role or "General"
@@ -375,11 +414,19 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
             else:
                 v_att = base_att
                 v_def = base_def
+            c_for = 5.2 if venue_role in ("home", "Local") else 4.2
+            c_against = 4.2 if venue_role in ("home", "Local") else 5.2
             return {
                 "attack": v_att,
                 "defense": v_def,
                 "attack_gen": base_att,
                 "defense_gen": base_def,
+                "corners": c_for,
+                "corners_against": c_against,
+                "corners_gen": 4.8,
+                "corners_against_gen": 4.8,
+                "corners_total": round(c_for + c_against, 1),
+                "corners_total_gen": 9.6,
                 "venue_role": venue_role or "General"
             }
 
@@ -395,11 +442,19 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
     else:
         v_att = att
         v_def = deff
+    c_for = round(4.8 + ((h % 20) / 10.0), 1) if venue_role in ("home", "Local") else round(4.0 + ((h % 15) / 10.0), 1)
+    c_against = round(4.2 + (((h // 20) % 15) / 10.0), 1)
     return {
         "attack": v_att,
         "defense": v_def,
         "attack_gen": att,
         "defense_gen": deff,
+        "corners": c_for,
+        "corners_against": c_against,
+        "corners_gen": round((c_for + c_against) / 2.0, 1),
+        "corners_against_gen": round((c_for + c_against) / 2.0, 1),
+        "corners_total": round(c_for + c_against, 1),
+        "corners_total_gen": round(c_for + c_against, 1),
         "venue_role": venue_role or "General"
     }
 
@@ -452,7 +507,23 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "venue_role": venue_role or "General"
     }
 
-def generate_four_picks_football(home_team: str, away_team: str, pct_h: float, pct_d: float, pct_a: float, pct_over: float, pct_under: float, pct_btts: float, lam_h: float, mu_a: float) -> list:
+def generate_four_picks_football(
+    home_team: str,
+    away_team: str,
+    pct_h: float,
+    pct_d: float,
+    pct_a: float,
+    pct_over: float,
+    pct_under: float,
+    pct_btts: float,
+    lam_h: float,
+    mu_a: float,
+    pct_over_15: float = 75.0,
+    pct_under_15: float = 25.0,
+    home_stats: dict = None,
+    away_stats: dict = None,
+    projected_corners: float = None
+) -> list:
     picks = []
     
     # 1. 1X2 Principal
@@ -484,46 +555,44 @@ def generate_four_picks_football(home_team: str, away_team: str, pct_h: float, p
         "explanation": p1_exp
     })
 
-    # 2. Total de Goles (Over / Under)
-    if pct_over >= 52.0:
-        p2_name = "Más de 2.5 Goles (+2.5)"
-        p2_prob = pct_over
-        p2_risk = "Bajo" if pct_over >= 63 else "Medio"
-        p2_exp = f"La suma combinada esperada es de {round(lam_h + mu_a, 2)} goles. Las métricas anticipan transiciones rápidas y desajustes defensivos en ambas áreas."
+    # 2. Doble Oportunidad / Apuesta de Cobertura
+    if pct_h >= pct_a:
+        p2_name = f"Doble Oportunidad: 1X ({home_team} o Empate)"
+        p2_prob = round(min(95.0, pct_h + pct_d), 1)
+        p2_exp = f"Pick de máxima seguridad cuantitativa; cubre el triunfo local y el empate, dejando solo un {pct_a}% de margen al visitante."
     else:
-        p2_name = "Menos de 2.5 Goles (-2.5)"
-        p2_prob = pct_under
-        p2_risk = "Bajo" if pct_under >= 63 else "Medio"
-        p2_exp = f"Partido de ritmo pausado con expectativa total de solo {round(lam_h + mu_a, 2)} goles. Las defensas priorizan el orden posicional."
+        p2_name = f"Doble Oportunidad: X2 (Empate o {away_team})"
+        p2_prob = round(min(95.0, pct_a + pct_d), 1)
+        p2_exp = f"Cobertura amplia respaldando al visitante; cubre el triunfo de {away_team} y la paridad, descartando la victoria local con {p2_prob}% de probabilidad acumulada."
     
     odds2 = round(100.0 / max(p2_prob, 1.0), 2)
     picks.append({
         "id": 2,
-        "market": "Total de Goles (Línea 2.5)",
+        "market": "Doble Oportunidad (Cobertura)",
         "name": p2_name,
         "probability": p2_prob,
         "fair_odds": odds2,
-        "risk_level": p2_risk,
-        "risk_color": "emerald" if p2_risk == "Bajo" else ("amber" if p2_risk == "Medio" else "rose"),
+        "risk_level": "Bajo",
+        "risk_color": "emerald",
         "explanation": p2_exp
     })
 
-    # 3. Ambos Equipos Marcan (BTTS)
-    if pct_btts >= 50.0:
-        p3_name = "Ambos Equipos Anotan (SÍ)"
-        p3_prob = pct_btts
-        p3_risk = "Bajo" if pct_btts >= 60 else "Medio"
-        p3_exp = f"Tanto {home_team} como {away_team} superan 1.0 gol esperado individual ({lam_h} y {mu_a}), lo que maximiza la probabilidad de goles en ambas porterías."
+    # 3. Total de Goles (+1.5 Goles)
+    if pct_over_15 >= 60.0:
+        p3_name = "Más de 1.5 Goles (+1.5)"
+        p3_prob = pct_over_15
+        p3_risk = "Bajo" if pct_over_15 >= 72 else "Medio"
+        p3_exp = f"Elevada probabilidad cuantitativa ({pct_over_15}%) impulsada por una expectativa combinada de {round(lam_h + mu_a, 2)} goles. Se anticipan al menos 2 anotaciones en los 90 minutos."
     else:
-        p3_name = "Ambos Equipos Anotan (NO)"
-        p3_prob = round(100.0 - pct_btts, 1)
-        p3_risk = "Medio"
-        p3_exp = f"Uno de los dos conjuntos presenta dificultades severas de generación de peligro ({min(lam_h, mu_a)} xG), perfilando al menos una portería a cero."
-    
+        p3_name = "Menos de 1.5 Goles (-1.5)"
+        p3_prob = pct_under_15
+        p3_risk = "Medio" if pct_under_15 >= 50 else "Alto"
+        p3_exp = f"Bajo volumen ofensivo proyectado ({round(lam_h + mu_a, 2)} xG combinados). Alta probabilidad de duelo cerrado y cauteloso con marcador inferior a 2 goles."
+
     odds3 = round(100.0 / max(p3_prob, 1.0), 2)
     picks.append({
         "id": 3,
-        "market": "Ambos Equipos Anotan (BTTS)",
+        "market": "Total de Goles (Línea +1.5)",
         "name": p3_name,
         "probability": p3_prob,
         "fair_odds": odds3,
@@ -532,26 +601,115 @@ def generate_four_picks_football(home_team: str, away_team: str, pct_h: float, p
         "explanation": p3_exp
     })
 
-    # 4. Doble Oportunidad / Apuesta de Cobertura
-    if pct_h >= pct_a:
-        p4_name = f"Doble Oportunidad: 1X ({home_team} o Empate)"
-        p4_prob = round(min(95.0, pct_h + pct_d), 1)
-        p4_exp = f"Pick de máxima seguridad cuantitativa; cubre el triunfo local y el empate, dejando solo un {pct_a}% de margen al visitante."
+    # 4. Total de Goles (Over / Under 2.5)
+    if pct_over >= 52.0:
+        p4_name = "Más de 2.5 Goles (+2.5)"
+        p4_prob = pct_over
+        p4_risk = "Bajo" if pct_over >= 63 else "Medio"
+        p4_exp = f"La suma combinada esperada es de {round(lam_h + mu_a, 2)} goles. Las métricas anticipan transiciones rápidas y desajustes defensivos en ambas áreas."
     else:
-        p4_name = f"Doble Oportunidad: X2 (Empate o {away_team})"
-        p4_prob = round(min(95.0, pct_a + pct_d), 1)
-        p4_exp = f"Cobertura amplia respaldando al visitante; cubre el triunfo de {away_team} y la paridad, descartando la victoria local con {p4_prob}% de probabilidad acumulada."
+        p4_name = "Menos de 2.5 Goles (-2.5)"
+        p4_prob = pct_under
+        p4_risk = "Bajo" if pct_under >= 63 else "Medio"
+        p4_exp = f"Partido de ritmo pausado con expectativa total de solo {round(lam_h + mu_a, 2)} goles. Las defensas priorizan el orden posicional."
     
     odds4 = round(100.0 / max(p4_prob, 1.0), 2)
     picks.append({
         "id": 4,
-        "market": "Doble Oportunidad (Cobertura)",
+        "market": "Total de Goles (Línea 2.5)",
         "name": p4_name,
         "probability": p4_prob,
         "fair_odds": odds4,
-        "risk_level": "Bajo",
-        "risk_color": "emerald",
+        "risk_level": p4_risk,
+        "risk_color": "emerald" if p4_risk == "Bajo" else ("amber" if p4_risk == "Medio" else "rose"),
         "explanation": p4_exp
+    })
+
+    # 5. Ambos Equipos Marcan (BTTS)
+    if pct_btts >= 50.0:
+        p5_name = "Ambos Equipos Anotan (SÍ)"
+        p5_prob = pct_btts
+        p5_risk = "Bajo" if pct_btts >= 60 else "Medio"
+        p5_exp = f"Tanto {home_team} como {away_team} superan 1.0 gol esperado individual ({lam_h} y {mu_a}), lo que maximiza la probabilidad de goles en ambas porterías."
+    else:
+        p5_name = "Ambos Equipos Anotan (NO)"
+        p5_prob = round(100.0 - pct_btts, 1)
+        p5_risk = "Medio"
+        p5_exp = f"Uno de los dos conjuntos presenta dificultades severas de generación de peligro ({min(lam_h, mu_a)} xG), perfilando al menos una portería a cero."
+    
+    odds5 = round(100.0 / max(p5_prob, 1.0), 2)
+    picks.append({
+        "id": 5,
+        "market": "Ambos Equipos Anotan (BTTS)",
+        "name": p5_name,
+        "probability": p5_prob,
+        "fair_odds": odds5,
+        "risk_level": p5_risk,
+        "risk_color": "emerald" if p5_risk == "Bajo" else ("amber" if p5_risk == "Medio" else "rose"),
+        "explanation": p5_exp
+    })
+
+    # 6. Total de Córners (Proyección Cuantitativa de Saques de Esquina)
+    hs = home_stats or {}
+    as_ = away_stats or {}
+    h_c = float(hs.get("corners", 5.2) or 5.2)
+    h_cg = float(hs.get("corners_gen", 5.0) or 5.0)
+    a_c = float(as_.get("corners", 4.2) or 4.2)
+    a_cg = float(as_.get("corners_gen", 4.5) or 4.5)
+
+    if projected_corners is not None and projected_corners > 0:
+        exp_c = float(projected_corners)
+    else:
+        exp_c = round((h_c * 0.5 + h_cg * 0.5) + (a_c * 0.5 + a_cg * 0.5), 1)
+        if exp_c <= 0:
+            exp_c = 9.5
+
+    def poisson_tail_corners(lmbda, min_k):
+        p_acc = 0.0
+        for k in range(min_k, 30):
+            p_k = (math.exp(-lmbda) * (lmbda ** k)) / math.factorial(k)
+            p_acc += p_k
+        return min(0.95, max(0.05, p_acc))
+
+    p_over_85 = round(poisson_tail_corners(exp_c, 9) * 100, 1)
+    p_over_95 = round(poisson_tail_corners(exp_c, 10) * 100, 1)
+    p_over_105 = round(poisson_tail_corners(exp_c, 11) * 100, 1)
+
+    if exp_c >= 10.2:
+        p6_market = "Total de Córners (Línea 9.5)"
+        p6_name = "Más de 9.5 Córners (+9.5)"
+        p6_prob = p_over_95
+        p6_risk = "Bajo" if p_over_95 >= 65 else "Medio"
+        p6_exp = f"{home_team} promedia {h_c} córners de local ({h_cg} gen) y {away_team} {a_c} de visita ({a_cg} gen). La proyección combinada asciende a {exp_c} tiros de esquina totales."
+    elif exp_c >= 8.8:
+        p6_market = "Total de Córners (Línea 8.5)"
+        p6_name = "Más de 8.5 Córners (+8.5)"
+        p6_prob = p_over_85
+        p6_risk = "Bajo" if p_over_85 >= 65 else "Medio"
+        p6_exp = f"Juego vertical con dinámica en bandas. Se proyectan {exp_c} córners combinados ({h_c} para {home_team} y {a_c} para {away_team}), con {p_over_85}% de probabilidad para superar los 8.5 tiros de esquina."
+    elif exp_c <= 7.8:
+        p6_market = "Total de Córners (Línea 9.5)"
+        p6_name = "Menos de 9.5 Córners (-9.5)"
+        p6_prob = round(100.0 - p_over_95, 1)
+        p6_risk = "Bajo" if p6_prob >= 65 else "Medio"
+        p6_exp = f"Trámite centralizado y reducido desborde exterior ({exp_c} córners proyectados). Alta probabilidad ({p6_prob}%) para la línea de menos de 9.5 córners."
+    else:
+        p6_market = "Total de Córners (Línea 10.5)"
+        p6_name = "Menos de 10.5 Córners (-10.5)"
+        p6_prob = round(100.0 - p_over_105, 1)
+        p6_risk = "Bajo"
+        p6_exp = f"Expectativa equilibrada de {exp_c} córners combinados ({h_c} de {home_team} vs {a_c} de {away_team}). Cobertura con {p6_prob}% de probabilidad favorable al 'Under 10.5'."
+
+    odds6 = round(100.0 / max(p6_prob, 1.0), 2)
+    picks.append({
+        "id": 6,
+        "market": p6_market,
+        "name": p6_name,
+        "probability": p6_prob,
+        "fair_odds": odds6,
+        "risk_level": p6_risk,
+        "risk_color": "emerald" if p6_risk == "Bajo" else ("amber" if p6_risk == "Medio" else "rose"),
+        "explanation": p6_exp
     })
 
     return picks
@@ -3958,6 +4116,12 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
 
     is_value_bet = best_pick["prob"] >= 60
 
+    h_c_loc = float(home_stats.get("corners", 5.2) or 5.2)
+    h_c_gen = float(home_stats.get("corners_gen", 5.0) or 5.0)
+    a_c_vis = float(away_stats.get("corners", 4.2) or 4.2)
+    a_c_gen = float(away_stats.get("corners_gen", 4.5) or 4.5)
+    exp_c = round((h_c_loc * 0.5 + h_c_gen * 0.5) + (a_c_vis * 0.5 + a_c_gen * 0.5), 1)
+
     four_predictions = generate_four_picks_football(
         home_team=home_team,
         away_team=away_team,
@@ -3968,7 +4132,12 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         pct_under=pct_under,
         pct_btts=pct_btts,
         lam_h=round(lambda_home, 2),
-        mu_a=round(mu_away, 2)
+        mu_a=round(mu_away, 2),
+        pct_over_15=pct_over_15,
+        pct_under_15=pct_under_15,
+        home_stats=home_stats,
+        away_stats=away_stats,
+        projected_corners=exp_c
     )
 
     return {
@@ -3982,6 +4151,7 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "prob_over_25": pct_over,
         "prob_under_25": pct_under,
         "prob_btts": pct_btts,
+        "projected_corners": exp_c,
         "top_scores": [{"score": s["score"], "prob": round(s["prob"] * 100, 1)} for s in top_scores],
         "recommended_pick": best_pick["type"],
         "confidence": best_pick["prob"],

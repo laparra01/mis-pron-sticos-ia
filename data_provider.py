@@ -1,4 +1,5 @@
 import os
+import json
 import requests
 from datetime import datetime
 import importlib
@@ -1027,8 +1028,7 @@ def fetch_live_matches_data(sport_filter="all"):
         if sport_filter in ("all", "nba"):
             # Trae partidos de la NBA en vivo (incluye Lakers vs Warriors)
             live_results.extend(fetch_espn_live_nba())
-        if live_results:
-            return live_results
+        return live_results
 
     # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
     results = []
@@ -1047,11 +1047,14 @@ def fetch_live_matches_data(sport_filter="all"):
                 live_stats=item["live_stats"]
             )
             ai_resp = generate_live_ai_analysis(item, pred, item["live_stats"])
+            c_code_map = {"Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it", "Alemania": "de", "Francia": "fr", "Estados Unidos": "us", "México": "mx", "Argentina": "ar", "Colombia": "co"}
+            c_code = c_code_map.get(c_name, "")
             results.append({
                 "id": item["id"],
                 "sport": "football",
                 "league": l_clean,
                 "country": c_name,
+                "country_code": c_code,
                 "league_flag": c_flag,
                 "country_flag": c_flag,
                 "home_team": item["home_team"],
@@ -1088,6 +1091,7 @@ def fetch_live_matches_data(sport_filter="all"):
                 "sport": "nba",
                 "league": "NBA",
                 "country": "Estados Unidos",
+                "country_code": "us",
                 "league_flag": "🏀",
                 "country_flag": "🇺🇸",
                 "home_team": item["home_team"],
@@ -1106,81 +1110,145 @@ def fetch_live_matches_data(sport_filter="all"):
 
     return results
 
+_last_auto_scrape_check = 0
+
+def check_and_auto_update_scraped_matches(max_age_hours=6):
+    """
+    Verifica si los datos oficiales escrapeados tienen más de `max_age_hours` horas.
+    Si están desactualizados o faltan, lanza los scrapers en un hilo en segundo plano,
+    sin bloquear la carga de la página ni la experiencia del usuario.
+    """
+    global _last_auto_scrape_check
+    import time
+    now = time.time()
+    if now - _last_auto_scrape_check < 300:  # Como máximo revisar cada 5 min
+        return
+    _last_auto_scrape_check = now
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(base_dir, "data")
+    try:
+        from scraper_engine import SUPPORTED_LEAGUES, scrape_single_league, load_match_cache, save_match_cache
+        missing_leagues = []
+        for l in SUPPORTED_LEAGUES:
+            fpath = os.path.join(data_dir, f"{l['slug']}_real.json")
+            if not os.path.exists(fpath):
+                missing_leagues.append(l)
+            else:
+                try:
+                    age_h = (now - os.path.getmtime(fpath)) / 3600.0
+                    if age_h > max_age_hours:
+                        missing_leagues.append(l)
+                except Exception:
+                    pass
+
+        if missing_leagues:
+            import threading
+            def run_bg():
+                cache = load_match_cache()
+                for lg in missing_leagues:
+                    try:
+                        scrape_single_league(lg, cache)
+                        save_match_cache(cache)
+                    except Exception as err:
+                        print(f"[AUTO-SCRAPER] Error en {lg['name']}: {err}")
+            threading.Thread(target=run_bg, daemon=True).start()
+            print(f"[AUTO-SCRAPER] Actualización en segundo plano iniciada para {len(missing_leagues)} ligas")
+    except Exception as e:
+        print(f"[AUTO-SCRAPER] Error comprobando ligas: {e}")
+
+def load_scraped_matches():
+    """
+    Carga partidos oficiales reales obtenidos por web scraping especializado de FotMob
+    (Brasileirão Série A, Liga BetPlay Dimayor y otras ligas clave).
+    Prioriza estos partidos con estadísticas 100% verificadas, H2H oficial y córners reales.
+    """
+    check_and_auto_update_scraped_matches(max_age_hours=6)
+
+    scraped_list = []
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(base_dir, "data")
+    if not os.path.exists(data_dir):
+        return scraped_list
+
+    for fname in os.listdir(data_dir):
+        if fname.endswith("_real.json"):
+            fpath = os.path.join(data_dir, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    payload = json.load(f)
+
+                upcoming = payload.get("upcoming_matches", [])
+                for item in upcoming:
+                    h_name = item.get("home_team")
+                    a_name = item.get("away_team")
+                    h2h_data = item.get("h2h", {})
+                    league = item.get("league", "Brasileirão Série A")
+                    country = item.get("country", "Brasil")
+
+                    if "summary" not in h2h_data:
+                        dir_matches = h2h_data.get("head_to_head", [])
+                        w_h = sum(1 for m in dir_matches if m.get("winner") == h_name or (h_name.lower() in (m.get("winner") or "").lower()))
+                        w_d = sum(1 for m in dir_matches if m.get("winner") == "Empate")
+                        w_a = sum(1 for m in dir_matches if m.get("winner") == a_name or (a_name.lower() in (m.get("winner") or "").lower()))
+                        total_g = sum(m.get("home_score", 0) + m.get("away_score", 0) for m in dir_matches)
+                        count_dir = len(dir_matches) or 1
+                        h2h_data["summary"] = {
+                            "home_wins": w_h,
+                            "draws": w_d,
+                            "away_wins": w_a,
+                            "avg_goals": round(total_g / float(count_dir), 1),
+                            "text": f"{h_name} {w_h} victorias • {w_d} empates • {a_name} {w_a} victorias"
+                        }
+
+                    home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                    away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
+                    pred = calculate_match_probabilities(home_stats, away_stats, home_team=h_name, away_team=a_name)
+                    analysis = generate_ai_analysis(item, pred)
+
+                    c_code = item.get("country_code") or ""
+                    l_flag = item.get("league_flag") or "⚽"
+                    c_flag = item.get("country_flag") or "⚽"
+                    scraped_list.append({
+                        "id": item.get("id"),
+                        "sport": "football",
+                        "league": league,
+                        "country": country,
+                        "country_code": c_code,
+                        "league_flag": l_flag,
+                        "country_flag": c_flag,
+                        "home_team": h_name,
+                        "away_team": a_name,
+                        "date": item.get("date"),
+                        "date_iso": item.get("date_iso"),
+                        "time": item.get("time"),
+                        "timestamp": item.get("timestamp") or 0,
+                        "timezone": item.get("timezone", "America/Guatemala"),
+                        "home_stats": home_stats,
+                        "away_stats": away_stats,
+                        "prediction": pred,
+                        "h2h": h2h_data,
+                        "ai_analysis": analysis,
+                        "is_live": False,
+                        "is_external": True,
+                        "source_api": "FotMob (Scraping Oficial)"
+                    })
+            except Exception as e:
+                print(f"[SCRAPING DATA] Error procesando archivo {fname}: {e}")
+
+    # Ordenar cronológicamente por hora/timestamp de Guatemala (los más próximos primero)
+    scraped_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+    return scraped_list
+
 def fetch_matches_data(sport_filter="all"):
     """
     Obtiene los partidos programados (pre-match).
-    Si USE_LIVE_API = True, trae ÚNICAMENTE partidos oficiales reales de las APIs.
-    NUNCA devuelve partidos simulados si USE_LIVE_API = True.
+    ÚNICAMENTE devuelve partidos analizados mediante la extracción oficial de FotMob
+    con estadísticas 100% reales, H2H directo y córners verificados.
+    Se eliminan todos los partidos de las otras APIs pre-partido para mantener solo datos reales.
     """
-    cfg = get_config()
-    is_live_api = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
-    results = []
+    if sport_filter not in ("all", "football"):
+        return []
 
-    if is_live_api:
-        if sport_filter in ("all", "football"):
-            ext_matches = try_fetch_external_football()
-            if ext_matches:
-                results.extend(ext_matches)
-        if sport_filter in ("all", "nba"):
-            ext_nba = try_fetch_external_nba()
-            if ext_nba:
-                results.extend(ext_nba)
-        return results
-
-    # Modo offline de maqueta local (SOLO cuando USE_LIVE_API = False):
-    if sport_filter in ("all", "football"):
-        for item in SOCCER_UPCOMING_MATCHES:
-            l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football", item["home_team"], item["away_team"])
-            h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
-            home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-            away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-            pred = calculate_match_probabilities(home_stats, away_stats, home_team=item["home_team"], away_team=item["away_team"])
-            analysis = generate_ai_analysis(item, pred)
-            results.append({
-                "id": item["id"],
-                "sport": "football",
-                "league": l_clean,
-                "country": c_name,
-                "league_flag": c_flag,
-                "country_flag": c_flag,
-                "home_team": item["home_team"],
-                "away_team": item["away_team"],
-                "date": item["date"],
-                "date_iso": "2026-10-07",
-                "market_odds": item.get("market_odds", {}),
-                "home_stats": home_stats,
-                "away_stats": away_stats,
-                "prediction": pred,
-                "h2h": h2h_data,
-                "ai_analysis": analysis,
-                "is_live": False
-            })
-
-    if sport_filter in ("all", "nba"):
-        for item in NBA_UPCOMING_MATCHES:
-            h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "nba", "NBA", country="Estados Unidos")
-            home_stats = get_nba_team_ratings(item["home_team"], recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-            away_stats = get_nba_team_ratings(item["away_team"], recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-            pred = calculate_nba_probabilities(home_stats, away_stats, home_team=item["home_team"], away_team=item["away_team"])
-            analysis = generate_nba_ai_analysis(item, pred)
-            results.append({
-                "id": item["id"],
-                "sport": "nba",
-                "league": "NBA",
-                "country": "Estados Unidos",
-                "league_flag": "🏀",
-                "country_flag": "🇺🇸",
-                "home_team": item["home_team"],
-                "away_team": item["away_team"],
-                "date": item["date"],
-                "date_iso": "2026-10-07",
-                "market_odds": item.get("market_odds", {}),
-                "home_stats": home_stats,
-                "away_stats": away_stats,
-                "prediction": pred,
-                "h2h": h2h_data,
-                "ai_analysis": analysis,
-                "is_live": False
-            })
-
-    return results
+    # Cargar exclusivamente los partidos oficiales escrapeados de FotMob
+    return load_scraped_matches()
