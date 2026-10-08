@@ -154,6 +154,61 @@ def api_match_gemini(match_id):
     match["ai_analysis"] = ai_data
     return jsonify(ai_data)
 
+@app.route("/api/trigger-scrape", methods=["POST"])
+def api_trigger_scrape():
+    """
+    Inicia la actualización bajo demanda:
+    - Si GITHUB_TOKEN está configurado, invoca GitHub Actions para procesar en la nube y persistir en el repo.
+    - Si no hay GITHUB_TOKEN (ej. local o prueba), corre scraper_engine en segundo plano.
+    """
+    import threading
+    import requests
+
+    cfg = get_config()
+    token = getattr(cfg, "GITHUB_TOKEN", "") or os.environ.get("GITHUB_TOKEN", "")
+    repo = getattr(cfg, "GITHUB_REPO", "") or os.environ.get("GITHUB_REPO", "laparra01/mis-pron-sticos-ia")
+
+    if token:
+        url = f"https://api.github.com/repos/{repo}/actions/workflows/update_matches.yml/dispatches"
+        headers = {
+            "Accept": "application/vnd.github.v3+json",
+            "Authorization": f"Bearer {token}",
+            "X-GitHub-Api-Version": "2022-11-28"
+        }
+        data = {"ref": "main"}
+        try:
+            resp = requests.post(url, headers=headers, json=data, timeout=10)
+            if resp.status_code in (204, 200, 201):
+                return jsonify({
+                    "success": True,
+                    "method": "github_action",
+                    "message": "¡GitHub Action iniciada con éxito! El robot está extrayendo los datos y tu web se actualizará en aproximadamente 1 minuto."
+                })
+            else:
+                return jsonify({
+                    "success": False,
+                    "method": "github_action",
+                    "error": f"GitHub API respondió {resp.status_code}: {resp.text}"
+                }), 400
+        except Exception as e:
+            return jsonify({"success": False, "error": str(e)}), 500
+    else:
+        def run_background_scrape():
+            try:
+                import scraper_engine
+                print("[TRIGGER SCRAPE] Ejecutando extracción local en segundo plano...")
+                scraper_engine.scrape_all_leagues()
+                print("[TRIGGER SCRAPE] Extracción local finalizada con éxito.")
+            except Exception as ex:
+                print(f"[TRIGGER SCRAPE ERROR]: {ex}")
+
+        threading.Thread(target=run_background_scrape, daemon=True).start()
+        return jsonify({
+            "success": True,
+            "method": "local_background",
+            "message": "Extracción iniciada en segundo plano en el servidor. Los datos se actualizarán en breve."
+        })
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print(f"\n=======================================================")
