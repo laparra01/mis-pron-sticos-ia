@@ -732,7 +732,78 @@ LEAGUE_TEAMS_POOL = {
     "selecciones": [
         "Argentina", "Brasil", "Francia", "Inglaterra", "España", "Alemania", "Portugal", "Uruguay",
         "Colombia", "Países Bajos", "Italia", "Bélgica", "Croacia", "México", "Estados Unidos",
-        "Chile", "Ecuador", "Suiza", "Dinamarca", "Japón", "Marruecos", "Canadá", "Perú", "Paraguay", "Venezuela", "Costa Rica", "Panamá"
+        "Chile", "Ecuador", "Suiza", "Dinamarca", "Japón", "Marruecos", "Canadá", "Perú", "Paraguay",
+        "Venezuela", "Costa Rica", "Panamá", "Kazajistán", "República de Irlanda", "Israel", "Finlandia",
+        "Serbia", "Albania", "Gales", "Kosovo", "Austria", "Eslovaquia", "Ucrania", "Turquía",
+        "Eslovenia", "Lituania", "Suecia", "Bielorrusia", "Grecia", "Islandia", "República Checa",
+        "Escocia", "Hungría", "Polonia", "Noruega", "Rumania", "Bulgaria", "Georgia", "Irlanda del Norte"
+    ],
+    "turquia": [
+        "Galatasaray SK", "Fenerbahçe SK", "Beşiktaş JK", "Trabzonspor", "Başakşehir FK",
+        "Kasımpaşa SK", "Samsunspor", "Eyüpspor", "Göztepe SK", "Sivasspor", "Antalyaspor",
+        "Konyaspor", "Alanyaspor", "Kayserispor", "Çaykur Rizespor", "Gaziantep FK"
+    ],
+    "suecia": [
+        "Malmö FF", "Hammarby IF", "Djurgårdens IF", "AIK Fotboll", "IF Elfsborg",
+        "BK Häcken", "IFK Göteborg", "GAIS", "IK Sirius", "Halmstads BK", "Västerås SK", "IFK Norrköping"
+    ],
+    "noruega": [
+        "FK Bodø/Glimt", "SK Brann", "Viking FK", "Molde FK", "Rosenborg BK", "Fredrikstad FK",
+        "KFUM Oslo", "Tromsø IL", "Strømsgodset IF", "Sarpsborg 08", "Kristiansund BK", "Sandefjord"
+    ],
+    "japon": [
+        "Vissel Kobe", "Sanfrecce Hiroshima", "Machida Zelvia", "Gamba Osaka", "Kashima Antlers",
+        "Tokyo Verdy", "Cerezo Osaka", "FC Tokyo", "Urawa Red Diamonds", "Yokohama F. Marinos",
+        "Kawasaki Frontale", "Nagoya Grampus", "Kashiwa Reysol", "Avispa Fukuoka", "Shonan Bellmare"
+    ],
+    "bolivia": [
+        "Club Bolívar", "The Strongest", "Club Always Ready", "Club Blooming", "Oriente Petrolero",
+        "Jorge Wilstermann", "Nacional Potosí", "Real Tomayapo", "San Antonio Bulo Bulo", "Club Aurora",
+        "Universitario de Vinto", "Guabirá", "Real Santa Cruz"
+    ],
+    "ecuador": [
+        "Independiente del Valle", "Liga de Quito", "Barcelona SC", "CS Emelec", "Universidad Católica (Ecu)",
+        "Orense SC", "Mushuc Runa", "Delfín SC", "CSD Macará", "El Nacional", "SD Aucas", "Deportivo Cuenca"
+    ],
+    "dinamarca": [
+        "FC København", "FC Midtjylland", "Brøndby IF", "AGF Aarhus", "FC Nordsjælland",
+        "Randers FC", "Silkeborg IF", "Viborg FF", "Aalborg BK", "Lyngby BK", "Odense Boldklub"
+    ],
+    "belgica": [
+        "Club Brugge", "RSC Anderlecht", "Royale Union Saint-Gilloise", "KRC Genk", "KAA Gent",
+        "Royal Antwerp FC", "Cercle Brugge", "Standard de Liège", "KV Mechelen", "Sporting Charleroi",
+        "Waasland-Beveren", "Lommel SK", "KVC Westerlo"
+    ],
+    "china": [
+        "Shanghai Port", "Shanghai Shenhua", "Chengdu Rongcheng", "Beijing Guoan", "Shandong Taishan",
+        "Tianjin Jinmen Tiger", "Zhejiang Professional", "Henan FC", "Wuhan Three Towns", "Qingdao West Coast",
+        "Changchun Yatai", "Shenzhen Xinpengcheng", "Qingdao Hainiu", "Meizhou Hakka"
+    ],
+    "chile": [
+        "Colo-Colo", "Universidad de Chile", "Universidad Católica", "Deportes Iquique", "CD Palestino",
+        "Coquimbo Unido", "Unión Española", "Everton de Viña", "Audax Italiano", "CD O'Higgins", "Huachipato", "CD Cobreloa"
+    ],
+    "uruguay": [
+        "CA Peñarol", "Club Nacional", "Defensor Sporting", "Danubio FC", "CA Boston River",
+        "Montevideo Wanderers", "Cerro Largo FC", "Racing Club de Montevideo", "Liverpool FC (Uru)", "Progreso"
+    ],
+    "peru": [
+        "Universitario de Deportes", "Alianza Lima", "Sporting Cristal", "FBC Melgar", "Cusco FC",
+        "CS Cienciano", "ADT Tarma", "Atlético Grau", "Sport Boys Association", "Universidad César Vallejo"
+    ],
+    "paraguay": [
+        "Club Olimpia", "Club Cerro Porteño", "Club Libertad", "Club Guaraní", "Club Nacional (Par)",
+        "Sportivo Luqueño", "Sportivo Ameliano", "General Caballero JLM", "Sol de América"
+    ],
+    "paises_bajos_segunda": [
+        "SC Cambuur", "FC Volendam", "SBV Vitesse", "SBV Excelsior", "De Graafschap", "FC Emmen",
+        "FC Dordrecht", "Roda JC", "ADO Den Haag", "Almere City FC", "FC Eindhoven", "MVV Maastricht",
+        "Helmond Sport", "TOP Oss", "FC Den Bosch", "VVV-Venlo", "Jong Ajax", "Jong PSV", "Jong AZ", "Jong FC Utrecht"
+    ],
+    "francia_segunda": [
+        "FC Lorient", "FC Metz", "Clermont Foot 63", "Paris FC", "USL Dunkerque", "FC Annecy",
+        "EA Guingamp", "Stade Lavallois", "Pau FC", "Grenoble Foot 38", "Amiens SC", "SC Bastia",
+        "Rodez AF", "AC Ajaccio", "Red Star FC", "FC Martigues", "SM Caen", "ESTAC Troyes", "AS Nancy Lorraine", "US Boulogne"
     ],
     "nba": [
         "Los Angeles Lakers", "Boston Celtics", "Golden State Warriors", "Milwaukee Bucks", "Denver Nuggets",
@@ -747,8 +818,8 @@ LEAGUE_TEAMS_POOL = {
 def detect_league_and_country(home_team: str, away_team: str, sport: str = "football", league: str = "", country: str = ""):
     """
     Identifica con total precisión la liga, país, bandera y grupo de rivales (pool)
-    para cualquier partido, evitando cruces erróneos entre países (p.ej. ingleses contra españoles
-    o brasileños contra alemanes).
+    para cualquier partido, evitando cruces erróneos entre países (p.ej. ingleses contra españoles,
+    selecciones nacionales contra clubes o brasileños contra alemanes).
     """
     l_low = (league or "").lower().strip()
     c_low = (country or "").lower().strip()
@@ -764,17 +835,154 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     ]):
         return "NBA", "Estados Unidos", "🏀", LEAGUE_TEAMS_POOL["nba"]
 
-    # 2. Torneos continentales e internacionales de Selecciones
-    if any(k in l_low for k in ["champions league", "uefa", "europa league"]):
+    # 2. SELECCIONES NACIONALES (FIFA, UEFA Nations League, Eliminatorias, Amistosos)
+    national_keywords = [
+        "argentina", "brasil", "brazil", "francia", "france", "inglaterra", "england", "españa", "spain",
+        "alemania", "germany", "portugal", "uruguay", "colombia", "países bajos", "netherlands", "holanda",
+        "italia", "italy", "bélgica", "belgium", "croacia", "croatia", "méxico", "mexico", "estados unidos", "usa",
+        "chile", "ecuador", "suiza", "switzerland", "dinamarca", "denmark", "japón", "japan", "marruecos", "morocco",
+        "canadá", "canada", "perú", "peru", "paraguay", "venezuela", "costa rica", "panamá", "panama",
+        "kazakhstan", "kazajistán", "republic of ireland", "ireland", "irlanda", "israel", "finland", "finlandia",
+        "serbia", "albania", "wales", "gales", "kosovo", "austria", "slovakia", "eslovaquia", "ukraine", "ucrania",
+        "türkiye", "turkey", "turquía", "slovenia", "eslovenia", "lithuania", "lituania", "sweden", "suecia",
+        "belarus", "bielorrusia", "greece", "grecia", "iceland", "islandia", "czechia", "czech republic",
+        "república checa", "scotland", "escocia", "hungary", "hungría", "poland", "polonia", "norway", "noruega",
+        "romania", "rumania", "bulgaria", "georgia", "northern ireland", "irlanda del norte"
+    ]
+    is_national_match = (
+        any(k in l_low for k in ["selecciones", "fifa", "nations league", "eliminatorias", "copa américa", "eurocopa", "amistoso internacional", "friendly", "playoff-phase"])
+        or (h_low in national_keywords and a_low in national_keywords)
+        or (any(nt.lower() == h_low or nt.lower() == a_low for nt in LEAGUE_TEAMS_POOL["selecciones"]))
+    )
+    if is_national_match:
+        t_title = "UEFA Nations League / Eliminatorias" if ("uefa" in l_low or "nations" in l_low or "playoff" in l_low or "europe" in l_low) else "Selecciones FIFA"
+        return t_title, "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+
+    # 3. Torneos Continentales de Clubes
+    if any(k in l_low for k in ["champions league", "uefa champions", "europa league"]):
         return "UEFA Champions League", "Europa", "🏆", LEAGUE_TEAMS_POOL["champions"]
     if any(k in l_low for k in ["libertadores", "sudamericana", "conmebol"]):
         return "Copa CONMEBOL Libertadores", "Sudamérica", "🏆", LEAGUE_TEAMS_POOL["libertadores"]
-    if any(k in l_low for k in ["selecciones", "fifa", "nations league", "eliminatorias", "copa américa", "eurocopa", "amistoso internacional", "friendly"]):
-        return "Selecciones FIFA", "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
-    if any(nt.lower() == h_low or nt.lower() == a_low for nt in LEAGUE_TEAMS_POOL["selecciones"]):
-        return "Selecciones FIFA", "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
 
-    # 3. Inglaterra (Premier League / Championship / Copas Inglesas)
+    # 4. Turquía (Süper Lig)
+    turkey_keywords = [
+        "galatasaray", "fenerbahce", "fenerbahçe", "besiktas", "beşiktaş", "trabzonspor", "kasimpasa", "kasımpaşa",
+        "samsunspor", "eyupspor", "eyüpspor", "goztepe", "göztepe", "sivasspor", "antalyaspor", "konyaspor",
+        "alanyaspor", "kayserispor", "rizespor", "gaziantep", "bodrum"
+    ]
+    if "turkish" in l_low or "super-lig" in l_low or "süper lig" in l_low or "turqu" in c_low or any(k in h_low or k in a_low for k in turkey_keywords):
+        return "Süper Lig", "Turquía", "🇹🇷", LEAGUE_TEAMS_POOL["turquia"]
+
+    # 5. Suecia (Allsvenskan)
+    sweden_keywords = [
+        "malmö", "malmo", "hammarby", "djurgården", "djurgarden", "aik fotboll", "elfsborg", "häcken", "hacken",
+        "göteborg", "goteborg", "västerås", "vasteras", "sirius", "halmstad", "norrköping", "norrkoping", "gais"
+    ]
+    if "allsvenskan" in l_low or "suecia" in c_low or "sweden" in c_low or any(k in h_low or k in a_low for k in sweden_keywords):
+        return "Allsvenskan", "Suecia", "🇸🇪", LEAGUE_TEAMS_POOL["suecia"]
+
+    # 6. Noruega (Eliteserien)
+    norway_keywords = [
+        "bodø", "bodo", "glimt", "brann", "viking fk", "viking", "molde", "rosenborg", "fredrikstad",
+        "tromsø", "tromso", "kfum oslo", "strømsgodset", "sarpsborg", "sandefjord", "kristiansund"
+    ]
+    if "eliteserien" in l_low or "noruega" in c_low or "norway" in c_low or any(k in h_low or k in a_low for k in norway_keywords):
+        return "Eliteserien", "Noruega", "🇳🇴", LEAGUE_TEAMS_POOL["noruega"]
+
+    # 7. Japón (J1 League)
+    japan_keywords = [
+        "kashima", "vissel kobe", "gamba osaka", "urawa", "sanfrecce", "machida", "cerezo osaka",
+        "kashiwa", "kawasaki frontale", "marinos", "tokyo verdy", "fc tokyo", "nagoya grampus", "shonan"
+    ]
+    if "j-league" in l_low or "j1" in l_low or "japón" in c_low or "japon" in c_low or "japan" in c_low or any(k in h_low or k in a_low for k in japan_keywords):
+        return "J1 League", "Japón", "🇯🇵", LEAGUE_TEAMS_POOL["japon"]
+
+    # 8. Bolivia (División Profesional)
+    bolivia_keywords = [
+        "bolívar", "bolivar", "the strongest", "always ready", "blooming", "oriente petrolero",
+        "wilstermann", "nacional potosí", "nacional potosi", "real tomayapo", "bulo bulo", "aurora", "vinto", "guabirá"
+    ]
+    if "bolivian" in l_low or "bolivia" in c_low or any(k in h_low or k in a_low for k in bolivia_keywords):
+        return "División Profesional (Bolivia)", "Bolivia", "🇧🇴", LEAGUE_TEAMS_POOL["bolivia"]
+
+    # 9. Ecuador (LigaPro Serie A)
+    ecuador_keywords = [
+        "delfín", "delfin", "mushuc runa", "barcelona sc", "emelec", "ldu quito", "liga de quito",
+        "independiente del valle", "orense", "macará", "macara", "aucas", "cuenca", "cumbayá"
+    ]
+    if "ecuador" in c_low or "ligapro" in l_low or any(k in h_low or k in a_low for k in ecuador_keywords):
+        return "LigaPro Serie A", "Ecuador", "🇪🇨", LEAGUE_TEAMS_POOL["ecuador"]
+
+    # 10. Países Bajos - Segunda División (Keuken Kampioen Divisie)
+    keuken_keywords = [
+        "de graafschap", "jong fc utrecht", "jong utrecht", "jong ajax", "jong psv", "jong az", "dordrecht",
+        "emmen", "volendam", "vitesse", "heracles", "waalwijk", "den bosch", "nac breda", "maastricht", "mvv", "roda jc", "top oss", "helmond"
+    ]
+    if "keuken" in l_low or "kampioen" in l_low or "divisie" in l_low or any(k in h_low or k in a_low for k in keuken_keywords):
+        return "Keuken Kampioen Divisie", "Países Bajos", "🇳🇱", LEAGUE_TEAMS_POOL["paises_bajos_segunda"]
+
+    # 11. Francia - Ligue 2
+    ligue2_keywords = [
+        "nancy", "guingamp", "dunkerque", "annecy", "stade laval", "laval", "pau", "sochaux", "boulogne",
+        "lorient", "metz", "clermont", "paris fc", "grenoble", "amiens", "bastia", "rodez", "ajaccio", "martigues", "troyes"
+    ]
+    if "ligue-2" in l_low or "ligue 2" in l_low or any(k in h_low or k in a_low for k in ligue2_keywords):
+        return "Ligue 2", "Francia", "🇫🇷", LEAGUE_TEAMS_POOL["francia_segunda"]
+
+    # 12. China (Chinese Super League)
+    china_keywords = [
+        "beijing guoan", "shanghai port", "shanghai shenhua", "shandong", "chengdu", "zhejiang",
+        "henan", "qingdao", "shenzhen xinpengcheng", "wuhan three towns", "meizhou", "cangzhou"
+    ]
+    if "chinese" in l_low or "csl" in l_low or "china" in c_low or any(k in h_low or k in a_low for k in china_keywords):
+        return "Chinese Super League", "China", "🇨🇳", LEAGUE_TEAMS_POOL["china"]
+
+    # 13. Dinamarca (Superligaen)
+    denmark_keywords = [
+        "nordsjælland", "nordsjaelland", "københavn", "kobenhavn", "copenhagen", "midtjylland",
+        "brøndby", "brondby", "aarhus", "agf", "odense", "randers", "silkeborg", "vejle"
+    ]
+    if "dinamarca" in c_low or "denmark" in c_low or "superliga" in l_low or any(k in h_low or k in a_low for k in denmark_keywords):
+        return "Superligaen", "Dinamarca", "🇩🇰", LEAGUE_TEAMS_POOL["dinamarca"]
+
+    # 14. Bélgica (Jupiler Pro League)
+    belgium_keywords = [
+        "waasland", "lommel", "anderlecht", "club brugge", "union saint-gilloise", "genk", "gent",
+        "antwerp", "standard liège", "charleroi", "mechelen", "kortrijk", "cercle brugge"
+    ]
+    if "bélgica" in c_low or "belgica" in c_low or "belgium" in c_low or "pro league" in l_low or any(k in h_low or k in a_low for k in belgium_keywords):
+        return "Jupiler Pro League", "Bélgica", "🇧🇪", LEAGUE_TEAMS_POOL["belgica"]
+
+    # 15. Chile (Primera División)
+    chile_keywords = [
+        "colo-colo", "universidad de chile", "universidad católica", "deportes iquique", "coquimbo",
+        "palestino", "unión española", "everton de viña", "audax italiano", "o'higgins", "huachipato", "cobreloa"
+    ]
+    if "chile" in c_low or any(k in h_low or k in a_low for k in chile_keywords):
+        return "Primera División de Chile", "Chile", "🇨🇱", LEAGUE_TEAMS_POOL["chile"]
+
+    # 16. Uruguay (Primera División)
+    uruguay_keywords = [
+        "peñarol", "penarol", "nacional de montevideo", "defensor sporting", "danubio", "boston river", "cerro largo"
+    ]
+    if "uruguay" in c_low or any(k in h_low or k in a_low for k in uruguay_keywords):
+        return "Primera División de Uruguay", "Uruguay", "🇺🇾", LEAGUE_TEAMS_POOL["uruguay"]
+
+    # 17. Perú (Liga 1)
+    peru_keywords = [
+        "universitario de deportes", "alianza lima", "sporting cristal", "fbc melgar", "cienciano", "adt tarma"
+    ]
+    if "peru" in c_low or "perú" in c_low or any(k in h_low or k in a_low for k in peru_keywords):
+        return "Liga 1 Perú", "Perú", "🇵🇪", LEAGUE_TEAMS_POOL["peru"]
+
+    # 18. Paraguay (Primera División)
+    paraguay_keywords = [
+        "olimpia", "cerro porteño", "cerro porteno", "libertad", "guaraní", "guarani", "sportivo ameliano"
+    ]
+    if "paraguay" in c_low or any(k in h_low or k in a_low for k in paraguay_keywords):
+        return "Primera División de Paraguay", "Paraguay", "🇵🇾", LEAGUE_TEAMS_POOL["paraguay"]
+
+    # 19. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [
         "west ham", "queens", "qpr", "arsenal", "chelsea", "liverpool", "manchester", "man city", "man utd",
         "tottenham", "spurs", "aston villa", "newcastle", "everton", "fulham", "wolves", "wolverhampton",
@@ -788,7 +996,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         t_name = "Championship" if ("championship" in l_low or any(k in h_low or k in a_low for k in ["queens", "qpr", "leeds", "sunderland", "watford", "west brom", "birmingham", "derby", "wrexham", "middlesbrough", "millwall", "norwich", "coventry", "blackburn"])) else ("National League (Inglaterra)" if ("national" in l_low or "sutton" in h_low or "boreham" in h_low) else "Premier League")
         return t_name, "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", LEAGUE_TEAMS_POOL["inglaterra"]
 
-    # 4. Brasil (Brasileirão Série A / Copas / Estadual)
+    # 20. Brasil (Brasileirão Série A / Copas / Estadual)
     brazil_keywords = [
         "flamengo", "palmeiras", "são paulo", "sao paulo", "corinthians", "fluminense", "grêmio", "gremio",
         "internacional", "atlético mineiro", "atletico mineiro", "cruzeiro", "botafogo", "santos",
@@ -800,7 +1008,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if "brasil" in c_low or any(k in l_low for k in ["brasil", "brasileir", "série a", "serie a brasil", "paulista", "carioca", "copa do brasil"]) or any(k in h_low or k in a_low for k in brazil_keywords):
         return "Brasileirão Série A", "Brasil", "🇧🇷", LEAGUE_TEAMS_POOL["brasil"]
 
-    # 5. México (Liga MX)
+    # 21. México (Liga MX)
     mexico_keywords = [
         "américa", "america", "chivas", "guadalajara", "cruz azul", "pumas", "unam", "tigres", "uanl",
         "monterrey", "rayados", "toluca", "pachuca", "santos laguna", "león", "leon", "atlas",
@@ -810,7 +1018,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if "mexic" in c_low or "méxic" in c_low or any(k in l_low for k in ["mexic", "méxic", "liga mx", "expansion", "expansión", "clausura", "apertura"]) or any(k in h_low or k in a_low for k in mexico_keywords):
         return "Liga MX", "México", "🇲🇽", LEAGUE_TEAMS_POOL["mexico"]
 
-    # 6. Alemania (Bundesliga)
+    # 22. Alemania (Bundesliga)
     germany_keywords = [
         "bayern", "leverkusen", "dortmund", "borussia", "leipzig", "frankfurt", "stuttgart",
         "freiburg", "wolfsburg", "mönchengladbach", "gladbach", "werder", "bremen", "augsburg",
@@ -820,7 +1028,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if any(k in c_low for k in ["alemania", "germany"]) or any(k in l_low for k in ["bundesliga", "dfb-pokal"]) or any(k in h_low or k in a_low for k in germany_keywords):
         return "Bundesliga", "Alemania", "🇩🇪", LEAGUE_TEAMS_POOL["alemania"]
 
-    # 7. España (LaLiga EA Sports)
+    # 23. España (LaLiga EA Sports)
     spain_keywords = [
         "real madrid", "barcelona", "atlético de madrid", "atletico madrid", "athletic club", "athletic bilbao",
         "real sociedad", "sociedad", "real betis", "betis", "villarreal", "valencia", "sevilla",
@@ -830,7 +1038,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if any(k in c_low for k in ["españa", "spain"]) or any(k in l_low for k in ["laliga", "primera división", "copa del rey", "hypermotion"]) or any(k in h_low or k in a_low for k in spain_keywords):
         return "LaLiga EA Sports", "España", "🇪🇸", LEAGUE_TEAMS_POOL["espana"]
 
-    # 8. Italia (Serie A)
+    # 24. Italia (Serie A)
     italy_keywords = [
         "inter milan", "inter", "ac milan", "milan", "juventus", "napoli", "atalanta", "roma",
         "lazio", "fiorentina", "bologna", "torino", "genoa", "monza", "verona", "hellas", "lecce",
@@ -839,7 +1047,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if (("italia" in c_low or "italy" in c_low or "serie a" in l_low) and "brasil" not in l_low and "brasil" not in c_low) or any(k in h_low or k in a_low for k in italy_keywords):
         return "Serie A", "Italia", "🇮🇹", LEAGUE_TEAMS_POOL["italia"]
 
-    # 9. Francia (Ligue 1)
+    # 25. Francia (Ligue 1)
     france_keywords = [
         "psg", "paris saint-germain", "paris", "monaco", "brest", "lille", "nice", "lyon", "olympique lyonnais",
         "lens", "marseille", "reims", "rennes", "toulouse", "montpellier", "strasbourg", "nantes", "le havre",
@@ -848,17 +1056,18 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if any(k in c_low for k in ["francia", "france"]) or any(k in l_low for k in ["ligue 1", "coupe de france"]) or any(k in h_low or k in a_low for k in france_keywords):
         return "Ligue 1", "Francia", "🇫🇷", LEAGUE_TEAMS_POOL["francia"]
 
-    # 10. Argentina (Liga Profesional Argentina)
+    # 26. Argentina (Liga Profesional Argentina / Ascenso)
     arg_keywords = [
         "river plate", "river", "boca juniors", "boca", "racing club", "racing", "independiente",
         "san lorenzo", "vélez", "velez", "estudiantes", "lanús", "lanus", "newell", "rosario central",
         "talleres", "belgrano", "huracán", "huracan", "argentinos juniors", "defensa y justicia",
-        "godoy cruz", "banfield", "platense", "gimnasia", "tigre"
+        "godoy cruz", "banfield", "platense", "gimnasia", "tigre", "excursionistas", "villa san carlos"
     ]
     if "argentin" in c_low or any(k in l_low for k in ["argentin", "liga profesional", "copa de la liga"]) or any(k in h_low or k in a_low for k in arg_keywords):
-        return "Liga Profesional Argentina", "Argentina", "🇦🇷", LEAGUE_TEAMS_POOL["argentina"]
+        t_arg = "Primera B Metropolitana" if any(k in h_low or k in a_low for k in ["excursionistas", "villa san carlos"]) else "Liga Profesional Argentina"
+        return t_arg, "Argentina", "🇦🇷", LEAGUE_TEAMS_POOL["argentina"]
 
-    # 11. Colombia (Liga BetPlay Dimayor)
+    # 27. Colombia (Liga BetPlay Dimayor)
     col_keywords = [
         "millonarios", "atlético nacional", "atletico nacional", "américa de cali", "america de cali",
         "santa fe", "junior de barranquilla", "junior", "independiente medellín", "medellin", "tolima",
@@ -867,7 +1076,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if "colombia" in c_low or any(k in l_low for k in ["colombia", "betplay", "dimayor"]) or any(k in h_low or k in a_low for k in col_keywords):
         return "Liga BetPlay Dimayor", "Colombia", "🇨🇴", LEAGUE_TEAMS_POOL["colombia"]
 
-    # 12. USA / MLS / Fútbol Colegial
+    # 28. USA / MLS / USL / Fútbol Colegial
     usa_keywords = [
         "inter miami", "la galaxy", "los angeles fc", "lafc", "columbus crew", "cincinnati", "real salt lake",
         "new york red bulls", "red bulls", "new york city fc", "nycfc", "seattle sounders", "houston dynamo",
@@ -875,28 +1084,30 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "austin fc", "nashville sc", "st. louis", "philadelphia union", "colorado rapids", "chicago fire",
         "western illinois", "eastern illinois", "west florida", "lipscomb", "west georgia", "little rock",
         "fordham", "vcu", "queens university", "bellarmine", "rutgers", "northwestern", "west virginia", "byu",
-        "richmond kickers", "fc naples", "chattanooga red wolves", "one knoxville", "fort wayne", "corpus christi"
+        "richmond kickers", "fc naples", "chattanooga red wolves", "one knoxville", "fort wayne", "corpus christi",
+        "sporting jax", "dc power", "lexington", "fc tulsa", "tulsa"
     ]
-    if any(k in c_low for k in ["estados unidos", "usa", "eeuu"]) or any(k in l_low for k in ["mls", "major league", "usl", "ncaa"]) or any(k in h_low or k in a_low for k in usa_keywords):
-        return "Major League Soccer (MLS)", "Estados Unidos", "🇺🇸", LEAGUE_TEAMS_POOL["usa"]
+    if any(k in c_low for k in ["estados unidos", "usa", "eeuu"]) or any(k in l_low for k in ["mls", "major league", "usl", "ncaa", "fall-season"]) or any(k in h_low or k in a_low for k in usa_keywords):
+        t_us = "USL / Fútbol Femenino USA" if ("fall-season" in l_low or "sporting jax" in h_low or "dc power" in h_low) else ("USL Championship" if ("lexington" in h_low or "tulsa" in h_low) else "Major League Soccer (MLS)")
+        return t_us, "Estados Unidos", "🇺🇸", LEAGUE_TEAMS_POOL["usa"]
 
-    # 13. Portugal
+    # 29. Portugal (Primeira Liga)
     if "portugal" in c_low or "primeira" in l_low or any(k in h_low or k in a_low for k in ["benfica", "porto", "sporting cp", "braga"]):
         return "Primeira Liga", "Portugal", "🇵🇹", LEAGUE_TEAMS_POOL["portugal"]
 
-    # 14. Países Bajos
-    if "países bajos" in c_low or "holanda" in c_low or "eredivisie" in l_low or any(k in h_low or k in a_low for k in ["ajax", "psv", "feyenoord", "az alkmaar"]):
+    # 30. Países Bajos (Eredivisie)
+    if "países bajos" in c_low or "holanda" in c_low or "eredivisie" in l_low or any(k in h_low or k in a_low for k in ["ajax", "psv", "feyenoord", "az alkmaar", "twente", "heerenveen"]):
         return "Eredivisie", "Países Bajos", "🇳🇱", LEAGUE_TEAMS_POOL["paises_bajos"]
 
-    # 15. Arabia Saudita
+    # 31. Arabia Saudita (Saudi Pro League)
     if "arabia" in c_low or "saudi" in l_low or any(k in h_low or k in a_low for k in ["al hilal", "al nassr", "al ittihad", "al ahli"]):
         return "Saudi Pro League", "Arabia Saudita", "🇸🇦", LEAGUE_TEAMS_POOL["arabia"]
 
-    # Fallback predeterminado según el nombre del equipo
-    clean_title = league if (league and league.lower() not in ("regular-season", "pre-season", "post-season", "oficial", "desconocida")) else "Liga Oficial"
-    if "fc" in h_low or "cr" in h_low or "sc" in h_low:
-        return clean_title, "Brasil", "🇧🇷", LEAGUE_TEAMS_POOL["brasil"]
-    return clean_title, "España", "🇪🇸", LEAGUE_TEAMS_POOL["espana"]
+    # Fallback predeterminado limpio
+    clean_title = league if (league and not league.lower().startswith("202") and league.lower() not in ("regular-season", "pre-season", "post-season", "oficial", "desconocida", "first-stage", "group-stage", "fall-season")) else "Competición Oficial"
+    if country and country.lower() not in ("desconocido", "internacional", ""):
+        return clean_title, country, "⚽", LEAGUE_TEAMS_POOL["champions"]
+    return clean_title, "Internacional", "🌎", LEAGUE_TEAMS_POOL["champions"]
 
 def get_rivals_pool_for_match(home_team: str, away_team: str, sport: str, league: str, country: str) -> list:
     _, _, _, pool = detect_league_and_country(home_team, away_team, sport, league, country)
@@ -2707,187 +2918,249 @@ VERIFIED_REAL_TEAM_MATCHES = {
     ],
     "west ham": [
         {
-            "date": "28/09/2026",
-            "match_home": "West Ham United",
-            "match_away": "Chelsea FC",
-            "venue": "Local",
-            "opponent": "Chelsea FC",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "result": "L",
-            "competition": "Premier League"
-        },
-        {
-            "date": "21/09/2026",
-            "match_home": "Fulham FC",
+            "date": "19/09/2026",
+            "match_home": "Millwall FC",
             "match_away": "West Ham United",
             "venue": "Visitante",
-            "opponent": "Fulham FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Premier League"
-        },
-        {
-            "date": "14/09/2026",
-            "match_home": "West Ham United",
-            "match_away": "Manchester City",
-            "venue": "Local",
-            "opponent": "Manchester City",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "L",
-            "competition": "Premier League"
-        },
-        {
-            "date": "31/08/2026",
-            "match_home": "Crystal Palace",
-            "match_away": "West Ham United",
-            "venue": "Visitante",
-            "opponent": "Crystal Palace",
-            "home_score": 0,
+            "opponent": "Millwall FC",
+            "home_score": 2,
             "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "Premier League"
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "EFL Championship"
         },
         {
-            "date": "24/08/2026",
+            "date": "15/09/2026",
             "match_home": "West Ham United",
-            "match_away": "AFC Bournemouth",
+            "match_away": "Fulham FC",
             "venue": "Local",
-            "opponent": "AFC Bournemouth",
-            "home_score": 1,
+            "opponent": "Fulham FC",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "L",
+            "competition": "Copa de la Liga (Carabao Cup)"
+        },
+        {
+            "date": "11/09/2026",
+            "match_home": "West Ham United",
+            "match_away": "Wrexham AFC",
+            "venue": "Local",
+            "opponent": "Wrexham AFC",
+            "home_score": 6,
             "away_score": 0,
-            "score": "1 - 0",
+            "score": "6 - 0",
             "result": "W",
-            "competition": "Carabao Cup"
+            "competition": "EFL Championship"
+        },
+        {
+            "date": "08/09/2026",
+            "match_home": "Bolton Wanderers FC",
+            "match_away": "West Ham United",
+            "venue": "Visitante",
+            "opponent": "Bolton Wanderers FC",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "EFL Championship"
+        },
+        {
+            "date": "05/09/2026",
+            "match_home": "West Ham United",
+            "match_away": "Derby County FC",
+            "venue": "Local",
+            "opponent": "Derby County FC",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "EFL Championship"
+        }
+    ],
+    "west ham united": [
+        {
+            "date": "19/09/2026",
+            "match_home": "Millwall FC",
+            "match_away": "West Ham United",
+            "venue": "Visitante",
+            "opponent": "Millwall FC",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "EFL Championship"
+        },
+        {
+            "date": "15/09/2026",
+            "match_home": "West Ham United",
+            "match_away": "Fulham FC",
+            "venue": "Local",
+            "opponent": "Fulham FC",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "L",
+            "competition": "Copa de la Liga (Carabao Cup)"
+        },
+        {
+            "date": "11/09/2026",
+            "match_home": "West Ham United",
+            "match_away": "Wrexham AFC",
+            "venue": "Local",
+            "opponent": "Wrexham AFC",
+            "home_score": 6,
+            "away_score": 0,
+            "score": "6 - 0",
+            "result": "W",
+            "competition": "EFL Championship"
+        },
+        {
+            "date": "08/09/2026",
+            "match_home": "Bolton Wanderers FC",
+            "match_away": "West Ham United",
+            "venue": "Visitante",
+            "opponent": "Bolton Wanderers FC",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "EFL Championship"
+        },
+        {
+            "date": "05/09/2026",
+            "match_home": "West Ham United",
+            "match_away": "Derby County FC",
+            "venue": "Local",
+            "opponent": "Derby County FC",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "EFL Championship"
         }
     ],
     "queens": [
         {
-            "date": "28/09/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Millwall FC",
+            "date": "19/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Preston North End FC",
             "venue": "Local",
-            "opponent": "Millwall FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Championship"
-        },
-        {
-            "date": "21/09/2026",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Queens Park Rangers",
-            "venue": "Visitante",
-            "opponent": "Blackburn Rovers",
+            "opponent": "Preston North End FC",
             "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
             "competition": "Championship"
         },
         {
-            "date": "14/09/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Crystal Palace",
-            "venue": "Local",
-            "opponent": "Crystal Palace",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Carabao Cup"
-        },
-        {
-            "date": "30/08/2026",
-            "match_home": "Luton Town",
-            "match_away": "Queens Park Rangers",
+            "date": "12/09/2026",
+            "match_home": "West Bromwich Albion FC",
+            "match_away": "Queens Park Rangers FC",
             "venue": "Visitante",
-            "opponent": "Luton Town",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Championship"
-        },
-        {
-            "date": "24/08/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Plymouth Argyle",
-            "venue": "Local",
-            "opponent": "Plymouth Argyle",
+            "opponent": "West Bromwich Albion FC",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "result": "D",
+            "competition": "Championship"
+        },
+        {
+            "date": "09/09/2026",
+            "match_home": "Charlton Athletic FC",
+            "match_away": "Queens Park Rangers FC",
+            "venue": "Visitante",
+            "opponent": "Charlton Athletic FC",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Championship"
+        },
+        {
+            "date": "05/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Middlesbrough FC",
+            "venue": "Local",
+            "opponent": "Middlesbrough FC",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Championship"
+        },
+        {
+            "date": "02/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Cardiff City FC",
+            "venue": "Local",
+            "opponent": "Cardiff City FC",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
             "competition": "Championship"
         }
     ],
     "qpr": [
         {
-            "date": "28/09/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Millwall FC",
+            "date": "19/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Preston North End FC",
             "venue": "Local",
-            "opponent": "Millwall FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Championship"
-        },
-        {
-            "date": "21/09/2026",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Queens Park Rangers",
-            "venue": "Visitante",
-            "opponent": "Blackburn Rovers",
+            "opponent": "Preston North End FC",
             "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
             "competition": "Championship"
         },
         {
-            "date": "14/09/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Crystal Palace",
-            "venue": "Local",
-            "opponent": "Crystal Palace",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Carabao Cup"
-        },
-        {
-            "date": "30/08/2026",
-            "match_home": "Luton Town",
-            "match_away": "Queens Park Rangers",
+            "date": "12/09/2026",
+            "match_home": "West Bromwich Albion FC",
+            "match_away": "Queens Park Rangers FC",
             "venue": "Visitante",
-            "opponent": "Luton Town",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Championship"
-        },
-        {
-            "date": "24/08/2026",
-            "match_home": "Queens Park Rangers",
-            "match_away": "Plymouth Argyle",
-            "venue": "Local",
-            "opponent": "Plymouth Argyle",
+            "opponent": "West Bromwich Albion FC",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "result": "D",
+            "competition": "Championship"
+        },
+        {
+            "date": "09/09/2026",
+            "match_home": "Charlton Athletic FC",
+            "match_away": "Queens Park Rangers FC",
+            "venue": "Visitante",
+            "opponent": "Charlton Athletic FC",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Championship"
+        },
+        {
+            "date": "05/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Middlesbrough FC",
+            "venue": "Local",
+            "opponent": "Middlesbrough FC",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Championship"
+        },
+        {
+            "date": "02/09/2026",
+            "match_home": "Queens Park Rangers FC",
+            "match_away": "Cardiff City FC",
+            "venue": "Local",
+            "opponent": "Cardiff City FC",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
             "competition": "Championship"
         }
     ]
@@ -3261,7 +3534,7 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
     combined_hash = deterministic_hash(f"{home_team}_{away_team}")
 
     detected_league, detected_country, detected_flag, rivals_pool = detect_league_and_country(home_team, away_team, sport, league, country)
-    if not league or league.lower() in ("regular-season", "pre-season", "post-season", "oficial", "amistoso internacional", "desconocida"):
+    if not league or league.lower().startswith("202") or any(k in league.lower() for k in ("regular-season", "pre-season", "post-season", "oficial", "amistoso internacional", "desconocida", "first-stage", "group-stage", "fall-season", "playoff", "round")):
         comp_name = detected_league
     else:
         comp_name = league
@@ -3291,6 +3564,11 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
 
     if sport == "football":
 
+        def are_similar_team_names(n1: str, n2: str) -> bool:
+            c1 = (n1 or "").lower().replace("club ", "").replace(" fc", "").replace(" sc", "").replace(" af", "").replace(" cf", "").replace(" de ", " ").strip()
+            c2 = (n2 or "").lower().replace("club ", "").replace(" fc", "").replace(" sc", "").replace(" af", "").replace(" cf", "").replace(" de ", " ").strip()
+            return c1 == c2 or (len(c1) >= 4 and len(c2) >= 4 and (c1 in c2 or c2 in c1))
+
         # 1. Últimos 5 del Local
         if verified_h:
             home_last_5 = verified_h
@@ -3301,7 +3579,7 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
                 idx = (h_hash + i * 7) % len(rivals_pool)
                 opp = rivals_pool[idx]
                 step = 1
-                while opp.lower() in used_home_rivals:
+                while opp.lower() in used_home_rivals or are_similar_team_names(opp, home_team):
                     opp = rivals_pool[(idx + step) % len(rivals_pool)]
                     step += 1
                 used_home_rivals.add(opp.lower())
@@ -3349,7 +3627,7 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
                 idx = (a_hash + i * 11) % len(rivals_pool)
                 opp = rivals_pool[idx]
                 step = 1
-                while opp.lower() in used_away_rivals:
+                while opp.lower() in used_away_rivals or are_similar_team_names(opp, away_team):
                     opp = rivals_pool[(idx + step) % len(rivals_pool)]
                     step += 1
                 used_away_rivals.add(opp.lower())

@@ -416,14 +416,25 @@ def try_fetch_external_football():
     Si no hay conexión o no hay clave, regresa None para usar el catálogo local.
     """
 def get_league_and_country_info(comp_name, sport="football", home_team="", away_team=""):
-    # Si la competición es genérica (ej. 'regular-season') o disponemos de los nombres de los equipos
     comp_lower = (comp_name or "").lower().strip()
-    if (home_team or away_team) and comp_lower in ("regular-season", "pre-season", "post-season", "oficial", "amistoso internacional", "desconocida", ""):
+    
+    # 1. Resolver primero con el detector experto si tenemos equipos o si el slug es técnico/genérico
+    is_technical_slug = (
+        comp_lower.startswith("202")
+        or any(k in comp_lower for k in [
+            "regular-season", "pre-season", "post-season", "oficial", "amistoso internacional",
+            "desconocida", "first-stage", "group-stage", "fall-season", "playoff", "round",
+            "keuken", "divisie", "ligue-2", "super-lig", "allsvenskan", "eliteserien", "chinese", "bolivian"
+        ])
+    )
+    if is_technical_slug or home_team or away_team:
         t_clean, c_name, flag, _ = detect_league_and_country(home_team, away_team, sport, comp_name, "")
-        return t_clean, c_name, flag
+        if c_name and c_name != "Internacional" and t_clean != "Competición Oficial":
+            return t_clean, c_name, flag
 
+    # 2. Casos directos por nombre de liga limpio
     if sport == "nba" or "nba" in comp_lower:
-        return "NBA", "Estados Unidos", "🇺🇸"
+        return "NBA", "Estados Unidos", "🏀"
     if "premier" in comp_lower:
         return "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     if "championship" in comp_lower:
