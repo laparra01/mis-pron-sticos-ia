@@ -27,7 +27,8 @@ from prediction_engine import (
     get_football_team_ratings,
     get_nba_team_ratings,
     generate_match_h2h,
-    deterministic_hash
+    deterministic_hash,
+    detect_league_and_country
 )
 from ai_analyzer import (
     generate_ai_analysis,
@@ -414,8 +415,13 @@ def try_fetch_external_football():
     Intenta conectar a Football-Data.org si USE_LIVE_API = True en config.py.
     Si no hay conexión o no hay clave, regresa None para usar el catálogo local.
     """
-def get_league_and_country_info(comp_name, sport="football"):
-    comp_lower = comp_name.lower()
+def get_league_and_country_info(comp_name, sport="football", home_team="", away_team=""):
+    # Si la competición es genérica (ej. 'regular-season') o disponemos de los nombres de los equipos
+    comp_lower = (comp_name or "").lower().strip()
+    if (home_team or away_team) and comp_lower in ("regular-season", "pre-season", "post-season", "oficial", "amistoso internacional", "desconocida", ""):
+        t_clean, c_name, flag, _ = detect_league_and_country(home_team, away_team, sport, comp_name, "")
+        return t_clean, c_name, flag
+
     if sport == "nba" or "nba" in comp_lower:
         return "NBA", "Estados Unidos", "🇺🇸"
     if "premier" in comp_lower:
@@ -456,7 +462,9 @@ def get_league_and_country_info(comp_name, sport="football"):
         return "UEFA Champions League", "Europa", "🏆"
     if "nations" in comp_lower:
         return "UEFA Nations League", "Europa", "🇪🇺"
-    return comp_name, "Internacional", "⚽"
+
+    t_clean, c_name, flag, _ = detect_league_and_country(home_team, away_team, sport, comp_name, "")
+    return t_clean, c_name, flag
 
 def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, score_a: int, minute: int, h_ratings: dict = None, a_ratings: dict = None) -> dict:
     """
@@ -555,10 +563,7 @@ def fetch_espn_live_soccer():
                     if "mexico" in home_name.lower() or "chile" in away_name.lower() or "méxico" in home_name.lower():
                         raw_league = "Selecciones FIFA - Amistoso Internacional"
 
-                    league_title, country_name, flag = get_league_and_country_info(raw_league, "football")
-                    if "mexico" in home_name.lower() or "méxico" in home_name.lower():
-                        country_name = "México"
-                        flag = "🇲🇽"
+                    league_title, country_name, flag = get_league_and_country_info(raw_league, "football", home_name, away_name)
 
                     h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
                     h_ratings = get_football_team_ratings(home_name, league_title, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
@@ -811,7 +816,7 @@ def try_fetch_external_football(date_from=None, date_to=None):
                 except Exception:
                     pretty_date = f"{date_iso} {time_str}"
 
-                league_clean, country_name, flag = get_league_and_country_info(comp, "football")
+                league_clean, country_name, flag = get_league_and_country_info(comp, "football", home_name, away_name)
                 h2h_data = generate_match_h2h(home_name, away_name, "football", league_clean, country=country_name)
                 home_stats = get_football_team_ratings(home_name, league_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
                 away_stats = get_football_team_ratings(away_name, league_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
@@ -870,7 +875,7 @@ def try_fetch_external_football(date_from=None, date_to=None):
                                 existing_keys.add(m_key)
 
                                 raw_slug = e.get("season", {}).get("slug", "") or comp_info.get("league", {}).get("description", "Oficial")
-                                l_clean, c_name, c_flag = get_league_and_country_info(raw_slug, "football")
+                                l_clean, c_name, c_flag = get_league_and_country_info(raw_slug, "football", h_name, a_name)
 
                                 raw_dt = e.get("date", "")
                                 d_iso = raw_dt[:10] if len(raw_dt) >= 10 else target_dt.strftime("%Y-%m-%d")
@@ -1018,7 +1023,7 @@ def fetch_live_matches_data(sport_filter="all"):
     results = []
     if sport_filter in ("all", "football"):
         for item in SOCCER_LIVE_MATCHES:
-            l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football")
+            l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football", item["home_team"], item["away_team"])
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
             home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
             away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
@@ -1114,7 +1119,7 @@ def fetch_matches_data(sport_filter="all"):
     # Modo offline de maqueta local (SOLO cuando USE_LIVE_API = False):
     if sport_filter in ("all", "football"):
         for item in SOCCER_UPCOMING_MATCHES:
-            l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football")
+            l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football", item["home_team"], item["away_team"])
             h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
             home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
             away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
