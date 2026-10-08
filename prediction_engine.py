@@ -947,7 +947,13 @@ LEAGUE_TEAMS_POOL = {
     ],
     "peru": [
         "Universitario de Deportes", "Alianza Lima", "Sporting Cristal", "FBC Melgar", "Cusco FC",
-        "CS Cienciano", "ADT Tarma", "Atlético Grau", "Sport Boys Association", "Universidad César Vallejo"
+        "CS Cienciano", "ADT Tarma", "Atlético Grau", "Los Chankas", "Sport Boys Association",
+        "Universidad César Vallejo", "UTC Cajamarca", "Carlos A. Mannucci", "Comerciantes Unidos",
+        "Deportivo Garcilaso", "Alianza Atlético Sullana", "Sport Huancayo"
+    ],
+    "suiza": [
+        "BSC Young Boys", "FC Basel", "FC Zürich", "FC Lugano", "Servette FC",
+        "FC St. Gallen", "FC Luzern", "FC Winterthur", "Yverdon Sport", "Grasshopper Club Zürich", "FC Sion", "FC Lausanne-Sport"
     ],
     "paraguay": [
         "Club Olimpia", "Club Cerro Porteño", "Club Libertad", "Club Guaraní", "Club Nacional (Par)",
@@ -1128,19 +1134,31 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
 
     # 17. Perú (Liga 1)
     peru_keywords = [
-        "universitario de deportes", "alianza lima", "sporting cristal", "fbc melgar", "cienciano", "adt tarma"
+        "universitario de deportes", "universitario", "alianza lima", "sporting cristal", "fbc melgar", "melgar",
+        "cienciano", "adt tarma", "adt", "grau", "atlético grau", "atletico grau", "chankas", "los chankas",
+        "los chankas cyc", "sport boys", "césar vallejo", "cesar vallejo", "vallejo", "utc cajamarca", "utc",
+        "carlos mannucci", "mannucci", "comerciantes unidos", "garcilaso", "deportivo garcilaso",
+        "alianza atlético", "alianza atletico", "cusco fc", "cusco", "sport huancayo", "huancayo"
     ]
-    if "peru" in c_low or "perú" in c_low or any(k in h_low or k in a_low for k in peru_keywords):
+    if "peru" in c_low or "perú" in c_low or "peru" in l_low or "perú" in l_low or "liga 1" in l_low or "liga1" in l_low or any(k in h_low or k in a_low for k in peru_keywords):
         return "Liga 1 Perú", "Perú", "🇵🇪", LEAGUE_TEAMS_POOL["peru"]
 
-    # 18. Paraguay (Primera División)
+    # 18. Suiza (Super League Suiza)
+    switzerland_keywords = [
+        "young boys", "fc basel", "basel", "fc zürich", "fc zurich", "zürich", "zurich", "fc lugano", "lugano",
+        "servette", "st. gallen", "luzern", "winterthur", "yverdon", "grasshopper", "grasshoppers", "fc sion", "sion", "lausanne"
+    ]
+    if "suiza" in c_low or "switzerland" in c_low or "swiss" in l_low or "super league suiza" in l_low or (("super league" in l_low or "superleague" in l_low) and any(k in h_low or k in a_low for k in switzerland_keywords)) or any(k in h_low or k in a_low for k in switzerland_keywords):
+        return "Super League Suiza", "Suiza", "🇨🇭", LEAGUE_TEAMS_POOL["suiza"]
+
+    # 19. Paraguay (Primera División)
     paraguay_keywords = [
         "olimpia", "cerro porteño", "cerro porteno", "libertad", "guaraní", "guarani", "sportivo ameliano"
     ]
     if "paraguay" in c_low or any(k in h_low or k in a_low for k in paraguay_keywords):
         return "Primera División de Paraguay", "Paraguay", "🇵🇾", LEAGUE_TEAMS_POOL["paraguay"]
 
-    # 19. Inglaterra (Premier League / Championship / Copas Inglesas)
+    # 20. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [
         "west ham", "queens", "qpr", "arsenal", "chelsea", "liverpool", "manchester", "man city", "man utd",
         "tottenham", "spurs", "aston villa", "newcastle", "everton", "fulham", "wolves", "wolverhampton",
@@ -1154,7 +1172,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         t_name = "Championship" if ("championship" in l_low or any(k in h_low or k in a_low for k in ["queens", "qpr", "leeds", "sunderland", "watford", "west brom", "birmingham", "derby", "wrexham", "middlesbrough", "millwall", "norwich", "coventry", "blackburn"])) else ("National League (Inglaterra)" if ("national" in l_low or "sutton" in h_low or "boreham" in h_low) else "Premier League")
         return t_name, "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", LEAGUE_TEAMS_POOL["inglaterra"]
 
-    # 20. Brasil (Brasileirão Série A / Copas / Estadual)
+    # 21. Brasil (Brasileirão Série A / Copas / Estadual)
     brazil_keywords = [
         "flamengo", "palmeiras", "são paulo", "sao paulo", "corinthians", "fluminense", "grêmio", "gremio",
         "internacional", "atlético mineiro", "atletico mineiro", "cruzeiro", "botafogo", "santos",
@@ -1166,14 +1184,14 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if "brasil" in c_low or any(k in l_low for k in ["brasil", "brasileir", "série a", "serie a brasil", "paulista", "carioca", "copa do brasil"]) or any(k in h_low or k in a_low for k in brazil_keywords):
         return "Brasileirão Série A", "Brasil", "🇧🇷", LEAGUE_TEAMS_POOL["brasil"]
 
-    # 21. México (Liga MX)
+    # 22. México (Liga MX)
     mexico_keywords = [
         "américa", "america", "chivas", "guadalajara", "cruz azul", "pumas", "unam", "tigres", "uanl",
         "monterrey", "rayados", "toluca", "pachuca", "santos laguna", "león", "leon", "atlas",
         "tijuana", "xolos", "necaxa", "puebla", "mazatlán", "mazatlan", "querétaro", "queretaro",
         "juárez", "juarez", "san luis", "atlético de san luis"
     ]
-    if "mexic" in c_low or "méxic" in c_low or any(k in l_low for k in ["mexic", "méxic", "liga mx", "expansion", "expansión", "clausura", "apertura"]) or any(k in h_low or k in a_low for k in mexico_keywords):
+    if "mexic" in c_low or "méxic" in c_low or any(k in l_low for k in ["mexic", "méxic", "liga mx", "expansion", "expansión"]) or any(k in h_low or k in a_low for k in mexico_keywords):
         return "Liga MX", "México", "🇲🇽", LEAGUE_TEAMS_POOL["mexico"]
 
     # 22. Alemania (Bundesliga)
@@ -4251,47 +4269,203 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         live_pick = f"Menos de {current_h + current_a + 1.5} Goles Totales"
         conf = max(55.0, prob_no_more_goals)
         risk = "Medio"
+    # 1. 1X2 En Vivo (Cierre)
+    if pct_home >= pct_away and pct_home >= pct_draw:
+        p1_name = "Victoria Local"
+        p1_prob = pct_home
+    elif pct_away >= pct_home and pct_away >= pct_draw:
+        p1_name = "Victoria Visitante"
+        p1_prob = pct_away
+    else:
+        p1_name = "Empate Final (X)"
+        p1_prob = pct_draw
+    p1_odds = round(100.0 / max(p1_prob, 1.0), 2)
+    p1_risk = "Bajo" if p1_prob >= 65 else ("Medio" if p1_prob >= 50 else "Alto")
+    p1_color = "emerald" if p1_risk == "Bajo" else ("amber" if p1_risk == "Medio" else "rose")
+    p1_exp = f"Con el marcador en {current_h}-{current_a} y {remaining_mins}' restantes, el modelo cuantitativo proyecta este desenlace con {p1_prob}% de probabilidad."
+
+    # 2. Doble Oportunidad en Juego
+    if pct_home >= pct_away:
+        p2_name = "Local o Empate (1X)"
+        p2_prob = round(min(96.0, pct_home + pct_draw), 1)
+        p2_exp = f"Cobertura en vivo de alta probabilidad para respaldar al conjunto local ({p2_prob}% acumulado)."
+    else:
+        p2_name = "Empate o Visitante (X2)"
+        p2_prob = round(min(96.0, pct_away + pct_draw), 1)
+        p2_exp = f"Cobertura táctica en juego protegiendo al visitante y el reparto de puntos ({p2_prob}% acumulado)."
+    p2_odds = round(100.0 / max(p2_prob, 1.0), 2)
+
+    # 3. Línea Total de Goles Restante
+    line_total = current_h + current_a + 1.5
+    under_line_prob = round(min(95.0, max(52.0, prob_no_more_goals + (0.35 * max(prob_next_goal_home, prob_next_goal_away)))), 1)
+    if minute >= 60 or prob_no_more_goals > 45:
+        p3_name = f"Menos de {line_total} Goles Totales"
+        p3_prob = under_line_prob
+        p3_risk = "Bajo" if p3_prob >= 65 else "Medio"
+        p3_exp = f"El desgaste físico y el control defensivo en los {remaining_mins}' restantes favorecen una línea inferior a {line_total} goles."
+    else:
+        p3_name = f"Más de {current_h + current_a + 0.5} Goles Totales"
+        p3_prob = round(100.0 - prob_no_more_goals, 1)
+        p3_risk = "Medio"
+        p3_exp = f"Con {remaining_mins}' por jugar y ritmo ofensivo activo, se proyecta al menos 1 anotación adicional en el encuentro."
+    p3_odds = round(100.0 / max(p3_prob, 1.0), 2)
+    p3_color = "emerald" if p3_risk == "Bajo" else "amber"
+
+    # 4. Ambos Equipos Anotan En Vivo (BTTS)
+    if current_h > 0 and current_a > 0:
+        p4_name = "Ambos Equipos Anotan: SÍ (Confirmado)"
+        p4_prob = 99.0
+        p4_odds = 1.01
+        p4_risk = "Bajo"
+        p4_color = "emerald"
+        p4_exp = f"Ambos equipos ya han marcado en el partido ({current_h}-{current_a}). Pronóstico cumplido."
+    elif current_h > 0 and current_a == 0:
+        p_away_score = round((1.0 - math.exp(-mu_rem)) * 100, 1)
+        if p_away_score >= 45:
+            p4_name = "Ambos Equipos Anotan: SÍ"
+            p4_prob = p_away_score
+            p4_risk = "Medio"
+            p4_color = "amber"
+            p4_exp = f"El visitante adelanta líneas en busca del gol con {p_away_score}% de probabilidad de marcar en los {remaining_mins}' restantes."
+        else:
+            p4_name = "Ambos Equipos Anotan: NO"
+            p4_prob = round(100.0 - p_away_score, 1)
+            p4_risk = "Bajo" if p4_prob >= 65 else "Medio"
+            p4_color = "emerald" if p4_risk == "Bajo" else "amber"
+            p4_exp = f"La zaga local mantiene solvencia y el rival registra {shots_a} remates a puerta, perfilando portería a cero con {p4_prob}%."
+        p4_odds = round(100.0 / max(p4_prob, 1.0), 2)
+    elif current_h == 0 and current_a > 0:
+        p_home_score = round((1.0 - math.exp(-lambda_rem)) * 100, 1)
+        if p_home_score >= 45:
+            p4_name = "Ambos Equipos Anotan: SÍ"
+            p4_prob = p_home_score
+            p4_risk = "Medio"
+            p4_color = "amber"
+            p4_exp = f"El anfitrión presiona en territorio contrario buscando igualar el marcador con {p_home_score}% de probabilidad."
+        else:
+            p4_name = "Ambos Equipos Anotan: NO"
+            p4_prob = round(100.0 - p_home_score, 1)
+            p4_risk = "Bajo" if p4_prob >= 65 else "Medio"
+            p4_color = "emerald" if p4_risk == "Bajo" else "amber"
+            p4_exp = f"El visitante repliega en bloque bajo protegiendo su ventaja con {p4_prob}% de probabilidad de mantener arco en cero."
+        p4_odds = round(100.0 / max(p4_prob, 1.0), 2)
+    else:
+        p_both = round((1.0 - math.exp(-lambda_rem)) * (1.0 - math.exp(-mu_rem)) * 100, 1)
+        if p_both >= 45:
+            p4_name = "Ambos Equipos Anotan: SÍ"
+            p4_prob = p_both
+            p4_risk = "Medio"
+            p4_color = "amber"
+            p4_exp = f"Duelo abierto con transiciones ofensivas rápidas y {p_both}% de probabilidad de goles de ambos bandos."
+        else:
+            p4_name = "Ambos Equipos Anotan: NO"
+            p4_prob = round(100.0 - p_both, 1)
+            p4_risk = "Bajo" if p4_prob >= 65 else "Medio"
+            p4_color = "emerald" if p4_risk == "Bajo" else "amber"
+            p4_exp = f"Marcador 0-0 con trámite trabado en la medular. Alta probabilidad de que no marquen ambos ({p4_prob}%)."
+        p4_odds = round(100.0 / max(p4_prob, 1.0), 2)
+
+    # 5. Próximo Gol en Juego
+    if prob_next_goal_home >= prob_next_goal_away and prob_next_goal_home >= prob_no_more_goals:
+        p5_name = "Próximo Gol: Local"
+        p5_prob = prob_next_goal_home
+        p5_exp = f"Mayor caudal de remates a puerta ({shots_h}) y control territorial del juego."
+    elif prob_next_goal_away >= prob_next_goal_home and prob_next_goal_away >= prob_no_more_goals:
+        p5_name = "Próximo Gol: Visitante"
+        p5_prob = prob_next_goal_away
+        p5_exp = f"Mayor profundidad del visitante en contragolpe con {shots_a} remates a puerta."
+    else:
+        p5_name = "No Habrá Más Goles"
+        p5_prob = prob_no_more_goals
+        p5_exp = f"El desgaste físico y el control defensivo favorecen el cierre del marcador en {remaining_mins}' restantes."
+    p5_odds = round(100.0 / max(p5_prob, 1.0), 2)
+    p5_risk = "Medio"
+    p5_color = "amber"
+
+    # 6. Total de Córners en Vivo
+    c_h = live_stats.get("corners_home", 0)
+    c_a = live_stats.get("corners_away", 0)
+    current_corners = c_h + c_a
+    c_rate = (current_corners / max(10, minute)) if minute > 0 else 0.1
+    proj_corners_rem = c_rate * remaining_mins
+    tot_proj_corners = round(current_corners + proj_corners_rem, 1)
+
+    c_line = round(tot_proj_corners) + 0.5 if round(tot_proj_corners) >= current_corners + 1 else current_corners + 1.5
+    p_over_corners = round(min(88.0, max(25.0, (1.0 - math.exp(-max(0.2, proj_corners_rem))) * 100)), 1)
+    if p_over_corners >= 50.0 and remaining_mins >= 20:
+        p6_name = f"Más de {c_line - 1.0:.1f} Córners Totales"
+        p6_prob = p_over_corners
+        p6_risk = "Medio"
+        p6_color = "amber"
+        p6_exp = f"Con {current_corners} saques de esquina acumulados ({c_h} vs {c_a}) y llegadas por bandas, el modelo proyecta sobre {c_line - 1.0:.1f} córners."
+    else:
+        p6_name = f"Menos de {c_line:.1f} Córners Totales"
+        p6_prob = round(100.0 - p_over_corners, 1)
+        p6_risk = "Bajo" if p6_prob >= 65 else "Medio"
+        p6_color = "emerald" if p6_risk == "Bajo" else "amber"
+        p6_exp = f"Juego trabado con escasa llegada por bandas ({current_corners} córners en {minute}'). Se proyecta un total menor a {c_line:.1f} córners."
+    p6_odds = round(100.0 / max(p6_prob, 1.0), 2)
 
     four_predictions = [
         {
             "id": 1,
             "market": "1X2 En Vivo (Cierre)",
-            "name": f"Victoria Local" if pct_home >= pct_away else f"Victoria Visitante",
-            "probability": max(pct_home, pct_away),
-            "fair_odds": round(100.0 / max(pct_home, pct_away, 1.0), 2),
-            "risk_level": "Bajo" if max(pct_home, pct_away) >= 65 else "Medio",
-            "risk_color": "emerald" if max(pct_home, pct_away) >= 65 else "amber",
-            "explanation": f"Con el marcador en {current_h}-{current_a} y {90 - minute}' restantes, el modelo cuantitativo proyecta este desenlace con {max(pct_home, pct_away)}% de probabilidad."
+            "name": p1_name,
+            "probability": p1_prob,
+            "fair_odds": p1_odds,
+            "risk_level": p1_risk,
+            "risk_color": p1_color,
+            "explanation": p1_exp
         },
         {
             "id": 2,
-            "market": "Próximo Gol en Vivo",
-            "name": "Próximo Gol: Local" if prob_next_goal_home >= prob_next_goal_away else "Próximo Gol: Visitante",
-            "probability": max(prob_next_goal_home, prob_next_goal_away),
-            "fair_odds": round(100.0 / max(prob_next_goal_home, prob_next_goal_away, 1.0), 2),
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "explanation": f"Mayor intensidad ofensiva generada en el tercio final con {shots_h} vs {shots_a} remates a puerta."
+            "market": "Doble Oportunidad en Juego",
+            "name": p2_name,
+            "probability": p2_prob,
+            "fair_odds": p2_odds,
+            "risk_level": "Bajo",
+            "risk_color": "emerald",
+            "explanation": p2_exp
         },
         {
             "id": 3,
-            "market": "Línea Total Restante",
-            "name": f"Menos de {current_h + current_a + 1.5} Goles Totales",
-            "probability": prob_no_more_goals if prob_no_more_goals > 40 else 58.5,
-            "fair_odds": round(100.0 / max(prob_no_more_goals, 40.0), 2),
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "explanation": "El desgaste físico del tramo final y la gestión de faltas favorecen el cierre de espacios defensivos."
+            "market": "Línea Total de Goles Restante",
+            "name": p3_name,
+            "probability": p3_prob,
+            "fair_odds": p3_odds,
+            "risk_level": p3_risk,
+            "risk_color": p3_color,
+            "explanation": p3_exp
         },
         {
             "id": 4,
-            "market": "Doble Oportunidad en Juego",
-            "name": "Local o Empate (1X)" if pct_home >= pct_away else "Empate o Visitante (X2)",
-            "probability": round(min(96.0, (pct_home if pct_home >= pct_away else pct_away) + pct_draw), 1),
-            "fair_odds": 1.18,
-            "risk_level": "Bajo",
-            "risk_color": "emerald",
-            "explanation": "Cobertura en vivo de alta probabilidad para proteger la apuesta con dos resultados favorables."
+            "market": "Ambos Equipos Anotan (BTTS)",
+            "name": p4_name,
+            "probability": p4_prob,
+            "fair_odds": p4_odds,
+            "risk_level": p4_risk,
+            "risk_color": p4_color,
+            "explanation": p4_exp
+        },
+        {
+            "id": 5,
+            "market": "Próximo Gol en Juego",
+            "name": p5_name,
+            "probability": p5_prob,
+            "fair_odds": p5_odds,
+            "risk_level": p5_risk,
+            "risk_color": p5_color,
+            "explanation": p5_exp
+        },
+        {
+            "id": 6,
+            "market": "Total de Córners en Vivo",
+            "name": p6_name,
+            "probability": p6_prob,
+            "fair_odds": p6_odds,
+            "risk_level": p6_risk,
+            "risk_color": p6_color,
+            "explanation": p6_exp
         }
     ]
 
@@ -4308,7 +4482,8 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "confidence": conf,
         "risk_level": risk,
         "is_value_bet": conf >= 65,
-        "four_predictions": four_predictions
+        "four_predictions": four_predictions,
+        "six_predictions": four_predictions
     }
 
 def normal_cdf(x: float) -> float:
@@ -4620,6 +4795,26 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
             "risk_level": "Medio",
             "risk_color": "amber",
             "explanation": "Rendimiento inmediato de los quintetos sobre la pista en este tramo de juego."
+        },
+        {
+            "id": 5,
+            "market": "Hándicap / Spread en Vivo",
+            "name": f"{'Local' if pct_h >= pct_a else 'Visitante'} {'-3.5' if abs(final_proj_h - final_proj_a) > 5 else '+2.5'}",
+            "probability": 60.0,
+            "fair_odds": 1.67,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "explanation": "Línea ajustada con la proyección de diferencial y ritmo de posesiones del cierre."
+        },
+        {
+            "id": 6,
+            "market": "Margen de Victoria Proyectado",
+            "name": f"{'Local' if pct_h >= pct_a else 'Visitante'} por {max(1, round(abs(final_proj_h - final_proj_a)))}+ Pts",
+            "probability": 55.0,
+            "fair_odds": 1.82,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "explanation": "Diferencia esperada según eficiencia neta ofensiva y defensiva sobre la duela."
         }
     ]
 
@@ -4636,7 +4831,8 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         "risk_level": risk,
         "is_value_bet": conf >= 65,
         "quarters_breakdown": quarters_breakdown,
-        "four_predictions": four_predictions
+        "four_predictions": four_predictions,
+        "six_predictions": four_predictions
     }
 
 

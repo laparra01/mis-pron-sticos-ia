@@ -142,12 +142,12 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
     score = live_pred.get('current_score', '0-0')
     pick = live_pred.get('recommended_pick', 'Victoria Local')
     poss_h = live_stats.get('possession_home', 50)
-    shots_h = live_stats.get('shots_on_target_home', 3)
-    shots_a = live_stats.get('shots_on_target_away', 3)
-    tot_shots_h = live_stats.get('total_shots_home', max(shots_h + 3, 6))
-    tot_shots_a = live_stats.get('total_shots_away', max(shots_a + 2, 5))
-    corners_h = live_stats.get('corners_home', 4)
-    corners_a = live_stats.get('corners_away', 3)
+    shots_h = live_stats.get('shots_on_target_home', 0)
+    shots_a = live_stats.get('shots_on_target_away', 0)
+    tot_shots_h = live_stats.get('total_shots_home', max(shots_h, 0))
+    tot_shots_a = live_stats.get('total_shots_away', max(shots_a, 0))
+    corners_h = live_stats.get('corners_home', 0)
+    corners_a = live_stats.get('corners_away', 0)
     tot_corners = corners_h + corners_a
 
     if force_gemini:
@@ -155,19 +155,24 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
 Actúa como analista deportivo experto en apuestas y táctica en vivo (estilo 'Mis Pronósticos AI').
 Partido en juego: {home} vs {away} (Marcador {score}, Minuto {minute}')
 Estadísticas oficiales en tiempo real:
-- Posesión: {home} {poss_h}% vs {away} {100-poss_h}%
-- Tiros a puerta: {home} {shots_h} vs {away} {shots_a}
+- Posesión de balón: {home} {poss_h}% vs {away} {100-poss_h}%
+- Remates a puerta: {home} {shots_h} vs {away} {shots_a}
 - Tiros totales: {home} {tot_shots_h} vs {away} {tot_shots_a}
-- Córners: {home} {corners_h} vs {away} {corners_a} (Total acumulado: {tot_corners} córners)
+- Saques de esquina (córners): {home} {corners_h} vs {away} {corners_a} (Total acumulado: {tot_corners} córners)
 - Pick principal en vivo: {pick} ({live_pred.get('confidence', 60)}%)
+
+REGLAS CRÍTICAS DE FIDELIDAD NUMÉRICA (OBLIGATORIAS):
+1. Debes respetar RIGUROSAMENTE los datos numéricos reales provistos arriba.
+2. Si un equipo tiene 0 tiros a puerta o 0 saques de esquina, indica textualmente y sin rodeos "0 tiros a puerta" o "0 saques de esquina". NO inventes que hubo más córners, remates a puerta o asedio ofensivo de los que realmente indican las estadísticas oficiales.
+3. En 'analisis_corners_remates', cita exactamente las cifras provistas ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a} remates, y {corners_h} vs {corners_a} córners) y analiza tácticamente lo que estos números exactos reflejan en el terreno de juego.
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 {{
-  "resumen": "Diagnóstico en 1 frase directa del momento del juego",
-  "justificacion_estadistica": "Explicación del ritmo en juego, xG y expectativa restante",
-  "analisis_corners_remates": "Lectura táctica profunda: efectividad y puntería de tiros ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a}), asedio por bandas ({corners_h} vs {corners_a} córners) y proyección de córners o peligro de gol en los minutos restantes",
-  "factor_clave": "Quién domina el momentum táctico y control del juego",
-  "advertencia_riesgo": "Riesgo en el cierre del partido",
+  "resumen": "Diagnóstico en 1 frase directa y veraz del momento del partido",
+  "justificacion_estadistica": "Explicación fiel basada en los {shots_h} vs {shots_a} remates a puerta y la posesión de balón",
+  "analisis_corners_remates": "Lectura táctica precisa citando fielmente remates ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a}) y córners ({corners_h} vs {corners_a} córners acumulados)",
+  "factor_clave": "Quién domina el ritmo del partido según las estadísticas reales",
+  "advertencia_riesgo": "Riesgo táctico en el tramo final",
   "marcador_sugerido": "{score}"
 }}
 """
@@ -176,17 +181,19 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
             return ai_result
 
     # Fallback analítico cuantitativo en vivo
-    eff_h = round((shots_h / max(tot_shots_h, 1)) * 100)
-    eff_a = round((shots_a / max(tot_shots_a, 1)) * 100)
+    eff_h = round((shots_h / max(tot_shots_h, 1)) * 100) if tot_shots_h > 0 else 0
+    eff_a = round((shots_a / max(tot_shots_a, 1)) * 100) if tot_shots_a > 0 else 0
 
-    if corners_h > corners_a:
-        corner_read = f"{home} vuelca su juego por las bandas generando {corners_h} saques de esquina (vs {corners_a} de {away})."
+    if tot_corners == 0:
+        corner_read = f"Trámite trabado en mediocampo sin profundidad por bandas (0 saques de esquina registrados hasta el momento)."
+    elif corners_h > corners_a:
+        corner_read = f"{home} vuelca su juego por las bandas sumando {corners_h} saque(s) de esquina (frente a {corners_a} de {away})."
     elif corners_a > corners_h:
-        corner_read = f"{away} gana profundidad en tres cuartos de cancha sumando {corners_a} córners a favor (vs {corners_h} de {home})."
+        corner_read = f"{away} gana profundidad en tres cuartos de cancha sumando {corners_a} córner(s) a favor (frente a {corners_h} de {home})."
     else:
         corner_read = f"Juego disputado en el carril central con paridad en tiros de esquina ({corners_h} vs {corners_a})."
 
-    proj_corners = round(tot_corners + max(1.5, ((90 - minute) / 90.0) * 4.5), 1)
+    proj_corners = round(tot_corners + max(0.5, ((90 - minute) / 90.0) * max(1.0, tot_corners)), 1)
 
     analisis_cr = (
         f"{corner_read} "
@@ -200,7 +207,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
         f"{home} registra {poss_h}% de posesión y {shots_h} remates a puerta (vs {shots_a} de {away}). "
         f"La probabilidad en vivo para victoria local es de {live_pred.get('prob_home', 50)}%, empate {live_pred.get('prob_draw', 25)}% y visitante {live_pred.get('prob_away', 25)}%."
     )
-    factor = f"Momentum ofensivo: {home if poss_h >= 50 else away} domina el mediocampo y la presión alta ({tot_corners} córners combinados)."
+    factor = f"Momentum ofensivo: {home if poss_h >= 50 else away} domina la posesión ({poss_h}% vs {100-poss_h}%) con {shots_h} vs {shots_a} tiros a puerta."
     advertencia = f"En los últimos minutos aumenta el riesgo por desorden físico. Probabilidad de no más goles: {live_pred.get('prob_no_more_goals', 40)}%."
 
     return {

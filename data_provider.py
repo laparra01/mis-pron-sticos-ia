@@ -543,6 +543,115 @@ def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, sc
         "dangerous_attacks_away": round(poss_a * 0.82 + (minute * 0.14))
     }
 
+_espn_event_cache = {}
+
+def fetch_espn_event_real_stats(event_id: str) -> dict:
+    """
+    Consulta las estadísticas oficiales en vivo de ESPN (boxscore en tiempo real):
+    tiros a puerta, tiros totales, córners reales, posesión exacta, faltas y tarjetas.
+    Usa caché con TTL de 30s para máxima rapidez.
+    """
+    global _espn_event_cache
+    now = time.time()
+    if event_id in _espn_event_cache:
+        cached = _espn_event_cache[event_id]
+        if now - cached["timestamp"] < 30:
+            return cached["data"]
+
+    url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event={event_id}"
+    try:
+        resp = requests.get(url, timeout=4)
+        if resp.status_code == 200:
+            data = resp.json()
+            header = data.get("header", {})
+            league_obj = header.get("league", {})
+            season_obj = header.get("season", {})
+            league_name = league_obj.get("name", "") or season_obj.get("name", "")
+
+            boxscore = data.get("boxscore", {})
+            teams = boxscore.get("teams", [])
+            header_comps = header.get("competitions", [{}])[0].get("competitors", [])
+
+            home_id = next((str(c.get("id")) for c in header_comps if c.get("homeAway") == "home"), None)
+            away_id = next((str(c.get("id")) for c in header_comps if c.get("homeAway") == "away"), None)
+
+            home_team_stats = None
+            away_team_stats = None
+
+            for t in teams:
+                t_id = str(t.get("team", {}).get("id", ""))
+                if home_id and t_id == home_id:
+                    home_team_stats = t
+                elif away_id and t_id == away_id:
+                    away_team_stats = t
+
+            if not home_team_stats and len(teams) >= 1:
+                home_team_stats = teams[0]
+            if not away_team_stats and len(teams) >= 2:
+                away_team_stats = teams[1]
+
+            def extract_team_stats(t_obj):
+                if not t_obj:
+                    return {}
+                st = {}
+                for s in t_obj.get("statistics", []):
+                    st[s.get("name", "")] = s.get("displayValue", "")
+                return st
+
+            st_h = extract_team_stats(home_team_stats)
+            st_a = extract_team_stats(away_team_stats)
+
+            def parse_stat_int(val, default=0):
+                try:
+                    return int(str(val).split(".")[0].strip())
+                except Exception:
+                    return default
+
+            def parse_stat_float(val, default=50.0):
+                try:
+                    return float(str(val).replace("%", "").strip())
+                except Exception:
+                    return default
+
+            poss_h = round(parse_stat_float(st_h.get("possessionPct"), 50.0))
+            poss_a = 100 - poss_h
+            shots_h = parse_stat_int(st_h.get("shotsOnTarget"), 0)
+            shots_a = parse_stat_int(st_a.get("shotsOnTarget"), 0)
+            tot_h = parse_stat_int(st_h.get("totalShots"), shots_h)
+            tot_a = parse_stat_int(st_a.get("totalShots"), shots_a)
+            corn_h = parse_stat_int(st_h.get("wonCorners"), 0)
+            corn_a = parse_stat_int(st_a.get("wonCorners"), 0)
+            fouls_h = parse_stat_int(st_h.get("foulsCommitted"), 0)
+            fouls_a = parse_stat_int(st_a.get("foulsCommitted"), 0)
+            yc_h = parse_stat_int(st_h.get("yellowCards"), 0)
+            yc_a = parse_stat_int(st_a.get("yellowCards"), 0)
+
+            res = {
+                "league_name": league_name,
+                "stats": {
+                    "possession_home": poss_h,
+                    "possession_away": poss_a,
+                    "shots_on_target_home": shots_h,
+                    "shots_on_target_away": shots_a,
+                    "total_shots_home": tot_h,
+                    "total_shots_away": tot_a,
+                    "corners_home": corn_h,
+                    "corners_away": corn_a,
+                    "fouls_home": fouls_h,
+                    "fouls_away": fouls_a,
+                    "yellow_cards_home": yc_h,
+                    "yellow_cards_away": yc_a,
+                    "dangerous_attacks_home": round(poss_h * 0.9),
+                    "dangerous_attacks_away": round(poss_a * 0.9),
+                    "is_real_live": True
+                }
+            }
+            _espn_event_cache[event_id] = {"data": res, "timestamp": now}
+            return res
+    except Exception as ex:
+        print(f"[ESPN] Error fetching event stats {event_id}: {ex}")
+    return None
+
 def fetch_espn_live_soccer():
     """
     Obtiene partidos de fútbol en vivo transmitidos por ESPN (incluye selecciones como México, Concacaf, Conmebol, etc.).
@@ -571,7 +680,14 @@ def fetch_espn_live_soccer():
                     except Exception:
                         minute = 65
 
-                    raw_league = e.get("season", {}).get("slug", "") or comp.get("league", {}).get("description", "Amistoso Internacional")
+                    event_id = str(e.get('id', ''))
+                    real_event_info = fetch_espn_event_real_stats(event_id) if event_id else None
+
+                    raw_league = ""
+                    if real_event_info and real_event_info.get("league_name"):
+                        raw_league = real_event_info["league_name"]
+                    if not raw_league or raw_league.lower() in ("clausura", "apertura", "regular-season", "pre-season"):
+                        raw_league = e.get("season", {}).get("slug", "") or comp.get("league", {}).get("description", "Amistoso Internacional")
                     if "mexico" in home_name.lower() or "chile" in away_name.lower() or "méxico" in home_name.lower():
                         raw_league = "Selecciones FIFA - Amistoso Internacional"
 
@@ -580,7 +696,11 @@ def fetch_espn_live_soccer():
                     h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
                     h_ratings = get_football_team_ratings(home_name, league_title, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
                     a_ratings = get_football_team_ratings(away_name, league_title, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-                    live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
+
+                    if real_event_info and real_event_info.get("stats"):
+                        live_stats = real_event_info["stats"]
+                    else:
+                        live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
 
                     pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
                     ai_resp = generate_live_ai_analysis({"home_team": home_name, "away_team": away_name, "league": league_title}, pred, live_stats)
