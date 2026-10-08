@@ -79,6 +79,24 @@ SUPPORTED_LEAGUES = [
         "flag": "🇨🇴",
         "max_upcoming": 15
     },
+    {
+        "id": 131,
+        "slug": "peru",
+        "name": "Liga 1 de Perú",
+        "country": "Perú",
+        "code": "pe",
+        "flag": "🇵🇪",
+        "max_upcoming": 15
+    },
+    {
+        "id": 144,
+        "slug": "bolivia",
+        "name": "Primera División de Bolivia",
+        "country": "Bolivia",
+        "code": "bo",
+        "flag": "🇧🇴",
+        "max_upcoming": 15
+    },
 
     # Europa Domésticas
     {
@@ -127,6 +145,15 @@ SUPPORTED_LEAGUES = [
         "max_upcoming": 12
     },
     {
+        "id": 53,
+        "slug": "francia",
+        "name": "Ligue 1 de Francia",
+        "country": "Francia",
+        "code": "fr",
+        "flag": "🇫🇷",
+        "max_upcoming": 12
+    },
+    {
         "id": 146,
         "slug": "bundesliga_2",
         "name": "2. Bundesliga",
@@ -162,6 +189,24 @@ SUPPORTED_LEAGUES = [
         "flag": "🇩🇰",
         "max_upcoming": 12
     },
+    {
+        "id": 40,
+        "slug": "belgica",
+        "name": "Pro League de Bélgica",
+        "country": "Bélgica",
+        "code": "be",
+        "flag": "🇧🇪",
+        "max_upcoming": 12
+    },
+    {
+        "id": 69,
+        "slug": "suiza",
+        "name": "Super League de Suiza",
+        "country": "Suiza",
+        "code": "ch",
+        "flag": "🇨🇭",
+        "max_upcoming": 12
+    },
 
     # Torneos Internacionales UEFA
     {
@@ -190,6 +235,17 @@ SUPPORTED_LEAGUES = [
         "code": "eu",
         "flag": "🏆",
         "max_upcoming": 18
+    },
+
+    # Asia
+    {
+        "id": 223,
+        "slug": "japon",
+        "name": "J1 League de Japón",
+        "country": "Japón",
+        "code": "jp",
+        "flag": "🇯🇵",
+        "max_upcoming": 15
     }
 ]
 
