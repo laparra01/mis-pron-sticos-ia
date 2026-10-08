@@ -3,7 +3,7 @@
   "league_id": 336,
   "country": "Guatemala",
   "country_code": "gt",
-  "last_updated": "2026-10-08T11:22:40.638340",
+  "last_updated": "2026-10-08T20:25:13.662127",
   "total_fixtures": 12,
   "team_histories": {
     "Antigua Guatemala": [
@@ -1308,6 +1308,8 @@
       "date": "Jue 8 Oct, 19:00",
       "date_iso": "2026-10-08",
       "time": "19:00",
+      "timestamp": 1791507600,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -1590,9 +1592,7 @@
           "text": "Antigua Guatemala 2 victorias • 1 empates • CSD Municipal 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791507600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861281",
@@ -1608,6 +1608,8 @@
       "date": "Sáb 10 Oct, 15:00",
       "date_iso": "2026-10-10",
       "time": "15:00",
+      "timestamp": 1791666000,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -1890,9 +1892,7 @@
           "text": "Aurora FC 1 victorias • 2 empates • Club Xelajú 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791666000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861285",
@@ -1908,6 +1908,8 @@
       "date": "Sáb 10 Oct, 17:00",
       "date_iso": "2026-10-10",
       "time": "17:00",
+      "timestamp": 1791673200,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -2146,9 +2148,7 @@
           "text": "CD Suchitepéquez 0 victorias • 0 empates • Deportivo Mixco 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791673200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861283",
@@ -2164,6 +2164,8 @@
       "date": "Sáb 10 Oct, 19:00",
       "date_iso": "2026-10-10",
       "time": "19:00",
+      "timestamp": 1791680400,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -2446,9 +2448,7 @@
           "text": "Deportivo Malacateco 2 victorias • 1 empates • Guastatoya 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791680400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861282",
@@ -2464,6 +2464,8 @@
       "date": "Dom 11 Oct, 15:00",
       "date_iso": "2026-10-11",
       "time": "15:00",
+      "timestamp": 1791752400,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -2702,9 +2704,7 @@
           "text": "San Pedro 0 victorias • 0 empates • Comunicaciones FC 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791752400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861284",
@@ -2720,6 +2720,8 @@
       "date": "Dom 11 Oct, 17:00",
       "date_iso": "2026-10-11",
       "time": "17:00",
+      "timestamp": 1791759600,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -3002,9 +3004,7 @@
           "text": "CSD Municipal 5 victorias • 0 empates • Deportivo Marquense 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791759600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861280",
@@ -3020,6 +3020,8 @@
       "date": "Dom 11 Oct, 19:10",
       "date_iso": "2026-10-11",
       "time": "19:10",
+      "timestamp": 1791767400,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -3302,9 +3304,7 @@
           "text": "Antigua Guatemala 1 victorias • 3 empates • Coban Imperial 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791767400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861287",
@@ -3320,6 +3320,8 @@
       "date": "Mié 14 Oct, 17:00",
       "date_iso": "2026-10-14",
       "time": "17:00",
+      "timestamp": 1792018800,
+      "timezone": "America/Guatemala",
       "round": "14",
       "h2h": {
         "home_last_5": [
@@ -3602,9 +3604,7 @@
           "text": "Comunicaciones FC 1 victorias • 1 empates • Aurora FC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792018800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861288",
@@ -3620,6 +3620,8 @@
       "date": "Mié 14 Oct, 19:00",
       "date_iso": "2026-10-14",
       "time": "19:00",
+      "timestamp": 1792026000,
+      "timezone": "America/Guatemala",
       "round": "14",
       "h2h": {
         "home_last_5": [
@@ -3902,9 +3904,7 @@
           "text": "Guastatoya 1 victorias • 0 empates • Antigua Guatemala 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792026000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861289",
@@ -3920,6 +3920,8 @@
       "date": "Mié 14 Oct, 21:00",
       "date_iso": "2026-10-14",
       "time": "21:00",
+      "timestamp": 1792033200,
+      "timezone": "America/Guatemala",
       "round": "14",
       "h2h": {
         "home_last_5": [
@@ -4202,9 +4204,7 @@
           "text": "Deportivo Marquense 1 victorias • 0 empates • Deportivo Mixco 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792033200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861286",
@@ -4220,6 +4220,8 @@
       "date": "Jue 15 Oct, 15:00",
       "date_iso": "2026-10-15",
       "time": "15:00",
+      "timestamp": 1792098000,
+      "timezone": "America/Guatemala",
       "round": "14",
       "h2h": {
         "home_last_5": [
@@ -4502,9 +4504,7 @@
           "text": "Coban Imperial 0 victorias • 2 empates • CSD Municipal 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792098000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_guatemala_5861290",
@@ -4520,6 +4520,8 @@
       "date": "Jue 15 Oct, 19:00",
       "date_iso": "2026-10-15",
       "time": "19:00",
+      "timestamp": 1792112400,
+      "timezone": "America/Guatemala",
       "round": "14",
       "h2h": {
         "home_last_5": [
@@ -4758,9 +4760,7 @@
           "text": "CD Suchitepéquez 0 victorias • 0 empates • San Pedro 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792112400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

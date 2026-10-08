@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-08T11:25:59.859943",
+  "last_updated": "2026-10-08T20:25:46.423586",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -349,11 +349,11 @@
         "score": "4 - 1",
         "result": "L",
         "competition": "Championship",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 2,
+        "total_corners": 7,
+        "shots_on_target": 6,
+        "total_shots": 21
       },
       {
         "match_id": "5836816",
@@ -834,11 +834,11 @@
         "score": "0 - 1",
         "result": "W",
         "competition": "Championship",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
+        "corners_for": 3,
+        "corners_against": 16,
+        "total_corners": 19,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 9
       },
       {
         "match_id": "5836816",
@@ -931,11 +931,11 @@
         "score": "4 - 3",
         "result": "W",
         "competition": "Championship",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
+        "corners_for": 3,
+        "corners_against": 5,
+        "total_corners": 8,
+        "shots_on_target": 6,
+        "total_shots": 17
       },
       {
         "match_id": "5836818",
@@ -2368,13 +2368,13 @@
     },
     "Bristol City": {
       "corners_avg_home": 7.5,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 5.4,
+      "corners_avg_away": 4.33,
+      "corners_avg_gen": 5.6,
       "corners_conceded_home": 4.5,
-      "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.8,
-      "shots_on_target_gen": 4.0,
-      "total_shots_gen": 13.0
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 4.2,
+      "shots_on_target_gen": 4.6,
+      "total_shots_gen": 15.2
     },
     "Burnley": {
       "corners_avg_home": 4.67,
@@ -2418,23 +2418,23 @@
     },
     "Lincoln City": {
       "corners_avg_home": 4.0,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.0,
+      "corners_avg_away": 3.5,
+      "corners_avg_gen": 3.8,
       "corners_conceded_home": 3.0,
-      "corners_conceded_away": 9.0,
-      "corners_conceded_gen": 5.4,
+      "corners_conceded_away": 14.5,
+      "corners_conceded_gen": 7.6,
       "shots_on_target_gen": 3.6,
-      "total_shots_gen": 11.2
+      "total_shots_gen": 11.0
     },
     "Middlesbrough": {
-      "corners_avg_home": 9.5,
+      "corners_avg_home": 8.5,
       "corners_avg_away": 3.67,
-      "corners_avg_gen": 6.0,
-      "corners_conceded_home": 2.5,
+      "corners_avg_gen": 5.6,
+      "corners_conceded_home": 3.0,
       "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.0,
-      "shots_on_target_gen": 4.2,
-      "total_shots_gen": 13.8
+      "corners_conceded_gen": 4.2,
+      "shots_on_target_gen": 4.6,
+      "total_shots_gen": 14.8
     },
     "Millwall": {
       "corners_avg_home": 4.33,
@@ -2592,6 +2592,8 @@
       "date": "Vie 9 Oct, 13:00",
       "date_iso": "2026-10-09",
       "time": "13:00",
+      "timestamp": 1791572400,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -2874,9 +2876,7 @@
           "text": "West Ham United 2 victorias • 3 empates • Queens Park Rangers 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791572400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836852",
@@ -2892,6 +2892,8 @@
       "date": "Sáb 10 Oct, 05:30",
       "date_iso": "2026-10-10",
       "time": "05:30",
+      "timestamp": 1791631800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -3043,11 +3045,11 @@
             "score": "4 - 1",
             "result": "L",
             "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 2,
+            "total_corners": 7,
+            "shots_on_target": 6,
+            "total_shots": 21
           },
           {
             "match_id": "5836816",
@@ -3157,15 +3159,15 @@
         },
         "away_corner_stats": {
           "corners_avg_home": 7.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 5.4,
+          "corners_avg_away": 4.33,
+          "corners_avg_gen": 5.6,
           "corners_conceded_home": 4.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 4.0,
-          "total_shots_gen": 13.0
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 4.6,
+          "total_shots_gen": 15.2
         },
-        "projected_corners": 9.8,
+        "projected_corners": 10.1,
         "summary": {
           "home_wins": 1,
           "draws": 2,
@@ -3174,9 +3176,7 @@
           "text": "Charlton Athletic 1 victorias • 2 empates • Bristol City 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791631800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836858",
@@ -3192,6 +3192,8 @@
       "date": "Sáb 10 Oct, 05:30",
       "date_iso": "2026-10-10",
       "time": "05:30",
+      "timestamp": 1791631800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -3474,9 +3476,7 @@
           "text": "Swansea City 2 victorias • 2 empates • Norwich City 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791631800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836860",
@@ -3492,6 +3492,8 @@
       "date": "Sáb 10 Oct, 05:30",
       "date_iso": "2026-10-10",
       "time": "05:30",
+      "timestamp": 1791631800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -3774,9 +3776,7 @@
           "text": "West Bromwich Albion 1 victorias • 3 empates • Birmingham City 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791631800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836850",
@@ -3792,6 +3792,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -4074,9 +4076,7 @@
           "text": "Blackburn Rovers 2 victorias • 2 empates • Cardiff City 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836851",
@@ -4092,6 +4092,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -4374,9 +4376,7 @@
           "text": "Bolton Wanderers 1 victorias • 3 empates • Stoke City 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836853",
@@ -4392,6 +4392,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -4652,9 +4654,7 @@
           "text": "Derby County 0 victorias • 2 empates • Wrexham 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836854",
@@ -4670,6 +4670,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -4724,11 +4726,11 @@
             "score": "4 - 3",
             "result": "W",
             "competition": "Championship",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
+            "corners_for": 3,
+            "corners_against": 5,
+            "total_corners": 8,
+            "shots_on_target": 6,
+            "total_shots": 17
           },
           {
             "match_id": "5836818",
@@ -4924,14 +4926,14 @@
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 9.5,
+          "corners_avg_home": 8.5,
           "corners_avg_away": 3.67,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 2.5,
+          "corners_avg_gen": 5.6,
+          "corners_conceded_home": 3.0,
           "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 4.0,
-          "shots_on_target_gen": 4.2,
-          "total_shots_gen": 13.8
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 4.6,
+          "total_shots_gen": 14.8
         },
         "away_corner_stats": {
           "corners_avg_home": 6.5,
@@ -4943,7 +4945,7 @@
           "shots_on_target_gen": 3.8,
           "total_shots_gen": 12.6
         },
-        "projected_corners": 13.6,
+        "projected_corners": 12.9,
         "summary": {
           "home_wins": 2,
           "draws": 1,
@@ -4952,9 +4954,7 @@
           "text": "Middlesbrough 2 victorias • 1 empates • Wolverhampton Wanderers 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836855",
@@ -4970,6 +4970,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5252,9 +5254,7 @@
           "text": "Preston North End 0 victorias • 3 empates • Millwall 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836856",
@@ -5270,6 +5270,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5421,11 +5423,11 @@
             "score": "0 - 1",
             "result": "W",
             "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
+            "corners_for": 3,
+            "corners_against": 16,
+            "total_corners": 19,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 9
           },
           {
             "match_id": "5836816",
@@ -5502,15 +5504,15 @@
         },
         "away_corner_stats": {
           "corners_avg_home": 4.0,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.0,
+          "corners_avg_away": 3.5,
+          "corners_avg_gen": 3.8,
           "corners_conceded_home": 3.0,
-          "corners_conceded_away": 9.0,
-          "corners_conceded_gen": 5.4,
+          "corners_conceded_away": 14.5,
+          "corners_conceded_gen": 7.6,
           "shots_on_target_gen": 3.6,
-          "total_shots_gen": 11.2
+          "total_shots_gen": 11.0
         },
-        "projected_corners": 7.2,
+        "projected_corners": 6.8,
         "summary": {
           "home_wins": 0,
           "draws": 2,
@@ -5519,9 +5521,7 @@
           "text": "Sheffield United 0 victorias • 2 empates • Lincoln City 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836859",
@@ -5537,6 +5537,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5819,9 +5821,7 @@
           "text": "Watford 1 victorias • 2 empates • Burnley 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_championship_5836857",
@@ -5837,6 +5837,8 @@
       "date": "Dom 11 Oct, 05:00",
       "date_iso": "2026-10-11",
       "time": "05:00",
+      "timestamp": 1791716400,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -6119,9 +6121,7 @@
           "text": "Southampton 1 victorias • 4 empates • Portsmouth 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791716400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

@@ -3,7 +3,7 @@
   "league_id": 230,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-10-08T11:23:00.504531",
+  "last_updated": "2026-10-08T20:25:18.820966",
   "total_fixtures": 12,
   "team_histories": {
     "Atlante": [
@@ -1950,6 +1950,8 @@
       "date": "Vie 9 Oct, 19:00",
       "date_iso": "2026-10-09",
       "time": "19:00",
+      "timestamp": 1791594000,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -2232,9 +2234,7 @@
           "text": "Puebla 1 victorias • 1 empates • León 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791594000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014591",
@@ -2250,6 +2250,8 @@
       "date": "Vie 9 Oct, 21:00",
       "date_iso": "2026-10-09",
       "time": "21:00",
+      "timestamp": 1791601200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -2532,9 +2534,7 @@
           "text": "Tigres 2 victorias • 2 empates • Toluca 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791601200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014592",
@@ -2550,6 +2550,8 @@
       "date": "Sáb 10 Oct, 17:00",
       "date_iso": "2026-10-10",
       "time": "17:00",
+      "timestamp": 1791673200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -2832,9 +2834,7 @@
           "text": "FC Juárez 1 victorias • 2 empates • Tijuana 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791673200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014589",
@@ -2850,6 +2850,8 @@
       "date": "Sáb 10 Oct, 17:00",
       "date_iso": "2026-10-10",
       "time": "17:00",
+      "timestamp": 1791673200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3132,9 +3134,7 @@
           "text": "Querétaro FC 1 victorias • 1 empates • Atlante 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791673200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014593",
@@ -3150,6 +3150,8 @@
       "date": "Sáb 10 Oct, 19:00",
       "date_iso": "2026-10-10",
       "time": "19:00",
+      "timestamp": 1791680400,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3432,9 +3434,7 @@
           "text": "Atlas 2 victorias • 1 empates • Chivas 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791680400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014594",
@@ -3450,6 +3450,8 @@
       "date": "Sáb 10 Oct, 21:10",
       "date_iso": "2026-10-10",
       "time": "21:10",
+      "timestamp": 1791688200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3732,9 +3734,7 @@
           "text": "CF América 2 victorias • 2 empates • Monterrey 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791688200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014596",
@@ -3750,6 +3750,8 @@
       "date": "Dom 11 Oct, 17:00",
       "date_iso": "2026-10-11",
       "time": "17:00",
+      "timestamp": 1791759600,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4032,9 +4034,7 @@
           "text": "Atlético de San Luis 5 victorias • 0 empates • Santos Laguna 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791759600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014595",
@@ -4050,6 +4050,8 @@
       "date": "Dom 11 Oct, 17:10",
       "date_iso": "2026-10-11",
       "time": "17:10",
+      "timestamp": 1791760200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4332,9 +4334,7 @@
           "text": "Pachuca 5 victorias • 0 empates • Necaxa 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791760200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014597",
@@ -4350,6 +4350,8 @@
       "date": "Dom 11 Oct, 19:15",
       "date_iso": "2026-10-11",
       "time": "19:15",
+      "timestamp": 1791767700,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4632,9 +4634,7 @@
           "text": "Pumas 1 victorias • 2 empates • Cruz Azul 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791767700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014598",
@@ -4650,6 +4650,8 @@
       "date": "Vie 16 Oct, 19:00",
       "date_iso": "2026-10-16",
       "time": "19:00",
+      "timestamp": 1792198800,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -4932,9 +4934,7 @@
           "text": "Necaxa 2 victorias • 1 empates • Atlas 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792198800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014599",
@@ -4950,6 +4950,8 @@
       "date": "Vie 16 Oct, 21:00",
       "date_iso": "2026-10-16",
       "time": "21:00",
+      "timestamp": 1792206000,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -5232,9 +5234,7 @@
           "text": "Atlante 1 victorias • 0 empates • Pumas 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792206000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_mx_1000014600",
@@ -5250,6 +5250,8 @@
       "date": "Vie 16 Oct, 21:00",
       "date_iso": "2026-10-16",
       "time": "21:00",
+      "timestamp": 1792206000,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -5532,9 +5534,7 @@
           "text": "Tijuana 2 victorias • 1 empates • Puebla 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792206000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

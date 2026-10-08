@@ -3,7 +3,7 @@
   "league_id": 10282,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-08T11:24:44.548125",
+  "last_updated": "2026-10-08T20:25:30.790652",
   "total_fixtures": 10,
   "team_histories": {
     "Atlanta United 2": [
@@ -1417,11 +1417,11 @@
         "score": "5 - 1",
         "result": "W",
         "competition": "MLS Next Pro",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
+        "corners_for": 9,
+        "corners_against": 6,
+        "total_corners": 15,
+        "shots_on_target": 12,
+        "total_shots": 24
       },
       {
         "match_id": "1000007704",
@@ -2096,11 +2096,11 @@
         "score": "4 - 0",
         "result": "L",
         "competition": "MLS Next Pro",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 0,
+        "corners_against": 8,
+        "total_corners": 8,
+        "shots_on_target": 0,
+        "total_shots": 1
       },
       {
         "match_id": "1000007704",
@@ -3071,14 +3071,14 @@
       "total_shots_gen": 12.2
     },
     "Minnesota United 2": {
-      "corners_avg_home": 5.67,
+      "corners_avg_home": 7.0,
       "corners_avg_away": 3.5,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 3.0,
+      "corners_avg_gen": 5.6,
+      "corners_conceded_home": 3.67,
       "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 3.8,
-      "shots_on_target_gen": 4.2,
-      "total_shots_gen": 13.2
+      "corners_conceded_gen": 4.2,
+      "shots_on_target_gen": 5.8,
+      "total_shots_gen": 15.6
     },
     "New England Revolution II": {
       "corners_avg_home": 5.0,
@@ -3142,13 +3142,13 @@
     },
     "Real Monarchs SLC": {
       "corners_avg_home": 3.33,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 3.6,
+      "corners_avg_away": 2.0,
+      "corners_avg_gen": 2.8,
       "corners_conceded_home": 4.0,
-      "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.4,
-      "shots_on_target_gen": 3.2,
-      "total_shots_gen": 10.2
+      "corners_conceded_away": 6.5,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 2.6,
+      "total_shots_gen": 8.4
     },
     "Red Bull New York  II": {
       "corners_avg_home": 7.33,
@@ -3256,6 +3256,8 @@
       "date": "Dom 11 Oct, 15:00",
       "date_iso": "2026-10-11",
       "time": "15:00",
+      "timestamp": 1791752400,
+      "timezone": "America/Guatemala",
       "round": "Play-In Round",
       "h2h": {
         "home_last_5": [
@@ -3538,9 +3540,7 @@
           "text": "Red Bull New York  II 2 victorias • 0 empates • Huntsville City FC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791752400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6301173",
@@ -3556,6 +3556,8 @@
       "date": "Dom 11 Oct, 18:00",
       "date_iso": "2026-10-11",
       "time": "18:00",
+      "timestamp": 1791763200,
+      "timezone": "America/Guatemala",
       "round": "Play-In Round",
       "h2h": {
         "home_last_5": [
@@ -3838,9 +3840,7 @@
           "text": "San Jose Earthquakes II 0 victorias • 2 empates • Tacoma Defiance 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791763200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_1000022198",
@@ -3856,6 +3856,8 @@
       "date": "Vie 16 Oct, 16:00",
       "date_iso": "2026-10-16",
       "time": "16:00",
+      "timestamp": 1792188000,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -4094,9 +4096,7 @@
           "text": "Atlanta United 2 1 victorias • 0 empates • Connecticut United 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792188000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6309731",
@@ -4112,6 +4112,8 @@
       "date": "Vie 16 Oct, 20:00",
       "date_iso": "2026-10-16",
       "time": "20:00",
+      "timestamp": 1792202400,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -4394,9 +4396,7 @@
           "text": "Portland Timbers 2 2 victorias • 2 empates • St. Louis City 2 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792202400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6309732",
@@ -4412,6 +4412,8 @@
       "date": "Vie 16 Oct, 20:00",
       "date_iso": "2026-10-16",
       "time": "20:00",
+      "timestamp": 1792202400,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -4563,11 +4565,11 @@
             "score": "5 - 1",
             "result": "W",
             "competition": "MLS Next Pro",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
+            "corners_for": 9,
+            "corners_against": 6,
+            "total_corners": 15,
+            "shots_on_target": 12,
+            "total_shots": 24
           },
           {
             "match_id": "1000007704",
@@ -4665,16 +4667,16 @@
           "total_shots_gen": 12.4
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.67,
+          "corners_avg_home": 7.0,
           "corners_avg_away": 3.5,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 3.0,
+          "corners_avg_gen": 5.6,
+          "corners_conceded_home": 3.67,
           "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 3.8,
-          "shots_on_target_gen": 4.2,
-          "total_shots_gen": 13.2
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 5.8,
+          "total_shots_gen": 15.6
         },
-        "projected_corners": 8.9,
+        "projected_corners": 9.2,
         "summary": {
           "home_wins": 1,
           "draws": 0,
@@ -4683,9 +4685,7 @@
           "text": "Ventura County FC 1 victorias • 0 empates • Minnesota United 2 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792202400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6309729",
@@ -4701,6 +4701,8 @@
       "date": "Sáb 17 Oct, 13:00",
       "date_iso": "2026-10-17",
       "time": "13:00",
+      "timestamp": 1792263600,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -4983,9 +4985,7 @@
           "text": "Columbus Crew 2 1 victorias • 3 empates • New England Revolution II 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792263600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6309730",
@@ -5001,6 +5001,8 @@
       "date": "Dom 18 Oct, 15:00",
       "date_iso": "2026-10-18",
       "time": "15:00",
+      "timestamp": 1792357200,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -5261,9 +5263,7 @@
           "text": "Chattanooga FC 1 victorias • 2 empates • New York City FC II 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792357200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_1000022199",
@@ -5279,6 +5279,8 @@
       "date": "Dom 18 Oct, 17:00",
       "date_iso": "2026-10-18",
       "time": "17:00",
+      "timestamp": 1792364400,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -5409,9 +5411,7 @@
           "text": "Crown Legacy FC 0 victorias • 0 empates • Huntsville City FC/Red Bull New York  II 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792364400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_6309733",
@@ -5427,6 +5427,8 @@
       "date": "Dom 18 Oct, 17:00",
       "date_iso": "2026-10-18",
       "time": "17:00",
+      "timestamp": 1792364400,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -5709,9 +5711,7 @@
           "text": "Houston Dynamo 2 3 victorias • 0 empates • Los Angeles FC II 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792364400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_next_pro_1000022200",
@@ -5727,6 +5727,8 @@
       "date": "Dom 18 Oct, 18:30",
       "date_iso": "2026-10-18",
       "time": "18:30",
+      "timestamp": 1792369800,
+      "timezone": "America/Guatemala",
       "round": "Conference - Quarter-finals",
       "h2h": {
         "home_last_5": [
@@ -5857,9 +5859,7 @@
           "text": "Austin FC II 0 victorias • 0 empates • San Jose Earthquakes II/Tacoma Defiance 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792369800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

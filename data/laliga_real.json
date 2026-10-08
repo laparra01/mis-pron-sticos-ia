@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-10-08T11:26:42.393061",
+  "last_updated": "2026-10-08T20:25:49.278174",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -155,11 +155,11 @@
         "score": "0 - 3",
         "result": "W",
         "competition": "LaLiga",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 3,
+        "corners_against": 9,
+        "total_corners": 12,
+        "shots_on_target": 5,
+        "total_shots": 13
       },
       {
         "match_id": "5868062",
@@ -252,11 +252,11 @@
         "score": "2 - 4",
         "result": "W",
         "competition": "LaLiga",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 3,
+        "total_corners": 8,
+        "shots_on_target": 6,
+        "total_shots": 12
       },
       {
         "match_id": "5868066",
@@ -1960,23 +1960,23 @@
     },
     "Atlético Madrid": {
       "corners_avg_home": 5.5,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.6,
+      "corners_avg_away": 3.67,
+      "corners_avg_gen": 4.4,
       "corners_conceded_home": 0.5,
-      "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 3.2,
-      "shots_on_target_gen": 5.8,
-      "total_shots_gen": 14.8
+      "corners_conceded_away": 6.33,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 6.2,
+      "total_shots_gen": 15.4
     },
     "Barcelona": {
       "corners_avg_home": 11.5,
-      "corners_avg_away": 3.67,
-      "corners_avg_gen": 6.8,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 7.0,
       "corners_conceded_home": 2.0,
-      "corners_conceded_away": 3.67,
-      "corners_conceded_gen": 3.0,
-      "shots_on_target_gen": 5.2,
-      "total_shots_gen": 17.2
+      "corners_conceded_away": 3.0,
+      "corners_conceded_gen": 2.6,
+      "shots_on_target_gen": 5.8,
+      "total_shots_gen": 17.6
     },
     "Celta Vigo": {
       "corners_avg_home": 3.0,
@@ -2164,6 +2164,8 @@
       "date": "Vie 9 Oct, 13:00",
       "date_iso": "2026-10-09",
       "time": "13:00",
+      "timestamp": 1791572400,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2446,9 +2448,7 @@
           "text": "Málaga 0 victorias • 1 empates • Espanyol 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791572400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868088",
@@ -2464,6 +2464,8 @@
       "date": "Sáb 10 Oct, 06:00",
       "date_iso": "2026-10-10",
       "time": "06:00",
+      "timestamp": 1791633600,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2746,9 +2748,7 @@
           "text": "Rayo Vallecano 0 victorias • 2 empates • Athletic Club 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791633600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868081",
@@ -2764,6 +2764,8 @@
       "date": "Sáb 10 Oct, 08:15",
       "date_iso": "2026-10-10",
       "time": "08:15",
+      "timestamp": 1791641700,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2915,11 +2917,11 @@
             "score": "0 - 3",
             "result": "W",
             "competition": "LaLiga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 3,
+            "corners_against": 9,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 13
           },
           {
             "match_id": "5868062",
@@ -3029,15 +3031,15 @@
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.6,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 0.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 3.2,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 14.8
+          "corners_conceded_away": 6.33,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 6.2,
+          "total_shots_gen": 15.4
         },
-        "projected_corners": 8.0,
+        "projected_corners": 7.7,
         "summary": {
           "home_wins": 0,
           "draws": 3,
@@ -3046,9 +3048,7 @@
           "text": "Deportivo Alavés 0 victorias • 3 empates • Atlético Madrid 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791641700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868084",
@@ -3064,6 +3064,8 @@
       "date": "Sáb 10 Oct, 10:30",
       "date_iso": "2026-10-10",
       "time": "10:30",
+      "timestamp": 1791649800,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3118,11 +3120,11 @@
             "score": "2 - 4",
             "result": "W",
             "competition": "LaLiga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 3,
+            "total_corners": 8,
+            "shots_on_target": 6,
+            "total_shots": 12
           },
           {
             "match_id": "5868066",
@@ -3319,13 +3321,13 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 11.5,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 6.8,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 7.0,
           "corners_conceded_home": 2.0,
-          "corners_conceded_away": 3.67,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.2,
-          "total_shots_gen": 17.2
+          "corners_conceded_away": 3.0,
+          "corners_conceded_gen": 2.6,
+          "shots_on_target_gen": 5.8,
+          "total_shots_gen": 17.6
         },
         "away_corner_stats": {
           "corners_avg_home": 5.0,
@@ -3337,7 +3339,7 @@
           "shots_on_target_gen": 4.0,
           "total_shots_gen": 12.4
         },
-        "projected_corners": 13.1,
+        "projected_corners": 13.2,
         "summary": {
           "home_wins": 3,
           "draws": 2,
@@ -3346,9 +3348,7 @@
           "text": "Barcelona 3 victorias • 2 empates • Getafe 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791649800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868089",
@@ -3364,6 +3364,8 @@
       "date": "Sáb 10 Oct, 13:00",
       "date_iso": "2026-10-10",
       "time": "13:00",
+      "timestamp": 1791658800,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3646,9 +3648,7 @@
           "text": "Real Madrid 4 victorias • 1 empates • Villarreal 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791658800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868083",
@@ -3664,6 +3664,8 @@
       "date": "Dom 11 Oct, 06:00",
       "date_iso": "2026-10-11",
       "time": "06:00",
+      "timestamp": 1791720000,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3946,9 +3948,7 @@
           "text": "Elche 1 victorias • 1 empates • Celta Vigo 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791720000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868090",
@@ -3964,6 +3964,8 @@
       "date": "Dom 11 Oct, 08:15",
       "date_iso": "2026-10-11",
       "time": "08:15",
+      "timestamp": 1791728100,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4246,9 +4248,7 @@
           "text": "Real Sociedad 3 victorias • 1 empates • Deportivo A Coruña 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791728100,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868082",
@@ -4264,6 +4264,8 @@
       "date": "Dom 11 Oct, 10:30",
       "date_iso": "2026-10-11",
       "time": "10:30",
+      "timestamp": 1791736200,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4546,9 +4548,7 @@
           "text": "Real Betis 2 victorias • 3 empates • Osasuna 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791736200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868087",
@@ -4564,6 +4564,8 @@
       "date": "Dom 11 Oct, 13:00",
       "date_iso": "2026-10-11",
       "time": "13:00",
+      "timestamp": 1791745200,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4846,9 +4848,7 @@
           "text": "Racing Santander 0 victorias • 3 empates • Valencia 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791745200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868085",
@@ -4864,6 +4864,8 @@
       "date": "Lun 12 Oct, 13:00",
       "date_iso": "2026-10-12",
       "time": "13:00",
+      "timestamp": 1791831600,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -5146,9 +5148,7 @@
           "text": "Levante 2 victorias • 1 empates • Sevilla 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791831600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868093",
@@ -5164,6 +5164,8 @@
       "date": "Vie 16 Oct, 13:00",
       "date_iso": "2026-10-16",
       "time": "13:00",
+      "timestamp": 1792177200,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5446,9 +5448,7 @@
           "text": "Deportivo A Coruña 0 victorias • 3 empates • Levante 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792177200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_laliga_5868094",
@@ -5464,6 +5464,8 @@
       "date": "Sáb 17 Oct, 06:00",
       "date_iso": "2026-10-17",
       "time": "06:00",
+      "timestamp": 1792238400,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5615,11 +5617,11 @@
             "score": "0 - 3",
             "result": "W",
             "competition": "LaLiga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 3,
+            "corners_against": 9,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 13
           },
           {
             "match_id": "5868062",
@@ -5729,15 +5731,15 @@
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.6,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 0.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 3.2,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 14.8
+          "corners_conceded_away": 6.33,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 6.2,
+          "total_shots_gen": 15.4
         },
-        "projected_corners": 8.4,
+        "projected_corners": 8.1,
         "summary": {
           "home_wins": 1,
           "draws": 3,
@@ -5746,9 +5748,7 @@
           "text": "Espanyol 1 victorias • 3 empates • Atlético Madrid 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792238400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

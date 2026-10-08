@@ -3,7 +3,7 @@
   "league_id": 46,
   "country": "Dinamarca",
   "country_code": "dk",
-  "last_updated": "2026-10-08T11:30:24.357964",
+  "last_updated": "2026-10-08T20:26:10.478609",
   "total_fixtures": 12,
   "team_histories": {
     "AC Horsens": [
@@ -1308,6 +1308,8 @@
       "date": "Vie 9 Oct, 11:00",
       "date_iso": "2026-10-09",
       "time": "11:00",
+      "timestamp": 1791565200,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -1590,9 +1592,7 @@
           "text": "Nordsjælland 1 victorias • 2 empates • OB 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791565200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739518",
@@ -1608,6 +1608,8 @@
       "date": "Dom 11 Oct, 06:00",
       "date_iso": "2026-10-11",
       "time": "06:00",
+      "timestamp": 1791720000,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -1890,9 +1892,7 @@
           "text": "Randers FC 3 victorias • 1 empates • Viborg 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791720000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739522",
@@ -1908,6 +1908,8 @@
       "date": "Dom 11 Oct, 06:00",
       "date_iso": "2026-10-11",
       "time": "06:00",
+      "timestamp": 1791720000,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -2190,9 +2192,7 @@
           "text": "Silkeborg 2 victorias • 1 empates • AC Horsens 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791720000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739520",
@@ -2208,6 +2208,8 @@
       "date": "Dom 11 Oct, 08:00",
       "date_iso": "2026-10-11",
       "time": "08:00",
+      "timestamp": 1791727200,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -2490,9 +2492,7 @@
           "text": "Brøndby IF 2 victorias • 3 empates • Lyngby 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791727200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739519",
@@ -2508,6 +2508,8 @@
       "date": "Dom 11 Oct, 10:00",
       "date_iso": "2026-10-11",
       "time": "10:00",
+      "timestamp": 1791734400,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -2790,9 +2792,7 @@
           "text": "FC Midtjylland 2 victorias • 3 empates • FC København 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791734400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739521",
@@ -2808,6 +2808,8 @@
       "date": "Lun 12 Oct, 11:00",
       "date_iso": "2026-10-12",
       "time": "11:00",
+      "timestamp": 1791824400,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -3090,9 +3092,7 @@
           "text": "AGF 2 victorias • 2 empates • Sønderjyske 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791824400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739529",
@@ -3108,6 +3108,8 @@
       "date": "Vie 16 Oct, 11:00",
       "date_iso": "2026-10-16",
       "time": "11:00",
+      "timestamp": 1792170000,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3390,9 +3392,7 @@
           "text": "AC Horsens 1 victorias • 1 empates • Randers FC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792170000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739527",
@@ -3408,6 +3408,8 @@
       "date": "Dom 18 Oct, 06:00",
       "date_iso": "2026-10-18",
       "time": "06:00",
+      "timestamp": 1792324800,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3690,9 +3692,7 @@
           "text": "Lyngby 1 victorias • 3 empates • Nordsjælland 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792324800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739525",
@@ -3708,6 +3708,8 @@
       "date": "Dom 18 Oct, 06:00",
       "date_iso": "2026-10-18",
       "time": "06:00",
+      "timestamp": 1792324800,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -3990,9 +3992,7 @@
           "text": "Sønderjyske 3 victorias • 1 empates • Silkeborg 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792324800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739524",
@@ -4008,6 +4008,8 @@
       "date": "Dom 18 Oct, 08:00",
       "date_iso": "2026-10-18",
       "time": "08:00",
+      "timestamp": 1792332000,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4290,9 +4292,7 @@
           "text": "OB 1 victorias • 1 empates • Brøndby IF 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792332000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739526",
@@ -4308,6 +4308,8 @@
       "date": "Dom 18 Oct, 10:00",
       "date_iso": "2026-10-18",
       "time": "10:00",
+      "timestamp": 1792339200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4590,9 +4592,7 @@
           "text": "FC København 2 victorias • 1 empates • AGF 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792339200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_superligaen_5739528",
@@ -4608,6 +4608,8 @@
       "date": "Lun 19 Oct, 11:00",
       "date_iso": "2026-10-19",
       "time": "11:00",
+      "timestamp": 1792429200,
+      "timezone": "America/Guatemala",
       "round": "11",
       "h2h": {
         "home_last_5": [
@@ -4890,9 +4892,7 @@
           "text": "Viborg 0 victorias • 4 empates • FC Midtjylland 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792429200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

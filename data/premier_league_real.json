@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-08T11:25:24.898821",
+  "last_updated": "2026-10-08T20:25:43.737454",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -2164,6 +2164,8 @@
       "date": "Sáb 10 Oct, 05:30",
       "date_iso": "2026-10-10",
       "time": "05:30",
+      "timestamp": 1791631800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -2446,9 +2448,7 @@
           "text": "Arsenal 4 victorias • 1 empates • Leeds United 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791631800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795466",
@@ -2464,6 +2464,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -2746,9 +2748,7 @@
           "text": "Aston Villa 1 victorias • 2 empates • Brentford 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795467",
@@ -2764,6 +2764,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3046,9 +3048,7 @@
           "text": "Chelsea 1 victorias • 4 empates • AFC Bournemouth 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795471",
@@ -3064,6 +3064,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3346,9 +3348,7 @@
           "text": "Ipswich Town 0 victorias • 3 empates • Fulham 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795474",
@@ -3364,6 +3364,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3635,9 +3637,7 @@
           "text": "Sunderland 0 victorias • 2 empates • Brighton & Hove Albion 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795473",
@@ -3653,6 +3653,8 @@
       "date": "Sáb 10 Oct, 10:30",
       "date_iso": "2026-10-10",
       "time": "10:30",
+      "timestamp": 1791649800,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3935,9 +3937,7 @@
           "text": "Manchester United 1 victorias • 2 empates • Tottenham Hotspur 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791649800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795469",
@@ -3953,6 +3953,8 @@
       "date": "Dom 11 Oct, 07:00",
       "date_iso": "2026-10-11",
       "time": "07:00",
+      "timestamp": 1791723600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4235,9 +4237,7 @@
           "text": "Crystal Palace 0 victorias • 4 empates • Nottingham Forest 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791723600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795470",
@@ -4253,6 +4253,8 @@
       "date": "Dom 11 Oct, 07:00",
       "date_iso": "2026-10-11",
       "time": "07:00",
+      "timestamp": 1791723600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4535,9 +4537,7 @@
           "text": "Hull City 1 victorias • 2 empates • Everton 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791723600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795472",
@@ -4553,6 +4553,8 @@
       "date": "Dom 11 Oct, 09:30",
       "date_iso": "2026-10-11",
       "time": "09:30",
+      "timestamp": 1791732600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4835,9 +4837,7 @@
           "text": "Liverpool 1 victorias • 1 empates • Manchester City 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791732600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795468",
@@ -4853,6 +4853,8 @@
       "date": "Lun 12 Oct, 13:00",
       "date_iso": "2026-10-12",
       "time": "13:00",
+      "timestamp": 1791831600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -5091,9 +5093,7 @@
           "text": "Coventry City 0 victorias • 1 empates • Newcastle United 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791831600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795478",
@@ -5109,6 +5109,8 @@
       "date": "Sáb 17 Oct, 05:30",
       "date_iso": "2026-10-17",
       "time": "05:30",
+      "timestamp": 1792236600,
+      "timezone": "America/Guatemala",
       "round": "7",
       "h2h": {
         "home_last_5": [
@@ -5391,9 +5393,7 @@
           "text": "Everton 1 victorias • 2 empates • Chelsea 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792236600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_premier_league_5795476",
@@ -5409,6 +5409,8 @@
       "date": "Sáb 17 Oct, 08:00",
       "date_iso": "2026-10-17",
       "time": "08:00",
+      "timestamp": 1792245600,
+      "timezone": "America/Guatemala",
       "round": "7",
       "h2h": {
         "home_last_5": [
@@ -5691,9 +5693,7 @@
           "text": "Brentford 1 victorias • 2 empates • Liverpool 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792245600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

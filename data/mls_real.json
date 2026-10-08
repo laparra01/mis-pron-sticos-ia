@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-08T11:24:00.777984",
+  "last_updated": "2026-10-08T20:25:26.631797",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -446,11 +446,11 @@
         "score": "3 - 0",
         "result": "L",
         "competition": "MLS",
-        "corners_for": 4,
+        "corners_for": 2,
         "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "total_corners": 7,
+        "shots_on_target": 1,
+        "total_shots": 9
       },
       {
         "match_id": "5071382",
@@ -2960,13 +2960,13 @@
     },
     "Chicago Fire FC": {
       "corners_avg_home": 4.0,
-      "corners_avg_away": 5.0,
-      "corners_avg_gen": 4.4,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
       "corners_conceded_home": 5.33,
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 5.0,
-      "shots_on_target_gen": 5.4,
-      "total_shots_gen": 14.8
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 14.6
     },
     "Colorado Rapids": {
       "corners_avg_home": 4.5,
@@ -3234,6 +3234,8 @@
       "date": "Sáb 10 Oct, 11:00",
       "date_iso": "2026-10-10",
       "time": "11:00",
+      "timestamp": 1791651600,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -3516,9 +3518,7 @@
           "text": "Toronto FC 2 victorias • 3 empates • CF Montréal 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791651600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071398",
@@ -3534,6 +3534,8 @@
       "date": "Sáb 10 Oct, 12:30",
       "date_iso": "2026-10-10",
       "time": "12:30",
+      "timestamp": 1791657000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -3588,11 +3590,11 @@
             "score": "3 - 0",
             "result": "L",
             "competition": "MLS",
-            "corners_for": 4,
+            "corners_for": 2,
             "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "total_corners": 7,
+            "shots_on_target": 1,
+            "total_shots": 9
           },
           {
             "match_id": "5071382",
@@ -3789,13 +3791,13 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
-          "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.4,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 5.0,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 14.8
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 14.6
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -3807,7 +3809,7 @@
           "shots_on_target_gen": 3.6,
           "total_shots_gen": 11.8
         },
-        "projected_corners": 8.2,
+        "projected_corners": 8.1,
         "summary": {
           "home_wins": 0,
           "draws": 2,
@@ -3816,9 +3818,7 @@
           "text": "Chicago Fire FC 0 victorias • 2 empates • New York City FC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791657000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071396",
@@ -3834,6 +3834,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -4116,9 +4118,7 @@
           "text": "Atlanta United 1 victorias • 1 empates • FC Cincinnati 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071397",
@@ -4134,6 +4134,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -4372,9 +4374,7 @@
           "text": "Charlotte FC 0 victorias • 1 empates • FC Dallas 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071399",
@@ -4390,6 +4390,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -4672,9 +4674,7 @@
           "text": "Inter Miami CF 4 victorias • 1 empates • DC United 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071400",
@@ -4690,6 +4690,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -4972,9 +4974,7 @@
           "text": "New England Revolution 1 victorias • 3 empates • Seattle Sounders FC 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071402",
@@ -4990,6 +4990,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -5272,9 +5274,7 @@
           "text": "Orlando City 1 victorias • 2 empates • Columbus Crew 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071403",
@@ -5290,6 +5290,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -5572,9 +5574,7 @@
           "text": "Philadelphia Union 1 victorias • 0 empates • Real Salt Lake 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071401",
@@ -5590,6 +5590,8 @@
       "date": "Sáb 10 Oct, 17:30",
       "date_iso": "2026-10-10",
       "time": "17:30",
+      "timestamp": 1791675000,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -5816,9 +5818,7 @@
           "text": "Red Bull New York 0 victorias • 0 empates • San Diego FC 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791675000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071405",
@@ -5834,6 +5834,8 @@
       "date": "Sáb 10 Oct, 18:30",
       "date_iso": "2026-10-10",
       "time": "18:30",
+      "timestamp": 1791678600,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -6116,9 +6118,7 @@
           "text": "Austin FC 1 victorias • 1 empates • Nashville SC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791678600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071409",
@@ -6134,6 +6134,8 @@
       "date": "Sáb 10 Oct, 18:30",
       "date_iso": "2026-10-10",
       "time": "18:30",
+      "timestamp": 1791678600,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -6416,9 +6418,7 @@
           "text": "Minnesota United 1 victorias • 2 empates • Houston Dynamo FC 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791678600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071407",
@@ -6434,6 +6434,8 @@
       "date": "Sáb 10 Oct, 18:30",
       "date_iso": "2026-10-10",
       "time": "18:30",
+      "timestamp": 1791678600,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -6716,9 +6718,7 @@
           "text": "Sporting Kansas City 0 victorias • 1 empates • Portland Timbers 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791678600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071406",
@@ -6734,6 +6734,8 @@
       "date": "Sáb 10 Oct, 19:30",
       "date_iso": "2026-10-10",
       "time": "19:30",
+      "timestamp": 1791682200,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -7016,9 +7018,7 @@
           "text": "Colorado Rapids 2 victorias • 1 empates • San Jose Earthquakes 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791682200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071408",
@@ -7034,6 +7034,8 @@
       "date": "Sáb 10 Oct, 20:30",
       "date_iso": "2026-10-10",
       "time": "20:30",
+      "timestamp": 1791685800,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -7316,9 +7318,7 @@
           "text": "Los Angeles FC 1 victorias • 3 empates • Vancouver Whitecaps 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791685800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_mls_5071410",
@@ -7334,6 +7334,8 @@
       "date": "Dom 11 Oct, 17:00",
       "date_iso": "2026-10-11",
       "time": "17:00",
+      "timestamp": 1791759600,
+      "timezone": "America/Guatemala",
       "round": "28",
       "h2h": {
         "home_last_5": [
@@ -7616,9 +7618,7 @@
           "text": "St. Louis City 3 victorias • 2 empates • LA Galaxy 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791759600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

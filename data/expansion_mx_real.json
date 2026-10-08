@@ -3,7 +3,7 @@
   "league_id": 8976,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-10-08T11:23:23.248126",
+  "last_updated": "2026-10-08T20:25:22.164289",
   "total_fixtures": 12,
   "team_histories": {
     "Alacranes de Durango": [
@@ -1736,6 +1736,8 @@
       "date": "Jue 8 Oct, 19:00",
       "date_iso": "2026-10-08",
       "time": "19:00",
+      "timestamp": 1791507600,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -2018,9 +2020,7 @@
           "text": "Alebrijes Oaxaca 3 victorias • 1 empates • Correcaminos de la UAT 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791507600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898747",
@@ -2036,6 +2036,8 @@
       "date": "Vie 9 Oct, 17:00",
       "date_iso": "2026-10-09",
       "time": "17:00",
+      "timestamp": 1791586800,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -2318,9 +2320,7 @@
           "text": "Tapatío 2 victorias • 1 empates • Atlético La Paz 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791586800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898752",
@@ -2336,6 +2336,8 @@
       "date": "Vie 9 Oct, 19:00",
       "date_iso": "2026-10-09",
       "time": "19:00",
+      "timestamp": 1791594000,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -2618,9 +2620,7 @@
           "text": "Tepatitlán FC 3 victorias • 0 empates • Atlético Morelia 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791594000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898746",
@@ -2636,6 +2636,8 @@
       "date": "Sáb 10 Oct, 16:00",
       "date_iso": "2026-10-10",
       "time": "16:00",
+      "timestamp": 1791669600,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -2862,9 +2864,7 @@
           "text": "Tlaxcala FC 0 victorias • 0 empates • Piratas 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791669600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898748",
@@ -2880,6 +2880,8 @@
       "date": "Sáb 10 Oct, 17:00",
       "date_iso": "2026-10-10",
       "time": "17:00",
+      "timestamp": 1791673200,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -3162,9 +3164,7 @@
           "text": "Venados FC 2 victorias • 1 empates • Leones Negros 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791673200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898750",
@@ -3180,6 +3180,8 @@
       "date": "Sáb 10 Oct, 19:00",
       "date_iso": "2026-10-10",
       "time": "19:00",
+      "timestamp": 1791680400,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -3406,9 +3408,7 @@
           "text": "Dorados 0 victorias • 0 empates • Cruz Azul Hidalgo 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791680400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898751",
@@ -3424,6 +3424,8 @@
       "date": "Sáb 10 Oct, 19:00",
       "date_iso": "2026-10-10",
       "time": "19:00",
+      "timestamp": 1791680400,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -3650,9 +3652,7 @@
           "text": "Jaiba Brava del Tampico-Madero 0 victorias • 0 empates • Alacranes de Durango 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791680400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898753",
@@ -3668,6 +3668,8 @@
       "date": "Sáb 10 Oct, 19:00",
       "date_iso": "2026-10-10",
       "time": "19:00",
+      "timestamp": 1791680400,
+      "timezone": "America/Guatemala",
       "round": "12",
       "h2h": {
         "home_last_5": [
@@ -3950,9 +3952,7 @@
           "text": "Mineros de Zacatecas 0 victorias • 3 empates • Cancún FC 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791680400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898732",
@@ -3968,6 +3968,8 @@
       "date": "Mar 13 Oct, 17:00",
       "date_iso": "2026-10-13",
       "time": "17:00",
+      "timestamp": 1791932400,
+      "timezone": "America/Guatemala",
       "round": "10",
       "h2h": {
         "home_last_5": [
@@ -4250,9 +4252,7 @@
           "text": "Tapatío 0 victorias • 2 empates • Tepatitlán FC 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791932400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898757",
@@ -4268,6 +4268,8 @@
       "date": "Vie 16 Oct, 19:00",
       "date_iso": "2026-10-16",
       "time": "19:00",
+      "timestamp": 1792198800,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -4550,9 +4552,7 @@
           "text": "Correcaminos de la UAT 2 victorias • 0 empates • Dorados 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792198800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898761",
@@ -4568,6 +4568,8 @@
       "date": "Vie 16 Oct, 21:00",
       "date_iso": "2026-10-16",
       "time": "21:00",
+      "timestamp": 1792206000,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -4850,9 +4852,7 @@
           "text": "Atlético La Paz 3 victorias • 2 empates • Tlaxcala FC 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792206000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_expansion_mx_5898754",
@@ -4868,6 +4868,8 @@
       "date": "Sáb 17 Oct, 12:00",
       "date_iso": "2026-10-17",
       "time": "12:00",
+      "timestamp": 1792260000,
+      "timezone": "America/Guatemala",
       "round": "13",
       "h2h": {
         "home_last_5": [
@@ -5094,9 +5096,7 @@
           "text": "Cruz Azul Hidalgo 0 victorias • 0 empates • Mineros de Zacatecas 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792260000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

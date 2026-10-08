@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-10-08T11:25:06.717947",
+  "last_updated": "2026-10-08T20:25:41.656996",
   "total_fixtures": 15,
   "team_histories": {
     "Alianza FC": [
@@ -2164,6 +2164,8 @@
       "date": "Jue 8 Oct, 17:05",
       "date_iso": "2026-10-08",
       "time": "17:05",
+      "timestamp": 1791500700,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 9",
       "h2h": {
         "home_last_5": [
@@ -2446,9 +2448,7 @@
           "text": "Atlético Nacional 3 victorias • 1 empates • Tolima 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791500700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014178",
@@ -2464,6 +2464,8 @@
       "date": "Jue 8 Oct, 19:10",
       "date_iso": "2026-10-08",
       "time": "19:10",
+      "timestamp": 1791508200,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -2746,9 +2748,7 @@
           "text": "Fortaleza FC 0 victorias • 1 empates • Millonarios 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791508200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014179",
@@ -2764,6 +2764,8 @@
       "date": "Vie 9 Oct, 17:00",
       "date_iso": "2026-10-09",
       "time": "17:00",
+      "timestamp": 1791586800,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -3046,9 +3048,7 @@
           "text": "Alianza FC 2 victorias • 1 empates • Águilas Doradas 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791586800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014183",
@@ -3064,6 +3064,8 @@
       "date": "Vie 9 Oct, 19:10",
       "date_iso": "2026-10-09",
       "time": "19:10",
+      "timestamp": 1791594600,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -3324,9 +3326,7 @@
           "text": "Once Caldas 1 victorias • 1 empates • Llaneros FC 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791594600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014186",
@@ -3342,6 +3342,8 @@
       "date": "Sáb 10 Oct, 14:30",
       "date_iso": "2026-10-10",
       "time": "14:30",
+      "timestamp": 1791664200,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -3624,9 +3626,7 @@
           "text": "Deportivo Pereira 2 victorias • 1 empates • Deportivo Cali 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791664200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014182",
@@ -3642,6 +3642,8 @@
       "date": "Sáb 10 Oct, 17:10",
       "date_iso": "2026-10-10",
       "time": "17:10",
+      "timestamp": 1791673800,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -3924,9 +3926,7 @@
           "text": "Junior FC 3 victorias • 1 empates • Internacional de Bogotá 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791673800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014185",
@@ -3942,6 +3942,8 @@
       "date": "Dom 11 Oct, 15:05",
       "date_iso": "2026-10-11",
       "time": "15:05",
+      "timestamp": 1791752700,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -4224,9 +4226,7 @@
           "text": "CD Jaguares 0 victorias • 1 empates • Tolima 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791752700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014181",
@@ -4242,6 +4242,8 @@
       "date": "Dom 11 Oct, 17:10",
       "date_iso": "2026-10-11",
       "time": "17:10",
+      "timestamp": 1791760200,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -4524,9 +4526,7 @@
           "text": "Chicó FC 2 victorias • 1 empates • Cúcuta 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791760200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014184",
@@ -4542,6 +4542,8 @@
       "date": "Dom 11 Oct, 19:15",
       "date_iso": "2026-10-11",
       "time": "19:15",
+      "timestamp": 1791767700,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 14",
       "h2h": {
         "home_last_5": [
@@ -4824,9 +4826,7 @@
           "text": "América de Cali 1 victorias • 2 empates • Independiente Medellín 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791767700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014115",
@@ -4842,6 +4842,8 @@
       "date": "Mar 13 Oct, 17:30",
       "date_iso": "2026-10-13",
       "time": "17:30",
+      "timestamp": 1791934200,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 7",
       "h2h": {
         "home_last_5": [
@@ -5124,9 +5126,7 @@
           "text": "Bucaramanga 4 victorias • 0 empates • Águilas Doradas 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791934200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014172",
@@ -5142,6 +5142,8 @@
       "date": "Mar 13 Oct, 19:30",
       "date_iso": "2026-10-13",
       "time": "19:30",
+      "timestamp": 1791941400,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 13",
       "h2h": {
         "home_last_5": [
@@ -5424,9 +5426,7 @@
           "text": "Millonarios 1 victorias • 4 empates • Once Caldas 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791941400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014084",
@@ -5442,6 +5442,8 @@
       "date": "Mié 14 Oct, 15:30",
       "date_iso": "2026-10-14",
       "time": "15:30",
+      "timestamp": 1792013400,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 4",
       "h2h": {
         "home_last_5": [
@@ -5724,9 +5726,7 @@
           "text": "Junior FC 3 victorias • 1 empates • Deportivo Pereira 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792013400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014110",
@@ -5742,6 +5742,8 @@
       "date": "Mié 14 Oct, 17:30",
       "date_iso": "2026-10-14",
       "time": "17:30",
+      "timestamp": 1792020600,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 7",
       "h2h": {
         "home_last_5": [
@@ -6024,9 +6026,7 @@
           "text": "Santa Fe 2 victorias • 1 empates • CD Jaguares 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792020600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014053",
@@ -6042,6 +6042,8 @@
       "date": "Sáb 17 Oct, 14:00",
       "date_iso": "2026-10-17",
       "time": "14:00",
+      "timestamp": 1792267200,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 1",
       "h2h": {
         "home_last_5": [
@@ -6324,9 +6326,7 @@
           "text": "Chicó FC 1 victorias • 1 empates • Atlético Nacional 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792267200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_colombia_1000014190",
@@ -6342,6 +6342,8 @@
       "date": "Sáb 17 Oct, 17:05",
       "date_iso": "2026-10-17",
       "time": "17:05",
+      "timestamp": 1792278300,
+      "timezone": "America/Guatemala",
       "round": "Clausura - Round 15",
       "h2h": {
         "home_last_5": [
@@ -6624,9 +6626,7 @@
           "text": "Millonarios 1 victorias • 1 empates • CD Jaguares 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792278300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

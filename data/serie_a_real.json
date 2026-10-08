@@ -3,7 +3,7 @@
   "league_id": 55,
   "country": "Italia",
   "country_code": "it",
-  "last_updated": "2026-10-08T11:27:53.523116",
+  "last_updated": "2026-10-08T20:25:52.700399",
   "total_fixtures": 12,
   "team_histories": {
     "Atalanta": [
@@ -2164,6 +2164,8 @@
       "date": "Sáb 10 Oct, 07:00",
       "date_iso": "2026-10-10",
       "time": "07:00",
+      "timestamp": 1791637200,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -2446,9 +2448,7 @@
           "text": "Genoa 0 victorias • 3 empates • Fiorentina 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791637200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749694",
@@ -2464,6 +2464,8 @@
       "date": "Sáb 10 Oct, 10:00",
       "date_iso": "2026-10-10",
       "time": "10:00",
+      "timestamp": 1791648000,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -2746,9 +2748,7 @@
           "text": "Inter 3 victorias • 2 empates • Parma 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791648000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749697",
@@ -2764,6 +2764,8 @@
       "date": "Sáb 10 Oct, 12:45",
       "date_iso": "2026-10-10",
       "time": "12:45",
+      "timestamp": 1791657900,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3046,9 +3048,7 @@
           "text": "Napoli 2 victorias • 2 empates • Frosinone 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791657900,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749692",
@@ -3064,6 +3064,8 @@
       "date": "Dom 11 Oct, 04:30",
       "date_iso": "2026-10-11",
       "time": "04:30",
+      "timestamp": 1791714600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3346,9 +3348,7 @@
           "text": "Como 2 victorias • 1 empates • Roma 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791714600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749695",
@@ -3364,6 +3364,8 @@
       "date": "Dom 11 Oct, 07:00",
       "date_iso": "2026-10-11",
       "time": "07:00",
+      "timestamp": 1791723600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3646,9 +3648,7 @@
           "text": "Lazio 2 victorias • 3 empates • Monza 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791723600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749696",
@@ -3664,6 +3664,8 @@
       "date": "Dom 11 Oct, 07:00",
       "date_iso": "2026-10-11",
       "time": "07:00",
+      "timestamp": 1791723600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -3946,9 +3948,7 @@
           "text": "Lecce 0 victorias • 3 empates • Bologna 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791723600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749698",
@@ -3964,6 +3964,8 @@
       "date": "Dom 11 Oct, 10:00",
       "date_iso": "2026-10-11",
       "time": "10:00",
+      "timestamp": 1791734400,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4246,9 +4248,7 @@
           "text": "Sassuolo 1 victorias • 3 empates • Milan 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791734400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749691",
@@ -4264,6 +4264,8 @@
       "date": "Dom 11 Oct, 12:45",
       "date_iso": "2026-10-11",
       "time": "12:45",
+      "timestamp": 1791744300,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4546,9 +4548,7 @@
           "text": "Cagliari 1 victorias • 1 empates • Juventus 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791744300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749690",
@@ -4564,6 +4564,8 @@
       "date": "Lun 12 Oct, 10:30",
       "date_iso": "2026-10-12",
       "time": "10:30",
+      "timestamp": 1791822600,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -4846,9 +4848,7 @@
           "text": "Atalanta 3 victorias • 2 empates • Venezia 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791822600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749699",
@@ -4864,6 +4864,8 @@
       "date": "Lun 12 Oct, 12:45",
       "date_iso": "2026-10-12",
       "time": "12:45",
+      "timestamp": 1791830700,
+      "timezone": "America/Guatemala",
       "round": "6",
       "h2h": {
         "home_last_5": [
@@ -5146,9 +5148,7 @@
           "text": "Torino 1 victorias • 2 empates • Udinese 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791830700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749704",
@@ -5164,6 +5164,8 @@
       "date": "Vie 16 Oct, 12:45",
       "date_iso": "2026-10-16",
       "time": "12:45",
+      "timestamp": 1792176300,
+      "timezone": "America/Guatemala",
       "round": "7",
       "h2h": {
         "home_last_5": [
@@ -5446,9 +5448,7 @@
           "text": "Frosinone 1 victorias • 2 empates • Sassuolo 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792176300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_serie_a_5749709",
@@ -5464,6 +5464,8 @@
       "date": "Sáb 17 Oct, 07:00",
       "date_iso": "2026-10-17",
       "time": "07:00",
+      "timestamp": 1792242000,
+      "timezone": "America/Guatemala",
       "round": "7",
       "h2h": {
         "home_last_5": [
@@ -5746,9 +5748,7 @@
           "text": "Venezia 0 victorias • 2 empates • Napoli 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792242000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

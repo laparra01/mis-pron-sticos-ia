@@ -3,7 +3,7 @@
   "league_id": 42,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-08T11:30:55.112531",
+  "last_updated": "2026-10-08T20:26:14.696677",
   "total_fixtures": 18,
   "team_histories": {
     "AEK Athens": [
@@ -1140,6 +1140,8 @@
       "date": "Mar 13 Oct, 10:45",
       "date_iso": "2026-10-13",
       "time": "10:45",
+      "timestamp": 1791909900,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1214,9 +1216,7 @@
           "text": "Lens 0 victorias • 0 empates • Sporting CP 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791909900,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106424",
@@ -1232,6 +1232,8 @@
       "date": "Mar 13 Oct, 10:45",
       "date_iso": "2026-10-13",
       "time": "10:45",
+      "timestamp": 1791909900,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1306,9 +1308,7 @@
           "text": "Sabah FK 0 victorias • 0 empates • Slavia Prague 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791909900,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106260",
@@ -1324,6 +1324,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1398,9 +1400,7 @@
           "text": "Arsenal 0 victorias • 0 empates • Lille 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106267",
@@ -1416,6 +1416,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1513,9 +1515,7 @@
           "text": "Atlético Madrid 1 victorias • 1 empates • Manchester United 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106338",
@@ -1531,6 +1531,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1628,9 +1630,7 @@
           "text": "Galatasaray 0 victorias • 1 empates • Barcelona 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106251",
@@ -1646,6 +1646,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1720,9 +1722,7 @@
           "text": "Inter 0 victorias • 0 empates • Club Brugge 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106323",
@@ -1738,6 +1738,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1812,9 +1814,7 @@
           "text": "RB Leipzig 0 victorias • 0 empates • PSV Eindhoven 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106417",
@@ -1830,6 +1830,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -1904,9 +1906,7 @@
           "text": "Viking 0 victorias • 0 empates • Bayern München 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106328",
@@ -1922,6 +1922,8 @@
       "date": "Mar 13 Oct, 13:00",
       "date_iso": "2026-10-13",
       "time": "13:00",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2052,9 +2054,7 @@
           "text": "Villarreal 2 victorias • 1 empates • Napoli 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791918000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106309",
@@ -2070,6 +2070,8 @@
       "date": "Mié 14 Oct, 10:45",
       "date_iso": "2026-10-14",
       "time": "10:45",
+      "timestamp": 1791996300,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2144,9 +2146,7 @@
           "text": "Feyenoord 0 victorias • 0 empates • Como 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791996300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106405",
@@ -2162,6 +2162,8 @@
       "date": "Mié 14 Oct, 10:45",
       "date_iso": "2026-10-14",
       "time": "10:45",
+      "timestamp": 1791996300,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2259,9 +2261,7 @@
           "text": "LASK 0 victorias • 0 empates • Liverpool 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791996300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106284",
@@ -2277,6 +2277,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2363,9 +2365,7 @@
           "text": "Aston Villa 1 victorias • 0 empates • Fenerbahçe 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106315",
@@ -2381,6 +2381,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2467,9 +2469,7 @@
           "text": "Bodø/Glimt 0 victorias • 1 empates • Borussia Dortmund 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106254",
@@ -2485,6 +2485,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2615,9 +2617,7 @@
           "text": "Manchester City 3 victorias • 0 empates • Paris Saint-Germain 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106299",
@@ -2633,6 +2633,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2707,9 +2709,7 @@
           "text": "Real Betis 0 victorias • 0 empates • FC Porto 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106274",
@@ -2725,6 +2725,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2855,9 +2857,7 @@
           "text": "Roma 0 victorias • 0 empates • Real Madrid 5 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106337",
@@ -2873,6 +2873,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -2947,9 +2949,7 @@
           "text": "Shakhtar Donetsk 0 victorias • 0 empates • AEK Athens 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_champions_league_6106396",
@@ -2965,6 +2965,8 @@
       "date": "Mié 14 Oct, 13:00",
       "date_iso": "2026-10-14",
       "time": "13:00",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -3073,9 +3075,7 @@
           "text": "Slovan Bratislava 0 victorias • 1 empates • VfB Stuttgart 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792004400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

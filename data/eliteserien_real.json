@@ -3,7 +3,7 @@
   "league_id": 59,
   "country": "Noruega",
   "country_code": "no",
-  "last_updated": "2026-10-08T11:29:51.436899",
+  "last_updated": "2026-10-08T20:26:06.693511",
   "total_fixtures": 12,
   "team_histories": {
     "Aalesund": [
@@ -1736,6 +1736,8 @@
       "date": "Vie 9 Oct, 11:00",
       "date_iso": "2026-10-09",
       "time": "11:00",
+      "timestamp": 1791565200,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -2018,9 +2020,7 @@
           "text": "Brann 1 victorias • 2 empates • Viking 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791565200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105017",
@@ -2036,6 +2036,8 @@
       "date": "Sáb 10 Oct, 08:00",
       "date_iso": "2026-10-10",
       "time": "08:00",
+      "timestamp": 1791640800,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -2318,9 +2320,7 @@
           "text": "Bodø/Glimt 4 victorias • 1 empates • Kristiansund 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791640800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105020",
@@ -2336,6 +2336,8 @@
       "date": "Sáb 10 Oct, 10:00",
       "date_iso": "2026-10-10",
       "time": "10:00",
+      "timestamp": 1791648000,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -2618,9 +2620,7 @@
           "text": "Rosenborg 2 victorias • 2 empates • Sandefjord 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791648000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105019",
@@ -2636,6 +2636,8 @@
       "date": "Dom 11 Oct, 06:30",
       "date_iso": "2026-10-11",
       "time": "06:30",
+      "timestamp": 1791721800,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -2918,9 +2920,7 @@
           "text": "Fredrikstad 0 victorias • 2 empates • Tromsø 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791721800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105022",
@@ -2936,6 +2936,8 @@
       "date": "Dom 11 Oct, 09:00",
       "date_iso": "2026-10-11",
       "time": "09:00",
+      "timestamp": 1791730800,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -3218,9 +3220,7 @@
           "text": "Aalesund 2 victorias • 1 empates • Sarpsborg 08 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791730800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105021",
@@ -3236,6 +3236,8 @@
       "date": "Dom 11 Oct, 09:00",
       "date_iso": "2026-10-11",
       "time": "09:00",
+      "timestamp": 1791730800,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -3518,9 +3520,7 @@
           "text": "Start 1 victorias • 0 empates • Hamarkameratene 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791730800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105023",
@@ -3536,6 +3536,8 @@
       "date": "Dom 11 Oct, 11:15",
       "date_iso": "2026-10-11",
       "time": "11:15",
+      "timestamp": 1791738900,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -3818,9 +3820,7 @@
           "text": "Lillestrøm 1 victorias • 0 empates • Molde 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791738900,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105024",
@@ -3836,6 +3836,8 @@
       "date": "Lun 12 Oct, 11:00",
       "date_iso": "2026-10-12",
       "time": "11:00",
+      "timestamp": 1791824400,
+      "timezone": "America/Guatemala",
       "round": "23",
       "h2h": {
         "home_last_5": [
@@ -4107,9 +4109,7 @@
           "text": "KFUM 0 victorias • 2 empates • Vålerenga 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791824400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105025",
@@ -4125,6 +4125,8 @@
       "date": "Sáb 17 Oct, 06:00",
       "date_iso": "2026-10-17",
       "time": "06:00",
+      "timestamp": 1792238400,
+      "timezone": "America/Guatemala",
       "round": "24",
       "h2h": {
         "home_last_5": [
@@ -4407,9 +4409,7 @@
           "text": "Hamarkameratene 1 victorias • 0 empates • Bodø/Glimt 4 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792238400,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105028",
@@ -4425,6 +4425,8 @@
       "date": "Sáb 17 Oct, 08:00",
       "date_iso": "2026-10-17",
       "time": "08:00",
+      "timestamp": 1792245600,
+      "timezone": "America/Guatemala",
       "round": "24",
       "h2h": {
         "home_last_5": [
@@ -4707,9 +4709,7 @@
           "text": "Kristiansund 2 victorias • 2 empates • Aalesund 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792245600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105026",
@@ -4725,6 +4725,8 @@
       "date": "Sáb 17 Oct, 10:00",
       "date_iso": "2026-10-17",
       "time": "10:00",
+      "timestamp": 1792252800,
+      "timezone": "America/Guatemala",
       "round": "24",
       "h2h": {
         "home_last_5": [
@@ -5007,9 +5009,7 @@
           "text": "Viking 3 victorias • 1 empates • Fredrikstad 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792252800,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_eliteserien_5105032",
@@ -5025,6 +5025,8 @@
       "date": "Dom 18 Oct, 06:30",
       "date_iso": "2026-10-18",
       "time": "06:30",
+      "timestamp": 1792326600,
+      "timezone": "America/Guatemala",
       "round": "24",
       "h2h": {
         "home_last_5": [
@@ -5307,9 +5309,7 @@
           "text": "Sarpsborg 08 1 victorias • 3 empates • Rosenborg 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792326600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }

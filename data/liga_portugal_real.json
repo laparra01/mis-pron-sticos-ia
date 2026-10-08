@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-08T11:29:23.537643",
+  "last_updated": "2026-10-08T20:26:03.135730",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -1950,6 +1950,8 @@
       "date": "Vie 9 Oct, 11:45",
       "date_iso": "2026-10-09",
       "time": "11:45",
+      "timestamp": 1791567900,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2232,9 +2234,7 @@
           "text": "Moreirense 1 victorias • 1 empates • Gil Vicente 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791567900,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887647",
@@ -2250,6 +2250,8 @@
       "date": "Vie 9 Oct, 13:15",
       "date_iso": "2026-10-09",
       "time": "13:15",
+      "timestamp": 1791573300,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2532,9 +2534,7 @@
           "text": "Braga 0 victorias • 4 empates • Sporting CP 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791573300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887648",
@@ -2550,6 +2550,8 @@
       "date": "Sáb 10 Oct, 08:30",
       "date_iso": "2026-10-10",
       "time": "08:30",
+      "timestamp": 1791642600,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -2832,9 +2834,7 @@
           "text": "Casa Pia AC 0 victorias • 2 empates • Santa Clara 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791642600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887650",
@@ -2850,6 +2850,8 @@
       "date": "Sáb 10 Oct, 11:00",
       "date_iso": "2026-10-10",
       "time": "11:00",
+      "timestamp": 1791651600,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3132,9 +3134,7 @@
           "text": "Marítimo 0 victorias • 2 empates • FC Porto 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791651600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887645",
@@ -3150,6 +3150,8 @@
       "date": "Sáb 10 Oct, 13:30",
       "date_iso": "2026-10-10",
       "time": "13:30",
+      "timestamp": 1791660600,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3432,9 +3434,7 @@
           "text": "Académico Viseu 1 victorias • 1 empates • Estoril 3 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791660600,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887652",
@@ -3450,6 +3450,8 @@
       "date": "Dom 11 Oct, 08:30",
       "date_iso": "2026-10-11",
       "time": "08:30",
+      "timestamp": 1791729000,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -3732,9 +3734,7 @@
           "text": "Rio Ave 1 victorias • 3 empates • Nacional 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791729000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887653",
@@ -3750,6 +3750,8 @@
       "date": "Dom 11 Oct, 11:00",
       "date_iso": "2026-10-11",
       "time": "11:00",
+      "timestamp": 1791738000,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4032,9 +4034,7 @@
           "text": "Benfica 4 victorias • 1 empates • Vitória de Guimarães 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791738000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887646",
@@ -4050,6 +4050,8 @@
       "date": "Dom 11 Oct, 13:30",
       "date_iso": "2026-10-11",
       "time": "13:30",
+      "timestamp": 1791747000,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4332,9 +4334,7 @@
           "text": "Arouca 2 victorias • 1 empates • Estrela da Amadora 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791747000,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887649",
@@ -4350,6 +4350,8 @@
       "date": "Lun 12 Oct, 13:15",
       "date_iso": "2026-10-12",
       "time": "13:15",
+      "timestamp": 1791832500,
+      "timezone": "America/Guatemala",
       "round": "8",
       "h2h": {
         "home_last_5": [
@@ -4621,9 +4623,7 @@
           "text": "Famalicão 2 victorias • 1 empates • Alverca 1 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1791832500,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887594",
@@ -4639,6 +4639,8 @@
       "date": "Lun 19 Oct, 13:15",
       "date_iso": "2026-10-19",
       "time": "13:15",
+      "timestamp": 1792437300,
+      "timezone": "America/Guatemala",
       "round": "2",
       "h2h": {
         "home_last_5": [
@@ -4921,9 +4923,7 @@
           "text": "Braga 1 victorias • 2 empates • Gil Vicente 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792437300,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887662",
@@ -4939,6 +4939,8 @@
       "date": "Vie 23 Oct, 13:45",
       "date_iso": "2026-10-23",
       "time": "13:45",
+      "timestamp": 1792784700,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5221,9 +5223,7 @@
           "text": "Vitória de Guimarães 4 victorias • 1 empates • Marítimo 0 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792784700,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     },
     {
       "id": "fotmob_liga_portugal_5887655",
@@ -5239,6 +5239,8 @@
       "date": "Sáb 24 Oct, 08:30",
       "date_iso": "2026-10-24",
       "time": "08:30",
+      "timestamp": 1792852200,
+      "timezone": "America/Guatemala",
       "round": "9",
       "h2h": {
         "home_last_5": [
@@ -5521,9 +5523,7 @@
           "text": "Estrela da Amadora 2 victorias • 1 empates • Casa Pia AC 2 victorias"
         }
       },
-      "source_api": "FotMob (Scraping Oficial)",
-      "timestamp": 1792852200,
-      "timezone": "America/Guatemala"
+      "source_api": "FotMob (Scraping Oficial)"
     }
   ]
 }
