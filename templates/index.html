@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Pronósticos AI - Fútbol & NBA en Tiempo Real</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0A0E17',
+                        cardbg: '#111827',
+                        cardborder: '#1F2937',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #0A0E17;
+            color: #E2E8F0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .prob-bar-fill {
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes pulse-live {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .animate-live {
+            animation: pulse-live 1.8s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-16">
+
+    <!-- Top Navigation -->
+    <header class="border-b border-gray-800 bg-gray-900/95 backdrop-blur sticky top-0 z-30 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
+                        <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
+                            Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
+                        </h1>
+                        <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
+                    </div>
+                </div>
+                <!-- Botón Refrescar en móvil (lado derecho del logo) -->
+                <button onclick="refreshApp()" class="sm:hidden btn-refresh-trigger flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs cursor-pointer" title="Actualizar datos">
+                    <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Actualizar</span>
+                </button>
+            </div>
+
+            <!-- Controles derecha: Categorías + Botón Refrescar Desktop -->
+            <div class="flex items-center gap-2">
+                <!-- Sport Switcher Tabs -->
+                <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-xs flex-1 sm:flex-none">
+                    <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow">
+                        <span>🌟</span>
+                        <span>Todos</span>
+                    </button>
+                    <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>⚽</span>
+                        <span>Clubes</span>
+                    </button>
+                    <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>🌎</span>
+                        <span class="hidden sm:inline">Selecciones</span>
+                        <span class="sm:hidden">Selecc.</span>
+                    </button>
+                    <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                        <span>🏀</span>
+                        <span>NBA</span>
+                    </button>
+                </div>
+
+                <!-- Botón Refrescar en Desktop -->
+                <button onclick="refreshApp()" class="hidden sm:flex btn-refresh-trigger items-center gap-1.5 px-3 py-2 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs shrink-0 cursor-pointer" title="Actualizar partidos y estadísticas en tiempo real">
+                    <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Actualizar</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 pt-6">
+
+        {% if live_api_active %}
+        <!-- Live API Active Alert Banner -->
+        <div class="mb-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 to-blue-950/80 border border-emerald-500/40 text-emerald-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
+            <div class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
+                    <i data-lucide="radio" class="w-5 h-5 animate-pulse"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-sm text-emerald-200 flex items-center gap-2">
+                        <span>🟢 Modo API en Vivo Activo</span>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono">CONECTADO</span>
+                    </h3>
+                    <p class="text-xs text-gray-300 mt-0.5">Partidos oficiales sincronizados en vivo desde <strong>ESPN Live (Selecciones FIFA & NBA)</strong> y <strong>Football-Data.org</strong>.</p>
+                </div>
+            </div>
+            <button onclick="switchTab('upcoming')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-emerald-900/40 flex items-center gap-2 shrink-0">
+                <span>Ver Partidos Programados ({{ upcoming_matches|length }})</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+        </div>
+        {% endif %}
+
+        <!-- Stat Highlights Cards -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1">
+                    <span class="text-xs font-medium">Partidos en Cartelera</span>
+                    <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-white">{{ stats.total_analyzed }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol Mundial + 🏀 NBA</p>
+            </div>
+
+            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1">
+                    <span class="text-xs font-medium">En Vivo con Estadísticas</span>
+                    <i data-lucide="activity" class="w-4 h-4 text-rose-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-rose-400 flex items-center gap-2">
+                    <span>{{ stats.live_count }}</span>
+                    <span class="w-2 h-2 rounded-full bg-rose-500 animate-live"></span>
+                </div>
+                <p class="text-[11px] text-gray-500 mt-1">Minuto a minuto & Cuartos Q2-Q4</p>
+            </div>
+
+            <div onclick="toggleValuePicks()" class="bg-gray-900/80 border border-gray-800 hover:border-cyan-500/50 cursor-pointer transition p-4 rounded-xl shadow-sm group">
+                <div class="flex items-center justify-between text-gray-400 mb-1">
+                    <span class="text-xs font-medium group-hover:text-cyan-400 transition">Picks de Alto Valor</span>
+                    <i data-lucide="gem" class="w-4 h-4 text-cyan-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-cyan-400 flex items-center justify-between">
+                    <span>{{ stats.value_picks }}</span>
+                    <span class="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 px-2 py-0.5 rounded-full font-mono font-semibold">Filtrar 💎</span>
+                </div>
+                <p class="text-[11px] text-gray-500 mt-1">Margen matemático positivo</p>
+            </div>
+
+            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1">
+                    <span class="text-xs font-medium">Tasa de Acierto Global</span>
+                    <i data-lucide="trending-up" class="w-4 h-4 text-indigo-400"></i>
+                </div>
+                <div class="text-2xl font-bold text-indigo-400">{{ stats.historical_accuracy }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">Modelos cuantitativos</p>
+            </div>
+        </section>
+
+        <!-- Secondary Section Switcher: EN VIVO vs PRÓXIMOS -->
+        <section class="flex items-center justify-between border-b border-gray-800 mb-6 gap-2">
+            <div class="flex items-center gap-2 overflow-x-auto">
+                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-live"></span>
+                    <span>Partidos En Vivo ({{ live_matches|length }})</span>
+                </button>
+                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Próximos Partidos ({{ upcoming_matches|length }})</span>
+                    {% if live_api_active %}
+                    <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold ml-1">Partidos Reales</span>
+                    {% endif %}
+                </button>
+            </div>
+            <button onclick="refreshApp()" class="btn-refresh-trigger mb-3 px-3 py-1.5 bg-gray-900/90 hover:bg-gray-800 text-gray-300 hover:text-white border border-gray-700/80 hover:border-emerald-500/60 rounded-xl text-xs font-bold transition flex items-center gap-1.5 shadow-sm shrink-0 cursor-pointer" title="Actualizar cartelera y marcadores">
+                <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                <span class="hidden sm:inline">Refrescar</span>
+            </button>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 1: EN VIVO (FÚTBOL & NBA)          -->
+        <!-- ========================================== -->
+        <div id="section-live" class="space-y-6">
+            {% if live_matches|length == 0 %}
+            <div class="py-16 px-6 rounded-2xl bg-gray-900/60 border border-gray-800 text-center flex flex-col items-center justify-center space-y-4 shadow-xl">
+                <div class="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
+                    <i data-lucide="clock-4" class="w-8 h-8"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-200">No hay partidos oficiales en juego en este momento</h3>
+                    <p class="text-xs text-gray-400 max-w-lg mx-auto mt-1 leading-relaxed">
+                        El botón funciona correctamente. En este instante las ligas oficiales (Premier, LaLiga, Serie A, NBA) no tienen encuentros en disputa activa. El reloj y estadísticas en tiempo real se activan automáticamente al comenzar cada encuentro oficial.
+                    </p>
+                </div>
+                <button onclick="switchTab('upcoming')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-emerald-950 flex items-center gap-2">
+                    <i data-lucide="calendar" class="w-4 h-4"></i>
+                    <span>Ver los {{ upcoming_matches|length }} Partidos Oficiales Programados</span>
+                </button>
+            </div>
+            {% else %}
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="live-grid">
+                {% for m in live_matches %}
+                <div class="match-card bg-gray-900/90 border border-gray-800 hover:border-gray-700 transition rounded-2xl p-5 shadow-lg flex flex-col justify-between"
+                     data-sport="{{ m.sport }}"
+                     data-is-national="{{ 'true' if 'Selecciones' in m.league else 'false' }}"
+                     data-league="{{ m.league }}"
+                     data-country="{{ m.country }}"
+                     data-value-bet="{{ 'true' if m.prediction.is_value_bet else 'false' }}">
+                    
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-800 text-xs">
+                            <span class="flex items-center gap-1.5 text-gray-300 font-medium flex-wrap">
+                                {% if m.country == 'Brasil' or 'Brasileir' in m.league or m.country_code == 'br' %}
+                                <img src="https://flagcdn.com/20x15/br.png" alt="Brasil" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.country_code %}
+                                <img src="https://flagcdn.com/20x15/{{ m.country_code }}.png" alt="{{ m.country }}" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.league_flag %}
+                                <span>{{ m.league_flag }}</span>
+                                {% endif %}
+                                <span>{{ m.league }}</span>
+                                {% if m.country and m.country != 'Internacional' %}
+                                <span class="text-gray-400 text-[11px]">({{ m.country }})</span>
+                                {% endif %}
+                                {% if m.prediction.is_value_bet %}
+                                <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/80 px-1.5 py-0.2 rounded text-[10px] font-bold flex items-center gap-1">
+                                    <span>💎</span>
+                                    <span>Valor</span>
+                                </span>
+                                {% endif %}
+                                {% if 'Selecciones' in m.league %}
+                                <span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>
+                                {% elif m.sport == 'nba' %}
+                                <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
+                                {% endif %}
+                            </span>
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-950 text-rose-400 border border-rose-800 font-mono font-bold text-xs shrink-0">
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-live"></span>
+                                {% if m.sport == 'nba' %}{{ m.quarter }}{% else %}{{ m.minute }}'{% endif %} EN VIVO
+                            </span>
+                        </div>
+
+                        <!-- Marcador Principal -->
+                        <div class="py-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex-1 text-left">
+                                    <h4 class="font-bold text-base text-white">{{ m.home_team }}</h4>
+                                    <span class="text-[11px] text-gray-400 font-mono">Local</span>
+                                    {% if m.home_stats %}
+                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    {% endif %}
+                                </div>
+
+                                <div class="px-5 py-2 bg-gray-950 rounded-xl border border-gray-800 flex items-center gap-3 font-mono font-extrabold text-2xl text-white shadow-inner">
+                                    <span class="text-emerald-400">{{ m.score_home }}</span>
+                                    <span class="text-gray-600">:</span>
+                                    <span class="text-rose-400">{{ m.score_away }}</span>
+                                </div>
+
+                                <div class="flex-1 text-right">
+                                    <h4 class="font-bold text-base text-white">{{ m.away_team }}</h4>
+                                    <span class="text-[11px] text-gray-400 font-mono">Visitante</span>
+                                    {% if m.away_stats %}
+                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ESTADÍSTICAS EN TIEMPO REAL: FÚTBOL -->
+                        {% if m.sport == 'football' %}
+                        <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-3.5 space-y-2.5 my-2">
+                            <div class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center justify-between pb-1 border-b border-gray-800/60">
+                                <span>Estadísticas de Juego en Vivo</span>
+                                <span class="text-emerald-400 flex items-center gap-1"><i data-lucide="activity" class="w-3 h-3"></i> En Juego</span>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-semibold mb-1">
+                                    <span class="text-blue-400">{{ m.live_stats.possession_home }}%</span>
+                                    <span class="text-gray-400 font-normal text-[11px]">Posesión de Balón</span>
+                                    <span class="text-rose-400">{{ m.live_stats.possession_away }}%</span>
+                                </div>
+                                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden flex">
+                                    <div class="bg-blue-500" style="width: {{ m.live_stats.possession_home }}%"></div>
+                                    <div class="bg-rose-500" style="width: {{ m.live_stats.possession_away }}%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1 border-t border-gray-800/50">
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros a Puerta</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.shots_on_target_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.shots_on_target_away }}</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros Totales</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.total_shots_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.total_shots_away }}</span>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block mb-0.5">Córners</span>
+                                    <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
+                                        <span class="text-blue-400">{{ m.live_stats.corners_home }}</span>
+                                        <span class="text-gray-500 text-[10px]">-</span>
+                                        <span class="text-rose-400">{{ m.live_stats.corners_away }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Probabilidades Recalculadas en Vivo (Fútbol) -->
+                        <div class="mt-3 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Probabilidad Final Restante (1X2)</span>
+                            <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                                <span class="text-blue-400 font-semibold">1 ({{ m.prediction.prob_home }}%)</span>
+                                <span class="text-gray-400">X ({{ m.prediction.prob_draw }}%)</span>
+                                <span class="text-rose-400 font-semibold">2 ({{ m.prediction.prob_away }}%)</span>
+                            </div>
+                            <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden flex">
+                                <div class="bg-blue-500" style="width: {{ m.prediction.prob_home }}%"></div>
+                                <div class="bg-gray-600" style="width: {{ m.prediction.prob_draw }}%"></div>
+                                <div class="bg-rose-500" style="width: {{ m.prediction.prob_away }}%"></div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- ESTADÍSTICAS EN TIEMPO REAL: NBA -->
+                        {% if m.sport == 'nba' %}
+                        <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-3.5 space-y-2.5 my-2">
+                            <div class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center justify-between pb-1 border-b border-gray-800/60">
+                                <span>Puntaje por Cuartos & Tiro</span>
+                                <span class="text-orange-400 font-mono text-xs">Proy. Final: {{ m.prediction.projected_final }}</span>
+                            </div>
+
+                            <div class="flex items-center justify-around text-xs font-mono bg-gray-900/90 py-1.5 px-2 rounded-lg border border-gray-800">
+                                {% for q_name, q_score in m.live_stats.q_scores.items() %}
+                                <div class="text-center">
+                                    <span class="text-[10px] text-gray-400 block">{{ q_name }}</span>
+                                    <span class="font-bold text-gray-200">{{ q_score }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block">% Tiro Campo (FG)</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.fg_pct_home }}% vs {{ m.live_stats.fg_pct_away }}%</span>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block">% Triples (3PT)</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.three_pct_home }}% vs {{ m.live_stats.three_pct_away }}%</span>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
+                                    <span class="text-[10px] text-gray-400 block">Rebotes Totales</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.rebounds_home }} - {{ m.live_stats.rebounds_away }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TABLA ESPECIAL: GANADOR POR CUARTOS, MITADES Y JUEGO COMPLETO (NBA LIVE) -->
+                        {% if m.prediction.quarters_breakdown %}
+                        <div class="bg-gray-950/80 border border-orange-900/40 rounded-xl p-3 my-3">
+                            <span class="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2">
+                                <i data-lucide="layers" class="w-3 h-3"></i> Ganador por Cuarto & Mitad (Análisis en Vivo)
+                            </span>
+                            <div class="grid grid-cols-4 gap-1.5 text-center text-[11px] font-mono">
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">1Q</span>
+                                    <span class="font-bold text-white">{{ m.prediction.quarters_breakdown.q1.winner }}</span>
+                                    <span class="text-[9px] text-gray-500 block">Fin</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">2Q</span>
+                                    <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.q2.winner }}</span>
+                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">1ª Mitad</span>
+                                    <span class="font-bold text-amber-400">{{ m.prediction.quarters_breakdown.first_half.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ m.prediction.quarters_breakdown.first_half.score }}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">3Q</span>
+                                    <span class="font-bold text-cyan-400">{{ m.prediction.quarters_breakdown.q3.winner }}</span>
+                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-1.5 text-center text-[11px] font-mono mt-1.5">
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">4Q (Cierre)</span>
+                                    <span class="font-bold text-purple-400">{{ m.prediction.quarters_breakdown.q4.winner }}</span>
+                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">2ª Mitad (Q3+Q4)</span>
+                                    <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.second_half.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">Proy. Vivo</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">Juego Completo</span>
+                                    <span class="font-bold text-amber-400">{{ m.prediction.quarters_breakdown.full_game.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ m.prediction.quarters_breakdown.full_game.prob }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Probabilidades Recalculadas en Vivo (NBA) -->
+                        <div class="mt-3 space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Probabilidad de Triunfo en Vivo</span>
+                            <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                                <span class="text-blue-400 font-semibold">{{ m.home_team }} ({{ m.prediction.prob_home }}%)</span>
+                                <span class="text-rose-400 font-semibold">{{ m.away_team }} ({{ m.prediction.prob_away }}%)</span>
+                            </div>
+                            <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden flex">
+                                <div class="bg-blue-500" style="width: {{ m.prediction.prob_home }}%"></div>
+                                <div class="bg-rose-500" style="width: {{ m.prediction.prob_away }}%"></div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Footer Pick en Vivo -->
+                    <div class="pt-4 border-t border-gray-800 mt-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Pick en Tiempo Real</span>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                    <span class="text-sm font-extrabold text-emerald-400">{{ m.prediction.recommended_pick }}</span>
+                                    <span class="text-xs text-gray-400 font-mono">({{ m.prediction.confidence }}%)</span>
+                                </div>
+                            </div>
+
+                            <span class="px-2.5 py-1 bg-emerald-950 text-emerald-400 border border-emerald-800 rounded-lg text-xs font-bold flex items-center gap-1">
+                                <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> {{ m.prediction.risk_level }}
+                            </span>
+                        </div>
+
+                        <button onclick="openAiModal('{{ m.id }}')" class="w-full py-2.5 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-emerald-950/70 hover:to-blue-950/70 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition border border-gray-700 hover:border-emerald-500/50 shadow">
+                            <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Ver 4 Pronósticos, H2H y Gemini AI</span>
+                        </button>
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- ========================================== -->
+        <!-- SECCIÓN 2: PRÓXIMOS (PRE-MATCH)            -->
+        <!-- ========================================== -->
+        <div id="section-upcoming" class="hidden space-y-6">
+
+            <!-- Toolbar de Filtros Avanzados (Fechas, País, Liga, Picks de Valor) -->
+            <div class="bg-gray-900/90 border border-gray-800 rounded-2xl p-4 shadow-sm space-y-3.5">
+                <!-- Fila 1: Filtro por Fecha y Botón Picks de Alto Valor -->
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="text-xs font-bold text-gray-200 block">Filtros de Cartelera</span>
+                                <span class="text-[10px] text-emerald-300 font-mono bg-emerald-950/80 border border-emerald-700/60 px-2 py-0.5 rounded-full flex items-center gap-1 font-semibold shadow-xs">
+                                    <i data-lucide="clock" class="w-3 h-3 text-emerald-400"></i>
+                                    <span>Hora Guatemala (GMT-6)</span>
+                                </span>
+                            </div>
+                            <span class="text-[11px] text-gray-400" id="filter-status-text">Mostrando todos los partidos oficiales</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center flex-wrap gap-2 text-xs">
+                        <!-- Presets de Fecha -->
+                        <button onclick="setDateFilter('all')" id="date-btn-all" class="date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow">
+                            Todos ({{ upcoming_matches|length }})
+                        </button>
+                        <button onclick="setDateFilter('{{ today_iso }}')" id="date-btn-today" class="date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white">
+                            ⚡ Hoy ({{ today_str }})
+                        </button>
+                        <button onclick="setDateFilter('{{ tomorrow_iso }}')" id="date-btn-tomorrow" class="date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white">
+                            🌅 Mañana ({{ tomorrow_str }})
+                        </button>
+
+                        <!-- Selector Calendario -->
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-700/80 rounded-xl px-2.5 py-1.5">
+                            <i data-lucide="calendar-search" class="w-3.5 h-3.5 text-emerald-400"></i>
+                            <input type="date" id="date-picker-input" onchange="setDateFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none font-mono">
+                        </div>
+
+                        <!-- Botón Picks de Alto Valor -->
+                        <button onclick="toggleValuePicks()" id="btn-value-filter" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-gray-950 border-gray-800 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950/40">
+                            <i data-lucide="gem" class="w-3.5 h-3.5 text-cyan-400"></i>
+                            <span>💎 Picks Alto Valor</span>
+                            <span id="badge-value-count" class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[10px] px-1.5 py-0.2 rounded-full font-mono">{{ stats.value_picks }}</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fila 2: Selectores de País, Liga, Orden por Hora + Botón Restablecer -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-3 border-t border-gray-800/80 text-xs">
+                    <div class="flex flex-wrap items-center gap-2.5 flex-1">
+                        <!-- Selector País con Banderas Reales -->
+                        <div class="relative flex-1 sm:flex-none min-w-[190px]" id="country-dropdown-wrapper">
+                            <button type="button" id="country-dropdown-btn" onclick="toggleCountryDropdown(event)" class="w-full flex items-center justify-between gap-2 bg-gray-950 border border-gray-800 hover:border-gray-700 rounded-xl px-3 py-1.5 text-xs text-gray-200 transition focus:outline-none cursor-pointer">
+                                <div class="flex items-center gap-2 truncate" id="country-selected-label">
+                                    <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                                    <span class="truncate">Todos los Países</span>
+                                </div>
+                                <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-gray-400 shrink-0 transition-transform duration-200" id="country-dropdown-arrow"></i>
+                            </button>
+                            <div id="country-dropdown-menu" class="hidden absolute left-0 top-full mt-1.5 w-60 bg-gray-950/95 backdrop-blur-md border border-gray-800 rounded-xl shadow-2xl py-1 z-50 max-h-64 overflow-y-auto">
+                                <!-- Opciones generadas dinámicamente con banderas reales -->
+                            </div>
+                            <select id="country-select" onchange="setCountryFilter(this.value)" class="hidden">
+                                <option value="all">Todos los Países</option>
+                                {% for c in countries %}
+                                <option value="{{ c.name if c.name is defined else c }}">{{ c.name if c.name is defined else c }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Selector Liga -->
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[210px]">
+                            <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                            <select id="league-select" onchange="setLeagueFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer">
+                                <option value="all" class="bg-gray-900 text-gray-200">🏆 Todas las Ligas</option>
+                                {% for l in leagues %}
+                                <option value="{{ l }}" class="bg-gray-900 text-gray-200">{{ l }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Selector Orden por Hora / Criterio -->
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[200px]">
+                            <i data-lucide="arrow-up-down" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
+                            <select id="sort-select" onchange="setSortOrder(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer font-medium">
+                                <option value="time-asc" class="bg-gray-900 text-gray-200">⏰ Hora más próxima (GT)</option>
+                                <option value="time-desc" class="bg-gray-900 text-gray-200">⏳ Hora más lejana (GT)</option>
+                                <option value="prob-desc" class="bg-gray-900 text-gray-200">💎 Mayor Probabilidad</option>
+                                <option value="league" class="bg-gray-900 text-gray-200">🏆 Por Liga</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Contador de Resultados y Botón Reset -->
+                    <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                        <span id="filtered-matches-counter" class="text-[11px] text-gray-400 font-mono">
+                            Mostrando <strong class="text-white">{{ upcoming_matches|length }}</strong> partidos
+                        </span>
+                        <button onclick="resetAllFilters()" id="btn-reset-filters" class="hidden items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white transition font-medium text-[11px]">
+                            <i data-lucide="rotate-ccw" class="w-3 h-3"></i>
+                            <span>Restablecer</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alerta cuando no hay partidos para el filtro actual -->
+            <div id="no-matches-date-alert" class="hidden py-12 px-6 rounded-2xl bg-gray-900/60 border border-gray-800 text-center flex flex-col items-center justify-center space-y-2">
+                <i data-lucide="search-x" class="w-8 h-8 text-gray-500"></i>
+                <p class="text-sm font-semibold text-gray-300">No hay partidos oficiales con los filtros seleccionados</p>
+                <p class="text-xs text-gray-500">Prueba cambiando la fecha, seleccionando otro país/liga o pulsa "Restablecer Filtros".</p>
+                <button onclick="resetAllFilters()" class="mt-2 px-4 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold rounded-xl transition shadow">
+                    Restablecer todos los filtros
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="upcoming-grid">
+                {% for m in upcoming_matches %}
+                <div class="match-card bg-gray-900/90 border border-gray-800 hover:border-gray-700 transition rounded-2xl p-5 flex flex-col justify-between"
+                     data-sport="{{ m.sport }}"
+                     data-is-national="{{ 'true' if 'Selecciones' in m.league else 'false' }}"
+                     data-league="{{ m.league }}"
+                     data-country="{{ m.country }}"
+                     data-value-bet="{{ 'true' if m.prediction.is_value_bet else 'false' }}"
+                     data-date="{{ m.date_iso }}"
+                     data-timestamp="{{ m.timestamp or 0 }}"
+                     data-time="{{ m.time or '00:00' }}"
+                     data-prob="{{ m.prediction.prob_home if (m.prediction and m.prediction.prob_home is defined and m.prediction.prob_home > m.prediction.prob_away) else (m.prediction.prob_away if (m.prediction and m.prediction.prob_away is defined) else 50) }}">
+                    
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center gap-1.5 font-medium text-gray-300 flex-wrap">
+                                {% if m.country == 'Brasil' or 'Brasileir' in m.league or m.country_code == 'br' %}
+                                <img src="https://flagcdn.com/20x15/br.png" alt="Brasil" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.country_code %}
+                                <img src="https://flagcdn.com/20x15/{{ m.country_code }}.png" alt="{{ m.country }}" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">
+                                {% elif m.league_flag %}
+                                <span>{{ m.league_flag }}</span>
+                                {% endif %}
+                                <span>{{ m.league }}</span>
+                                {% if m.country and m.country != 'Internacional' %}
+                                <span class="text-gray-400 text-[11px]">({{ m.country }})</span>
+                                {% endif %}
+                                {% if m.prediction.is_value_bet %}
+                                <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/80 px-1.5 py-0.2 rounded text-[10px] font-bold flex items-center gap-1">
+                                    <span>💎</span>
+                                    <span>Valor</span>
+                                </span>
+                                {% endif %}
+                                {% if m.is_external %}
+                                <span class="bg-emerald-950 text-emerald-400 border border-emerald-700 px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    <span>API Real: {{ m.source_api }}</span>
+                                </span>
+                                {% elif 'Selecciones' in m.league %}
+                                <span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>
+                                {% elif m.sport == 'nba' %}
+                                <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
+                                {% endif %}
+                            </span>
+                            <span class="bg-gray-800/90 border border-gray-700/70 px-2.5 py-1 rounded-lg text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1.5 shadow-xs" title="Hora local de Guatemala (GMT-6)">
+                                <i data-lucide="clock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
+                                <span>{{ m.date }}</span>
+                                <span class="text-[9px] text-emerald-300 font-bold bg-emerald-950/90 border border-emerald-700/60 px-1 py-0.2 rounded font-sans tracking-wide">GT</span>
+                            </span>
+                        </div>
+
+                        <div class="py-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <div class="flex-1 text-left">
+                                    <span class="font-bold text-base text-white block">{{ m.home_team }}</span>
+                                    {% if m.home_stats %}
+                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Loc: {{ m.home_stats.corners }} (Gen: {{ m.home_stats.corners_gen or m.home_stats.corners }})</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    {% endif %}
+                                </div>
+                                <span class="text-xs font-mono font-bold text-gray-500 px-3">vs</span>
+                                <div class="flex-1 text-right">
+                                    <span class="font-bold text-base text-white block">{{ m.away_team }}</span>
+                                    {% if m.away_stats %}
+                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Vis: {{ m.away_stats.corners }} (Gen: {{ m.away_stats.corners_gen or m.away_stats.corners }})</span>{% endif %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <!-- Gráfico de Probabilidad Pre-Match (Fútbol) -->
+                            {% if m.sport == 'football' %}
+                            <div class="space-y-1 mt-3">
+                                <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                                    <span class="text-blue-400 font-semibold">1 ({{ m.prediction.prob_home }}%)</span>
+                                    <span class="text-gray-400">X ({{ m.prediction.prob_draw }}%)</span>
+                                    <span class="text-rose-400 font-semibold">2 ({{ m.prediction.prob_away }}%)</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                                    <div class="bg-blue-500 prob-bar-fill" style="width: {{ m.prediction.prob_home }}%"></div>
+                                    <div class="bg-gray-600 prob-bar-fill" style="width: {{ m.prediction.prob_draw }}%"></div>
+                                    <div class="bg-rose-500 prob-bar-fill" style="width: {{ m.prediction.prob_away }}%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2 mt-4 text-center">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">+1.5 Goles</span>
+                                    <span class="text-xs font-bold text-cyan-400">{{ m.prediction.prob_over_15 }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">+2.5 Goles</span>
+                                    <span class="text-xs font-bold text-emerald-400">{{ m.prediction.prob_over_25 }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Ambos Marcan</span>
+                                    <span class="text-xs font-bold text-gray-300">{{ m.prediction.prob_btts }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Córners IA</span>
+                                    <span class="text-xs font-bold text-cyan-300 font-mono">{{ m.prediction.projected_corners or 9.5 }}</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Marcador IA</span>
+                                    <span class="text-xs font-bold text-amber-400 font-mono">{{ m.prediction.top_scores[0].score }}</span>
+                                </div>
+                            </div>
+                            {% else %}
+                            <!-- NBA Pre-Match Info -->
+                            <div class="space-y-1 mt-3">
+                                <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                                    <span class="text-blue-400 font-semibold">{{ m.home_team }} ({{ m.prediction.prob_home }}%)</span>
+                                    <span class="text-rose-400 font-semibold">{{ m.away_team }} ({{ m.prediction.prob_away }}%)</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                                    <div class="bg-blue-500 prob-bar-fill" style="width: {{ m.prediction.prob_home }}%"></div>
+                                    <div class="bg-rose-500 prob-bar-fill" style="width: {{ m.prediction.prob_away }}%"></div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Total Puntos</span>
+                                    <span class="text-xs font-bold text-orange-400">{{ m.prediction.total_points }} pts</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Línea O/U</span>
+                                    <span class="text-xs font-bold text-emerald-400">{{ m.prediction.over_under_line }}</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Hándicap Proy.</span>
+                                    <span class="text-xs font-bold text-cyan-400 font-mono">{{ m.prediction.spread_home }}</span>
+                                </div>
+                            </div>
+
+                            <!-- Desglose de Cuartos Pre-Match (NBA) -->
+                            {% if m.prediction.quarters_breakdown %}
+                            <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-2.5 mt-3">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider block mb-1">
+                                    Ganador por Cuartos & Mitades:
+                                </span>
+                                <div class="grid grid-cols-4 gap-1 text-center text-[10px] font-mono">
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">1Q</span>
+                                        <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.q1.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">2Q</span>
+                                        <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">1ª Mitad</span>
+                                        <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.first_half.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">Q3 & Q4</span>
+                                        <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-800 mt-2">
+                        <div class="flex items-center justify-between mb-3">
+                            <div>
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Pronóstico Sugerido</span>
+                                <div class="flex items-center gap-1.5 mt-0.5">
+                                    <span class="text-sm font-extrabold text-emerald-400">{{ m.prediction.recommended_pick }}</span>
+                                    <span class="text-xs text-gray-400 font-mono">({{ m.prediction.confidence }}%)</span>
+                                </div>
+                            </div>
+
+                            <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800 rounded-md text-[10px] font-bold">
+                                {{ m.prediction.risk_level }}
+                            </span>
+                        </div>
+
+                        <button onclick="openAiModal('{{ m.id }}')" class="w-full py-2.5 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-emerald-950/70 hover:to-blue-950/70 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition border border-gray-700 hover:border-emerald-500/50 shadow">
+                            <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Ver Pronósticos IA, Córners, H2H y Gemini AI</span>
+                        </button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal for Detailed AI Analysis, H2H & 4 Predictions -->
+    <div id="ai-modal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-3 sm:p-5">
+        <div class="bg-gray-900 border border-gray-700 max-w-4xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[92vh] animate-in fade-in zoom-in duration-150">
+            <!-- Modal Header -->
+            <div class="p-4 sm:p-5 border-b border-gray-800 bg-gray-950 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-emerald-400"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <h3 id="modal-match-title" class="font-bold text-white text-base">Cargando partido...</h3>
+                            <span id="modal-gemini-badge" class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-950 text-purple-300 border border-purple-800 flex items-center gap-1 font-mono">
+                                <i data-lucide="bot" class="w-3 h-3 text-purple-400"></i>
+                                <span id="modal-gemini-badge-text">Google Gemini AI</span>
+                            </span>
+                        </div>
+                        <p id="modal-league" class="text-xs text-gray-400 mt-0.5">Competición</p>
+                    </div>
+                </div>
+                <button onclick="closeAiModal()" class="text-gray-400 hover:text-white p-2 rounded-xl hover:bg-gray-800 transition">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Modal Sub-Navigation Tabs -->
+            <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-4 text-xs font-bold overflow-x-auto">
+                <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap">
+                    <i data-lucide="target" class="w-4 h-4"></i>
+                    <span>🎯 Pronósticos y Córners</span>
+                </button>
+                <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
+                    <i data-lucide="history" class="w-4 h-4"></i>
+                    <span>📊 Historial H2H y Córners</span>
+                </button>
+                <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
+                    <i data-lucide="bot" class="w-4 h-4"></i>
+                    <span>🧠 Análisis Deportivo Google Gemini</span>
+                </button>
+            </div>
+
+            <!-- Modal Scrollable Body -->
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs">
+
+                <!-- SECCIÓN TAB 1: PRONÓSTICOS DETALLADOS -->
+                <div id="modal-content-picks" class="space-y-4">
+                    <div class="flex items-center justify-between pb-1">
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Pronósticos Calculados por Inteligencia Artificial</h4>
+                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan y Córners con cuota justa y nivel de riesgo.</p>
+                        </div>
+                    </div>
+                    <div id="modal-picks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                        <!-- Generado dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- SECCIÓN TAB 2: HISTORIAL H2H -->
+                <div id="modal-content-h2h" class="hidden space-y-4">
+                    <div class="flex items-center justify-between pb-1">
+                        <div>
+                            <h4 class="font-bold text-sm text-white">Historial de Rendimiento y Cara a Cara (H2H)</h4>
+                            <p class="text-gray-400 text-[11px]">Últimos 5 partidos del local, últimos 5 del visitante y los 5 enfrentamientos directos entre ellos.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-3.5" id="modal-h2h-grid">
+                        <!-- Columna Local -->
+                        <div class="bg-gray-950/70 border border-gray-800 rounded-xl p-3.5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
+                                    <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
+                                        <i data-lucide="home" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                                        <span id="h2h-home-title">Últimos 5 Local</span>
+                                    </span>
+                                    <span id="h2h-home-streak" class="text-[10px] text-gray-400 font-mono"></span>
+                                </div>
+                                <div id="h2h-home-list" class="space-y-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Visitante -->
+                        <div class="bg-gray-950/70 border border-gray-800 rounded-xl p-3.5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
+                                    <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
+                                        <i data-lucide="plane" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                                        <span id="h2h-away-title">Últimos 5 Visitante</span>
+                                    </span>
+                                    <span id="h2h-away-streak" class="text-[10px] text-gray-400 font-mono"></span>
+                                </div>
+                                <div id="h2h-away-list" class="space-y-2">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Cara a Cara (Directos) -->
+                        <div class="bg-gray-950/70 border border-gray-800 rounded-xl p-3.5 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
+                                    <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
+                                        <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                                        <span>Cara a Cara Directo</span>
+                                    </span>
+                                    <span class="text-[10px] text-amber-400 font-mono">5 Partidos</span>
+                                </div>
+                                <div id="h2h-direct-list" class="space-y-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN TAB 3: ANÁLISIS GOOGLE GEMINI AI -->
+                <div id="modal-content-gemini" class="hidden space-y-4">
+                    <!-- Banner de Estado de Gemini -->
+                    <div id="modal-gemini-status-card" class="bg-gradient-to-r from-purple-950/60 to-blue-950/60 border border-purple-800/60 p-3.5 rounded-xl flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center border border-purple-500/30 shrink-0">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-200 text-xs flex items-center gap-2">
+                                    <span id="modal-gemini-provider-title">Análisis Táctico Google Gemini AI</span>
+                                    <span class="text-[10px] bg-purple-500/20 text-purple-300 border border-purple-500/30 px-2 py-0.2 rounded-full font-mono">OFICIAL</span>
+                                </div>
+                                <p class="text-[11px] text-gray-400 mt-0.5" id="modal-gemini-provider-desc">
+                                    Modelo gemini-3.5-flash-lite analizando variables cuantitativas, xG y táctica.
+                                </p>
+                            </div>
+                        </div>
+                        <button onclick="requestGeminiRefresh()" id="btn-refresh-gemini" class="px-3 py-1.5 bg-purple-900/60 hover:bg-purple-800 text-purple-200 border border-purple-700/80 rounded-xl text-[11px] font-bold transition flex items-center gap-1.5 shrink-0">
+                            <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                            <span>Reanalizar</span>
+                        </button>
+                    </div>
+
+                    <div class="bg-emerald-950/30 border border-emerald-800/50 p-3.5 rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-emerald-400 tracking-wider flex items-center gap-1 mb-1">
+                            <i data-lucide="zap" class="w-3 h-3"></i> Diagnóstico de Inteligencia Artificial
+                        </span>
+                        <p id="modal-summary" class="text-gray-200 font-medium leading-relaxed"></p>
+                    </div>
+
+                    <!-- Desglose de Cuartos en el Modal si es NBA -->
+                    <div id="modal-quarters-container" class="hidden bg-gray-950/80 p-3.5 rounded-xl border border-orange-900/40">
+                        <span class="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2">
+                            <i data-lucide="layers" class="w-3.5 h-3.5"></i> Desglose: Cuartos, Mitades y Juego Completo (NBA)
+                        </span>
+                        <div id="modal-quarters-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1 mb-1.5">
+                                <i data-lucide="bar-chart-2" class="w-3.5 h-3.5 text-blue-400"></i> Justificación Cuantitativa (Algoritmo & xG)
+                            </span>
+                            <p id="modal-justification" class="text-gray-300 bg-gray-950/60 p-3 rounded-xl border border-gray-800 leading-relaxed"></p>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1 mb-1.5">
+                                <i data-lucide="key" class="w-3.5 h-3.5 text-amber-400"></i> Factor Táctico / Ritmo Clave
+                            </span>
+                            <p id="modal-factor" class="text-gray-300 bg-gray-950/60 p-3 rounded-xl border border-gray-800 leading-relaxed"></p>
+                        </div>
+                    </div>
+
+                    <div id="modal-corners-shots-box" class="hidden bg-cyan-950/30 border border-cyan-800/50 p-3.5 rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider flex items-center gap-1 mb-1.5">
+                            <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400"></i> Análisis de Córners y Remates
+                        </span>
+                        <p id="modal-corners-shots" class="text-gray-200 leading-relaxed font-sans"></p>
+                    </div>
+
+                    <div>
+                        <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1 mb-1.5">
+                            <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-400"></i> Advertencia de Riesgo
+                        </span>
+                        <p id="modal-risk-warning" class="text-gray-300 bg-gray-950/60 p-3 rounded-xl border border-gray-800 leading-relaxed"></p>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3.5 bg-gray-950 rounded-xl border border-gray-800">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="target" class="w-4 h-4 text-amber-400"></i>
+                            <span class="text-gray-300 font-semibold">Marcador / Proyección Final:</span>
+                        </div>
+                        <span id="modal-score" class="font-mono text-base font-extrabold text-amber-400 px-3 py-1 bg-amber-950/50 rounded-lg border border-amber-800/40"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-4 border-t border-gray-800 bg-gray-950 flex items-center justify-between">
+                <span class="text-[11px] text-gray-500 font-mono hidden sm:inline">
+                    Mis Pronósticos AI • Google Gemini & Modelos Cuantitativos
+                </span>
+                <button onclick="closeAiModal()" class="px-5 py-2 bg-gray-800 hover:bg-gray-700 text-white rounded-xl text-xs font-semibold transition ml-auto">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client-side Logic -->
+    <script>
+        lucide.createIcons();
+
+        const allMatchesData = {{ all_matches | tojson }};
+
+        let currentCategory = 'all';
+        let currentDateFilter = 'all';
+        let currentCountryFilter = 'all';
+        let currentLeagueFilter = 'all';
+        let onlyValuePicks = false;
+        let currentSortOrder = 'time-asc';
+
+        function updateFilterStatusText() {
+            const statusEl = document.getElementById('filter-status-text');
+            if (!statusEl) return;
+            let parts = [];
+            if (currentDateFilter !== 'all') {
+                if (currentDateFilter === '{{ today_iso }}') parts.push('Hoy');
+                else if (currentDateFilter === '{{ tomorrow_iso }}') parts.push('Mañana');
+                else parts.push(currentDateFilter);
+            }
+            if (currentCountryFilter !== 'all') parts.push(currentCountryFilter);
+            if (currentLeagueFilter !== 'all') parts.push(currentLeagueFilter);
+            if (onlyValuePicks) parts.push('💎 Picks de Valor');
+
+            if (parts.length === 0) {
+                statusEl.innerText = "Mostrando todos los partidos oficiales";
+            } else {
+                statusEl.innerText = "Filtros activos: " + parts.join(' • ');
+            }
+        }
+
+        function applyAllFilters() {
+            let upcomingVisibleCount = 0;
+            document.querySelectorAll('#upcoming-grid .match-card').forEach(card => {
+                const isNat = card.dataset.isNational === 'true';
+                const sport = card.dataset.sport;
+                const cardDate = card.dataset.date;
+                const cardCountry = card.dataset.country;
+                const cardLeague = card.dataset.league;
+                const isValue = card.dataset.valueBet === 'true';
+
+                let matchCat = false;
+                if (currentCategory === 'all') matchCat = true;
+                else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
+                else if (currentCategory === 'national' && isNat) matchCat = true;
+                else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+
+                let matchDate = false;
+                if (currentDateFilter === 'all') matchDate = true;
+                else if (cardDate === currentDateFilter) matchDate = true;
+
+                let matchCountry = false;
+                if (currentCountryFilter === 'all') matchCountry = true;
+                else if (cardCountry === currentCountryFilter) matchCountry = true;
+
+                let matchLeague = false;
+                if (currentLeagueFilter === 'all') matchLeague = true;
+                else if (cardLeague === currentLeagueFilter) matchLeague = true;
+
+                let matchValue = true;
+                if (onlyValuePicks) {
+                    matchValue = isValue;
+                }
+
+                const show = matchCat && matchDate && matchCountry && matchLeague && matchValue;
+                card.style.display = show ? 'flex' : 'none';
+                if (show) upcomingVisibleCount++;
+            });
+
+            // Sincronizar también con partidos en vivo si corresponden a los filtros
+            document.querySelectorAll('#live-grid .match-card').forEach(card => {
+                const isNat = card.dataset.isNational === 'true';
+                const sport = card.dataset.sport;
+                const cardCountry = card.dataset.country;
+                const cardLeague = card.dataset.league;
+                const isValue = card.dataset.valueBet === 'true';
+
+                let matchCat = false;
+                if (currentCategory === 'all') matchCat = true;
+                else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
+                else if (currentCategory === 'national' && isNat) matchCat = true;
+                else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+
+                let matchCountry = false;
+                if (currentCountryFilter === 'all') matchCountry = true;
+                else if (cardCountry === currentCountryFilter) matchCountry = true;
+
+                let matchLeague = false;
+                if (currentLeagueFilter === 'all') matchLeague = true;
+                else if (cardLeague === currentLeagueFilter) matchLeague = true;
+
+                let matchValue = true;
+                if (onlyValuePicks) {
+                    matchValue = isValue;
+                }
+
+                const show = matchCat && matchCountry && matchLeague && matchValue;
+                card.style.display = show ? 'flex' : 'none';
+            });
+
+            // Actualizar contador
+            const counterEl = document.getElementById('filtered-matches-counter');
+            if (counterEl) {
+                counterEl.innerHTML = `Mostrando <strong class="text-white">${upcomingVisibleCount}</strong> de {{ upcoming_matches|length }} partidos`;
+            }
+
+            // Alerta de sin resultados
+            const alertBox = document.getElementById('no-matches-date-alert');
+            if (alertBox) {
+                if (upcomingVisibleCount === 0) alertBox.classList.remove('hidden');
+                else alertBox.classList.add('hidden');
+            }
+
+            // Visibilidad del botón restablecer
+            const hasActiveFilter = (currentCategory !== 'all' || currentDateFilter !== 'all' || currentCountryFilter !== 'all' || currentLeagueFilter !== 'all' || onlyValuePicks);
+            const resetBtn = document.getElementById('btn-reset-filters');
+            if (resetBtn) {
+                if (hasActiveFilter) {
+                    resetBtn.classList.remove('hidden');
+                    resetBtn.classList.add('inline-flex');
+                } else {
+                    resetBtn.classList.add('hidden');
+                    resetBtn.classList.remove('inline-flex');
+                }
+            }
+        }
+
+        function updateDynamicFilters() {
+            const cards = document.querySelectorAll('#upcoming-grid .match-card');
+            const countrySelect = document.getElementById('country-select');
+            const leagueSelect = document.getElementById('league-select');
+            if (!countrySelect || !leagueSelect) return;
+
+            const countryCounts = {};
+            const leagueCounts = {};
+            let totalAvailable = 0;
+
+            cards.forEach(card => {
+                const sport = card.dataset.sport;
+                const isNat = card.dataset.isNational === 'true';
+                const cardDate = card.dataset.date;
+                const isValue = card.dataset.valueBet === 'true';
+
+                // Categoría
+                let matchCat = false;
+                if (currentCategory === 'all') matchCat = true;
+                else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
+                else if (currentCategory === 'national' && isNat) matchCat = true;
+                else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+
+                // Fecha
+                let matchDate = (currentDateFilter === 'all') || (cardDate === currentDateFilter);
+
+                // Picks de valor
+                let matchVal = (!onlyValuePicks) || isValue;
+
+                if (matchCat && matchDate && matchVal) {
+                    totalAvailable++;
+                    const c = card.dataset.country || 'Internacional';
+                    countryCounts[c] = (countryCounts[c] || 0) + 1;
+
+                    // Si coincide con el país seleccionado (o si está en 'all')
+                    if (currentCountryFilter === 'all' || card.dataset.country === currentCountryFilter) {
+                        const l = card.dataset.league;
+                        if (l) leagueCounts[l] = (leagueCounts[l] || 0) + 1;
+                    }
+                }
+            });
+
+            // Si el país que estaba seleccionado ya no tiene partidos en esta vista, restablecer a 'all'
+            if (currentCountryFilter !== 'all' && (!countryCounts[currentCountryFilter] || countryCounts[currentCountryFilter] === 0)) {
+                currentCountryFilter = 'all';
+            }
+
+            // Si la liga que estaba seleccionada ya no tiene partidos, restablecer a 'all'
+            if (currentLeagueFilter !== 'all' && (!leagueCounts[currentLeagueFilter] || leagueCounts[currentLeagueFilter] === 0)) {
+                currentLeagueFilter = 'all';
+            }
+
+            const countryCodesMap = {
+                'Brasil': 'br',
+                'España': 'es',
+                'Inglaterra': 'gb-eng',
+                'Italia': 'it',
+                'Alemania': 'de',
+                'Francia': 'fr',
+                'Portugal': 'pt',
+                'Países Bajos': 'nl',
+                'Holanda': 'nl',
+                'Estados Unidos': 'us',
+                'México': 'mx',
+                'Argentina': 'ar',
+                'Colombia': 'co',
+                'Guatemala': 'gt',
+                'Noruega': 'no',
+                'Dinamarca': 'dk',
+                'Europa': 'eu',
+                'Chile': 'cl',
+                'Uruguay': 'uy',
+                'Arabia Saudita': 'sa'
+            };
+
+            const flagsMap = {
+                'España': '🇪🇸',
+                'Inglaterra': '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
+                'Italia': '🇮🇹',
+                'Alemania': '🇩🇪',
+                'Francia': '🇫🇷',
+                'Portugal': '🇵🇹',
+                'Países Bajos': '🇳🇱',
+                'Holanda': '🇳🇱',
+                'Estados Unidos': '🇺🇸',
+                'México': '🇲🇽',
+                'Brasil': '🇧🇷',
+                'Argentina': '🇦🇷',
+                'Colombia': '🇨🇴',
+                'Guatemala': '🇬🇹',
+                'Noruega': '🇳🇴',
+                'Dinamarca': '🇩🇰',
+                'Europa': '🏆',
+                'Chile': '🇨🇱',
+                'Uruguay': '🇺🇾',
+                'Arabia Saudita': '🇸🇦',
+                'Internacional': '🌎'
+            };
+
+            function getCountryFlagHtml(countryName) {
+                const code = countryCodesMap[countryName];
+                if (code) {
+                    return `<img src="https://flagcdn.com/20x15/${code}.png" alt="${countryName}" class="w-4 h-3 rounded-xs object-cover border border-white/10 shadow-xs inline-block align-middle shrink-0">`;
+                }
+                const emoji = flagsMap[countryName] || '🌍';
+                return `<span class="inline-block text-xs">${emoji}</span>`;
+            }
+
+            // Reconstruir selector de País: SOLO mostrar los países que sí tienen partidos disponibles
+            const sortedCountries = Object.keys(countryCounts).sort((a, b) => a.localeCompare(b));
+            let countryHtml = `<option value="all" class="bg-gray-900 text-gray-200">🌍 Todos los Países (${totalAvailable})</option>`;
+            sortedCountries.forEach(c => {
+                const flag = flagsMap[c] || '🌍';
+                const count = countryCounts[c];
+                countryHtml += `<option value="${c}" class="bg-gray-900 text-gray-200">${flag} ${c} (${count})</option>`;
+            });
+            countrySelect.innerHTML = countryHtml;
+            countrySelect.value = currentCountryFilter;
+
+            // Reconstruir menú desplegable visual con banderas reales
+            const menuEl = document.getElementById('country-dropdown-menu');
+            if (menuEl) {
+                let menuHtml = `
+                    <button type="button" onclick="selectCountryOption('all')" class="w-full text-left px-3 py-2 flex items-center justify-between text-xs hover:bg-gray-800/80 transition cursor-pointer ${currentCountryFilter === 'all' ? 'text-emerald-400 font-bold bg-gray-800/50' : 'text-gray-200'}">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                            <span>Todos los Países</span>
+                        </span>
+                        <span class="font-mono text-gray-500 text-[10px]">(${totalAvailable})</span>
+                    </button>
+                `;
+                sortedCountries.forEach(c => {
+                    const flagImg = getCountryFlagHtml(c);
+                    const count = countryCounts[c];
+                    const isSelected = (currentCountryFilter === c);
+                    menuHtml += `
+                        <button type="button" onclick="selectCountryOption('${c}')" class="w-full text-left px-3 py-2 flex items-center justify-between text-xs hover:bg-gray-800/80 transition cursor-pointer ${isSelected ? 'text-emerald-400 font-bold bg-gray-800/50' : 'text-gray-200'}">
+                            <span class="flex items-center gap-2">
+                                ${flagImg}
+                                <span>${c}</span>
+                            </span>
+                            <span class="font-mono text-gray-500 text-[10px]">(${count})</span>
+                        </button>
+                    `;
+                });
+                menuEl.innerHTML = menuHtml;
+            }
+
+            // Actualizar etiqueta del botón principal con la bandera real
+            const labelEl = document.getElementById('country-selected-label');
+            if (labelEl) {
+                if (currentCountryFilter === 'all') {
+                    labelEl.innerHTML = `
+                        <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                        <span class="truncate">Todos los Países</span>
+                    `;
+                } else {
+                    labelEl.innerHTML = `
+                        ${getCountryFlagHtml(currentCountryFilter)}
+                        <span class="truncate font-semibold text-white">${currentCountryFilter}</span>
+                    `;
+                }
+            }
+            if (window.lucide) lucide.createIcons();
+
+            // Reconstruir selector de Liga: SOLO mostrar ligas que sí tienen partidos
+            const sortedLeagues = Object.keys(leagueCounts).sort((a, b) => a.localeCompare(b));
+            const totalLeaguesMatches = Object.values(leagueCounts).reduce((a, b) => a + b, 0);
+            let leagueHtml = `<option value="all" class="bg-gray-900 text-gray-200">🏆 Todas las Ligas (${totalLeaguesMatches})</option>`;
+            sortedLeagues.forEach(l => {
+                const count = leagueCounts[l];
+                leagueHtml += `<option value="${l}" class="bg-gray-900 text-gray-200">${l} (${count})</option>`;
+            });
+            leagueSelect.innerHTML = leagueHtml;
+            leagueSelect.value = currentLeagueFilter;
+        }
+
+        function setCategoryFilter(category) {
+            currentCategory = category;
+            document.querySelectorAll('.cat-btn').forEach(b => {
+                b.className = "cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white";
+            });
+            const activeBtn = document.getElementById('cat-tab-' + category);
+            if (activeBtn) {
+                activeBtn.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
+            }
+            updateDynamicFilters();
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function setDateFilter(dateVal) {
+            currentDateFilter = dateVal;
+            document.querySelectorAll('.date-filter-btn').forEach(b => {
+                b.className = "date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white";
+            });
+
+            if (dateVal === 'all') {
+                const btn = document.getElementById('date-btn-all');
+                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
+                const picker = document.getElementById('date-picker-input');
+                if (picker) picker.value = '';
+            } else if (dateVal === '{{ today_iso }}') {
+                const btn = document.getElementById('date-btn-today');
+                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
+                const picker = document.getElementById('date-picker-input');
+                if (picker) picker.value = dateVal;
+            } else if (dateVal === '{{ tomorrow_iso }}') {
+                const btn = document.getElementById('date-btn-tomorrow');
+                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
+                const picker = document.getElementById('date-picker-input');
+                if (picker) picker.value = dateVal;
+            } else {
+                const picker = document.getElementById('date-picker-input');
+                if (picker) picker.value = dateVal;
+            }
+
+            updateDynamicFilters();
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function toggleCountryDropdown(e) {
+            if (e) e.stopPropagation();
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (!menu) return;
+            const isHidden = menu.classList.contains('hidden');
+            if (isHidden) {
+                menu.classList.remove('hidden');
+                if (arrow) arrow.style.transform = 'rotate(180deg)';
+            } else {
+                menu.classList.add('hidden');
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function selectCountryOption(country) {
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (menu) menu.classList.add('hidden');
+            if (arrow) arrow.style.transform = 'rotate(0deg)';
+            const sel = document.getElementById('country-select');
+            if (sel) sel.value = country;
+            setCountryFilter(country);
+        }
+
+        document.addEventListener('click', function(e) {
+            const wrapper = document.getElementById('country-dropdown-wrapper');
+            const menu = document.getElementById('country-dropdown-menu');
+            const arrow = document.getElementById('country-dropdown-arrow');
+            if (wrapper && !wrapper.contains(e.target) && menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                if (arrow) arrow.style.transform = 'rotate(0deg)';
+            }
+        });
+
+        function setCountryFilter(country) {
+            currentCountryFilter = country;
+            currentLeagueFilter = 'all'; // Al filtrar país, resetear liga para mostrar las de ese país
+            updateDynamicFilters();
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function setLeagueFilter(league) {
+            currentLeagueFilter = league;
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function toggleValuePicks() {
+            onlyValuePicks = !onlyValuePicks;
+            const btn = document.getElementById('btn-value-filter');
+            if (btn) {
+                if (onlyValuePicks) {
+                    btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-cyan-950 border-cyan-500 text-cyan-300 shadow-lg shadow-cyan-950 ring-2 ring-cyan-500/30";
+                } else {
+                    btn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-gray-950 border-gray-800 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950/40";
+                }
+            }
+            switchTab('upcoming');
+            updateDynamicFilters();
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function setSortOrder(order) {
+            currentSortOrder = order;
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect && sortSelect.value !== order) {
+                sortSelect.value = order;
+            }
+            const grid = document.getElementById('upcoming-grid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.match-card'));
+
+            cards.sort((a, b) => {
+                const tsA = parseInt(a.dataset.timestamp || '0', 10);
+                const tsB = parseInt(b.dataset.timestamp || '0', 10);
+                const dateA = a.dataset.date || '';
+                const dateB = b.dataset.date || '';
+                const timeA = a.dataset.time || '';
+                const timeB = b.dataset.time || '';
+
+                if (order === 'time-asc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsA - tsB;
+                    if (dateA !== dateB) return dateA.localeCompare(dateB);
+                    return timeA.localeCompare(timeB);
+                } else if (order === 'time-desc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsB - tsA;
+                    if (dateA !== dateB) return dateB.localeCompare(dateA);
+                    return timeB.localeCompare(timeA);
+                } else if (order === 'prob-desc') {
+                    const pA = parseFloat(a.dataset.prob || '0');
+                    const pB = parseFloat(b.dataset.prob || '0');
+                    if (pA !== pB) return pB - pA;
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                } else if (order === 'league') {
+                    const lA = (a.dataset.league || '').toLowerCase();
+                    const lB = (b.dataset.league || '').toLowerCase();
+                    if (lA !== lB) return lA.localeCompare(lB);
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                }
+                return 0;
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        function resetAllFilters() {
+            currentCategory = 'all';
+            currentDateFilter = 'all';
+            currentCountryFilter = 'all';
+            currentLeagueFilter = 'all';
+            onlyValuePicks = false;
+            currentSortOrder = 'time-asc';
+
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) sortSelect.value = 'time-asc';
+
+            const dateInput = document.getElementById('date-picker-input');
+            if (dateInput) dateInput.value = '';
+
+            const btnVal = document.getElementById('btn-value-filter');
+            if (btnVal) {
+                btnVal.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-gray-950 border-gray-800 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950/40";
+            }
+
+            document.querySelectorAll('.cat-btn').forEach(b => {
+                b.className = "cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white";
+            });
+            const catAll = document.getElementById('cat-tab-all');
+            if (catAll) catAll.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
+
+            document.querySelectorAll('.date-filter-btn').forEach(b => {
+                b.className = "date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white";
+            });
+            const dateAll = document.getElementById('date-btn-all');
+            if (dateAll) dateAll.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
+
+            setSortOrder('time-asc');
+            updateDynamicFilters();
+            applyAllFilters();
+            updateFilterStatusText();
+        }
+
+        function switchTab(tab) {
+            const liveSec = document.getElementById('section-live');
+            const upcomingSec = document.getElementById('section-upcoming');
+            const tabLive = document.getElementById('tab-btn-live');
+            const tabUpcoming = document.getElementById('tab-btn-upcoming');
+
+            if (tab === 'live') {
+                liveSec.classList.remove('hidden');
+                upcomingSec.classList.add('hidden');
+                tabLive.className = "flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition";
+                tabUpcoming.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition";
+            } else {
+                liveSec.classList.add('hidden');
+                upcomingSec.classList.remove('hidden');
+                tabLive.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition";
+                tabUpcoming.className = "flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-emerald-500 text-emerald-400 transition";
+            }
+        }
+
+        let activeMatchId = null;
+        let currentModalTab = 'picks';
+
+        function switchModalTab(tab) {
+            currentModalTab = tab;
+            const btnPicks = document.getElementById('modal-tab-btn-picks');
+            const btnH2h = document.getElementById('modal-tab-btn-h2h');
+            const btnGemini = document.getElementById('modal-tab-btn-gemini');
+            const contentPicks = document.getElementById('modal-content-picks');
+            const contentH2h = document.getElementById('modal-content-h2h');
+            const contentGemini = document.getElementById('modal-content-gemini');
+
+            const activeClass = "pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap";
+            const inactiveClass = "pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap";
+
+            if (tab === 'picks') {
+                btnPicks.className = activeClass;
+                btnH2h.className = inactiveClass;
+                btnGemini.className = inactiveClass;
+                contentPicks.classList.remove('hidden');
+                contentH2h.classList.add('hidden');
+                contentGemini.classList.add('hidden');
+            } else if (tab === 'h2h') {
+                btnPicks.className = inactiveClass;
+                btnH2h.className = activeClass;
+                btnGemini.className = inactiveClass;
+                contentPicks.classList.add('hidden');
+                contentH2h.classList.remove('hidden');
+                contentGemini.classList.add('hidden');
+            } else if (tab === 'gemini') {
+                btnPicks.className = inactiveClass;
+                btnH2h.className = inactiveClass;
+                btnGemini.className = activeClass;
+                contentPicks.classList.add('hidden');
+                contentH2h.classList.add('hidden');
+                contentGemini.classList.remove('hidden');
+            }
+        }
+
+        function renderModalPicks(match) {
+            const grid = document.getElementById('modal-picks-grid');
+            if (!grid) return;
+            grid.innerHTML = '';
+
+            const picks = (match.prediction && match.prediction.four_predictions) ? match.prediction.four_predictions : [];
+            if (picks.length === 0) {
+                grid.innerHTML = `<p class="text-gray-400 text-center col-span-2 py-4">Pronósticos no disponibles para este encuentro.</p>`;
+                return;
+            }
+
+            picks.forEach(p => {
+                const riskLevel = p.risk_level || p.risk || "Medio";
+                let riskClass = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                if (riskLevel === "Medio") riskClass = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+                if (riskLevel === "Alto") riskClass = "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+
+                const marketTitle = p.market || `Pronóstico ${p.id || ''}`;
+                const pickTitle = p.name || p.pick || "Selección";
+                const fairOdds = p.fair_odds || p.odds || "1.80";
+                const probability = p.probability || p.prob || 50;
+
+                const cardHtml = `
+                    <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-4 space-y-2.5 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between pb-2 border-b border-gray-800/80">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">${marketTitle}</span>
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${riskClass}">
+                                    Riesgo ${riskLevel}
+                                </span>
+                            </div>
+                            <div class="flex items-center justify-between mt-2.5">
+                                <span class="text-sm font-extrabold text-white">${pickTitle}</span>
+                                <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/50">Cuota justa: ${fairOdds}</span>
+                            </div>
+                            <div class="mt-2">
+                                <div class="flex justify-between text-[11px] font-mono text-gray-400 mb-1">
+                                    <span>Probabilidad estimada</span>
+                                    <strong class="text-emerald-400">${probability}%</strong>
+                                </div>
+                                <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: ${probability}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-[11px] text-gray-300 leading-relaxed bg-gray-900/70 p-2.5 rounded-lg border border-gray-800/60 mt-2">
+                            ${p.explanation}
+                        </p>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHtml);
+            });
+        }
+
+        function renderModalH2H(match) {
+            const h2h = match.h2h || {};
+            const homeList = document.getElementById('h2h-home-list');
+            const awayList = document.getElementById('h2h-away-list');
+            const directList = document.getElementById('h2h-direct-list');
+
+            document.getElementById('h2h-home-title').innerText = `${match.home_team}`;
+            document.getElementById('h2h-away-title').innerText = `${match.away_team}`;
+
+            const hs = match.home_stats || {};
+            const as = match.away_stats || {};
+            const homeStreakEl = document.getElementById('h2h-home-streak');
+            const awayStreakEl = document.getElementById('h2h-away-streak');
+            if (homeStreakEl) {
+                if (match.sport === 'football') {
+                    homeStreakEl.innerHTML = `
+                        <div class="flex flex-col items-end gap-0.5">
+                            <div><span class="text-emerald-400 font-bold">Goles Loc: ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Loc: ${hs.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.corners_gen || hs.corners || 0}</span></div>
+                        </div>
+                    `;
+                } else {
+                    homeStreakEl.innerHTML = `<span class="text-emerald-400 font-bold">Loc: ${hs.off_rating || 0}/${hs.def_rating || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.off_rating_gen || hs.off_rating || 0}/${hs.def_rating_gen || hs.def_rating || 0}</span>`;
+                }
+            }
+            if (awayStreakEl) {
+                if (match.sport === 'football') {
+                    awayStreakEl.innerHTML = `
+                        <div class="flex flex-col items-end gap-0.5">
+                            <div><span class="text-rose-400 font-bold">Goles Vis: ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Vis: ${as.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.corners_gen || as.corners || 0}</span></div>
+                        </div>
+                    `;
+                } else {
+                    awayStreakEl.innerHTML = `<span class="text-rose-400 font-bold">Vis: ${as.off_rating || 0}/${as.def_rating || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.off_rating_gen || as.off_rating || 0}/${as.def_rating_gen || as.def_rating || 0}</span>`;
+                }
+            }
+
+            const renderTeamMatches = (container, matches, targetTeam) => {
+                if (!container) return;
+                container.innerHTML = '';
+                if (!matches || matches.length === 0) {
+                    container.innerHTML = `<span class="text-gray-500 text-[10px] block text-center py-2">Sin historial disponible</span>`;
+                    return;
+                }
+                matches.forEach(m => {
+                    let resCode = m.result || "W";
+                    let resLabel = (resCode === "W" || resCode === "V") ? "Victoria" : ((resCode === "D" || resCode === "E") ? "Empate" : "Derrota");
+                    let badgeClass = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40";
+                    if (resLabel === "Empate") badgeClass = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                    if (resLabel === "Derrota") badgeClass = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+
+                    // Determinar qué equipo jugó de local y cuál de visitante
+                    let localTeam = m.match_home;
+                    let awayTeam = m.match_away;
+                    if (!localTeam || !awayTeam) {
+                        const isTargetLoc = (m.venue === "Local");
+                        localTeam = isTargetLoc ? targetTeam : m.opponent;
+                        awayTeam = isTargetLoc ? m.opponent : targetTeam;
+                    }
+
+                    const scoreText = m.score || `${m.home_score || 0} - ${m.away_score || 0}`;
+
+                    let extraStatsHtml = '';
+                    if (m.corners_for !== undefined && m.corners_for !== null) {
+                        const totCorn = m.total_corners !== undefined ? m.total_corners : (m.corners_for + (m.corners_against || 0));
+                        const sot = m.shots_on_target !== undefined ? m.shots_on_target : '-';
+                        extraStatsHtml = `
+                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1">
+                                <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 Córners: ${m.corners_for} <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
+                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 Tiros al arco: ${sot}</span>
+                            </div>
+                        `;
+                    }
+
+                    const itemHtml = `
+                        <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
+                                <span>${m.date} • ${m.competition || ''}</span>
+                                <span class="px-2 py-0.5 rounded-full font-bold ${badgeClass}">${resLabel}</span>
+                            </div>
+                            <div class="flex items-center justify-between font-sans">
+                                <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
+                                    <span class="${localTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${localTeam}</span>
+                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
+                                    <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
+                                    <span class="${awayTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${awayTeam}</span>
+                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                                </div>
+                                <span class="font-mono font-bold text-emerald-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${scoreText}</span>
+                            </div>
+                            ${extraStatsHtml}
+                        </div>
+                    `;
+                    container.insertAdjacentHTML('beforeend', itemHtml);
+                });
+            };
+
+            renderTeamMatches(homeList, h2h.home_last_5, match.home_team);
+            renderTeamMatches(awayList, h2h.away_last_5, match.away_team);
+
+            if (directList) {
+                directList.innerHTML = '';
+                const directs = h2h.head_to_head || [];
+                if (directs.length === 0) {
+                    directList.innerHTML = `<span class="text-gray-500 text-[10px] block text-center py-2">Sin enfrentamientos previos</span>`;
+                } else {
+                    directs.forEach(d => {
+                        let winText = d.winner || "Empate";
+                        let winBadge = "bg-gray-800 text-gray-300 border border-gray-700";
+                        if (winText.includes(match.home_team)) winBadge = "bg-blue-500/20 text-blue-400 border border-blue-500/40";
+                        else if (winText.includes(match.away_team)) winBadge = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+                        else if (winText === "Empate") winBadge = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+
+                        const lTeam = d.match_home || d.home_team || match.home_team;
+                        const vTeam = d.match_away || d.away_team || match.away_team;
+                        const score = d.score || "0 - 0";
+
+                        const directHtml = `
+                            <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                                <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
+                                    <span>${d.date} • ${d.tournament || d.competition || ''}</span>
+                                    <span class="px-2 py-0.5 rounded-full font-bold ${winBadge}">${winText === 'Empate' ? 'Empate' : 'Ganó ' + winText}</span>
+                                </div>
+                                <div class="flex items-center justify-between font-sans">
+                                    <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
+                                        <span class="text-gray-200 font-semibold truncate">${lTeam}</span>
+                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
+                                        <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
+                                        <span class="text-gray-200 font-semibold truncate">${vTeam}</span>
+                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                                    </div>
+                                    <span class="font-mono font-bold text-blue-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${score}</span>
+                                </div>
+                            </div>
+                        `;
+                        directList.insertAdjacentHTML('beforeend', directHtml);
+                    });
+                }
+            }
+        }
+
+        function updateGeminiUI(ai) {
+            document.getElementById('modal-summary').innerText = ai.resumen || "Análisis en progreso...";
+            document.getElementById('modal-justification').innerText = ai.justificacion_estadistica || "";
+            document.getElementById('modal-factor').innerText = ai.factor_clave || "";
+            document.getElementById('modal-risk-warning').innerText = ai.advertencia_riesgo || "";
+            document.getElementById('modal-score').innerText = ai.marcador_sugerido || "";
+
+            const csBox = document.getElementById('modal-corners-shots-box');
+            const csEl = document.getElementById('modal-corners-shots');
+            if (ai.analisis_corners_remates && csBox && csEl) {
+                csBox.classList.remove('hidden');
+                csEl.innerText = ai.analisis_corners_remates;
+            } else if (csBox) {
+                csBox.classList.add('hidden');
+            }
+
+            const badge = document.getElementById('modal-gemini-badge');
+            const badgeText = document.getElementById('modal-gemini-badge-text');
+            const provTitle = document.getElementById('modal-gemini-provider-title');
+            const provDesc = document.getElementById('modal-gemini-provider-desc');
+
+            if (ai.is_gemini || (ai.powered_by && ai.powered_by.includes("Gemini"))) {
+                badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-950 text-purple-300 border border-purple-500/80 flex items-center gap-1 font-mono shadow-sm shadow-purple-900/50";
+                badgeText.innerText = "✨ Google Gemini AI";
+                provTitle.innerText = "✨ Verificado con Google Gemini AI";
+                provDesc.innerText = `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Rigor táctico, xG y actualidad.`;
+            } else {
+                badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-700 flex items-center gap-1 font-mono";
+                badgeText.innerText = "Motor Cuantitativo";
+                provTitle.innerText = "Análisis Predictivo Cuantitativo";
+                provDesc.innerText = "Modelo de Poisson y calificaciones tácticas de equipo.";
+            }
+        }
+
+        function refreshApp() {
+            const btns = document.querySelectorAll('.btn-refresh-trigger');
+            const icons = document.querySelectorAll('.icon-refresh-trigger');
+            icons.forEach(ic => ic.classList.add('animate-spin'));
+            btns.forEach(b => {
+                b.classList.add('opacity-60');
+                b.disabled = true;
+            });
+            setTimeout(() => {
+                window.location.reload();
+            }, 300);
+        }
+
+        function requestGeminiRefresh() {
+            if (!activeMatchId) return;
+            const btn = document.getElementById('btn-refresh-gemini');
+            if (btn) {
+                btn.innerHTML = `<i data-lucide="loader-2" class="w-3.5 h-3.5 animate-spin"></i><span>Consultando Gemini...</span>`;
+                btn.disabled = true;
+            }
+
+            fetch(`/api/match/${activeMatchId}/gemini_analysis`)
+                .then(r => r.json())
+                .then(ai => {
+                    const match = allMatchesData.find(m => m.id === activeMatchId);
+                    if (match) match.ai_analysis = ai;
+                    updateGeminiUI(ai);
+                })
+                .catch(err => {
+                    console.error("Error al consultar Gemini:", err);
+                })
+                .finally(() => {
+                    if (btn) {
+                        btn.innerHTML = `<i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i><span>Reanalizar</span>`;
+                        btn.disabled = false;
+                        lucide.createIcons();
+                    }
+                });
+        }
+
+        function openAiModal(matchId) {
+            activeMatchId = matchId;
+            const match = allMatchesData.find(m => m.id === matchId);
+            if (!match) return;
+            document.getElementById('modal-match-title').innerText = `${match.home_team} vs ${match.away_team}`;
+            const isBrazil = match.country === 'Brasil' || (match.league && match.league.includes('Brasileir')) || match.country_code === 'br';
+            const flagMarkup = isBrazil 
+                ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`
+                : (match.country_code ? `<img src="https://flagcdn.com/20x15/${match.country_code}.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="${match.country}">` : `${match.league_flag} `);
+            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${match.quarter || match.minute + "'"} EN VIVO (${match.score_home}-${match.score_away})` : `${flagMarkup} ${match.league} • ${match.date}`;
+            document.getElementById('modal-league').innerHTML = sub;
+
+            // Renderizar las 3 secciones
+            renderModalPicks(match);
+            renderModalH2H(match);
+            updateGeminiUI(match.ai_analysis || {});
+
+            // Render Quarters and Halves si es NBA
+            const qContainer = document.getElementById('modal-quarters-container');
+            const qGrid = document.getElementById('modal-quarters-grid');
+            if (match.prediction && match.prediction.quarters_breakdown) {
+                const b = match.prediction.quarters_breakdown;
+                qContainer.classList.remove('hidden');
+                qGrid.innerHTML = `
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">1Q</span>
+                        <span class="font-bold text-emerald-400">${b.q1.winner || b.q1.predicted_winner}</span>
+                        <span class="text-[9px] text-gray-500 block">${b.q1.status}</span>
+                    </div>
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">2Q</span>
+                        <span class="font-bold text-cyan-400">${b.q2.winner || b.q2.predicted_winner}</span>
+                        <span class="text-[9px] text-gray-500 block">${b.q2.status}</span>
+                    </div>
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">1ª Mitad</span>
+                        <span class="font-bold text-amber-400">${b.first_half.winner || b.first_half.predicted_winner}</span>
+                        <span class="text-[9px] text-gray-500 block">${b.first_half.status}</span>
+                    </div>
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">3Q</span>
+                        <span class="font-bold text-purple-400">${b.q3.winner || b.q3.predicted_winner}</span>
+                        <span class="text-[9px] text-gray-500 block">${b.q3.status}</span>
+                    </div>
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">4Q</span>
+                        <span class="font-bold text-rose-400">${b.q4.winner || b.q4.predicted_winner}</span>
+                        <span class="text-[9px] text-gray-500 block">${b.q4.status}</span>
+                    </div>
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">Juego Completo</span>
+                        <span class="font-bold text-white">${b.full_game.winner || b.full_game.predicted_winner}</span>
+                        <span class="text-[9px] text-emerald-400 block">${b.full_game.prob || b.full_game.prob_winner}%</span>
+                    </div>
+                `;
+            } else {
+                qContainer.classList.add('hidden');
+                qGrid.innerHTML = '';
+            }
+
+            // Consultar Gemini en segundo plano si aún no está analizado por Gemini
+            if (!match.ai_analysis || !match.ai_analysis.is_gemini) {
+                fetch(`/api/match/${matchId}/gemini_analysis`)
+                    .then(r => r.json())
+                    .then(geminiData => {
+                        match.ai_analysis = geminiData;
+                        if (activeMatchId === matchId) {
+                            updateGeminiUI(geminiData);
+                        }
+                    })
+                    .catch(e => console.error("Error auto-cargando Gemini:", e));
+            }
+
+            switchModalTab('picks');
+            document.getElementById('ai-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeAiModal() {
+            document.getElementById('ai-modal').classList.add('hidden');
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeAiModal();
+        });
+        document.getElementById('ai-modal').addEventListener('click', (e) => {
+            if (e.target.id === 'ai-modal') closeAiModal();
+        });
+
+        // Gestión inteligente de pestañas y filtros al cargar
+        document.addEventListener("DOMContentLoaded", () => {
+            setSortOrder('time-asc');
+            updateDynamicFilters();
+            applyAllFilters();
+            {% if live_matches|length > 0 %}
+            switchTab('live');
+            {% elif live_api_active %}
+            switchTab('upcoming');
+            {% endif %}
+        });
+    </script>
+</body>
+</html>

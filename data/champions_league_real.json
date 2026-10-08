@@ -1,0 +1,3081 @@
+{
+  "league": "UEFA Champions League",
+  "league_id": 42,
+  "country": "Europa",
+  "country_code": "eu",
+  "last_updated": "2026-10-08T11:30:55.112531",
+  "total_fixtures": 18,
+  "team_histories": {
+    "AEK Athens": [
+      {
+        "match_id": "6106404",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "LASK",
+        "venue": "Local",
+        "match_home": "AEK Athens",
+        "match_away": "LASK",
+        "home_score": 1,
+        "away_score": 0,
+        "score": "1 - 0",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 7,
+        "corners_against": 3,
+        "total_corners": 10,
+        "shots_on_target": 4,
+        "total_shots": 18
+      }
+    ],
+    "Arsenal": [
+      {
+        "match_id": "6106318",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Napoli",
+        "venue": "Visitante",
+        "match_home": "Napoli",
+        "match_away": "Arsenal",
+        "home_score": 0,
+        "away_score": 1,
+        "score": "0 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 6,
+        "corners_against": 0,
+        "total_corners": 6,
+        "shots_on_target": 8,
+        "total_shots": 26
+      }
+    ],
+    "Aston Villa": [
+      {
+        "match_id": "6106295",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Club Brugge",
+        "venue": "Visitante",
+        "match_home": "Club Brugge",
+        "match_away": "Aston Villa",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 9,
+        "total_shots": 21
+      }
+    ],
+    "Atlético Madrid": [
+      {
+        "match_id": "6106246",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Liverpool",
+        "venue": "Visitante",
+        "match_home": "Liverpool",
+        "match_away": "Atlético Madrid",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 7,
+        "total_corners": 12,
+        "shots_on_target": 4,
+        "total_shots": 9
+      }
+    ],
+    "Barcelona": [
+      {
+        "match_id": "6106264",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Feyenoord",
+        "venue": "Local",
+        "match_home": "Barcelona",
+        "match_away": "Feyenoord",
+        "home_score": 5,
+        "away_score": 1,
+        "score": "5 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 4,
+        "corners_against": 1,
+        "total_corners": 5,
+        "shots_on_target": 9,
+        "total_shots": 24
+      }
+    ],
+    "Bayern München": [
+      {
+        "match_id": "6106240",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Bodø/Glimt",
+        "venue": "Local",
+        "match_home": "Bayern München",
+        "match_away": "Bodø/Glimt",
+        "home_score": 5,
+        "away_score": 0,
+        "score": "5 - 0",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 6,
+        "corners_against": 3,
+        "total_corners": 9,
+        "shots_on_target": 12,
+        "total_shots": 25
+      }
+    ],
+    "Bodø/Glimt": [
+      {
+        "match_id": "6106240",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Bayern München",
+        "venue": "Visitante",
+        "match_home": "Bayern München",
+        "match_away": "Bodø/Glimt",
+        "home_score": 5,
+        "away_score": 0,
+        "score": "5 - 0",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 6,
+        "total_corners": 9,
+        "shots_on_target": 0,
+        "total_shots": 3
+      }
+    ],
+    "Borussia Dortmund": [
+      {
+        "match_id": "6106272",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Villarreal",
+        "venue": "Local",
+        "match_home": "Borussia Dortmund",
+        "match_away": "Villarreal",
+        "home_score": 3,
+        "away_score": 2,
+        "score": "3 - 2",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 9,
+        "corners_against": 7,
+        "total_corners": 16,
+        "shots_on_target": 6,
+        "total_shots": 18
+      }
+    ],
+    "Club Brugge": [
+      {
+        "match_id": "6106295",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Aston Villa",
+        "venue": "Local",
+        "match_home": "Club Brugge",
+        "match_away": "Aston Villa",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 7,
+        "total_shots": 14
+      }
+    ],
+    "Como": [
+      {
+        "match_id": "6106411",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "RB Leipzig",
+        "venue": "Local",
+        "match_home": "Como",
+        "match_away": "RB Leipzig",
+        "home_score": 4,
+        "away_score": 1,
+        "score": "4 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 1,
+        "corners_against": 5,
+        "total_corners": 6,
+        "shots_on_target": 6,
+        "total_shots": 14
+      }
+    ],
+    "FC Porto": [
+      {
+        "match_id": "6106286",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Manchester City",
+        "venue": "Local",
+        "match_home": "FC Porto",
+        "match_away": "Manchester City",
+        "home_score": 0,
+        "away_score": 2,
+        "score": "0 - 2",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 2,
+        "corners_against": 5,
+        "total_corners": 7,
+        "shots_on_target": 0,
+        "total_shots": 5
+      }
+    ],
+    "Fenerbahçe": [
+      {
+        "match_id": "6106331",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Roma",
+        "venue": "Local",
+        "match_home": "Fenerbahçe",
+        "match_away": "Roma",
+        "home_score": 1,
+        "away_score": 1,
+        "score": "1 - 1",
+        "result": "D",
+        "competition": "UEFA Champions League",
+        "corners_for": 1,
+        "corners_against": 3,
+        "total_corners": 4,
+        "shots_on_target": 5,
+        "total_shots": 11
+      }
+    ],
+    "Feyenoord": [
+      {
+        "match_id": "6106264",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Barcelona",
+        "venue": "Visitante",
+        "match_home": "Barcelona",
+        "match_away": "Feyenoord",
+        "home_score": 5,
+        "away_score": 1,
+        "score": "5 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 1,
+        "corners_against": 4,
+        "total_corners": 5,
+        "shots_on_target": 2,
+        "total_shots": 4
+      }
+    ],
+    "Galatasaray": [
+      {
+        "match_id": "6106280",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Sporting CP",
+        "venue": "Visitante",
+        "match_home": "Sporting CP",
+        "match_away": "Galatasaray",
+        "home_score": 3,
+        "away_score": 1,
+        "score": "3 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 4,
+        "corners_against": 1,
+        "total_corners": 5,
+        "shots_on_target": 3,
+        "total_shots": 10
+      }
+    ],
+    "Inter": [
+      {
+        "match_id": "6106242",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Real Madrid",
+        "venue": "Visitante",
+        "match_home": "Real Madrid",
+        "match_away": "Inter",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 11,
+        "corners_against": 4,
+        "total_corners": 15,
+        "shots_on_target": 7,
+        "total_shots": 21
+      }
+    ],
+    "LASK": [
+      {
+        "match_id": "6106404",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "AEK Athens",
+        "venue": "Visitante",
+        "match_home": "AEK Athens",
+        "match_away": "LASK",
+        "home_score": 1,
+        "away_score": 0,
+        "score": "1 - 0",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 7,
+        "total_corners": 10,
+        "shots_on_target": 3,
+        "total_shots": 11
+      }
+    ],
+    "Lens": [
+      {
+        "match_id": "6106392",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Slavia Prague",
+        "venue": "Visitante",
+        "match_home": "Slavia Prague",
+        "match_away": "Lens",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 9,
+        "corners_against": 6,
+        "total_corners": 15,
+        "shots_on_target": 8,
+        "total_shots": 26
+      }
+    ],
+    "Lille": [
+      {
+        "match_id": "6106311",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Real Betis",
+        "venue": "Local",
+        "match_home": "Lille",
+        "match_away": "Real Betis",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 5,
+        "total_corners": 10,
+        "shots_on_target": 2,
+        "total_shots": 6
+      }
+    ],
+    "Liverpool": [
+      {
+        "match_id": "6106246",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Atlético Madrid",
+        "venue": "Local",
+        "match_home": "Liverpool",
+        "match_away": "Atlético Madrid",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 7,
+        "corners_against": 5,
+        "total_corners": 12,
+        "shots_on_target": 5,
+        "total_shots": 14
+      }
+    ],
+    "Manchester City": [
+      {
+        "match_id": "6106286",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "FC Porto",
+        "venue": "Visitante",
+        "match_home": "FC Porto",
+        "match_away": "Manchester City",
+        "home_score": 0,
+        "away_score": 2,
+        "score": "0 - 2",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 2,
+        "total_corners": 7,
+        "shots_on_target": 10,
+        "total_shots": 20
+      }
+    ],
+    "Manchester United": [
+      {
+        "match_id": "6106293",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Sabah FK",
+        "venue": "Local",
+        "match_home": "Manchester United",
+        "match_away": "Sabah FK",
+        "home_score": 4,
+        "away_score": 0,
+        "score": "4 - 0",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 7,
+        "corners_against": 2,
+        "total_corners": 9,
+        "shots_on_target": 10,
+        "total_shots": 21
+      }
+    ],
+    "Napoli": [
+      {
+        "match_id": "6106318",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Arsenal",
+        "venue": "Local",
+        "match_home": "Napoli",
+        "match_away": "Arsenal",
+        "home_score": 0,
+        "away_score": 1,
+        "score": "0 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 0,
+        "corners_against": 6,
+        "total_corners": 6,
+        "shots_on_target": 3,
+        "total_shots": 5
+      }
+    ],
+    "PSV Eindhoven": [
+      {
+        "match_id": "6106304",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Shakhtar Donetsk",
+        "venue": "Local",
+        "match_home": "PSV Eindhoven",
+        "match_away": "Shakhtar Donetsk",
+        "home_score": 1,
+        "away_score": 1,
+        "score": "1 - 1",
+        "result": "D",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 3,
+        "total_corners": 6,
+        "shots_on_target": 2,
+        "total_shots": 10
+      }
+    ],
+    "Paris Saint-Germain": [
+      {
+        "match_id": "6106237",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Slovan Bratislava",
+        "venue": "Local",
+        "match_home": "Paris Saint-Germain",
+        "match_away": "Slovan Bratislava",
+        "home_score": 6,
+        "away_score": 1,
+        "score": "6 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 7,
+        "corners_against": 2,
+        "total_corners": 9,
+        "shots_on_target": 14,
+        "total_shots": 35
+      }
+    ],
+    "RB Leipzig": [
+      {
+        "match_id": "6106411",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Como",
+        "venue": "Visitante",
+        "match_home": "Como",
+        "match_away": "RB Leipzig",
+        "home_score": 4,
+        "away_score": 1,
+        "score": "4 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 1,
+        "total_corners": 6,
+        "shots_on_target": 4,
+        "total_shots": 14
+      }
+    ],
+    "Real Betis": [
+      {
+        "match_id": "6106311",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Lille",
+        "venue": "Visitante",
+        "match_home": "Lille",
+        "match_away": "Real Betis",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 5,
+        "total_corners": 10,
+        "shots_on_target": 5,
+        "total_shots": 20
+      }
+    ],
+    "Real Madrid": [
+      {
+        "match_id": "6106242",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Inter",
+        "venue": "Local",
+        "match_home": "Real Madrid",
+        "match_away": "Inter",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 4,
+        "corners_against": 11,
+        "total_corners": 15,
+        "shots_on_target": 8,
+        "total_shots": 16
+      }
+    ],
+    "Roma": [
+      {
+        "match_id": "6106331",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Fenerbahçe",
+        "venue": "Visitante",
+        "match_home": "Fenerbahçe",
+        "match_away": "Roma",
+        "home_score": 1,
+        "away_score": 1,
+        "score": "1 - 1",
+        "result": "D",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 1,
+        "total_corners": 4,
+        "shots_on_target": 3,
+        "total_shots": 8
+      }
+    ],
+    "Sabah FK": [
+      {
+        "match_id": "6106293",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Manchester United",
+        "venue": "Visitante",
+        "match_home": "Manchester United",
+        "match_away": "Sabah FK",
+        "home_score": 4,
+        "away_score": 0,
+        "score": "4 - 0",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 2,
+        "corners_against": 7,
+        "total_corners": 9,
+        "shots_on_target": 0,
+        "total_shots": 11
+      }
+    ],
+    "Shakhtar Donetsk": [
+      {
+        "match_id": "6106304",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "PSV Eindhoven",
+        "venue": "Visitante",
+        "match_home": "PSV Eindhoven",
+        "match_away": "Shakhtar Donetsk",
+        "home_score": 1,
+        "away_score": 1,
+        "score": "1 - 1",
+        "result": "D",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 3,
+        "total_corners": 6,
+        "shots_on_target": 2,
+        "total_shots": 8
+      }
+    ],
+    "Slavia Prague": [
+      {
+        "match_id": "6106392",
+        "date": "10/09/2026",
+        "date_iso": "2026-09-10",
+        "opponent": "Lens",
+        "venue": "Local",
+        "match_home": "Slavia Prague",
+        "match_away": "Lens",
+        "home_score": 2,
+        "away_score": 3,
+        "score": "2 - 3",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 6,
+        "corners_against": 9,
+        "total_corners": 15,
+        "shots_on_target": 5,
+        "total_shots": 17
+      }
+    ],
+    "Slovan Bratislava": [
+      {
+        "match_id": "6106237",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Paris Saint-Germain",
+        "venue": "Visitante",
+        "match_home": "Paris Saint-Germain",
+        "match_away": "Slovan Bratislava",
+        "home_score": 6,
+        "away_score": 1,
+        "score": "6 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 2,
+        "corners_against": 7,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 9
+      }
+    ],
+    "Sporting CP": [
+      {
+        "match_id": "6106280",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Galatasaray",
+        "venue": "Local",
+        "match_home": "Sporting CP",
+        "match_away": "Galatasaray",
+        "home_score": 3,
+        "away_score": 1,
+        "score": "3 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 1,
+        "corners_against": 4,
+        "total_corners": 5,
+        "shots_on_target": 5,
+        "total_shots": 8
+      }
+    ],
+    "VfB Stuttgart": [
+      {
+        "match_id": "6106400",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "Viking",
+        "venue": "Local",
+        "match_home": "VfB Stuttgart",
+        "match_away": "Viking",
+        "home_score": 3,
+        "away_score": 1,
+        "score": "3 - 1",
+        "result": "W",
+        "competition": "UEFA Champions League",
+        "corners_for": 3,
+        "corners_against": 5,
+        "total_corners": 8,
+        "shots_on_target": 3,
+        "total_shots": 17
+      }
+    ],
+    "Viking": [
+      {
+        "match_id": "6106400",
+        "date": "09/09/2026",
+        "date_iso": "2026-09-09",
+        "opponent": "VfB Stuttgart",
+        "venue": "Visitante",
+        "match_home": "VfB Stuttgart",
+        "match_away": "Viking",
+        "home_score": 3,
+        "away_score": 1,
+        "score": "3 - 1",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 5,
+        "corners_against": 3,
+        "total_corners": 8,
+        "shots_on_target": 3,
+        "total_shots": 9
+      }
+    ],
+    "Villarreal": [
+      {
+        "match_id": "6106272",
+        "date": "08/09/2026",
+        "date_iso": "2026-09-08",
+        "opponent": "Borussia Dortmund",
+        "venue": "Visitante",
+        "match_home": "Borussia Dortmund",
+        "match_away": "Villarreal",
+        "home_score": 3,
+        "away_score": 2,
+        "score": "3 - 2",
+        "result": "L",
+        "competition": "UEFA Champions League",
+        "corners_for": 7,
+        "corners_against": 9,
+        "total_corners": 16,
+        "shots_on_target": 6,
+        "total_shots": 13
+      }
+    ]
+  },
+  "team_corner_stats": {
+    "AEK Athens": {
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 7.0,
+      "corners_conceded_home": 3.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 18.0
+    },
+    "Arsenal": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 6.0,
+      "corners_avg_gen": 6.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 0.0,
+      "corners_conceded_gen": 0.0,
+      "shots_on_target_gen": 8.0,
+      "total_shots_gen": 26.0
+    },
+    "Aston Villa": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 9.0,
+      "total_shots_gen": 21.0
+    },
+    "Atlético Madrid": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 7.0,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 9.0
+    },
+    "Barcelona": {
+      "corners_avg_home": 4.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 1.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 1.0,
+      "shots_on_target_gen": 9.0,
+      "total_shots_gen": 24.0
+    },
+    "Bayern München": {
+      "corners_avg_home": 6.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 6.0,
+      "corners_conceded_home": 3.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 12.0,
+      "total_shots_gen": 25.0
+    },
+    "Bodø/Glimt": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 3.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 6.0,
+      "corners_conceded_gen": 6.0,
+      "shots_on_target_gen": 0.0,
+      "total_shots_gen": 3.0
+    },
+    "Borussia Dortmund": {
+      "corners_avg_home": 9.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 9.0,
+      "corners_conceded_home": 7.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 7.0,
+      "shots_on_target_gen": 6.0,
+      "total_shots_gen": 18.0
+    },
+    "Club Brugge": {
+      "corners_avg_home": 4.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 7.0,
+      "total_shots_gen": 14.0
+    },
+    "Como": {
+      "corners_avg_home": 1.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 1.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 6.0,
+      "total_shots_gen": 14.0
+    },
+    "FC Porto": {
+      "corners_avg_home": 2.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 2.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 0.0,
+      "total_shots_gen": 5.0
+    },
+    "Fenerbahçe": {
+      "corners_avg_home": 1.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 1.0,
+      "corners_conceded_home": 3.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 11.0
+    },
+    "Feyenoord": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 1.0,
+      "corners_avg_gen": 1.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 2.0,
+      "total_shots_gen": 4.0
+    },
+    "Galatasaray": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 1.0,
+      "corners_conceded_gen": 1.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 10.0
+    },
+    "Inter": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 11.0,
+      "corners_avg_gen": 11.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 7.0,
+      "total_shots_gen": 21.0
+    },
+    "LASK": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 3.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 7.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 11.0
+    },
+    "Lens": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 9.0,
+      "corners_avg_gen": 9.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 6.0,
+      "corners_conceded_gen": 6.0,
+      "shots_on_target_gen": 8.0,
+      "total_shots_gen": 26.0
+    },
+    "Lille": {
+      "corners_avg_home": 5.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 2.0,
+      "total_shots_gen": 6.0
+    },
+    "Liverpool": {
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 7.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 14.0
+    },
+    "Manchester City": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 2.0,
+      "corners_conceded_gen": 2.0,
+      "shots_on_target_gen": 10.0,
+      "total_shots_gen": 20.0
+    },
+    "Manchester United": {
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 7.0,
+      "corners_conceded_home": 2.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 2.0,
+      "shots_on_target_gen": 10.0,
+      "total_shots_gen": 21.0
+    },
+    "Napoli": {
+      "corners_avg_home": 0.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 0.0,
+      "corners_conceded_home": 6.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 6.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 5.0
+    },
+    "PSV Eindhoven": {
+      "corners_avg_home": 3.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 3.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 2.0,
+      "total_shots_gen": 10.0
+    },
+    "Paris Saint-Germain": {
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 7.0,
+      "corners_conceded_home": 2.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 2.0,
+      "shots_on_target_gen": 14.0,
+      "total_shots_gen": 35.0
+    },
+    "RB Leipzig": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 1.0,
+      "corners_conceded_gen": 1.0,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 14.0
+    },
+    "Real Betis": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 20.0
+    },
+    "Real Madrid": {
+      "corners_avg_home": 4.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 11.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 11.0,
+      "shots_on_target_gen": 8.0,
+      "total_shots_gen": 16.0
+    },
+    "Roma": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 3.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 1.0,
+      "corners_conceded_gen": 1.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 8.0
+    },
+    "Sabah FK": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 2.0,
+      "corners_avg_gen": 2.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 7.0,
+      "shots_on_target_gen": 0.0,
+      "total_shots_gen": 11.0
+    },
+    "Shakhtar Donetsk": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 3.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 3.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 2.0,
+      "total_shots_gen": 8.0
+    },
+    "Slavia Prague": {
+      "corners_avg_home": 6.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 6.0,
+      "corners_conceded_home": 9.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 9.0,
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 17.0
+    },
+    "Slovan Bratislava": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 2.0,
+      "corners_avg_gen": 2.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 7.0,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 9.0
+    },
+    "Sporting CP": {
+      "corners_avg_home": 1.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 1.0,
+      "corners_conceded_home": 4.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 5.0,
+      "total_shots_gen": 8.0
+    },
+    "VfB Stuttgart": {
+      "corners_avg_home": 3.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 3.0,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 17.0
+    },
+    "Viking": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 3.0,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 9.0
+    },
+    "Villarreal": {
+      "corners_avg_home": 4.8,
+      "corners_avg_away": 7.0,
+      "corners_avg_gen": 7.0,
+      "corners_conceded_home": 3.8,
+      "corners_conceded_away": 9.0,
+      "corners_conceded_gen": 9.0,
+      "shots_on_target_gen": 6.0,
+      "total_shots_gen": 13.0
+    }
+  },
+  "upcoming_matches": [
+    {
+      "id": "fotmob_champions_league_6106414",
+      "match_id": "6106414",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Lens",
+      "away_team": "Sporting CP",
+      "date": "Mar 13 Oct, 10:45",
+      "date_iso": "2026-10-13",
+      "time": "10:45",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106392",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Slavia Prague",
+            "venue": "Visitante",
+            "match_home": "Slavia Prague",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 9,
+            "corners_against": 6,
+            "total_corners": 15,
+            "shots_on_target": 8,
+            "total_shots": 26
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106280",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Galatasaray",
+            "venue": "Local",
+            "match_home": "Sporting CP",
+            "match_away": "Galatasaray",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 1,
+            "corners_against": 4,
+            "total_corners": 5,
+            "shots_on_target": 5,
+            "total_shots": 8
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 9.0,
+          "corners_avg_gen": 9.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 6.0,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 8.0,
+          "total_shots_gen": 26.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 1.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 1.0,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 8.0
+        },
+        "projected_corners": 9.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Lens 0 victorias • 0 empates • Sporting CP 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791909900,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106424",
+      "match_id": "6106424",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Sabah FK",
+      "away_team": "Slavia Prague",
+      "date": "Mar 13 Oct, 10:45",
+      "date_iso": "2026-10-13",
+      "time": "10:45",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106293",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Manchester United",
+            "venue": "Visitante",
+            "match_home": "Manchester United",
+            "match_away": "Sabah FK",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 2,
+            "corners_against": 7,
+            "total_corners": 9,
+            "shots_on_target": 0,
+            "total_shots": 11
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106392",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Lens",
+            "venue": "Local",
+            "match_home": "Slavia Prague",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 6,
+            "corners_against": 9,
+            "total_corners": 15,
+            "shots_on_target": 5,
+            "total_shots": 17
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 2.0,
+          "corners_avg_gen": 2.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 7.0,
+          "shots_on_target_gen": 0.0,
+          "total_shots_gen": 11.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 6.0,
+          "corners_conceded_home": 9.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 9.0,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 17.0
+        },
+        "projected_corners": 8.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Sabah FK 0 victorias • 0 empates • Slavia Prague 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791909900,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106260",
+      "match_id": "6106260",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Arsenal",
+      "away_team": "Lille",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106318",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Napoli",
+            "venue": "Visitante",
+            "match_home": "Napoli",
+            "match_away": "Arsenal",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 6,
+            "corners_against": 0,
+            "total_corners": 6,
+            "shots_on_target": 8,
+            "total_shots": 26
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106311",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Real Betis",
+            "venue": "Local",
+            "match_home": "Lille",
+            "match_away": "Real Betis",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 5,
+            "total_corners": 10,
+            "shots_on_target": 2,
+            "total_shots": 6
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 6.0,
+          "corners_avg_gen": 6.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 0.0,
+          "corners_conceded_gen": 0.0,
+          "shots_on_target_gen": 8.0,
+          "total_shots_gen": 26.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 2.0,
+          "total_shots_gen": 6.0
+        },
+        "projected_corners": 9.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Arsenal 0 victorias • 0 empates • Lille 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106267",
+      "match_id": "6106267",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Atlético Madrid",
+      "away_team": "Manchester United",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106246",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Liverpool",
+            "venue": "Visitante",
+            "match_home": "Liverpool",
+            "match_away": "Atlético Madrid",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 7,
+            "total_corners": 12,
+            "shots_on_target": 4,
+            "total_shots": 9
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106293",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Sabah FK",
+            "venue": "Local",
+            "match_home": "Manchester United",
+            "match_away": "Sabah FK",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 7,
+            "corners_against": 2,
+            "total_corners": 9,
+            "shots_on_target": 10,
+            "total_shots": 21
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "15/03/2022",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester United",
+            "match_away": "Atlético Madrid",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Atlético Madrid"
+          },
+          {
+            "date": "23/02/2022",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Atlético Madrid",
+            "match_away": "Manchester United",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 7.0,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 9.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 2.0,
+          "shots_on_target_gen": 10.0,
+          "total_shots_gen": 21.0
+        },
+        "projected_corners": 10.4,
+        "summary": {
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 1.5,
+          "text": "Atlético Madrid 1 victorias • 1 empates • Manchester United 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106338",
+      "match_id": "6106338",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Galatasaray",
+      "away_team": "Barcelona",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106280",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Sporting CP",
+            "venue": "Visitante",
+            "match_home": "Sporting CP",
+            "match_away": "Galatasaray",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 4,
+            "corners_against": 1,
+            "total_corners": 5,
+            "shots_on_target": 3,
+            "total_shots": 10
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106264",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Feyenoord",
+            "venue": "Local",
+            "match_home": "Barcelona",
+            "match_away": "Feyenoord",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 4,
+            "corners_against": 1,
+            "total_corners": 5,
+            "shots_on_target": 9,
+            "total_shots": 24
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "17/03/2022",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Galatasaray",
+            "match_away": "Barcelona",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Barcelona"
+          },
+          {
+            "date": "10/03/2022",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Barcelona",
+            "match_away": "Galatasaray",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 1.0,
+          "corners_conceded_gen": 1.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 10.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 1.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 1.0,
+          "shots_on_target_gen": 9.0,
+          "total_shots_gen": 24.0
+        },
+        "projected_corners": 8.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 1.5,
+          "text": "Galatasaray 0 victorias • 1 empates • Barcelona 1 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106251",
+      "match_id": "6106251",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Inter",
+      "away_team": "Club Brugge",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106242",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Real Madrid",
+            "venue": "Visitante",
+            "match_home": "Real Madrid",
+            "match_away": "Inter",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 11,
+            "corners_against": 4,
+            "total_corners": 15,
+            "shots_on_target": 7,
+            "total_shots": 21
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106295",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Aston Villa",
+            "venue": "Local",
+            "match_home": "Club Brugge",
+            "match_away": "Aston Villa",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 7,
+            "total_shots": 14
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 11.0,
+          "corners_avg_gen": 11.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 7.0,
+          "total_shots_gen": 21.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 7.0,
+          "total_shots_gen": 14.0
+        },
+        "projected_corners": 11.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Inter 0 victorias • 0 empates • Club Brugge 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106323",
+      "match_id": "6106323",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "RB Leipzig",
+      "away_team": "PSV Eindhoven",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106411",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Como",
+            "venue": "Visitante",
+            "match_home": "Como",
+            "match_away": "RB Leipzig",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 1,
+            "total_corners": 6,
+            "shots_on_target": 4,
+            "total_shots": 14
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106304",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Shakhtar Donetsk",
+            "venue": "Local",
+            "match_home": "PSV Eindhoven",
+            "match_away": "Shakhtar Donetsk",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 3,
+            "total_corners": 6,
+            "shots_on_target": 2,
+            "total_shots": 10
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 1.0,
+          "corners_conceded_gen": 1.0,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 14.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 3.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 2.0,
+          "total_shots_gen": 10.0
+        },
+        "projected_corners": 8.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "RB Leipzig 0 victorias • 0 empates • PSV Eindhoven 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106417",
+      "match_id": "6106417",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Viking",
+      "away_team": "Bayern München",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106400",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "VfB Stuttgart",
+            "venue": "Visitante",
+            "match_home": "VfB Stuttgart",
+            "match_away": "Viking",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 3,
+            "total_corners": 8,
+            "shots_on_target": 3,
+            "total_shots": 9
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106240",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Bodø/Glimt",
+            "venue": "Local",
+            "match_home": "Bayern München",
+            "match_away": "Bodø/Glimt",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 6,
+            "corners_against": 3,
+            "total_corners": 9,
+            "shots_on_target": 12,
+            "total_shots": 25
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 3.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 9.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 6.0,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 12.0,
+          "total_shots_gen": 25.0
+        },
+        "projected_corners": 9.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Viking 0 victorias • 0 empates • Bayern München 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106328",
+      "match_id": "6106328",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Villarreal",
+      "away_team": "Napoli",
+      "date": "Mar 13 Oct, 13:00",
+      "date_iso": "2026-10-13",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106272",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Borussia Dortmund",
+            "venue": "Visitante",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Villarreal",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 7,
+            "corners_against": 9,
+            "total_corners": 16,
+            "shots_on_target": 6,
+            "total_shots": 13
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106318",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Arsenal",
+            "venue": "Local",
+            "match_home": "Napoli",
+            "match_away": "Arsenal",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 0,
+            "corners_against": 6,
+            "total_corners": 6,
+            "shots_on_target": 3,
+            "total_shots": 5
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "25/02/2016",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Napoli",
+            "match_away": "Villarreal",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "18/02/2016",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Villarreal"
+          },
+          {
+            "date": "07/12/2011",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Napoli"
+          },
+          {
+            "date": "27/09/2011",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Napoli",
+            "match_away": "Villarreal",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Napoli"
+          },
+          {
+            "date": "24/02/2011",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Villarreal"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 7.0,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 9.0,
+          "corners_conceded_gen": 9.0,
+          "shots_on_target_gen": 6.0,
+          "total_shots_gen": 13.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 0.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 0.0,
+          "corners_conceded_home": 6.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 5.0
+        },
+        "projected_corners": 7.9,
+        "summary": {
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.0,
+          "text": "Villarreal 2 victorias • 1 empates • Napoli 2 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791918000,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106309",
+      "match_id": "6106309",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Feyenoord",
+      "away_team": "Como",
+      "date": "Mié 14 Oct, 10:45",
+      "date_iso": "2026-10-14",
+      "time": "10:45",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106264",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Barcelona",
+            "venue": "Visitante",
+            "match_home": "Barcelona",
+            "match_away": "Feyenoord",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 1,
+            "corners_against": 4,
+            "total_corners": 5,
+            "shots_on_target": 2,
+            "total_shots": 4
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106411",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "RB Leipzig",
+            "venue": "Local",
+            "match_home": "Como",
+            "match_away": "RB Leipzig",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 1,
+            "corners_against": 5,
+            "total_corners": 6,
+            "shots_on_target": 6,
+            "total_shots": 14
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 1.0,
+          "corners_avg_gen": 1.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 2.0,
+          "total_shots_gen": 4.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 1.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 1.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 6.0,
+          "total_shots_gen": 14.0
+        },
+        "projected_corners": 5.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Feyenoord 0 victorias • 0 empates • Como 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791996300,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106405",
+      "match_id": "6106405",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "LASK",
+      "away_team": "Liverpool",
+      "date": "Mié 14 Oct, 10:45",
+      "date_iso": "2026-10-14",
+      "time": "10:45",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106404",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "AEK Athens",
+            "venue": "Visitante",
+            "match_home": "AEK Athens",
+            "match_away": "LASK",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 7,
+            "total_corners": 10,
+            "shots_on_target": 3,
+            "total_shots": 11
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106246",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Atlético Madrid",
+            "venue": "Local",
+            "match_home": "Liverpool",
+            "match_away": "Atlético Madrid",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 7,
+            "corners_against": 5,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 14
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "30/11/2023",
+            "competition": "Europa League Grp. E",
+            "tournament": "Europa League Grp. E",
+            "match_home": "Liverpool",
+            "match_away": "LASK",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Liverpool"
+          },
+          {
+            "date": "21/09/2023",
+            "competition": "Europa League Grp. E",
+            "tournament": "Europa League Grp. E",
+            "match_home": "LASK",
+            "match_away": "Liverpool",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Liverpool"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 3.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 7.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 11.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 14.0
+        },
+        "projected_corners": 9.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 2,
+          "avg_goals": 4.0,
+          "text": "LASK 0 victorias • 0 empates • Liverpool 2 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1791996300,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106284",
+      "match_id": "6106284",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Aston Villa",
+      "away_team": "Fenerbahçe",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106295",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Club Brugge",
+            "venue": "Visitante",
+            "match_home": "Club Brugge",
+            "match_away": "Aston Villa",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 9,
+            "total_shots": 21
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106331",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Roma",
+            "venue": "Local",
+            "match_home": "Fenerbahçe",
+            "match_away": "Roma",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "UEFA Champions League",
+            "corners_for": 1,
+            "corners_against": 3,
+            "total_corners": 4,
+            "shots_on_target": 5,
+            "total_shots": 11
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "22/01/2026",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Fenerbahçe",
+            "match_away": "Aston Villa",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Aston Villa"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 9.0,
+          "total_shots_gen": 21.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 1.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 1.0,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 11.0
+        },
+        "projected_corners": 7.4,
+        "summary": {
+          "home_wins": 1,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 1.0,
+          "text": "Aston Villa 1 victorias • 0 empates • Fenerbahçe 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106315",
+      "match_id": "6106315",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Bodø/Glimt",
+      "away_team": "Borussia Dortmund",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106240",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Bayern München",
+            "venue": "Visitante",
+            "match_home": "Bayern München",
+            "match_away": "Bodø/Glimt",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 6,
+            "total_corners": 9,
+            "shots_on_target": 0,
+            "total_shots": 3
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106272",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Villarreal",
+            "venue": "Local",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Villarreal",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 9,
+            "corners_against": 7,
+            "total_corners": 16,
+            "shots_on_target": 6,
+            "total_shots": 18
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "10/12/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Bodø/Glimt",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 3.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 6.0,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 0.0,
+          "total_shots_gen": 3.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 9.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 9.0,
+          "corners_conceded_home": 7.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 7.0,
+          "shots_on_target_gen": 6.0,
+          "total_shots_gen": 18.0
+        },
+        "projected_corners": 10.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 4.0,
+          "text": "Bodø/Glimt 0 victorias • 1 empates • Borussia Dortmund 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106254",
+      "match_id": "6106254",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Manchester City",
+      "away_team": "Paris Saint-Germain",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106286",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "FC Porto",
+            "venue": "Visitante",
+            "match_home": "FC Porto",
+            "match_away": "Manchester City",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 2,
+            "total_corners": 7,
+            "shots_on_target": 10,
+            "total_shots": 20
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106237",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Slovan Bratislava",
+            "venue": "Local",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Slovan Bratislava",
+            "home_score": 6,
+            "away_score": 1,
+            "score": "6 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 7,
+            "corners_against": 2,
+            "total_corners": 9,
+            "shots_on_target": 14,
+            "total_shots": 35
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "22/01/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Paris Saint-Germain"
+          },
+          {
+            "date": "24/11/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester City",
+            "match_away": "Paris Saint-Germain",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Manchester City"
+          },
+          {
+            "date": "28/09/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Paris Saint-Germain"
+          },
+          {
+            "date": "04/05/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester City",
+            "match_away": "Paris Saint-Germain",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Manchester City"
+          },
+          {
+            "date": "28/04/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Manchester City"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 2.0,
+          "corners_conceded_gen": 2.0,
+          "shots_on_target_gen": 10.0,
+          "total_shots_gen": 20.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 2.0,
+          "shots_on_target_gen": 14.0,
+          "total_shots_gen": 35.0
+        },
+        "projected_corners": 10.4,
+        "summary": {
+          "home_wins": 3,
+          "draws": 0,
+          "away_wins": 2,
+          "avg_goals": 3.2,
+          "text": "Manchester City 3 victorias • 0 empates • Paris Saint-Germain 2 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106299",
+      "match_id": "6106299",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Real Betis",
+      "away_team": "FC Porto",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106311",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Lille",
+            "venue": "Visitante",
+            "match_home": "Lille",
+            "match_away": "Real Betis",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 5,
+            "corners_against": 5,
+            "total_corners": 10,
+            "shots_on_target": 5,
+            "total_shots": 20
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106286",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Manchester City",
+            "venue": "Local",
+            "match_home": "FC Porto",
+            "match_away": "Manchester City",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 2,
+            "corners_against": 5,
+            "total_corners": 7,
+            "shots_on_target": 0,
+            "total_shots": 5
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 20.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 2.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 2.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 0.0,
+          "total_shots_gen": 5.0
+        },
+        "projected_corners": 7.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Real Betis 0 victorias • 0 empates • FC Porto 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106274",
+      "match_id": "6106274",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Roma",
+      "away_team": "Real Madrid",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106331",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "Fenerbahçe",
+            "venue": "Visitante",
+            "match_home": "Fenerbahçe",
+            "match_away": "Roma",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 1,
+            "total_corners": 4,
+            "shots_on_target": 3,
+            "total_shots": 8
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106242",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Inter",
+            "venue": "Local",
+            "match_home": "Real Madrid",
+            "match_away": "Inter",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 4,
+            "corners_against": 11,
+            "total_corners": 15,
+            "shots_on_target": 8,
+            "total_shots": 16
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "27/11/2018",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Roma",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "19/09/2018",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "08/08/2018",
+            "competition": "Champions Cup",
+            "tournament": "Champions Cup",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "08/03/2016",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "17/02/2016",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Roma",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Madrid"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 3.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 1.0,
+          "corners_conceded_gen": 1.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 8.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 11.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 11.0,
+          "shots_on_target_gen": 8.0,
+          "total_shots_gen": 16.0
+        },
+        "projected_corners": 7.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 5,
+          "avg_goals": 2.4,
+          "text": "Roma 0 victorias • 0 empates • Real Madrid 5 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106337",
+      "match_id": "6106337",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Shakhtar Donetsk",
+      "away_team": "AEK Athens",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106304",
+            "date": "10/09/2026",
+            "date_iso": "2026-09-10",
+            "opponent": "PSV Eindhoven",
+            "venue": "Visitante",
+            "match_home": "PSV Eindhoven",
+            "match_away": "Shakhtar Donetsk",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 3,
+            "total_corners": 6,
+            "shots_on_target": 2,
+            "total_shots": 8
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106404",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "LASK",
+            "venue": "Local",
+            "match_home": "AEK Athens",
+            "match_away": "LASK",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 7,
+            "corners_against": 3,
+            "total_corners": 10,
+            "shots_on_target": 4,
+            "total_shots": 18
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 3.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 3.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 2.0,
+          "total_shots_gen": 8.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 18.0
+        },
+        "projected_corners": 9.4,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Shakhtar Donetsk 0 victorias • 0 empates • AEK Athens 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    },
+    {
+      "id": "fotmob_champions_league_6106396",
+      "match_id": "6106396",
+      "sport": "football",
+      "league": "UEFA Champions League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🏆",
+      "country_flag": "🏆",
+      "home_team": "Slovan Bratislava",
+      "away_team": "VfB Stuttgart",
+      "date": "Mié 14 Oct, 13:00",
+      "date_iso": "2026-10-14",
+      "time": "13:00",
+      "round": "2",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "6106237",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Paris Saint-Germain",
+            "venue": "Visitante",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Slovan Bratislava",
+            "home_score": 6,
+            "away_score": 1,
+            "score": "6 - 1",
+            "result": "L",
+            "competition": "UEFA Champions League",
+            "corners_for": 2,
+            "corners_against": 7,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 9
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "6106400",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Viking",
+            "venue": "Local",
+            "match_home": "VfB Stuttgart",
+            "match_away": "Viking",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "UEFA Champions League",
+            "corners_for": 3,
+            "corners_against": 5,
+            "total_corners": 8,
+            "shots_on_target": 3,
+            "total_shots": 17
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "21/01/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Slovan Bratislava",
+            "match_away": "VfB Stuttgart",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "VfB Stuttgart"
+          },
+          {
+            "date": "26/08/2010",
+            "competition": "Europa League Qualification",
+            "tournament": "Europa League Qualification",
+            "match_home": "VfB Stuttgart",
+            "match_away": "Slovan Bratislava",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/08/2010",
+            "competition": "Europa League Qualification",
+            "tournament": "Europa League Qualification",
+            "match_home": "Slovan Bratislava",
+            "match_away": "VfB Stuttgart",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "VfB Stuttgart"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.8,
+          "corners_avg_away": 2.0,
+          "corners_avg_gen": 2.0,
+          "corners_conceded_home": 3.8,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 7.0,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 9.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 3.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 3.0,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 17.0
+        },
+        "projected_corners": 6.9,
+        "summary": {
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.0,
+          "text": "Slovan Bratislava 0 victorias • 1 empates • VfB Stuttgart 2 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)",
+      "timestamp": 1792004400,
+      "timezone": "America/Guatemala"
+    }
+  ]
+}
