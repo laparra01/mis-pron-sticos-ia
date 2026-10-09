@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-09T16:47:24.973085",
+  "last_updated": "2026-10-09T22:07:45.252596",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -543,11 +543,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Super League de Suiza",
-        "corners_for": 5,
+        "corners_for": 4,
         "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
+        "total_corners": 8,
+        "shots_on_target": 7,
+        "total_shots": 18
       },
       {
         "match_id": "5804242",
@@ -1223,14 +1223,14 @@
       "total_shots_gen": 11.4
     },
     "Lugano": {
-      "corners_avg_home": 4.0,
+      "corners_avg_home": 3.67,
       "corners_avg_away": 5.0,
-      "corners_avg_gen": 4.4,
+      "corners_avg_gen": 4.2,
       "corners_conceded_home": 5.33,
       "corners_conceded_away": 3.0,
       "corners_conceded_gen": 4.4,
-      "shots_on_target_gen": 4.8,
-      "total_shots_gen": 13.4
+      "shots_on_target_gen": 5.4,
+      "total_shots_gen": 14.6
     },
     "Luzern": {
       "corners_avg_home": 5.33,
@@ -1664,11 +1664,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Super League de Suiza",
-            "corners_for": 5,
+            "corners_for": 4,
             "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
+            "total_corners": 8,
+            "shots_on_target": 7,
+            "total_shots": 18
           },
           {
             "match_id": "5804242",
@@ -1864,14 +1864,14 @@
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 4.0,
+          "corners_avg_home": 3.67,
           "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.4,
+          "corners_avg_gen": 4.2,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 3.0,
           "corners_conceded_gen": 4.4,
-          "shots_on_target_gen": 4.8,
-          "total_shots_gen": 13.4
+          "shots_on_target_gen": 5.4,
+          "total_shots_gen": 14.6
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -1883,7 +1883,7 @@
           "shots_on_target_gen": 4.8,
           "total_shots_gen": 14.8
         },
-        "projected_corners": 8.6,
+        "projected_corners": 8.3,
         "summary": {
           "home_wins": 3,
           "draws": 1,
@@ -4161,11 +4161,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Super League de Suiza",
-            "corners_for": 5,
+            "corners_for": 4,
             "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
+            "total_corners": 8,
+            "shots_on_target": 7,
+            "total_shots": 18
           },
           {
             "match_id": "5804242",
@@ -4274,16 +4274,16 @@
           "total_shots_gen": 13.2
         },
         "away_corner_stats": {
-          "corners_avg_home": 4.0,
+          "corners_avg_home": 3.67,
           "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.4,
+          "corners_avg_gen": 4.2,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 3.0,
           "corners_conceded_gen": 4.4,
-          "shots_on_target_gen": 4.8,
-          "total_shots_gen": 13.4
+          "shots_on_target_gen": 5.4,
+          "total_shots_gen": 14.6
         },
-        "projected_corners": 10.3,
+        "projected_corners": 10.2,
         "summary": {
           "home_wins": 1,
           "draws": 1,

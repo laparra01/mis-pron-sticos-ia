@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-10-09T16:46:12.677174",
+  "last_updated": "2026-10-09T22:07:17.530585",
   "total_fixtures": 15,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -737,11 +737,11 @@
         "score": "1 - 2",
         "result": "L",
         "competition": "Liga 1 de Perú",
-        "corners_for": 5,
+        "corners_for": 10,
         "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
+        "total_corners": 14,
+        "shots_on_target": 6,
+        "total_shots": 21
       },
       {
         "match_id": "1000017244",
@@ -1825,14 +1825,14 @@
       "total_shots_gen": 15.8
     },
     "Club Deportivo Moquegua": {
-      "corners_avg_home": 5.33,
+      "corners_avg_home": 7.0,
       "corners_avg_away": 2.0,
-      "corners_avg_gen": 4.0,
+      "corners_avg_gen": 5.0,
       "corners_conceded_home": 5.67,
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 3.4,
-      "total_shots_gen": 10.2
+      "shots_on_target_gen": 3.8,
+      "total_shots_gen": 12.0
     },
     "Comerciantes Unidos": {
       "corners_avg_home": 3.0,
@@ -5915,11 +5915,11 @@
             "score": "1 - 2",
             "result": "L",
             "competition": "Liga 1 de Perú",
-            "corners_for": 5,
+            "corners_for": 10,
             "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
+            "total_corners": 14,
+            "shots_on_target": 6,
+            "total_shots": 21
           },
           {
             "match_id": "1000017244",
@@ -5984,16 +5984,16 @@
           "total_shots_gen": 14.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.33,
+          "corners_avg_home": 7.0,
           "corners_avg_away": 2.0,
-          "corners_avg_gen": 4.0,
+          "corners_avg_gen": 5.0,
           "corners_conceded_home": 5.67,
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 3.4,
-          "total_shots_gen": 10.2
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 12.0
         },
-        "projected_corners": 6.8,
+        "projected_corners": 7.3,
         "summary": {
           "home_wins": 0,
           "draws": 0,

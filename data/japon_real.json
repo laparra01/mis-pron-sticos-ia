@@ -3,7 +3,7 @@
   "league_id": 223,
   "country": "Japón",
   "country_code": "jp",
-  "last_updated": "2026-10-09T16:47:53.163305",
+  "last_updated": "2026-10-09T22:07:57.418673",
   "total_fixtures": 15,
   "team_histories": {
     "Avispa Fukuoka": [
@@ -737,11 +737,11 @@
         "score": "2 - 3",
         "result": "W",
         "competition": "J1 League de Japón",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 7,
+        "total_corners": 12,
+        "shots_on_target": 6,
+        "total_shots": 19
       },
       {
         "match_id": "5803592",
@@ -2020,13 +2020,13 @@
     },
     "Kashiwa Reysol": {
       "corners_avg_home": 4.5,
-      "corners_avg_away": 5.33,
-      "corners_avg_gen": 5.0,
+      "corners_avg_away": 5.67,
+      "corners_avg_gen": 5.2,
       "corners_conceded_home": 3.0,
-      "corners_conceded_away": 3.67,
-      "corners_conceded_gen": 3.4,
-      "shots_on_target_gen": 5.2,
-      "total_shots_gen": 14.4
+      "corners_conceded_away": 4.33,
+      "corners_conceded_gen": 3.8,
+      "shots_on_target_gen": 5.8,
+      "total_shots_gen": 16.2
     },
     "Kawasaki Frontale": {
       "corners_avg_home": 4.33,
