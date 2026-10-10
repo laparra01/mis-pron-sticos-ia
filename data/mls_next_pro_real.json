@@ -3,7 +3,7 @@
   "league_id": 10282,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-09T22:07:10.262228",
+  "last_updated": "2026-10-09T22:35:02.945854",
   "total_fixtures": 10,
   "team_histories": {
     "Atlanta United 2": [
@@ -387,11 +387,11 @@
         "score": "0 - 1",
         "result": "W",
         "competition": "MLS Next Pro",
-        "corners_for": 4,
-        "corners_against": 5,
-        "total_corners": 9,
+        "corners_for": 5,
+        "corners_against": 10,
+        "total_corners": 15,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 9
       }
     ],
     "Chicago Fire FC II": [
@@ -484,11 +484,11 @@
         "score": "0 - 1",
         "result": "L",
         "competition": "MLS Next Pro",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
+        "corners_for": 10,
+        "corners_against": 5,
+        "total_corners": 15,
+        "shots_on_target": 7,
+        "total_shots": 22
       }
     ],
     "Colorado Rapids 2": [
@@ -1417,11 +1417,11 @@
         "score": "5 - 1",
         "result": "W",
         "competition": "MLS Next Pro",
-        "corners_for": 9,
-        "corners_against": 6,
-        "total_corners": 15,
-        "shots_on_target": 12,
-        "total_shots": 24
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000007704",
@@ -2096,11 +2096,11 @@
         "score": "4 - 0",
         "result": "L",
         "competition": "MLS Next Pro",
-        "corners_for": 0,
-        "corners_against": 8,
-        "total_corners": 8,
-        "shots_on_target": 0,
-        "total_shots": 1
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000007704",
@@ -2952,23 +2952,23 @@
     },
     "Chattanooga FC": {
       "corners_avg_home": 4.5,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.2,
+      "corners_avg_away": 4.33,
+      "corners_avg_gen": 4.4,
       "corners_conceded_home": 4.5,
-      "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.8,
+      "corners_conceded_away": 6.67,
+      "corners_conceded_gen": 5.8,
       "shots_on_target_gen": 4.8,
-      "total_shots_gen": 12.6
+      "total_shots_gen": 12.4
     },
     "Chicago Fire FC II": {
-      "corners_avg_home": 4.0,
+      "corners_avg_home": 5.67,
       "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.0,
-      "corners_conceded_home": 4.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 4.33,
       "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.4,
-      "shots_on_target_gen": 3.8,
-      "total_shots_gen": 12.0
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 4.4,
+      "total_shots_gen": 14.0
     },
     "Colorado Rapids 2": {
       "corners_avg_home": 3.67,
@@ -3071,14 +3071,14 @@
       "total_shots_gen": 12.2
     },
     "Minnesota United 2": {
-      "corners_avg_home": 7.0,
+      "corners_avg_home": 5.67,
       "corners_avg_away": 3.5,
-      "corners_avg_gen": 5.6,
-      "corners_conceded_home": 3.67,
+      "corners_avg_gen": 4.8,
+      "corners_conceded_home": 3.0,
       "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 5.8,
-      "total_shots_gen": 15.6
+      "corners_conceded_gen": 3.8,
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 13.2
     },
     "New England Revolution II": {
       "corners_avg_home": 5.0,
@@ -3142,13 +3142,13 @@
     },
     "Real Monarchs SLC": {
       "corners_avg_home": 3.33,
-      "corners_avg_away": 2.0,
-      "corners_avg_gen": 2.8,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 3.6,
       "corners_conceded_home": 4.0,
-      "corners_conceded_away": 6.5,
-      "corners_conceded_gen": 5.0,
-      "shots_on_target_gen": 2.6,
-      "total_shots_gen": 8.4
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.4,
+      "shots_on_target_gen": 3.2,
+      "total_shots_gen": 10.2
     },
     "Red Bull New York  II": {
       "corners_avg_home": 7.33,
@@ -3456,7 +3456,7 @@
         ],
         "head_to_head": [
           {
-            "date": "20/09/2026",
+            "date": "2026-09-20",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Red Bull New York  II",
@@ -3465,50 +3465,6 @@
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Huntsville City FC"
-          },
-          {
-            "date": "14/09/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Huntsville City FC",
-            "match_away": "Red Bull New York  II",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Red Bull New York  II"
-          },
-          {
-            "date": "06/07/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Red Bull New York  II",
-            "match_away": "Huntsville City FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Huntsville City FC"
-          },
-          {
-            "date": "18/08/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Huntsville City FC",
-            "match_away": "Red Bull New York  II",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Huntsville City FC"
-          },
-          {
-            "date": "27/05/2023",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Huntsville City FC",
-            "match_away": "Red Bull New York  II",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Red Bull New York  II"
           }
         ],
         "home_corner_stats": {
@@ -3533,11 +3489,11 @@
         },
         "projected_corners": 11.1,
         "summary": {
-          "home_wins": 2,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 3,
-          "avg_goals": 3.8,
-          "text": "Red Bull New York  II 2 victorias • 0 empates • Huntsville City FC 3 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Red Bull New York  II 0 victorias • 0 empates • Huntsville City FC 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3756,29 +3712,7 @@
         ],
         "head_to_head": [
           {
-            "date": "06/09/2026",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "San Jose Earthquakes II",
-            "match_away": "Tacoma Defiance",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Tacoma Defiance"
-          },
-          {
-            "date": "13/07/2026",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "San Jose Earthquakes II",
-            "match_away": "Tacoma Defiance",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Tacoma Defiance"
-          },
-          {
-            "date": "15/03/2026",
+            "date": "2026-03-15",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Tacoma Defiance",
@@ -3789,7 +3723,7 @@
             "winner": "Empate"
           },
           {
-            "date": "28/09/2025",
+            "date": "2026-07-13",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "San Jose Earthquakes II",
@@ -3800,15 +3734,15 @@
             "winner": "Tacoma Defiance"
           },
           {
-            "date": "04/07/2025",
+            "date": "2026-09-06",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
-            "match_home": "Tacoma Defiance",
-            "match_away": "San Jose Earthquakes II",
-            "home_score": 4,
-            "away_score": 4,
-            "score": "4 - 4",
-            "winner": "Empate"
+            "match_home": "San Jose Earthquakes II",
+            "match_away": "Tacoma Defiance",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Tacoma Defiance"
           }
         ],
         "home_corner_stats": {
@@ -3834,10 +3768,10 @@
         "projected_corners": 11.4,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
-          "away_wins": 3,
-          "avg_goals": 2.6,
-          "text": "San Jose Earthquakes II 0 victorias • 2 empates • Tacoma Defiance 3 victorias"
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 1.3,
+          "text": "San Jose Earthquakes II 0 victorias • 1 empates • Tacoma Defiance 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4056,7 +3990,7 @@
         ],
         "head_to_head": [
           {
-            "date": "08/09/2026",
+            "date": "2026-09-08",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Atlanta United 2",
@@ -4312,18 +4246,7 @@
         ],
         "head_to_head": [
           {
-            "date": "14/09/2026",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Portland Timbers 2",
-            "match_away": "St. Louis City 2",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "18/07/2026",
+            "date": "2026-07-18",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "St. Louis City 2",
@@ -4334,33 +4257,11 @@
             "winner": "Portland Timbers 2"
           },
           {
-            "date": "05/10/2025",
+            "date": "2026-09-14",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Portland Timbers 2",
             "match_away": "St. Louis City 2",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Portland Timbers 2"
-          },
-          {
-            "date": "24/05/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "St. Louis City 2",
-            "match_away": "Portland Timbers 2",
-            "home_score": 6,
-            "away_score": 3,
-            "score": "6 - 3",
-            "winner": "St. Louis City 2"
-          },
-          {
-            "date": "07/04/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "St. Louis City 2",
-            "match_away": "Portland Timbers 2",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
@@ -4389,11 +4290,11 @@
         },
         "projected_corners": 8.8,
         "summary": {
-          "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
-          "avg_goals": 3.8,
-          "text": "Portland Timbers 2 2 victorias • 2 empates • St. Louis City 2 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 2.5,
+          "text": "Portland Timbers 2 1 victorias • 1 empates • St. Louis City 2 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4565,11 +4466,11 @@
             "score": "5 - 1",
             "result": "W",
             "competition": "MLS Next Pro",
-            "corners_for": 9,
-            "corners_against": 6,
-            "total_corners": 15,
-            "shots_on_target": 12,
-            "total_shots": 24
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000007704",
@@ -4610,52 +4511,7 @@
             "total_shots": 17
           }
         ],
-        "head_to_head": [
-          {
-            "date": "16/06/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Minnesota United 2",
-            "match_away": "Ventura County FC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Ventura County FC"
-          },
-          {
-            "date": "12/05/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Minnesota United 2",
-            "match_away": "Ventura County FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Minnesota United 2"
-          },
-          {
-            "date": "25/05/2023",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Minnesota United 2",
-            "match_away": "Ventura County FC",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Minnesota United 2"
-          },
-          {
-            "date": "10/04/2023",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Ventura County FC",
-            "match_away": "Minnesota United 2",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Minnesota United 2"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 4.25,
@@ -4667,22 +4523,22 @@
           "total_shots_gen": 12.4
         },
         "away_corner_stats": {
-          "corners_avg_home": 7.0,
+          "corners_avg_home": 5.67,
           "corners_avg_away": 3.5,
-          "corners_avg_gen": 5.6,
-          "corners_conceded_home": 3.67,
+          "corners_avg_gen": 4.8,
+          "corners_conceded_home": 3.0,
           "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 15.6
+          "corners_conceded_gen": 3.8,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 13.2
         },
-        "projected_corners": 9.2,
+        "projected_corners": 8.9,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 3,
-          "avg_goals": 2.8,
-          "text": "Ventura County FC 1 victorias • 0 empates • Minnesota United 2 3 victorias"
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Ventura County FC 0 victorias • 0 empates • Minnesota United 2 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4901,29 +4757,7 @@
         ],
         "head_to_head": [
           {
-            "date": "13/09/2026",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Columbus Crew 2",
-            "match_away": "New England Revolution II",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "15/07/2026",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "New England Revolution II",
-            "match_away": "Columbus Crew 2",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "18/04/2026",
+            "date": "2026-04-18",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Columbus Crew 2",
@@ -4934,7 +4768,7 @@
             "winner": "Columbus Crew 2"
           },
           {
-            "date": "11/08/2025",
+            "date": "2026-07-15",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "New England Revolution II",
@@ -4945,15 +4779,15 @@
             "winner": "Empate"
           },
           {
-            "date": "05/07/2025",
+            "date": "2026-09-13",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Columbus Crew 2",
             "match_away": "New England Revolution II",
             "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "New England Revolution II"
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -4979,10 +4813,10 @@
         "projected_corners": 9.2,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
-          "away_wins": 1,
-          "avg_goals": 3.2,
-          "text": "Columbus Crew 2 1 victorias • 3 empates • New England Revolution II 1 victorias"
+          "draws": 2,
+          "away_wins": 0,
+          "avg_goals": 3.0,
+          "text": "Columbus Crew 2 1 victorias • 2 empates • New England Revolution II 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5095,11 +4929,11 @@
             "score": "0 - 1",
             "result": "W",
             "competition": "MLS Next Pro",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
+            "corners_for": 5,
+            "corners_against": 10,
+            "total_corners": 15,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 9
           }
         ],
         "away_last_5": [
@@ -5201,31 +5035,9 @@
         ],
         "head_to_head": [
           {
-            "date": "21/06/2026",
+            "date": "2026-06-21",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
-            "match_home": "New York City FC II",
-            "match_away": "Chattanooga FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "28/09/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "New York City FC II",
-            "match_away": "Chattanooga FC",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Chattanooga FC"
-          },
-          {
-            "date": "27/03/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
             "match_home": "New York City FC II",
             "match_away": "Chattanooga FC",
             "home_score": 1,
@@ -5236,13 +5048,13 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 4.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.2,
+          "corners_avg_away": 4.33,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 4.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 4.8,
+          "corners_conceded_away": 6.67,
+          "corners_conceded_gen": 5.8,
           "shots_on_target_gen": 4.8,
-          "total_shots_gen": 12.6
+          "total_shots_gen": 12.4
         },
         "away_corner_stats": {
           "corners_avg_home": 6.0,
@@ -5254,13 +5066,13 @@
           "shots_on_target_gen": 4.6,
           "total_shots_gen": 12.8
         },
-        "projected_corners": 9.0,
+        "projected_corners": 9.1,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
+          "home_wins": 0,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 1.7,
-          "text": "Chattanooga FC 1 victorias • 2 empates • New York City FC II 0 victorias"
+          "avg_goals": 2.0,
+          "text": "Chattanooga FC 0 victorias • 1 empates • New York City FC II 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5627,7 +5439,7 @@
         ],
         "head_to_head": [
           {
-            "date": "29/06/2026",
+            "date": "2026-06-29",
             "competition": "MLS Next Pro",
             "tournament": "MLS Next Pro",
             "match_home": "Los Angeles FC II",
@@ -5636,50 +5448,6 @@
             "away_score": 1,
             "score": "3 - 1",
             "winner": "Los Angeles FC II"
-          },
-          {
-            "date": "06/04/2025",
-            "competition": "MLS Next Pro",
-            "tournament": "MLS Next Pro",
-            "match_home": "Houston Dynamo 2",
-            "match_away": "Los Angeles FC II",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Houston Dynamo 2"
-          },
-          {
-            "date": "29/07/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Houston Dynamo 2",
-            "match_away": "Los Angeles FC II",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Houston Dynamo 2"
-          },
-          {
-            "date": "24/03/2024",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Los Angeles FC II",
-            "match_away": "Houston Dynamo 2",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Los Angeles FC II"
-          },
-          {
-            "date": "04/06/2023",
-            "competition": "MLS NEXT Pro",
-            "tournament": "MLS NEXT Pro",
-            "match_home": "Los Angeles FC II",
-            "match_away": "Houston Dynamo 2",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Houston Dynamo 2"
           }
         ],
         "home_corner_stats": {
@@ -5704,11 +5472,11 @@
         },
         "projected_corners": 8.1,
         "summary": {
-          "home_wins": 3,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 2,
-          "avg_goals": 3.0,
-          "text": "Houston Dynamo 2 3 victorias • 0 empates • Los Angeles FC II 2 victorias"
+          "away_wins": 1,
+          "avg_goals": 4.0,
+          "text": "Houston Dynamo 2 0 victorias • 0 empates • Los Angeles FC II 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

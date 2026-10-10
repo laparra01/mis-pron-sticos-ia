@@ -179,6 +179,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             "corners": 5.0, "corners_against": 4.5,
             "corners_gen": 5.0, "corners_against_gen": 4.5,
             "corners_total": 9.5, "corners_total_gen": 9.5,
+            "yellow_cards": 2.2, "red_cards": 0.1, "total_cards": 2.3, "fouls": 11.5,
+            "yellow_cards_gen": 2.2, "red_cards_gen": 0.1, "total_cards_gen": 2.3, "fouls_gen": 11.5,
             "sample_size": 0, "sample_size_gen": 0,
             "venue_role": venue_role or "General"
         }
@@ -188,12 +190,18 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
     gen_conceded = 0
     gen_corners_for = 0
     gen_corners_against = 0
+    gen_yellow = 0
+    gen_red = 0
+    gen_fouls = 0
     gen_count = 0
 
     venue_scored = 0
     venue_conceded = 0
     venue_corners_for = 0
     venue_corners_against = 0
+    venue_yellow = 0
+    venue_red = 0
+    venue_fouls = 0
     venue_count = 0
 
     is_seeking_home = (venue_role in ("home", "Local", "local")) if venue_role else None
@@ -229,10 +237,18 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             c_for = int(m.get("away_corners", 4) or 4)
             c_against = int(m.get("home_corners", 5) or 5)
 
+        # Extracción de tarjetas y faltas reales por partido
+        y_cards = float(m.get("yellow_cards", 2.0) if m.get("yellow_cards") is not None else 2.0)
+        r_cards = float(m.get("red_cards", 0.0) if m.get("red_cards") is not None else 0.0)
+        f_count = float(m.get("fouls", 11.5) if m.get("fouls") is not None else 11.5)
+
         gen_scored += scored
         gen_conceded += conceded
         gen_corners_for += c_for
         gen_corners_against += c_against
+        gen_yellow += y_cards
+        gen_red += r_cards
+        gen_fouls += f_count
         gen_count += 1
 
         if is_seeking_home is not None and is_seeking_home and is_home:
@@ -240,12 +256,18 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             venue_conceded += conceded
             venue_corners_for += c_for
             venue_corners_against += c_against
+            venue_yellow += y_cards
+            venue_red += r_cards
+            venue_fouls += f_count
             venue_count += 1
         elif is_seeking_away is not None and is_seeking_away and (not is_home):
             venue_scored += scored
             venue_conceded += conceded
             venue_corners_for += c_for
             venue_corners_against += c_against
+            venue_yellow += y_cards
+            venue_red += r_cards
+            venue_fouls += f_count
             venue_count += 1
 
     if gen_count == 0:
@@ -257,6 +279,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             "corners": 5.0, "corners_against": 4.5,
             "corners_gen": 5.0, "corners_against_gen": 4.5,
             "corners_total": 9.5, "corners_total_gen": 9.5,
+            "yellow_cards": 2.2, "red_cards": 0.1, "total_cards": 2.3, "fouls": 11.5,
+            "yellow_cards_gen": 2.2, "red_cards_gen": 0.1, "total_cards_gen": 2.3, "fouls_gen": 11.5,
             "sample_size": 0, "sample_size_gen": 0,
             "venue_role": venue_role or "General"
         }
@@ -265,6 +289,9 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
     avg_gen_conceded = round(gen_conceded / float(gen_count), 2)
     avg_gen_c_for = round(gen_corners_for / float(gen_count), 1)
     avg_gen_c_against = round(gen_corners_against / float(gen_count), 1)
+    avg_gen_y = round(gen_yellow / float(gen_count), 1)
+    avg_gen_r = round(gen_red / float(gen_count), 2)
+    avg_gen_f = round(gen_fouls / float(gen_count), 1)
     attack_gen = max(0.40, min(3.80, avg_gen_scored))
     defense_gen = max(0.35, min(3.50, avg_gen_conceded))
 
@@ -273,6 +300,9 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         avg_venue_conceded = round(venue_conceded / float(venue_count), 2)
         avg_venue_c_for = round(venue_corners_for / float(venue_count), 1)
         avg_venue_c_against = round(venue_corners_against / float(venue_count), 1)
+        avg_venue_y = round(venue_yellow / float(venue_count), 1)
+        avg_venue_r = round(venue_red / float(venue_count), 2)
+        avg_venue_f = round(venue_fouls / float(venue_count), 1)
         attack_venue = max(0.40, min(3.80, avg_venue_scored))
         defense_venue = max(0.35, min(3.50, avg_venue_conceded))
         sample_venue = venue_count
@@ -281,6 +311,9 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         avg_venue_conceded = avg_gen_conceded
         avg_venue_c_for = avg_gen_c_for
         avg_venue_c_against = avg_gen_c_against
+        avg_venue_y = avg_gen_y
+        avg_venue_r = avg_gen_r
+        avg_venue_f = avg_gen_f
         attack_venue = attack_gen
         defense_venue = defense_gen
         sample_venue = gen_count
@@ -300,6 +333,14 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         "corners_against_gen": avg_gen_c_against,
         "corners_total": round(avg_venue_c_for + avg_venue_c_against, 1),
         "corners_total_gen": round(avg_gen_c_for + avg_gen_c_against, 1),
+        "yellow_cards": avg_venue_y,
+        "red_cards": avg_venue_r,
+        "total_cards": round(avg_venue_y + avg_venue_r, 1),
+        "fouls": avg_venue_f,
+        "yellow_cards_gen": avg_gen_y,
+        "red_cards_gen": avg_gen_r,
+        "total_cards_gen": round(avg_gen_y + avg_gen_r, 1),
+        "fouls_gen": avg_gen_f,
         "sample_size": sample_venue,
         "sample_size_gen": gen_count,
         "venue_role": venue_role or "General"
@@ -522,7 +563,8 @@ def generate_four_picks_football(
     pct_under_15: float = 25.0,
     home_stats: dict = None,
     away_stats: dict = None,
-    projected_corners: float = None
+    projected_corners: float = None,
+    projected_cards: float = None
 ) -> list:
     picks = []
     
@@ -710,6 +752,76 @@ def generate_four_picks_football(
         "risk_level": p6_risk,
         "risk_color": "emerald" if p6_risk == "Bajo" else ("amber" if p6_risk == "Medio" else "rose"),
         "explanation": p6_exp
+    })
+
+    # 7. Total de Tarjetas e Índice de Fricción (Proyección Disciplinaria)
+    h_cards = float(hs.get("total_cards", 2.2) or 2.2)
+    h_cards_gen = float(hs.get("total_cards_gen", 2.3) or 2.3)
+    a_cards = float(as_.get("total_cards", 2.4) or 2.4)
+    a_cards_gen = float(as_.get("total_cards_gen", 2.5) or 2.5)
+    h_fouls = float(hs.get("fouls", 11.5) or 11.5)
+    a_fouls = float(as_.get("fouls", 12.0) or 12.0)
+
+    if projected_cards is not None and projected_cards > 0:
+        exp_cards = float(projected_cards)
+    else:
+        exp_cards = round((h_cards * 0.5 + h_cards_gen * 0.5) + (a_cards * 0.5 + a_cards_gen * 0.5), 1)
+        if exp_cards <= 0:
+            exp_cards = 4.6
+
+    def poisson_tail_cards(lmbda, min_k):
+        p_acc = 0.0
+        for k in range(min_k, 25):
+            p_k = (math.exp(-lmbda) * (lmbda ** k)) / math.factorial(k)
+            p_acc += p_k
+        return min(0.95, max(0.05, p_acc))
+
+    p_over_35_cards = round(poisson_tail_cards(exp_cards, 4) * 100, 1)
+    p_over_45_cards = round(poisson_tail_cards(exp_cards, 5) * 100, 1)
+
+    tot_fouls = round(h_fouls + a_fouls, 1)
+    if exp_cards >= 5.2 or tot_fouls >= 27.0:
+        friction_level = "Alta Tensión (Juego Brusco)"
+        friction_color = "rose"
+    elif exp_cards >= 4.0:
+        friction_level = "Fricción Moderada"
+        friction_color = "amber"
+    else:
+        friction_level = "Juego Limpio (Baja Fricción)"
+        friction_color = "emerald"
+
+    if exp_cards >= 5.2:
+        p7_market = "Total de Tarjetas (Línea 4.5)"
+        p7_name = "Más de 4.5 Tarjetas (+4.5)"
+        p7_prob = p_over_45_cards
+        p7_risk = "Bajo" if p_over_45_cards >= 65 else "Medio"
+        p7_exp = f"Duelo con alta intensidad en balones divididos ({tot_fouls} faltas combinadas estimadas). {home_team} promedia {h_cards} tarjetas y {away_team} {a_cards}. Se proyectan {exp_cards} amonestaciones totales."
+    elif exp_cards >= 4.1:
+        p7_market = "Total de Tarjetas (Línea 3.5)"
+        p7_name = "Más de 3.5 Tarjetas (+3.5)"
+        p7_prob = p_over_35_cards
+        p7_risk = "Bajo" if p_over_35_cards >= 65 else "Medio"
+        p7_exp = f"Partido con fricción en la medular. Se proyectan {exp_cards} tarjetas combinadas ({h_cards} de {home_team} vs {a_cards} de {away_team}), con {p_over_35_cards}% de probabilidad para superar la línea de 3.5 tarjetas."
+    else:
+        p7_market = "Total de Tarjetas (Línea 4.5)"
+        p7_name = "Menos de 4.5 Tarjetas (-4.5)"
+        p7_prob = round(100.0 - p_over_45_cards, 1)
+        p7_risk = "Bajo" if p7_prob >= 65 else "Medio"
+        p7_exp = f"Encuentro fluido con escasa interrupción táctica ({tot_fouls} faltas proyectadas). Tendencia de fair play con {p7_prob}% de probabilidad favorable al 'Under 4.5 tarjetas'."
+
+    odds7 = round(100.0 / max(p7_prob, 1.0), 2)
+    picks.append({
+        "id": 7,
+        "market": p7_market,
+        "name": p7_name,
+        "probability": p7_prob,
+        "fair_odds": odds7,
+        "risk_level": p7_risk,
+        "risk_color": "emerald" if p7_risk == "Bajo" else ("amber" if p7_risk == "Medio" else "rose"),
+        "explanation": p7_exp,
+        "friction_index": friction_level,
+        "friction_color": friction_color,
+        "projected_cards": exp_cards
     })
 
     return picks
@@ -976,6 +1088,34 @@ LEAGUE_TEAMS_POOL = {
         "Indiana Pacers", "Orlando Magic", "New Orleans Pelicans", "Sacramento Kings", "Atlanta Hawks",
         "Chicago Bulls", "Toronto Raptors", "Brooklyn Nets", "Houston Rockets", "Memphis Grizzlies",
         "Utah Jazz", "San Antonio Spurs", "Portland Trail Blazers", "Charlotte Hornets", "Detroit Pistons", "Washington Wizards"
+    ],
+    "el_salvador": [
+        "Alianza FC", "CD FAS", "CD Águila", "AD Isidro Metapán", "CD Luis Ángel Firpo", "CD Municipal Limeño",
+        "CD Platense", "CD Fuerte San Francisco", "11 Deportivo FC", "CD Dragón", "CD Cacahuatique", "Santa Tecla FC"
+    ],
+    "costa_rica": [
+        "Deportivo Saprissa", "LD Alajuelense", "CS Herediano", "CS Cartaginés", "AD San Carlos", "Puntarenas FC",
+        "Santos de Guápiles", "Sporting San José", "Municipal Pérez Zeledón", "AD Guanacasteca", "Santa Ana FC", "Municipal Liberia"
+    ],
+    "guatemala": [
+        "Comunicaciones FC", "CSD Municipal", "Antigua GFC", "Cobán Imperial", "Xelajú MC", "CD Guastatoya",
+        "Deportivo Malacateco", "Xinabajul Huehue", "CSD Zacapa", "Deportivo Achuapa", "Deportivo Marquense", "Deportivo Mixco"
+    ],
+    "honduras": [
+        "CD Olimpia", "FC Motagua", "CD Marathón", "Real CD España", "Olancho FC", "Juticalpa FC",
+        "CD Victoria", "CD Génesis", "CD Real Sociedad", "Platense FC", "CDS Vida", "Lobos UPNFM"
+    ],
+    "panama": [
+        "Tauro FC", "CD Plaza Amador", "CA Independiente", "San Francisco FC", "Sporting San Miguelito",
+        "CD Árabe Unido", "Alianza FC (Pan)", "Herrera FC", "Veraguas United", "CD Universitario", "Potros del Este"
+    ],
+    "nicaragua": [
+        "Real Estelí FC", "Diriangén FC", "CD Walter Ferretti", "Managua FC", "UNAN Managua",
+        "Deportivo Ocotal", "ART Municipal Jalapa", "Matagalpa FC", "CS Sébaco", "Juventus Managua"
+    ],
+    "venezuela": [
+        "Deportivo Táchira", "Caracas FC", "Academia Puerto Cabello", "Metropolitanos FC", "Monagas SC",
+        "Carabobo FC", "Portuguesa FC", "Zamora FC", "Deportivo La Guaira", "Estudiantes de Mérida", "Rayo Zuliano", "Angostura FC"
     ]
 }
 
@@ -985,6 +1125,13 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     para cualquier partido, evitando cruces erróneos entre países (p.ej. ingleses contra españoles,
     selecciones nacionales contra clubes o brasileños contra alemanes).
     """
+    def _match_kw(kw: str, target: str) -> bool:
+        if not kw or not target:
+            return False
+        if len(kw) <= 4:
+            return bool(re.search(r'(?:\b|^)' + re.escape(kw) + r'(?:\b|$)', target))
+        return kw in target
+
     l_low = (league or "").lower().strip()
     c_low = (country or "").lower().strip()
     h_low = (home_team or "").lower().strip()
@@ -1155,8 +1302,69 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     paraguay_keywords = [
         "olimpia", "cerro porteño", "cerro porteno", "libertad", "guaraní", "guarani", "sportivo ameliano"
     ]
-    if "paraguay" in c_low or any(k in h_low or k in a_low for k in paraguay_keywords):
+    if "paraguay" in c_low or "par.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in paraguay_keywords):
         return "Primera División de Paraguay", "Paraguay", "🇵🇾", LEAGUE_TEAMS_POOL["paraguay"]
+
+    # 19.1 El Salvador (Primera División de El Salvador)
+    salvador_keywords = [
+        "alianza fc", "fas", "c.d. fas", "águila", "aguila", "isidro metapán", "metapán", "metapan",
+        "firpo", "luis ángel firpo", "limeño", "limeno", "municipal limeño", "platense zacatecoluca",
+        "c.d. platense", "fuerte san francisco", "santa tecla", "11 deportivo", "once deportivo",
+        "dragón", "dragon", "cacahuatique", "jocoro", "chalatenango", "inca aruba"
+    ]
+    if "salvador" in c_low or "salvador" in l_low or "slv.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in salvador_keywords):
+        return "Primera División de El Salvador", "El Salvador", "🇸🇻", LEAGUE_TEAMS_POOL["el_salvador"]
+
+    # 19.2 Costa Rica (Primera División de Costa Rica / Liga Promerica)
+    costa_rica_keywords = [
+        "saprissa", "alajuelense", "herediano", "cartaginés", "cartagines", "san carlos",
+        "puntarenas", "santos de guápiles", "santos de guapiles", "sporting san josé", "sporting san jose",
+        "pérez zeledón", "perez zeledon", "guanacasteca", "santa ana", "liberia"
+    ]
+    if "costa rica" in c_low or "costa rica" in l_low or "crc.1" in l_low or "promerica" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in costa_rica_keywords):
+        return "Primera División de Costa Rica", "Costa Rica", "🇨🇷", LEAGUE_TEAMS_POOL["costa_rica"]
+
+    # 19.3 Guatemala (Liga Nacional de Guatemala)
+    guatemala_keywords = [
+        "comunicaciones", "municipal", "csd municipal", "antigua gfc", "cobán imperial", "coban imperial",
+        "xelajú", "xelaju", "xelajú mc", "guastatoya", "malacateco", "xinabajul", "zacapa", "achuapa",
+        "marquense", "mixco"
+    ]
+    if "guatemala" in c_low or "guatemala" in l_low or "gua.1" in l_low or "banrural" in l_low or "liga guate" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in guatemala_keywords):
+        return "Liga Nacional de Guatemala", "Guatemala", "🇬🇹", LEAGUE_TEAMS_POOL["guatemala"]
+
+    # 19.4 Honduras (Liga Nacional de Honduras)
+    honduras_keywords = [
+        "motagua", "marathón", "marathon", "real españa", "real espana", "olancho", "juticalpa",
+        "génesis", "genesis", "real sociedad tocoa", "platense fc", "upnfm", "lobos upnfm"
+    ]
+    if "honduras" in c_low or "hondur" in l_low or "hon.1" in l_low or "betcris" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in honduras_keywords) or (("olimpia" in h_low or "olimpia" in a_low) and "paraguay" not in c_low):
+        return "Liga Nacional de Honduras", "Honduras", "🇭🇳", LEAGUE_TEAMS_POOL["honduras"]
+
+    # 19.5 Panamá (Liga Panameña de Fútbol / LPF)
+    panama_keywords = [
+        "tauro", "plaza amador", "cai la chorrera", "árabe unido", "arabe unido", "sporting san miguelito",
+        "san francisco fc", "alianza fc panama", "herrera fc", "veraguas united", "potros del este"
+    ]
+    if "panam" in c_low or "panam" in l_low or "pan.1" in l_low or "lpf" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in panama_keywords):
+        return "Liga Panameña de Fútbol (LPF)", "Panamá", "🇵🇦", LEAGUE_TEAMS_POOL["panama"]
+
+    # 19.6 Nicaragua (Liga Primera de Nicaragua)
+    nicaragua_keywords = [
+        "real estelí", "real esteli", "diriangén", "diriangen", "walter ferretti", "managua fc",
+        "unan managua", "deportivo ocotal", "art jalapa", "matagalpa fc", "sébaco", "sebaco"
+    ]
+    if "nicarag" in c_low or "nicarag" in l_low or "nic.1" in l_low or "liga primera" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in nicaragua_keywords):
+        return "Liga Primera de Nicaragua", "Nicaragua", "🇳🇮", LEAGUE_TEAMS_POOL["nicaragua"]
+
+    # 19.7 Venezuela (Liga FUTVE)
+    venezuela_keywords = [
+        "deportivo táchira", "deportivo tachira", "caracas fc", "academia puerto cabello", "puerto cabello",
+        "metropolitanos", "monagas", "carabobo", "portuguesa", "zamora", "deportivo la guaira",
+        "estudiantes de mérida", "estudiantes de merida", "rayo zuliano", "angostura"
+    ]
+    if "venezuel" in c_low or "venezuel" in l_low or "ven.1" in l_low or "futve" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in venezuela_keywords):
+        return "Liga FUTVE", "Venezuela", "🇻🇪", LEAGUE_TEAMS_POOL["venezuela"]
 
     # 20. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [
@@ -1168,8 +1376,8 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "blackburn", "swansea", "cardiff", "sutton", "boreham", "luton", "burnley", "hull city", "preston",
         "bristol", "plymouth", "oxford", "portsmouth"
     ]
-    if any(k in c_low for k in ["inglaterra", "reino unido", "england", "uk"]) or any(k in l_low for k in ["premier", "championship", "fa cup", "carabao", "efl", "national league"]) or any(k in h_low or k in a_low for k in english_keywords):
-        t_name = "Championship" if ("championship" in l_low or any(k in h_low or k in a_low for k in ["queens", "qpr", "leeds", "sunderland", "watford", "west brom", "birmingham", "derby", "wrexham", "middlesbrough", "millwall", "norwich", "coventry", "blackburn"])) else ("National League (Inglaterra)" if ("national" in l_low or "sutton" in h_low or "boreham" in h_low) else "Premier League")
+    if any(k in c_low for k in ["inglaterra", "reino unido", "england", "uk"]) or any(k in l_low for k in ["premier", "championship", "fa cup", "carabao", "efl", "national league", "eng.1", "eng.2"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in english_keywords):
+        t_name = "Championship" if ("championship" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in ["queens", "qpr", "leeds", "sunderland", "watford", "west brom", "birmingham", "derby", "wrexham", "middlesbrough", "millwall", "norwich", "coventry", "blackburn"])) else ("National League (Inglaterra)" if ("national" in l_low or "sutton" in h_low or "boreham" in h_low) else "Premier League")
         return t_name, "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", LEAGUE_TEAMS_POOL["inglaterra"]
 
     # 21. Brasil (Brasileirão Série A / Copas / Estadual)
@@ -1181,7 +1389,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "chapecoense", "mirassol", "clube do remo", "remo", "coritiba", "goiás", "goias", "sport recife",
         "ceará", "ceara", "américa mineiro", "america mineiro", "vila nova", "paysandu", "operário", "novorizontino"
     ]
-    if "brasil" in c_low or any(k in l_low for k in ["brasil", "brasileir", "série a", "serie a brasil", "paulista", "carioca", "copa do brasil"]) or any(k in h_low or k in a_low for k in brazil_keywords):
+    if "brasil" in c_low or "bra.1" in l_low or any(k in l_low for k in ["brasil", "brasileir", "série a", "serie a brasil", "paulista", "carioca", "copa do brasil"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in brazil_keywords):
         return "Brasileirão Série A", "Brasil", "🇧🇷", LEAGUE_TEAMS_POOL["brasil"]
 
     # 22. México (Liga MX)
@@ -1191,28 +1399,34 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "tijuana", "xolos", "necaxa", "puebla", "mazatlán", "mazatlan", "querétaro", "queretaro",
         "juárez", "juarez", "san luis", "atlético de san luis"
     ]
-    if "mexic" in c_low or "méxic" in c_low or any(k in l_low for k in ["mexic", "méxic", "liga mx", "expansion", "expansión"]) or any(k in h_low or k in a_low for k in mexico_keywords):
+    if "mexic" in c_low or "méxic" in c_low or "mex.1" in l_low or "mex.2" in l_low or any(k in l_low for k in ["mexic", "méxic", "liga mx", "expansion", "expansión"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in mexico_keywords):
         return "Liga MX", "México", "🇲🇽", LEAGUE_TEAMS_POOL["mexico"]
 
-    # 22. Alemania (Bundesliga)
+    # 22.1 Alemania (Bundesliga)
     germany_keywords = [
         "bayern", "leverkusen", "dortmund", "borussia", "leipzig", "frankfurt", "stuttgart",
         "freiburg", "wolfsburg", "mönchengladbach", "gladbach", "werder", "bremen", "augsburg",
         "mainz", "hoffenheim", "union berlin", "heidenheim", "st. pauli", "pauli", "bochum",
         "hamburger", "hamburg", "schalke", "kiel", "hertha", "düsseldorf", "dusseldorf"
     ]
-    if any(k in c_low for k in ["alemania", "germany"]) or any(k in l_low for k in ["bundesliga", "dfb-pokal"]) or any(k in h_low or k in a_low for k in germany_keywords):
+    if any(k in c_low for k in ["alemania", "germany"]) or any(k in l_low for k in ["bundesliga", "dfb-pokal", "ger.1", "ger.2"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in germany_keywords):
         return "Bundesliga", "Alemania", "🇩🇪", LEAGUE_TEAMS_POOL["alemania"]
 
-    # 23. España (LaLiga EA Sports)
+    # 23. España (LaLiga EA Sports / LaLiga Hypermotion)
     spain_keywords = [
         "real madrid", "barcelona", "atlético de madrid", "atletico madrid", "athletic club", "athletic bilbao",
         "real sociedad", "sociedad", "real betis", "betis", "villarreal", "valencia", "sevilla",
         "celta", "osasuna", "getafe", "girona", "mallorca", "rayo vallecano", "las palmas", "alavés", "alaves",
         "espanyol", "leganés", "leganes", "valladolid", "zaragoza", "sporting gijón", "oviedo", "racing"
     ]
-    if any(k in c_low for k in ["españa", "spain"]) or any(k in l_low for k in ["laliga", "primera división", "copa del rey", "hypermotion"]) or any(k in h_low or k in a_low for k in spain_keywords):
-        return "LaLiga EA Sports", "España", "🇪🇸", LEAGUE_TEAMS_POOL["espana"]
+    is_spain_league = (
+        any(k in c_low for k in ["españa", "spain"])
+        or any(k in l_low for k in ["laliga", "ea sports", "hypermotion", "copa del rey", "esp.1", "esp.2"])
+        or (any(k in l_low for k in ["la liga", "primera división", "primera division"]) and any(k in l_low for k in ["españ", "spain", "ea sports", "santander"]))
+    )
+    if is_spain_league or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in spain_keywords):
+        t_esp = "LaLiga Hypermotion" if any(k in l_low for k in ["hypermotion", "segunda", "esp.2"]) else "LaLiga EA Sports"
+        return t_esp, "España", "🇪🇸", LEAGUE_TEAMS_POOL["espana"]
 
     # 24. Italia (Serie A)
     italy_keywords = [
@@ -1220,7 +1434,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "lazio", "fiorentina", "bologna", "torino", "genoa", "monza", "verona", "hellas", "lecce",
         "cagliari", "udinese", "empoli", "parma", "como", "venezia", "sampdoria", "palermo", "sassuolo"
     ]
-    if (("italia" in c_low or "italy" in c_low or "serie a" in l_low) and "brasil" not in l_low and "brasil" not in c_low) or any(k in h_low or k in a_low for k in italy_keywords):
+    if (("italia" in c_low or "italy" in c_low or "serie a" in l_low or "ita.1" in l_low or "ita.2" in l_low) and "brasil" not in l_low and "brasil" not in c_low) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in italy_keywords):
         return "Serie A", "Italia", "🇮🇹", LEAGUE_TEAMS_POOL["italia"]
 
     # 25. Francia (Ligue 1)
@@ -1229,7 +1443,7 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "lens", "marseille", "reims", "rennes", "toulouse", "montpellier", "strasbourg", "nantes", "le havre",
         "auxerre", "angers", "saint-étienne", "saint-etienne"
     ]
-    if any(k in c_low for k in ["francia", "france"]) or any(k in l_low for k in ["ligue 1", "coupe de france"]) or any(k in h_low or k in a_low for k in france_keywords):
+    if any(k in c_low for k in ["francia", "france"]) or any(k in l_low for k in ["ligue 1", "coupe de france", "fra.1"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in france_keywords):
         return "Ligue 1", "Francia", "🇫🇷", LEAGUE_TEAMS_POOL["francia"]
 
     # 26. Argentina (Liga Profesional Argentina / Ascenso)
@@ -1237,10 +1451,11 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "river plate", "river", "boca juniors", "boca", "racing club", "racing", "independiente",
         "san lorenzo", "vélez", "velez", "estudiantes", "lanús", "lanus", "newell", "rosario central",
         "talleres", "belgrano", "huracán", "huracan", "argentinos juniors", "defensa y justicia",
-        "godoy cruz", "banfield", "platense", "gimnasia", "tigre", "excursionistas", "villa san carlos"
+        "godoy cruz", "banfield", "gimnasia", "tigre", "excursionistas", "villa san carlos", "aldosivi", "sarmiento"
     ]
-    if "argentin" in c_low or any(k in l_low for k in ["argentin", "liga profesional", "copa de la liga"]) or any(k in h_low or k in a_low for k in arg_keywords):
-        t_arg = "Primera B Metropolitana" if any(k in h_low or k in a_low for k in ["excursionistas", "villa san carlos"]) else "Liga Profesional Argentina"
+    is_arg_platense = (_match_kw("platense", h_low) or _match_kw("platense", a_low)) and not any(k in l_low for k in ["salvador", "slv.1", "hondur", "hon.1"]) and "salvador" not in c_low and "honduras" not in c_low
+    if "argentin" in c_low or "arg.1" in l_low or "arg.3" in l_low or any(k in l_low for k in ["argentin", "liga profesional", "copa de la liga"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in arg_keywords) or is_arg_platense:
+        t_arg = "Primera B Metropolitana" if any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in ["excursionistas", "villa san carlos"]) else "Liga Profesional Argentina"
         return t_arg, "Argentina", "🇦🇷", LEAGUE_TEAMS_POOL["argentina"]
 
     # 27. Colombia (Liga BetPlay Dimayor)
@@ -4140,6 +4355,12 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
     a_c_gen = float(away_stats.get("corners_gen", 4.5) or 4.5)
     exp_c = round((h_c_loc * 0.5 + h_c_gen * 0.5) + (a_c_vis * 0.5 + a_c_gen * 0.5), 1)
 
+    h_cards = float(home_stats.get("total_cards", 2.2) or 2.2)
+    h_cards_gen = float(home_stats.get("total_cards_gen", 2.3) or 2.3)
+    a_cards = float(away_stats.get("total_cards", 2.4) or 2.4)
+    a_cards_gen = float(away_stats.get("total_cards_gen", 2.5) or 2.5)
+    exp_cards = round((h_cards * 0.5 + h_cards_gen * 0.5) + (a_cards * 0.5 + a_cards_gen * 0.5), 1)
+
     four_predictions = generate_four_picks_football(
         home_team=home_team,
         away_team=away_team,
@@ -4155,7 +4376,8 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         pct_under_15=pct_under_15,
         home_stats=home_stats,
         away_stats=away_stats,
-        projected_corners=exp_c
+        projected_corners=exp_c,
+        projected_cards=exp_cards
     )
 
     return {
@@ -4170,6 +4392,7 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "prob_under_25": pct_under,
         "prob_btts": pct_btts,
         "projected_corners": exp_c,
+        "projected_cards": exp_cards,
         "top_scores": [{"score": s["score"], "prob": round(s["prob"] * 100, 1)} for s in top_scores],
         "recommended_pick": best_pick["type"],
         "confidence": best_pick["prob"],
@@ -4177,16 +4400,23 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "risk_level": risk_level,
         "risk_color": risk_color,
         "is_value_bet": is_value_bet,
-        "four_predictions": four_predictions
+        "four_predictions": four_predictions,
+        "seven_predictions": four_predictions
     }
 
-def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict) -> dict:
+def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict, is_halftime: bool = False) -> dict:
     """
     Calcula probabilidades en vivo (in-play) en función del minuto actual,
     el marcador actual y el momentum de estadísticas (posesión, remates a puerta).
+    Si is_halftime = True (descanso/medio tiempo), ajusta a 45' restantes para la 2ª mitad.
     """
-    remaining_mins = max(1, 90 - minute)
-    fraction_remaining = remaining_mins / 90.0
+    if is_halftime:
+        minute = 45
+        remaining_mins = 45
+        fraction_remaining = 0.50
+    else:
+        remaining_mins = max(1, 90 - minute)
+        fraction_remaining = remaining_mins / 90.0
 
     # Ajuste de momentum por estadísticas en vivo
     poss_h = live_stats.get("possession_home", 50) / 100.0
@@ -4282,7 +4512,8 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
     p1_odds = round(100.0 / max(p1_prob, 1.0), 2)
     p1_risk = "Bajo" if p1_prob >= 65 else ("Medio" if p1_prob >= 50 else "Alto")
     p1_color = "emerald" if p1_risk == "Bajo" else ("amber" if p1_risk == "Medio" else "rose")
-    p1_exp = f"Con el marcador en {current_h}-{current_a} y {remaining_mins}' restantes, el modelo cuantitativo proyecta este desenlace con {p1_prob}% de probabilidad."
+    time_desc = "en el descanso (45' restantes de la 2ª mitad)" if is_halftime else f"{remaining_mins}' restantes"
+    p1_exp = f"Con el marcador en {current_h}-{current_a} y {time_desc}, el modelo cuantitativo proyecta este desenlace con {p1_prob}% de probabilidad."
 
     # 2. Doble Oportunidad en Juego
     if pct_home >= pct_away:
@@ -4406,6 +4637,32 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         p6_exp = f"Juego trabado con escasa llegada por bandas ({current_corners} córners en {minute}'). Se proyecta un total menor a {c_line:.1f} córners."
     p6_odds = round(100.0 / max(p6_prob, 1.0), 2)
 
+    # 7. Total de Tarjetas en Vivo
+    y_h = live_stats.get("yellow_cards_home", 0)
+    y_a = live_stats.get("yellow_cards_away", 0)
+    r_h = live_stats.get("red_cards_home", 0)
+    r_a = live_stats.get("red_cards_away", 0)
+    current_cards = y_h + y_a + (r_h + r_a) * 2
+    cards_rate = (current_cards / max(15, minute)) if minute > 0 else 0.05
+    proj_cards_rem = cards_rate * remaining_mins
+    tot_proj_cards = round(current_cards + proj_cards_rem, 1)
+
+    cards_line = round(tot_proj_cards) + 0.5 if round(tot_proj_cards) >= current_cards + 1 else current_cards + 1.5
+    p_over_cards = round(min(88.0, max(22.0, (1.0 - math.exp(-max(0.15, proj_cards_rem))) * 100)), 1)
+    if p_over_cards >= 50.0 and remaining_mins >= 20:
+        p7_name = f"Más de {cards_line - 1.0:.1f} Tarjetas Totales"
+        p7_prob = p_over_cards
+        p7_risk = "Medio"
+        p7_color = "amber"
+        p7_exp = f"Con {current_cards} amonestaciones registradas ({y_h + r_h} local vs {y_a + r_a} visitante) y juego disputado, el modelo proyecta sobre {cards_line - 1.0:.1f} tarjetas totales."
+    else:
+        p7_name = f"Menos de {cards_line:.1f} Tarjetas Totales"
+        p7_prob = round(100.0 - p_over_cards, 1)
+        p7_risk = "Bajo" if p7_prob >= 65 else "Medio"
+        p7_color = "emerald" if p7_risk == "Bajo" else "amber"
+        p7_exp = f"Juego controlado sin excesivas interrupciones tácticas ({current_cards} tarjetas en {minute}'). Se proyecta un total inferior a {cards_line:.1f} tarjetas."
+    p7_odds = round(100.0 / max(p7_prob, 1.0), 2)
+
     four_predictions = [
         {
             "id": 1,
@@ -4466,6 +4723,16 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
             "risk_level": p6_risk,
             "risk_color": p6_color,
             "explanation": p6_exp
+        },
+        {
+            "id": 7,
+            "market": "Total de Tarjetas en Vivo",
+            "name": p7_name,
+            "probability": p7_prob,
+            "fair_odds": p7_odds,
+            "risk_level": p7_risk,
+            "risk_color": p7_color,
+            "explanation": p7_exp
         }
     ]
 
@@ -4482,8 +4749,10 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "confidence": conf,
         "risk_level": risk,
         "is_value_bet": conf >= 65,
+        "is_halftime": is_halftime,
         "four_predictions": four_predictions,
-        "six_predictions": four_predictions
+        "six_predictions": four_predictions,
+        "seven_predictions": four_predictions
     }
 
 def normal_cdf(x: float) -> float:

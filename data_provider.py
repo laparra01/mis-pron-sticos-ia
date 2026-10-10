@@ -1,6 +1,8 @@
 import os
 import json
 import requests
+import re
+import time
 from datetime import datetime
 import importlib
 try:
@@ -416,67 +418,232 @@ def try_fetch_external_football():
     Intenta conectar a Football-Data.org si USE_LIVE_API = True en config.py.
     Si no hay conexión o no hay clave, regresa None para usar el catálogo local.
     """
-def get_league_and_country_info(comp_name, sport="football", home_team="", away_team=""):
-    comp_lower = (comp_name or "").lower().strip()
-    
-    # 1. Resolver primero con el detector experto si tenemos equipos o si el slug es técnico/genérico
-    is_technical_slug = (
-        comp_lower.startswith("202")
-        or any(k in comp_lower for k in [
-            "regular-season", "pre-season", "post-season", "oficial", "amistoso internacional",
-            "desconocida", "first-stage", "group-stage", "fall-season", "playoff", "round",
-            "keuken", "divisie", "ligue-2", "super-lig", "allsvenskan", "eliteserien", "chinese", "bolivian"
-        ])
-    )
-    if is_technical_slug or home_team or away_team:
-        t_clean, c_name, flag, _ = detect_league_and_country(home_team, away_team, sport, comp_name, "")
-        if c_name and c_name != "Internacional" and t_clean != "Competición Oficial":
-            return t_clean, c_name, flag
+ESPN_LEAGUES_BY_ID = {
+    # España
+    "740": ("LaLiga EA Sports", "España", "🇪🇸"),
+    "741": ("LaLiga Hypermotion", "España", "🇪🇸"),
+    "3928": ("LaLiga Hypermotion", "España", "🇪🇸"),
+    # Inglaterra
+    "382": ("Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    "3914": ("Championship", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    "3917": ("National League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    # Alemania
+    "720": ("Bundesliga", "Alemania", "🇩🇪"),
+    "3927": ("2. Bundesliga", "Alemania", "🇩🇪"),
+    # Francia
+    "710": ("Ligue 1", "Francia", "🇫🇷"),
+    "3926": ("Ligue 2", "Francia", "🇫🇷"),
+    # Italia
+    "705": ("Serie A", "Italia", "🇮🇹"),
+    "3931": ("Serie B", "Italia", "🇮🇹"),
+    # Países Bajos
+    "725": ("Eredivisie", "Países Bajos", "🇳🇱"),
+    "3933": ("Keuken Kampioen Divisie", "Países Bajos", "🇳🇱"),
+    # Portugal
+    "715": ("Primeira Liga", "Portugal", "🇵🇹"),
+    # Bélgica
+    "3901": ("Jupiler Pro League", "Bélgica", "🇧🇪"),
+    # Suiza
+    "3947": ("Super League Suiza", "Suiza", "🇨🇭"),
+    # Turquía
+    "3946": ("Süper Lig", "Turquía", "🇹🇷"),
+    # Suecia
+    "3945": ("Allsvenskan", "Suecia", "🇸🇪"),
+    # Noruega
+    "3960": ("Eliteserien", "Noruega", "🇳🇴"),
+    # Dinamarca
+    "3913": ("Superligaen", "Dinamarca", "🇩🇰"),
+    # Rusia
+    "3939": ("Russian Premier League", "Rusia", "🇷🇺"),
+    # México
+    "760": ("Liga MX", "México", "🇲🇽"),
+    "3932": ("Liga de Expansión MX", "México", "🇲🇽"),
+    # Centroamérica
+    "3943": ("Primera División de El Salvador", "El Salvador", "🇸🇻"),
+    "4005": ("Primera División de Costa Rica", "Costa Rica", "🇨🇷"),
+    "3929": ("Liga Nacional de Honduras", "Honduras", "🇭🇳"),
+    "3930": ("Liga Nacional de Guatemala", "Guatemala", "🇬🇹"),
+    "3942": ("Liga Panameña de Fútbol (LPF)", "Panamá", "🇵🇦"),
+    "3941": ("Liga Primera de Nicaragua", "Nicaragua", "🇳🇮"),
+    # Sudamérica
+    "650": ("Liga BetPlay Dimayor", "Colombia", "🇨🇴"),
+    "670": ("Liga 1 Perú", "Perú", "🇵🇪"),
+    "660": ("LigaPro Serie A", "Ecuador", "🇪🇨"),
+    "620": ("División Profesional (Bolivia)", "Bolivia", "🇧🇴"),
+    "745": ("Liga Profesional Argentina", "Argentina", "🇦🇷"),
+    "3904": ("Primera B Metropolitana", "Argentina", "🇦🇷"),
+    "680": ("Primera División de Uruguay", "Uruguay", "🇺🇾"),
+    "630": ("Primera División de Chile", "Chile", "🇨🇱"),
+    "640": ("Primera División de Paraguay", "Paraguay", "🇵🇾"),
+    "690": ("Liga FUTVE", "Venezuela", "🇻🇪"),
+    "268": ("Brasileirão Série A", "Brasil", "🇧🇷"),
+    # Asia y Medio Oriente
+    "750": ("J1 League", "Japón", "🇯🇵"),
+    "8376": ("Chinese Super League", "China", "🇨🇳"),
+    "21231": ("Saudi Pro League", "Arabia Saudita", "🇸🇦"),
+    # Estados Unidos
+    "4002": ("USL Championship", "Estados Unidos", "🇺🇸"),
+    "5487": ("NCAA Soccer", "Estados Unidos", "🇺🇸"),
+    # Torneos / Selecciones
+    "20649": ("UEFA Nations League / Eliminatorias", "Europa", "🇪🇺"),
+    "3923": ("Amistoso Internacional", "Internacional", "🌎"),
+}
 
-    # 2. Casos directos por nombre de liga limpio
+ESPN_SLUG_PREFIXES = [
+    ("slv.", "Primera División de El Salvador", "El Salvador", "🇸🇻"),
+    ("crc.", "Primera División de Costa Rica", "Costa Rica", "🇨🇷"),
+    ("hon.", "Liga Nacional de Honduras", "Honduras", "🇭🇳"),
+    ("gua.", "Liga Nacional de Guatemala", "Guatemala", "🇬🇹"),
+    ("pan.", "Liga Panameña de Fútbol (LPF)", "Panamá", "🇵🇦"),
+    ("nic.", "Liga Primera de Nicaragua", "Nicaragua", "🇳🇮"),
+    ("ven.", "Liga FUTVE", "Venezuela", "🇻🇪"),
+    ("col.", "Liga BetPlay Dimayor", "Colombia", "🇨🇴"),
+    ("per.", "Liga 1 Perú", "Perú", "🇵🇪"),
+    ("bol.", "División Profesional (Bolivia)", "Bolivia", "🇧🇴"),
+    ("ecu.", "LigaPro Serie A", "Ecuador", "🇪🇨"),
+    ("arg.", "Liga Profesional Argentina", "Argentina", "🇦🇷"),
+    ("uru.", "Primera División de Uruguay", "Uruguay", "🇺🇾"),
+    ("chi.", "Primera División de Chile", "Chile", "🇨🇱"),
+    ("par.", "Primera División de Paraguay", "Paraguay", "🇵🇾"),
+    ("bra.", "Brasileirão Série A", "Brasil", "🇧🇷"),
+    ("mex.", "Liga MX", "México", "🇲🇽"),
+    ("esp.2", "LaLiga Hypermotion", "España", "🇪🇸"),
+    ("esp.", "LaLiga EA Sports", "España", "🇪🇸"),
+    ("eng.2", "Championship", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.5", "National League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.", "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("ger.2", "2. Bundesliga", "Alemania", "🇩🇪"),
+    ("ger.", "Bundesliga", "Alemania", "🇩🇪"),
+    ("fra.2", "Ligue 2", "Francia", "🇫🇷"),
+    ("fra.", "Ligue 1", "Francia", "🇫🇷"),
+    ("ita.2", "Serie B", "Italia", "🇮🇹"),
+    ("ita.", "Serie A", "Italia", "🇮🇹"),
+    ("por.", "Primeira Liga", "Portugal", "🇵🇹"),
+    ("ned.2", "Keuken Kampioen Divisie", "Países Bajos", "🇳🇱"),
+    ("ned.", "Eredivisie", "Países Bajos", "🇳🇱"),
+    ("bel.", "Jupiler Pro League", "Bélgica", "🇧🇪"),
+    ("sui.", "Super League Suiza", "Suiza", "🇨🇭"),
+    ("jpn.", "J1 League", "Japón", "🇯🇵"),
+    ("tur.", "Süper Lig", "Turquía", "🇹🇷"),
+    ("swe.", "Allsvenskan", "Suecia", "🇸🇪"),
+    ("nor.", "Eliteserien", "Noruega", "🇳🇴"),
+    ("den.", "Superligaen", "Dinamarca", "🇩🇰"),
+    ("chn.", "Chinese Super League", "China", "🇨🇳"),
+    ("ksa.", "Saudi Pro League", "Arabia Saudita", "🇸🇦"),
+]
+
+def get_league_and_country_info(comp_name, sport="football", home_team="", away_team="", espn_league_id=""):
+    # 0. Si viene ESPN League ID directo
+    if espn_league_id and str(espn_league_id) in ESPN_LEAGUES_BY_ID:
+        t, c, f = ESPN_LEAGUES_BY_ID[str(espn_league_id)]
+        return t, c, f
+
+    comp_lower = (comp_name or "").lower().strip()
+
+    # 1. Resolver por prefijo de slug de ESPN
+    for pfx, t_name, c_name, flag in ESPN_SLUG_PREFIXES:
+        if comp_lower.startswith(pfx) or f"/{pfx}" in comp_lower or f"_{pfx}" in comp_lower or f"-{pfx}" in comp_lower:
+            return t_name, c_name, flag
+
+    # 2. Casos directos por nombre explícito de país o liga
     if sport == "nba" or "nba" in comp_lower:
         return "NBA", "Estados Unidos", "🏀"
+    if "salvador" in comp_lower or "slv.1" in comp_lower:
+        return "Primera División de El Salvador", "El Salvador", "🇸🇻"
+    if "costa rica" in comp_lower or "crc.1" in comp_lower or "promerica" in comp_lower:
+        return "Primera División de Costa Rica", "Costa Rica", "🇨🇷"
+    if "hondur" in comp_lower or "hon.1" in comp_lower or "betcris" in comp_lower:
+        return "Liga Nacional de Honduras", "Honduras", "🇭🇳"
+    if "guatemal" in comp_lower or "gua.1" in comp_lower or "banrural" in comp_lower or "liga guate" in comp_lower:
+        return "Liga Nacional de Guatemala", "Guatemala", "🇬🇹"
+    if "panam" in comp_lower or "pan.1" in comp_lower or "lpf" in comp_lower:
+        return "Liga Panameña de Fútbol (LPF)", "Panamá", "🇵🇦"
+    if "nicarag" in comp_lower or "nic.1" in comp_lower or "liga primera" in comp_lower:
+        return "Liga Primera de Nicaragua", "Nicaragua", "🇳🇮"
+    if "venezuel" in comp_lower or "ven.1" in comp_lower or "futve" in comp_lower:
+        return "Liga FUTVE", "Venezuela", "🇻🇪"
+    if "peru" in comp_lower or "perú" in comp_lower or "per.1" in comp_lower or "liga 1" in comp_lower or "liga1" in comp_lower:
+        return "Liga 1 Perú", "Perú", "🇵🇪"
+    if "boliv" in comp_lower or "bol.1" in comp_lower:
+        return "División Profesional (Bolivia)", "Bolivia", "🇧🇴"
+    if "suiz" in comp_lower or "switzer" in comp_lower or "swiss" in comp_lower or "sui.1" in comp_lower:
+        return "Super League Suiza", "Suiza", "🇨🇭"
+    if "bélgic" in comp_lower or "belgic" in comp_lower or "belgium" in comp_lower or "bel.1" in comp_lower or "jupiler" in comp_lower:
+        return "Jupiler Pro League", "Bélgica", "🇧🇪"
+    if "japón" in comp_lower or "japon" in comp_lower or "japan" in comp_lower or "jpn.1" in comp_lower or "j1" in comp_lower:
+        return "J1 League", "Japón", "🇯🇵"
     if "premier" in comp_lower:
         return "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     if "championship" in comp_lower:
         return "Championship", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
-    if "primera division" in comp_lower or "laliga" in comp_lower or "la liga" in comp_lower:
-        return "LaLiga EA Sports", "España", "🇪🇸"
-    if "brasileir" in comp_lower or "brazil" in comp_lower:
+    if "brasileir" in comp_lower or "brazil" in comp_lower or "bra.1" in comp_lower:
         return "Brasileirão Série A", "Brasil", "🇧🇷"
-    if "serie a" in comp_lower or "italia" in comp_lower:
+    if "serie a" in comp_lower and "brasil" not in comp_lower and "brazil" not in comp_lower:
         return "Serie A", "Italia", "🇮🇹"
     if "bundesliga" in comp_lower:
         return "Bundesliga", "Alemania", "🇩🇪"
     if "ligue 1" in comp_lower:
         return "Ligue 1", "Francia", "🇫🇷"
+    if "ligue 2" in comp_lower or "ligue-2" in comp_lower:
+        return "Ligue 2", "Francia", "🇫🇷"
     if "primeira liga" in comp_lower or "portugal" in comp_lower:
         return "Primeira Liga", "Portugal", "🇵🇹"
     if "eredivisie" in comp_lower or "netherlands" in comp_lower:
         return "Eredivisie", "Países Bajos", "🇳🇱"
-    if "argentin" in comp_lower:
+    if "keuken" in comp_lower or "kampioen" in comp_lower:
+        return "Keuken Kampioen Divisie", "Países Bajos", "🇳🇱"
+    if "argentin" in comp_lower or "arg.1" in comp_lower:
         return "Liga Profesional Argentina", "Argentina", "🇦🇷"
-    if "colomb" in comp_lower:
+    if "colomb" in comp_lower or "col.1" in comp_lower or "betplay" in comp_lower:
         return "Liga BetPlay Dimayor", "Colombia", "🇨🇴"
+    if "chile" in comp_lower or "chi.1" in comp_lower:
+        return "Primera División de Chile", "Chile", "🇨🇱"
+    if "uruguay" in comp_lower or "uru.1" in comp_lower:
+        return "Primera División de Uruguay", "Uruguay", "🇺🇾"
+    if "paraguay" in comp_lower or "par.1" in comp_lower:
+        return "Primera División de Paraguay", "Paraguay", "🇵🇾"
+    if "ecuador" in comp_lower or "ecu.1" in comp_lower or "ligapro" in comp_lower:
+        return "LigaPro Serie A", "Ecuador", "🇪🇨"
+    if "mexic" in comp_lower or "méxic" in comp_lower or "liga mx" in comp_lower or "mex.1" in comp_lower:
+        return "Liga MX", "México", "🇲🇽"
     if "mls" in comp_lower or "major league soccer" in comp_lower or "usl" in comp_lower or "ncaa" in comp_lower or "usa" in comp_lower:
         return "Major League Soccer (MLS)", "Estados Unidos", "🇺🇸"
-    if "saudi" in comp_lower or "arab" in comp_lower:
+    if "saudi" in comp_lower or "arab" in comp_lower or "ksa.1" in comp_lower:
         return "Saudi Pro League", "Arabia Saudita", "🇸🇦"
+    if "super-lig" in comp_lower or "süper lig" in comp_lower or "turqu" in comp_lower:
+        return "Süper Lig", "Turquía", "🇹🇷"
+    if "allsvenskan" in comp_lower or "suecia" in comp_lower or "sweden" in comp_lower:
+        return "Allsvenskan", "Suecia", "🇸🇪"
+    if "eliteserien" in comp_lower or "noruega" in comp_lower or "norway" in comp_lower:
+        return "Eliteserien", "Noruega", "🇳🇴"
+    if "superliga" in comp_lower or "dinamarca" in comp_lower or "denmark" in comp_lower:
+        return "Superligaen", "Dinamarca", "🇩🇰"
+    if "chinese" in comp_lower or "china" in comp_lower or "csl" in comp_lower:
+        return "Chinese Super League", "China", "🇨🇳"
     if "libertadores" in comp_lower:
         return "Copa CONMEBOL Libertadores", "Sudamérica", "🏆"
     if "sudamericana" in comp_lower:
         return "Copa CONMEBOL Sudamericana", "Sudamérica", "🏆"
-    if "mexic" in comp_lower or "méxic" in comp_lower or "liga mx" in comp_lower:
-        return "Liga MX", "México", "🇲🇽"
-    if "selección" in comp_lower or "amistoso" in comp_lower or "fifa" in comp_lower or "friendly" in comp_lower:
-        return "Selecciones FIFA", "Internacional", "🌎"
     if "champions" in comp_lower:
         return "UEFA Champions League", "Europa", "🏆"
     if "nations" in comp_lower:
         return "UEFA Nations League", "Europa", "🇪🇺"
+    if "selección" in comp_lower or "amistoso" in comp_lower or "fifa" in comp_lower or "friendly" in comp_lower:
+        return "Selecciones FIFA", "Internacional", "🌎"
 
+    # España: ÚNICAMENTE si dice explícitamente LaLiga, España o EA Sports
+    if "laliga" in comp_lower or "hypermotion" in comp_lower or "copa del rey" in comp_lower or (("la liga" in comp_lower or "primera division" in comp_lower) and any(k in comp_lower for k in ["españ", "spain", "ea sports", "santander"])):
+        t_spain = "LaLiga Hypermotion" if ("hypermotion" in comp_lower or "segunda" in comp_lower) else "LaLiga EA Sports"
+        return t_spain, "España", "🇪🇸"
+
+    # 3. Detector experto si tenemos equipos o slug técnico
     t_clean, c_name, flag, _ = detect_league_and_country(home_team, away_team, sport, comp_name, "")
-    return t_clean, c_name, flag
+    if c_name and c_name != "Internacional" and t_clean != "Competición Oficial":
+        return t_clean, c_name, flag
+
+    # 4. Fallback limpio
+    clean_title = comp_name if (comp_name and not comp_name.lower().startswith("202") and comp_name.lower() not in ("regular-season", "pre-season", "post-season", "oficial", "desconocida", "first-stage", "group-stage", "fall-season")) else "Competición Oficial"
+    return clean_title, "Internacional", "⚽"
 
 def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, score_a: int, minute: int, h_ratings: dict = None, a_ratings: dict = None) -> dict:
     """
@@ -567,6 +734,8 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
             league_obj = header.get("league", {})
             season_obj = header.get("season", {})
             league_name = league_obj.get("name", "") or season_obj.get("name", "")
+            league_id = str(league_obj.get("id", ""))
+            league_slug = str(league_obj.get("slug", ""))
 
             boxscore = data.get("boxscore", {})
             teams = boxscore.get("teams", [])
@@ -628,6 +797,8 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
 
             res = {
                 "league_name": league_name,
+                "league_id": league_id,
+                "league_slug": league_slug,
                 "stats": {
                     "possession_home": poss_h,
                     "possession_away": poss_a,
@@ -652,9 +823,48 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
         print(f"[ESPN] Error fetching event stats {event_id}: {ex}")
     return None
 
+def find_scraped_h2h(home_name: str, away_name: str):
+    """
+    Busca si el partido en vivo ya existe en la base de datos oficial escrapeada (data/*.json).
+    Si existe, devuelve su H2H verificado oficial de FotMob para que coincida exactamente 1:1
+    entre la tarjeta pre-partido y la tarjeta en vivo.
+    """
+    def clean_team_key(name):
+        return re.sub(r'[^a-z0-9]', '', (name or '').lower())
+
+    h_norm = clean_team_key(home_name)
+    a_norm = clean_team_key(away_name)
+    if not h_norm or not a_norm:
+        return None
+
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    data_dir = os.path.join(base_dir, "data")
+    if not os.path.exists(data_dir):
+        return None
+
+    for fname in os.listdir(data_dir):
+        if fname.endswith("_real.json"):
+            fpath = os.path.join(data_dir, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    payload = json.load(f)
+                matches = payload.get("upcoming_matches", [])
+                for m in matches:
+                    mh = clean_team_key(m.get("home_team", ""))
+                    ma = clean_team_key(m.get("away_team", ""))
+                    if ((h_norm in mh or mh in h_norm) and (a_norm in ma or ma in a_norm)) or \
+                       ((h_norm in ma or ma in h_norm) and (a_norm in mh or mh in a_norm)):
+                        h2h = m.get("h2h")
+                        if h2h and (h2h.get("head_to_head") or h2h.get("home_last_5")):
+                            return h2h
+            except Exception:
+                continue
+    return None
+
 def fetch_espn_live_soccer():
     """
     Obtiene partidos de fútbol en vivo transmitidos por ESPN (incluye selecciones como México, Concacaf, Conmebol, etc.).
+    Soporta reconocimiento nativo de medio tiempo (descanso/HT) y vinculación con el H2H oficial pre-partido.
     """
     try:
         url = "https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard"
@@ -674,26 +884,73 @@ def fetch_espn_live_soccer():
                     away_name = away.get("team", {}).get("displayName", "Visitante")
                     score_h = int(home.get("score", 0) or 0)
                     score_a = int(away.get("score", 0) or 0)
-                    clock = e.get("status", {}).get("displayClock", "65'")
-                    try:
-                        minute = int(clock.replace("'", ""))
-                    except Exception:
-                        minute = 65
+
+                    # Detección precisa de Medio Tiempo / Descanso (Halftime)
+                    status_type = e.get("status", {}).get("type", {})
+                    state_name = str(status_type.get("name", "")).upper()
+                    state_desc = str(status_type.get("description", "")).lower()
+                    state_detail = str(status_type.get("detail", "")).upper()
+                    state_short = str(status_type.get("shortDetail", "")).upper()
+                    clock_raw = str(e.get("status", {}).get("displayClock", "")).strip()
+
+                    is_halftime = (
+                        state_name in ("STATUS_HALFTIME", "STATUS_END_OF_HALF", "STATUS_INTERMISSION")
+                        or any(k in state_desc for k in ["halftime", "half time", "descanso", "medio tiempo", "entretiempo"])
+                        or state_detail in ("HT", "HALFTIME")
+                        or state_short in ("HT", "HALFTIME")
+                        or "ht" in clock_raw.lower()
+                    )
+
+                    if is_halftime:
+                        minute = 45
+                        display_clock = "Descanso (HT)"
+                        clock_label = "HT"
+                    else:
+                        clean_clock = clock_raw.replace("'", "").strip()
+                        if "+" in clean_clock:
+                            try:
+                                minute = int(clean_clock.split("+")[0].strip())
+                            except Exception:
+                                minute = 45
+                            display_clock = clock_raw
+                        else:
+                            digits = re.findall(r'\d+', clean_clock)
+                            minute = int(digits[0]) if digits else 65
+                            display_clock = f"{minute}'"
+                        clock_label = display_clock
 
                     event_id = str(e.get('id', ''))
                     real_event_info = fetch_espn_event_real_stats(event_id) if event_id else None
 
+                    espn_lid = ""
+                    uid = e.get("uid", "")
+                    if "~l:" in uid:
+                        try:
+                            espn_lid = uid.split("~l:")[1].split("~")[0]
+                        except Exception:
+                            pass
+                    if not espn_lid and real_event_info and real_event_info.get("league_id"):
+                        espn_lid = real_event_info["league_id"]
+
                     raw_league = ""
-                    if real_event_info and real_event_info.get("league_name"):
+                    if real_event_info and real_event_info.get("league_slug"):
+                        raw_league = real_event_info["league_slug"]
+                    elif real_event_info and real_event_info.get("league_name"):
                         raw_league = real_event_info["league_name"]
                     if not raw_league or raw_league.lower() in ("clausura", "apertura", "regular-season", "pre-season"):
                         raw_league = e.get("season", {}).get("slug", "") or comp.get("league", {}).get("description", "Amistoso Internacional")
                     if "mexico" in home_name.lower() or "chile" in away_name.lower() or "méxico" in home_name.lower():
                         raw_league = "Selecciones FIFA - Amistoso Internacional"
 
-                    league_title, country_name, flag = get_league_and_country_info(raw_league, "football", home_name, away_name)
+                    league_title, country_name, flag = get_league_and_country_info(raw_league, "football", home_name, away_name, espn_league_id=espn_lid)
 
-                    h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
+                    # Garantizar que el H2H en vivo coincida 1:1 con el H2H de pre-partido si existe en el sistema
+                    matched_h2h = find_scraped_h2h(home_name, away_name)
+                    if matched_h2h and (matched_h2h.get("head_to_head") or matched_h2h.get("home_last_5")):
+                        h2h_data = matched_h2h
+                    else:
+                        h2h_data = generate_match_h2h(home_name, away_name, "football", league_title, country=country_name)
+
                     h_ratings = get_football_team_ratings(home_name, league_title, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
                     a_ratings = get_football_team_ratings(away_name, league_title, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
 
@@ -702,8 +959,14 @@ def fetch_espn_live_soccer():
                     else:
                         live_stats = generate_dynamic_live_stats(home_name, away_name, score_h, score_a, minute, h_ratings, a_ratings)
 
-                    pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats)
-                    ai_resp = generate_live_ai_analysis({"home_team": home_name, "away_team": away_name, "league": league_title}, pred, live_stats)
+                    pred = calculate_live_probabilities(score_h, score_a, minute, h_ratings, a_ratings, live_stats, is_halftime=is_halftime)
+                    ai_resp = generate_live_ai_analysis({
+                        "home_team": home_name,
+                        "away_team": away_name,
+                        "league": league_title,
+                        "is_halftime": is_halftime,
+                        "display_clock": display_clock
+                    }, pred, live_stats)
 
                     live_list.append({
                         "id": f"espn_soc_{e.get('id')}",
@@ -715,6 +978,9 @@ def fetch_espn_live_soccer():
                         "home_team": home_name,
                         "away_team": away_name,
                         "minute": minute,
+                        "display_clock": display_clock,
+                        "clock_label": clock_label,
+                        "is_halftime": is_halftime,
                         "score_home": score_h,
                         "score_away": score_a,
                         "home_stats": h_ratings,
@@ -1006,8 +1272,16 @@ def try_fetch_external_football(date_from=None, date_to=None):
                                     continue
                                 existing_keys.add(m_key)
 
+                                espn_lid = ""
+                                uid = e.get("uid", "")
+                                if "~l:" in uid:
+                                    try:
+                                        espn_lid = uid.split("~l:")[1].split("~")[0]
+                                    except Exception:
+                                        pass
+
                                 raw_slug = e.get("season", {}).get("slug", "") or comp_info.get("league", {}).get("description", "Oficial")
-                                l_clean, c_name, c_flag = get_league_and_country_info(raw_slug, "football", h_name, a_name)
+                                l_clean, c_name, c_flag = get_league_and_country_info(raw_slug, "football", h_name, a_name, espn_league_id=espn_lid)
 
                                 raw_dt = e.get("date", "")
                                 d_iso = raw_dt[:10] if len(raw_dt) >= 10 else target_dt.strftime("%Y-%m-%d")

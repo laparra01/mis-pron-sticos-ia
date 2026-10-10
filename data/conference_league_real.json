@@ -3,7 +3,7 @@
   "league_id": 10216,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-09T22:07:54.495271",
+  "last_updated": "2026-10-09T22:36:56.688406",
   "total_fixtures": 18,
   "team_histories": {
     "AGF": [],
@@ -790,19 +790,7 @@
       "h2h": {
         "home_last_5": [],
         "away_last_5": [],
-        "head_to_head": [
-          {
-            "date": "03/10/2024",
-            "competition": "Conference League",
-            "tournament": "Conference League",
-            "match_home": "Borac Banja Luka",
-            "match_away": "Panathinaikos",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 4.0,
@@ -826,10 +814,10 @@
         "projected_corners": 8.9,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Panathinaikos 0 victorias • 1 empates • Borac Banja Luka 0 victorias"
+          "avg_goals": 0.0,
+          "text": "Panathinaikos 0 victorias • 0 empates • Borac Banja Luka 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

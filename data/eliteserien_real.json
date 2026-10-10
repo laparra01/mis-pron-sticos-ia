@@ -3,7 +3,7 @@
   "league_id": 59,
   "country": "Noruega",
   "country_code": "no",
-  "last_updated": "2026-10-09T22:07:37.034380",
+  "last_updated": "2026-10-09T22:36:18.708054",
   "total_fixtures": 12,
   "team_histories": {
     "Aalesund": [
@@ -252,11 +252,11 @@
         "score": "2 - 0",
         "result": "L",
         "competition": "Eliteserien",
-        "corners_for": 7,
-        "corners_against": 9,
-        "total_corners": 16,
-        "shots_on_target": 4,
-        "total_shots": 14
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "5105011",
@@ -1582,13 +1582,13 @@
     },
     "Brann": {
       "corners_avg_home": 7.0,
-      "corners_avg_away": 5.5,
-      "corners_avg_gen": 6.4,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 5.8,
       "corners_conceded_home": 4.67,
-      "corners_conceded_away": 7.0,
-      "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 3.8,
-      "total_shots_gen": 14.2
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.8,
+      "shots_on_target_gen": 3.6,
+      "total_shots_gen": 13.4
     },
     "Fredrikstad": {
       "corners_avg_home": 5.33,
@@ -1936,7 +1936,7 @@
         ],
         "head_to_head": [
           {
-            "date": "06/04/2026",
+            "date": "2026-04-06",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Kristiansund",
@@ -1944,50 +1944,6 @@
             "home_score": 0,
             "away_score": 3,
             "score": "0 - 3",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "12/09/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Bodø/Glimt",
-            "match_away": "Kristiansund",
-            "home_score": 7,
-            "away_score": 1,
-            "score": "7 - 1",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "05/07/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Kristiansund",
-            "match_away": "Bodø/Glimt",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "29/09/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Bodø/Glimt",
-            "match_away": "Kristiansund",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "12/05/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Kristiansund",
-            "match_away": "Bodø/Glimt",
-            "home_score": 2,
-            "away_score": 4,
-            "score": "2 - 4",
             "winner": "Bodø/Glimt"
           }
         ],
@@ -2013,11 +1969,11 @@
         },
         "projected_corners": 11.0,
         "summary": {
-          "home_wins": 4,
-          "draws": 1,
+          "home_wins": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 4.6,
-          "text": "Bodø/Glimt 4 victorias • 1 empates • Kristiansund 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Bodø/Glimt 1 victorias • 0 empates • Kristiansund 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2236,7 +2192,7 @@
         ],
         "head_to_head": [
           {
-            "date": "18/04/2026",
+            "date": "2026-04-18",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Sandefjord",
@@ -2245,50 +2201,6 @@
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
-          },
-          {
-            "date": "29/10/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Rosenborg",
-            "match_away": "Sandefjord",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "06/07/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sandefjord",
-            "match_away": "Rosenborg",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Sandefjord"
-          },
-          {
-            "date": "29/09/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sandefjord",
-            "match_away": "Rosenborg",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Rosenborg"
-          },
-          {
-            "date": "01/04/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Rosenborg",
-            "match_away": "Sandefjord",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Rosenborg"
           }
         ],
         "home_corner_stats": {
@@ -2313,11 +2225,11 @@
         },
         "projected_corners": 8.3,
         "summary": {
-          "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
-          "avg_goals": 1.4,
-          "text": "Rosenborg 2 victorias • 2 empates • Sandefjord 1 victorias"
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Rosenborg 0 victorias • 1 empates • Sandefjord 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2536,7 +2448,7 @@
         ],
         "head_to_head": [
           {
-            "date": "15/03/2026",
+            "date": "2026-03-15",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Tromsø",
@@ -2545,50 +2457,6 @@
             "away_score": 0,
             "score": "4 - 0",
             "winner": "Tromsø"
-          },
-          {
-            "date": "02/08/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Tromsø",
-            "match_away": "Fredrikstad",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "29/06/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Fredrikstad",
-            "match_away": "Tromsø",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Tromsø"
-          },
-          {
-            "date": "29/05/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Tromsø",
-            "match_away": "Fredrikstad",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Tromsø"
-          },
-          {
-            "date": "25/05/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Fredrikstad",
-            "match_away": "Tromsø",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -2614,10 +2482,10 @@
         "projected_corners": 9.7,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
-          "away_wins": 3,
-          "avg_goals": 1.6,
-          "text": "Fredrikstad 0 victorias • 2 empates • Tromsø 3 victorias"
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 4.0,
+          "text": "Fredrikstad 0 victorias • 0 empates • Tromsø 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2834,63 +2702,7 @@
             "total_shots": 21
           }
         ],
-        "head_to_head": [
-          {
-            "date": "25/10/2026",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sarpsborg 08",
-            "match_away": "Aalesund",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "22/10/2023",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Aalesund",
-            "match_away": "Sarpsborg 08",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Aalesund"
-          },
-          {
-            "date": "29/05/2023",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sarpsborg 08",
-            "match_away": "Aalesund",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Sarpsborg 08"
-          },
-          {
-            "date": "11/09/2022",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Aalesund",
-            "match_away": "Sarpsborg 08",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Sarpsborg 08"
-          },
-          {
-            "date": "22/05/2022",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sarpsborg 08",
-            "match_away": "Aalesund",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Aalesund"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 4.67,
@@ -2913,11 +2725,11 @@
         },
         "projected_corners": 9.4,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 3.2,
-          "text": "Aalesund 2 victorias • 1 empates • Sarpsborg 08 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Aalesund 0 victorias • 0 empates • Sarpsborg 08 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3136,7 +2948,7 @@
         ],
         "head_to_head": [
           {
-            "date": "26/04/2026",
+            "date": "2026-04-26",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Hamarkameratene",
@@ -3145,50 +2957,6 @@
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Hamarkameratene"
-          },
-          {
-            "date": "29/08/2021",
-            "competition": "1. Divisjon",
-            "tournament": "1. Divisjon",
-            "match_home": "Hamarkameratene",
-            "match_away": "Start",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Hamarkameratene"
-          },
-          {
-            "date": "05/07/2021",
-            "competition": "1. Divisjon",
-            "tournament": "1. Divisjon",
-            "match_home": "Start",
-            "match_away": "Hamarkameratene",
-            "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "winner": "Hamarkameratene"
-          },
-          {
-            "date": "22/09/2019",
-            "competition": "1. Divisjon",
-            "tournament": "1. Divisjon",
-            "match_home": "Hamarkameratene",
-            "match_away": "Start",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Hamarkameratene"
-          },
-          {
-            "date": "21/07/2019",
-            "competition": "1. Divisjon",
-            "tournament": "1. Divisjon",
-            "match_home": "Start",
-            "match_away": "Hamarkameratene",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Start"
           }
         ],
         "home_corner_stats": {
@@ -3213,11 +2981,11 @@
         },
         "projected_corners": 9.4,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 4.4,
-          "text": "Start 1 victorias • 0 empates • Hamarkameratene 4 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Start 0 victorias • 0 empates • Hamarkameratene 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3436,7 +3204,7 @@
         ],
         "head_to_head": [
           {
-            "date": "06/04/2026",
+            "date": "2026-04-06",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Molde",
@@ -3445,50 +3213,6 @@
             "away_score": 1,
             "score": "0 - 1",
             "winner": "Lillestrøm"
-          },
-          {
-            "date": "06/10/2024",
-            "competition": "Cup",
-            "tournament": "Cup",
-            "match_home": "Lillestrøm",
-            "match_away": "Molde",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Molde"
-          },
-          {
-            "date": "11/08/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Lillestrøm",
-            "match_away": "Molde",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Molde"
-          },
-          {
-            "date": "07/07/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Molde",
-            "match_away": "Lillestrøm",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Molde"
-          },
-          {
-            "date": "12/11/2023",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Molde",
-            "match_away": "Lillestrøm",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Molde"
           }
         ],
         "home_corner_stats": {
@@ -3515,9 +3239,9 @@
         "summary": {
           "home_wins": 1,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 2.8,
-          "text": "Lillestrøm 1 victorias • 0 empates • Molde 4 victorias"
+          "away_wins": 0,
+          "avg_goals": 1.0,
+          "text": "Lillestrøm 1 victorias • 0 empates • Molde 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3736,7 +3460,7 @@
         ],
         "head_to_head": [
           {
-            "date": "03/05/2026",
+            "date": "2026-05-03",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Vålerenga",
@@ -3745,39 +3469,6 @@
             "away_score": 2,
             "score": "2 - 2",
             "winner": "Empate"
-          },
-          {
-            "date": "20/09/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Vålerenga",
-            "match_away": "KFUM",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "26/05/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "KFUM",
-            "match_away": "Vålerenga",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Vålerenga"
-          },
-          {
-            "date": "04/05/2016",
-            "competition": "Cup",
-            "tournament": "Cup",
-            "match_home": "KFUM",
-            "match_away": "Vålerenga",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Vålerenga"
           }
         ],
         "home_corner_stats": {
@@ -3803,10 +3494,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "KFUM 0 victorias • 2 empates • Vålerenga 2 victorias"
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 4.0,
+          "text": "KFUM 0 victorias • 1 empates • Vålerenga 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4025,7 +3716,7 @@
         ],
         "head_to_head": [
           {
-            "date": "22/07/2026",
+            "date": "2026-07-22",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Bodø/Glimt",
@@ -4034,50 +3725,6 @@
             "away_score": 0,
             "score": "3 - 0",
             "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "03/08/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Hamarkameratene",
-            "match_away": "Bodø/Glimt",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "05/04/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Bodø/Glimt",
-            "match_away": "Hamarkameratene",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "13/09/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Bodø/Glimt",
-            "match_away": "Hamarkameratene",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Bodø/Glimt"
-          },
-          {
-            "date": "20/05/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Hamarkameratene",
-            "match_away": "Bodø/Glimt",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Hamarkameratene"
           }
         ],
         "home_corner_stats": {
@@ -4102,11 +3749,11 @@
         },
         "projected_corners": 10.0,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 2.8,
-          "text": "Hamarkameratene 1 victorias • 0 empates • Bodø/Glimt 4 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Hamarkameratene 0 victorias • 0 empates • Bodø/Glimt 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4325,18 +3972,7 @@
         ],
         "head_to_head": [
           {
-            "date": "28/10/2026",
-            "competition": "Cup",
-            "tournament": "Cup",
-            "match_home": "Kristiansund",
-            "match_away": "Aalesund",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "26/04/2026",
+            "date": "2026-04-26",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Aalesund",
@@ -4345,39 +3981,6 @@
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
-          },
-          {
-            "date": "30/10/2022",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Kristiansund",
-            "match_away": "Aalesund",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Kristiansund"
-          },
-          {
-            "date": "03/04/2022",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Aalesund",
-            "match_away": "Kristiansund",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Aalesund"
-          },
-          {
-            "date": "04/10/2020",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Aalesund",
-            "match_away": "Kristiansund",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Kristiansund"
           }
         ],
         "home_corner_stats": {
@@ -4402,11 +4005,11 @@
         },
         "projected_corners": 9.2,
         "summary": {
-          "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
           "avg_goals": 2.0,
-          "text": "Kristiansund 2 victorias • 2 empates • Aalesund 1 victorias"
+          "text": "Kristiansund 0 victorias • 1 empates • Aalesund 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4625,7 +4228,7 @@
         ],
         "head_to_head": [
           {
-            "date": "25/04/2026",
+            "date": "2026-04-25",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Fredrikstad",
@@ -4634,50 +4237,6 @@
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Viking"
-          },
-          {
-            "date": "23/11/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Fredrikstad",
-            "match_away": "Viking",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Viking"
-          },
-          {
-            "date": "22/06/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Viking",
-            "match_away": "Fredrikstad",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Viking"
-          },
-          {
-            "date": "22/09/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Fredrikstad",
-            "match_away": "Viking",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Fredrikstad"
-          },
-          {
-            "date": "21/04/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Viking",
-            "match_away": "Fredrikstad",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -4702,11 +4261,11 @@
         },
         "projected_corners": 11.0,
         "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 2.8,
-          "text": "Viking 3 victorias • 1 empates • Fredrikstad 1 victorias"
+          "home_wins": 1,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 3.0,
+          "text": "Viking 1 victorias • 0 empates • Fredrikstad 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4925,7 +4484,7 @@
         ],
         "head_to_head": [
           {
-            "date": "12/04/2026",
+            "date": "2026-04-12",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Rosenborg",
@@ -4934,50 +4493,6 @@
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Rosenborg"
-          },
-          {
-            "date": "05/10/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Rosenborg",
-            "match_away": "Sarpsborg 08",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Sarpsborg 08"
-          },
-          {
-            "date": "18/07/2025",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Sarpsborg 08",
-            "match_away": "Rosenborg",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "25/06/2025",
-            "competition": "Cup",
-            "tournament": "Cup",
-            "match_home": "Rosenborg",
-            "match_away": "Sarpsborg 08",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "23/11/2024",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Rosenborg",
-            "match_away": "Sarpsborg 08",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5002,11 +4517,11 @@
         },
         "projected_corners": 11.2,
         "summary": {
-          "home_wins": 1,
-          "draws": 3,
+          "home_wins": 0,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 3.6,
-          "text": "Sarpsborg 08 1 victorias • 3 empates • Rosenborg 1 victorias"
+          "avg_goals": 3.0,
+          "text": "Sarpsborg 08 0 victorias • 0 empates • Rosenborg 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5225,7 +4740,7 @@
         ],
         "head_to_head": [
           {
-            "date": "19/04/2026",
+            "date": "2026-04-19",
             "competition": "Eliteserien",
             "tournament": "Eliteserien",
             "match_home": "Start",
@@ -5234,50 +4749,6 @@
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
-          },
-          {
-            "date": "05/08/2020",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Molde",
-            "match_away": "Start",
-            "home_score": 5,
-            "away_score": 0,
-            "score": "5 - 0",
-            "winner": "Molde"
-          },
-          {
-            "date": "24/06/2020",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Start",
-            "match_away": "Molde",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Molde"
-          },
-          {
-            "date": "29/10/2018",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Start",
-            "match_away": "Molde",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Molde"
-          },
-          {
-            "date": "27/05/2018",
-            "competition": "Eliteserien",
-            "tournament": "Eliteserien",
-            "match_home": "Molde",
-            "match_away": "Start",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Molde"
           }
         ],
         "home_corner_stats": {
@@ -5302,11 +4773,11 @@
         },
         "projected_corners": 10.6,
         "summary": {
-          "home_wins": 4,
+          "home_wins": 0,
           "draws": 1,
           "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Molde 4 victorias • 1 empates • Start 0 victorias"
+          "avg_goals": 2.0,
+          "text": "Molde 0 victorias • 1 empates • Start 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

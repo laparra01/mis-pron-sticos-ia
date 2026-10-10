@@ -3,7 +3,7 @@
   "league_id": 46,
   "country": "Dinamarca",
   "country_code": "dk",
-  "last_updated": "2026-10-09T22:07:40.107119",
+  "last_updated": "2026-10-08T14:39:30.471147",
   "total_fixtures": 12,
   "team_histories": {
     "AC Horsens": [
@@ -590,6 +590,25 @@
     ],
     "Nordsjælland": [
       {
+        "match_id": "5739495",
+        "date": "30/08/2026",
+        "date_iso": "2026-08-30",
+        "opponent": "Brøndby IF",
+        "venue": "Local",
+        "match_home": "Nordsjælland",
+        "match_away": "Brøndby IF",
+        "home_score": 3,
+        "away_score": 1,
+        "score": "3 - 1",
+        "result": "W",
+        "competition": "Superligaen",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
+      },
+      {
         "match_id": "5739498",
         "date": "03/09/2026",
         "date_iso": "2026-09-03",
@@ -664,28 +683,28 @@
         "total_corners": 9,
         "shots_on_target": 2,
         "total_shots": 14
-      },
-      {
-        "match_id": "5739523",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "OB",
-        "venue": "Local",
-        "match_home": "Nordsjælland",
-        "match_away": "OB",
-        "home_score": 0,
-        "away_score": 0,
-        "score": "0 - 0",
-        "result": "D",
-        "competition": "Superligaen",
-        "corners_for": 9,
-        "corners_against": 3,
-        "total_corners": 12,
-        "shots_on_target": 5,
-        "total_shots": 21
       }
     ],
     "OB": [
+      {
+        "match_id": "5739485",
+        "date": "23/08/2026",
+        "date_iso": "2026-08-23",
+        "opponent": "AGF",
+        "venue": "Visitante",
+        "match_home": "AGF",
+        "match_away": "OB",
+        "home_score": 2,
+        "away_score": 2,
+        "score": "2 - 2",
+        "result": "D",
+        "competition": "Superligaen",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
+      },
       {
         "match_id": "5739492",
         "date": "30/08/2026",
@@ -761,25 +780,6 @@
         "total_corners": 11,
         "shots_on_target": 5,
         "total_shots": 21
-      },
-      {
-        "match_id": "5739523",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Nordsjælland",
-        "venue": "Visitante",
-        "match_home": "Nordsjælland",
-        "match_away": "OB",
-        "home_score": 0,
-        "away_score": 0,
-        "score": "0 - 0",
-        "result": "D",
-        "competition": "Superligaen",
-        "corners_for": 3,
-        "corners_against": 9,
-        "total_corners": 12,
-        "shots_on_target": 3,
-        "total_shots": 10
       }
     ],
     "Randers FC": [
@@ -1233,22 +1233,22 @@
       "total_shots_gen": 11.6
     },
     "Nordsjælland": {
-      "corners_avg_home": 5.5,
+      "corners_avg_home": 3.5,
       "corners_avg_away": 4.33,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 3.5,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 4.0,
       "corners_conceded_away": 4.67,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 3.2,
-      "total_shots_gen": 14.8
+      "corners_conceded_gen": 4.4,
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 13.0
     },
     "OB": {
       "corners_avg_home": 7.0,
-      "corners_avg_away": 6.0,
-      "corners_avg_gen": 6.4,
+      "corners_avg_away": 6.33,
+      "corners_avg_gen": 6.6,
       "corners_conceded_home": 3.0,
-      "corners_conceded_away": 5.67,
-      "corners_conceded_gen": 4.6,
+      "corners_conceded_away": 4.33,
+      "corners_conceded_gen": 3.8,
       "shots_on_target_gen": 4.0,
       "total_shots_gen": 14.4
     },
@@ -1294,6 +1294,306 @@
     }
   },
   "upcoming_matches": [
+    {
+      "id": "fotmob_superligaen_5739523",
+      "match_id": "5739523",
+      "sport": "football",
+      "league": "Superligaen",
+      "country": "Dinamarca",
+      "country_code": "dk",
+      "league_flag": "🇩🇰",
+      "country_flag": "🇩🇰",
+      "home_team": "Nordsjælland",
+      "away_team": "OB",
+      "date": "Vie 9 Oct, 11:00",
+      "date_iso": "2026-10-09",
+      "time": "11:00",
+      "timestamp": 1791565200,
+      "timezone": "America/Guatemala",
+      "round": "10",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5739495",
+            "date": "30/08/2026",
+            "date_iso": "2026-08-30",
+            "opponent": "Brøndby IF",
+            "venue": "Local",
+            "match_home": "Nordsjælland",
+            "match_away": "Brøndby IF",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "Superligaen",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5739498",
+            "date": "03/09/2026",
+            "date_iso": "2026-09-03",
+            "opponent": "FC København",
+            "venue": "Visitante",
+            "match_home": "FC København",
+            "match_away": "Nordsjælland",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "L",
+            "competition": "Superligaen",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5739505",
+            "date": "07/09/2026",
+            "date_iso": "2026-09-07",
+            "opponent": "FC Midtjylland",
+            "venue": "Visitante",
+            "match_home": "FC Midtjylland",
+            "match_away": "Nordsjælland",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Superligaen",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5739511",
+            "date": "13/09/2026",
+            "date_iso": "2026-09-13",
+            "opponent": "AGF",
+            "venue": "Local",
+            "match_home": "Nordsjælland",
+            "match_away": "AGF",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "W",
+            "competition": "Superligaen",
+            "corners_for": 2,
+            "corners_against": 4,
+            "total_corners": 6,
+            "shots_on_target": 3,
+            "total_shots": 19
+          },
+          {
+            "match_id": "5739516",
+            "date": "20/09/2026",
+            "date_iso": "2026-09-20",
+            "opponent": "Viborg",
+            "venue": "Visitante",
+            "match_home": "Viborg",
+            "match_away": "Nordsjælland",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "result": "L",
+            "competition": "Superligaen",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 2,
+            "total_shots": 14
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5739485",
+            "date": "23/08/2026",
+            "date_iso": "2026-08-23",
+            "opponent": "AGF",
+            "venue": "Visitante",
+            "match_home": "AGF",
+            "match_away": "OB",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Superligaen",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5739492",
+            "date": "30/08/2026",
+            "date_iso": "2026-08-30",
+            "opponent": "Lyngby",
+            "venue": "Visitante",
+            "match_home": "Lyngby",
+            "match_away": "OB",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Superligaen",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5739503",
+            "date": "06/09/2026",
+            "date_iso": "2026-09-06",
+            "opponent": "FC København",
+            "venue": "Local",
+            "match_home": "OB",
+            "match_away": "FC København",
+            "home_score": 0,
+            "away_score": 5,
+            "score": "0 - 5",
+            "result": "L",
+            "competition": "Superligaen",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5739507",
+            "date": "13/09/2026",
+            "date_iso": "2026-09-13",
+            "opponent": "Randers FC",
+            "venue": "Visitante",
+            "match_home": "Randers FC",
+            "match_away": "OB",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "W",
+            "competition": "Superligaen",
+            "corners_for": 11,
+            "corners_against": 3,
+            "total_corners": 14,
+            "shots_on_target": 5,
+            "total_shots": 19
+          },
+          {
+            "match_id": "5739512",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "FC Midtjylland",
+            "venue": "Local",
+            "match_home": "OB",
+            "match_away": "FC Midtjylland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Superligaen",
+            "corners_for": 9,
+            "corners_against": 2,
+            "total_corners": 11,
+            "shots_on_target": 5,
+            "total_shots": 21
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "30/11/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Nordsjælland",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "02/11/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "OB",
+            "home_score": 2,
+            "away_score": 4,
+            "score": "2 - 4",
+            "winner": "OB"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Nordsjælland",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Nordsjælland"
+          },
+          {
+            "date": "03/12/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Nordsjælland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "08/10/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "OB",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "OB"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 3.5,
+          "corners_avg_away": 4.33,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 4.67,
+          "corners_conceded_gen": 4.4,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 13.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 6.33,
+          "corners_avg_gen": 6.6,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 4.33,
+          "corners_conceded_gen": 3.8,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 14.4
+        },
+        "projected_corners": 10.2,
+        "summary": {
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.4,
+          "text": "Nordsjælland 1 victorias • 2 empates • OB 2 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
     {
       "id": "fotmob_superligaen_5739518",
       "match_id": "5739518",
@@ -2108,17 +2408,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/02/2027",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Lyngby",
-            "match_away": "Brøndby IF",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/03/2025",
             "competition": "Superligaen",
             "tournament": "Superligaen",
@@ -2186,10 +2475,10 @@
         "projected_corners": 8.1,
         "summary": {
           "home_wins": 2,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 2.6,
-          "text": "Brøndby IF 2 victorias • 3 empates • Lyngby 0 victorias"
+          "avg_goals": 3.2,
+          "text": "Brøndby IF 2 victorias • 2 empates • Lyngby 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2708,17 +2997,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/02/2027",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Sønderjyske",
-            "match_away": "AGF",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/05/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
@@ -2786,10 +3064,10 @@
         "projected_corners": 9.5,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 2.6,
-          "text": "AGF 2 victorias • 2 empates • Sønderjyske 1 victorias"
+          "avg_goals": 3.2,
+          "text": "AGF 2 victorias • 1 empates • Sønderjyske 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3211,6 +3489,25 @@
         ],
         "away_last_5": [
           {
+            "match_id": "5739495",
+            "date": "30/08/2026",
+            "date_iso": "2026-08-30",
+            "opponent": "Brøndby IF",
+            "venue": "Local",
+            "match_home": "Nordsjælland",
+            "match_away": "Brøndby IF",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "Superligaen",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
             "match_id": "5739498",
             "date": "03/09/2026",
             "date_iso": "2026-09-03",
@@ -3285,25 +3582,6 @@
             "total_corners": 9,
             "shots_on_target": 2,
             "total_shots": 14
-          },
-          {
-            "match_id": "5739523",
-            "date": "09/10/2026",
-            "date_iso": "2026-10-09",
-            "opponent": "OB",
-            "venue": "Local",
-            "match_home": "Nordsjælland",
-            "match_away": "OB",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Superligaen",
-            "corners_for": 9,
-            "corners_against": 3,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 21
           }
         ],
         "head_to_head": [
@@ -3374,16 +3652,16 @@
           "total_shots_gen": 11.6
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.5,
+          "corners_avg_home": 3.5,
           "corners_avg_away": 4.33,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 3.5,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 4.0,
           "corners_conceded_away": 4.67,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 3.2,
-          "total_shots_gen": 14.8
+          "corners_conceded_gen": 4.4,
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 13.0
         },
-        "projected_corners": 10.2,
+        "projected_corners": 9.8,
         "summary": {
           "home_wins": 1,
           "draws": 3,
@@ -3608,17 +3886,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/03/2027",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Silkeborg",
-            "match_away": "Sønderjyske",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "16/02/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
@@ -3686,10 +3953,10 @@
         "projected_corners": 8.3,
         "summary": {
           "home_wins": 3,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 1.8,
-          "text": "Sønderjyske 3 victorias • 1 empates • Silkeborg 1 victorias"
+          "avg_goals": 2.2,
+          "text": "Sønderjyske 3 victorias • 0 empates • Silkeborg 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3713,6 +3980,25 @@
       "round": "11",
       "h2h": {
         "home_last_5": [
+          {
+            "match_id": "5739485",
+            "date": "23/08/2026",
+            "date_iso": "2026-08-23",
+            "opponent": "AGF",
+            "venue": "Visitante",
+            "match_home": "AGF",
+            "match_away": "OB",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Superligaen",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
           {
             "match_id": "5739492",
             "date": "30/08/2026",
@@ -3788,25 +4074,6 @@
             "total_corners": 11,
             "shots_on_target": 5,
             "total_shots": 21
-          },
-          {
-            "match_id": "5739523",
-            "date": "09/10/2026",
-            "date_iso": "2026-10-09",
-            "opponent": "Nordsjælland",
-            "venue": "Visitante",
-            "match_home": "Nordsjælland",
-            "match_away": "OB",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Superligaen",
-            "corners_for": 3,
-            "corners_against": 9,
-            "total_corners": 12,
-            "shots_on_target": 3,
-            "total_shots": 10
           }
         ],
         "away_last_5": [
@@ -3965,11 +4232,11 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 7.0,
-          "corners_avg_away": 6.0,
-          "corners_avg_gen": 6.4,
+          "corners_avg_away": 6.33,
+          "corners_avg_gen": 6.6,
           "corners_conceded_home": 3.0,
-          "corners_conceded_away": 5.67,
-          "corners_conceded_gen": 4.6,
+          "corners_conceded_away": 4.33,
+          "corners_conceded_gen": 3.8,
           "shots_on_target_gen": 4.0,
           "total_shots_gen": 14.4
         },
@@ -3983,7 +4250,7 @@
           "shots_on_target_gen": 3.4,
           "total_shots_gen": 11.2
         },
-        "projected_corners": 9.9,
+        "projected_corners": 10.0,
         "summary": {
           "home_wins": 1,
           "draws": 1,
@@ -4208,17 +4475,6 @@
         ],
         "head_to_head": [
           {
-            "date": "28/02/2027",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "AGF",
-            "match_away": "FC København",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "30/11/2025",
             "competition": "Superligaen",
             "tournament": "Superligaen",
@@ -4286,10 +4542,10 @@
         "projected_corners": 9.0,
         "summary": {
           "home_wins": 2,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 2,
-          "avg_goals": 3.0,
-          "text": "FC København 2 victorias • 1 empates • AGF 2 victorias"
+          "avg_goals": 3.8,
+          "text": "FC København 2 victorias • 0 empates • AGF 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4508,17 +4764,6 @@
         ],
         "head_to_head": [
           {
-            "date": "07/03/2027",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "FC Midtjylland",
-            "match_away": "Viborg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "04/05/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
@@ -4586,310 +4831,10 @@
         "projected_corners": 8.5,
         "summary": {
           "home_wins": 0,
-          "draws": 4,
+          "draws": 3,
           "away_wins": 1,
-          "avg_goals": 3.2,
-          "text": "Viborg 0 victorias • 4 empates • FC Midtjylland 1 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_superligaen_5739531",
-      "match_id": "5739531",
-      "sport": "football",
-      "league": "Superligaen",
-      "country": "Dinamarca",
-      "country_code": "dk",
-      "league_flag": "🇩🇰",
-      "country_flag": "🇩🇰",
-      "home_team": "Randers FC",
-      "away_team": "Brøndby IF",
-      "date": "Vie 23 Oct, 11:00",
-      "date_iso": "2026-10-23",
-      "time": "11:00",
-      "timestamp": 1792774800,
-      "timezone": "America/Guatemala",
-      "round": "12",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5739487",
-            "date": "23/08/2026",
-            "date_iso": "2026-08-23",
-            "opponent": "FC Midtjylland",
-            "venue": "Visitante",
-            "match_home": "FC Midtjylland",
-            "match_away": "Randers FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5739494",
-            "date": "30/08/2026",
-            "date_iso": "2026-08-30",
-            "opponent": "AGF",
-            "venue": "Local",
-            "match_home": "Randers FC",
-            "match_away": "AGF",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "Superligaen",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5739504",
-            "date": "06/09/2026",
-            "date_iso": "2026-09-06",
-            "opponent": "Brøndby IF",
-            "venue": "Visitante",
-            "match_home": "Brøndby IF",
-            "match_away": "Randers FC",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "result": "W",
-            "competition": "Superligaen",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5739507",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "OB",
-            "venue": "Local",
-            "match_home": "Randers FC",
-            "match_away": "OB",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 3,
-            "corners_against": 11,
-            "total_corners": 14,
-            "shots_on_target": 2,
-            "total_shots": 11
-          },
-          {
-            "match_id": "5739513",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "Sønderjyske",
-            "venue": "Visitante",
-            "match_home": "Sønderjyske",
-            "match_away": "Randers FC",
-            "home_score": 4,
-            "away_score": 2,
-            "score": "4 - 2",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 6,
-            "total_shots": 14
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5739490",
-            "date": "24/08/2026",
-            "date_iso": "2026-08-24",
-            "opponent": "Silkeborg",
-            "venue": "Local",
-            "match_home": "Brøndby IF",
-            "match_away": "Silkeborg",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "Superligaen",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5739495",
-            "date": "30/08/2026",
-            "date_iso": "2026-08-30",
-            "opponent": "Nordsjælland",
-            "venue": "Visitante",
-            "match_home": "Nordsjælland",
-            "match_away": "Brøndby IF",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5739504",
-            "date": "06/09/2026",
-            "date_iso": "2026-09-06",
-            "opponent": "Randers FC",
-            "venue": "Local",
-            "match_home": "Brøndby IF",
-            "match_away": "Randers FC",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5739509",
-            "date": "14/09/2026",
-            "date_iso": "2026-09-14",
-            "opponent": "FC Midtjylland",
-            "venue": "Visitante",
-            "match_home": "FC Midtjylland",
-            "match_away": "Brøndby IF",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 2,
-            "corners_against": 6,
-            "total_corners": 8,
-            "shots_on_target": 4,
-            "total_shots": 13
-          },
-          {
-            "match_id": "5739515",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "FC København",
-            "venue": "Local",
-            "match_home": "Brøndby IF",
-            "match_away": "FC København",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Superligaen",
-            "corners_for": 1,
-            "corners_against": 4,
-            "total_corners": 5,
-            "shots_on_target": 2,
-            "total_shots": 9
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "06/09/2026",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Brøndby IF",
-            "match_away": "Randers FC",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "winner": "Randers FC"
-          },
-          {
-            "date": "08/02/2026",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Brøndby IF",
-            "match_away": "Randers FC",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "17/08/2025",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Randers FC",
-            "match_away": "Brøndby IF",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Brøndby IF"
-          },
-          {
-            "date": "25/04/2025",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Randers FC",
-            "match_away": "Brøndby IF",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "21/04/2025",
-            "competition": "Superligaen",
-            "tournament": "Superligaen",
-            "match_home": "Brøndby IF",
-            "match_away": "Randers FC",
-            "home_score": 4,
-            "away_score": 3,
-            "score": "4 - 3",
-            "winner": "Brøndby IF"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 4.0,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.0,
-          "corners_conceded_home": 7.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 6.0,
-          "shots_on_target_gen": 3.6,
-          "total_shots_gen": 11.4
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 3.67,
-          "corners_avg_away": 3.0,
-          "corners_avg_gen": 3.4,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 5.5,
-          "corners_conceded_gen": 4.6,
-          "shots_on_target_gen": 3.4,
-          "total_shots_gen": 11.2
-        },
-        "projected_corners": 7.2,
-        "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.4,
-          "text": "Randers FC 1 victorias • 2 empates • Brøndby IF 2 victorias"
+          "avg_goals": 4.0,
+          "text": "Viborg 0 victorias • 3 empates • FC Midtjylland 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

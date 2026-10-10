@@ -97,6 +97,24 @@ SUPPORTED_LEAGUES = [
         "flag": "🇧🇴",
         "max_upcoming": 15
     },
+    {
+        "id": 112,
+        "slug": "argentina",
+        "name": "Liga Profesional de Argentina",
+        "country": "Argentina",
+        "code": "ar",
+        "flag": "🇦🇷",
+        "max_upcoming": 15
+    },
+    {
+        "id": 161,
+        "slug": "uruguay",
+        "name": "Primera División de Uruguay",
+        "country": "Uruguay",
+        "code": "uy",
+        "flag": "🇺🇾",
+        "max_upcoming": 15
+    },
 
     # Europa Domésticas
     {
@@ -205,6 +223,15 @@ SUPPORTED_LEAGUES = [
         "country": "Suiza",
         "code": "ch",
         "flag": "🇨🇭",
+        "max_upcoming": 12
+    },
+    {
+        "id": 57,
+        "slug": "holanda",
+        "name": "Eredivisie de Países Bajos",
+        "country": "Países Bajos",
+        "code": "nl",
+        "flag": "🇳🇱",
         "max_upcoming": 12
     },
 
@@ -317,6 +344,9 @@ def get_match_stats(match_id, cache, fetch_network=True):
             shots_target = stats_map.get("shots on target", [4, 3])
             total_shots = stats_map.get("total shots", [12, 10])
             possession = stats_map.get("ball possession", [50, 50])
+            yellow_cards = stats_map.get("yellow cards", [2, 2])
+            red_cards = stats_map.get("red cards", [0, 0])
+            fouls = stats_map.get("fouls committed", stats_map.get("fouls", [11, 12]))
 
             res = {
                 "corners_home": parse_num(corners[0], 5),
@@ -326,7 +356,13 @@ def get_match_stats(match_id, cache, fetch_network=True):
                 "total_shots_home": parse_num(total_shots[0], 12),
                 "total_shots_away": parse_num(total_shots[1], 10),
                 "possession_home": parse_num(possession[0], 50),
-                "possession_away": parse_num(possession[1], 50)
+                "possession_away": parse_num(possession[1], 50),
+                "yellow_cards_home": parse_num(yellow_cards[0], 2),
+                "yellow_cards_away": parse_num(yellow_cards[1], 2),
+                "red_cards_home": parse_num(red_cards[0], 0),
+                "red_cards_away": parse_num(red_cards[1], 0),
+                "fouls_home": parse_num(fouls[0], 11),
+                "fouls_away": parse_num(fouls[1], 12)
             }
             cache[str_id] = res
             time.sleep(0.04)
@@ -338,7 +374,10 @@ def get_match_stats(match_id, cache, fetch_network=True):
         "corners_home": 5, "corners_away": 4,
         "shots_on_target_home": 4, "shots_on_target_away": 3,
         "total_shots_home": 12, "total_shots_away": 10,
-        "possession_home": 50, "possession_away": 50
+        "possession_home": 50, "possession_away": 50,
+        "yellow_cards_home": 2, "yellow_cards_away": 2,
+        "red_cards_home": 0, "red_cards_away": 0,
+        "fouls_home": 11, "fouls_away": 12
     }
     cache[str_id] = fallback
     return fallback
@@ -352,22 +391,39 @@ def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
             h2h_content = d.get("content", {}).get("h2h", {})
             raw_matches = h2h_content.get("matches", [])
             direct = []
+            today_date = datetime.now().date()
             for m in raw_matches:
                 leg_name = m.get("league", {}).get("name", default_league_name)
                 # Excluir partidos amistosos no oficiales
                 if any(k in leg_name.lower() for k in ("friendly", "amistoso", "club friendlies", "exhibition")):
                     continue
 
-                h_name = m.get("home", {}).get("name", "Local")
-                a_name = m.get("away", {}).get("name", "Visitante")
-                score_str = m.get("status", {}).get("scoreStr", "0 - 0")
-                raw_time = m.get("time", {}).get("utcTime", "")
-                dt_str = raw_time[:10] if len(raw_time) >= 10 else "2026-05-01"
+                # Excluir partidos futuros o no finalizados (FotMob incluye partidos pendientes de jugar)
+                if m.get("finished") is False:
+                    continue
+                st_obj = m.get("status", {})
+                if st_obj.get("finished") is False:
+                    continue
+
+                score_str = st_obj.get("scoreStr") or m.get("scoreStr") or ""
+                if not score_str or "-" not in score_str:
+                    continue
+
+                raw_time = m.get("time", {}).get("utcTime", "") or st_obj.get("utcTime", "")
+                dt_str = raw_time[:10] if len(raw_time) >= 10 else ""
+                if not dt_str:
+                    continue
                 try:
                     dt_obj = datetime.strptime(dt_str, "%Y-%m-%d")
+                    # No puede ser una fecha en el futuro (ej. 2027)
+                    if dt_obj.date() > today_date:
+                        continue
                     dt_fmt = dt_obj.strftime("%d/%m/%Y")
                 except Exception:
-                    dt_fmt = dt_str
+                    continue
+
+                h_name = m.get("home", {}).get("name", "Local")
+                a_name = m.get("away", {}).get("name", "Visitante")
 
                 parts = score_str.split("-")
                 h_sc = int(parts[0].strip()) if len(parts) == 2 and parts[0].strip().isdigit() else 0
@@ -472,6 +528,9 @@ def scrape_single_league(cfg, match_cache=None):
         c_for_home, c_for_away, c_for_gen = [], [], []
         c_against_home, c_against_away, c_against_gen = [], [], []
         sot_gen, tot_gen = [], []
+        y_for_home, y_for_away, y_for_gen = [], [], []
+        r_for_home, r_for_away, r_for_gen = [], [], []
+        fouls_for_home, fouls_for_away, fouls_for_gen = [], [], []
 
         for idx, m in enumerate(recent_5):
             m_id = m.get("id")
@@ -510,18 +569,30 @@ def scrape_single_league(cfg, match_cache=None):
             corners_opp = st["corners_away"] if is_loc else st["corners_home"]
             sot_my = st["shots_on_target_home"] if is_loc else st["shots_on_target_away"]
             tot_my = st["total_shots_home"] if is_loc else st["total_shots_away"]
+            yellow_my = st.get("yellow_cards_home", 2) if is_loc else st.get("yellow_cards_away", 2)
+            red_my = st.get("red_cards_home", 0) if is_loc else st.get("red_cards_away", 0)
+            fouls_my = st.get("fouls_home", 11) if is_loc else st.get("fouls_away", 12)
 
             c_for_gen.append(corners_my)
             c_against_gen.append(corners_opp)
             sot_gen.append(sot_my)
             tot_gen.append(tot_my)
+            y_for_gen.append(yellow_my)
+            r_for_gen.append(red_my)
+            fouls_for_gen.append(fouls_my)
 
             if is_loc:
                 c_for_home.append(corners_my)
                 c_against_home.append(corners_opp)
+                y_for_home.append(yellow_my)
+                r_for_home.append(red_my)
+                fouls_for_home.append(fouls_my)
             else:
                 c_for_away.append(corners_my)
                 c_against_away.append(corners_opp)
+                y_for_away.append(yellow_my)
+                r_for_away.append(red_my)
+                fouls_for_away.append(fouls_my)
 
             formatted_last_5.append({
                 "match_id": m_id,
@@ -540,7 +611,11 @@ def scrape_single_league(cfg, match_cache=None):
                 "corners_against": corners_opp,
                 "total_corners": corners_my + corners_opp,
                 "shots_on_target": sot_my,
-                "total_shots": tot_my
+                "total_shots": tot_my,
+                "yellow_cards": yellow_my,
+                "red_cards": red_my,
+                "total_cards": yellow_my + red_my,
+                "fouls": fouls_my
             })
 
         team_history[team] = formatted_last_5
@@ -556,7 +631,19 @@ def scrape_single_league(cfg, match_cache=None):
             "corners_conceded_away": safe_avg(c_against_away, 5.0),
             "corners_conceded_gen": safe_avg(c_against_gen, 4.4),
             "shots_on_target_gen": safe_avg(sot_gen, 4.2),
-            "total_shots_gen": safe_avg(tot_gen, 11.8)
+            "total_shots_gen": safe_avg(tot_gen, 11.8),
+            "yellow_cards_avg_home": safe_avg(y_for_home, 2.0),
+            "yellow_cards_avg_away": safe_avg(y_for_away, 2.3),
+            "yellow_cards_avg": safe_avg(y_for_gen, 2.1),
+            "red_cards_avg_home": safe_avg(r_for_home, 0.05),
+            "red_cards_avg_away": safe_avg(r_for_away, 0.15),
+            "red_cards_avg": safe_avg(r_for_gen, 0.1),
+            "total_cards_avg_home": safe_avg([y + r for y, r in zip(y_for_home, r_for_home)], 2.1),
+            "total_cards_avg_away": safe_avg([y + r for y, r in zip(y_for_away, r_for_away)], 2.5),
+            "total_cards_avg": safe_avg([y + r for y, r in zip(y_for_gen, r_for_gen)], 2.2),
+            "fouls_avg_home": safe_avg(fouls_for_home, 11.0),
+            "fouls_avg_away": safe_avg(fouls_for_away, 12.5),
+            "fouls_avg": safe_avg(fouls_for_gen, 11.5)
         }
 
     upcoming_pool = unplayed[:max_up]
@@ -603,6 +690,12 @@ def scrape_single_league(cfg, match_cache=None):
         a_cg = a_corners.get("corners_avg_gen", 4.3)
         proj_corners = round((h_ch * 0.5 + h_cg * 0.5) + (a_ca * 0.5 + a_cg * 0.5), 1)
 
+        h_cards_h = h_corners.get("total_cards_avg_home", 2.1)
+        h_cards_g = h_corners.get("total_cards_avg", 2.2)
+        a_cards_a = a_corners.get("total_cards_avg_away", 2.5)
+        a_cards_g = a_corners.get("total_cards_avg", 2.4)
+        proj_cards = round((h_cards_h * 0.5 + h_cards_g * 0.5) + (a_cards_a * 0.5 + a_cards_g * 0.5), 1)
+
         w_h = sum(1 for d in direct_h2h if d.get("winner") == h_name or (h_name.lower() in (d.get("winner") or "").lower()))
         w_d = sum(1 for d in direct_h2h if d.get("winner") == "Empate")
         w_a = sum(1 for d in direct_h2h if d.get("winner") == a_name or (a_name.lower() in (d.get("winner") or "").lower()))
@@ -640,6 +733,7 @@ def scrape_single_league(cfg, match_cache=None):
                 "home_corner_stats": h_corners,
                 "away_corner_stats": a_corners,
                 "projected_corners": proj_corners,
+                "projected_cards": proj_cards,
                 "summary": h2h_summary
             },
             "source_api": "FotMob (Scraping Oficial)"

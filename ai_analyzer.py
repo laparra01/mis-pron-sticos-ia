@@ -74,6 +74,7 @@ Goles esperados: Local {prediction.get('lambda_home')} - Visitante {prediction.g
 Probabilidades: Local {prediction.get('prob_home')}%, Empate {prediction.get('prob_draw')}%, Visitante {prediction.get('prob_away')}%
 Over 2.5: {prediction.get('prob_over_25')}%, Ambos marcan: {prediction.get('prob_btts')}%
 Córners proyectados: {proj_corners} (Probabilidad Más de 8.5 Córners: {prob_corners}%)
+Tarjetas proyectadas: {prediction.get('projected_cards', 4.5)} amonestaciones totales (Línea disciplinaria / fricción táctica)
 Pronóstico Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence')}%)
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
@@ -138,7 +139,9 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
     """
     home = match_data.get('home_team', 'Local')
     away = match_data.get('away_team', 'Visitante')
-    minute = live_pred.get('minute', 45)
+    is_halftime = bool(match_data.get('is_halftime', False) or live_pred.get('is_halftime', False))
+    minute = 45 if is_halftime else live_pred.get('minute', 45)
+    time_label = "DESCANSO / MEDIO TIEMPO (HT)" if is_halftime else f"Minuto {minute}'"
     score = live_pred.get('current_score', '0-0')
     pick = live_pred.get('recommended_pick', 'Victoria Local')
     poss_h = live_stats.get('possession_home', 50)
@@ -149,22 +152,30 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
     corners_h = live_stats.get('corners_home', 0)
     corners_a = live_stats.get('corners_away', 0)
     tot_corners = corners_h + corners_a
+    yellow_h = live_stats.get('yellow_cards_home', 0)
+    yellow_a = live_stats.get('yellow_cards_away', 0)
+    red_h = live_stats.get('red_cards_home', 0)
+    red_a = live_stats.get('red_cards_away', 0)
+    tot_cards = yellow_h + yellow_a + (red_h + red_a) * 2
 
     if force_gemini:
         prompt = f"""
 Actúa como analista deportivo experto en apuestas y táctica en vivo (estilo 'Mis Pronósticos AI').
-Partido en juego: {home} vs {away} (Marcador {score}, Minuto {minute}')
+Partido en juego: {home} vs {away} (Marcador {score}, {time_label})
 Estadísticas oficiales en tiempo real:
 - Posesión de balón: {home} {poss_h}% vs {away} {100-poss_h}%
 - Remates a puerta: {home} {shots_h} vs {away} {shots_a}
 - Tiros totales: {home} {tot_shots_h} vs {away} {tot_shots_a}
 - Saques de esquina (córners): {home} {corners_h} vs {away} {corners_a} (Total acumulado: {tot_corners} córners)
+- Amonestaciones (tarjetas): {home} {yellow_h} amarillas/{red_h} rojas vs {away} {yellow_a} amarillas/{red_a} rojas (Total: {tot_cards} amonestaciones)
 - Pick principal en vivo: {pick} ({live_pred.get('confidence', 60)}%)
+{"- ESTADO ESPECIAL: El partido se encuentra en el DESCANSO / MEDIO TIEMPO (HT). Los equipos están en vestuarios y restan los 45 minutos del segundo tiempo." if is_halftime else ""}
 
 REGLAS CRÍTICAS DE FIDELIDAD NUMÉRICA (OBLIGATORIAS):
 1. Debes respetar RIGUROSAMENTE los datos numéricos reales provistos arriba.
 2. Si un equipo tiene 0 tiros a puerta o 0 saques de esquina, indica textualmente y sin rodeos "0 tiros a puerta" o "0 saques de esquina". NO inventes que hubo más córners, remates a puerta o asedio ofensivo de los que realmente indican las estadísticas oficiales.
 3. En 'analisis_corners_remates', cita exactamente las cifras provistas ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a} remates, y {corners_h} vs {corners_a} córners) y analiza tácticamente lo que estos números exactos reflejan en el terreno de juego.
+{"4. Si el partido está en descanso, habla del descanso / medio tiempo y de la segunda mitad que está por jugarse." if is_halftime else ""}
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 {{
@@ -193,20 +204,30 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
     else:
         corner_read = f"Juego disputado en el carril central con paridad en tiros de esquina ({corners_h} vs {corners_a})."
 
-    proj_corners = round(tot_corners + max(0.5, ((90 - minute) / 90.0) * max(1.0, tot_corners)), 1)
+    rem_time = 45 if is_halftime else max(1, 90 - minute)
+    proj_corners = round(tot_corners + max(0.5, (rem_time / 90.0) * max(1.0, tot_corners)), 1)
 
+    time_context = "al descanso (primer tiempo)" if is_halftime else f"al minuto {minute}'"
     analisis_cr = (
         f"{corner_read} "
         f"En remates, {home} registra {shots_h}/{tot_shots_h} a puerta ({eff_h}% de puntería) frente a {shots_a}/{tot_shots_a} ({eff_a}%) de {away}. "
-        f"Con {tot_corners} córners acumulados al minuto {minute}', el modelo proyecta una línea final de {proj_corners} córners."
+        f"Con {tot_corners} córners acumulados {time_context}, el modelo proyecta una línea final de {proj_corners} córners."
     )
 
-    resumen = f"Minuto {minute}' ({score}): {pick} con {live_pred.get('confidence', 60)}% de probabilidad restante calculada."
-    justificacion = (
-        f"Con el marcador en {score} y {max(1, 90 - minute)} minutos por disputar, el modelo recalculó la expectativa de goles. "
-        f"{home} registra {poss_h}% de posesión y {shots_h} remates a puerta (vs {shots_a} de {away}). "
-        f"La probabilidad en vivo para victoria local es de {live_pred.get('prob_home', 50)}%, empate {live_pred.get('prob_draw', 25)}% y visitante {live_pred.get('prob_away', 25)}%."
-    )
+    if is_halftime:
+        resumen = f"Descanso / Medio Tiempo ({score}): {pick} con {live_pred.get('confidence', 60)}% de probabilidad proyectada para la 2ª mitad."
+        justificacion = (
+            f"Al medio tiempo con el marcador en {score} y 45 minutos por disputar en la 2ª mitad, el modelo cuantitativo recalculó la expectativa de goles. "
+            f"{home} registra {poss_h}% de posesión y {shots_h} remates a puerta (vs {shots_a} de {away}). "
+            f"La probabilidad en vivo para victoria local es de {live_pred.get('prob_home', 50)}%, empate {live_pred.get('prob_draw', 25)}% y visitante {live_pred.get('prob_away', 25)}%."
+        )
+    else:
+        resumen = f"Minuto {minute}' ({score}): {pick} con {live_pred.get('confidence', 60)}% de probabilidad restante calculada."
+        justificacion = (
+            f"Con el marcador en {score} y {max(1, 90 - minute)} minutos por disputar, el modelo recalculó la expectativa de goles. "
+            f"{home} registra {poss_h}% de posesión y {shots_h} remates a puerta (vs {shots_a} de {away}). "
+            f"La probabilidad en vivo para victoria local es de {live_pred.get('prob_home', 50)}%, empate {live_pred.get('prob_draw', 25)}% y visitante {live_pred.get('prob_away', 25)}%."
+        )
     factor = f"Momentum ofensivo: {home if poss_h >= 50 else away} domina la posesión ({poss_h}% vs {100-poss_h}%) con {shots_h} vs {shots_a} tiros a puerta."
     advertencia = f"En los últimos minutos aumenta el riesgo por desorden físico. Probabilidad de no más goles: {live_pred.get('prob_no_more_goals', 40)}%."
 

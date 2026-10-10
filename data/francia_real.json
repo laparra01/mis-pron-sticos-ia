@@ -3,7 +3,7 @@
   "league_id": 53,
   "country": "Francia",
   "country_code": "fr",
-  "last_updated": "2026-10-09T22:07:30.470702",
+  "last_updated": "2026-10-08T15:24:59.366094",
   "total_fixtures": 12,
   "team_histories": {
     "Angers": [
@@ -493,6 +493,25 @@
     ],
     "Lens": [
       {
+        "match_id": "5802904",
+        "date": "22/08/2026",
+        "date_iso": "2026-08-22",
+        "opponent": "Auxerre",
+        "venue": "Local",
+        "match_home": "Lens",
+        "match_away": "Auxerre",
+        "home_score": 5,
+        "away_score": 2,
+        "score": "5 - 2",
+        "result": "W",
+        "competition": "Ligue 1 de Francia",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
+      },
+      {
         "match_id": "5802917",
         "date": "29/08/2026",
         "date_iso": "2026-08-29",
@@ -567,25 +586,6 @@
         "total_corners": 10,
         "shots_on_target": 4,
         "total_shots": 12
-      },
-      {
-        "match_id": "5802947",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Lyon",
-        "venue": "Local",
-        "match_home": "Lens",
-        "match_away": "Lyon",
-        "home_score": 2,
-        "away_score": 1,
-        "score": "2 - 1",
-        "result": "W",
-        "competition": "Ligue 1 de Francia",
-        "corners_for": 7,
-        "corners_against": 4,
-        "total_corners": 11,
-        "shots_on_target": 7,
-        "total_shots": 15
       }
     ],
     "Lille": [
@@ -784,6 +784,25 @@
     ],
     "Lyon": [
       {
+        "match_id": "5802908",
+        "date": "22/08/2026",
+        "date_iso": "2026-08-22",
+        "opponent": "Toulouse",
+        "venue": "Visitante",
+        "match_home": "Toulouse",
+        "match_away": "Lyon",
+        "home_score": 0,
+        "away_score": 2,
+        "score": "0 - 2",
+        "result": "W",
+        "competition": "Ligue 1 de Francia",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
+      },
+      {
         "match_id": "5802913",
         "date": "29/08/2026",
         "date_iso": "2026-08-29",
@@ -858,25 +877,6 @@
         "total_corners": 11,
         "shots_on_target": 9,
         "total_shots": 15
-      },
-      {
-        "match_id": "5802947",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Lens",
-        "venue": "Visitante",
-        "match_home": "Lens",
-        "match_away": "Lyon",
-        "home_score": 2,
-        "away_score": 1,
-        "score": "2 - 1",
-        "result": "L",
-        "competition": "Ligue 1 de Francia",
-        "corners_for": 4,
-        "corners_against": 7,
-        "total_corners": 11,
-        "shots_on_target": 5,
-        "total_shots": 13
       }
     ],
     "Marseille": [
@@ -1805,14 +1805,14 @@
       "total_shots_gen": 11.0
     },
     "Lens": {
-      "corners_avg_home": 6.0,
+      "corners_avg_home": 5.0,
       "corners_avg_away": 7.0,
-      "corners_avg_gen": 6.6,
+      "corners_avg_gen": 6.2,
       "corners_conceded_home": 4.0,
       "corners_conceded_away": 3.33,
       "corners_conceded_gen": 3.6,
-      "shots_on_target_gen": 4.8,
-      "total_shots_gen": 13.0
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 12.4
     },
     "Lille": {
       "corners_avg_home": 3.5,
@@ -1839,10 +1839,10 @@
       "corners_avg_away": 3.5,
       "corners_avg_gen": 4.0,
       "corners_conceded_home": 5.33,
-      "corners_conceded_away": 5.5,
-      "corners_conceded_gen": 5.4,
-      "shots_on_target_gen": 4.6,
-      "total_shots_gen": 11.4
+      "corners_conceded_away": 4.5,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 10.8
     },
     "Marseille": {
       "corners_avg_home": 4.33,
@@ -1936,6 +1936,295 @@
     }
   },
   "upcoming_matches": [
+    {
+      "id": "fotmob_francia_5802947",
+      "match_id": "5802947",
+      "sport": "football",
+      "league": "Ligue 1 de Francia",
+      "country": "Francia",
+      "country_code": "fr",
+      "league_flag": "🇫🇷",
+      "country_flag": "🇫🇷",
+      "home_team": "Lens",
+      "away_team": "Lyon",
+      "date": "Vie 9 Oct, 12:45",
+      "date_iso": "2026-10-09",
+      "time": "12:45",
+      "timestamp": 1791571500,
+      "timezone": "America/Guatemala",
+      "round": "6",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5802904",
+            "date": "22/08/2026",
+            "date_iso": "2026-08-22",
+            "opponent": "Auxerre",
+            "venue": "Local",
+            "match_home": "Lens",
+            "match_away": "Auxerre",
+            "home_score": 5,
+            "away_score": 2,
+            "score": "5 - 2",
+            "result": "W",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5802917",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Strasbourg",
+            "venue": "Visitante",
+            "match_home": "Strasbourg",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5802921",
+            "date": "05/09/2026",
+            "date_iso": "2026-09-05",
+            "opponent": "Lorient",
+            "venue": "Local",
+            "match_home": "Lens",
+            "match_away": "Lorient",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5802931",
+            "date": "13/09/2026",
+            "date_iso": "2026-09-13",
+            "opponent": "Le Mans",
+            "venue": "Visitante",
+            "match_home": "Le Mans",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 9,
+            "corners_against": 3,
+            "total_corners": 12,
+            "shots_on_target": 6,
+            "total_shots": 16
+          },
+          {
+            "match_id": "5802941",
+            "date": "18/09/2026",
+            "date_iso": "2026-09-18",
+            "opponent": "Monaco",
+            "venue": "Visitante",
+            "match_home": "Monaco",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 8,
+            "corners_against": 2,
+            "total_corners": 10,
+            "shots_on_target": 4,
+            "total_shots": 12
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5802908",
+            "date": "22/08/2026",
+            "date_iso": "2026-08-22",
+            "opponent": "Toulouse",
+            "venue": "Visitante",
+            "match_home": "Toulouse",
+            "match_away": "Lyon",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5802913",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Le Havre",
+            "venue": "Local",
+            "match_home": "Lyon",
+            "match_away": "Le Havre",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5802922",
+            "date": "04/09/2026",
+            "date_iso": "2026-09-04",
+            "opponent": "Auxerre",
+            "venue": "Local",
+            "match_home": "Lyon",
+            "match_away": "Auxerre",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5802934",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "Paris FC",
+            "venue": "Visitante",
+            "match_home": "Paris FC",
+            "match_away": "Lyon",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 3,
+            "corners_against": 4,
+            "total_corners": 7,
+            "shots_on_target": 1,
+            "total_shots": 5
+          },
+          {
+            "match_id": "5802940",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "Rennes",
+            "venue": "Local",
+            "match_home": "Lyon",
+            "match_away": "Rennes",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "result": "W",
+            "competition": "Ligue 1 de Francia",
+            "corners_for": 3,
+            "corners_against": 8,
+            "total_corners": 11,
+            "shots_on_target": 9,
+            "total_shots": 15
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "17/05/2026",
+            "competition": "Ligue 1",
+            "tournament": "Ligue 1",
+            "match_home": "Lyon",
+            "match_away": "Lens",
+            "home_score": 0,
+            "away_score": 4,
+            "score": "0 - 4",
+            "winner": "Lens"
+          },
+          {
+            "date": "05/03/2026",
+            "competition": "Coupe de France",
+            "tournament": "Coupe de France",
+            "match_home": "Lyon",
+            "match_away": "Lens",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/08/2025",
+            "competition": "Ligue 1",
+            "tournament": "Ligue 1",
+            "match_home": "Lens",
+            "match_away": "Lyon",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Lyon"
+          },
+          {
+            "date": "04/05/2025",
+            "competition": "Ligue 1",
+            "tournament": "Ligue 1",
+            "match_home": "Lyon",
+            "match_away": "Lens",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Lens"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 7.0,
+          "corners_avg_gen": 6.2,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 3.33,
+          "corners_conceded_gen": 3.6,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 12.4
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.33,
+          "corners_avg_away": 3.5,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 5.33,
+          "corners_conceded_away": 4.5,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 10.8
+        },
+        "projected_corners": 9.3,
+        "summary": {
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Lens 2 victorias • 1 empates • Lyon 1 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
     {
       "id": "fotmob_francia_5802948",
       "match_id": "5802948",
@@ -2150,17 +2439,6 @@
         ],
         "head_to_head": [
           {
-            "date": "22/05/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Le Havre",
-            "match_away": "Lille",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/05/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -2228,10 +2506,10 @@
         "projected_corners": 9.2,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 1.8,
-          "text": "Lille 2 victorias • 2 empates • Le Havre 1 victorias"
+          "avg_goals": 2.2,
+          "text": "Lille 2 victorias • 1 empates • Le Havre 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2450,17 +2728,6 @@
         ],
         "head_to_head": [
           {
-            "date": "22/05/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Angers",
-            "match_away": "Brest",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "17/05/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -2528,10 +2795,10 @@
         "projected_corners": 8.6,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 1.6,
-          "text": "Brest 2 victorias • 2 empates • Angers 1 victorias"
+          "avg_goals": 2.0,
+          "text": "Brest 2 victorias • 1 empates • Angers 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2750,17 +3017,6 @@
         ],
         "head_to_head": [
           {
-            "date": "13/03/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Paris FC",
-            "match_away": "Lorient",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "05/04/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -2828,10 +3084,10 @@
         "projected_corners": 8.2,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Lorient 1 victorias • 2 empates • Paris FC 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Lorient 1 victorias • 1 empates • Paris FC 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3050,17 +3306,6 @@
         ],
         "head_to_head": [
           {
-            "date": "13/02/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Toulouse",
-            "match_away": "Monaco",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/04/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -3128,10 +3373,10 @@
         "projected_corners": 8.0,
         "summary": {
           "home_wins": 2,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 1.8,
-          "text": "Monaco 2 victorias • 3 empates • Toulouse 0 victorias"
+          "avg_goals": 2.2,
+          "text": "Monaco 2 victorias • 2 empates • Toulouse 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3350,17 +3595,6 @@
         ],
         "head_to_head": [
           {
-            "date": "13/02/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Le Mans",
-            "match_away": "Paris Saint-Germain",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "04/02/2025",
             "competition": "Coupe de France",
             "tournament": "Coupe de France",
@@ -3417,10 +3651,10 @@
         "projected_corners": 8.4,
         "summary": {
           "home_wins": 3,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 2.2,
-          "text": "Paris Saint-Germain 3 victorias • 1 empates • Le Mans 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Paris Saint-Germain 3 victorias • 0 empates • Le Mans 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3639,17 +3873,6 @@
         ],
         "head_to_head": [
           {
-            "date": "29/05/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Strasbourg",
-            "match_away": "Nice",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "22/04/2026",
             "competition": "Coupe de France",
             "tournament": "Coupe de France",
@@ -3717,10 +3940,10 @@
         "projected_corners": 7.5,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Nice 1 victorias • 3 empates • Strasbourg 1 victorias"
+          "avg_goals": 3.0,
+          "text": "Nice 1 victorias • 2 empates • Strasbourg 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3939,17 +4162,6 @@
         ],
         "head_to_head": [
           {
-            "date": "16/05/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Auxerre",
-            "match_away": "Rennes",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "22/02/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -4017,10 +4229,10 @@
         "projected_corners": 9.1,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.4,
-          "text": "Rennes 1 victorias • 2 empates • Auxerre 2 victorias"
+          "avg_goals": 3.0,
+          "text": "Rennes 1 victorias • 1 empates • Auxerre 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4239,17 +4451,6 @@
         ],
         "head_to_head": [
           {
-            "date": "30/01/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Marseille",
-            "match_away": "Troyes",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "16/04/2023",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -4317,10 +4518,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 3,
-          "avg_goals": 1.8,
-          "text": "Troyes 0 victorias • 2 empates • Marseille 3 victorias"
+          "avg_goals": 2.2,
+          "text": "Troyes 0 victorias • 1 empates • Marseille 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4537,19 +4738,7 @@
             "total_shots": 14
           }
         ],
-        "head_to_head": [
-          {
-            "date": "06/03/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Toulouse",
-            "match_away": "Le Mans",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 3.0,
           "corners_avg_away": 4.0,
@@ -4573,10 +4762,10 @@
         "projected_corners": 7.2,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
           "avg_goals": 0.0,
-          "text": "Le Mans 0 victorias • 1 empates • Toulouse 0 victorias"
+          "text": "Le Mans 0 victorias • 0 empates • Toulouse 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4795,17 +4984,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/03/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Paris Saint-Germain",
-            "match_away": "Strasbourg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "01/02/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -4873,10 +5051,10 @@
         "projected_corners": 7.6,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 3.6,
-          "text": "Strasbourg 1 victorias • 2 empates • Paris Saint-Germain 2 victorias"
+          "avg_goals": 4.5,
+          "text": "Strasbourg 1 victorias • 1 empates • Paris Saint-Germain 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5095,17 +5273,6 @@
         ],
         "head_to_head": [
           {
-            "date": "13/03/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Brest",
-            "match_away": "Lille",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "14/02/2026",
             "competition": "Ligue 1",
             "tournament": "Ligue 1",
@@ -5173,310 +5340,10 @@
         "projected_corners": 7.7,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
-          "away_wins": 1,
-          "avg_goals": 2.8,
-          "text": "Lille 1 victorias • 3 empates • Brest 1 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_francia_5802963",
-      "match_id": "5802963",
-      "sport": "football",
-      "league": "Ligue 1 de Francia",
-      "country": "Francia",
-      "country_code": "fr",
-      "league_flag": "🇫🇷",
-      "country_flag": "🇫🇷",
-      "home_team": "Troyes",
-      "away_team": "Lens",
-      "date": "Sáb 17 Oct, 12:45",
-      "date_iso": "2026-10-17",
-      "time": "12:45",
-      "timestamp": 1792262700,
-      "timezone": "America/Guatemala",
-      "round": "7",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5802909",
-            "date": "22/08/2026",
-            "date_iso": "2026-08-22",
-            "opponent": "Paris FC",
-            "venue": "Local",
-            "match_home": "Troyes",
-            "match_away": "Paris FC",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5802912",
-            "date": "29/08/2026",
-            "date_iso": "2026-08-29",
-            "opponent": "Lorient",
-            "venue": "Visitante",
-            "match_home": "Lorient",
-            "match_away": "Troyes",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5802927",
-            "date": "06/09/2026",
-            "date_iso": "2026-09-06",
-            "opponent": "Strasbourg",
-            "venue": "Local",
-            "match_home": "Troyes",
-            "match_away": "Strasbourg",
-            "home_score": 2,
-            "away_score": 6,
-            "score": "2 - 6",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5802932",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Lille",
-            "venue": "Visitante",
-            "match_home": "Lille",
-            "match_away": "Troyes",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 5,
-            "corners_against": 2,
-            "total_corners": 7,
-            "shots_on_target": 1,
-            "total_shots": 8
-          },
-          {
-            "match_id": "5802937",
-            "date": "19/09/2026",
-            "date_iso": "2026-09-19",
-            "opponent": "Angers",
-            "venue": "Visitante",
-            "match_home": "Angers",
-            "match_away": "Troyes",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 11,
-            "corners_against": 2,
-            "total_corners": 13,
-            "shots_on_target": 3,
-            "total_shots": 19
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5802917",
-            "date": "29/08/2026",
-            "date_iso": "2026-08-29",
-            "opponent": "Strasbourg",
-            "venue": "Visitante",
-            "match_home": "Strasbourg",
-            "match_away": "Lens",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5802921",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Lorient",
-            "venue": "Local",
-            "match_home": "Lens",
-            "match_away": "Lorient",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5802931",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Le Mans",
-            "venue": "Visitante",
-            "match_home": "Le Mans",
-            "match_away": "Lens",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 9,
-            "corners_against": 3,
-            "total_corners": 12,
-            "shots_on_target": 6,
-            "total_shots": 16
-          },
-          {
-            "match_id": "5802941",
-            "date": "18/09/2026",
-            "date_iso": "2026-09-18",
-            "opponent": "Monaco",
-            "venue": "Visitante",
-            "match_home": "Monaco",
-            "match_away": "Lens",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 8,
-            "corners_against": 2,
-            "total_corners": 10,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5802947",
-            "date": "09/10/2026",
-            "date_iso": "2026-10-09",
-            "opponent": "Lyon",
-            "venue": "Local",
-            "match_home": "Lens",
-            "match_away": "Lyon",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "Ligue 1 de Francia",
-            "corners_for": 7,
-            "corners_against": 4,
-            "total_corners": 11,
-            "shots_on_target": 7,
-            "total_shots": 15
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "20/02/2027",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Lens",
-            "match_away": "Troyes",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "04/02/2026",
-            "competition": "Coupe de France",
-            "tournament": "Coupe de France",
-            "match_home": "Troyes",
-            "match_away": "Lens",
-            "home_score": 2,
-            "away_score": 4,
-            "score": "2 - 4",
-            "winner": "Lens"
-          },
-          {
-            "date": "28/01/2023",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Troyes",
-            "match_away": "Lens",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "09/09/2022",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Lens",
-            "match_away": "Troyes",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Lens"
-          },
-          {
-            "date": "14/05/2022",
-            "competition": "Ligue 1",
-            "tournament": "Ligue 1",
-            "match_home": "Troyes",
-            "match_away": "Lens",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Lens"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 5.0,
-          "corners_avg_away": 6.67,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 3.4,
-          "shots_on_target_gen": 3.0,
-          "total_shots_gen": 12.2
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 7.0,
-          "corners_avg_gen": 6.6,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 3.33,
-          "corners_conceded_gen": 3.6,
-          "shots_on_target_gen": 4.8,
-          "total_shots_gen": 13.0
-        },
-        "projected_corners": 12.3,
-        "summary": {
-          "home_wins": 0,
           "draws": 2,
-          "away_wins": 3,
-          "avg_goals": 2.6,
-          "text": "Troyes 0 victorias • 2 empates • Lens 3 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.5,
+          "text": "Lille 1 victorias • 2 empates • Brest 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

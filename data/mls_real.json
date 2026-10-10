@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-09T22:07:07.251462",
+  "last_updated": "2026-10-09T22:34:37.553962",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -446,11 +446,11 @@
         "score": "3 - 0",
         "result": "L",
         "competition": "MLS",
-        "corners_for": 2,
+        "corners_for": 4,
         "corners_against": 5,
-        "total_corners": 7,
-        "shots_on_target": 1,
-        "total_shots": 9
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "5071382",
@@ -2960,13 +2960,13 @@
     },
     "Chicago Fire FC": {
       "corners_avg_home": 4.0,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.0,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 4.4,
       "corners_conceded_home": 5.33,
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 5.0,
-      "shots_on_target_gen": 5.0,
-      "total_shots_gen": 14.6
+      "shots_on_target_gen": 5.4,
+      "total_shots_gen": 14.8
     },
     "Colorado Rapids": {
       "corners_avg_home": 4.5,
@@ -3434,59 +3434,15 @@
         ],
         "head_to_head": [
           {
-            "date": "16/07/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-07-16",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "CF Montréal",
             "match_away": "Toronto FC",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
-          },
-          {
-            "date": "30/08/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Toronto FC",
-            "match_away": "CF Montréal",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "17/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "CF Montréal",
-            "match_away": "Toronto FC",
-            "home_score": 1,
-            "away_score": 6,
-            "score": "1 - 6",
-            "winner": "Toronto FC"
-          },
-          {
-            "date": "30/04/2025",
-            "competition": "Canadian Championship",
-            "tournament": "Canadian Championship",
-            "match_home": "Toronto FC",
-            "match_away": "CF Montréal",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "20/07/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "CF Montréal",
-            "match_away": "Toronto FC",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Toronto FC"
           }
         ],
         "home_corner_stats": {
@@ -3511,11 +3467,11 @@
         },
         "projected_corners": 8.8,
         "summary": {
-          "home_wins": 2,
-          "draws": 3,
+          "home_wins": 0,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 2.8,
-          "text": "Toronto FC 2 victorias • 3 empates • CF Montréal 0 victorias"
+          "avg_goals": 0.0,
+          "text": "Toronto FC 0 victorias • 1 empates • CF Montréal 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3590,11 +3546,11 @@
             "score": "3 - 0",
             "result": "L",
             "competition": "MLS",
-            "corners_for": 2,
+            "corners_for": 4,
             "corners_against": 5,
-            "total_corners": 7,
-            "shots_on_target": 1,
-            "total_shots": 9
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "5071382",
@@ -3734,70 +3690,26 @@
         ],
         "head_to_head": [
           {
-            "date": "25/07/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-07-25",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "New York City FC",
             "match_away": "Chicago Fire FC",
             "home_score": 3,
             "away_score": 1,
             "score": "3 - 1",
             "winner": "New York City FC"
-          },
-          {
-            "date": "14/09/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Chicago Fire FC",
-            "match_away": "New York City FC",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "New York City FC"
-          },
-          {
-            "date": "25/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "New York City FC",
-            "match_away": "Chicago Fire FC",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "New York City FC"
-          },
-          {
-            "date": "24/08/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "New York City FC",
-            "match_away": "Chicago Fire FC",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "14/07/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Chicago Fire FC",
-            "match_away": "New York City FC",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.0,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 5.0,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 14.6
+          "shots_on_target_gen": 5.4,
+          "total_shots_gen": 14.8
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -3809,13 +3721,13 @@
           "shots_on_target_gen": 3.6,
           "total_shots_gen": 11.8
         },
-        "projected_corners": 8.1,
+        "projected_corners": 8.2,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
-          "away_wins": 3,
-          "avg_goals": 3.2,
-          "text": "Chicago Fire FC 0 victorias • 2 empates • New York City FC 3 victorias"
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 4.0,
+          "text": "Chicago Fire FC 0 victorias • 0 empates • New York City FC 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4034,58 +3946,14 @@
         ],
         "head_to_head": [
           {
-            "date": "21/02/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-02-21",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "FC Cincinnati",
             "match_away": "Atlanta United",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
-            "winner": "FC Cincinnati"
-          },
-          {
-            "date": "25/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Atlanta United",
-            "match_away": "FC Cincinnati",
-            "home_score": 4,
-            "away_score": 2,
-            "score": "4 - 2",
-            "winner": "Atlanta United"
-          },
-          {
-            "date": "22/03/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "FC Cincinnati",
-            "match_away": "Atlanta United",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "15/05/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "FC Cincinnati",
-            "match_away": "Atlanta United",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "FC Cincinnati"
-          },
-          {
-            "date": "20/04/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Atlanta United",
-            "match_away": "FC Cincinnati",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
             "winner": "FC Cincinnati"
           }
         ],
@@ -4111,11 +3979,11 @@
         },
         "projected_corners": 9.5,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 3.2,
-          "text": "Atlanta United 1 victorias • 1 empates • FC Cincinnati 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 2.0,
+          "text": "Atlanta United 0 victorias • 0 empates • FC Cincinnati 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4332,19 +4200,7 @@
             "total_shots": 13
           }
         ],
-        "head_to_head": [
-          {
-            "date": "22/07/2023",
-            "competition": "Leagues Cup South Grp. 4",
-            "tournament": "Leagues Cup South Grp. 4",
-            "match_home": "FC Dallas",
-            "match_away": "Charlotte FC",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 4.5,
           "corners_avg_away": 3.67,
@@ -4368,10 +4224,10 @@
         "projected_corners": 8.7,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Charlotte FC 0 victorias • 1 empates • FC Dallas 0 victorias"
+          "avg_goals": 0.0,
+          "text": "Charlotte FC 0 victorias • 0 empates • FC Dallas 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4590,58 +4446,14 @@
         ],
         "head_to_head": [
           {
-            "date": "07/03/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-03-07",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "DC United",
             "match_away": "Inter Miami CF",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
-            "winner": "Inter Miami CF"
-          },
-          {
-            "date": "20/09/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Inter Miami CF",
-            "match_away": "DC United",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Inter Miami CF"
-          },
-          {
-            "date": "23/08/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "DC United",
-            "match_away": "Inter Miami CF",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "18/05/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Inter Miami CF",
-            "match_away": "DC United",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Inter Miami CF"
-          },
-          {
-            "date": "16/03/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "DC United",
-            "match_away": "Inter Miami CF",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
             "winner": "Inter Miami CF"
           }
         ],
@@ -4667,11 +4479,11 @@
         },
         "projected_corners": 12.1,
         "summary": {
-          "home_wins": 4,
-          "draws": 1,
+          "home_wins": 1,
+          "draws": 0,
           "away_wins": 0,
           "avg_goals": 3.0,
-          "text": "Inter Miami CF 4 victorias • 1 empates • DC United 0 victorias"
+          "text": "Inter Miami CF 1 victorias • 0 empates • DC United 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4888,63 +4700,7 @@
             "total_shots": 21
           }
         ],
-        "head_to_head": [
-          {
-            "date": "07/07/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Seattle Sounders FC",
-            "match_away": "New England Revolution",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Seattle Sounders FC"
-          },
-          {
-            "date": "10/08/2019",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Seattle Sounders FC",
-            "match_away": "New England Revolution",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "winner": "Empate"
-          },
-          {
-            "date": "07/07/2018",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "New England Revolution",
-            "match_away": "Seattle Sounders FC",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "30/04/2017",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Seattle Sounders FC",
-            "match_away": "New England Revolution",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "winner": "Empate"
-          },
-          {
-            "date": "28/05/2016",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "New England Revolution",
-            "match_away": "Seattle Sounders FC",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "New England Revolution"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 10.0,
           "corners_avg_away": 5.75,
@@ -4967,11 +4723,11 @@
         },
         "projected_corners": 14.1,
         "summary": {
-          "home_wins": 1,
-          "draws": 3,
-          "away_wins": 1,
-          "avg_goals": 3.4,
-          "text": "New England Revolution 1 victorias • 3 empates • Seattle Sounders FC 1 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "New England Revolution 0 victorias • 0 empates • Seattle Sounders FC 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5190,59 +4946,15 @@
         ],
         "head_to_head": [
           {
-            "date": "16/09/2026",
-            "competition": "US Open Cup",
-            "tournament": "US Open Cup",
-            "match_home": "Columbus Crew",
-            "match_away": "Orlando City",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Columbus Crew"
-          },
-          {
-            "date": "12/04/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-04-12",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "Columbus Crew",
             "match_away": "Orlando City",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
-          },
-          {
-            "date": "04/10/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Orlando City",
-            "match_away": "Columbus Crew",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "26/07/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Columbus Crew",
-            "match_away": "Orlando City",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Orlando City"
-          },
-          {
-            "date": "21/09/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Columbus Crew",
-            "match_away": "Orlando City",
-            "home_score": 4,
-            "away_score": 3,
-            "score": "4 - 3",
-            "winner": "Columbus Crew"
           }
         ],
         "home_corner_stats": {
@@ -5267,11 +4979,11 @@
         },
         "projected_corners": 8.6,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 3.6,
-          "text": "Orlando City 1 victorias • 2 empates • Columbus Crew 2 victorias"
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 2.0,
+          "text": "Orlando City 0 victorias • 1 empates • Columbus Crew 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5488,63 +5200,7 @@
             "total_shots": 9
           }
         ],
-        "head_to_head": [
-          {
-            "date": "27/04/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Philadelphia Union",
-            "match_away": "Real Salt Lake",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Real Salt Lake"
-          },
-          {
-            "date": "14/07/2019",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Real Salt Lake",
-            "match_away": "Philadelphia Union",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Real Salt Lake"
-          },
-          {
-            "date": "19/05/2018",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Philadelphia Union",
-            "match_away": "Real Salt Lake",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Philadelphia Union"
-          },
-          {
-            "date": "28/05/2017",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Real Salt Lake",
-            "match_away": "Philadelphia Union",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Real Salt Lake"
-          },
-          {
-            "date": "31/07/2016",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Philadelphia Union",
-            "match_away": "Real Salt Lake",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Real Salt Lake"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 5.67,
           "corners_avg_away": 4.0,
@@ -5567,11 +5223,11 @@
         },
         "projected_corners": 9.9,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 3.2,
-          "text": "Philadelphia Union 1 victorias • 0 empates • Real Salt Lake 4 victorias"
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Philadelphia Union 0 victorias • 0 empates • Real Salt Lake 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6032,63 +5688,7 @@
             "total_shots": 23
           }
         ],
-        "head_to_head": [
-          {
-            "date": "02/10/2025",
-            "competition": "US Open Cup",
-            "tournament": "US Open Cup",
-            "match_home": "Austin FC",
-            "match_away": "Nashville SC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Nashville SC"
-          },
-          {
-            "date": "25/08/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Nashville SC",
-            "match_away": "Austin FC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Austin FC"
-          },
-          {
-            "date": "18/09/2022",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Austin FC",
-            "match_away": "Nashville SC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "04/09/2022",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Nashville SC",
-            "match_away": "Austin FC",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Nashville SC"
-          },
-          {
-            "date": "24/05/2021",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Nashville SC",
-            "match_away": "Austin FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Nashville SC"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 4.67,
           "corners_avg_away": 5.0,
@@ -6111,11 +5711,11 @@
         },
         "projected_corners": 9.3,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 2.2,
-          "text": "Austin FC 1 victorias • 1 empates • Nashville SC 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Austin FC 0 victorias • 0 empates • Nashville SC 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6332,63 +5932,7 @@
             "total_shots": 21
           }
         ],
-        "head_to_head": [
-          {
-            "date": "25/10/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Houston Dynamo FC",
-            "match_away": "Minnesota United",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "26/06/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Minnesota United",
-            "match_away": "Houston Dynamo FC",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Minnesota United"
-          },
-          {
-            "date": "15/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Houston Dynamo FC",
-            "match_away": "Minnesota United",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Houston Dynamo FC"
-          },
-          {
-            "date": "14/07/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Houston Dynamo FC",
-            "match_away": "Minnesota United",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "14/04/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Minnesota United",
-            "match_away": "Houston Dynamo FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Houston Dynamo FC"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 5.0,
@@ -6411,11 +5955,11 @@
         },
         "projected_corners": 9.4,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Minnesota United 1 victorias • 2 empates • Houston Dynamo FC 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Minnesota United 0 victorias • 0 empates • Houston Dynamo FC 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6634,59 +6178,15 @@
         ],
         "head_to_head": [
           {
-            "date": "10/05/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-05-10",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "Portland Timbers",
             "match_away": "Sporting Kansas City",
             "home_score": 6,
             "away_score": 0,
             "score": "6 - 0",
             "winner": "Portland Timbers"
-          },
-          {
-            "date": "11/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Portland Timbers",
-            "match_away": "Sporting Kansas City",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Portland Timbers"
-          },
-          {
-            "date": "13/04/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Sporting Kansas City",
-            "match_away": "Portland Timbers",
-            "home_score": 2,
-            "away_score": 4,
-            "score": "2 - 4",
-            "winner": "Portland Timbers"
-          },
-          {
-            "date": "26/05/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Portland Timbers",
-            "match_away": "Sporting Kansas City",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Portland Timbers"
-          },
-          {
-            "date": "07/04/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Sporting Kansas City",
-            "match_away": "Portland Timbers",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -6712,10 +6212,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
-          "away_wins": 4,
-          "avg_goals": 4.4,
-          "text": "Sporting Kansas City 0 victorias • 1 empates • Portland Timbers 4 victorias"
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 6.0,
+          "text": "Sporting Kansas City 0 victorias • 0 empates • Portland Timbers 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6932,63 +6432,7 @@
             "total_shots": 13
           }
         ],
-        "head_to_head": [
-          {
-            "date": "29/10/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "San Jose Earthquakes",
-            "match_away": "Colorado Rapids",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "21/05/2026",
-            "competition": "US Open Cup",
-            "tournament": "US Open Cup",
-            "match_home": "Colorado Rapids",
-            "match_away": "San Jose Earthquakes",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Colorado Rapids"
-          },
-          {
-            "date": "11/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Colorado Rapids",
-            "match_away": "San Jose Earthquakes",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "San Jose Earthquakes"
-          },
-          {
-            "date": "16/03/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "San Jose Earthquakes",
-            "match_away": "Colorado Rapids",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Colorado Rapids"
-          },
-          {
-            "date": "12/05/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Colorado Rapids",
-            "match_away": "San Jose Earthquakes",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "San Jose Earthquakes"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 4.5,
           "corners_avg_away": 4.67,
@@ -7011,11 +6455,11 @@
         },
         "projected_corners": 10.1,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.4,
-          "text": "Colorado Rapids 2 victorias • 1 empates • San Jose Earthquakes 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Colorado Rapids 0 victorias • 0 empates • San Jose Earthquakes 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7234,59 +6678,15 @@
         ],
         "head_to_head": [
           {
-            "date": "01/08/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-08-01",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "Vancouver Whitecaps",
             "match_away": "Los Angeles FC",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
-          },
-          {
-            "date": "23/11/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Vancouver Whitecaps",
-            "match_away": "Los Angeles FC",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "30/06/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Los Angeles FC",
-            "match_away": "Vancouver Whitecaps",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Vancouver Whitecaps"
-          },
-          {
-            "date": "11/05/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Vancouver Whitecaps",
-            "match_away": "Los Angeles FC",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "09/11/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "Los Angeles FC",
-            "match_away": "Vancouver Whitecaps",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Los Angeles FC"
           }
         ],
         "home_corner_stats": {
@@ -7311,11 +6711,11 @@
         },
         "projected_corners": 10.2,
         "summary": {
-          "home_wins": 1,
-          "draws": 3,
-          "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Los Angeles FC 1 victorias • 3 empates • Vancouver Whitecaps 1 victorias"
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 2.0,
+          "text": "Los Angeles FC 0 victorias • 1 empates • Vancouver Whitecaps 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7534,59 +6934,15 @@
         ],
         "head_to_head": [
           {
-            "date": "23/07/2026",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
+            "date": "2026-07-23",
+            "competition": "MLS",
+            "tournament": "MLS",
             "match_home": "LA Galaxy",
             "match_away": "St. Louis City",
             "home_score": 1,
             "away_score": 3,
             "score": "1 - 3",
             "winner": "St. Louis City"
-          },
-          {
-            "date": "14/06/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "St. Louis City",
-            "match_away": "LA Galaxy",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "winner": "Empate"
-          },
-          {
-            "date": "09/03/2025",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "LA Galaxy",
-            "match_away": "St. Louis City",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "winner": "St. Louis City"
-          },
-          {
-            "date": "01/09/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "St. Louis City",
-            "match_away": "LA Galaxy",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "St. Louis City"
-          },
-          {
-            "date": "17/03/2024",
-            "competition": "Major League Soccer",
-            "tournament": "Major League Soccer",
-            "match_home": "LA Galaxy",
-            "match_away": "St. Louis City",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -7611,11 +6967,11 @@
         },
         "projected_corners": 11.7,
         "summary": {
-          "home_wins": 3,
-          "draws": 2,
+          "home_wins": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 4.4,
-          "text": "St. Louis City 3 victorias • 2 empates • LA Galaxy 0 victorias"
+          "avg_goals": 4.0,
+          "text": "St. Louis City 1 victorias • 0 empates • LA Galaxy 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

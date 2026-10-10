@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-10-09T22:07:17.530585",
+  "last_updated": "2026-10-09T22:35:53.155884",
   "total_fixtures": 15,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -737,11 +737,11 @@
         "score": "1 - 2",
         "result": "L",
         "competition": "Liga 1 de Perú",
-        "corners_for": 10,
+        "corners_for": 5,
         "corners_against": 4,
-        "total_corners": 14,
-        "shots_on_target": 6,
-        "total_shots": 21
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000017244",
@@ -978,25 +978,6 @@
     ],
     "Deportivo Garcilaso": [
       {
-        "match_id": "1000017201",
-        "date": "23/08/2026",
-        "date_iso": "2026-08-23",
-        "opponent": "Cusco FC",
-        "venue": "Local",
-        "match_home": "Deportivo Garcilaso",
-        "match_away": "Cusco FC",
-        "home_score": 4,
-        "away_score": 1,
-        "score": "4 - 1",
-        "result": "W",
-        "competition": "Liga 1 de Perú",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
-      },
-      {
         "match_id": "1000017214",
         "date": "30/08/2026",
         "date_iso": "2026-08-30",
@@ -1047,11 +1028,11 @@
         "score": "1 - 0",
         "result": "L",
         "competition": "Liga 1 de Perú",
-        "corners_for": 6,
-        "corners_against": 7,
-        "total_corners": 13,
-        "shots_on_target": 7,
-        "total_shots": 13
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000017241",
@@ -1071,6 +1052,25 @@
         "total_corners": 8,
         "shots_on_target": 12,
         "total_shots": 21
+      },
+      {
+        "match_id": "1000017251",
+        "date": "10/10/2026",
+        "date_iso": "2026-10-10",
+        "opponent": "Sport Huancayo",
+        "venue": "Local",
+        "match_home": "Deportivo Garcilaso",
+        "match_away": "Sport Huancayo",
+        "home_score": 0,
+        "away_score": 1,
+        "score": "0 - 1",
+        "result": "L",
+        "competition": "Liga 1 de Perú",
+        "corners_for": 6,
+        "corners_against": 5,
+        "total_corners": 11,
+        "shots_on_target": 2,
+        "total_shots": 19
       }
     ],
     "FBC Melgar": [
@@ -1463,25 +1463,6 @@
     ],
     "Sport Huancayo": [
       {
-        "match_id": "1000017208",
-        "date": "22/08/2026",
-        "date_iso": "2026-08-22",
-        "opponent": "Club Deportivo Moquegua",
-        "venue": "Local",
-        "match_home": "Sport Huancayo",
-        "match_away": "Club Deportivo Moquegua",
-        "home_score": 0,
-        "away_score": 2,
-        "score": "0 - 2",
-        "result": "L",
-        "competition": "Liga 1 de Perú",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 12
-      },
-      {
         "match_id": "1000017215",
         "date": "30/08/2026",
         "date_iso": "2026-08-30",
@@ -1556,6 +1537,25 @@
         "total_corners": 8,
         "shots_on_target": 6,
         "total_shots": 22
+      },
+      {
+        "match_id": "1000017251",
+        "date": "10/10/2026",
+        "date_iso": "2026-10-10",
+        "opponent": "Deportivo Garcilaso",
+        "venue": "Visitante",
+        "match_home": "Deportivo Garcilaso",
+        "match_away": "Sport Huancayo",
+        "home_score": 0,
+        "away_score": 1,
+        "score": "0 - 1",
+        "result": "W",
+        "competition": "Liga 1 de Perú",
+        "corners_for": 5,
+        "corners_against": 6,
+        "total_corners": 11,
+        "shots_on_target": 6,
+        "total_shots": 13
       }
     ],
     "Sporting Cristal": [
@@ -1825,14 +1825,14 @@
       "total_shots_gen": 15.8
     },
     "Club Deportivo Moquegua": {
-      "corners_avg_home": 7.0,
+      "corners_avg_home": 5.33,
       "corners_avg_away": 2.0,
-      "corners_avg_gen": 5.0,
+      "corners_avg_gen": 4.0,
       "corners_conceded_home": 5.67,
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 3.8,
-      "total_shots_gen": 12.0
+      "shots_on_target_gen": 3.4,
+      "total_shots_gen": 10.2
     },
     "Comerciantes Unidos": {
       "corners_avg_home": 3.0,
@@ -1855,14 +1855,14 @@
       "total_shots_gen": 11.0
     },
     "Deportivo Garcilaso": {
-      "corners_avg_home": 4.67,
-      "corners_avg_away": 5.0,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 4.0,
-      "corners_conceded_away": 6.0,
-      "corners_conceded_gen": 4.8,
-      "shots_on_target_gen": 6.0,
-      "total_shots_gen": 13.6
+      "corners_avg_home": 5.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.6,
+      "corners_conceded_home": 4.33,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 4.8,
+      "total_shots_gen": 14.4
     },
     "FBC Melgar": {
       "corners_avg_home": 7.33,
@@ -1905,14 +1905,14 @@
       "total_shots_gen": 11.4
     },
     "Sport Huancayo": {
-      "corners_avg_home": 5.67,
-      "corners_avg_away": 6.0,
+      "corners_avg_home": 6.0,
+      "corners_avg_away": 5.67,
       "corners_avg_gen": 5.8,
-      "corners_conceded_home": 3.0,
-      "corners_conceded_away": 3.0,
-      "corners_conceded_gen": 3.0,
-      "shots_on_target_gen": 5.0,
-      "total_shots_gen": 16.6
+      "corners_conceded_home": 2.5,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 3.4,
+      "shots_on_target_gen": 5.4,
+      "total_shots_gen": 16.8
     },
     "Sporting Cristal": {
       "corners_avg_home": 7.0,
@@ -1936,306 +1936,6 @@
     }
   },
   "upcoming_matches": [
-    {
-      "id": "fotmob_peru_1000017251",
-      "match_id": "1000017251",
-      "sport": "football",
-      "league": "Liga 1 de Perú",
-      "country": "Perú",
-      "country_code": "pe",
-      "league_flag": "🇵🇪",
-      "country_flag": "🇵🇪",
-      "home_team": "Deportivo Garcilaso",
-      "away_team": "Sport Huancayo",
-      "date": "Vie 9 Oct, 19:00",
-      "date_iso": "2026-10-09",
-      "time": "19:00",
-      "timestamp": 1791594000,
-      "timezone": "America/Guatemala",
-      "round": "Clausura - Round 11",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "1000017201",
-            "date": "23/08/2026",
-            "date_iso": "2026-08-23",
-            "opponent": "Cusco FC",
-            "venue": "Local",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Cusco FC",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000017214",
-            "date": "30/08/2026",
-            "date_iso": "2026-08-30",
-            "opponent": "Alianza Lima",
-            "venue": "Visitante",
-            "match_home": "Alianza Lima",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "1000017223",
-            "date": "06/09/2026",
-            "date_iso": "2026-09-06",
-            "opponent": "Atlético Grau",
-            "venue": "Local",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Atlético Grau",
-            "home_score": 4,
-            "away_score": 2,
-            "score": "4 - 2",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000017232",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Sport Boys",
-            "venue": "Visitante",
-            "match_home": "Sport Boys",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 7,
-            "total_shots": 13
-          },
-          {
-            "match_id": "1000017241",
-            "date": "19/09/2026",
-            "date_iso": "2026-09-19",
-            "opponent": "Universitario de Deportes",
-            "venue": "Local",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Universitario de Deportes",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 4,
-            "corners_against": 4,
-            "total_corners": 8,
-            "shots_on_target": 12,
-            "total_shots": 21
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "1000017208",
-            "date": "22/08/2026",
-            "date_iso": "2026-08-22",
-            "opponent": "Club Deportivo Moquegua",
-            "venue": "Local",
-            "match_home": "Sport Huancayo",
-            "match_away": "Club Deportivo Moquegua",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000017215",
-            "date": "30/08/2026",
-            "date_iso": "2026-08-30",
-            "opponent": "Asociación Deportiva Tarma",
-            "venue": "Visitante",
-            "match_home": "Asociación Deportiva Tarma",
-            "match_away": "Sport Huancayo",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "1000017225",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Sport Boys",
-            "venue": "Local",
-            "match_home": "Sport Huancayo",
-            "match_away": "Sport Boys",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000017233",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Comerciantes Unidos",
-            "venue": "Visitante",
-            "match_home": "Comerciantes Unidos",
-            "match_away": "Sport Huancayo",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 8,
-            "corners_against": 1,
-            "total_corners": 9,
-            "shots_on_target": 8,
-            "total_shots": 27
-          },
-          {
-            "match_id": "1000017239",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "CD UT Cajamarca",
-            "venue": "Local",
-            "match_home": "Sport Huancayo",
-            "match_away": "CD UT Cajamarca",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 7,
-            "corners_against": 1,
-            "total_corners": 8,
-            "shots_on_target": 6,
-            "total_shots": 22
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "18/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
-            "match_home": "Sport Huancayo",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Sport Huancayo"
-          },
-          {
-            "date": "23/08/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Sport Huancayo",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "05/04/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Sport Huancayo",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "winner": "Deportivo Garcilaso"
-          },
-          {
-            "date": "19/07/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sport Huancayo",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Sport Huancayo"
-          },
-          {
-            "date": "05/02/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Sport Huancayo",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Sport Huancayo"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 4.67,
-          "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 6.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 6.0,
-          "total_shots_gen": 13.6
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 5.67,
-          "corners_avg_away": 6.0,
-          "corners_avg_gen": 5.8,
-          "corners_conceded_home": 3.0,
-          "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 16.6
-        },
-        "projected_corners": 10.6,
-        "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 2.2,
-          "text": "Deportivo Garcilaso 1 victorias • 1 empates • Sport Huancayo 3 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
     {
       "id": "fotmob_peru_1000017253",
       "match_id": "1000017253",
@@ -2450,9 +2150,9 @@
         ],
         "head_to_head": [
           {
-            "date": "18/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-18",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "FC Cajamarca",
             "match_away": "Asociación Deportiva Tarma",
             "home_score": 2,
@@ -2706,37 +2406,15 @@
         ],
         "head_to_head": [
           {
-            "date": "18/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-18",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "ADC Juan Pablo II",
             "match_away": "Comerciantes Unidos",
             "home_score": 2,
             "away_score": 2,
             "score": "2 - 2",
             "winner": "Empate"
-          },
-          {
-            "date": "24/10/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "ADC Juan Pablo II",
-            "match_away": "Comerciantes Unidos",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Comerciantes Unidos"
-          },
-          {
-            "date": "22/06/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Comerciantes Unidos",
-            "match_away": "ADC Juan Pablo II",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Comerciantes Unidos"
           }
         ],
         "home_corner_stats": {
@@ -2761,11 +2439,11 @@
         },
         "projected_corners": 8.0,
         "summary": {
-          "home_wins": 2,
+          "home_wins": 0,
           "draws": 1,
           "away_wins": 0,
-          "avg_goals": 2.7,
-          "text": "Comerciantes Unidos 2 victorias • 1 empates • ADC Juan Pablo II 0 victorias"
+          "avg_goals": 4.0,
+          "text": "Comerciantes Unidos 0 victorias • 1 empates • ADC Juan Pablo II 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2984,59 +2662,15 @@
         ],
         "head_to_head": [
           {
-            "date": "19/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-19",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "FBC Melgar",
             "match_away": "Universitario de Deportes",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
             "winner": "FBC Melgar"
-          },
-          {
-            "date": "14/09/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "FBC Melgar",
-            "match_away": "Universitario de Deportes",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Universitario de Deportes"
-          },
-          {
-            "date": "14/04/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Universitario de Deportes",
-            "match_away": "FBC Melgar",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Universitario de Deportes"
-          },
-          {
-            "date": "01/08/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "FBC Melgar",
-            "match_away": "Universitario de Deportes",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "FBC Melgar"
-          },
-          {
-            "date": "18/02/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Universitario de Deportes",
-            "match_away": "FBC Melgar",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Universitario de Deportes"
           }
         ],
         "home_corner_stats": {
@@ -3061,11 +2695,11 @@
         },
         "projected_corners": 9.9,
         "summary": {
-          "home_wins": 3,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "Universitario de Deportes 3 victorias • 0 empates • FBC Melgar 2 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Universitario de Deportes 0 victorias • 0 empates • FBC Melgar 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3284,58 +2918,14 @@
         ],
         "head_to_head": [
           {
-            "date": "19/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-19",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Sporting Cristal",
             "match_away": "CD UT Cajamarca",
             "home_score": 3,
             "away_score": 2,
             "score": "3 - 2",
-            "winner": "Sporting Cristal"
-          },
-          {
-            "date": "23/08/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sporting Cristal",
-            "match_away": "CD UT Cajamarca",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "06/04/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "CD UT Cajamarca",
-            "match_away": "Sporting Cristal",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "CD UT Cajamarca"
-          },
-          {
-            "date": "25/08/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sporting Cristal",
-            "match_away": "CD UT Cajamarca",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Sporting Cristal"
-          },
-          {
-            "date": "31/03/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "CD UT Cajamarca",
-            "match_away": "Sporting Cristal",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
             "winner": "Sporting Cristal"
           }
         ],
@@ -3361,11 +2951,11 @@
         },
         "projected_corners": 8.6,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 4.2,
-          "text": "CD UT Cajamarca 1 victorias • 1 empates • Sporting Cristal 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 5.0,
+          "text": "CD UT Cajamarca 0 victorias • 0 empates • Sporting Cristal 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3584,59 +3174,15 @@
         ],
         "head_to_head": [
           {
-            "date": "19/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-19",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Alianza Atlético",
             "match_away": "Sport Boys",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
             "winner": "Sport Boys"
-          },
-          {
-            "date": "16/11/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sport Boys",
-            "match_away": "Alianza Atlético",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Alianza Atlético"
-          },
-          {
-            "date": "12/07/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Alianza Atlético",
-            "match_away": "Sport Boys",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Alianza Atlético"
-          },
-          {
-            "date": "24/08/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Alianza Atlético",
-            "match_away": "Sport Boys",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Alianza Atlético"
-          },
-          {
-            "date": "31/03/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Sport Boys",
-            "match_away": "Alianza Atlético",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -3662,10 +3208,10 @@
         "projected_corners": 9.3,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
+          "draws": 0,
+          "away_wins": 0,
           "avg_goals": 1.0,
-          "text": "Sport Boys 1 victorias • 1 empates • Alianza Atlético 3 victorias"
+          "text": "Sport Boys 1 victorias • 0 empates • Alianza Atlético 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3884,59 +3430,15 @@
         ],
         "head_to_head": [
           {
-            "date": "19/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-19",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Alianza Lima",
             "match_away": "Cusco FC",
             "home_score": 8,
             "away_score": 0,
             "score": "8 - 0",
             "winner": "Alianza Lima"
-          },
-          {
-            "date": "19/07/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Cusco FC",
-            "match_away": "Alianza Lima",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Cusco FC"
-          },
-          {
-            "date": "09/02/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Alianza Lima",
-            "match_away": "Cusco FC",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Alianza Lima"
-          },
-          {
-            "date": "03/11/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Alianza Lima",
-            "match_away": "Cusco FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Cusco FC"
-          },
-          {
-            "date": "24/05/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Cusco FC",
-            "match_away": "Alianza Lima",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Cusco FC"
           }
         ],
         "home_corner_stats": {
@@ -3961,11 +3463,11 @@
         },
         "projected_corners": 11.1,
         "summary": {
-          "home_wins": 3,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 2,
-          "avg_goals": 3.8,
-          "text": "Cusco FC 3 victorias • 0 empates • Alianza Lima 2 victorias"
+          "away_wins": 1,
+          "avg_goals": 8.0,
+          "text": "Cusco FC 0 victorias • 0 empates • Alianza Lima 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3989,25 +3491,6 @@
       "round": "Clausura - Round 12",
       "h2h": {
         "home_last_5": [
-          {
-            "match_id": "1000017208",
-            "date": "22/08/2026",
-            "date_iso": "2026-08-22",
-            "opponent": "Club Deportivo Moquegua",
-            "venue": "Local",
-            "match_home": "Sport Huancayo",
-            "match_away": "Club Deportivo Moquegua",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
           {
             "match_id": "1000017215",
             "date": "30/08/2026",
@@ -4083,6 +3566,25 @@
             "total_corners": 8,
             "shots_on_target": 6,
             "total_shots": 22
+          },
+          {
+            "match_id": "1000017251",
+            "date": "10/10/2026",
+            "date_iso": "2026-10-10",
+            "opponent": "Deportivo Garcilaso",
+            "venue": "Visitante",
+            "match_home": "Deportivo Garcilaso",
+            "match_away": "Sport Huancayo",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "W",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 5,
+            "corners_against": 6,
+            "total_corners": 11,
+            "shots_on_target": 6,
+            "total_shots": 13
           }
         ],
         "away_last_5": [
@@ -4184,70 +3686,26 @@
         ],
         "head_to_head": [
           {
-            "date": "26/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-26",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Cusco FC",
             "match_away": "Sport Huancayo",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Cusco FC"
-          },
-          {
-            "date": "23/11/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sport Huancayo",
-            "match_away": "Cusco FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Cusco FC"
-          },
-          {
-            "date": "13/07/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Cusco FC",
-            "match_away": "Sport Huancayo",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Cusco FC"
-          },
-          {
-            "date": "25/07/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Cusco FC",
-            "match_away": "Sport Huancayo",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Cusco FC"
-          },
-          {
-            "date": "11/02/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Sport Huancayo",
-            "match_away": "Cusco FC",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Sport Huancayo"
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 5.67,
-          "corners_avg_away": 6.0,
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 5.67,
           "corners_avg_gen": 5.8,
-          "corners_conceded_home": 3.0,
-          "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 16.6
+          "corners_conceded_home": 2.5,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 3.4,
+          "shots_on_target_gen": 5.4,
+          "total_shots_gen": 16.8
         },
         "away_corner_stats": {
           "corners_avg_home": 7.0,
@@ -4259,13 +3717,13 @@
           "shots_on_target_gen": 3.0,
           "total_shots_gen": 11.0
         },
-        "projected_corners": 10.1,
+        "projected_corners": 10.2,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 2.8,
-          "text": "Sport Huancayo 1 victorias • 0 empates • Cusco FC 4 victorias"
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Sport Huancayo 0 victorias • 0 empates • Cusco FC 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4484,59 +3942,15 @@
         ],
         "head_to_head": [
           {
-            "date": "27/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-27",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Asociación Deportiva Tarma",
             "match_away": "Los Chankas",
             "home_score": 4,
             "away_score": 0,
             "score": "4 - 0",
             "winner": "Asociación Deportiva Tarma"
-          },
-          {
-            "date": "10/11/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Asociación Deportiva Tarma",
-            "match_away": "Los Chankas",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Asociación Deportiva Tarma"
-          },
-          {
-            "date": "04/07/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Los Chankas",
-            "match_away": "Asociación Deportiva Tarma",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "27/07/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Asociación Deportiva Tarma",
-            "match_away": "Los Chankas",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Asociación Deportiva Tarma"
-          },
-          {
-            "date": "11/02/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Los Chankas",
-            "match_away": "Asociación Deportiva Tarma",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Los Chankas"
           }
         ],
         "home_corner_stats": {
@@ -4561,11 +3975,11 @@
         },
         "projected_corners": 6.5,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 2.4,
-          "text": "Los Chankas 1 victorias • 1 empates • Asociación Deportiva Tarma 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 4.0,
+          "text": "Los Chankas 0 victorias • 0 empates • Asociación Deportiva Tarma 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4784,37 +4198,15 @@
         ],
         "head_to_head": [
           {
-            "date": "26/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-26",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Sport Boys",
             "match_away": "ADC Juan Pablo II",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
-          },
-          {
-            "date": "20/07/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "ADC Juan Pablo II",
-            "match_away": "Sport Boys",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "ADC Juan Pablo II"
-          },
-          {
-            "date": "09/02/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Sport Boys",
-            "match_away": "ADC Juan Pablo II",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Sport Boys"
           }
         ],
         "home_corner_stats": {
@@ -4839,11 +4231,11 @@
         },
         "projected_corners": 9.3,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 1,
-          "away_wins": 1,
+          "away_wins": 0,
           "avg_goals": 2.0,
-          "text": "ADC Juan Pablo II 1 victorias • 1 empates • Sport Boys 1 victorias"
+          "text": "ADC Juan Pablo II 0 victorias • 1 empates • Sport Boys 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4965,25 +4357,6 @@
         ],
         "away_last_5": [
           {
-            "match_id": "1000017201",
-            "date": "23/08/2026",
-            "date_iso": "2026-08-23",
-            "opponent": "Cusco FC",
-            "venue": "Local",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "Cusco FC",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "result": "W",
-            "competition": "Liga 1 de Perú",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
             "match_id": "1000017214",
             "date": "30/08/2026",
             "date_iso": "2026-08-30",
@@ -5034,11 +4407,11 @@
             "score": "1 - 0",
             "result": "L",
             "competition": "Liga 1 de Perú",
-            "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 7,
-            "total_shots": 13
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000017241",
@@ -5058,63 +4431,38 @@
             "total_corners": 8,
             "shots_on_target": 12,
             "total_shots": 21
+          },
+          {
+            "match_id": "1000017251",
+            "date": "10/10/2026",
+            "date_iso": "2026-10-10",
+            "opponent": "Sport Huancayo",
+            "venue": "Local",
+            "match_home": "Deportivo Garcilaso",
+            "match_away": "Sport Huancayo",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 6,
+            "corners_against": 5,
+            "total_corners": 11,
+            "shots_on_target": 2,
+            "total_shots": 19
           }
         ],
         "head_to_head": [
           {
-            "date": "28/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-28",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Deportivo Garcilaso",
             "match_away": "FBC Melgar",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Deportivo Garcilaso"
-          },
-          {
-            "date": "19/09/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "FBC Melgar",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "18/04/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "FBC Melgar",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Deportivo Garcilaso"
-          },
-          {
-            "date": "03/11/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "FBC Melgar",
-            "match_away": "Deportivo Garcilaso",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "25/05/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Deportivo Garcilaso",
-            "match_away": "FBC Melgar",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "FBC Melgar"
           }
         ],
         "home_corner_stats": {
@@ -5128,22 +4476,22 @@
           "total_shots_gen": 15.6
         },
         "away_corner_stats": {
-          "corners_avg_home": 4.67,
-          "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 6.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 6.0,
-          "total_shots_gen": 13.6
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.6,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 4.8,
+          "total_shots_gen": 14.4
         },
-        "projected_corners": 11.7,
+        "projected_corners": 11.1,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.4,
-          "text": "FBC Melgar 1 victorias • 2 empates • Deportivo Garcilaso 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 1.0,
+          "text": "FBC Melgar 0 victorias • 0 empates • Deportivo Garcilaso 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5362,58 +4710,14 @@
         ],
         "head_to_head": [
           {
-            "date": "26/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-26",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Atlético Grau",
             "match_away": "Alianza Lima",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
-            "winner": "Alianza Lima"
-          },
-          {
-            "date": "02/10/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Alianza Lima",
-            "match_away": "Atlético Grau",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Alianza Lima"
-          },
-          {
-            "date": "10/05/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Atlético Grau",
-            "match_away": "Alianza Lima",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "18/09/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Atlético Grau",
-            "match_away": "Alianza Lima",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Atlético Grau"
-          },
-          {
-            "date": "15/04/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Alianza Lima",
-            "match_away": "Atlético Grau",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
             "winner": "Alianza Lima"
           }
         ],
@@ -5439,11 +4743,11 @@
         },
         "projected_corners": 11.8,
         "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 1.8,
-          "text": "Alianza Lima 3 victorias • 1 empates • Atlético Grau 1 victorias"
+          "home_wins": 1,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 1.0,
+          "text": "Alianza Lima 1 victorias • 0 empates • Atlético Grau 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5662,59 +4966,15 @@
         ],
         "head_to_head": [
           {
-            "date": "25/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-25",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Comerciantes Unidos",
             "match_away": "Sporting Cristal",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Comerciantes Unidos"
-          },
-          {
-            "date": "01/11/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Comerciantes Unidos",
-            "match_away": "Sporting Cristal",
-            "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "winner": "Sporting Cristal"
-          },
-          {
-            "date": "29/06/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Sporting Cristal",
-            "match_away": "Comerciantes Unidos",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Sporting Cristal"
-          },
-          {
-            "date": "03/11/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Sporting Cristal",
-            "match_away": "Comerciantes Unidos",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Sporting Cristal"
-          },
-          {
-            "date": "25/05/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Comerciantes Unidos",
-            "match_away": "Sporting Cristal",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Sporting Cristal"
           }
         ],
         "home_corner_stats": {
@@ -5739,11 +4999,11 @@
         },
         "projected_corners": 9.6,
         "summary": {
-          "home_wins": 4,
+          "home_wins": 0,
           "draws": 0,
           "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Sporting Cristal 4 victorias • 0 empates • Comerciantes Unidos 1 victorias"
+          "avg_goals": 1.0,
+          "text": "Sporting Cristal 0 victorias • 0 empates • Comerciantes Unidos 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5915,11 +5175,11 @@
             "score": "1 - 2",
             "result": "L",
             "competition": "Liga 1 de Perú",
-            "corners_for": 10,
+            "corners_for": 5,
             "corners_against": 4,
-            "total_corners": 14,
-            "shots_on_target": 6,
-            "total_shots": 21
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000017244",
@@ -5962,9 +5222,9 @@
         ],
         "head_to_head": [
           {
-            "date": "25/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-25",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Club Deportivo Moquegua",
             "match_away": "FC Cajamarca",
             "home_score": 2,
@@ -5984,16 +5244,16 @@
           "total_shots_gen": 14.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 7.0,
+          "corners_avg_home": 5.33,
           "corners_avg_away": 2.0,
-          "corners_avg_gen": 5.0,
+          "corners_avg_gen": 4.0,
           "corners_conceded_home": 5.67,
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 3.8,
-          "total_shots_gen": 12.0
+          "shots_on_target_gen": 3.4,
+          "total_shots_gen": 10.2
         },
-        "projected_corners": 7.3,
+        "projected_corners": 6.8,
         "summary": {
           "home_wins": 0,
           "draws": 0,
@@ -6218,59 +5478,15 @@
         ],
         "head_to_head": [
           {
-            "date": "26/04/2026",
-            "competition": "Liga 1",
-            "tournament": "Liga 1",
+            "date": "2026-04-26",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
             "match_home": "Universitario de Deportes",
             "match_away": "Alianza Atlético",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Alianza Atlético"
-          },
-          {
-            "date": "01/10/2025",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Alianza Atlético",
-            "match_away": "Universitario de Deportes",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Universitario de Deportes"
-          },
-          {
-            "date": "11/05/2025",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Universitario de Deportes",
-            "match_away": "Alianza Atlético",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Alianza Atlético"
-          },
-          {
-            "date": "15/09/2024",
-            "competition": "Liga 1 Clausura",
-            "tournament": "Liga 1 Clausura",
-            "match_home": "Alianza Atlético",
-            "match_away": "Universitario de Deportes",
-            "home_score": 0,
-            "away_score": 3,
-            "score": "0 - 3",
-            "winner": "Universitario de Deportes"
-          },
-          {
-            "date": "06/04/2024",
-            "competition": "Liga 1 Apertura",
-            "tournament": "Liga 1 Apertura",
-            "match_home": "Universitario de Deportes",
-            "match_away": "Alianza Atlético",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Universitario de Deportes"
           }
         ],
         "home_corner_stats": {
@@ -6295,11 +5511,267 @@
         },
         "projected_corners": 9.9,
         "summary": {
-          "home_wins": 2,
+          "home_wins": 1,
           "draws": 0,
-          "away_wins": 3,
-          "avg_goals": 2.0,
-          "text": "Alianza Atlético 2 victorias • 0 empates • Universitario de Deportes 3 victorias"
+          "away_wins": 0,
+          "avg_goals": 3.0,
+          "text": "Alianza Atlético 1 victorias • 0 empates • Universitario de Deportes 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
+    {
+      "id": "fotmob_peru_1000017257",
+      "match_id": "1000017257",
+      "sport": "football",
+      "league": "Liga 1 de Perú",
+      "country": "Perú",
+      "country_code": "pe",
+      "league_flag": "🇵🇪",
+      "country_flag": "🇵🇪",
+      "home_team": "Cienciano",
+      "away_team": "CD UT Cajamarca",
+      "date": "Dom 18 Oct, 17:30",
+      "date_iso": "2026-10-18",
+      "time": "17:30",
+      "timestamp": 1792366200,
+      "timezone": "America/Guatemala",
+      "round": "Clausura - Round 12",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "1000017210",
+            "date": "31/08/2026",
+            "date_iso": "2026-08-31",
+            "opponent": "Cusco FC",
+            "venue": "Local",
+            "match_home": "Cienciano",
+            "match_away": "Cusco FC",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000017222",
+            "date": "04/09/2026",
+            "date_iso": "2026-09-04",
+            "opponent": "FC Cajamarca",
+            "venue": "Visitante",
+            "match_home": "FC Cajamarca",
+            "match_away": "Cienciano",
+            "home_score": 2,
+            "away_score": 5,
+            "score": "2 - 5",
+            "result": "W",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000017231",
+            "date": "23/09/2026",
+            "date_iso": "2026-09-23",
+            "opponent": "Asociación Deportiva Tarma",
+            "venue": "Visitante",
+            "match_home": "Asociación Deportiva Tarma",
+            "match_away": "Cienciano",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 7,
+            "corners_against": 4,
+            "total_corners": 11,
+            "shots_on_target": 2,
+            "total_shots": 13
+          },
+          {
+            "match_id": "1000017242",
+            "date": "30/09/2026",
+            "date_iso": "2026-09-30",
+            "opponent": "Los Chankas",
+            "venue": "Local",
+            "match_home": "Cienciano",
+            "match_away": "Los Chankas",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 10,
+            "corners_against": 0,
+            "total_corners": 10,
+            "shots_on_target": 5,
+            "total_shots": 19
+          },
+          {
+            "match_id": "1000017250",
+            "date": "08/10/2026",
+            "date_iso": "2026-10-08",
+            "opponent": "Club Deportivo Moquegua",
+            "venue": "Visitante",
+            "match_home": "Club Deportivo Moquegua",
+            "match_away": "Cienciano",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 9,
+            "corners_against": 6,
+            "total_corners": 15,
+            "shots_on_target": 12,
+            "total_shots": 25
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "1000017209",
+            "date": "22/08/2026",
+            "date_iso": "2026-08-22",
+            "opponent": "Comerciantes Unidos",
+            "venue": "Local",
+            "match_home": "CD UT Cajamarca",
+            "match_away": "Comerciantes Unidos",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000017217",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Universitario de Deportes",
+            "venue": "Local",
+            "match_home": "CD UT Cajamarca",
+            "match_away": "Universitario de Deportes",
+            "home_score": 2,
+            "away_score": 4,
+            "score": "2 - 4",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000017220",
+            "date": "04/09/2026",
+            "date_iso": "2026-09-04",
+            "opponent": "Alianza Atlético",
+            "venue": "Visitante",
+            "match_home": "Alianza Atlético",
+            "match_away": "CD UT Cajamarca",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000017228",
+            "date": "11/09/2026",
+            "date_iso": "2026-09-11",
+            "opponent": "ADC Juan Pablo II",
+            "venue": "Local",
+            "match_home": "CD UT Cajamarca",
+            "match_away": "ADC Juan Pablo II",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 3,
+            "corners_against": 5,
+            "total_corners": 8,
+            "shots_on_target": 7,
+            "total_shots": 14
+          },
+          {
+            "match_id": "1000017239",
+            "date": "20/09/2026",
+            "date_iso": "2026-09-20",
+            "opponent": "Sport Huancayo",
+            "venue": "Visitante",
+            "match_home": "Sport Huancayo",
+            "match_away": "CD UT Cajamarca",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "L",
+            "competition": "Liga 1 de Perú",
+            "corners_for": 1,
+            "corners_against": 7,
+            "total_corners": 8,
+            "shots_on_target": 4,
+            "total_shots": 11
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "2026-04-26",
+            "competition": "Liga 1 de Perú",
+            "tournament": "Liga 1 de Perú",
+            "match_home": "CD UT Cajamarca",
+            "match_away": "Cienciano",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 7.5,
+          "corners_avg_away": 6.67,
+          "corners_avg_gen": 7.0,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 3.8,
+          "shots_on_target_gen": 5.2,
+          "total_shots_gen": 15.8
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.33,
+          "corners_avg_away": 2.5,
+          "corners_avg_gen": 3.6,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 6.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 4.4,
+          "total_shots_gen": 11.8
+        },
+        "projected_corners": 10.3,
+        "summary": {
+          "home_wins": 0,
+          "draws": 1,
+          "away_wins": 0,
+          "avg_goals": 4.0,
+          "text": "Cienciano 0 victorias • 1 empates • CD UT Cajamarca 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

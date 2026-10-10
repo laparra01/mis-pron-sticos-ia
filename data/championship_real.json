@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-09T22:07:23.280370",
+  "last_updated": "2026-10-08T14:38:51.305203",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -1366,6 +1366,25 @@
     ],
     "Queens Park Rangers": [
       {
+        "match_id": "5836800",
+        "date": "02/09/2026",
+        "date_iso": "2026-09-02",
+        "opponent": "Cardiff City",
+        "venue": "Local",
+        "match_home": "Queens Park Rangers",
+        "match_away": "Cardiff City",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "W",
+        "competition": "Championship",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
+      },
+      {
         "match_id": "5836808",
         "date": "05/09/2026",
         "date_iso": "2026-09-05",
@@ -1440,25 +1459,6 @@
         "total_corners": 13,
         "shots_on_target": 7,
         "total_shots": 33
-      },
-      {
-        "match_id": "5836861",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "West Ham United",
-        "venue": "Visitante",
-        "match_home": "West Ham United",
-        "match_away": "Queens Park Rangers",
-        "home_score": 1,
-        "away_score": 1,
-        "score": "1 - 1",
-        "result": "D",
-        "competition": "Championship",
-        "corners_for": 1,
-        "corners_against": 4,
-        "total_corners": 5,
-        "shots_on_target": 3,
-        "total_shots": 7
       }
     ],
     "Sheffield United": [
@@ -2045,6 +2045,25 @@
     ],
     "West Ham United": [
       {
+        "match_id": "5836797",
+        "date": "01/09/2026",
+        "date_iso": "2026-09-01",
+        "opponent": "Wolverhampton Wanderers",
+        "venue": "Local",
+        "match_home": "West Ham United",
+        "match_away": "Wolverhampton Wanderers",
+        "home_score": 4,
+        "away_score": 2,
+        "score": "4 - 2",
+        "result": "W",
+        "competition": "Championship",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
+      },
+      {
         "match_id": "5836813",
         "date": "05/09/2026",
         "date_iso": "2026-09-05",
@@ -2119,25 +2138,6 @@
         "total_corners": 14,
         "shots_on_target": 6,
         "total_shots": 15
-      },
-      {
-        "match_id": "5836861",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Queens Park Rangers",
-        "venue": "Local",
-        "match_home": "West Ham United",
-        "match_away": "Queens Park Rangers",
-        "home_score": 1,
-        "away_score": 1,
-        "score": "1 - 1",
-        "result": "D",
-        "competition": "Championship",
-        "corners_for": 4,
-        "corners_against": 1,
-        "total_corners": 5,
-        "shots_on_target": 5,
-        "total_shots": 12
       }
     ],
     "Wolverhampton Wanderers": [
@@ -2477,14 +2477,14 @@
       "total_shots_gen": 11.8
     },
     "Queens Park Rangers": {
-      "corners_avg_home": 7.5,
-      "corners_avg_away": 2.67,
-      "corners_avg_gen": 4.6,
-      "corners_conceded_home": 3.5,
-      "corners_conceded_away": 4.67,
+      "corners_avg_home": 6.67,
+      "corners_avg_away": 3.5,
+      "corners_avg_gen": 5.4,
+      "corners_conceded_home": 3.67,
+      "corners_conceded_away": 5.0,
       "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 4.0,
-      "total_shots_gen": 13.2
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 14.2
     },
     "Sheffield United": {
       "corners_avg_home": 3.33,
@@ -2547,13 +2547,13 @@
       "total_shots_gen": 10.6
     },
     "West Ham United": {
-      "corners_avg_home": 4.0,
+      "corners_avg_home": 4.33,
       "corners_avg_away": 7.5,
-      "corners_avg_gen": 5.4,
-      "corners_conceded_home": 3.67,
+      "corners_avg_gen": 5.6,
+      "corners_conceded_home": 4.67,
       "corners_conceded_away": 4.0,
-      "corners_conceded_gen": 3.8,
-      "shots_on_target_gen": 5.4,
+      "corners_conceded_gen": 4.4,
+      "shots_on_target_gen": 5.2,
       "total_shots_gen": 13.6
     },
     "Wolverhampton Wanderers": {
@@ -2578,6 +2578,295 @@
     }
   },
   "upcoming_matches": [
+    {
+      "id": "fotmob_championship_5836861",
+      "match_id": "5836861",
+      "sport": "football",
+      "league": "Championship",
+      "country": "Inglaterra",
+      "country_code": "gb-eng",
+      "league_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "country_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+      "home_team": "West Ham United",
+      "away_team": "Queens Park Rangers",
+      "date": "Vie 9 Oct, 13:00",
+      "date_iso": "2026-10-09",
+      "time": "13:00",
+      "timestamp": 1791572400,
+      "timezone": "America/Guatemala",
+      "round": "9",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5836797",
+            "date": "01/09/2026",
+            "date_iso": "2026-09-01",
+            "opponent": "Wolverhampton Wanderers",
+            "venue": "Local",
+            "match_home": "West Ham United",
+            "match_away": "Wolverhampton Wanderers",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "result": "W",
+            "competition": "Championship",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5836813",
+            "date": "05/09/2026",
+            "date_iso": "2026-09-05",
+            "opponent": "Derby County",
+            "venue": "Local",
+            "match_home": "West Ham United",
+            "match_away": "Derby County",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "Championship",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5836815",
+            "date": "08/09/2026",
+            "date_iso": "2026-09-08",
+            "opponent": "Bolton Wanderers",
+            "venue": "Visitante",
+            "match_home": "Bolton Wanderers",
+            "match_away": "West Ham United",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "Championship",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5836837",
+            "date": "11/09/2026",
+            "date_iso": "2026-09-11",
+            "opponent": "Wrexham",
+            "venue": "Local",
+            "match_home": "West Ham United",
+            "match_away": "Wrexham",
+            "home_score": 6,
+            "away_score": 0,
+            "score": "6 - 0",
+            "result": "W",
+            "competition": "Championship",
+            "corners_for": 3,
+            "corners_against": 6,
+            "total_corners": 9,
+            "shots_on_target": 9,
+            "total_shots": 19
+          },
+          {
+            "match_id": "5836843",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "Millwall",
+            "venue": "Visitante",
+            "match_home": "Millwall",
+            "match_away": "West Ham United",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Championship",
+            "corners_for": 11,
+            "corners_against": 3,
+            "total_corners": 14,
+            "shots_on_target": 6,
+            "total_shots": 15
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5836800",
+            "date": "02/09/2026",
+            "date_iso": "2026-09-02",
+            "opponent": "Cardiff City",
+            "venue": "Local",
+            "match_home": "Queens Park Rangers",
+            "match_away": "Cardiff City",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
+            "competition": "Championship",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5836808",
+            "date": "05/09/2026",
+            "date_iso": "2026-09-05",
+            "opponent": "Middlesbrough",
+            "venue": "Local",
+            "match_home": "Queens Park Rangers",
+            "match_away": "Middlesbrough",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Championship",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5836822",
+            "date": "09/09/2026",
+            "date_iso": "2026-09-09",
+            "opponent": "Charlton Athletic",
+            "venue": "Visitante",
+            "match_home": "Charlton Athletic",
+            "match_away": "Queens Park Rangers",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Championship",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5836836",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "West Bromwich Albion",
+            "venue": "Visitante",
+            "match_home": "West Bromwich Albion",
+            "match_away": "Queens Park Rangers",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Championship",
+            "corners_for": 3,
+            "corners_against": 5,
+            "total_corners": 8,
+            "shots_on_target": 3,
+            "total_shots": 4
+          },
+          {
+            "match_id": "5836846",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "Preston North End",
+            "venue": "Local",
+            "match_home": "Queens Park Rangers",
+            "match_away": "Preston North End",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Championship",
+            "corners_for": 10,
+            "corners_against": 3,
+            "total_corners": 13,
+            "shots_on_target": 7,
+            "total_shots": 33
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "11/01/2026",
+            "competition": "FA Cup",
+            "tournament": "FA Cup",
+            "match_home": "West Ham United",
+            "match_away": "Queens Park Rangers",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "West Ham United"
+          },
+          {
+            "date": "25/04/2015",
+            "competition": "Premier League",
+            "tournament": "Premier League",
+            "match_home": "Queens Park Rangers",
+            "match_away": "West Ham United",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "05/10/2014",
+            "competition": "Premier League",
+            "tournament": "Premier League",
+            "match_home": "West Ham United",
+            "match_away": "Queens Park Rangers",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "West Ham United"
+          },
+          {
+            "date": "19/01/2013",
+            "competition": "Premier League",
+            "tournament": "Premier League",
+            "match_home": "West Ham United",
+            "match_away": "Queens Park Rangers",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.33,
+          "corners_avg_away": 7.5,
+          "corners_avg_gen": 5.6,
+          "corners_conceded_home": 4.67,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.4,
+          "shots_on_target_gen": 5.2,
+          "total_shots_gen": 13.6
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 6.67,
+          "corners_avg_away": 3.5,
+          "corners_avg_gen": 5.4,
+          "corners_conceded_home": 3.67,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 14.2
+        },
+        "projected_corners": 9.4,
+        "summary": {
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 0,
+          "avg_goals": 1.8,
+          "text": "West Ham United 2 victorias • 2 empates • Queens Park Rangers 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
     {
       "id": "fotmob_championship_5836852",
       "match_id": "5836852",
@@ -2792,17 +3081,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Bristol City",
-            "match_away": "Charlton Athletic",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/04/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -2870,10 +3148,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Charlton Athletic 1 victorias • 2 empates • Bristol City 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Charlton Athletic 1 victorias • 1 empates • Bristol City 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3092,17 +3370,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Norwich City",
-            "match_away": "Swansea City",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/04/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -3170,10 +3437,10 @@
         "projected_corners": 8.3,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Swansea City 2 victorias • 2 empates • Norwich City 1 victorias"
+          "avg_goals": 3.0,
+          "text": "Swansea City 2 victorias • 1 empates • Norwich City 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3392,17 +3659,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Birmingham City",
-            "match_away": "West Bromwich Albion",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "10/02/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -3470,10 +3726,10 @@
         "projected_corners": 9.4,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 1.4,
-          "text": "West Bromwich Albion 1 victorias • 3 empates • Birmingham City 1 victorias"
+          "avg_goals": 1.8,
+          "text": "West Bromwich Albion 1 victorias • 2 empates • Birmingham City 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3692,17 +3948,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Cardiff City",
-            "match_away": "Blackburn Rovers",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "15/03/2025",
             "competition": "Championship",
             "tournament": "Championship",
@@ -3770,10 +4015,10 @@
         "projected_corners": 11.2,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 1.6,
-          "text": "Blackburn Rovers 2 victorias • 2 empates • Cardiff City 1 victorias"
+          "avg_goals": 2.0,
+          "text": "Blackburn Rovers 2 victorias • 1 empates • Cardiff City 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3992,17 +4237,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Stoke City",
-            "match_away": "Bolton Wanderers",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "29/12/2018",
             "competition": "Championship",
             "tournament": "Championship",
@@ -4070,10 +4304,10 @@
         "projected_corners": 9.4,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 2.2,
-          "text": "Bolton Wanderers 1 victorias • 3 empates • Stoke City 1 victorias"
+          "avg_goals": 2.8,
+          "text": "Bolton Wanderers 1 victorias • 2 empates • Stoke City 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4292,17 +4526,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Wrexham",
-            "match_away": "Derby County",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "04/01/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -4348,10 +4571,10 @@
         "projected_corners": 11.1,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 1.7,
-          "text": "Derby County 0 victorias • 2 empates • Wrexham 1 victorias"
+          "avg_goals": 2.5,
+          "text": "Derby County 0 victorias • 1 empates • Wrexham 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4570,17 +4793,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Wolverhampton Wanderers",
-            "match_away": "Middlesbrough",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "30/03/2018",
             "competition": "Championship",
             "tournament": "Championship",
@@ -4648,10 +4860,10 @@
         "projected_corners": 12.9,
         "summary": {
           "home_wins": 2,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Middlesbrough 2 victorias • 1 empates • Wolverhampton Wanderers 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Middlesbrough 2 victorias • 0 empates • Wolverhampton Wanderers 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4870,17 +5082,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Millwall",
-            "match_away": "Preston North End",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "28/02/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -4948,10 +5149,10 @@
         "projected_corners": 10.0,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 2.0,
-          "text": "Preston North End 0 victorias • 3 empates • Millwall 2 victorias"
+          "avg_goals": 2.5,
+          "text": "Preston North End 0 victorias • 2 empates • Millwall 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5170,17 +5371,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Lincoln City",
-            "match_away": "Sheffield United",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "30/08/2023",
             "competition": "EFL Cup",
             "tournament": "EFL Cup",
@@ -5215,10 +5405,10 @@
         "projected_corners": 6.8,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 0,
           "avg_goals": 0.0,
-          "text": "Sheffield United 0 victorias • 2 empates • Lincoln City 0 victorias"
+          "text": "Sheffield United 0 victorias • 1 empates • Lincoln City 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5437,17 +5627,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Burnley",
-            "match_away": "Watford",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "18/04/2025",
             "competition": "Championship",
             "tournament": "Championship",
@@ -5515,10 +5694,10 @@
         "projected_corners": 9.7,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 1.8,
-          "text": "Watford 1 victorias • 2 empates • Burnley 2 victorias"
+          "avg_goals": 2.2,
+          "text": "Watford 1 victorias • 1 empates • Burnley 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5737,17 +5916,6 @@
         ],
         "head_to_head": [
           {
-            "date": "28/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Portsmouth",
-            "match_away": "Southampton",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/01/2026",
             "competition": "Championship",
             "tournament": "Championship",
@@ -5815,310 +5983,10 @@
         "projected_corners": 8.6,
         "summary": {
           "home_wins": 1,
-          "draws": 4,
+          "draws": 3,
           "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Southampton 1 victorias • 4 empates • Portsmouth 0 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_championship_5836863",
-      "match_id": "5836863",
-      "sport": "football",
-      "league": "Championship",
-      "country": "Inglaterra",
-      "country_code": "gb-eng",
-      "league_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "country_flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
-      "home_team": "Bristol City",
-      "away_team": "Blackburn Rovers",
-      "date": "Mar 13 Oct, 12:45",
-      "date_iso": "2026-10-13",
-      "time": "12:45",
-      "timestamp": 1791917100,
-      "timezone": "America/Guatemala",
-      "round": "10",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5836793",
-            "date": "01/09/2026",
-            "date_iso": "2026-09-01",
-            "opponent": "Preston North End",
-            "venue": "Visitante",
-            "match_home": "Preston North End",
-            "match_away": "Bristol City",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5836803",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Burnley",
-            "venue": "Visitante",
-            "match_home": "Burnley",
-            "match_away": "Bristol City",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5836833",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Southampton",
-            "venue": "Visitante",
-            "match_home": "Southampton",
-            "match_away": "Bristol City",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "result": "L",
-            "competition": "Championship",
-            "corners_for": 5,
-            "corners_against": 2,
-            "total_corners": 7,
-            "shots_on_target": 6,
-            "total_shots": 21
-          },
-          {
-            "match_id": "5836816",
-            "date": "15/09/2026",
-            "date_iso": "2026-09-15",
-            "opponent": "Lincoln City",
-            "venue": "Local",
-            "match_home": "Bristol City",
-            "match_away": "Lincoln City",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Championship",
-            "corners_for": 13,
-            "corners_against": 4,
-            "total_corners": 17,
-            "shots_on_target": 4,
-            "total_shots": 18
-          },
-          {
-            "match_id": "5836839",
-            "date": "18/09/2026",
-            "date_iso": "2026-09-18",
-            "opponent": "Watford",
-            "venue": "Local",
-            "match_home": "Bristol City",
-            "match_away": "Watford",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "W",
-            "competition": "Championship",
-            "corners_for": 2,
-            "corners_against": 5,
-            "total_corners": 7,
-            "shots_on_target": 7,
-            "total_shots": 17
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5836791",
-            "date": "01/09/2026",
-            "date_iso": "2026-09-01",
-            "opponent": "Lincoln City",
-            "venue": "Visitante",
-            "match_home": "Lincoln City",
-            "match_away": "Blackburn Rovers",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5836807",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Preston North End",
-            "venue": "Visitante",
-            "match_home": "Preston North End",
-            "match_away": "Blackburn Rovers",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Championship",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5836814",
-            "date": "08/09/2026",
-            "date_iso": "2026-09-08",
-            "opponent": "Sheffield United",
-            "venue": "Local",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Sheffield United",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Championship",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5836826",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Millwall",
-            "venue": "Local",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Millwall",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "Championship",
-            "corners_for": 6,
-            "corners_against": 2,
-            "total_corners": 8,
-            "shots_on_target": 4,
-            "total_shots": 18
-          },
-          {
-            "match_id": "5836845",
-            "date": "19/09/2026",
-            "date_iso": "2026-09-19",
-            "opponent": "Portsmouth",
-            "venue": "Visitante",
-            "match_home": "Portsmouth",
-            "match_away": "Blackburn Rovers",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Championship",
-            "corners_for": 7,
-            "corners_against": 9,
-            "total_corners": 16,
-            "shots_on_target": 5,
-            "total_shots": 8
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "16/02/2027",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Bristol City",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "24/02/2026",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Bristol City",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Bristol City"
-          },
-          {
-            "date": "04/11/2025",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Bristol City",
-            "match_away": "Blackburn Rovers",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Blackburn Rovers"
-          },
-          {
-            "date": "25/01/2025",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Bristol City",
-            "match_away": "Blackburn Rovers",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Bristol City"
-          },
-          {
-            "date": "14/09/2024",
-            "competition": "Championship",
-            "tournament": "Championship",
-            "match_home": "Blackburn Rovers",
-            "match_away": "Bristol City",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Blackburn Rovers"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 7.5,
-          "corners_avg_away": 4.33,
-          "corners_avg_gen": 5.6,
-          "corners_conceded_home": 4.5,
-          "corners_conceded_away": 4.0,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 4.6,
-          "total_shots_gen": 15.2
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 5.5,
-          "corners_avg_away": 5.0,
-          "corners_avg_gen": 5.2,
-          "corners_conceded_home": 3.0,
-          "corners_conceded_away": 6.33,
-          "corners_conceded_gen": 5.0,
-          "shots_on_target_gen": 3.8,
-          "total_shots_gen": 11.6
-        },
-        "projected_corners": 11.6,
-        "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.0,
-          "text": "Bristol City 2 victorias • 1 empates • Blackburn Rovers 2 victorias"
+          "avg_goals": 2.5,
+          "text": "Southampton 1 victorias • 3 empates • Portsmouth 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

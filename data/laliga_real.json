@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-10-09T22:07:25.025670",
+  "last_updated": "2026-10-08T14:38:56.119225",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -687,6 +687,25 @@
     ],
     "Espanyol": [
       {
+        "match_id": "5868039",
+        "date": "29/08/2026",
+        "date_iso": "2026-08-29",
+        "opponent": "Real Sociedad",
+        "venue": "Visitante",
+        "match_home": "Real Sociedad",
+        "match_away": "Espanyol",
+        "home_score": 2,
+        "away_score": 1,
+        "score": "2 - 1",
+        "result": "L",
+        "competition": "LaLiga",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
+      },
+      {
         "match_id": "5868045",
         "date": "06/09/2026",
         "date_iso": "2026-09-06",
@@ -761,25 +780,6 @@
         "total_corners": 6,
         "shots_on_target": 4,
         "total_shots": 23
-      },
-      {
-        "match_id": "5868086",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Málaga",
-        "venue": "Visitante",
-        "match_home": "Málaga",
-        "match_away": "Espanyol",
-        "home_score": 1,
-        "away_score": 1,
-        "score": "1 - 1",
-        "result": "D",
-        "competition": "LaLiga",
-        "corners_for": 2,
-        "corners_against": 8,
-        "total_corners": 10,
-        "shots_on_target": 4,
-        "total_shots": 9
       }
     ],
     "Getafe": [
@@ -978,6 +978,25 @@
     ],
     "Málaga": [
       {
+        "match_id": "5868038",
+        "date": "30/08/2026",
+        "date_iso": "2026-08-30",
+        "opponent": "Real Madrid",
+        "venue": "Visitante",
+        "match_home": "Real Madrid",
+        "match_away": "Málaga",
+        "home_score": 4,
+        "away_score": 0,
+        "score": "4 - 0",
+        "result": "L",
+        "competition": "LaLiga",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
+      },
+      {
         "match_id": "5868047",
         "date": "06/09/2026",
         "date_iso": "2026-09-06",
@@ -1052,25 +1071,6 @@
         "total_corners": 14,
         "shots_on_target": 4,
         "total_shots": 11
-      },
-      {
-        "match_id": "5868086",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Espanyol",
-        "venue": "Local",
-        "match_home": "Málaga",
-        "match_away": "Espanyol",
-        "home_score": 1,
-        "away_score": 1,
-        "score": "1 - 1",
-        "result": "D",
-        "competition": "LaLiga",
-        "corners_for": 8,
-        "corners_against": 2,
-        "total_corners": 10,
-        "shots_on_target": 7,
-        "total_shots": 15
       }
     ],
     "Osasuna": [
@@ -2020,13 +2020,13 @@
     },
     "Espanyol": {
       "corners_avg_home": 4.0,
-      "corners_avg_away": 3.67,
-      "corners_avg_gen": 3.8,
+      "corners_avg_away": 4.33,
+      "corners_avg_gen": 4.2,
       "corners_conceded_home": 3.5,
-      "corners_conceded_away": 5.33,
-      "corners_conceded_gen": 4.6,
-      "shots_on_target_gen": 4.0,
-      "total_shots_gen": 14.6
+      "corners_conceded_away": 4.33,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 3.8,
+      "total_shots_gen": 14.8
     },
     "Getafe": {
       "corners_avg_home": 5.0,
@@ -2049,14 +2049,14 @@
       "total_shots_gen": 10.2
     },
     "Málaga": {
-      "corners_avg_home": 5.67,
-      "corners_avg_away": 7.0,
-      "corners_avg_gen": 6.2,
-      "corners_conceded_home": 4.67,
-      "corners_conceded_away": 3.0,
-      "corners_conceded_gen": 4.0,
-      "shots_on_target_gen": 3.6,
-      "total_shots_gen": 11.0
+      "corners_avg_home": 4.5,
+      "corners_avg_away": 6.0,
+      "corners_avg_gen": 5.4,
+      "corners_conceded_home": 6.0,
+      "corners_conceded_away": 3.67,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 2.8,
+      "total_shots_gen": 10.0
     },
     "Osasuna": {
       "corners_avg_home": 4.67,
@@ -2150,6 +2150,295 @@
     }
   },
   "upcoming_matches": [
+    {
+      "id": "fotmob_laliga_5868086",
+      "match_id": "5868086",
+      "sport": "football",
+      "league": "LaLiga",
+      "country": "España",
+      "country_code": "es",
+      "league_flag": "🇪🇸",
+      "country_flag": "🇪🇸",
+      "home_team": "Málaga",
+      "away_team": "Espanyol",
+      "date": "Vie 9 Oct, 13:00",
+      "date_iso": "2026-10-09",
+      "time": "13:00",
+      "timestamp": 1791572400,
+      "timezone": "America/Guatemala",
+      "round": "8",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5868038",
+            "date": "30/08/2026",
+            "date_iso": "2026-08-30",
+            "opponent": "Real Madrid",
+            "venue": "Visitante",
+            "match_home": "Real Madrid",
+            "match_away": "Málaga",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5868047",
+            "date": "06/09/2026",
+            "date_iso": "2026-09-06",
+            "opponent": "Levante",
+            "venue": "Local",
+            "match_home": "Málaga",
+            "match_away": "Levante",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "LaLiga",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5868052",
+            "date": "13/09/2026",
+            "date_iso": "2026-09-13",
+            "opponent": "Celta Vigo",
+            "venue": "Visitante",
+            "match_home": "Celta Vigo",
+            "match_away": "Málaga",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "LaLiga",
+            "corners_for": 5,
+            "corners_against": 1,
+            "total_corners": 6,
+            "shots_on_target": 2,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5868068",
+            "date": "17/09/2026",
+            "date_iso": "2026-09-17",
+            "opponent": "Villarreal",
+            "venue": "Local",
+            "match_home": "Málaga",
+            "match_away": "Villarreal",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 4,
+            "corners_against": 8,
+            "total_corners": 12,
+            "shots_on_target": 1,
+            "total_shots": 5
+          },
+          {
+            "match_id": "5868076",
+            "date": "20/09/2026",
+            "date_iso": "2026-09-20",
+            "opponent": "Getafe",
+            "venue": "Visitante",
+            "match_home": "Getafe",
+            "match_away": "Málaga",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 9,
+            "corners_against": 5,
+            "total_corners": 14,
+            "shots_on_target": 4,
+            "total_shots": 11
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5868039",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Real Sociedad",
+            "venue": "Visitante",
+            "match_home": "Real Sociedad",
+            "match_away": "Espanyol",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5868045",
+            "date": "06/09/2026",
+            "date_iso": "2026-09-06",
+            "opponent": "Sevilla",
+            "venue": "Local",
+            "match_home": "Espanyol",
+            "match_away": "Sevilla",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "LaLiga",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5868055",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "Osasuna",
+            "venue": "Visitante",
+            "match_home": "Osasuna",
+            "match_away": "Espanyol",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "LaLiga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5868069",
+            "date": "15/09/2026",
+            "date_iso": "2026-09-15",
+            "opponent": "Rayo Vallecano",
+            "venue": "Visitante",
+            "match_home": "Rayo Vallecano",
+            "match_away": "Espanyol",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 5,
+            "corners_against": 3,
+            "total_corners": 8,
+            "shots_on_target": 5,
+            "total_shots": 19
+          },
+          {
+            "match_id": "5868075",
+            "date": "18/09/2026",
+            "date_iso": "2026-09-18",
+            "opponent": "Elche",
+            "venue": "Local",
+            "match_home": "Espanyol",
+            "match_away": "Elche",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 3,
+            "corners_against": 3,
+            "total_corners": 6,
+            "shots_on_target": 4,
+            "total_shots": 23
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "02/05/2021",
+            "competition": "LaLiga2",
+            "tournament": "LaLiga2",
+            "match_home": "Espanyol",
+            "match_away": "Málaga",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Espanyol"
+          },
+          {
+            "date": "02/11/2020",
+            "competition": "LaLiga2",
+            "tournament": "LaLiga2",
+            "match_home": "Málaga",
+            "match_away": "Espanyol",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Espanyol"
+          },
+          {
+            "date": "13/05/2018",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Espanyol",
+            "match_away": "Málaga",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Espanyol"
+          },
+          {
+            "date": "08/01/2018",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Málaga",
+            "match_away": "Espanyol",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Espanyol"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 4.5,
+          "corners_avg_away": 6.0,
+          "corners_avg_gen": 5.4,
+          "corners_conceded_home": 6.0,
+          "corners_conceded_away": 3.67,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 2.8,
+          "total_shots_gen": 10.0
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 4.33,
+          "corners_avg_gen": 4.2,
+          "corners_conceded_home": 3.5,
+          "corners_conceded_away": 4.33,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 14.8
+        },
+        "projected_corners": 9.2,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 4,
+          "avg_goals": 3.0,
+          "text": "Málaga 0 victorias • 0 empates • Espanyol 4 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
     {
       "id": "fotmob_laliga_5868088",
       "match_id": "5868088",
@@ -2364,17 +2653,6 @@
         ],
         "head_to_head": [
           {
-            "date": "30/05/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Athletic Club",
-            "match_away": "Rayo Vallecano",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "28/02/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -2442,10 +2720,10 @@
         "projected_corners": 8.5,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 3,
-          "avg_goals": 2.0,
-          "text": "Rayo Vallecano 0 victorias • 2 empates • Athletic Club 3 victorias"
+          "avg_goals": 2.5,
+          "text": "Rayo Vallecano 0 victorias • 1 empates • Athletic Club 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2664,17 +2942,6 @@
         ],
         "head_to_head": [
           {
-            "date": "02/05/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Atlético Madrid",
-            "match_away": "Deportivo Alavés",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "18/01/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -2742,10 +3009,10 @@
         "projected_corners": 7.7,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 1.2,
-          "text": "Deportivo Alavés 0 victorias • 3 empates • Atlético Madrid 2 victorias"
+          "avg_goals": 1.5,
+          "text": "Deportivo Alavés 0 victorias • 2 empates • Atlético Madrid 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2964,17 +3231,6 @@
         ],
         "head_to_head": [
           {
-            "date": "30/05/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Getafe",
-            "match_away": "Barcelona",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/04/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -3042,10 +3298,10 @@
         "projected_corners": 13.2,
         "summary": {
           "home_wins": 3,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 1.6,
-          "text": "Barcelona 3 victorias • 2 empates • Getafe 0 victorias"
+          "avg_goals": 2.0,
+          "text": "Barcelona 3 victorias • 1 empates • Getafe 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3264,17 +3520,6 @@
         ],
         "head_to_head": [
           {
-            "date": "07/03/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Villarreal",
-            "match_away": "Real Madrid",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "24/01/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -3342,10 +3587,10 @@
         "projected_corners": 10.4,
         "summary": {
           "home_wins": 4,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 2.2,
-          "text": "Real Madrid 4 victorias • 1 empates • Villarreal 0 victorias"
+          "avg_goals": 2.8,
+          "text": "Real Madrid 4 victorias • 0 empates • Villarreal 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3564,17 +3809,6 @@
         ],
         "head_to_head": [
           {
-            "date": "11/04/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Celta Vigo",
-            "match_away": "Elche",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/05/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -3642,10 +3876,10 @@
         "projected_corners": 7.0,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 1.8,
-          "text": "Elche 1 victorias • 1 empates • Celta Vigo 3 victorias"
+          "avg_goals": 2.2,
+          "text": "Elche 1 victorias • 0 empates • Celta Vigo 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3864,17 +4098,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/02/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Deportivo A Coruña",
-            "match_away": "Real Sociedad",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "02/02/2018",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -3942,10 +4165,10 @@
         "projected_corners": 10.8,
         "summary": {
           "home_wins": 3,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 3.6,
-          "text": "Real Sociedad 3 victorias • 1 empates • Deportivo A Coruña 1 victorias"
+          "avg_goals": 4.5,
+          "text": "Real Sociedad 3 victorias • 0 empates • Deportivo A Coruña 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4164,17 +4387,6 @@
         ],
         "head_to_head": [
           {
-            "date": "16/05/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Osasuna",
-            "match_away": "Real Betis",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "12/04/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -4242,10 +4454,10 @@
         "projected_corners": 7.2,
         "summary": {
           "home_wins": 2,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 1.8,
-          "text": "Real Betis 2 victorias • 3 empates • Osasuna 0 victorias"
+          "avg_goals": 2.2,
+          "text": "Real Betis 2 victorias • 2 empates • Osasuna 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4464,17 +4676,6 @@
         ],
         "head_to_head": [
           {
-            "date": "07/02/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Valencia",
-            "match_away": "Racing Santander",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "29/01/2012",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -4542,10 +4743,10 @@
         "projected_corners": 8.9,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "Racing Santander 0 victorias • 3 empates • Valencia 2 victorias"
+          "avg_goals": 3.5,
+          "text": "Racing Santander 0 victorias • 2 empates • Valencia 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4764,17 +4965,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/04/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Sevilla",
-            "match_away": "Levante",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "23/04/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -4842,10 +5032,10 @@
         "projected_corners": 7.6,
         "summary": {
           "home_wins": 2,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 2,
-          "avg_goals": 3.6,
-          "text": "Levante 2 victorias • 1 empates • Sevilla 2 victorias"
+          "avg_goals": 4.5,
+          "text": "Levante 2 victorias • 0 empates • Sevilla 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5064,17 +5254,6 @@
         ],
         "head_to_head": [
           {
-            "date": "28/02/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Levante",
-            "match_away": "Deportivo A Coruña",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/01/2025",
             "competition": "LaLiga2",
             "tournament": "LaLiga2",
@@ -5142,10 +5321,10 @@
         "projected_corners": 9.3,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "Deportivo A Coruña 0 victorias • 3 empates • Levante 2 victorias"
+          "avg_goals": 3.5,
+          "text": "Deportivo A Coruña 0 victorias • 2 empates • Levante 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5169,6 +5348,25 @@
       "round": "9",
       "h2h": {
         "home_last_5": [
+          {
+            "match_id": "5868039",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Real Sociedad",
+            "venue": "Visitante",
+            "match_home": "Real Sociedad",
+            "match_away": "Espanyol",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "LaLiga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
           {
             "match_id": "5868045",
             "date": "06/09/2026",
@@ -5244,25 +5442,6 @@
             "total_corners": 6,
             "shots_on_target": 4,
             "total_shots": 23
-          },
-          {
-            "match_id": "5868086",
-            "date": "09/10/2026",
-            "date_iso": "2026-10-09",
-            "opponent": "Málaga",
-            "venue": "Visitante",
-            "match_home": "Málaga",
-            "match_away": "Espanyol",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "LaLiga",
-            "corners_for": 2,
-            "corners_against": 8,
-            "total_corners": 10,
-            "shots_on_target": 4,
-            "total_shots": 9
           }
         ],
         "away_last_5": [
@@ -5364,17 +5543,6 @@
         ],
         "head_to_head": [
           {
-            "date": "31/01/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Atlético Madrid",
-            "match_away": "Espanyol",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "21/02/2026",
             "competition": "LaLiga",
             "tournament": "LaLiga",
@@ -5421,13 +5589,13 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 3.8,
+          "corners_avg_away": 4.33,
+          "corners_avg_gen": 4.2,
           "corners_conceded_home": 3.5,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 4.6,
-          "shots_on_target_gen": 4.0,
-          "total_shots_gen": 14.6
+          "corners_conceded_away": 4.33,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 14.8
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
@@ -5439,313 +5607,13 @@
           "shots_on_target_gen": 6.2,
           "total_shots_gen": 15.4
         },
-        "projected_corners": 7.9,
+        "projected_corners": 8.1,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 2.2,
-          "text": "Espanyol 1 victorias • 3 empates • Atlético Madrid 1 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_laliga_5868100",
-      "match_id": "5868100",
-      "sport": "football",
-      "league": "LaLiga",
-      "country": "España",
-      "country_code": "es",
-      "league_flag": "🇪🇸",
-      "country_flag": "🇪🇸",
-      "home_team": "Villarreal",
-      "away_team": "Elche",
-      "date": "Sáb 17 Oct, 08:15",
-      "date_iso": "2026-10-17",
-      "time": "08:15",
-      "timestamp": 1792246500,
-      "timezone": "America/Guatemala",
-      "round": "9",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5868031",
-            "date": "28/08/2026",
-            "date_iso": "2026-08-28",
-            "opponent": "Deportivo Alavés",
-            "venue": "Visitante",
-            "match_home": "Deportivo Alavés",
-            "match_away": "Villarreal",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5868050",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Deportivo A Coruña",
-            "venue": "Local",
-            "match_home": "Villarreal",
-            "match_away": "Deportivo A Coruña",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5868060",
-            "date": "14/09/2026",
-            "date_iso": "2026-09-14",
-            "opponent": "Real Betis",
-            "venue": "Local",
-            "match_home": "Villarreal",
-            "match_away": "Real Betis",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5868068",
-            "date": "17/09/2026",
-            "date_iso": "2026-09-17",
-            "opponent": "Málaga",
-            "venue": "Visitante",
-            "match_home": "Málaga",
-            "match_away": "Villarreal",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "LaLiga",
-            "corners_for": 8,
-            "corners_against": 4,
-            "total_corners": 12,
-            "shots_on_target": 7,
-            "total_shots": 16
-          },
-          {
-            "match_id": "5868080",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "Levante",
-            "venue": "Local",
-            "match_home": "Villarreal",
-            "match_away": "Levante",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "LaLiga",
-            "corners_for": 7,
-            "corners_against": 1,
-            "total_corners": 8,
-            "shots_on_target": 7,
-            "total_shots": 21
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5868037",
-            "date": "28/08/2026",
-            "date_iso": "2026-08-28",
-            "opponent": "Racing Santander",
-            "venue": "Visitante",
-            "match_home": "Racing Santander",
-            "match_away": "Elche",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5868044",
-            "date": "07/09/2026",
-            "date_iso": "2026-09-07",
-            "opponent": "Real Sociedad",
-            "venue": "Local",
-            "match_home": "Elche",
-            "match_away": "Real Sociedad",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5868051",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Athletic Club",
-            "venue": "Visitante",
-            "match_home": "Athletic Club",
-            "match_away": "Elche",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "LaLiga",
-            "corners_for": 1,
-            "corners_against": 7,
-            "total_corners": 8,
-            "shots_on_target": 1,
-            "total_shots": 3
-          },
-          {
-            "match_id": "5868065",
-            "date": "15/09/2026",
-            "date_iso": "2026-09-15",
-            "opponent": "Real Madrid",
-            "venue": "Local",
-            "match_home": "Elche",
-            "match_away": "Real Madrid",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "L",
-            "competition": "LaLiga",
-            "corners_for": 2,
-            "corners_against": 5,
-            "total_corners": 7,
-            "shots_on_target": 3,
-            "total_shots": 11
-          },
-          {
-            "match_id": "5868075",
-            "date": "18/09/2026",
-            "date_iso": "2026-09-18",
-            "opponent": "Espanyol",
-            "venue": "Visitante",
-            "match_home": "Espanyol",
-            "match_away": "Elche",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "LaLiga",
-            "corners_for": 3,
-            "corners_against": 3,
-            "total_corners": 6,
-            "shots_on_target": 6,
-            "total_shots": 9
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "14/03/2027",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Elche",
-            "match_away": "Villarreal",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "08/03/2026",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Villarreal",
-            "match_away": "Elche",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Villarreal"
-          },
-          {
-            "date": "03/01/2026",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Elche",
-            "match_away": "Villarreal",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Villarreal"
-          },
-          {
-            "date": "04/02/2023",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Elche",
-            "match_away": "Villarreal",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Elche"
-          },
-          {
-            "date": "04/09/2022",
-            "competition": "LaLiga",
-            "tournament": "LaLiga",
-            "match_home": "Villarreal",
-            "match_away": "Elche",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Villarreal"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 5.67,
-          "corners_avg_away": 6.0,
-          "corners_avg_gen": 5.8,
-          "corners_conceded_home": 3.0,
-          "corners_conceded_away": 4.5,
-          "corners_conceded_gen": 3.6,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 14.2
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 3.5,
-          "corners_avg_away": 2.67,
-          "corners_avg_gen": 3.0,
-          "corners_conceded_home": 4.5,
-          "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 3.4,
-          "total_shots_gen": 9.0
-        },
-        "projected_corners": 8.6,
-        "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Villarreal 3 victorias • 1 empates • Elche 1 victorias"
+          "avg_goals": 2.8,
+          "text": "Espanyol 1 victorias • 2 empates • Atlético Madrid 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

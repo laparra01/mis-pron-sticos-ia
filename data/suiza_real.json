@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-09T22:07:45.252596",
+  "last_updated": "2026-10-08T15:16:37.838109",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -543,11 +543,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Super League de Suiza",
-        "corners_for": 4,
+        "corners_for": 5,
         "corners_against": 4,
-        "total_corners": 8,
-        "shots_on_target": 7,
-        "total_shots": 18
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "5804242",
@@ -1223,14 +1223,14 @@
       "total_shots_gen": 11.4
     },
     "Lugano": {
-      "corners_avg_home": 3.67,
+      "corners_avg_home": 4.0,
       "corners_avg_away": 5.0,
-      "corners_avg_gen": 4.2,
+      "corners_avg_gen": 4.4,
       "corners_conceded_home": 5.33,
       "corners_conceded_away": 3.0,
       "corners_conceded_gen": 4.4,
-      "shots_on_target_gen": 5.4,
-      "total_shots_gen": 14.6
+      "shots_on_target_gen": 4.8,
+      "total_shots_gen": 13.4
     },
     "Luzern": {
       "corners_avg_home": 5.33,
@@ -1508,17 +1508,6 @@
         ],
         "head_to_head": [
           {
-            "date": "23/01/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "Thun",
-            "match_away": "FC Zürich",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "21/03/2026",
             "competition": "Super League",
             "tournament": "Super League",
@@ -1586,10 +1575,10 @@
         "projected_corners": 11.1,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 3.8,
-          "text": "FC Zürich 1 victorias • 2 empates • Thun 2 victorias"
+          "avg_goals": 4.8,
+          "text": "FC Zürich 1 victorias • 1 empates • Thun 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -1664,11 +1653,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Super League de Suiza",
-            "corners_for": 4,
+            "corners_for": 5,
             "corners_against": 4,
-            "total_corners": 8,
-            "shots_on_target": 7,
-            "total_shots": 18
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "5804242",
@@ -1864,14 +1853,14 @@
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 3.67,
+          "corners_avg_home": 4.0,
           "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.2,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 3.0,
           "corners_conceded_gen": 4.4,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 14.6
+          "shots_on_target_gen": 4.8,
+          "total_shots_gen": 13.4
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -1883,7 +1872,7 @@
           "shots_on_target_gen": 4.8,
           "total_shots_gen": 14.8
         },
-        "projected_corners": 8.3,
+        "projected_corners": 8.6,
         "summary": {
           "home_wins": 3,
           "draws": 1,
@@ -2408,17 +2397,6 @@
         ],
         "head_to_head": [
           {
-            "date": "07/02/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "Young Boys",
-            "match_away": "Grasshopper",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "07/02/2026",
             "competition": "Super League",
             "tournament": "Super League",
@@ -2486,10 +2464,10 @@
         "projected_corners": 8.9,
         "summary": {
           "home_wins": 2,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 3.4,
-          "text": "Grasshopper 2 victorias • 3 empates • Young Boys 0 victorias"
+          "avg_goals": 4.2,
+          "text": "Grasshopper 2 victorias • 2 empates • Young Boys 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2708,17 +2686,6 @@
         ],
         "head_to_head": [
           {
-            "date": "16/01/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "Basel",
-            "match_away": "FC Vaduz",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "21/04/2021",
             "competition": "Super League",
             "tournament": "Super League",
@@ -2786,10 +2753,10 @@
         "projected_corners": 8.0,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 2.2,
-          "text": "FC Vaduz 1 victorias • 3 empates • Basel 1 victorias"
+          "avg_goals": 2.8,
+          "text": "FC Vaduz 1 victorias • 2 empates • Basel 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3308,17 +3275,6 @@
         ],
         "head_to_head": [
           {
-            "date": "31/01/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "Luzern",
-            "match_away": "FC Zürich",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "12/05/2026",
             "competition": "Super League",
             "tournament": "Super League",
@@ -3386,10 +3342,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.6,
-          "text": "FC Zürich 1 victorias • 2 empates • Luzern 2 victorias"
+          "avg_goals": 3.2,
+          "text": "FC Zürich 1 victorias • 1 empates • Luzern 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3608,17 +3564,6 @@
         ],
         "head_to_head": [
           {
-            "date": "31/01/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "FC Vaduz",
-            "match_away": "Servette",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "15/05/2021",
             "competition": "Super League",
             "tournament": "Super League",
@@ -3686,10 +3631,10 @@
         "projected_corners": 8.1,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 2.2,
-          "text": "Servette 2 victorias • 2 empates • FC Vaduz 1 victorias"
+          "avg_goals": 2.8,
+          "text": "Servette 2 victorias • 1 empates • FC Vaduz 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3908,17 +3853,6 @@
         ],
         "head_to_head": [
           {
-            "date": "24/01/2027",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "St. Gallen",
-            "match_away": "Young Boys",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "26/04/2026",
             "competition": "Super League",
             "tournament": "Super League",
@@ -3986,10 +3920,10 @@
         "projected_corners": 11.8,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 2.8,
-          "text": "Young Boys 1 victorias • 1 empates • St. Gallen 3 victorias"
+          "avg_goals": 3.5,
+          "text": "Young Boys 1 victorias • 0 empates • St. Gallen 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4161,11 +4095,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Super League de Suiza",
-            "corners_for": 4,
+            "corners_for": 5,
             "corners_against": 4,
-            "total_corners": 8,
-            "shots_on_target": 7,
-            "total_shots": 18
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "5804242",
@@ -4274,16 +4208,16 @@
           "total_shots_gen": 13.2
         },
         "away_corner_stats": {
-          "corners_avg_home": 3.67,
+          "corners_avg_home": 4.0,
           "corners_avg_away": 5.0,
-          "corners_avg_gen": 4.2,
+          "corners_avg_gen": 4.4,
           "corners_conceded_home": 5.33,
           "corners_conceded_away": 3.0,
           "corners_conceded_gen": 4.4,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 14.6
+          "shots_on_target_gen": 4.8,
+          "total_shots_gen": 13.4
         },
-        "projected_corners": 10.2,
+        "projected_corners": 10.3,
         "summary": {
           "home_wins": 1,
           "draws": 1,

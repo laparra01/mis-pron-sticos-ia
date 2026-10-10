@@ -3,29 +3,10 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-10-09T22:07:14.775336",
+  "last_updated": "2026-10-09T22:35:37.852481",
   "total_fixtures": 15,
   "team_histories": {
     "Alianza FC": [
-      {
-        "match_id": "1000014142",
-        "date": "13/09/2026",
-        "date_iso": "2026-09-13",
-        "opponent": "Junior FC",
-        "venue": "Local",
-        "match_home": "Alianza FC",
-        "match_away": "Junior FC",
-        "home_score": 1,
-        "away_score": 0,
-        "score": "1 - 0",
-        "result": "W",
-        "competition": "Liga BetPlay Dimayor",
-        "corners_for": 4,
-        "corners_against": 6,
-        "total_corners": 10,
-        "shots_on_target": 4,
-        "total_shots": 12
-      },
       {
         "match_id": "1000014071",
         "date": "16/09/2026",
@@ -39,11 +20,11 @@
         "score": "1 - 2",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 9,
-        "total_corners": 11,
-        "shots_on_target": 4,
-        "total_shots": 5
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014151",
@@ -58,11 +39,11 @@
         "score": "1 - 4",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 6,
-        "total_corners": 12,
-        "shots_on_target": 2,
-        "total_shots": 16
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014165",
@@ -77,11 +58,11 @@
         "score": "1 - 2",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 7,
-        "total_corners": 13,
-        "shots_on_target": 8,
-        "total_shots": 16
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014176",
@@ -101,6 +82,25 @@
         "total_corners": 8,
         "shots_on_target": 4,
         "total_shots": 13
+      },
+      {
+        "match_id": "1000014179",
+        "date": "09/10/2026",
+        "date_iso": "2026-10-09",
+        "opponent": "Águilas Doradas",
+        "venue": "Local",
+        "match_home": "Alianza FC",
+        "match_away": "Águilas Doradas",
+        "home_score": 2,
+        "away_score": 2,
+        "score": "2 - 2",
+        "result": "D",
+        "competition": "Liga BetPlay Dimayor",
+        "corners_for": 6,
+        "corners_against": 6,
+        "total_corners": 12,
+        "shots_on_target": 6,
+        "total_shots": 20
       }
     ],
     "América de Cali": [
@@ -117,11 +117,11 @@
         "score": "3 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
+        "corners_for": 5,
         "corners_against": 4,
-        "total_corners": 7,
-        "shots_on_target": 6,
-        "total_shots": 15
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014144",
@@ -136,11 +136,11 @@
         "score": "0 - 1",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 3,
-        "total_corners": 6,
-        "shots_on_target": 2,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014147",
@@ -155,11 +155,11 @@
         "score": "1 - 1",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 9,
-        "total_corners": 11,
-        "shots_on_target": 1,
-        "total_shots": 5
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014164",
@@ -214,11 +214,11 @@
         "score": "2 - 3",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 9,
-        "corners_against": 3,
-        "total_corners": 12,
-        "shots_on_target": 8,
-        "total_shots": 19
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014154",
@@ -233,11 +233,11 @@
         "score": "2 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 9,
-        "corners_against": 4,
-        "total_corners": 13,
-        "shots_on_target": 5,
-        "total_shots": 20
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014157",
@@ -252,11 +252,11 @@
         "score": "1 - 1",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 2,
-        "total_corners": 5,
-        "shots_on_target": 3,
-        "total_shots": 13
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014067",
@@ -311,11 +311,11 @@
         "score": "1 - 3",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 4,
-        "total_corners": 6,
-        "shots_on_target": 7,
-        "total_shots": 12
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014135",
@@ -330,11 +330,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 1,
-        "corners_against": 8,
+        "corners_for": 5,
+        "corners_against": 4,
         "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 8
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014153",
@@ -349,11 +349,11 @@
         "score": "2 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 11,
-        "total_corners": 13,
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 14
+        "total_shots": 12
       },
       {
         "match_id": "1000014163",
@@ -408,11 +408,11 @@
         "score": "3 - 3",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 5,
-        "corners_against": 7,
-        "total_corners": 12,
-        "shots_on_target": 5,
-        "total_shots": 12
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014145",
@@ -428,10 +428,10 @@
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
         "corners_for": 5,
-        "corners_against": 7,
-        "total_corners": 12,
-        "shots_on_target": 6,
-        "total_shots": 18
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014148",
@@ -446,11 +446,11 @@
         "score": "2 - 1",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 7,
-        "total_corners": 10,
-        "shots_on_target": 1,
-        "total_shots": 7
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014165",
@@ -506,10 +506,10 @@
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
         "corners_for": 5,
-        "corners_against": 1,
-        "total_corners": 6,
-        "shots_on_target": 5,
-        "total_shots": 13
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014071",
@@ -524,11 +524,11 @@
         "score": "1 - 2",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 9,
-        "corners_against": 2,
-        "total_corners": 11,
-        "shots_on_target": 2,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014152",
@@ -543,11 +543,11 @@
         "score": "3 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 6,
-        "total_corners": 12,
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 6
+        "total_shots": 10
       },
       {
         "match_id": "1000014161",
@@ -602,11 +602,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 5,
-        "total_corners": 7,
-        "shots_on_target": 5,
-        "total_shots": 13
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014139",
@@ -621,11 +621,11 @@
         "score": "1 - 2",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 7,
-        "corners_against": 5,
-        "total_corners": 12,
-        "shots_on_target": 8,
-        "total_shots": 16
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014156",
@@ -640,11 +640,11 @@
         "score": "3 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 1,
+        "corners_for": 4,
         "corners_against": 5,
-        "total_corners": 6,
-        "shots_on_target": 2,
-        "total_shots": 5
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014159",
@@ -699,11 +699,11 @@
         "score": "1 - 2",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 0,
+        "corners_for": 4,
         "corners_against": 5,
-        "total_corners": 5,
-        "shots_on_target": 6,
-        "total_shots": 12
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014156",
@@ -719,10 +719,10 @@
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
         "corners_for": 5,
-        "corners_against": 1,
-        "total_corners": 6,
-        "shots_on_target": 7,
-        "total_shots": 17
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014160",
@@ -737,11 +737,11 @@
         "score": "0 - 1",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 9,
-        "total_corners": 12,
-        "shots_on_target": 4,
-        "total_shots": 9
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014074",
@@ -796,11 +796,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 5,
-        "corners_against": 2,
-        "total_corners": 7,
-        "shots_on_target": 4,
-        "total_shots": 8
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014144",
@@ -815,11 +815,11 @@
         "score": "0 - 1",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 3,
-        "total_corners": 6,
-        "shots_on_target": 5,
-        "total_shots": 12
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014155",
@@ -837,8 +837,8 @@
         "corners_for": 5,
         "corners_against": 4,
         "total_corners": 9,
-        "shots_on_target": 5,
-        "total_shots": 18
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014161",
@@ -893,11 +893,11 @@
         "score": "1 - 3",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 4,
-        "corners_against": 2,
-        "total_corners": 6,
-        "shots_on_target": 3,
-        "total_shots": 10
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014149",
@@ -912,11 +912,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 5,
-        "corners_against": 7,
-        "total_corners": 12,
-        "shots_on_target": 7,
-        "total_shots": 11
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014166",
@@ -934,8 +934,8 @@
         "corners_for": 5,
         "corners_against": 4,
         "total_corners": 9,
-        "shots_on_target": 3,
-        "total_shots": 9
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014076",
@@ -990,11 +990,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 7,
+        "corners_for": 4,
         "corners_against": 5,
-        "total_corners": 12,
-        "shots_on_target": 2,
-        "total_shots": 8
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014150",
@@ -1009,11 +1009,11 @@
         "score": "1 - 4",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 1,
-        "total_corners": 3,
-        "shots_on_target": 2,
-        "total_shots": 8
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014158",
@@ -1028,11 +1028,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 8,
-        "corners_against": 0,
-        "total_corners": 8,
-        "shots_on_target": 6,
-        "total_shots": 14
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014175",
@@ -1087,11 +1087,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 8,
-        "corners_against": 1,
+        "corners_for": 4,
+        "corners_against": 5,
         "total_corners": 9,
-        "shots_on_target": 5,
-        "total_shots": 17
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014148",
@@ -1106,11 +1106,11 @@
         "score": "2 - 1",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 7,
-        "corners_against": 3,
-        "total_corners": 10,
-        "shots_on_target": 9,
-        "total_shots": 24
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014162",
@@ -1125,11 +1125,11 @@
         "score": "2 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 2,
-        "total_corners": 8,
-        "shots_on_target": 4,
-        "total_shots": 9
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014078",
@@ -1185,10 +1185,10 @@
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
         "corners_for": 5,
-        "corners_against": 6,
-        "total_corners": 11,
-        "shots_on_target": 8,
-        "total_shots": 18
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014168",
@@ -1203,11 +1203,11 @@
         "score": "2 - 3",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 9,
-        "total_corners": 12,
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 6
+        "total_shots": 12
       },
       {
         "match_id": "1000014153",
@@ -1222,11 +1222,11 @@
         "score": "2 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 11,
-        "corners_against": 2,
-        "total_corners": 13,
-        "shots_on_target": 4,
-        "total_shots": 15
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014166",
@@ -1281,11 +1281,11 @@
         "score": "1 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 4,
-        "total_corners": 10,
-        "shots_on_target": 5,
-        "total_shots": 19
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014150",
@@ -1300,11 +1300,11 @@
         "score": "1 - 4",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 1,
-        "corners_against": 2,
-        "total_corners": 3,
-        "shots_on_target": 6,
-        "total_shots": 8
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014162",
@@ -1319,11 +1319,11 @@
         "score": "2 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 6,
-        "total_corners": 8,
-        "shots_on_target": 9,
-        "total_shots": 21
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014067",
@@ -1366,25 +1366,6 @@
     ],
     "Llaneros FC": [
       {
-        "match_id": "1000014092",
-        "date": "07/09/2026",
-        "date_iso": "2026-09-07",
-        "opponent": "Tolima",
-        "venue": "Local",
-        "match_home": "Llaneros FC",
-        "match_away": "Tolima",
-        "home_score": 1,
-        "away_score": 2,
-        "score": "1 - 2",
-        "result": "L",
-        "competition": "Liga BetPlay Dimayor",
-        "corners_for": 4,
-        "corners_against": 8,
-        "total_corners": 12,
-        "shots_on_target": 2,
-        "total_shots": 15
-      },
-      {
         "match_id": "1000014138",
         "date": "12/09/2026",
         "date_iso": "2026-09-12",
@@ -1397,11 +1378,11 @@
         "score": "3 - 2",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
+        "corners_for": 4,
         "corners_against": 5,
-        "total_corners": 11,
-        "shots_on_target": 4,
-        "total_shots": 9
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014154",
@@ -1416,11 +1397,11 @@
         "score": "2 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 4,
-        "corners_against": 9,
-        "total_corners": 13,
-        "shots_on_target": 5,
-        "total_shots": 8
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014159",
@@ -1459,6 +1440,25 @@
         "total_corners": 11,
         "shots_on_target": 5,
         "total_shots": 12
+      },
+      {
+        "match_id": "1000014183",
+        "date": "10/10/2026",
+        "date_iso": "2026-10-10",
+        "opponent": "Once Caldas",
+        "venue": "Visitante",
+        "match_home": "Once Caldas",
+        "match_away": "Llaneros FC",
+        "home_score": 1,
+        "away_score": 0,
+        "score": "1 - 0",
+        "result": "L",
+        "competition": "Liga BetPlay Dimayor",
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 5,
+        "total_shots": 10
       }
     ],
     "Millonarios": [
@@ -1475,11 +1475,11 @@
         "score": "1 - 2",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 5,
-        "corners_against": 7,
-        "total_corners": 12,
-        "shots_on_target": 8,
-        "total_shots": 16
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014152",
@@ -1494,11 +1494,11 @@
         "score": "3 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 6,
-        "total_corners": 12,
-        "shots_on_target": 12,
-        "total_shots": 24
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014157",
@@ -1513,11 +1513,11 @@
         "score": "1 - 1",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 2,
-        "corners_against": 3,
-        "total_corners": 5,
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 4
+        "total_shots": 10
       },
       {
         "match_id": "1000014078",
@@ -1560,25 +1560,6 @@
     ],
     "Once Caldas": [
       {
-        "match_id": "1000014143",
-        "date": "13/09/2026",
-        "date_iso": "2026-09-13",
-        "opponent": "Deportivo Cali",
-        "venue": "Local",
-        "match_home": "Once Caldas",
-        "match_away": "Deportivo Cali",
-        "home_score": 1,
-        "away_score": 2,
-        "score": "1 - 2",
-        "result": "L",
-        "competition": "Liga BetPlay Dimayor",
-        "corners_for": 5,
-        "corners_against": 0,
-        "total_corners": 5,
-        "shots_on_target": 9,
-        "total_shots": 28
-      },
-      {
         "match_id": "1000014113",
         "date": "16/09/2026",
         "date_iso": "2026-09-16",
@@ -1591,11 +1572,11 @@
         "score": "1 - 0",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 6,
+        "corners_for": 5,
+        "corners_against": 4,
         "total_corners": 9,
-        "shots_on_target": 5,
-        "total_shots": 13
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014155",
@@ -1613,8 +1594,8 @@
         "corners_for": 4,
         "corners_against": 5,
         "total_corners": 9,
-        "shots_on_target": 5,
-        "total_shots": 16
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014163",
@@ -1653,6 +1634,25 @@
         "total_corners": 6,
         "shots_on_target": 5,
         "total_shots": 7
+      },
+      {
+        "match_id": "1000014183",
+        "date": "10/10/2026",
+        "date_iso": "2026-10-10",
+        "opponent": "Llaneros FC",
+        "venue": "Local",
+        "match_home": "Once Caldas",
+        "match_away": "Llaneros FC",
+        "home_score": 1,
+        "away_score": 0,
+        "score": "1 - 0",
+        "result": "W",
+        "competition": "Liga BetPlay Dimayor",
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 15
       }
     ],
     "Santa Fe": [
@@ -1670,10 +1670,10 @@
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
         "corners_for": 5,
-        "corners_against": 5,
-        "total_corners": 10,
+        "corners_against": 4,
+        "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 13
+        "total_shots": 12
       },
       {
         "match_id": "1000014151",
@@ -1688,11 +1688,11 @@
         "score": "1 - 4",
         "result": "W",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 6,
-        "total_corners": 12,
-        "shots_on_target": 7,
-        "total_shots": 9
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014160",
@@ -1707,11 +1707,11 @@
         "score": "0 - 1",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 9,
-        "corners_against": 3,
-        "total_corners": 12,
-        "shots_on_target": 5,
-        "total_shots": 19
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014076",
@@ -1766,11 +1766,11 @@
         "score": "1 - 0",
         "result": "L",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 6,
-        "corners_against": 3,
+        "corners_for": 4,
+        "corners_against": 5,
         "total_corners": 9,
-        "shots_on_target": 4,
-        "total_shots": 19
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014147",
@@ -1785,11 +1785,11 @@
         "score": "1 - 1",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 9,
-        "corners_against": 2,
-        "total_corners": 11,
-        "shots_on_target": 8,
-        "total_shots": 28
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
+        "total_shots": 12
       },
       {
         "match_id": "1000014158",
@@ -1804,11 +1804,11 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 0,
-        "corners_against": 8,
-        "total_corners": 8,
-        "shots_on_target": 1,
-        "total_shots": 7
+        "corners_for": 4,
+        "corners_against": 5,
+        "total_corners": 9,
+        "shots_on_target": 3,
+        "total_shots": 10
       },
       {
         "match_id": "1000014167",
@@ -1851,25 +1851,6 @@
     ],
     "Águilas Doradas": [
       {
-        "match_id": "1000014137",
-        "date": "13/09/2026",
-        "date_iso": "2026-09-13",
-        "opponent": "Atlético Nacional",
-        "venue": "Visitante",
-        "match_home": "Atlético Nacional",
-        "match_away": "Águilas Doradas",
-        "home_score": 2,
-        "away_score": 0,
-        "score": "2 - 0",
-        "result": "L",
-        "competition": "Liga BetPlay Dimayor",
-        "corners_for": 3,
-        "corners_against": 8,
-        "total_corners": 11,
-        "shots_on_target": 2,
-        "total_shots": 9
-      },
-      {
         "match_id": "1000014149",
         "date": "18/09/2026",
         "date_iso": "2026-09-18",
@@ -1882,10 +1863,10 @@
         "score": "2 - 2",
         "result": "D",
         "competition": "Liga BetPlay Dimayor",
-        "corners_for": 7,
-        "corners_against": 5,
-        "total_corners": 12,
-        "shots_on_target": 5,
+        "corners_for": 5,
+        "corners_against": 4,
+        "total_corners": 9,
+        "shots_on_target": 4,
         "total_shots": 12
       },
       {
@@ -1944,790 +1925,231 @@
         "total_corners": 12,
         "shots_on_target": 8,
         "total_shots": 26
+      },
+      {
+        "match_id": "1000014179",
+        "date": "09/10/2026",
+        "date_iso": "2026-10-09",
+        "opponent": "Alianza FC",
+        "venue": "Visitante",
+        "match_home": "Alianza FC",
+        "match_away": "Águilas Doradas",
+        "home_score": 2,
+        "away_score": 2,
+        "score": "2 - 2",
+        "result": "D",
+        "competition": "Liga BetPlay Dimayor",
+        "corners_for": 6,
+        "corners_against": 6,
+        "total_corners": 12,
+        "shots_on_target": 5,
+        "total_shots": 12
       }
     ]
   },
   "team_corner_stats": {
     "Alianza FC": {
-      "corners_avg_home": 5.0,
+      "corners_avg_home": 5.5,
       "corners_avg_away": 4.33,
-      "corners_avg_gen": 4.6,
-      "corners_conceded_home": 6.0,
-      "corners_conceded_away": 6.33,
-      "corners_conceded_gen": 6.2,
-      "shots_on_target_gen": 4.4,
-      "total_shots_gen": 12.4
+      "corners_avg_gen": 4.8,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 4.33,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 13.0
     },
     "América de Cali": {
-      "corners_avg_home": 5.67,
-      "corners_avg_away": 3.0,
-      "corners_avg_gen": 4.6,
-      "corners_conceded_home": 2.67,
-      "corners_conceded_away": 8.0,
-      "corners_conceded_gen": 4.8,
-      "shots_on_target_gen": 4.0,
-      "total_shots_gen": 12.4
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 5.8,
+      "corners_conceded_home": 3.0,
+      "corners_conceded_away": 6.0,
+      "corners_conceded_gen": 4.2,
+      "shots_on_target_gen": 4.4,
+      "total_shots_gen": 13.2
     },
     "Atlético Nacional": {
-      "corners_avg_home": 4.0,
-      "corners_avg_away": 9.0,
-      "corners_avg_gen": 6.0,
-      "corners_conceded_home": 4.33,
-      "corners_conceded_away": 3.5,
-      "corners_conceded_gen": 4.0,
-      "shots_on_target_gen": 5.6,
-      "total_shots_gen": 17.0
+      "corners_avg_home": 4.67,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.4,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 5.0,
+      "shots_on_target_gen": 4.4,
+      "total_shots_gen": 13.0
     },
     "Bucaramanga": {
-      "corners_avg_home": 1.67,
-      "corners_avg_away": 1.5,
-      "corners_avg_gen": 1.6,
-      "corners_conceded_home": 8.67,
-      "corners_conceded_away": 6.5,
-      "corners_conceded_gen": 7.8,
-      "shots_on_target_gen": 4.6,
+      "corners_avg_home": 4.0,
+      "corners_avg_away": 2.5,
+      "corners_avg_gen": 3.4,
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 5.8,
+      "shots_on_target_gen": 4.0,
       "total_shots_gen": 10.8
     },
     "CD Jaguares": {
       "corners_avg_home": 6.0,
       "corners_avg_away": 4.33,
       "corners_avg_gen": 5.0,
-      "corners_conceded_home": 6.5,
-      "corners_conceded_away": 7.0,
-      "corners_conceded_gen": 6.8,
-      "shots_on_target_gen": 3.6,
-      "total_shots_gen": 11.2
+      "corners_conceded_home": 5.0,
+      "corners_conceded_away": 5.67,
+      "corners_conceded_gen": 5.4,
+      "shots_on_target_gen": 3.2,
+      "total_shots_gen": 10.2
     },
     "Chicó FC": {
-      "corners_avg_home": 4.67,
-      "corners_avg_away": 3.0,
-      "corners_avg_gen": 4.0,
-      "corners_conceded_home": 2.33,
-      "corners_conceded_away": 8.0,
-      "corners_conceded_gen": 4.6,
-      "shots_on_target_gen": 3.2,
-      "total_shots_gen": 7.4
+      "corners_avg_home": 3.33,
+      "corners_avg_away": 2.0,
+      "corners_avg_gen": 2.8,
+      "corners_conceded_home": 4.0,
+      "corners_conceded_away": 7.5,
+      "corners_conceded_gen": 5.4,
+      "shots_on_target_gen": 3.4,
+      "total_shots_gen": 8.4
     },
     "Cúcuta": {
-      "corners_avg_home": 4.25,
-      "corners_avg_away": 1.0,
-      "corners_avg_gen": 3.6,
-      "corners_conceded_home": 3.25,
+      "corners_avg_home": 4.5,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.4,
+      "corners_conceded_home": 2.75,
       "corners_conceded_away": 5.0,
-      "corners_conceded_gen": 3.6,
-      "shots_on_target_gen": 4.8,
+      "corners_conceded_gen": 3.2,
+      "shots_on_target_gen": 4.0,
       "total_shots_gen": 11.6
     },
     "Deportivo Cali": {
       "corners_avg_home": 4.0,
-      "corners_avg_away": 1.5,
-      "corners_avg_gen": 3.0,
-      "corners_conceded_home": 3.33,
-      "corners_conceded_away": 7.0,
-      "corners_conceded_gen": 4.8,
-      "shots_on_target_gen": 6.0,
-      "total_shots_gen": 11.6
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.0,
+      "corners_conceded_home": 4.33,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 4.6,
+      "total_shots_gen": 10.4
     },
     "Deportivo Pasto": {
       "corners_avg_home": 4.0,
       "corners_avg_away": 4.0,
       "corners_avg_gen": 4.0,
       "corners_conceded_home": 2.5,
-      "corners_conceded_away": 1.67,
-      "corners_conceded_gen": 2.0,
-      "shots_on_target_gen": 3.4,
-      "total_shots_gen": 11.4
+      "corners_conceded_away": 3.33,
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 2.6,
+      "total_shots_gen": 10.2
     },
     "Deportivo Pereira": {
-      "corners_avg_home": 5.33,
-      "corners_avg_away": 2.5,
+      "corners_avg_home": 5.67,
+      "corners_avg_away": 2.0,
       "corners_avg_gen": 4.2,
-      "corners_conceded_home": 2.67,
-      "corners_conceded_away": 6.5,
+      "corners_conceded_home": 3.33,
+      "corners_conceded_away": 5.5,
       "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 3.4,
-      "total_shots_gen": 8.8
+      "shots_on_target_gen": 3.0,
+      "total_shots_gen": 9.6
     },
     "Fortaleza FC": {
       "corners_avg_home": 4.33,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 4.2,
-      "corners_conceded_home": 2.0,
+      "corners_avg_away": 2.5,
+      "corners_avg_gen": 3.6,
+      "corners_conceded_home": 4.33,
       "corners_conceded_away": 4.0,
-      "corners_conceded_gen": 2.8,
-      "shots_on_target_gen": 3.8,
-      "total_shots_gen": 11.8
+      "corners_conceded_gen": 4.2,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 12.6
     },
     "Independiente Medellín": {
-      "corners_avg_home": 5.33,
-      "corners_avg_away": 7.0,
-      "corners_avg_gen": 6.0,
-      "corners_conceded_home": 4.0,
-      "corners_conceded_away": 1.5,
-      "corners_conceded_gen": 3.0,
-      "shots_on_target_gen": 5.4,
-      "total_shots_gen": 15.8
+      "corners_avg_home": 4.67,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 4.4,
+      "corners_conceded_home": 4.33,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 3.8,
+      "total_shots_gen": 12.2
     },
     "Internacional de Bogotá": {
-      "corners_avg_home": 3.0,
-      "corners_avg_away": 7.5,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 6.67,
-      "corners_conceded_away": 3.5,
-      "corners_conceded_gen": 5.4,
-      "shots_on_target_gen": 4.4,
-      "total_shots_gen": 14.6
+      "corners_avg_home": 3.67,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 3.8,
+      "corners_conceded_home": 4.33,
+      "corners_conceded_away": 5.0,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 3.4,
+      "total_shots_gen": 13.6
     },
     "Junior FC": {
-      "corners_avg_home": 2.0,
-      "corners_avg_away": 4.75,
-      "corners_avg_gen": 4.2,
-      "corners_conceded_home": 6.0,
-      "corners_conceded_away": 3.75,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 6.0,
-      "total_shots_gen": 16.2
+      "corners_avg_home": 5.0,
+      "corners_avg_away": 5.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 4.0,
+      "corners_conceded_away": 4.75,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 4.0,
+      "total_shots_gen": 13.0
     },
     "Llaneros FC": {
-      "corners_avg_home": 5.0,
-      "corners_avg_away": 4.5,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 7.0,
-      "corners_conceded_away": 3.5,
-      "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 5.4,
+      "corners_avg_home": 6.0,
+      "corners_avg_away": 3.67,
+      "corners_avg_gen": 4.6,
+      "corners_conceded_home": 4.0,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 4.0,
+      "shots_on_target_gen": 5.6,
       "total_shots_gen": 13.0
     },
     "Millonarios": {
-      "corners_avg_home": 6.0,
-      "corners_avg_away": 4.0,
+      "corners_avg_home": 5.0,
+      "corners_avg_away": 4.25,
       "corners_avg_gen": 4.4,
-      "corners_conceded_home": 6.0,
+      "corners_conceded_home": 4.0,
       "corners_conceded_away": 3.75,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 6.4,
-      "total_shots_gen": 13.2
+      "corners_conceded_gen": 3.8,
+      "shots_on_target_gen": 3.8,
+      "total_shots_gen": 10.8
     },
     "Once Caldas": {
-      "corners_avg_home": 5.67,
+      "corners_avg_home": 6.33,
       "corners_avg_away": 4.5,
-      "corners_avg_gen": 5.2,
-      "corners_conceded_home": 2.33,
+      "corners_avg_gen": 5.6,
+      "corners_conceded_home": 3.0,
       "corners_conceded_away": 3.0,
-      "corners_conceded_gen": 2.6,
-      "shots_on_target_gen": 7.2,
-      "total_shots_gen": 18.6
+      "corners_conceded_gen": 3.0,
+      "shots_on_target_gen": 5.6,
+      "total_shots_gen": 14.6
     },
     "Santa Fe": {
-      "corners_avg_home": 7.0,
-      "corners_avg_away": 4.33,
-      "corners_avg_gen": 5.4,
+      "corners_avg_home": 5.0,
+      "corners_avg_away": 3.67,
+      "corners_avg_gen": 4.2,
       "corners_conceded_home": 4.0,
-      "corners_conceded_away": 6.67,
-      "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 5.6,
-      "total_shots_gen": 13.2
+      "corners_conceded_away": 6.33,
+      "corners_conceded_gen": 5.4,
+      "shots_on_target_gen": 4.6,
+      "total_shots_gen": 11.8
     },
     "Tolima": {
-      "corners_avg_home": 9.5,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 6.2,
-      "corners_conceded_home": 1.0,
-      "corners_conceded_away": 4.33,
-      "corners_conceded_gen": 3.0,
-      "shots_on_target_gen": 5.4,
-      "total_shots_gen": 17.6
+      "corners_avg_home": 7.5,
+      "corners_avg_away": 4.67,
+      "corners_avg_gen": 5.8,
+      "corners_conceded_home": 2.0,
+      "corners_conceded_away": 4.0,
+      "corners_conceded_gen": 3.2,
+      "shots_on_target_gen": 4.8,
+      "total_shots_gen": 13.2
     },
     "Águilas Doradas": {
-      "corners_avg_home": 7.0,
-      "corners_avg_away": 2.67,
-      "corners_avg_gen": 4.4,
-      "corners_conceded_home": 5.0,
-      "corners_conceded_away": 7.67,
-      "corners_conceded_gen": 6.6,
-      "shots_on_target_gen": 3.8,
-      "total_shots_gen": 14.2
+      "corners_avg_home": 6.0,
+      "corners_avg_away": 3.67,
+      "corners_avg_gen": 4.6,
+      "corners_conceded_home": 4.5,
+      "corners_conceded_away": 7.0,
+      "corners_conceded_gen": 6.0,
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 14.8
     }
   },
   "upcoming_matches": [
-    {
-      "id": "fotmob_colombia_1000014179",
-      "match_id": "1000014179",
-      "sport": "football",
-      "league": "Liga BetPlay Dimayor",
-      "country": "Colombia",
-      "country_code": "co",
-      "league_flag": "🇨🇴",
-      "country_flag": "🇨🇴",
-      "home_team": "Alianza FC",
-      "away_team": "Águilas Doradas",
-      "date": "Vie 9 Oct, 17:00",
-      "date_iso": "2026-10-09",
-      "time": "17:00",
-      "timestamp": 1791586800,
-      "timezone": "America/Guatemala",
-      "round": "Clausura - Round 14",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "1000014142",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Junior FC",
-            "venue": "Local",
-            "match_home": "Alianza FC",
-            "match_away": "Junior FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 6,
-            "total_corners": 10,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000014071",
-            "date": "16/09/2026",
-            "date_iso": "2026-09-16",
-            "opponent": "Chicó FC",
-            "venue": "Visitante",
-            "match_home": "Chicó FC",
-            "match_away": "Alianza FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 9,
-            "total_corners": 11,
-            "shots_on_target": 4,
-            "total_shots": 5
-          },
-          {
-            "match_id": "1000014151",
-            "date": "19/09/2026",
-            "date_iso": "2026-09-19",
-            "opponent": "Santa Fe",
-            "venue": "Local",
-            "match_home": "Alianza FC",
-            "match_away": "Santa Fe",
-            "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 2,
-            "total_shots": 16
-          },
-          {
-            "match_id": "1000014165",
-            "date": "27/09/2026",
-            "date_iso": "2026-09-27",
-            "opponent": "CD Jaguares",
-            "venue": "Visitante",
-            "match_home": "CD Jaguares",
-            "match_away": "Alianza FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 8,
-            "total_shots": 16
-          },
-          {
-            "match_id": "1000014176",
-            "date": "03/10/2026",
-            "date_iso": "2026-10-03",
-            "opponent": "Deportivo Cali",
-            "venue": "Visitante",
-            "match_home": "Deportivo Cali",
-            "match_away": "Alianza FC",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 3,
-            "total_corners": 8,
-            "shots_on_target": 4,
-            "total_shots": 13
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "1000014137",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Atlético Nacional",
-            "venue": "Visitante",
-            "match_home": "Atlético Nacional",
-            "match_away": "Águilas Doradas",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 8,
-            "total_corners": 11,
-            "shots_on_target": 2,
-            "total_shots": 9
-          },
-          {
-            "match_id": "1000014149",
-            "date": "18/09/2026",
-            "date_iso": "2026-09-18",
-            "opponent": "Deportivo Pereira",
-            "venue": "Local",
-            "match_home": "Águilas Doradas",
-            "match_away": "Deportivo Pereira",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 12
-          },
-          {
-            "match_id": "1000014164",
-            "date": "24/09/2026",
-            "date_iso": "2026-09-24",
-            "opponent": "América de Cali",
-            "venue": "Visitante",
-            "match_home": "América de Cali",
-            "match_away": "Águilas Doradas",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 1,
-            "corners_against": 11,
-            "total_corners": 12,
-            "shots_on_target": 1,
-            "total_shots": 7
-          },
-          {
-            "match_id": "1000014074",
-            "date": "28/09/2026",
-            "date_iso": "2026-09-28",
-            "opponent": "Deportivo Cali",
-            "venue": "Visitante",
-            "match_home": "Deportivo Cali",
-            "match_away": "Águilas Doradas",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 4,
-            "total_corners": 8,
-            "shots_on_target": 3,
-            "total_shots": 17
-          },
-          {
-            "match_id": "1000014169",
-            "date": "03/10/2026",
-            "date_iso": "2026-10-03",
-            "opponent": "CD Jaguares",
-            "venue": "Local",
-            "match_home": "Águilas Doradas",
-            "match_away": "CD Jaguares",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 8,
-            "total_shots": 26
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "27/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Águilas Doradas",
-            "match_away": "Alianza FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Águilas Doradas"
-          },
-          {
-            "date": "18/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Águilas Doradas",
-            "match_away": "Alianza FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Águilas Doradas"
-          },
-          {
-            "date": "04/06/2025",
-            "competition": "Cup Grp. B",
-            "tournament": "Cup Grp. B",
-            "match_home": "Alianza FC",
-            "match_away": "Águilas Doradas",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Alianza FC"
-          },
-          {
-            "date": "26/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Alianza FC",
-            "match_away": "Águilas Doradas",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "06/11/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Alianza FC",
-            "match_away": "Águilas Doradas",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Alianza FC"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 5.0,
-          "corners_avg_away": 4.33,
-          "corners_avg_gen": 4.6,
-          "corners_conceded_home": 6.0,
-          "corners_conceded_away": 6.33,
-          "corners_conceded_gen": 6.2,
-          "shots_on_target_gen": 4.4,
-          "total_shots_gen": 12.4
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 2.67,
-          "corners_avg_gen": 4.4,
-          "corners_conceded_home": 5.0,
-          "corners_conceded_away": 7.67,
-          "corners_conceded_gen": 6.6,
-          "shots_on_target_gen": 3.8,
-          "total_shots_gen": 14.2
-        },
-        "projected_corners": 8.3,
-        "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 1.8,
-          "text": "Alianza FC 2 victorias • 1 empates • Águilas Doradas 2 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_colombia_1000014183",
-      "match_id": "1000014183",
-      "sport": "football",
-      "league": "Liga BetPlay Dimayor",
-      "country": "Colombia",
-      "country_code": "co",
-      "league_flag": "🇨🇴",
-      "country_flag": "🇨🇴",
-      "home_team": "Once Caldas",
-      "away_team": "Llaneros FC",
-      "date": "Vie 9 Oct, 19:10",
-      "date_iso": "2026-10-09",
-      "time": "19:10",
-      "timestamp": 1791594600,
-      "timezone": "America/Guatemala",
-      "round": "Clausura - Round 14",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "1000014143",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Deportivo Cali",
-            "venue": "Local",
-            "match_home": "Once Caldas",
-            "match_away": "Deportivo Cali",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 0,
-            "total_corners": 5,
-            "shots_on_target": 9,
-            "total_shots": 28
-          },
-          {
-            "match_id": "1000014113",
-            "date": "16/09/2026",
-            "date_iso": "2026-09-16",
-            "opponent": "Tolima",
-            "venue": "Local",
-            "match_home": "Once Caldas",
-            "match_away": "Tolima",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 6,
-            "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 13
-          },
-          {
-            "match_id": "1000014155",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "Deportivo Pasto",
-            "venue": "Visitante",
-            "match_home": "Deportivo Pasto",
-            "match_away": "Once Caldas",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 16
-          },
-          {
-            "match_id": "1000014163",
-            "date": "26/09/2026",
-            "date_iso": "2026-09-26",
-            "opponent": "Bucaramanga",
-            "venue": "Local",
-            "match_home": "Once Caldas",
-            "match_away": "Bucaramanga",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 1,
-            "total_corners": 10,
-            "shots_on_target": 12,
-            "total_shots": 29
-          },
-          {
-            "match_id": "1000014215",
-            "date": "04/10/2026",
-            "date_iso": "2026-10-04",
-            "opponent": "Internacional de Bogotá",
-            "venue": "Visitante",
-            "match_home": "Internacional de Bogotá",
-            "match_away": "Once Caldas",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 1,
-            "total_corners": 6,
-            "shots_on_target": 5,
-            "total_shots": 7
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "1000014092",
-            "date": "07/09/2026",
-            "date_iso": "2026-09-07",
-            "opponent": "Tolima",
-            "venue": "Local",
-            "match_home": "Llaneros FC",
-            "match_away": "Tolima",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 8,
-            "total_corners": 12,
-            "shots_on_target": 2,
-            "total_shots": 15
-          },
-          {
-            "match_id": "1000014138",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Internacional de Bogotá",
-            "venue": "Visitante",
-            "match_home": "Internacional de Bogotá",
-            "match_away": "Llaneros FC",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 5,
-            "total_corners": 11,
-            "shots_on_target": 4,
-            "total_shots": 9
-          },
-          {
-            "match_id": "1000014154",
-            "date": "21/09/2026",
-            "date_iso": "2026-09-21",
-            "opponent": "Atlético Nacional",
-            "venue": "Local",
-            "match_home": "Llaneros FC",
-            "match_away": "Atlético Nacional",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 9,
-            "total_corners": 13,
-            "shots_on_target": 5,
-            "total_shots": 8
-          },
-          {
-            "match_id": "1000014159",
-            "date": "26/09/2026",
-            "date_iso": "2026-09-26",
-            "opponent": "Cúcuta",
-            "venue": "Visitante",
-            "match_home": "Cúcuta",
-            "match_away": "Llaneros FC",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 2,
-            "total_corners": 5,
-            "shots_on_target": 11,
-            "total_shots": 21
-          },
-          {
-            "match_id": "1000014174",
-            "date": "05/10/2026",
-            "date_iso": "2026-10-05",
-            "opponent": "América de Cali",
-            "venue": "Local",
-            "match_home": "Llaneros FC",
-            "match_away": "América de Cali",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 4,
-            "total_corners": 11,
-            "shots_on_target": 5,
-            "total_shots": 12
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "30/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Llaneros FC",
-            "match_away": "Once Caldas",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "19/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Llaneros FC",
-            "match_away": "Once Caldas",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Llaneros FC"
-          },
-          {
-            "date": "27/03/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Once Caldas",
-            "match_away": "Llaneros FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Once Caldas"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 5.67,
-          "corners_avg_away": 4.5,
-          "corners_avg_gen": 5.2,
-          "corners_conceded_home": 2.33,
-          "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 2.6,
-          "shots_on_target_gen": 7.2,
-          "total_shots_gen": 18.6
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 5.0,
-          "corners_avg_away": 4.5,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 7.0,
-          "corners_conceded_away": 3.5,
-          "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 13.0
-        },
-        "projected_corners": 10.1,
-        "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 1.7,
-          "text": "Once Caldas 1 victorias • 1 empates • Llaneros FC 1 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
     {
       "id": "fotmob_colombia_1000014186",
       "match_id": "1000014186",
@@ -2760,11 +2182,11 @@
             "score": "1 - 3",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 2,
-            "total_corners": 6,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014149",
@@ -2779,11 +2201,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 7,
-            "total_shots": 11
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014166",
@@ -2801,8 +2223,8 @@
             "corners_for": 5,
             "corners_against": 4,
             "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 9
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014076",
@@ -2857,11 +2279,11 @@
             "score": "1 - 2",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 0,
+            "corners_for": 4,
             "corners_against": 5,
-            "total_corners": 5,
-            "shots_on_target": 6,
-            "total_shots": 12
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014156",
@@ -2877,10 +2299,10 @@
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 1,
-            "total_corners": 6,
-            "shots_on_target": 7,
-            "total_shots": 17
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014160",
@@ -2895,11 +2317,11 @@
             "score": "0 - 1",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 9,
-            "total_corners": 12,
-            "shots_on_target": 4,
-            "total_shots": 9
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014074",
@@ -2940,90 +2362,34 @@
             "total_shots": 8
           }
         ],
-        "head_to_head": [
-          {
-            "date": "29/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Deportivo Cali",
-            "match_away": "Deportivo Pereira",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Deportivo Cali"
-          },
-          {
-            "date": "04/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Deportivo Cali",
-            "match_away": "Deportivo Pereira",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Deportivo Cali"
-          },
-          {
-            "date": "15/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Deportivo Pereira",
-            "match_away": "Deportivo Cali",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Deportivo Pereira"
-          },
-          {
-            "date": "17/07/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Deportivo Cali",
-            "match_away": "Deportivo Pereira",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Deportivo Pereira"
-          },
-          {
-            "date": "20/01/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Deportivo Pereira",
-            "match_away": "Deportivo Cali",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 5.33,
-          "corners_avg_away": 2.5,
+          "corners_avg_home": 5.67,
+          "corners_avg_away": 2.0,
           "corners_avg_gen": 4.2,
-          "corners_conceded_home": 2.67,
-          "corners_conceded_away": 6.5,
+          "corners_conceded_home": 3.33,
+          "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 3.4,
-          "total_shots_gen": 8.8
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 9.6
         },
         "away_corner_stats": {
           "corners_avg_home": 4.0,
-          "corners_avg_away": 1.5,
-          "corners_avg_gen": 3.0,
-          "corners_conceded_home": 3.33,
-          "corners_conceded_away": 7.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 6.0,
-          "total_shots_gen": 11.6
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 4.6,
+          "total_shots_gen": 10.4
         },
-        "projected_corners": 7.0,
+        "projected_corners": 8.9,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.0,
-          "text": "Deportivo Pereira 2 victorias • 1 empates • Deportivo Cali 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Deportivo Pereira 0 victorias • 0 empates • Deportivo Cali 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3060,11 +2426,11 @@
             "score": "1 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 19
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014150",
@@ -3079,11 +2445,11 @@
             "score": "1 - 4",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 1,
-            "corners_against": 2,
-            "total_corners": 3,
-            "shots_on_target": 6,
-            "total_shots": 8
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014162",
@@ -3098,11 +2464,11 @@
             "score": "2 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 6,
-            "total_corners": 8,
-            "shots_on_target": 9,
-            "total_shots": 21
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014067",
@@ -3158,10 +2524,10 @@
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 6,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 18
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014168",
@@ -3176,11 +2542,11 @@
             "score": "2 - 3",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 9,
-            "total_corners": 12,
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 6
+            "total_shots": 12
           },
           {
             "match_id": "1000014153",
@@ -3195,11 +2561,11 @@
             "score": "2 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 11,
-            "corners_against": 2,
-            "total_corners": 13,
-            "shots_on_target": 4,
-            "total_shots": 15
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014166",
@@ -3240,90 +2606,34 @@
             "total_shots": 18
           }
         ],
-        "head_to_head": [
-          {
-            "date": "29/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Internacional de Bogotá",
-            "match_away": "Junior FC",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Junior FC"
-          },
-          {
-            "date": "13/09/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Junior FC",
-            "match_away": "Internacional de Bogotá",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "01/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Internacional de Bogotá",
-            "match_away": "Junior FC",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Junior FC"
-          },
-          {
-            "date": "12/10/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Internacional de Bogotá",
-            "match_away": "Junior FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Internacional de Bogotá"
-          },
-          {
-            "date": "30/03/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Junior FC",
-            "match_away": "Internacional de Bogotá",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Junior FC"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 2.0,
-          "corners_avg_away": 4.75,
-          "corners_avg_gen": 4.2,
-          "corners_conceded_home": 6.0,
-          "corners_conceded_away": 3.75,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 6.0,
-          "total_shots_gen": 16.2
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 4.75,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 13.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 3.0,
-          "corners_avg_away": 7.5,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 6.67,
-          "corners_conceded_away": 3.5,
-          "corners_conceded_gen": 5.4,
-          "shots_on_target_gen": 4.4,
-          "total_shots_gen": 14.6
+          "corners_avg_home": 3.67,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 3.8,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 3.4,
+          "total_shots_gen": 13.6
         },
-        "projected_corners": 9.2,
+        "projected_corners": 8.9,
         "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 1.2,
-          "text": "Junior FC 3 victorias • 1 empates • Internacional de Bogotá 1 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Junior FC 0 victorias • 0 empates • Internacional de Bogotá 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3360,11 +2670,11 @@
             "score": "3 - 3",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 12
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014145",
@@ -3380,10 +2690,10 @@
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 6,
-            "total_shots": 18
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014148",
@@ -3398,11 +2708,11 @@
             "score": "2 - 1",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 1,
-            "total_shots": 7
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014165",
@@ -3457,11 +2767,11 @@
             "score": "1 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 3,
+            "corners_for": 4,
+            "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 19
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014147",
@@ -3476,11 +2786,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 28
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014158",
@@ -3495,11 +2805,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 0,
-            "corners_against": 8,
-            "total_corners": 8,
-            "shots_on_target": 1,
-            "total_shots": 7
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014167",
@@ -3540,90 +2850,34 @@
             "total_shots": 16
           }
         ],
-        "head_to_head": [
-          {
-            "date": "28/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Tolima",
-            "match_away": "CD Jaguares",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Tolima"
-          },
-          {
-            "date": "19/08/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "CD Jaguares",
-            "match_away": "Tolima",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Tolima"
-          },
-          {
-            "date": "15/02/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Tolima",
-            "match_away": "CD Jaguares",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Tolima"
-          },
-          {
-            "date": "06/10/2023",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "CD Jaguares",
-            "match_away": "Tolima",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Tolima"
-          },
-          {
-            "date": "26/04/2023",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Tolima",
-            "match_away": "CD Jaguares",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 4.33,
           "corners_avg_gen": 5.0,
-          "corners_conceded_home": 6.5,
-          "corners_conceded_away": 7.0,
-          "corners_conceded_gen": 6.8,
-          "shots_on_target_gen": 3.6,
-          "total_shots_gen": 11.2
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.67,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 3.2,
+          "total_shots_gen": 10.2
         },
         "away_corner_stats": {
-          "corners_avg_home": 9.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 6.2,
-          "corners_conceded_home": 1.0,
-          "corners_conceded_away": 4.33,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 17.6
+          "corners_avg_home": 7.5,
+          "corners_avg_away": 4.67,
+          "corners_avg_gen": 5.8,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 3.2,
+          "shots_on_target_gen": 4.8,
+          "total_shots_gen": 13.2
         },
-        "projected_corners": 10.6,
+        "projected_corners": 10.7,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
-          "away_wins": 4,
-          "avg_goals": 2.2,
-          "text": "CD Jaguares 0 victorias • 1 empates • Tolima 4 victorias"
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "CD Jaguares 0 victorias • 0 empates • Tolima 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3661,10 +2915,10 @@
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 1,
-            "total_corners": 6,
-            "shots_on_target": 5,
-            "total_shots": 13
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014071",
@@ -3679,11 +2933,11 @@
             "score": "1 - 2",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 2,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014152",
@@ -3698,11 +2952,11 @@
             "score": "3 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 6
+            "total_shots": 10
           },
           {
             "match_id": "1000014161",
@@ -3757,11 +3011,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 5,
-            "total_corners": 7,
-            "shots_on_target": 5,
-            "total_shots": 13
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014139",
@@ -3776,11 +3030,11 @@
             "score": "1 - 2",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 8,
-            "total_shots": 16
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014156",
@@ -3795,11 +3049,11 @@
             "score": "3 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 1,
+            "corners_for": 4,
             "corners_against": 5,
-            "total_corners": 6,
-            "shots_on_target": 2,
-            "total_shots": 5
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014159",
@@ -3840,90 +3094,34 @@
             "total_shots": 13
           }
         ],
-        "head_to_head": [
-          {
-            "date": "28/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Cúcuta",
-            "match_away": "Chicó FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Cúcuta"
-          },
-          {
-            "date": "09/08/2022",
-            "competition": "Primera B Clausura",
-            "tournament": "Primera B Clausura",
-            "match_home": "Cúcuta",
-            "match_away": "Chicó FC",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Chicó FC"
-          },
-          {
-            "date": "27/09/2020",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Chicó FC",
-            "match_away": "Cúcuta",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Cúcuta"
-          },
-          {
-            "date": "23/09/2015",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Chicó FC",
-            "match_away": "Cúcuta",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Chicó FC"
-          },
-          {
-            "date": "21/02/2015",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Cúcuta",
-            "match_away": "Chicó FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 4.67,
-          "corners_avg_away": 3.0,
-          "corners_avg_gen": 4.0,
-          "corners_conceded_home": 2.33,
-          "corners_conceded_away": 8.0,
-          "corners_conceded_gen": 4.6,
-          "shots_on_target_gen": 3.2,
-          "total_shots_gen": 7.4
+          "corners_avg_home": 3.33,
+          "corners_avg_away": 2.0,
+          "corners_avg_gen": 2.8,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 7.5,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 3.4,
+          "total_shots_gen": 8.4
         },
         "away_corner_stats": {
-          "corners_avg_home": 4.25,
-          "corners_avg_away": 1.0,
-          "corners_avg_gen": 3.6,
-          "corners_conceded_home": 3.25,
+          "corners_avg_home": 4.5,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.4,
+          "corners_conceded_home": 2.75,
           "corners_conceded_away": 5.0,
-          "corners_conceded_gen": 3.6,
-          "shots_on_target_gen": 4.8,
+          "corners_conceded_gen": 3.2,
+          "shots_on_target_gen": 4.0,
           "total_shots_gen": 11.6
         },
-        "projected_corners": 6.6,
+        "projected_corners": 7.3,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.6,
-          "text": "Chicó FC 2 victorias • 1 empates • Cúcuta 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Chicó FC 0 victorias • 0 empates • Cúcuta 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3960,11 +3158,11 @@
             "score": "3 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
+            "corners_for": 5,
             "corners_against": 4,
-            "total_corners": 7,
-            "shots_on_target": 6,
-            "total_shots": 15
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014144",
@@ -3979,11 +3177,11 @@
             "score": "0 - 1",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 3,
-            "total_corners": 6,
-            "shots_on_target": 2,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014147",
@@ -3998,11 +3196,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 9,
-            "total_corners": 11,
-            "shots_on_target": 1,
-            "total_shots": 5
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014164",
@@ -4057,11 +3255,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 8,
-            "corners_against": 1,
+            "corners_for": 4,
+            "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 17
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014148",
@@ -4076,11 +3274,11 @@
             "score": "2 - 1",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 3,
-            "total_corners": 10,
-            "shots_on_target": 9,
-            "total_shots": 24
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014162",
@@ -4095,11 +3293,11 @@
             "score": "2 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 2,
-            "total_corners": 8,
-            "shots_on_target": 4,
-            "total_shots": 9
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014078",
@@ -4140,90 +3338,34 @@
             "total_shots": 20
           }
         ],
-        "head_to_head": [
-          {
-            "date": "30/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Independiente Medellín",
-            "match_away": "América de Cali",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Independiente Medellín"
-          },
-          {
-            "date": "02/12/2025",
-            "competition": "Primera A Clausura Playoff Grp. A",
-            "tournament": "Primera A Clausura Playoff Grp. A",
-            "match_home": "Independiente Medellín",
-            "match_away": "América de Cali",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "27/11/2025",
-            "competition": "Primera A Clausura Playoff Grp. A",
-            "tournament": "Primera A Clausura Playoff Grp. A",
-            "match_home": "América de Cali",
-            "match_away": "Independiente Medellín",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "América de Cali"
-          },
-          {
-            "date": "14/11/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Independiente Medellín",
-            "match_away": "América de Cali",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Independiente Medellín"
-          },
-          {
-            "date": "20/06/2025",
-            "competition": "Primera A Apertura Playoff Grp. A",
-            "tournament": "Primera A Apertura Playoff Grp. A",
-            "match_home": "América de Cali",
-            "match_away": "Independiente Medellín",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 5.67,
-          "corners_avg_away": 3.0,
-          "corners_avg_gen": 4.6,
-          "corners_conceded_home": 2.67,
-          "corners_conceded_away": 8.0,
-          "corners_conceded_gen": 4.8,
-          "shots_on_target_gen": 4.0,
-          "total_shots_gen": 12.4
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 5.8,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 6.0,
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 4.4,
+          "total_shots_gen": 13.2
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.33,
-          "corners_avg_away": 7.0,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 1.5,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 15.8
+          "corners_avg_home": 4.67,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.4,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 12.2
         },
-        "projected_corners": 11.6,
+        "projected_corners": 10.6,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.6,
-          "text": "América de Cali 1 victorias • 2 empates • Independiente Medellín 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "América de Cali 0 victorias • 0 empates • Independiente Medellín 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4260,11 +3402,11 @@
             "score": "1 - 3",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 4,
-            "total_corners": 6,
-            "shots_on_target": 7,
-            "total_shots": 12
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014135",
@@ -4279,11 +3421,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 1,
-            "corners_against": 8,
+            "corners_for": 5,
+            "corners_against": 4,
             "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 8
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014153",
@@ -4298,11 +3440,11 @@
             "score": "2 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 11,
-            "total_corners": 13,
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 14
+            "total_shots": 12
           },
           {
             "match_id": "1000014163",
@@ -4345,25 +3487,6 @@
         ],
         "away_last_5": [
           {
-            "match_id": "1000014137",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Atlético Nacional",
-            "venue": "Visitante",
-            "match_home": "Atlético Nacional",
-            "match_away": "Águilas Doradas",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 8,
-            "total_corners": 11,
-            "shots_on_target": 2,
-            "total_shots": 9
-          },
-          {
             "match_id": "1000014149",
             "date": "18/09/2026",
             "date_iso": "2026-09-18",
@@ -4376,10 +3499,10 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 5,
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
             "total_shots": 12
           },
           {
@@ -4438,92 +3561,55 @@
             "total_corners": 12,
             "shots_on_target": 8,
             "total_shots": 26
-          }
-        ],
-        "head_to_head": [
+          },
           {
-            "date": "07/04/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Águilas Doradas",
-            "match_away": "Bucaramanga",
+            "match_id": "1000014179",
+            "date": "09/10/2026",
+            "date_iso": "2026-10-09",
+            "opponent": "Alianza FC",
+            "venue": "Visitante",
+            "match_home": "Alianza FC",
+            "match_away": "Águilas Doradas",
             "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Águilas Doradas"
-          },
-          {
-            "date": "25/08/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Bucaramanga",
-            "match_away": "Águilas Doradas",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Bucaramanga"
-          },
-          {
-            "date": "08/03/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Águilas Doradas",
-            "match_away": "Bucaramanga",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Bucaramanga"
-          },
-          {
-            "date": "21/10/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Águilas Doradas",
-            "match_away": "Bucaramanga",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Bucaramanga"
-          },
-          {
-            "date": "27/03/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Bucaramanga",
-            "match_away": "Águilas Doradas",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Bucaramanga"
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 6,
+            "corners_against": 6,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 12
           }
         ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 1.67,
-          "corners_avg_away": 1.5,
-          "corners_avg_gen": 1.6,
-          "corners_conceded_home": 8.67,
-          "corners_conceded_away": 6.5,
-          "corners_conceded_gen": 7.8,
-          "shots_on_target_gen": 4.6,
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 2.5,
+          "corners_avg_gen": 3.4,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 5.8,
+          "shots_on_target_gen": 4.0,
           "total_shots_gen": 10.8
         },
         "away_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 2.67,
-          "corners_avg_gen": 4.4,
-          "corners_conceded_home": 5.0,
-          "corners_conceded_away": 7.67,
-          "corners_conceded_gen": 6.6,
-          "shots_on_target_gen": 3.8,
-          "total_shots_gen": 14.2
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.6,
+          "corners_conceded_home": 4.5,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 14.8
         },
-        "projected_corners": 5.2,
+        "projected_corners": 7.8,
         "summary": {
-          "home_wins": 4,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.6,
-          "text": "Bucaramanga 4 victorias • 0 empates • Águilas Doradas 1 victorias"
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Bucaramanga 0 victorias • 0 empates • Águilas Doradas 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4560,11 +3646,11 @@
             "score": "1 - 2",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 8,
-            "total_shots": 16
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014152",
@@ -4579,11 +3665,11 @@
             "score": "3 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 12,
-            "total_shots": 24
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014157",
@@ -4598,11 +3684,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 3,
-            "total_corners": 5,
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 4
+            "total_shots": 10
           },
           {
             "match_id": "1000014078",
@@ -4645,25 +3731,6 @@
         ],
         "away_last_5": [
           {
-            "match_id": "1000014143",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Deportivo Cali",
-            "venue": "Local",
-            "match_home": "Once Caldas",
-            "match_away": "Deportivo Cali",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 0,
-            "total_corners": 5,
-            "shots_on_target": 9,
-            "total_shots": 28
-          },
-          {
             "match_id": "1000014113",
             "date": "16/09/2026",
             "date_iso": "2026-09-16",
@@ -4676,11 +3743,11 @@
             "score": "1 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 6,
+            "corners_for": 5,
+            "corners_against": 4,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 13
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014155",
@@ -4698,8 +3765,8 @@
             "corners_for": 4,
             "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 16
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014163",
@@ -4738,92 +3805,55 @@
             "total_corners": 6,
             "shots_on_target": 5,
             "total_shots": 7
-          }
-        ],
-        "head_to_head": [
+          },
           {
-            "date": "21/03/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
+            "match_id": "1000014183",
+            "date": "10/10/2026",
+            "date_iso": "2026-10-10",
+            "opponent": "Llaneros FC",
+            "venue": "Local",
             "match_home": "Once Caldas",
-            "match_away": "Millonarios",
+            "match_away": "Llaneros FC",
             "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "winner": "Millonarios"
-          },
-          {
-            "date": "30/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Millonarios",
-            "match_away": "Once Caldas",
-            "home_score": 0,
             "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "12/06/2025",
-            "competition": "Primera A Apertura Playoff Grp. B",
-            "tournament": "Primera A Apertura Playoff Grp. B",
-            "match_home": "Millonarios",
-            "match_away": "Once Caldas",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "09/06/2025",
-            "competition": "Primera A Apertura Playoff Grp. B",
-            "tournament": "Primera A Apertura Playoff Grp. B",
-            "match_home": "Once Caldas",
-            "match_away": "Millonarios",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "12/05/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Once Caldas",
-            "match_away": "Millonarios",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
+            "score": "1 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 15
           }
         ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 4.0,
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 4.25,
           "corners_avg_gen": 4.4,
-          "corners_conceded_home": 6.0,
+          "corners_conceded_home": 4.0,
           "corners_conceded_away": 3.75,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 6.4,
-          "total_shots_gen": 13.2
+          "corners_conceded_gen": 3.8,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 10.8
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.67,
+          "corners_avg_home": 6.33,
           "corners_avg_away": 4.5,
-          "corners_avg_gen": 5.2,
-          "corners_conceded_home": 2.33,
+          "corners_avg_gen": 5.6,
+          "corners_conceded_home": 3.0,
           "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 2.6,
-          "shots_on_target_gen": 7.2,
-          "total_shots_gen": 18.6
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 5.6,
+          "total_shots_gen": 14.6
         },
-        "projected_corners": 10.1,
+        "projected_corners": 9.8,
         "summary": {
-          "home_wins": 1,
-          "draws": 4,
+          "home_wins": 0,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 2.6,
-          "text": "Millonarios 1 victorias • 4 empates • Once Caldas 0 victorias"
+          "avg_goals": 0.0,
+          "text": "Millonarios 0 victorias • 0 empates • Once Caldas 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4860,11 +3890,11 @@
             "score": "1 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 19
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014150",
@@ -4879,11 +3909,11 @@
             "score": "1 - 4",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 1,
-            "corners_against": 2,
-            "total_corners": 3,
-            "shots_on_target": 6,
-            "total_shots": 8
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014162",
@@ -4898,11 +3928,11 @@
             "score": "2 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 6,
-            "total_corners": 8,
-            "shots_on_target": 9,
-            "total_shots": 21
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014067",
@@ -4957,11 +3987,11 @@
             "score": "1 - 3",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 4,
-            "corners_against": 2,
-            "total_corners": 6,
-            "shots_on_target": 3,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014149",
@@ -4976,11 +4006,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 7,
-            "total_shots": 11
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014166",
@@ -4998,8 +4028,8 @@
             "corners_for": 5,
             "corners_against": 4,
             "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 9
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014076",
@@ -5040,90 +4070,34 @@
             "total_shots": 4
           }
         ],
-        "head_to_head": [
-          {
-            "date": "03/02/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Deportivo Pereira",
-            "match_away": "Junior FC",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Junior FC"
-          },
-          {
-            "date": "18/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Junior FC",
-            "match_away": "Deportivo Pereira",
-            "home_score": 3,
-            "away_score": 2,
-            "score": "3 - 2",
-            "winner": "Junior FC"
-          },
-          {
-            "date": "27/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Deportivo Pereira",
-            "match_away": "Junior FC",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Deportivo Pereira"
-          },
-          {
-            "date": "20/10/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Junior FC",
-            "match_away": "Deportivo Pereira",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Junior FC"
-          },
-          {
-            "date": "23/05/2024",
-            "competition": "Primera A Apertura Playoff Grp. A",
-            "tournament": "Primera A Apertura Playoff Grp. A",
-            "match_home": "Deportivo Pereira",
-            "match_away": "Junior FC",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 2.0,
-          "corners_avg_away": 4.75,
-          "corners_avg_gen": 4.2,
-          "corners_conceded_home": 6.0,
-          "corners_conceded_away": 3.75,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 6.0,
-          "total_shots_gen": 16.2
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 5.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 4.75,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 13.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.33,
-          "corners_avg_away": 2.5,
+          "corners_avg_home": 5.67,
+          "corners_avg_away": 2.0,
           "corners_avg_gen": 4.2,
-          "corners_conceded_home": 2.67,
-          "corners_conceded_away": 6.5,
+          "corners_conceded_home": 3.33,
+          "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 3.4,
-          "total_shots_gen": 8.8
+          "shots_on_target_gen": 3.0,
+          "total_shots_gen": 9.6
         },
-        "projected_corners": 6.5,
+        "projected_corners": 8.1,
         "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Junior FC 3 victorias • 1 empates • Deportivo Pereira 1 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Junior FC 0 victorias • 0 empates • Deportivo Pereira 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5161,10 +4135,10 @@
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 5,
-            "total_corners": 10,
+            "corners_against": 4,
+            "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 13
+            "total_shots": 12
           },
           {
             "match_id": "1000014151",
@@ -5179,11 +4153,11 @@
             "score": "1 - 4",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 7,
-            "total_shots": 9
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014160",
@@ -5198,11 +4172,11 @@
             "score": "0 - 1",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 3,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 19
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014076",
@@ -5257,11 +4231,11 @@
             "score": "3 - 3",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 12
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014145",
@@ -5277,10 +4251,10 @@
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 6,
-            "total_shots": 18
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014148",
@@ -5295,11 +4269,11 @@
             "score": "2 - 1",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 1,
-            "total_shots": 7
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014165",
@@ -5340,90 +4314,34 @@
             "total_shots": 4
           }
         ],
-        "head_to_head": [
-          {
-            "date": "17/02/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "CD Jaguares",
-            "match_away": "Santa Fe",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "CD Jaguares"
-          },
-          {
-            "date": "15/11/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Santa Fe",
-            "match_away": "CD Jaguares",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "winner": "Santa Fe"
-          },
-          {
-            "date": "28/04/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "CD Jaguares",
-            "match_away": "Santa Fe",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "CD Jaguares"
-          },
-          {
-            "date": "20/07/2023",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Santa Fe",
-            "match_away": "CD Jaguares",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Santa Fe"
-          },
-          {
-            "date": "27/01/2023",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "CD Jaguares",
-            "match_away": "Santa Fe",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 4.33,
-          "corners_avg_gen": 5.4,
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.2,
           "corners_conceded_home": 4.0,
-          "corners_conceded_away": 6.67,
-          "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 5.6,
-          "total_shots_gen": 13.2
+          "corners_conceded_away": 6.33,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 4.6,
+          "total_shots_gen": 11.8
         },
         "away_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 4.33,
           "corners_avg_gen": 5.0,
-          "corners_conceded_home": 6.5,
-          "corners_conceded_away": 7.0,
-          "corners_conceded_gen": 6.8,
-          "shots_on_target_gen": 3.6,
-          "total_shots_gen": 11.2
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.67,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 3.2,
+          "total_shots_gen": 10.2
         },
-        "projected_corners": 10.9,
+        "projected_corners": 9.3,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.6,
-          "text": "Santa Fe 2 victorias • 1 empates • CD Jaguares 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Santa Fe 0 victorias • 0 empates • CD Jaguares 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5461,10 +4379,10 @@
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 1,
-            "total_corners": 6,
-            "shots_on_target": 5,
-            "total_shots": 13
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014071",
@@ -5479,11 +4397,11 @@
             "score": "1 - 2",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 2,
-            "total_shots": 10
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014152",
@@ -5498,11 +4416,11 @@
             "score": "3 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 6
+            "total_shots": 10
           },
           {
             "match_id": "1000014161",
@@ -5557,11 +4475,11 @@
             "score": "2 - 3",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 3,
-            "total_corners": 12,
-            "shots_on_target": 8,
-            "total_shots": 19
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014154",
@@ -5576,11 +4494,11 @@
             "score": "2 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 4,
-            "total_corners": 13,
-            "shots_on_target": 5,
-            "total_shots": 20
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014157",
@@ -5595,11 +4513,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 2,
-            "total_corners": 5,
-            "shots_on_target": 3,
-            "total_shots": 13
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014067",
@@ -5640,90 +4558,34 @@
             "total_shots": 14
           }
         ],
-        "head_to_head": [
-          {
-            "date": "17/01/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Atlético Nacional",
-            "match_away": "Chicó FC",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "winner": "Atlético Nacional"
-          },
-          {
-            "date": "06/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Chicó FC",
-            "match_away": "Atlético Nacional",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "16/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Atlético Nacional",
-            "match_away": "Chicó FC",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Atlético Nacional"
-          },
-          {
-            "date": "29/09/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Atlético Nacional",
-            "match_away": "Chicó FC",
-            "home_score": 6,
-            "away_score": 2,
-            "score": "6 - 2",
-            "winner": "Atlético Nacional"
-          },
-          {
-            "date": "16/03/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Chicó FC",
-            "match_away": "Atlético Nacional",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Chicó FC"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 4.67,
-          "corners_avg_away": 3.0,
-          "corners_avg_gen": 4.0,
-          "corners_conceded_home": 2.33,
-          "corners_conceded_away": 8.0,
-          "corners_conceded_gen": 4.6,
-          "shots_on_target_gen": 3.2,
-          "total_shots_gen": 7.4
+          "corners_avg_home": 3.33,
+          "corners_avg_away": 2.0,
+          "corners_avg_gen": 2.8,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 7.5,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 3.4,
+          "total_shots_gen": 8.4
         },
         "away_corner_stats": {
-          "corners_avg_home": 4.0,
-          "corners_avg_away": 9.0,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.33,
-          "corners_conceded_away": 3.5,
-          "corners_conceded_gen": 4.0,
-          "shots_on_target_gen": 5.6,
-          "total_shots_gen": 17.0
+          "corners_avg_home": 4.67,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.4,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 5.0,
+          "shots_on_target_gen": 4.4,
+          "total_shots_gen": 13.0
         },
-        "projected_corners": 11.8,
+        "projected_corners": 7.3,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 4.4,
-          "text": "Chicó FC 1 victorias • 1 empates • Atlético Nacional 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Chicó FC 0 victorias • 0 empates • Atlético Nacional 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5760,11 +4622,11 @@
             "score": "1 - 2",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 8,
-            "total_shots": 16
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014152",
@@ -5779,11 +4641,11 @@
             "score": "3 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 12,
-            "total_shots": 24
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014157",
@@ -5798,11 +4660,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 2,
-            "corners_against": 3,
-            "total_corners": 5,
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 4
+            "total_shots": 10
           },
           {
             "match_id": "1000014078",
@@ -5857,11 +4719,11 @@
             "score": "3 - 3",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 12
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014145",
@@ -5877,10 +4739,10 @@
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
             "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 6,
-            "total_shots": 18
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014148",
@@ -5895,11 +4757,11 @@
             "score": "2 - 1",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 1,
-            "total_shots": 7
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014165",
@@ -5940,90 +4802,34 @@
             "total_shots": 4
           }
         ],
-        "head_to_head": [
-          {
-            "date": "02/04/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "CD Jaguares",
-            "match_away": "Millonarios",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "CD Jaguares"
-          },
-          {
-            "date": "26/09/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Millonarios",
-            "match_away": "CD Jaguares",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "10/03/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "CD Jaguares",
-            "match_away": "Millonarios",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "CD Jaguares"
-          },
-          {
-            "date": "13/08/2023",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "CD Jaguares",
-            "match_away": "Millonarios",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "CD Jaguares"
-          },
-          {
-            "date": "18/02/2023",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Millonarios",
-            "match_away": "CD Jaguares",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Millonarios"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 4.0,
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 4.25,
           "corners_avg_gen": 4.4,
-          "corners_conceded_home": 6.0,
+          "corners_conceded_home": 4.0,
           "corners_conceded_away": 3.75,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 6.4,
-          "total_shots_gen": 13.2
+          "corners_conceded_gen": 3.8,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 10.8
         },
         "away_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 4.33,
           "corners_avg_gen": 5.0,
-          "corners_conceded_home": 6.5,
-          "corners_conceded_away": 7.0,
-          "corners_conceded_gen": 6.8,
-          "shots_on_target_gen": 3.6,
-          "total_shots_gen": 11.2
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 5.67,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 3.2,
+          "total_shots_gen": 10.2
         },
-        "projected_corners": 9.9,
+        "projected_corners": 9.4,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 3,
-          "avg_goals": 1.8,
-          "text": "Millonarios 1 victorias • 1 empates • CD Jaguares 3 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Millonarios 0 victorias • 0 empates • CD Jaguares 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6060,11 +4866,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 8,
-            "corners_against": 1,
+            "corners_for": 4,
+            "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 17
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014148",
@@ -6079,11 +4885,11 @@
             "score": "2 - 1",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 3,
-            "total_corners": 10,
-            "shots_on_target": 9,
-            "total_shots": 24
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014162",
@@ -6098,11 +4904,11 @@
             "score": "2 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 2,
-            "total_corners": 8,
-            "shots_on_target": 4,
-            "total_shots": 9
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014078",
@@ -6145,25 +4951,6 @@
         ],
         "away_last_5": [
           {
-            "match_id": "1000014143",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Deportivo Cali",
-            "venue": "Local",
-            "match_home": "Once Caldas",
-            "match_away": "Deportivo Cali",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 5,
-            "corners_against": 0,
-            "total_corners": 5,
-            "shots_on_target": 9,
-            "total_shots": 28
-          },
-          {
             "match_id": "1000014113",
             "date": "16/09/2026",
             "date_iso": "2026-09-16",
@@ -6176,11 +4963,11 @@
             "score": "1 - 0",
             "result": "W",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 6,
+            "corners_for": 5,
+            "corners_against": 4,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 13
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014155",
@@ -6198,8 +4985,8 @@
             "corners_for": 4,
             "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 16
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014163",
@@ -6238,92 +5025,55 @@
             "total_corners": 6,
             "shots_on_target": 5,
             "total_shots": 7
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "03/04/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Once Caldas",
-            "match_away": "Independiente Medellín",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
           },
           {
-            "date": "13/10/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
+            "match_id": "1000014183",
+            "date": "10/10/2026",
+            "date_iso": "2026-10-10",
+            "opponent": "Llaneros FC",
+            "venue": "Local",
             "match_home": "Once Caldas",
-            "match_away": "Independiente Medellín",
+            "match_away": "Llaneros FC",
             "home_score": 1,
-            "away_score": 5,
-            "score": "1 - 5",
-            "winner": "Independiente Medellín"
-          },
-          {
-            "date": "20/04/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Independiente Medellín",
-            "match_away": "Once Caldas",
-            "home_score": 2,
             "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Independiente Medellín"
-          },
-          {
-            "date": "28/09/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Once Caldas",
-            "match_away": "Independiente Medellín",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Independiente Medellín"
-          },
-          {
-            "date": "17/03/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Independiente Medellín",
-            "match_away": "Once Caldas",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Once Caldas"
+            "score": "1 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 15
           }
         ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 5.33,
-          "corners_avg_away": 7.0,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 1.5,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 15.8
+          "corners_avg_home": 4.67,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 4.4,
+          "corners_conceded_home": 4.33,
+          "corners_conceded_away": 5.0,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 3.8,
+          "total_shots_gen": 12.2
         },
         "away_corner_stats": {
-          "corners_avg_home": 5.67,
+          "corners_avg_home": 6.33,
           "corners_avg_away": 4.5,
-          "corners_avg_gen": 5.2,
-          "corners_conceded_home": 2.33,
+          "corners_avg_gen": 5.6,
+          "corners_conceded_home": 3.0,
           "corners_conceded_away": 3.0,
-          "corners_conceded_gen": 2.6,
-          "shots_on_target_gen": 7.2,
-          "total_shots_gen": 18.6
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 5.6,
+          "total_shots_gen": 14.6
         },
-        "projected_corners": 10.5,
+        "projected_corners": 9.6,
         "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Independiente Medellín 3 victorias • 1 empates • Once Caldas 1 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Independiente Medellín 0 victorias • 0 empates • Once Caldas 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6348,25 +5098,6 @@
       "h2h": {
         "home_last_5": [
           {
-            "match_id": "1000014137",
-            "date": "13/09/2026",
-            "date_iso": "2026-09-13",
-            "opponent": "Atlético Nacional",
-            "venue": "Visitante",
-            "match_home": "Atlético Nacional",
-            "match_away": "Águilas Doradas",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Liga BetPlay Dimayor",
-            "corners_for": 3,
-            "corners_against": 8,
-            "total_corners": 11,
-            "shots_on_target": 2,
-            "total_shots": 9
-          },
-          {
             "match_id": "1000014149",
             "date": "18/09/2026",
             "date_iso": "2026-09-18",
@@ -6379,10 +5110,10 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 5,
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
             "total_shots": 12
           },
           {
@@ -6441,6 +5172,25 @@
             "total_corners": 12,
             "shots_on_target": 8,
             "total_shots": 26
+          },
+          {
+            "match_id": "1000014179",
+            "date": "09/10/2026",
+            "date_iso": "2026-10-09",
+            "opponent": "Alianza FC",
+            "venue": "Visitante",
+            "match_home": "Alianza FC",
+            "match_away": "Águilas Doradas",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 6,
+            "corners_against": 6,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 12
           }
         ],
         "away_last_5": [
@@ -6457,11 +5207,11 @@
             "score": "1 - 0",
             "result": "L",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 6,
-            "corners_against": 3,
+            "corners_for": 4,
+            "corners_against": 5,
             "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 19
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014147",
@@ -6476,11 +5226,11 @@
             "score": "1 - 1",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 28
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
             "match_id": "1000014158",
@@ -6495,11 +5245,11 @@
             "score": "2 - 2",
             "result": "D",
             "competition": "Liga BetPlay Dimayor",
-            "corners_for": 0,
-            "corners_against": 8,
-            "total_corners": 8,
-            "shots_on_target": 1,
-            "total_shots": 7
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
           },
           {
             "match_id": "1000014167",
@@ -6540,90 +5290,522 @@
             "total_shots": 16
           }
         ],
-        "head_to_head": [
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.6,
+          "corners_conceded_home": 4.5,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 14.8
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.5,
+          "corners_avg_away": 4.67,
+          "corners_avg_gen": 5.8,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 3.2,
+          "shots_on_target_gen": 4.8,
+          "total_shots_gen": 13.2
+        },
+        "projected_corners": 10.5,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Águilas Doradas 0 victorias • 0 empates • Tolima 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
+    {
+      "id": "fotmob_colombia_1000014191",
+      "match_id": "1000014191",
+      "sport": "football",
+      "league": "Liga BetPlay Dimayor",
+      "country": "Colombia",
+      "country_code": "co",
+      "league_flag": "🇨🇴",
+      "country_flag": "🇨🇴",
+      "home_team": "Bucaramanga",
+      "away_team": "América de Cali",
+      "date": "Dom 18 Oct, 15:00",
+      "date_iso": "2026-10-18",
+      "time": "15:00",
+      "timestamp": 1792357200,
+      "timezone": "America/Guatemala",
+      "round": "Clausura - Round 15",
+      "h2h": {
+        "home_last_5": [
           {
-            "date": "01/04/2026",
-            "competition": "Primera A",
-            "tournament": "Primera A",
-            "match_home": "Tolima",
-            "match_away": "Águilas Doradas",
-            "home_score": 4,
+            "match_id": "1000014146",
+            "date": "13/09/2026",
+            "date_iso": "2026-09-13",
+            "opponent": "Deportivo Pereira",
+            "venue": "Visitante",
+            "match_home": "Deportivo Pereira",
+            "match_away": "Bucaramanga",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000014135",
+            "date": "18/09/2026",
+            "date_iso": "2026-09-18",
+            "opponent": "Independiente Medellín",
+            "venue": "Local",
+            "match_home": "Bucaramanga",
+            "match_away": "Independiente Medellín",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014153",
+            "date": "20/09/2026",
+            "date_iso": "2026-09-20",
+            "opponent": "Internacional de Bogotá",
+            "venue": "Local",
+            "match_home": "Bucaramanga",
+            "match_away": "Internacional de Bogotá",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014163",
+            "date": "26/09/2026",
+            "date_iso": "2026-09-26",
+            "opponent": "Once Caldas",
+            "venue": "Visitante",
+            "match_home": "Once Caldas",
+            "match_away": "Bucaramanga",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 1,
+            "corners_against": 9,
+            "total_corners": 10,
+            "shots_on_target": 5,
+            "total_shots": 8
+          },
+          {
+            "match_id": "1000014173",
+            "date": "04/10/2026",
+            "date_iso": "2026-10-04",
+            "opponent": "Junior FC",
+            "venue": "Local",
+            "match_home": "Bucaramanga",
+            "match_away": "Junior FC",
+            "home_score": 3,
             "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Tolima"
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 2,
+            "corners_against": 7,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "1000014134",
+            "date": "03/09/2026",
+            "date_iso": "2026-09-03",
+            "opponent": "Alianza FC",
+            "venue": "Local",
+            "match_home": "América de Cali",
+            "match_away": "Alianza FC",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
-            "date": "14/11/2025",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Águilas Doradas",
-            "match_away": "Tolima",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Tolima"
-          },
-          {
-            "date": "25/05/2025",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
-            "match_home": "Tolima",
-            "match_away": "Águilas Doradas",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Águilas Doradas"
-          },
-          {
-            "date": "02/11/2024",
-            "competition": "Primera A Clausura",
-            "tournament": "Primera A Clausura",
-            "match_home": "Águilas Doradas",
-            "match_away": "Tolima",
+            "match_id": "1000014144",
+            "date": "15/09/2026",
+            "date_iso": "2026-09-15",
+            "opponent": "Deportivo Pasto",
+            "venue": "Local",
+            "match_home": "América de Cali",
+            "match_away": "Deportivo Pasto",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
-            "winner": "Tolima"
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
           },
           {
-            "date": "12/04/2024",
-            "competition": "Primera A Apertura",
-            "tournament": "Primera A Apertura",
+            "match_id": "1000014147",
+            "date": "20/09/2026",
+            "date_iso": "2026-09-20",
+            "opponent": "Tolima",
+            "venue": "Visitante",
             "match_home": "Tolima",
+            "match_away": "América de Cali",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000014164",
+            "date": "24/09/2026",
+            "date_iso": "2026-09-24",
+            "opponent": "Águilas Doradas",
+            "venue": "Local",
+            "match_home": "América de Cali",
             "match_away": "Águilas Doradas",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 11,
+            "corners_against": 1,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 19
+          },
+          {
+            "match_id": "1000014174",
+            "date": "05/10/2026",
+            "date_iso": "2026-10-05",
+            "opponent": "Llaneros FC",
+            "venue": "Visitante",
+            "match_home": "Llaneros FC",
+            "match_away": "América de Cali",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 7,
+            "total_corners": 11,
+            "shots_on_target": 6,
+            "total_shots": 13
+          }
+        ],
+        "head_to_head": [],
+        "home_corner_stats": {
+          "corners_avg_home": 4.0,
+          "corners_avg_away": 2.5,
+          "corners_avg_gen": 3.4,
+          "corners_conceded_home": 5.0,
+          "corners_conceded_away": 7.0,
+          "corners_conceded_gen": 5.8,
+          "shots_on_target_gen": 4.0,
+          "total_shots_gen": 10.8
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 5.8,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 6.0,
+          "corners_conceded_gen": 4.2,
+          "shots_on_target_gen": 4.4,
+          "total_shots_gen": 13.2
+        },
+        "projected_corners": 8.6,
+        "summary": {
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Bucaramanga 0 victorias • 0 empates • América de Cali 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
+    {
+      "id": "fotmob_colombia_1000014192",
+      "match_id": "1000014192",
+      "sport": "football",
+      "league": "Liga BetPlay Dimayor",
+      "country": "Colombia",
+      "country_code": "co",
+      "league_flag": "🇨🇴",
+      "country_flag": "🇨🇴",
+      "home_team": "Llaneros FC",
+      "away_team": "Santa Fe",
+      "date": "Dom 18 Oct, 17:05",
+      "date_iso": "2026-10-18",
+      "time": "17:05",
+      "timestamp": 1792364700,
+      "timezone": "America/Guatemala",
+      "round": "Clausura - Round 15",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "1000014138",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "Internacional de Bogotá",
+            "venue": "Visitante",
+            "match_home": "Internacional de Bogotá",
+            "match_away": "Llaneros FC",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000014154",
+            "date": "21/09/2026",
+            "date_iso": "2026-09-21",
+            "opponent": "Atlético Nacional",
+            "venue": "Local",
+            "match_home": "Llaneros FC",
+            "match_away": "Atlético Nacional",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014159",
+            "date": "26/09/2026",
+            "date_iso": "2026-09-26",
+            "opponent": "Cúcuta",
+            "venue": "Visitante",
+            "match_home": "Cúcuta",
+            "match_away": "Llaneros FC",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
-            "winner": "Tolima"
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 3,
+            "corners_against": 2,
+            "total_corners": 5,
+            "shots_on_target": 11,
+            "total_shots": 21
+          },
+          {
+            "match_id": "1000014174",
+            "date": "05/10/2026",
+            "date_iso": "2026-10-05",
+            "opponent": "América de Cali",
+            "venue": "Local",
+            "match_home": "Llaneros FC",
+            "match_away": "América de Cali",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 7,
+            "corners_against": 4,
+            "total_corners": 11,
+            "shots_on_target": 5,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014183",
+            "date": "10/10/2026",
+            "date_iso": "2026-10-10",
+            "opponent": "Once Caldas",
+            "venue": "Visitante",
+            "match_home": "Once Caldas",
+            "match_away": "Llaneros FC",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 5,
+            "total_shots": 10
           }
         ],
+        "away_last_5": [
+          {
+            "match_id": "1000014140",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "Tolima",
+            "venue": "Local",
+            "match_home": "Santa Fe",
+            "match_away": "Tolima",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014151",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "Alianza FC",
+            "venue": "Visitante",
+            "match_home": "Alianza FC",
+            "match_away": "Santa Fe",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "1000014160",
+            "date": "23/09/2026",
+            "date_iso": "2026-09-23",
+            "opponent": "Deportivo Cali",
+            "venue": "Local",
+            "match_home": "Santa Fe",
+            "match_away": "Deportivo Cali",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "L",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "1000014076",
+            "date": "29/09/2026",
+            "date_iso": "2026-09-29",
+            "opponent": "Deportivo Pereira",
+            "venue": "Visitante",
+            "match_home": "Deportivo Pereira",
+            "match_away": "Santa Fe",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 2,
+            "corners_against": 7,
+            "total_corners": 9,
+            "shots_on_target": 6,
+            "total_shots": 9
+          },
+          {
+            "match_id": "1000014170",
+            "date": "06/10/2026",
+            "date_iso": "2026-10-06",
+            "opponent": "Independiente Medellín",
+            "venue": "Visitante",
+            "match_home": "Independiente Medellín",
+            "match_away": "Santa Fe",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "W",
+            "competition": "Liga BetPlay Dimayor",
+            "corners_for": 5,
+            "corners_against": 7,
+            "total_corners": 12,
+            "shots_on_target": 6,
+            "total_shots": 16
+          }
+        ],
+        "head_to_head": [],
         "home_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 2.67,
-          "corners_avg_gen": 4.4,
-          "corners_conceded_home": 5.0,
-          "corners_conceded_away": 7.67,
-          "corners_conceded_gen": 6.6,
-          "shots_on_target_gen": 3.8,
-          "total_shots_gen": 14.2
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.6,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 5.6,
+          "total_shots_gen": 13.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 9.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 6.2,
-          "corners_conceded_home": 1.0,
-          "corners_conceded_away": 4.33,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.4,
-          "total_shots_gen": 17.6
+          "corners_avg_home": 5.0,
+          "corners_avg_away": 3.67,
+          "corners_avg_gen": 4.2,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 6.33,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 4.6,
+          "total_shots_gen": 11.8
         },
-        "projected_corners": 10.8,
+        "projected_corners": 9.2,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 0,
           "draws": 0,
-          "away_wins": 4,
-          "avg_goals": 3.0,
-          "text": "Águilas Doradas 1 victorias • 0 empates • Tolima 4 victorias"
+          "away_wins": 0,
+          "avg_goals": 0.0,
+          "text": "Llaneros FC 0 victorias • 0 empates • Santa Fe 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

@@ -250,9 +250,9 @@
                                 <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
                                 {% endif %}
                             </span>
-                            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-950 text-rose-400 border border-rose-800 font-mono font-bold text-xs shrink-0">
-                                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-live"></span>
-                                {% if m.sport == 'nba' %}{{ m.quarter }}{% else %}{{ m.minute }}'{% endif %} EN VIVO
+                            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full {% if m.is_halftime %}bg-amber-950 text-amber-400 border border-amber-800{% else %}bg-rose-950 text-rose-400 border border-rose-800{% endif %} font-mono font-bold text-xs shrink-0">
+                                <span class="w-1.5 h-1.5 rounded-full {% if m.is_halftime %}bg-amber-400{% else %}bg-rose-500 animate-live{% endif %}"></span>
+                                {% if m.sport == 'nba' %}{{ m.quarter }}{% elif m.is_halftime %}DESCANSO (HT){% else %}{{ m.display_clock or m.minute ~ "'" }}{% endif %} EN VIVO
                             </span>
                         </div>
 
@@ -458,10 +458,17 @@
                             </span>
                         </div>
 
-                        <button onclick="openAiModal('{{ m.id }}')" class="w-full py-2.5 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-emerald-950/70 hover:to-blue-950/70 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition border border-gray-700 hover:border-emerald-500/50 shadow">
-                            <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                            <span>Ver 6 Pronósticos, H2H y Gemini AI</span>
-                        </button>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                        </div>
                     </div>
 
                 </div>
@@ -767,10 +774,17 @@
                             </span>
                         </div>
 
-                        <button onclick="openAiModal('{{ m.id }}')" class="w-full py-2.5 bg-gradient-to-r from-gray-800 to-gray-800/90 hover:from-emerald-950/70 hover:to-blue-950/70 text-white text-xs font-bold rounded-xl flex items-center justify-center gap-2 transition border border-gray-700 hover:border-emerald-500/50 shadow">
-                            <i data-lucide="target" class="w-4 h-4 text-emerald-400"></i>
-                            <span>Ver Pronósticos IA, Córners, H2H y Gemini AI</span>
-                        </button>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 {% endfor %}
@@ -808,11 +822,11 @@
             <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-4 text-xs font-bold overflow-x-auto">
                 <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="target" class="w-4 h-4"></i>
-                    <span>🎯 Pronósticos y Córners</span>
+                    <span>🎯 Pronósticos, Córners y Tarjetas</span>
                 </button>
                 <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="history" class="w-4 h-4"></i>
-                    <span>📊 Historial H2H y Córners</span>
+                    <span>📊 Historial H2H y Estadísticas</span>
                 </button>
                 <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
                     <i data-lucide="bot" class="w-4 h-4"></i>
@@ -828,7 +842,7 @@
                     <div class="flex items-center justify-between pb-1">
                         <div>
                             <h4 class="font-bold text-sm text-white">Pronósticos Calculados por Inteligencia Artificial</h4>
-                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan y Córners con cuota justa y nivel de riesgo.</p>
+                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan, Córners y Tarjetas con cuota justa e índice de fricción.</p>
                         </div>
                     </div>
                     <div id="modal-picks-grid" class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
@@ -1571,14 +1585,30 @@
                 const fairOdds = p.fair_odds || p.odds || "1.80";
                 const probability = p.probability || p.prob || 50;
 
+                const isCards = marketTitle.includes("Tarjetas");
+                const cardBorder = isCards 
+                    ? "border-amber-500/40 bg-gradient-to-b from-amber-950/20 to-gray-950/90 shadow-amber-950/20 shadow-sm" 
+                    : "border-gray-800 bg-gray-950/80";
+
+                const frictionBadge = p.friction_index ? `
+                    <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-950/70 text-amber-300 border border-amber-800/60 font-mono">
+                        ⚡ ${p.friction_index}
+                    </span>
+                ` : '';
+
                 const cardHtml = `
-                    <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-4 space-y-2.5 flex flex-col justify-between">
+                    <div class="${cardBorder} border rounded-xl p-4 space-y-2.5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between pb-2 border-b border-gray-800/80">
-                                <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">${marketTitle}</span>
-                                <span class="px-2 py-0.5 rounded text-[10px] font-bold ${riskClass}">
-                                    Riesgo ${riskLevel}
+                                <span class="text-[10px] uppercase font-bold ${isCards ? 'text-amber-400' : 'text-gray-400'} tracking-wider flex items-center gap-1">
+                                    ${isCards ? '🟨 ' : ''}${marketTitle}
                                 </span>
+                                <div class="flex items-center gap-1.5 flex-wrap justify-end">
+                                    ${frictionBadge}
+                                    <span class="px-2 py-0.5 rounded text-[10px] font-bold ${riskClass}">
+                                        Riesgo ${riskLevel}
+                                    </span>
+                                </div>
                             </div>
                             <div class="flex items-center justify-between mt-2.5">
                                 <span class="text-sm font-extrabold text-white">${pickTitle}</span>
@@ -1587,10 +1617,10 @@
                             <div class="mt-2">
                                 <div class="flex justify-between text-[11px] font-mono text-gray-400 mb-1">
                                     <span>Probabilidad estimada</span>
-                                    <strong class="text-emerald-400">${probability}%</strong>
+                                    <strong class="${isCards ? 'text-amber-400' : 'text-emerald-400'}">${probability}%</strong>
                                 </div>
                                 <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
-                                    <div class="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full" style="width: ${probability}%"></div>
+                                    <div class="h-full ${isCards ? 'bg-gradient-to-r from-amber-500 to-rose-500' : 'bg-gradient-to-r from-emerald-500 to-cyan-500'} rounded-full" style="width: ${probability}%"></div>
                                 </div>
                             </div>
                         </div>
@@ -1622,6 +1652,7 @@
                         <div class="flex flex-col items-end gap-0.5">
                             <div><span class="text-emerald-400 font-bold">Goles Loc: ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></div>
                             <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Loc: ${hs.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.corners_gen || hs.corners || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 Tarjetas Loc: ${hs.yellow_cards || 2.1}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${hs.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Faltas: ${hs.fouls || 11.5}</span></div>
                         </div>
                     `;
                 } else {
@@ -1634,6 +1665,7 @@
                         <div class="flex flex-col items-end gap-0.5">
                             <div><span class="text-rose-400 font-bold">Goles Vis: ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></div>
                             <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Vis: ${as.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.corners_gen || as.corners || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 Tarjetas Vis: ${as.yellow_cards || 2.4}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${as.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Faltas: ${as.fouls || 12.0}</span></div>
                         </div>
                     `;
                 } else {
@@ -1670,10 +1702,13 @@
                     if (m.corners_for !== undefined && m.corners_for !== null) {
                         const totCorn = m.total_corners !== undefined ? m.total_corners : (m.corners_for + (m.corners_against || 0));
                         const sot = m.shots_on_target !== undefined ? m.shots_on_target : '-';
+                        const yCards = m.yellow_cards !== undefined ? m.yellow_cards : 2;
+                        const rCards = m.red_cards !== undefined ? m.red_cards : 0;
                         extraStatsHtml = `
-                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1">
+                            <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1 flex-wrap gap-1">
                                 <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 Córners: ${m.corners_for} <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
-                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 Tiros al arco: ${sot}</span>
+                                <span class="text-amber-400 flex items-center gap-1 font-semibold">🟨 ${yCards} <span class="text-rose-400">🟥 ${rCards}</span></span>
+                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 Tiros: ${sot}</span>
                             </div>
                         `;
                     }
@@ -1876,7 +1911,7 @@
                 });
         }
 
-        function openAiModal(matchId) {
+        function openAiModal(matchId, initialTab = 'picks') {
             activeMatchId = matchId;
             const match = allMatchesData.find(m => m.id === matchId);
             if (!match) return;
@@ -1885,7 +1920,8 @@
             const flagMarkup = isBrazil 
                 ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`
                 : (match.country_code ? `<img src="https://flagcdn.com/20x15/${match.country_code}.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="${match.country}">` : `${match.league_flag} `);
-            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${match.quarter || match.minute + "'"} EN VIVO (${match.score_home}-${match.score_away})` : `${flagMarkup} ${match.league} • ${match.date}`;
+            const liveClock = match.is_halftime ? 'DESCANSO (HT)' : (match.quarter || (match.display_clock || match.minute + "'"));
+            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${liveClock} EN VIVO (${match.score_home}-${match.score_away})` : `${flagMarkup} ${match.league} • ${match.date}`;
             document.getElementById('modal-league').innerHTML = sub;
 
             // Renderizar las 3 secciones
@@ -1949,7 +1985,7 @@
                     .catch(e => console.error("Error auto-cargando Gemini:", e));
             }
 
-            switchModalTab('picks');
+            switchModalTab(initialTab);
             document.getElementById('ai-modal').classList.remove('hidden');
             lucide.createIcons();
         }

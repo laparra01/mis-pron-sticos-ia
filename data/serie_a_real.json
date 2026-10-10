@@ -3,7 +3,7 @@
   "league_id": 55,
   "country": "Italia",
   "country_code": "it",
-  "last_updated": "2026-10-09T22:07:26.523676",
+  "last_updated": "2026-10-08T14:39:01.308287",
   "total_fixtures": 12,
   "team_histories": {
     "Atalanta": [
@@ -2364,17 +2364,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/03/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Fiorentina",
-            "match_away": "Genoa",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "10/05/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -2442,10 +2431,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 1.6,
-          "text": "Genoa 0 victorias • 3 empates • Fiorentina 2 victorias"
+          "avg_goals": 2.0,
+          "text": "Genoa 0 victorias • 2 empates • Fiorentina 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2664,17 +2653,6 @@
         ],
         "head_to_head": [
           {
-            "date": "17/01/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Parma",
-            "match_away": "Inter",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/05/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -2742,10 +2720,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 3,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 2.4,
-          "text": "Inter 3 victorias • 2 empates • Parma 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Inter 3 victorias • 1 empates • Parma 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2964,17 +2942,6 @@
         ],
         "head_to_head": [
           {
-            "date": "28/02/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Frosinone",
-            "match_away": "Napoli",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "14/04/2024",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -3042,10 +3009,10 @@
         "projected_corners": 12.8,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 2.8,
-          "text": "Napoli 2 victorias • 2 empates • Frosinone 1 victorias"
+          "avg_goals": 3.5,
+          "text": "Napoli 2 victorias • 1 empates • Frosinone 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3264,17 +3231,6 @@
         ],
         "head_to_head": [
           {
-            "date": "23/05/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Roma",
-            "match_away": "Como",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "15/03/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -3342,10 +3298,10 @@
         "projected_corners": 14.2,
         "summary": {
           "home_wins": 2,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 2,
-          "avg_goals": 1.8,
-          "text": "Como 2 victorias • 1 empates • Roma 2 victorias"
+          "avg_goals": 2.2,
+          "text": "Como 2 victorias • 0 empates • Roma 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3564,17 +3520,6 @@
         ],
         "head_to_head": [
           {
-            "date": "24/01/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Monza",
-            "match_away": "Lazio",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "09/02/2025",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -3642,10 +3587,10 @@
         "projected_corners": 8.4,
         "summary": {
           "home_wins": 2,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 2.6,
-          "text": "Lazio 2 victorias • 3 empates • Monza 0 victorias"
+          "avg_goals": 3.2,
+          "text": "Lazio 2 victorias • 2 empates • Monza 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3864,17 +3809,6 @@
         ],
         "head_to_head": [
           {
-            "date": "28/02/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Bologna",
-            "match_away": "Lecce",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "12/04/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -3942,10 +3876,10 @@
         "projected_corners": 6.8,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 1.4,
-          "text": "Lecce 0 victorias • 3 empates • Bologna 2 victorias"
+          "avg_goals": 1.8,
+          "text": "Lecce 0 victorias • 2 empates • Bologna 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4164,17 +4098,6 @@
         ],
         "head_to_head": [
           {
-            "date": "14/03/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Milan",
-            "match_away": "Sassuolo",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "03/05/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -4242,10 +4165,10 @@
         "projected_corners": 8.3,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 3.8,
-          "text": "Sassuolo 1 victorias • 3 empates • Milan 1 victorias"
+          "avg_goals": 4.8,
+          "text": "Sassuolo 1 victorias • 2 empates • Milan 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4464,17 +4387,6 @@
         ],
         "head_to_head": [
           {
-            "date": "24/01/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Juventus",
-            "match_away": "Cagliari",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "17/01/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -4542,10 +4454,10 @@
         "projected_corners": 10.5,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 1.8,
-          "text": "Cagliari 1 victorias • 1 empates • Juventus 3 victorias"
+          "avg_goals": 2.2,
+          "text": "Cagliari 1 victorias • 0 empates • Juventus 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4764,17 +4676,6 @@
         ],
         "head_to_head": [
           {
-            "date": "14/03/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Venezia",
-            "match_away": "Atalanta",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "01/03/2025",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -4842,10 +4743,10 @@
         "projected_corners": 8.6,
         "summary": {
           "home_wins": 3,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 1.6,
-          "text": "Atalanta 3 victorias • 2 empates • Venezia 0 victorias"
+          "avg_goals": 2.0,
+          "text": "Atalanta 3 victorias • 1 empates • Venezia 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5064,17 +4965,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/03/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Udinese",
-            "match_away": "Torino",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "02/05/2026",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -5142,10 +5032,10 @@
         "projected_corners": 7.8,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Torino 1 victorias • 2 empates • Udinese 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Torino 1 victorias • 1 empates • Udinese 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5364,17 +5254,6 @@
         ],
         "head_to_head": [
           {
-            "date": "02/05/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Sassuolo",
-            "match_away": "Frosinone",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "02/09/2026",
             "competition": "Coppa Italia",
             "tournament": "Coppa Italia",
@@ -5442,10 +5321,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 1.4,
-          "text": "Frosinone 1 victorias • 2 empates • Sassuolo 2 victorias"
+          "avg_goals": 1.8,
+          "text": "Frosinone 1 victorias • 1 empates • Sassuolo 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5664,17 +5543,6 @@
         ],
         "head_to_head": [
           {
-            "date": "21/03/2027",
-            "competition": "Serie A",
-            "tournament": "Serie A",
-            "match_home": "Napoli",
-            "match_away": "Venezia",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "16/03/2025",
             "competition": "Serie A",
             "tournament": "Serie A",
@@ -5742,10 +5610,10 @@
         "projected_corners": 9.5,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 3,
-          "avg_goals": 1.0,
-          "text": "Venezia 0 victorias • 2 empates • Napoli 3 victorias"
+          "avg_goals": 1.2,
+          "text": "Venezia 0 victorias • 1 empates • Napoli 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

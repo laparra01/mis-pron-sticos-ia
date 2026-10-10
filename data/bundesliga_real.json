@@ -3,7 +3,7 @@
   "league_id": 54,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-09T22:07:28.368186",
+  "last_updated": "2026-10-08T14:39:06.827740",
   "total_fixtures": 12,
   "team_histories": {
     "1. FC Köln": [
@@ -394,25 +394,6 @@
         "total_corners": 8,
         "shots_on_target": 2,
         "total_shots": 13
-      },
-      {
-        "match_id": "5881180",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Werder Bremen",
-        "venue": "Local",
-        "match_home": "Borussia Dortmund",
-        "match_away": "Werder Bremen",
-        "home_score": 2,
-        "away_score": 2,
-        "score": "2 - 2",
-        "result": "D",
-        "competition": "Bundesliga",
-        "corners_for": 9,
-        "corners_against": 3,
-        "total_corners": 12,
-        "shots_on_target": 9,
-        "total_shots": 21
       }
     ],
     "Borussia Mönchengladbach": [
@@ -1427,25 +1408,6 @@
         "total_corners": 4,
         "shots_on_target": 11,
         "total_shots": 20
-      },
-      {
-        "match_id": "5881180",
-        "date": "09/10/2026",
-        "date_iso": "2026-10-09",
-        "opponent": "Borussia Dortmund",
-        "venue": "Visitante",
-        "match_home": "Borussia Dortmund",
-        "match_away": "Werder Bremen",
-        "home_score": 2,
-        "away_score": 2,
-        "score": "2 - 2",
-        "result": "D",
-        "competition": "Bundesliga",
-        "corners_for": 3,
-        "corners_against": 9,
-        "total_corners": 12,
-        "shots_on_target": 4,
-        "total_shots": 11
       }
     ]
   },
@@ -1491,14 +1453,14 @@
       "total_shots_gen": 18.25
     },
     "Borussia Dortmund": {
-      "corners_avg_home": 7.0,
+      "corners_avg_home": 6.0,
       "corners_avg_away": 3.0,
-      "corners_avg_gen": 5.4,
-      "corners_conceded_home": 3.33,
+      "corners_avg_gen": 4.5,
+      "corners_conceded_home": 3.5,
       "corners_conceded_away": 5.5,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 5.2,
-      "total_shots_gen": 14.0
+      "corners_conceded_gen": 4.5,
+      "shots_on_target_gen": 4.25,
+      "total_shots_gen": 12.25
     },
     "Borussia Mönchengladbach": {
       "corners_avg_home": 5.5,
@@ -1622,16 +1584,267 @@
     },
     "Werder Bremen": {
       "corners_avg_home": 3.5,
-      "corners_avg_away": 4.0,
-      "corners_avg_gen": 3.8,
+      "corners_avg_away": 4.5,
+      "corners_avg_gen": 4.0,
       "corners_conceded_home": 3.0,
-      "corners_conceded_away": 7.33,
-      "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 5.4,
-      "total_shots_gen": 13.4
+      "corners_conceded_away": 6.5,
+      "corners_conceded_gen": 4.75,
+      "shots_on_target_gen": 5.75,
+      "total_shots_gen": 14.0
     }
   },
   "upcoming_matches": [
+    {
+      "id": "fotmob_bundesliga_5881180",
+      "match_id": "5881180",
+      "sport": "football",
+      "league": "Bundesliga",
+      "country": "Alemania",
+      "country_code": "de",
+      "league_flag": "🇩🇪",
+      "country_flag": "🇩🇪",
+      "home_team": "Borussia Dortmund",
+      "away_team": "Werder Bremen",
+      "date": "Vie 9 Oct, 12:30",
+      "date_iso": "2026-10-09",
+      "time": "12:30",
+      "timestamp": 1791570600,
+      "timezone": "America/Guatemala",
+      "round": "5",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5881145",
+            "date": "29/08/2026",
+            "date_iso": "2026-08-29",
+            "opponent": "Hamburger SV",
+            "venue": "Local",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Hamburger SV",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5881156",
+            "date": "05/09/2026",
+            "date_iso": "2026-09-05",
+            "opponent": "Hoffenheim",
+            "venue": "Visitante",
+            "match_home": "Hoffenheim",
+            "match_away": "Borussia Dortmund",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5881162",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "Paderborn",
+            "venue": "Local",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Paderborn",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 7,
+            "corners_against": 3,
+            "total_corners": 10,
+            "shots_on_target": 8,
+            "total_shots": 14
+          },
+          {
+            "match_id": "5881177",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "VfB Stuttgart",
+            "venue": "Visitante",
+            "match_home": "VfB Stuttgart",
+            "match_away": "Borussia Dortmund",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 2,
+            "corners_against": 6,
+            "total_corners": 8,
+            "shots_on_target": 2,
+            "total_shots": 13
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5881148",
+            "date": "30/08/2026",
+            "date_iso": "2026-08-30",
+            "opponent": "Freiburg",
+            "venue": "Visitante",
+            "match_home": "Freiburg",
+            "match_away": "Werder Bremen",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "result": "L",
+            "competition": "Bundesliga",
+            "corners_for": 4,
+            "corners_against": 5,
+            "total_corners": 9,
+            "shots_on_target": 3,
+            "total_shots": 10
+          },
+          {
+            "match_id": "5881160",
+            "date": "05/09/2026",
+            "date_iso": "2026-09-05",
+            "opponent": "RB Leipzig",
+            "venue": "Local",
+            "match_home": "Werder Bremen",
+            "match_away": "RB Leipzig",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12
+          },
+          {
+            "match_id": "5881164",
+            "date": "12/09/2026",
+            "date_iso": "2026-09-12",
+            "opponent": "1. FC Köln",
+            "venue": "Visitante",
+            "match_home": "1. FC Köln",
+            "match_away": "Werder Bremen",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "result": "D",
+            "competition": "Bundesliga",
+            "corners_for": 5,
+            "corners_against": 8,
+            "total_corners": 13,
+            "shots_on_target": 5,
+            "total_shots": 14
+          },
+          {
+            "match_id": "5881178",
+            "date": "19/09/2026",
+            "date_iso": "2026-09-19",
+            "opponent": "Augsburg",
+            "venue": "Local",
+            "match_home": "Werder Bremen",
+            "match_away": "Augsburg",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "W",
+            "competition": "Bundesliga",
+            "corners_for": 2,
+            "corners_against": 2,
+            "total_corners": 4,
+            "shots_on_target": 11,
+            "total_shots": 20
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "27/10/2026",
+            "competition": "DFB Pokal",
+            "tournament": "DFB Pokal",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Werder Bremen",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/05/2026",
+            "competition": "Bundesliga",
+            "tournament": "Bundesliga",
+            "match_home": "Werder Bremen",
+            "match_away": "Borussia Dortmund",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Borussia Dortmund"
+          },
+          {
+            "date": "13/01/2026",
+            "competition": "Bundesliga",
+            "tournament": "Bundesliga",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Werder Bremen",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Borussia Dortmund"
+          },
+          {
+            "date": "25/01/2025",
+            "competition": "Bundesliga",
+            "tournament": "Bundesliga",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Werder Bremen",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 3.0,
+          "corners_avg_gen": 4.5,
+          "corners_conceded_home": 3.5,
+          "corners_conceded_away": 5.5,
+          "corners_conceded_gen": 4.5,
+          "shots_on_target_gen": 4.25,
+          "total_shots_gen": 12.25
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 3.5,
+          "corners_avg_away": 4.5,
+          "corners_avg_gen": 4.0,
+          "corners_conceded_home": 3.0,
+          "corners_conceded_away": 6.5,
+          "corners_conceded_gen": 4.75,
+          "shots_on_target_gen": 5.75,
+          "total_shots_gen": 14.0
+        },
+        "projected_corners": 9.5,
+        "summary": {
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 0,
+          "avg_goals": 2.2,
+          "text": "Borussia Dortmund 2 victorias • 2 empates • Werder Bremen 0 victorias"
+        }
+      },
+      "source_api": "FotMob (Scraping Oficial)"
+    },
     {
       "id": "fotmob_bundesliga_5881179",
       "match_id": "5881179",
@@ -1808,17 +2021,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Bayern München",
-            "match_away": "Augsburg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "24/01/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -1886,10 +2088,10 @@
         "projected_corners": 10.0,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 3.0,
-          "text": "Augsburg 1 victorias • 1 empates • Bayern München 3 victorias"
+          "avg_goals": 3.8,
+          "text": "Augsburg 1 victorias • 0 empates • Bayern München 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2070,17 +2272,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Hamburger SV",
-            "match_away": "Hoffenheim",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "25/04/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -2148,10 +2339,10 @@
         "projected_corners": 10.0,
         "summary": {
           "home_wins": 3,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 2.6,
-          "text": "Hoffenheim 3 victorias • 1 empates • Hamburger SV 1 victorias"
+          "avg_goals": 3.2,
+          "text": "Hoffenheim 3 victorias • 0 empates • Hamburger SV 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2332,17 +2523,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Bayer Leverkusen",
-            "match_away": "Mainz 05",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "28/02/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -2410,10 +2590,10 @@
         "projected_corners": 12.9,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "Mainz 05 0 victorias • 3 empates • Bayer Leverkusen 2 victorias"
+          "avg_goals": 3.5,
+          "text": "Mainz 05 0 victorias • 2 empates • Bayer Leverkusen 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2594,17 +2774,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "VfB Stuttgart",
-            "match_away": "Paderborn",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "28/10/2026",
             "competition": "DFB Pokal",
             "tournament": "DFB Pokal",
@@ -2672,10 +2841,10 @@
         "projected_corners": 10.5,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 1.2,
-          "text": "Paderborn 0 victorias • 3 empates • VfB Stuttgart 2 victorias"
+          "avg_goals": 1.5,
+          "text": "Paderborn 0 victorias • 2 empates • VfB Stuttgart 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2854,19 +3023,7 @@
             "total_shots": 11
           }
         ],
-        "head_to_head": [
-          {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Elversberg",
-            "match_away": "Union Berlin",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 4.5,
           "corners_avg_away": 3.0,
@@ -2890,10 +3047,10 @@
         "projected_corners": 8.1,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
           "avg_goals": 0.0,
-          "text": "Union Berlin 0 victorias • 1 empates • Elversberg 0 victorias"
+          "text": "Union Berlin 0 victorias • 0 empates • Elversberg 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3074,17 +3231,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Eintracht Frankfurt",
-            "match_away": "RB Leipzig",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "18/04/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -3152,10 +3298,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 3,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 3.4,
-          "text": "RB Leipzig 3 victorias • 1 empates • Eintracht Frankfurt 1 victorias"
+          "avg_goals": 4.2,
+          "text": "RB Leipzig 3 victorias • 0 empates • Eintracht Frankfurt 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3336,17 +3482,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Borussia Mönchengladbach",
-            "match_away": "1. FC Köln",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "21/03/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -3414,10 +3549,10 @@
         "projected_corners": 9.6,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 4.0,
-          "text": "1. FC Köln 1 victorias • 3 empates • Borussia Mönchengladbach 1 victorias"
+          "avg_goals": 5.0,
+          "text": "1. FC Köln 1 victorias • 2 empates • Borussia Mönchengladbach 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3598,17 +3733,6 @@
         ],
         "head_to_head": [
           {
-            "date": "20/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Schalke 04",
-            "match_away": "Freiburg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "23/04/2023",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -3676,10 +3800,10 @@
         "projected_corners": 9.8,
         "summary": {
           "home_wins": 4,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 2.4,
-          "text": "Freiburg 4 victorias • 1 empates • Schalke 04 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Freiburg 4 victorias • 0 empates • Schalke 04 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3860,17 +3984,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "1. FC Köln",
-            "match_away": "Eintracht Frankfurt",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "05/04/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -3938,10 +4051,10 @@
         "projected_corners": 9.1,
         "summary": {
           "home_wins": 1,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Eintracht Frankfurt 1 victorias • 3 empates • 1. FC Köln 1 victorias"
+          "avg_goals": 3.8,
+          "text": "Eintracht Frankfurt 1 victorias • 2 empates • 1. FC Köln 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4122,17 +4235,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Augsburg",
-            "match_away": "Elversberg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "07/08/2015",
             "competition": "DFB Pokal",
             "tournament": "DFB Pokal",
@@ -4167,10 +4269,10 @@
         "projected_corners": 7.1,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Elversberg 0 victorias • 1 empates • Augsburg 1 victorias"
+          "avg_goals": 4.0,
+          "text": "Elversberg 0 victorias • 0 empates • Augsburg 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4351,17 +4453,6 @@
         ],
         "head_to_head": [
           {
-            "date": "27/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "VfB Stuttgart",
-            "match_away": "Hamburger SV",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "12/04/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -4429,272 +4520,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 2.8,
-          "text": "Hamburger SV 1 victorias • 1 empates • VfB Stuttgart 3 victorias"
-        }
-      },
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_bundesliga_5881194",
-      "match_id": "5881194",
-      "sport": "football",
-      "league": "Bundesliga",
-      "country": "Alemania",
-      "country_code": "de",
-      "league_flag": "🇩🇪",
-      "country_flag": "🇩🇪",
-      "home_team": "Schalke 04",
-      "away_team": "Mainz 05",
-      "date": "Sáb 17 Oct, 07:30",
-      "date_iso": "2026-10-17",
-      "time": "07:30",
-      "timestamp": 1792243800,
-      "timezone": "America/Guatemala",
-      "round": "6",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5881144",
-            "date": "30/08/2026",
-            "date_iso": "2026-08-30",
-            "opponent": "Augsburg",
-            "venue": "Visitante",
-            "match_home": "Augsburg",
-            "match_away": "Schalke 04",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "result": "L",
-            "competition": "Bundesliga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5881158",
-            "date": "05/09/2026",
-            "date_iso": "2026-09-05",
-            "opponent": "Bayern München",
-            "venue": "Local",
-            "match_home": "Schalke 04",
-            "match_away": "Bayern München",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Bundesliga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5881169",
-            "date": "11/09/2026",
-            "date_iso": "2026-09-11",
-            "opponent": "Union Berlin",
-            "venue": "Visitante",
-            "match_home": "Union Berlin",
-            "match_away": "Schalke 04",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "Bundesliga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 10,
-            "total_shots": 19
-          },
-          {
-            "match_id": "5881176",
-            "date": "20/09/2026",
-            "date_iso": "2026-09-20",
-            "opponent": "Elversberg",
-            "venue": "Local",
-            "match_home": "Schalke 04",
-            "match_away": "Elversberg",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Bundesliga",
-            "corners_for": 4,
-            "corners_against": 4,
-            "total_corners": 8,
-            "shots_on_target": 1,
-            "total_shots": 13
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5881149",
-            "date": "29/08/2026",
-            "date_iso": "2026-08-29",
-            "opponent": "Paderborn",
-            "venue": "Local",
-            "match_home": "Mainz 05",
-            "match_away": "Paderborn",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Bundesliga",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12
-          },
-          {
-            "match_id": "5881155",
-            "date": "06/09/2026",
-            "date_iso": "2026-09-06",
-            "opponent": "Hamburger SV",
-            "venue": "Visitante",
-            "match_home": "Hamburger SV",
-            "match_away": "Mainz 05",
-            "home_score": 0,
-            "away_score": 5,
-            "score": "0 - 5",
-            "result": "W",
-            "competition": "Bundesliga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 10
-          },
-          {
-            "match_id": "5881167",
-            "date": "12/09/2026",
-            "date_iso": "2026-09-12",
-            "opponent": "Eintracht Frankfurt",
-            "venue": "Local",
-            "match_home": "Mainz 05",
-            "match_away": "Eintracht Frankfurt",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "L",
-            "competition": "Bundesliga",
-            "corners_for": 4,
-            "corners_against": 5,
-            "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 18
-          },
-          {
-            "match_id": "5881172",
-            "date": "19/09/2026",
-            "date_iso": "2026-09-19",
-            "opponent": "Borussia Mönchengladbach",
-            "venue": "Visitante",
-            "match_home": "Borussia Mönchengladbach",
-            "match_away": "Mainz 05",
-            "home_score": 3,
-            "away_score": 4,
-            "score": "3 - 4",
-            "result": "W",
-            "competition": "Bundesliga",
-            "corners_for": 4,
-            "corners_against": 6,
-            "total_corners": 10,
-            "shots_on_target": 8,
-            "total_shots": 17
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "27/02/2027",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Mainz 05",
-            "match_away": "Schalke 04",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "05/05/2023",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Mainz 05",
-            "match_away": "Schalke 04",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Schalke 04"
-          },
-          {
-            "date": "09/11/2022",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Schalke 04",
-            "match_away": "Mainz 05",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Schalke 04"
-          },
-          {
-            "date": "05/03/2021",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Schalke 04",
-            "match_away": "Mainz 05",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "07/11/2020",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Mainz 05",
-            "match_away": "Schalke 04",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 4.5,
-          "corners_avg_away": 4.5,
-          "corners_avg_gen": 4.5,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 4.5,
-          "corners_conceded_gen": 4.25,
-          "shots_on_target_gen": 4.5,
-          "total_shots_gen": 13.5
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 4.5,
-          "corners_avg_away": 4.0,
-          "corners_avg_gen": 4.25,
-          "corners_conceded_home": 4.5,
-          "corners_conceded_away": 5.5,
-          "corners_conceded_gen": 5.0,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 14.25
-        },
-        "projected_corners": 8.6,
-        "summary": {
-          "home_wins": 2,
-          "draws": 3,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Schalke 04 2 victorias • 3 empates • Mainz 05 0 victorias"
+          "avg_goals": 3.5,
+          "text": "Hamburger SV 1 victorias • 0 empates • VfB Stuttgart 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

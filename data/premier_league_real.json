@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-09T22:07:21.235593",
+  "last_updated": "2026-10-08T14:38:45.621067",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -2364,17 +2364,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Leeds United",
-            "match_away": "Arsenal",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "31/01/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -2442,10 +2431,10 @@
         "projected_corners": 8.9,
         "summary": {
           "home_wins": 4,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Arsenal 4 victorias • 1 empates • Leeds United 0 victorias"
+          "avg_goals": 3.8,
+          "text": "Arsenal 4 victorias • 0 empates • Leeds United 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2664,17 +2653,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Brentford",
-            "match_away": "Aston Villa",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "01/02/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -2742,10 +2720,10 @@
         "projected_corners": 7.9,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 1.0,
-          "text": "Aston Villa 1 victorias • 2 empates • Brentford 2 victorias"
+          "avg_goals": 1.2,
+          "text": "Aston Villa 1 victorias • 1 empates • Brentford 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2964,17 +2942,6 @@
         ],
         "head_to_head": [
           {
-            "date": "23/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "AFC Bournemouth",
-            "match_away": "Chelsea",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "30/12/2025",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -3042,10 +3009,10 @@
         "projected_corners": 11.1,
         "summary": {
           "home_wins": 1,
-          "draws": 4,
+          "draws": 3,
           "away_wins": 0,
-          "avg_goals": 1.8,
-          "text": "Chelsea 1 victorias • 4 empates • AFC Bournemouth 0 victorias"
+          "avg_goals": 2.2,
+          "text": "Chelsea 1 victorias • 3 empates • AFC Bournemouth 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3264,17 +3231,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Fulham",
-            "match_away": "Ipswich Town",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "05/01/2025",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -3342,10 +3298,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 0,
-          "draws": 3,
+          "draws": 2,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Ipswich Town 0 victorias • 3 empates • Fulham 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Ipswich Town 0 victorias • 2 empates • Fulham 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3564,17 +3520,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Brighton & Hove Albion",
-            "match_away": "Sunderland",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "14/03/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -3631,10 +3576,10 @@
         "projected_corners": 8.4,
         "summary": {
           "home_wins": 0,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 0.5,
-          "text": "Sunderland 0 victorias • 2 empates • Brighton & Hove Albion 2 victorias"
+          "avg_goals": 0.7,
+          "text": "Sunderland 0 victorias • 1 empates • Brighton & Hove Albion 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3853,17 +3798,6 @@
         ],
         "head_to_head": [
           {
-            "date": "23/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Tottenham Hotspur",
-            "match_away": "Manchester United",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "07/02/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -3931,10 +3865,10 @@
         "projected_corners": 10.9,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 1.6,
-          "text": "Manchester United 1 victorias • 2 empates • Tottenham Hotspur 2 victorias"
+          "avg_goals": 2.0,
+          "text": "Manchester United 1 victorias • 1 empates • Tottenham Hotspur 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4153,17 +4087,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Nottingham Forest",
-            "match_away": "Crystal Palace",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "01/02/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -4231,10 +4154,10 @@
         "projected_corners": 8.3,
         "summary": {
           "home_wins": 0,
-          "draws": 4,
+          "draws": 3,
           "away_wins": 1,
-          "avg_goals": 1.4,
-          "text": "Crystal Palace 0 victorias • 4 empates • Nottingham Forest 1 victorias"
+          "avg_goals": 1.8,
+          "text": "Crystal Palace 0 victorias • 3 empates • Nottingham Forest 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4453,17 +4376,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Everton",
-            "match_away": "Hull City",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "08/01/2022",
             "competition": "FA Cup",
             "tournament": "FA Cup",
@@ -4531,10 +4443,10 @@
         "projected_corners": 9.9,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 3.0,
-          "text": "Hull City 1 victorias • 2 empates • Everton 2 victorias"
+          "avg_goals": 3.8,
+          "text": "Hull City 1 victorias • 1 empates • Everton 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4753,17 +4665,6 @@
         ],
         "head_to_head": [
           {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Manchester City",
-            "match_away": "Liverpool",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "04/04/2026",
             "competition": "FA Cup",
             "tournament": "FA Cup",
@@ -4831,10 +4732,10 @@
         "projected_corners": 10.1,
         "summary": {
           "home_wins": 1,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 3,
-          "avg_goals": 2.4,
-          "text": "Liverpool 1 victorias • 1 empates • Manchester City 3 victorias"
+          "avg_goals": 3.0,
+          "text": "Liverpool 1 victorias • 0 empates • Manchester City 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5051,19 +4952,7 @@
             "total_shots": 12
           }
         ],
-        "head_to_head": [
-          {
-            "date": "08/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Newcastle United",
-            "match_away": "Coventry City",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          }
-        ],
+        "head_to_head": [],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 3.33,
@@ -5087,10 +4976,10 @@
         "projected_corners": 9.1,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
+          "draws": 0,
           "away_wins": 0,
           "avg_goals": 0.0,
-          "text": "Coventry City 0 victorias • 1 empates • Newcastle United 0 victorias"
+          "text": "Coventry City 0 victorias • 0 empates • Newcastle United 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5309,17 +5198,6 @@
         ],
         "head_to_head": [
           {
-            "date": "15/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Chelsea",
-            "match_away": "Everton",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "21/03/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -5387,10 +5265,10 @@
         "projected_corners": 11.6,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 1.2,
-          "text": "Everton 1 victorias • 2 empates • Chelsea 2 victorias"
+          "avg_goals": 1.5,
+          "text": "Everton 1 victorias • 1 empates • Chelsea 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5609,17 +5487,6 @@
         ],
         "head_to_head": [
           {
-            "date": "15/05/2027",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Liverpool",
-            "match_away": "Brentford",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
             "date": "24/05/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -5687,10 +5554,10 @@
         "projected_corners": 8.2,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
+          "draws": 1,
           "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Brentford 1 victorias • 2 empates • Liverpool 2 victorias"
+          "avg_goals": 2.8,
+          "text": "Brentford 1 victorias • 1 empates • Liverpool 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
