@@ -35,7 +35,7 @@ def call_gemini_api(prompt: str) -> dict:
                 "contents": [{"parts": [{"text": prompt}]}],
                 "generationConfig": {
                     "temperature": 0.35,
-                    "maxOutputTokens": 600
+                    "maxOutputTokens": 1024
                 }
             }
             resp = requests.post(url, json=payload, timeout=8)
@@ -64,6 +64,32 @@ def generate_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool 
     """
     proj_corners = prediction.get('projected_corners', 9.5)
     prob_corners = prediction.get('pct_corners_over', 55.0)
+    proj_cards = prediction.get('projected_cards', 4.5)
+    pick7 = next((p for p in prediction.get('seven_predictions', []) if p.get('id') == 7 or 'Tarjetas' in p.get('market', '')), {})
+    friction_idx = pick7.get('friction_index', 'Fricción Moderada')
+
+    h_c_stats = match_data.get('h2h', {}).get('home_corner_stats', {})
+    a_c_stats = match_data.get('h2h', {}).get('away_corner_stats', {})
+    h_y = h_c_stats.get('yellow_cards_avg_home') or h_c_stats.get('yellow_cards_avg') or 2.1
+    a_y = a_c_stats.get('yellow_cards_avg_away') or a_c_stats.get('yellow_cards_avg') or 2.3
+    h_f = h_c_stats.get('fouls_avg_home') or h_c_stats.get('fouls_avg') or 11.5
+    a_f = a_c_stats.get('fouls_avg_away') or a_c_stats.get('fouls_avg') or 12.0
+
+    home = match_data.get('home_team', 'Local')
+    away = match_data.get('away_team', 'Visitante')
+    pick = prediction.get('recommended_pick', 'Victoria Local')
+    conf = prediction.get('confidence', 60.0)
+    top_score = prediction.get('top_scores', [{}])[0].get('score', '2-1') if prediction.get('top_scores') else "2-1"
+
+    analisis_cr = f"El modelo proyecta una línea de {proj_corners} tiros de esquina totales ({prob_corners}% para Más de 8.5 córners), impulsado por la vocación ofensiva por bandas de {home} y las transiciones de {away}."
+
+    tot_fouls = round(float(h_f) + float(a_f), 1)
+    if proj_cards >= 5.2 or tot_fouls >= 27:
+        analisis_tf = f"Duelo catalogado bajo el índice de '{friction_idx}' con {proj_cards} tarjetas y {tot_fouls} faltas combinadas proyectadas. La intensidad física en zonas de recuperación será elevada, con {home} promediando {h_y} amarillas de local frente a {a_y} de {away} de visita, lo que abre gran valor en líneas Over de amonestaciones (+4.5)."
+    elif proj_cards >= 3.9:
+        analisis_tf = f"Compromiso con índice de '{friction_idx}'. Se proyectan {proj_cards} amonestaciones totales y {tot_fouls} faltas combinadas. El duelo en la medular entre {home} ({h_y} tarjetas de local) y {away} ({a_y} de visita) sugiere un encuentro de fricción controlada con alta probabilidad para superar la línea de 3.5 tarjetas."
+    else:
+        analisis_tf = f"Encuentro calificado bajo el índice de '{friction_idx}' con una proyección moderada de {proj_cards} tarjetas y {tot_fouls} faltas. Ambos clubes se caracterizan por una presión limpia y pocas infracciones tácticas ({home} {h_y} tarjetas de local vs {a_y} de {away}), perfilando valor en líneas Under de tarjetas disciplinarias."
 
     if force_gemini:
         prompt = f"""
@@ -74,7 +100,7 @@ Goles esperados: Local {prediction.get('lambda_home')} - Visitante {prediction.g
 Probabilidades: Local {prediction.get('prob_home')}%, Empate {prediction.get('prob_draw')}%, Visitante {prediction.get('prob_away')}%
 Over 2.5: {prediction.get('prob_over_25')}%, Ambos marcan: {prediction.get('prob_btts')}%
 Córners proyectados: {proj_corners} (Probabilidad Más de 8.5 Córners: {prob_corners}%)
-Tarjetas proyectadas: {prediction.get('projected_cards', 4.5)} amonestaciones totales (Línea disciplinaria / fricción táctica)
+Tarjetas proyectadas: {proj_cards} amonestaciones totales (Índice de Fricción: {friction_idx}). {match_data.get('home_team')} promedia {h_y} amarillas de local; {match_data.get('away_team')} promedia {a_y} de visita ({tot_fouls} faltas combinadas estimadas).
 Pronóstico Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence')}%)
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
@@ -82,23 +108,21 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
   "resumen": "Resumen ejecutivo táctico en 1 frase directa",
   "justificacion_estadistica": "Explicación del xG, ritmo de posesión y probabilidades",
   "analisis_corners_remates": "Proyección y lectura táctica del mercado de córners ({proj_corners} córners esperados) y volumen de remates",
+  "analisis_tarjetas_friccion": "Análisis táctico y lectura profunda del mercado disciplinario basada en las {proj_cards} tarjetas proyectadas, el índice de fricción ({friction_idx}), la rigurosidad en la disputa física ({tot_fouls} faltas combinadas estimadas) y la probabilidad de amonestaciones",
   "factor_clave": "Duelo individual o clave táctica en la cancha",
   "advertencia_riesgo": "Escenario específico que complicaría el pronóstico",
-  "marcador_sugerido": "{prediction.get('top_scores', [{}])[0].get('score', '2-1') if prediction.get('top_scores') else '2-1'}"
+  "marcador_sugerido": "{top_score}"
 }}
 """
         ai_result = call_gemini_api(prompt)
         if ai_result:
+            if not ai_result.get("analisis_tarjetas_friccion"):
+                ai_result["analisis_tarjetas_friccion"] = analisis_tf
+            if not ai_result.get("analisis_corners_remates"):
+                ai_result["analisis_corners_remates"] = analisis_cr
             return ai_result
 
     # Fallback analítico avanzado
-    home = match_data.get('home_team', 'Local')
-    away = match_data.get('away_team', 'Visitante')
-    pick = prediction.get('recommended_pick', 'Victoria Local')
-    conf = prediction.get('confidence', 60.0)
-    top_score = prediction.get('top_scores', [{}])[0].get('score', '2-1') if prediction.get('top_scores') else "2-1"
-
-    analisis_cr = f"El modelo proyecta una línea de {proj_corners} tiros de esquina totales ({prob_corners}% para Más de 8.5 córners), impulsado por la vocación ofensiva por bandas de {home} y las transiciones de {away}."
 
     if "Victoria Local" in pick or "Gana Local" in pick:
         resumen = f"Alta probabilidad para {home} aprovechando el factor localía y mayor producción ofensiva ({prediction.get('lambda_home', 2.1)} goles esperados)."
@@ -125,6 +149,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "analisis_corners_remates": analisis_cr,
+        "analisis_tarjetas_friccion": analisis_tf,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "marcador_sugerido": top_score,
@@ -158,6 +183,35 @@ def generate_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dic
     red_a = live_stats.get('red_cards_away', 0)
     tot_cards = yellow_h + yellow_a + (red_h + red_a) * 2
 
+    eff_h = round((shots_h / max(tot_shots_h, 1)) * 100) if tot_shots_h > 0 else 0
+    eff_a = round((shots_a / max(tot_shots_a, 1)) * 100) if tot_shots_a > 0 else 0
+
+    if tot_corners == 0:
+        corner_read = f"Trámite trabado en mediocampo sin profundidad por bandas (0 saques de esquina registrados hasta el momento)."
+    elif corners_h > corners_a:
+        corner_read = f"{home} vuelca su juego por las bandas sumando {corners_h} saque(s) de esquina (frente a {corners_a} de {away})."
+    elif corners_a > corners_h:
+        corner_read = f"{away} gana profundidad en tres cuartos de cancha sumando {corners_a} córner(s) a favor (frente a {corners_h} de {home})."
+    else:
+        corner_read = f"Juego disputado en el carril central con paridad en tiros de esquina ({corners_h} vs {corners_a})."
+
+    rem_time = 45 if is_halftime else max(1, 90 - minute)
+    proj_corners = round(tot_corners + max(0.5, (rem_time / 90.0) * max(1.0, tot_corners)), 1)
+
+    time_context = "al descanso (primer tiempo)" if is_halftime else f"al minuto {minute}'"
+    analisis_cr = (
+        f"{corner_read} "
+        f"En remates, {home} registra {shots_h}/{tot_shots_h} a puerta ({eff_h}% de puntería) frente a {shots_a}/{tot_shots_a} ({eff_a}%) de {away}. "
+        f"Con {tot_corners} córners acumulados {time_context}, el modelo proyecta una línea final de {proj_corners} córners."
+    )
+
+    if tot_cards >= 4 or (red_h + red_a) > 0:
+        analisis_live_cards = f"Clima de alta fricción disciplinaria: se acumulan {tot_cards} tarjetas en el encuentro ({yellow_h} amarillas y {red_h} rojas para {home}, frente a {yellow_a} amarillas y {red_a} rojas para {away}). Las disputas al límite y las reiteradas faltas tácticas incrementan fuertemente el riesgo de nuevas amonestaciones o expulsión en el cierre."
+    elif tot_cards >= 2:
+        analisis_live_cards = f"Fricción moderada en juego con {tot_cards} amonestaciones registradas ({yellow_h} para {home} y {yellow_a} para {away}). El árbitro mantiene el control del choque, aunque el desgaste físico hacia los últimos minutos propiciará infracciones para frenar contragolpes."
+    else:
+        analisis_live_cards = f"Trámite de juego limpio y baja tensión hasta el momento con apenas {tot_cards} tarjeta(s) mostrada(s) ({yellow_h} para {home} vs {yellow_a} para {away}). Encuentro fluido con escasa fricción y sin intervenciones rigurosas del juez principal."
+
     if force_gemini:
         prompt = f"""
 Actúa como analista deportivo experto en apuestas y táctica en vivo (estilo 'Mis Pronósticos AI').
@@ -182,6 +236,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
   "resumen": "Diagnóstico en 1 frase directa y veraz del momento del partido",
   "justificacion_estadistica": "Explicación fiel basada en los {shots_h} vs {shots_a} remates a puerta y la posesión de balón",
   "analisis_corners_remates": "Lectura táctica precisa citando fielmente remates ({shots_h}/{tot_shots_h} vs {shots_a}/{tot_shots_a}) y córners ({corners_h} vs {corners_a} córners acumulados)",
+  "analisis_tarjetas_friccion": "Lectura disciplinaria en vivo citando las {yellow_h} amarillas/{red_h} rojas de {home} y {yellow_a} amarillas/{red_a} rojas de {away} ({tot_cards} tarjetas acumuladas), el clima de tensión sobre el césped y la proyección disciplinaria para el tramo restante",
   "factor_clave": "Quién domina el ritmo del partido según las estadísticas reales",
   "advertencia_riesgo": "Riesgo táctico en el tramo final",
   "marcador_sugerido": "{score}"
@@ -189,30 +244,13 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 """
         ai_result = call_gemini_api(prompt)
         if ai_result:
+            if not ai_result.get("analisis_tarjetas_friccion"):
+                ai_result["analisis_tarjetas_friccion"] = analisis_live_cards
+            if not ai_result.get("analisis_corners_remates"):
+                ai_result["analisis_corners_remates"] = analisis_cr
             return ai_result
 
     # Fallback analítico cuantitativo en vivo
-    eff_h = round((shots_h / max(tot_shots_h, 1)) * 100) if tot_shots_h > 0 else 0
-    eff_a = round((shots_a / max(tot_shots_a, 1)) * 100) if tot_shots_a > 0 else 0
-
-    if tot_corners == 0:
-        corner_read = f"Trámite trabado en mediocampo sin profundidad por bandas (0 saques de esquina registrados hasta el momento)."
-    elif corners_h > corners_a:
-        corner_read = f"{home} vuelca su juego por las bandas sumando {corners_h} saque(s) de esquina (frente a {corners_a} de {away})."
-    elif corners_a > corners_h:
-        corner_read = f"{away} gana profundidad en tres cuartos de cancha sumando {corners_a} córner(s) a favor (frente a {corners_h} de {home})."
-    else:
-        corner_read = f"Juego disputado en el carril central con paridad en tiros de esquina ({corners_h} vs {corners_a})."
-
-    rem_time = 45 if is_halftime else max(1, 90 - minute)
-    proj_corners = round(tot_corners + max(0.5, (rem_time / 90.0) * max(1.0, tot_corners)), 1)
-
-    time_context = "al descanso (primer tiempo)" if is_halftime else f"al minuto {minute}'"
-    analisis_cr = (
-        f"{corner_read} "
-        f"En remates, {home} registra {shots_h}/{tot_shots_h} a puerta ({eff_h}% de puntería) frente a {shots_a}/{tot_shots_a} ({eff_a}%) de {away}. "
-        f"Con {tot_corners} córners acumulados {time_context}, el modelo proyecta una línea final de {proj_corners} córners."
-    )
 
     if is_halftime:
         resumen = f"Descanso / Medio Tiempo ({score}): {pick} con {live_pred.get('confidence', 60)}% de probabilidad proyectada para la 2ª mitad."
@@ -235,6 +273,7 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "analisis_corners_remates": analisis_cr,
+        "analisis_tarjetas_friccion": analisis_live_cards,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "marcador_sugerido": f"Actual {score}",

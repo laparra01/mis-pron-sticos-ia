@@ -24,7 +24,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 11
       },
       {
         "match_id": "5104991",
@@ -43,7 +47,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 14
       },
       {
         "match_id": "5104999",
@@ -62,7 +70,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       },
       {
         "match_id": "5105007",
@@ -81,7 +93,11 @@
         "corners_against": 6,
         "total_corners": 10,
         "shots_on_target": 3,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 6,
+        "red_cards": 0,
+        "total_cards": 6,
+        "fouls": 15
       },
       {
         "match_id": "5105016",
@@ -100,7 +116,11 @@
         "corners_against": 10,
         "total_corners": 16,
         "shots_on_target": 6,
-        "total_shots": 13
+        "total_shots": 13,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 12
       }
     ],
     "Bodø/Glimt": [
@@ -121,7 +141,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 9
       },
       {
         "match_id": "5104986",
@@ -140,7 +164,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 4
       },
       {
         "match_id": "5104994",
@@ -159,7 +187,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 5
       },
       {
         "match_id": "5105005",
@@ -178,7 +210,11 @@
         "corners_against": 2,
         "total_corners": 12,
         "shots_on_target": 10,
-        "total_shots": 25
+        "total_shots": 25,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 9
       },
       {
         "match_id": "5105011",
@@ -197,7 +233,11 @@
         "corners_against": 3,
         "total_corners": 9,
         "shots_on_target": 8,
-        "total_shots": 17
+        "total_shots": 17,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 16
       }
     ],
     "Brann": [
@@ -218,7 +258,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 20
       },
       {
         "match_id": "5104995",
@@ -237,7 +281,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       },
       {
         "match_id": "5105001",
@@ -256,7 +304,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 15
       },
       {
         "match_id": "5105011",
@@ -275,7 +327,11 @@
         "corners_against": 6,
         "total_corners": 9,
         "shots_on_target": 2,
-        "total_shots": 6
+        "total_shots": 6,
+        "yellow_cards": 2,
+        "red_cards": 1,
+        "total_cards": 3,
+        "fouls": 13
       },
       {
         "match_id": "5105018",
@@ -294,7 +350,11 @@
         "corners_against": 4,
         "total_corners": 17,
         "shots_on_target": 6,
-        "total_shots": 29
+        "total_shots": 29,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 8
       }
     ],
     "Fredrikstad": [
@@ -315,7 +375,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 7
       },
       {
         "match_id": "5104985",
@@ -334,7 +398,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 8
       },
       {
         "match_id": "5104994",
@@ -353,7 +421,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 8
       },
       {
         "match_id": "5105004",
@@ -372,7 +444,11 @@
         "corners_against": 3,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 14
+        "total_shots": 14,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       },
       {
         "match_id": "5105010",
@@ -391,7 +467,11 @@
         "corners_against": 9,
         "total_corners": 15,
         "shots_on_target": 2,
-        "total_shots": 9
+        "total_shots": 9,
+        "yellow_cards": 1,
+        "red_cards": 1,
+        "total_cards": 2,
+        "fouls": 12
       }
     ],
     "Hamarkameratene": [
@@ -412,7 +492,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 1,
+        "total_cards": 2,
+        "fouls": 12
       },
       {
         "match_id": "5104987",
@@ -431,7 +515,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 17
       },
       {
         "match_id": "5105000",
@@ -450,7 +538,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       },
       {
         "match_id": "5105006",
@@ -469,7 +561,11 @@
         "corners_against": 2,
         "total_corners": 8,
         "shots_on_target": 3,
-        "total_shots": 16
+        "total_shots": 16,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 10
       },
       {
         "match_id": "5105012",
@@ -488,7 +584,11 @@
         "corners_against": 7,
         "total_corners": 8,
         "shots_on_target": 2,
-        "total_shots": 5
+        "total_shots": 5,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 9
       }
     ],
     "KFUM": [
@@ -509,7 +609,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       },
       {
         "match_id": "5104989",
@@ -528,7 +632,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 1,
+        "total_cards": 4,
+        "fouls": 12
       },
       {
         "match_id": "5104997",
@@ -547,7 +655,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 1,
+        "total_cards": 3,
+        "fouls": 10
       },
       {
         "match_id": "5105007",
@@ -566,7 +678,11 @@
         "corners_against": 4,
         "total_corners": 10,
         "shots_on_target": 5,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5105009",
@@ -585,7 +701,11 @@
         "corners_against": 11,
         "total_corners": 12,
         "shots_on_target": 4,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       }
     ],
     "Kristiansund": [
@@ -606,7 +726,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 15
       },
       {
         "match_id": "5104987",
@@ -625,7 +749,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5104996",
@@ -644,7 +772,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5105008",
@@ -663,7 +795,11 @@
         "corners_against": 7,
         "total_corners": 12,
         "shots_on_target": 2,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 9
       },
       {
         "match_id": "5105013",
@@ -682,7 +818,11 @@
         "corners_against": 6,
         "total_corners": 10,
         "shots_on_target": 7,
-        "total_shots": 15
+        "total_shots": 15,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       }
     ],
     "Lillestrøm": [
@@ -703,7 +843,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 13
       },
       {
         "match_id": "5104985",
@@ -722,7 +866,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 10
       },
       {
         "match_id": "5104995",
@@ -741,7 +889,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 8
       },
       {
         "match_id": "5105003",
@@ -760,7 +912,11 @@
         "corners_against": 6,
         "total_corners": 12,
         "shots_on_target": 2,
-        "total_shots": 7
+        "total_shots": 7,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 14
       },
       {
         "match_id": "5105015",
@@ -779,7 +935,11 @@
         "corners_against": 7,
         "total_corners": 13,
         "shots_on_target": 6,
-        "total_shots": 15
+        "total_shots": 15,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       }
     ],
     "Molde": [
@@ -800,7 +960,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 16
       },
       {
         "match_id": "5104992",
@@ -819,7 +983,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       },
       {
         "match_id": "5104997",
@@ -838,7 +1006,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 7
       },
       {
         "match_id": "5105006",
@@ -857,7 +1029,11 @@
         "corners_against": 6,
         "total_corners": 8,
         "shots_on_target": 7,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5105016",
@@ -876,7 +1052,11 @@
         "corners_against": 6,
         "total_corners": 16,
         "shots_on_target": 8,
-        "total_shots": 16
+        "total_shots": 16,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 19
       }
     ],
     "Rosenborg": [
@@ -897,7 +1077,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 17
       },
       {
         "match_id": "5104986",
@@ -916,7 +1100,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5105000",
@@ -935,7 +1123,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 10
       },
       {
         "match_id": "5105002",
@@ -954,7 +1146,11 @@
         "corners_against": 4,
         "total_corners": 8,
         "shots_on_target": 10,
-        "total_shots": 20
+        "total_shots": 20,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 19
       },
       {
         "match_id": "5105013",
@@ -973,7 +1169,11 @@
         "corners_against": 4,
         "total_corners": 10,
         "shots_on_target": 8,
-        "total_shots": 17
+        "total_shots": 17,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 16
       }
     ],
     "Sandefjord": [
@@ -994,7 +1194,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 5,
+        "red_cards": 0,
+        "total_cards": 5,
+        "fouls": 12
       },
       {
         "match_id": "5104988",
@@ -1013,7 +1217,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 19
       },
       {
         "match_id": "5104993",
@@ -1032,7 +1240,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 5,
+        "red_cards": 0,
+        "total_cards": 5,
+        "fouls": 18
       },
       {
         "match_id": "5105005",
@@ -1051,7 +1263,11 @@
         "corners_against": 10,
         "total_corners": 12,
         "shots_on_target": 3,
-        "total_shots": 9
+        "total_shots": 9,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 12
       },
       {
         "match_id": "5105014",
@@ -1070,7 +1286,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 5,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 10
       }
     ],
     "Sarpsborg 08": [
@@ -1091,7 +1311,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       },
       {
         "match_id": "5104990",
@@ -1110,7 +1334,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 6
       },
       {
         "match_id": "5104998",
@@ -1129,7 +1357,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 9
       },
       {
         "match_id": "5105004",
@@ -1148,7 +1380,11 @@
         "corners_against": 6,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 7
+        "total_shots": 7,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 15
       },
       {
         "match_id": "5105009",
@@ -1167,7 +1403,11 @@
         "corners_against": 1,
         "total_corners": 12,
         "shots_on_target": 7,
-        "total_shots": 21
+        "total_shots": 21,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 7
       }
     ],
     "Start": [
@@ -1188,7 +1428,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 8
       },
       {
         "match_id": "5104989",
@@ -1207,7 +1451,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 11
       },
       {
         "match_id": "5104999",
@@ -1226,7 +1474,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 9
       },
       {
         "match_id": "5105001",
@@ -1245,7 +1497,11 @@
         "corners_against": 7,
         "total_corners": 16,
         "shots_on_target": 6,
-        "total_shots": 22
+        "total_shots": 22,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 10
       },
       {
         "match_id": "5105014",
@@ -1264,7 +1520,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 0,
-        "total_shots": 7
+        "total_shots": 7,
+        "yellow_cards": 2,
+        "red_cards": 1,
+        "total_cards": 3,
+        "fouls": 11
       }
     ],
     "Tromsø": [
@@ -1285,7 +1545,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       },
       {
         "match_id": "5104990",
@@ -1304,7 +1568,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 11
       },
       {
         "match_id": "5104996",
@@ -1323,7 +1591,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 23
       },
       {
         "match_id": "5105002",
@@ -1342,7 +1614,11 @@
         "corners_against": 4,
         "total_corners": 8,
         "shots_on_target": 9,
-        "total_shots": 14
+        "total_shots": 14,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 12
       },
       {
         "match_id": "5105012",
@@ -1361,7 +1637,11 @@
         "corners_against": 1,
         "total_corners": 8,
         "shots_on_target": 11,
-        "total_shots": 18
+        "total_shots": 18,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 8
       }
     ],
     "Viking": [
@@ -1382,7 +1662,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 5
       },
       {
         "match_id": "5104993",
@@ -1401,7 +1685,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 1,
+        "total_cards": 2,
+        "fouls": 19
       },
       {
         "match_id": "5105008",
@@ -1420,7 +1708,11 @@
         "corners_against": 5,
         "total_corners": 12,
         "shots_on_target": 12,
-        "total_shots": 28
+        "total_shots": 28,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 14
       },
       {
         "match_id": "5105015",
@@ -1439,7 +1731,11 @@
         "corners_against": 6,
         "total_corners": 13,
         "shots_on_target": 9,
-        "total_shots": 22
+        "total_shots": 22,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5105018",
@@ -1458,7 +1754,11 @@
         "corners_against": 13,
         "total_corners": 17,
         "shots_on_target": 4,
-        "total_shots": 9
+        "total_shots": 9,
+        "yellow_cards": 1,
+        "red_cards": 1,
+        "total_cards": 2,
+        "fouls": 12
       }
     ],
     "Vålerenga": [
@@ -1479,7 +1779,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5104992",
@@ -1498,7 +1802,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 10
       },
       {
         "match_id": "5104998",
@@ -1517,7 +1825,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 14
       },
       {
         "match_id": "5105003",
@@ -1536,7 +1848,11 @@
         "corners_against": 6,
         "total_corners": 12,
         "shots_on_target": 3,
-        "total_shots": 16
+        "total_shots": 16,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 14
       },
       {
         "match_id": "5105010",
@@ -1555,7 +1871,11 @@
         "corners_against": 6,
         "total_corners": 15,
         "shots_on_target": 4,
-        "total_shots": 17
+        "total_shots": 17,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 9
       }
     ]
   },
@@ -1568,7 +1888,19 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 5.8,
       "shots_on_target_gen": 4.0,
-      "total_shots_gen": 13.2
+      "total_shots_gen": 13.2,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 4.67,
+      "yellow_cards_avg": 3.2,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 4.67,
+      "total_cards_avg": 3.2,
+      "fouls_avg_home": 10.0,
+      "fouls_avg_away": 13.67,
+      "fouls_avg": 12.2
     },
     "Bodø/Glimt": {
       "corners_avg_home": 7.5,
@@ -1578,7 +1910,19 @@
       "corners_conceded_away": 4.33,
       "corners_conceded_gen": 3.8,
       "shots_on_target_gen": 5.6,
-      "total_shots_gen": 14.8
+      "total_shots_gen": 14.8,
+      "yellow_cards_avg_home": 0.5,
+      "yellow_cards_avg_away": 0.67,
+      "yellow_cards_avg": 0.6,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 0.5,
+      "total_cards_avg_away": 0.67,
+      "total_cards_avg": 0.6,
+      "fouls_avg_home": 6.5,
+      "fouls_avg_away": 10.0,
+      "fouls_avg": 8.6
     },
     "Brann": {
       "corners_avg_home": 7.0,
@@ -1588,7 +1932,19 @@
       "corners_conceded_away": 5.0,
       "corners_conceded_gen": 4.8,
       "shots_on_target_gen": 3.6,
-      "total_shots_gen": 13.4
+      "total_shots_gen": 13.4,
+      "yellow_cards_avg_home": 1.67,
+      "yellow_cards_avg_away": 3.0,
+      "yellow_cards_avg": 2.2,
+      "red_cards_avg_home": 0.33,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.2,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 3.0,
+      "total_cards_avg": 2.4,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 17.5,
+      "fouls_avg": 13.6
     },
     "Fredrikstad": {
       "corners_avg_home": 5.33,
@@ -1598,7 +1954,19 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 5.0,
       "shots_on_target_gen": 3.2,
-      "total_shots_gen": 11.4
+      "total_shots_gen": 11.4,
+      "yellow_cards_avg_home": 2.0,
+      "yellow_cards_avg_away": 1.0,
+      "yellow_cards_avg": 1.6,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.5,
+      "red_cards_avg": 0.2,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.8,
+      "fouls_avg_home": 8.0,
+      "fouls_avg_away": 10.0,
+      "fouls_avg": 8.8
     },
     "Hamarkameratene": {
       "corners_avg_home": 5.5,
@@ -1608,7 +1976,19 @@
       "corners_conceded_away": 5.67,
       "corners_conceded_gen": 4.6,
       "shots_on_target_gen": 3.0,
-      "total_shots_gen": 10.6
+      "total_shots_gen": 10.6,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 1.33,
+      "yellow_cards_avg": 1.2,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.33,
+      "red_cards_avg": 0.2,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 1.67,
+      "total_cards_avg": 1.4,
+      "fouls_avg_home": 13.5,
+      "fouls_avg_away": 11.0,
+      "fouls_avg": 12.0
     },
     "KFUM": {
       "corners_avg_home": 5.5,
@@ -1618,7 +1998,19 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 5.8,
       "shots_on_target_gen": 3.8,
-      "total_shots_gen": 10.4
+      "total_shots_gen": 10.4,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 2.33,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.67,
+      "red_cards_avg": 0.4,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 3.0,
+      "total_cards_avg": 2.2,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 10.33,
+      "fouls_avg": 10.6
     },
     "Kristiansund": {
       "corners_avg_home": 4.5,
@@ -1628,7 +2020,19 @@
       "corners_conceded_away": 5.67,
       "corners_conceded_gen": 5.4,
       "shots_on_target_gen": 3.8,
-      "total_shots_gen": 11.8
+      "total_shots_gen": 11.8,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 1.67,
+      "yellow_cards_avg": 1.4,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 1.67,
+      "total_cards_avg": 1.4,
+      "fouls_avg_home": 13.0,
+      "fouls_avg_away": 12.33,
+      "fouls_avg": 12.6
     },
     "Lillestrøm": {
       "corners_avg_home": 5.5,
@@ -1638,7 +2042,19 @@
       "corners_conceded_away": 5.67,
       "corners_conceded_gen": 5.4,
       "shots_on_target_gen": 3.6,
-      "total_shots_gen": 10.8
+      "total_shots_gen": 10.8,
+      "yellow_cards_avg_home": 2.0,
+      "yellow_cards_avg_away": 1.67,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 1.67,
+      "total_cards_avg": 1.8,
+      "fouls_avg_home": 12.0,
+      "fouls_avg_away": 10.33,
+      "fouls_avg": 11.0
     },
     "Molde": {
       "corners_avg_home": 6.67,
@@ -1648,7 +2064,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 5.0,
       "shots_on_target_gen": 5.2,
-      "total_shots_gen": 13.8
+      "total_shots_gen": 13.8,
+      "yellow_cards_avg_home": 2.0,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.8,
+      "fouls_avg_home": 14.0,
+      "fouls_avg_away": 9.5,
+      "fouls_avg": 12.2
     },
     "Rosenborg": {
       "corners_avg_home": 4.67,
@@ -1658,7 +2086,19 @@
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 4.2,
       "shots_on_target_gen": 5.8,
-      "total_shots_gen": 14.2
+      "total_shots_gen": 14.2,
+      "yellow_cards_avg_home": 0.67,
+      "yellow_cards_avg_away": 0.5,
+      "yellow_cards_avg": 0.6,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 0.67,
+      "total_cards_avg_away": 0.5,
+      "total_cards_avg": 0.6,
+      "fouls_avg_home": 15.33,
+      "fouls_avg_away": 14.5,
+      "fouls_avg": 15.0
     },
     "Sandefjord": {
       "corners_avg_home": 5.0,
@@ -1668,7 +2108,19 @@
       "corners_conceded_away": 7.5,
       "corners_conceded_gen": 5.4,
       "shots_on_target_gen": 3.8,
-      "total_shots_gen": 12.4
+      "total_shots_gen": 12.4,
+      "yellow_cards_avg_home": 3.0,
+      "yellow_cards_avg_away": 4.0,
+      "yellow_cards_avg": 3.4,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 3.0,
+      "total_cards_avg_away": 4.0,
+      "total_cards_avg": 3.4,
+      "fouls_avg_home": 15.67,
+      "fouls_avg_away": 12.0,
+      "fouls_avg": 14.2
     },
     "Sarpsborg 08": {
       "corners_avg_home": 7.0,
@@ -1678,7 +2130,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 4.0,
       "shots_on_target_gen": 4.4,
-      "total_shots_gen": 12.4
+      "total_shots_gen": 12.4,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 0.5,
+      "yellow_cards_avg": 0.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 0.5,
+      "total_cards_avg": 0.8,
+      "fouls_avg_home": 9.33,
+      "fouls_avg_away": 10.5,
+      "fouls_avg": 9.8
     },
     "Start": {
       "corners_avg_home": 6.33,
@@ -1688,7 +2152,19 @@
       "corners_conceded_away": 5.0,
       "corners_conceded_gen": 5.0,
       "shots_on_target_gen": 3.4,
-      "total_shots_gen": 12.6
+      "total_shots_gen": 12.6,
+      "yellow_cards_avg_home": 1.33,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.4,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.5,
+      "red_cards_avg": 0.2,
+      "total_cards_avg_home": 1.33,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 1.6,
+      "fouls_avg_home": 9.67,
+      "fouls_avg_away": 10.0,
+      "fouls_avg": 9.8
     },
     "Tromsø": {
       "corners_avg_home": 6.0,
@@ -1698,7 +2174,19 @@
       "corners_conceded_away": 4.67,
       "corners_conceded_gen": 3.8,
       "shots_on_target_gen": 6.0,
-      "total_shots_gen": 12.8
+      "total_shots_gen": 12.8,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 2.33,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 2.33,
+      "total_cards_avg": 1.8,
+      "fouls_avg_home": 9.5,
+      "fouls_avg_away": 15.67,
+      "fouls_avg": 13.2
     },
     "Viking": {
       "corners_avg_home": 6.33,
@@ -1708,7 +2196,19 @@
       "corners_conceded_away": 9.0,
       "corners_conceded_gen": 6.6,
       "shots_on_target_gen": 6.4,
-      "total_shots_gen": 16.2
+      "total_shots_gen": 16.2,
+      "yellow_cards_avg_home": 0.67,
+      "yellow_cards_avg_away": 1.0,
+      "yellow_cards_avg": 0.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 1.0,
+      "red_cards_avg": 0.4,
+      "total_cards_avg_home": 0.67,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 1.2,
+      "fouls_avg_home": 10.67,
+      "fouls_avg_away": 15.5,
+      "fouls_avg": 12.6
     },
     "Vålerenga": {
       "corners_avg_home": 7.0,
@@ -1718,7 +2218,19 @@
       "corners_conceded_away": 5.33,
       "corners_conceded_gen": 5.2,
       "shots_on_target_gen": 3.4,
-      "total_shots_gen": 13.0
+      "total_shots_gen": 13.0,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 2.0,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 1.8,
+      "fouls_avg_home": 9.5,
+      "fouls_avg_away": 12.67,
+      "fouls_avg": 11.4
     }
   },
   "upcoming_matches": [
@@ -1758,7 +2270,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9
           },
           {
             "match_id": "5104986",
@@ -1777,7 +2293,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 4
           },
           {
             "match_id": "5104994",
@@ -1796,7 +2316,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5105005",
@@ -1815,7 +2339,11 @@
             "corners_against": 2,
             "total_corners": 12,
             "shots_on_target": 10,
-            "total_shots": 25
+            "total_shots": 25,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9
           },
           {
             "match_id": "5105011",
@@ -1834,7 +2362,11 @@
             "corners_against": 3,
             "total_corners": 9,
             "shots_on_target": 8,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 16
           }
         ],
         "away_last_5": [
@@ -1855,7 +2387,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 15
           },
           {
             "match_id": "5104987",
@@ -1874,7 +2410,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5104996",
@@ -1893,7 +2433,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5105008",
@@ -1912,7 +2456,11 @@
             "corners_against": 7,
             "total_corners": 12,
             "shots_on_target": 2,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105013",
@@ -1931,7 +2479,11 @@
             "corners_against": 6,
             "total_corners": 10,
             "shots_on_target": 7,
-            "total_shots": 15
+            "total_shots": 15,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           }
         ],
         "head_to_head": [
@@ -1955,7 +2507,19 @@
           "corners_conceded_away": 4.33,
           "corners_conceded_gen": 3.8,
           "shots_on_target_gen": 5.6,
-          "total_shots_gen": 14.8
+          "total_shots_gen": 14.8,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 0.67,
+          "yellow_cards_avg": 0.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 0.67,
+          "total_cards_avg": 0.6,
+          "fouls_avg_home": 6.5,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 8.6
         },
         "away_corner_stats": {
           "corners_avg_home": 4.5,
@@ -1965,7 +2529,19 @@
           "corners_conceded_away": 5.67,
           "corners_conceded_gen": 5.4,
           "shots_on_target_gen": 3.8,
-          "total_shots_gen": 11.8
+          "total_shots_gen": 11.8,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.67,
+          "yellow_cards_avg": 1.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.4,
+          "fouls_avg_home": 13.0,
+          "fouls_avg_away": 12.33,
+          "fouls_avg": 12.6
         },
         "projected_corners": 11.0,
         "summary": {
@@ -1974,7 +2550,8 @@
           "away_wins": 0,
           "avg_goals": 3.0,
           "text": "Bodø/Glimt 1 victorias • 0 empates • Kristiansund 0 victorias"
-        }
+        },
+        "projected_cards": 2.1
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2014,7 +2591,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 17
           },
           {
             "match_id": "5104986",
@@ -2033,7 +2614,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5105000",
@@ -2052,7 +2637,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105002",
@@ -2071,7 +2660,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 10,
-            "total_shots": 20
+            "total_shots": 20,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19
           },
           {
             "match_id": "5105013",
@@ -2090,7 +2683,11 @@
             "corners_against": 4,
             "total_corners": 10,
             "shots_on_target": 8,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 16
           }
         ],
         "away_last_5": [
@@ -2111,7 +2708,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 5,
+            "red_cards": 0,
+            "total_cards": 5,
+            "fouls": 12
           },
           {
             "match_id": "5104988",
@@ -2130,7 +2731,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19
           },
           {
             "match_id": "5104993",
@@ -2149,7 +2754,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 5,
+            "red_cards": 0,
+            "total_cards": 5,
+            "fouls": 18
           },
           {
             "match_id": "5105005",
@@ -2168,7 +2777,11 @@
             "corners_against": 10,
             "total_corners": 12,
             "shots_on_target": 3,
-            "total_shots": 9
+            "total_shots": 9,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 12
           },
           {
             "match_id": "5105014",
@@ -2187,7 +2800,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 5,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           }
         ],
         "head_to_head": [
@@ -2211,7 +2828,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 4.2,
           "shots_on_target_gen": 5.8,
-          "total_shots_gen": 14.2
+          "total_shots_gen": 14.2,
+          "yellow_cards_avg_home": 0.67,
+          "yellow_cards_avg_away": 0.5,
+          "yellow_cards_avg": 0.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.67,
+          "total_cards_avg_away": 0.5,
+          "total_cards_avg": 0.6,
+          "fouls_avg_home": 15.33,
+          "fouls_avg_away": 14.5,
+          "fouls_avg": 15.0
         },
         "away_corner_stats": {
           "corners_avg_home": 5.0,
@@ -2221,7 +2850,19 @@
           "corners_conceded_away": 7.5,
           "corners_conceded_gen": 5.4,
           "shots_on_target_gen": 3.8,
-          "total_shots_gen": 12.4
+          "total_shots_gen": 12.4,
+          "yellow_cards_avg_home": 3.0,
+          "yellow_cards_avg_away": 4.0,
+          "yellow_cards_avg": 3.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 3.0,
+          "total_cards_avg_away": 4.0,
+          "total_cards_avg": 3.4,
+          "fouls_avg_home": 15.67,
+          "fouls_avg_away": 12.0,
+          "fouls_avg": 14.2
         },
         "projected_corners": 8.3,
         "summary": {
@@ -2230,7 +2871,8 @@
           "away_wins": 0,
           "avg_goals": 0.0,
           "text": "Rosenborg 0 victorias • 1 empates • Sandefjord 0 victorias"
-        }
+        },
+        "projected_cards": 4.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2270,7 +2912,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           },
           {
             "match_id": "5104985",
@@ -2289,7 +2935,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 8
           },
           {
             "match_id": "5104994",
@@ -2308,7 +2958,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 8
           },
           {
             "match_id": "5105004",
@@ -2327,7 +2981,11 @@
             "corners_against": 3,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 14
+            "total_shots": 14,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5105010",
@@ -2346,7 +3004,11 @@
             "corners_against": 9,
             "total_corners": 15,
             "shots_on_target": 2,
-            "total_shots": 9
+            "total_shots": 9,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "away_last_5": [
@@ -2367,7 +3029,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           },
           {
             "match_id": "5104990",
@@ -2386,7 +3052,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           },
           {
             "match_id": "5104996",
@@ -2405,7 +3075,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 23
           },
           {
             "match_id": "5105002",
@@ -2424,7 +3098,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 9,
-            "total_shots": 14
+            "total_shots": 14,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 12
           },
           {
             "match_id": "5105012",
@@ -2443,7 +3121,11 @@
             "corners_against": 1,
             "total_corners": 8,
             "shots_on_target": 11,
-            "total_shots": 18
+            "total_shots": 18,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           }
         ],
         "head_to_head": [
@@ -2467,7 +3149,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 3.2,
-          "total_shots_gen": 11.4
+          "total_shots_gen": 11.4,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 1.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 8.0,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 8.8
         },
         "away_corner_stats": {
           "corners_avg_home": 6.0,
@@ -2477,7 +3171,19 @@
           "corners_conceded_away": 4.67,
           "corners_conceded_gen": 3.8,
           "shots_on_target_gen": 6.0,
-          "total_shots_gen": 12.8
+          "total_shots_gen": 12.8,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 2.33,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 2.33,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 15.67,
+          "fouls_avg": 13.2
         },
         "projected_corners": 9.7,
         "summary": {
@@ -2486,7 +3192,8 @@
           "away_wins": 1,
           "avg_goals": 4.0,
           "text": "Fredrikstad 0 victorias • 0 empates • Tromsø 1 victorias"
-        }
+        },
+        "projected_cards": 4.0
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2526,7 +3233,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 11
           },
           {
             "match_id": "5104991",
@@ -2545,7 +3256,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 14
           },
           {
             "match_id": "5104999",
@@ -2564,7 +3279,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5105007",
@@ -2583,7 +3302,11 @@
             "corners_against": 6,
             "total_corners": 10,
             "shots_on_target": 3,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 6,
+            "red_cards": 0,
+            "total_cards": 6,
+            "fouls": 15
           },
           {
             "match_id": "5105016",
@@ -2602,7 +3325,11 @@
             "corners_against": 10,
             "total_corners": 16,
             "shots_on_target": 6,
-            "total_shots": 13
+            "total_shots": 13,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 12
           }
         ],
         "away_last_5": [
@@ -2623,7 +3350,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           },
           {
             "match_id": "5104990",
@@ -2642,7 +3373,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 6
           },
           {
             "match_id": "5104998",
@@ -2661,7 +3396,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105004",
@@ -2680,7 +3419,11 @@
             "corners_against": 6,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 15
           },
           {
             "match_id": "5105009",
@@ -2699,7 +3442,11 @@
             "corners_against": 1,
             "total_corners": 12,
             "shots_on_target": 7,
-            "total_shots": 21
+            "total_shots": 21,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           }
         ],
         "head_to_head": [],
@@ -2711,7 +3458,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.8,
           "shots_on_target_gen": 4.0,
-          "total_shots_gen": 13.2
+          "total_shots_gen": 13.2,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 4.67,
+          "yellow_cards_avg": 3.2,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 4.67,
+          "total_cards_avg": 3.2,
+          "fouls_avg_home": 10.0,
+          "fouls_avg_away": 13.67,
+          "fouls_avg": 12.2
         },
         "away_corner_stats": {
           "corners_avg_home": 7.0,
@@ -2721,7 +3480,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.0,
           "shots_on_target_gen": 4.4,
-          "total_shots_gen": 12.4
+          "total_shots_gen": 12.4,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 0.5,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 0.5,
+          "total_cards_avg": 0.8,
+          "fouls_avg_home": 9.33,
+          "fouls_avg_away": 10.5,
+          "fouls_avg": 9.8
         },
         "projected_corners": 9.4,
         "summary": {
@@ -2730,7 +3501,8 @@
           "away_wins": 0,
           "avg_goals": 0.0,
           "text": "Aalesund 0 victorias • 0 empates • Sarpsborg 08 0 victorias"
-        }
+        },
+        "projected_cards": 2.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2770,7 +3542,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5104989",
@@ -2789,7 +3565,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 11
           },
           {
             "match_id": "5104999",
@@ -2808,7 +3588,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105001",
@@ -2827,7 +3611,11 @@
             "corners_against": 7,
             "total_corners": 16,
             "shots_on_target": 6,
-            "total_shots": 22
+            "total_shots": 22,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105014",
@@ -2846,7 +3634,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 0,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 11
           }
         ],
         "away_last_5": [
@@ -2867,7 +3659,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5104987",
@@ -2886,7 +3682,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 17
           },
           {
             "match_id": "5105000",
@@ -2905,7 +3705,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5105006",
@@ -2924,7 +3728,11 @@
             "corners_against": 2,
             "total_corners": 8,
             "shots_on_target": 3,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105012",
@@ -2943,7 +3751,11 @@
             "corners_against": 7,
             "total_corners": 8,
             "shots_on_target": 2,
-            "total_shots": 5
+            "total_shots": 5,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           }
         ],
         "head_to_head": [
@@ -2967,7 +3779,19 @@
           "corners_conceded_away": 5.0,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 3.4,
-          "total_shots_gen": 12.6
+          "total_shots_gen": 12.6,
+          "yellow_cards_avg_home": 1.33,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 1.33,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.6,
+          "fouls_avg_home": 9.67,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 9.8
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
@@ -2977,7 +3801,19 @@
           "corners_conceded_away": 5.67,
           "corners_conceded_gen": 4.6,
           "shots_on_target_gen": 3.0,
-          "total_shots_gen": 10.6
+          "total_shots_gen": 10.6,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.33,
+          "yellow_cards_avg": 1.2,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.4,
+          "fouls_avg_home": 13.5,
+          "fouls_avg_away": 11.0,
+          "fouls_avg": 12.0
         },
         "projected_corners": 9.4,
         "summary": {
@@ -2986,7 +3822,8 @@
           "away_wins": 1,
           "avg_goals": 3.0,
           "text": "Start 0 victorias • 0 empates • Hamarkameratene 1 victorias"
-        }
+        },
+        "projected_cards": 3.0
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3026,7 +3863,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 13
           },
           {
             "match_id": "5104985",
@@ -3045,7 +3886,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           },
           {
             "match_id": "5104995",
@@ -3064,7 +3909,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 8
           },
           {
             "match_id": "5105003",
@@ -3083,7 +3932,11 @@
             "corners_against": 6,
             "total_corners": 12,
             "shots_on_target": 2,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 14
           },
           {
             "match_id": "5105015",
@@ -3102,7 +3955,11 @@
             "corners_against": 7,
             "total_corners": 13,
             "shots_on_target": 6,
-            "total_shots": 15
+            "total_shots": 15,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           }
         ],
         "away_last_5": [
@@ -3123,7 +3980,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 16
           },
           {
             "match_id": "5104992",
@@ -3142,7 +4003,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5104997",
@@ -3161,7 +4026,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 7
           },
           {
             "match_id": "5105006",
@@ -3180,7 +4049,11 @@
             "corners_against": 6,
             "total_corners": 8,
             "shots_on_target": 7,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5105016",
@@ -3199,7 +4072,11 @@
             "corners_against": 6,
             "total_corners": 16,
             "shots_on_target": 8,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19
           }
         ],
         "head_to_head": [
@@ -3223,7 +4100,19 @@
           "corners_conceded_away": 5.67,
           "corners_conceded_gen": 5.4,
           "shots_on_target_gen": 3.6,
-          "total_shots_gen": 10.8
+          "total_shots_gen": 10.8,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 1.67,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 12.0,
+          "fouls_avg_away": 10.33,
+          "fouls_avg": 11.0
         },
         "away_corner_stats": {
           "corners_avg_home": 6.67,
@@ -3233,7 +4122,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 5.2,
-          "total_shots_gen": 13.8
+          "total_shots_gen": 13.8,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 14.0,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 12.2
         },
         "projected_corners": 9.3,
         "summary": {
@@ -3242,7 +4143,8 @@
           "away_wins": 0,
           "avg_goals": 1.0,
           "text": "Lillestrøm 1 victorias • 0 empates • Molde 0 victorias"
-        }
+        },
+        "projected_cards": 3.5
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3282,7 +4184,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           },
           {
             "match_id": "5104989",
@@ -3301,7 +4207,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 1,
+            "total_cards": 4,
+            "fouls": 12
           },
           {
             "match_id": "5104997",
@@ -3320,7 +4230,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 10
           },
           {
             "match_id": "5105007",
@@ -3339,7 +4253,11 @@
             "corners_against": 4,
             "total_corners": 10,
             "shots_on_target": 5,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5105009",
@@ -3358,7 +4276,11 @@
             "corners_against": 11,
             "total_corners": 12,
             "shots_on_target": 4,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           }
         ],
         "away_last_5": [
@@ -3379,7 +4301,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5104992",
@@ -3398,7 +4324,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 10
           },
           {
             "match_id": "5104998",
@@ -3417,7 +4347,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 14
           },
           {
             "match_id": "5105003",
@@ -3436,7 +4370,11 @@
             "corners_against": 6,
             "total_corners": 12,
             "shots_on_target": 3,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 14
           },
           {
             "match_id": "5105010",
@@ -3455,7 +4393,11 @@
             "corners_against": 6,
             "total_corners": 15,
             "shots_on_target": 4,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9
           }
         ],
         "head_to_head": [
@@ -3479,7 +4421,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.8,
           "shots_on_target_gen": 3.8,
-          "total_shots_gen": 10.4
+          "total_shots_gen": 10.4,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 2.33,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.67,
+          "red_cards_avg": 0.4,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 3.0,
+          "total_cards_avg": 2.2,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 10.33,
+          "fouls_avg": 10.6
         },
         "away_corner_stats": {
           "corners_avg_home": 7.0,
@@ -3489,7 +4443,19 @@
           "corners_conceded_away": 5.33,
           "corners_conceded_gen": 5.2,
           "shots_on_target_gen": 3.4,
-          "total_shots_gen": 13.0
+          "total_shots_gen": 13.0,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 12.67,
+          "fouls_avg": 11.4
         },
         "projected_corners": 9.9,
         "summary": {
@@ -3498,7 +4464,8 @@
           "away_wins": 0,
           "avg_goals": 4.0,
           "text": "KFUM 0 victorias • 1 empates • Vålerenga 0 victorias"
-        }
+        },
+        "projected_cards": 3.5
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3538,7 +4505,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5104987",
@@ -3557,7 +4528,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 17
           },
           {
             "match_id": "5105000",
@@ -3576,7 +4551,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5105006",
@@ -3595,7 +4574,11 @@
             "corners_against": 2,
             "total_corners": 8,
             "shots_on_target": 3,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105012",
@@ -3614,7 +4597,11 @@
             "corners_against": 7,
             "total_corners": 8,
             "shots_on_target": 2,
-            "total_shots": 5
+            "total_shots": 5,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           }
         ],
         "away_last_5": [
@@ -3635,7 +4622,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9
           },
           {
             "match_id": "5104986",
@@ -3654,7 +4645,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 4
           },
           {
             "match_id": "5104994",
@@ -3673,7 +4668,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5105005",
@@ -3692,7 +4691,11 @@
             "corners_against": 2,
             "total_corners": 12,
             "shots_on_target": 10,
-            "total_shots": 25
+            "total_shots": 25,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9
           },
           {
             "match_id": "5105011",
@@ -3711,7 +4714,11 @@
             "corners_against": 3,
             "total_corners": 9,
             "shots_on_target": 8,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 16
           }
         ],
         "head_to_head": [
@@ -3735,7 +4742,19 @@
           "corners_conceded_away": 5.67,
           "corners_conceded_gen": 4.6,
           "shots_on_target_gen": 3.0,
-          "total_shots_gen": 10.6
+          "total_shots_gen": 10.6,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.33,
+          "yellow_cards_avg": 1.2,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.4,
+          "fouls_avg_home": 13.5,
+          "fouls_avg_away": 11.0,
+          "fouls_avg": 12.0
         },
         "away_corner_stats": {
           "corners_avg_home": 7.5,
@@ -3745,7 +4764,19 @@
           "corners_conceded_away": 4.33,
           "corners_conceded_gen": 3.8,
           "shots_on_target_gen": 5.6,
-          "total_shots_gen": 14.8
+          "total_shots_gen": 14.8,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 0.67,
+          "yellow_cards_avg": 0.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 0.67,
+          "total_cards_avg": 0.6,
+          "fouls_avg_home": 6.5,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 8.6
         },
         "projected_corners": 10.0,
         "summary": {
@@ -3754,7 +4785,8 @@
           "away_wins": 1,
           "avg_goals": 3.0,
           "text": "Hamarkameratene 0 victorias • 0 empates • Bodø/Glimt 1 victorias"
-        }
+        },
+        "projected_cards": 1.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3794,7 +4826,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 15
           },
           {
             "match_id": "5104987",
@@ -3813,7 +4849,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5104996",
@@ -3832,7 +4872,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5105008",
@@ -3851,7 +4895,11 @@
             "corners_against": 7,
             "total_corners": 12,
             "shots_on_target": 2,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105013",
@@ -3870,7 +4918,11 @@
             "corners_against": 6,
             "total_corners": 10,
             "shots_on_target": 7,
-            "total_shots": 15
+            "total_shots": 15,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           }
         ],
         "away_last_5": [
@@ -3891,7 +4943,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 11
           },
           {
             "match_id": "5104991",
@@ -3910,7 +4966,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 14
           },
           {
             "match_id": "5104999",
@@ -3929,7 +4989,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5105007",
@@ -3948,7 +5012,11 @@
             "corners_against": 6,
             "total_corners": 10,
             "shots_on_target": 3,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 6,
+            "red_cards": 0,
+            "total_cards": 6,
+            "fouls": 15
           },
           {
             "match_id": "5105016",
@@ -3967,7 +5035,11 @@
             "corners_against": 10,
             "total_corners": 16,
             "shots_on_target": 6,
-            "total_shots": 13
+            "total_shots": 13,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -3991,7 +5063,19 @@
           "corners_conceded_away": 5.67,
           "corners_conceded_gen": 5.4,
           "shots_on_target_gen": 3.8,
-          "total_shots_gen": 11.8
+          "total_shots_gen": 11.8,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.67,
+          "yellow_cards_avg": 1.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.4,
+          "fouls_avg_home": 13.0,
+          "fouls_avg_away": 12.33,
+          "fouls_avg": 12.6
         },
         "away_corner_stats": {
           "corners_avg_home": 5.0,
@@ -4001,7 +5085,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.8,
           "shots_on_target_gen": 4.0,
-          "total_shots_gen": 13.2
+          "total_shots_gen": 13.2,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 4.67,
+          "yellow_cards_avg": 3.2,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 4.67,
+          "total_cards_avg": 3.2,
+          "fouls_avg_home": 10.0,
+          "fouls_avg_away": 13.67,
+          "fouls_avg": 12.2
         },
         "projected_corners": 9.2,
         "summary": {
@@ -4010,7 +5106,8 @@
           "away_wins": 0,
           "avg_goals": 2.0,
           "text": "Kristiansund 0 victorias • 1 empates • Aalesund 0 victorias"
-        }
+        },
+        "projected_cards": 5.1
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4050,7 +5147,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5104993",
@@ -4069,7 +5170,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 19
           },
           {
             "match_id": "5105008",
@@ -4088,7 +5193,11 @@
             "corners_against": 5,
             "total_corners": 12,
             "shots_on_target": 12,
-            "total_shots": 28
+            "total_shots": 28,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 14
           },
           {
             "match_id": "5105015",
@@ -4107,7 +5216,11 @@
             "corners_against": 6,
             "total_corners": 13,
             "shots_on_target": 9,
-            "total_shots": 22
+            "total_shots": 22,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5105018",
@@ -4126,7 +5239,11 @@
             "corners_against": 13,
             "total_corners": 17,
             "shots_on_target": 4,
-            "total_shots": 9
+            "total_shots": 9,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "away_last_5": [
@@ -4147,7 +5264,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           },
           {
             "match_id": "5104985",
@@ -4166,7 +5287,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 8
           },
           {
             "match_id": "5104994",
@@ -4185,7 +5310,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 8
           },
           {
             "match_id": "5105004",
@@ -4204,7 +5333,11 @@
             "corners_against": 3,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 14
+            "total_shots": 14,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5105010",
@@ -4223,7 +5356,11 @@
             "corners_against": 9,
             "total_corners": 15,
             "shots_on_target": 2,
-            "total_shots": 9
+            "total_shots": 9,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -4247,7 +5384,19 @@
           "corners_conceded_away": 9.0,
           "corners_conceded_gen": 6.6,
           "shots_on_target_gen": 6.4,
-          "total_shots_gen": 16.2
+          "total_shots_gen": 16.2,
+          "yellow_cards_avg_home": 0.67,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 1.0,
+          "red_cards_avg": 0.4,
+          "total_cards_avg_home": 0.67,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.2,
+          "fouls_avg_home": 10.67,
+          "fouls_avg_away": 15.5,
+          "fouls_avg": 12.6
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -4257,7 +5406,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 3.2,
-          "total_shots_gen": 11.4
+          "total_shots_gen": 11.4,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 1.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 8.0,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 8.8
         },
         "projected_corners": 11.0,
         "summary": {
@@ -4266,7 +5427,8 @@
           "away_wins": 0,
           "avg_goals": 3.0,
           "text": "Viking 1 victorias • 0 empates • Fredrikstad 0 victorias"
-        }
+        },
+        "projected_cards": 2.6
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4306,7 +5468,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           },
           {
             "match_id": "5104990",
@@ -4325,7 +5491,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 6
           },
           {
             "match_id": "5104998",
@@ -4344,7 +5514,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105004",
@@ -4363,7 +5537,11 @@
             "corners_against": 6,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 15
           },
           {
             "match_id": "5105009",
@@ -4382,7 +5560,11 @@
             "corners_against": 1,
             "total_corners": 12,
             "shots_on_target": 7,
-            "total_shots": 21
+            "total_shots": 21,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           }
         ],
         "away_last_5": [
@@ -4403,7 +5585,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 17
           },
           {
             "match_id": "5104986",
@@ -4422,7 +5608,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5105000",
@@ -4441,7 +5631,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105002",
@@ -4460,7 +5654,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 10,
-            "total_shots": 20
+            "total_shots": 20,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19
           },
           {
             "match_id": "5105013",
@@ -4479,7 +5677,11 @@
             "corners_against": 4,
             "total_corners": 10,
             "shots_on_target": 8,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 16
           }
         ],
         "head_to_head": [
@@ -4503,7 +5705,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.0,
           "shots_on_target_gen": 4.4,
-          "total_shots_gen": 12.4
+          "total_shots_gen": 12.4,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 0.5,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 0.5,
+          "total_cards_avg": 0.8,
+          "fouls_avg_home": 9.33,
+          "fouls_avg_away": 10.5,
+          "fouls_avg": 9.8
         },
         "away_corner_stats": {
           "corners_avg_home": 4.67,
@@ -4513,7 +5727,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 4.2,
           "shots_on_target_gen": 5.8,
-          "total_shots_gen": 14.2
+          "total_shots_gen": 14.2,
+          "yellow_cards_avg_home": 0.67,
+          "yellow_cards_avg_away": 0.5,
+          "yellow_cards_avg": 0.6,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.67,
+          "total_cards_avg_away": 0.5,
+          "total_cards_avg": 0.6,
+          "fouls_avg_home": 15.33,
+          "fouls_avg_away": 14.5,
+          "fouls_avg": 15.0
         },
         "projected_corners": 11.2,
         "summary": {
@@ -4522,7 +5748,8 @@
           "away_wins": 1,
           "avg_goals": 3.0,
           "text": "Sarpsborg 08 0 victorias • 0 empates • Rosenborg 1 victorias"
-        }
+        },
+        "projected_cards": 1.5
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4562,7 +5789,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 16
           },
           {
             "match_id": "5104992",
@@ -4581,7 +5812,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5104997",
@@ -4600,7 +5835,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 7
           },
           {
             "match_id": "5105006",
@@ -4619,7 +5858,11 @@
             "corners_against": 6,
             "total_corners": 8,
             "shots_on_target": 7,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5105016",
@@ -4638,7 +5881,11 @@
             "corners_against": 6,
             "total_corners": 16,
             "shots_on_target": 8,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19
           }
         ],
         "away_last_5": [
@@ -4659,7 +5906,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5104989",
@@ -4678,7 +5929,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 11
           },
           {
             "match_id": "5104999",
@@ -4697,7 +5952,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 9
           },
           {
             "match_id": "5105001",
@@ -4716,7 +5975,11 @@
             "corners_against": 7,
             "total_corners": 16,
             "shots_on_target": 6,
-            "total_shots": 22
+            "total_shots": 22,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 10
           },
           {
             "match_id": "5105014",
@@ -4735,7 +5998,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 0,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 11
           }
         ],
         "head_to_head": [
@@ -4759,7 +6026,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 5.2,
-          "total_shots_gen": 13.8
+          "total_shots_gen": 13.8,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.8,
+          "fouls_avg_home": 14.0,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 12.2
         },
         "away_corner_stats": {
           "corners_avg_home": 6.33,
@@ -4769,7 +6048,19 @@
           "corners_conceded_away": 5.0,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 3.4,
-          "total_shots_gen": 12.6
+          "total_shots_gen": 12.6,
+          "yellow_cards_avg_home": 1.33,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 1.33,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.6,
+          "fouls_avg_home": 9.67,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 9.8
         },
         "projected_corners": 10.6,
         "summary": {
@@ -4778,7 +6069,8 @@
           "away_wins": 0,
           "avg_goals": 2.0,
           "text": "Molde 0 victorias • 1 empates • Start 0 victorias"
-        }
+        },
+        "projected_cards": 3.7
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

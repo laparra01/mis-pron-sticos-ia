@@ -969,6 +969,13 @@
                         <p id="modal-corners-shots" class="text-gray-200 leading-relaxed font-sans"></p>
                     </div>
 
+                    <div id="modal-cards-friction-box" class="hidden bg-amber-950/30 border border-amber-800/50 p-3.5 rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider flex items-center gap-1 mb-1.5">
+                            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i> Análisis de Tarjetas y Fricción Disciplinaria
+                        </span>
+                        <p id="modal-cards-friction" class="text-gray-200 leading-relaxed font-sans"></p>
+                    </div>
+
                     <div>
                         <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center gap-1 mb-1.5">
                             <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-400"></i> Advertencia de Riesgo
@@ -1794,6 +1801,15 @@
                 csEl.innerText = ai.analisis_corners_remates;
             } else if (csBox) {
                 csBox.classList.add('hidden');
+            }
+
+            const cardsBox = document.getElementById('modal-cards-friction-box');
+            const cardsEl = document.getElementById('modal-cards-friction');
+            if (ai.analisis_tarjetas_friccion && cardsBox && cardsEl) {
+                cardsBox.classList.remove('hidden');
+                cardsEl.innerText = ai.analisis_tarjetas_friccion;
+            } else if (cardsBox) {
+                cardsBox.classList.add('hidden');
             }
 
             const badge = document.getElementById('modal-gemini-badge');

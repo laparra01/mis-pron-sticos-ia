@@ -24,7 +24,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 11
       },
       {
         "match_id": "5881159",
@@ -43,7 +47,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 6
       },
       {
         "match_id": "5881164",
@@ -62,7 +70,11 @@
         "corners_against": 5,
         "total_corners": 13,
         "shots_on_target": 6,
-        "total_shots": 15
+        "total_shots": 15,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 11
       },
       {
         "match_id": "5881174",
@@ -81,7 +93,11 @@
         "corners_against": 3,
         "total_corners": 8,
         "shots_on_target": 5,
-        "total_shots": 18
+        "total_shots": 18,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 14
       }
     ],
     "Augsburg": [
@@ -102,7 +118,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 5
       },
       {
         "match_id": "5881154",
@@ -121,7 +141,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5881161",
@@ -140,7 +164,11 @@
         "corners_against": 14,
         "total_corners": 16,
         "shots_on_target": 5,
-        "total_shots": 8
+        "total_shots": 8,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 6
       },
       {
         "match_id": "5881178",
@@ -159,7 +187,11 @@
         "corners_against": 2,
         "total_corners": 4,
         "shots_on_target": 4,
-        "total_shots": 7
+        "total_shots": 7,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 11
       }
     ],
     "Bayer Leverkusen": [
@@ -180,7 +212,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 15
       },
       {
         "match_id": "5881152",
@@ -199,7 +235,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 11
       },
       {
         "match_id": "5881161",
@@ -218,7 +258,11 @@
         "corners_against": 2,
         "total_corners": 16,
         "shots_on_target": 5,
-        "total_shots": 30
+        "total_shots": 30,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       },
       {
         "match_id": "5881170",
@@ -237,7 +281,11 @@
         "corners_against": 6,
         "total_corners": 15,
         "shots_on_target": 6,
-        "total_shots": 18
+        "total_shots": 18,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 14
       }
     ],
     "Bayern München": [
@@ -258,7 +306,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5881158",
@@ -277,7 +329,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       },
       {
         "match_id": "5881163",
@@ -296,7 +352,11 @@
         "corners_against": 3,
         "total_corners": 12,
         "shots_on_target": 6,
-        "total_shots": 28
+        "total_shots": 28,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 8
       },
       {
         "match_id": "5881171",
@@ -315,7 +375,11 @@
         "corners_against": 2,
         "total_corners": 11,
         "shots_on_target": 15,
-        "total_shots": 23
+        "total_shots": 23,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       }
     ],
     "Borussia Dortmund": [
@@ -336,7 +400,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 1,
+        "total_cards": 3,
+        "fouls": 13
       },
       {
         "match_id": "5881156",
@@ -355,7 +423,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 7
       },
       {
         "match_id": "5881162",
@@ -374,7 +446,11 @@
         "corners_against": 3,
         "total_corners": 10,
         "shots_on_target": 8,
-        "total_shots": 14
+        "total_shots": 14,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 11
       },
       {
         "match_id": "5881177",
@@ -393,7 +469,11 @@
         "corners_against": 6,
         "total_corners": 8,
         "shots_on_target": 2,
-        "total_shots": 13
+        "total_shots": 13,
+        "yellow_cards": 5,
+        "red_cards": 0,
+        "total_cards": 5,
+        "fouls": 14
       }
     ],
     "Borussia Mönchengladbach": [
@@ -414,7 +494,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 13
       },
       {
         "match_id": "5881153",
@@ -433,7 +517,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 18
       },
       {
         "match_id": "5881165",
@@ -452,7 +540,11 @@
         "corners_against": 6,
         "total_corners": 8,
         "shots_on_target": 0,
-        "total_shots": 5
+        "total_shots": 5,
+        "yellow_cards": 3,
+        "red_cards": 1,
+        "total_cards": 4,
+        "fouls": 16
       },
       {
         "match_id": "5881172",
@@ -471,7 +563,11 @@
         "corners_against": 4,
         "total_corners": 10,
         "shots_on_target": 7,
-        "total_shots": 21
+        "total_shots": 21,
+        "yellow_cards": 6,
+        "red_cards": 0,
+        "total_cards": 6,
+        "fouls": 12
       }
     ],
     "Eintracht Frankfurt": [
@@ -492,7 +588,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 10
       },
       {
         "match_id": "5881154",
@@ -511,7 +611,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5881167",
@@ -530,7 +634,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 5,
-        "total_shots": 11
+        "total_shots": 11,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       },
       {
         "match_id": "5881173",
@@ -549,7 +657,11 @@
         "corners_against": 5,
         "total_corners": 8,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       }
     ],
     "Elversberg": [
@@ -570,7 +682,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 18
       },
       {
         "match_id": "5881153",
@@ -589,7 +705,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 1,
+        "total_cards": 3,
+        "fouls": 9
       },
       {
         "match_id": "5881163",
@@ -608,7 +728,11 @@
         "corners_against": 9,
         "total_corners": 12,
         "shots_on_target": 1,
-        "total_shots": 5
+        "total_shots": 5,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       },
       {
         "match_id": "5881176",
@@ -627,7 +751,11 @@
         "corners_against": 4,
         "total_corners": 8,
         "shots_on_target": 1,
-        "total_shots": 11
+        "total_shots": 11,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 10
       }
     ],
     "Freiburg": [
@@ -648,7 +776,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5881157",
@@ -667,7 +799,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 10
       },
       {
         "match_id": "5881165",
@@ -686,7 +822,11 @@
         "corners_against": 2,
         "total_corners": 8,
         "shots_on_target": 9,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 7
       },
       {
         "match_id": "5881173",
@@ -705,7 +845,11 @@
         "corners_against": 3,
         "total_corners": 8,
         "shots_on_target": 7,
-        "total_shots": 22
+        "total_shots": 22,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 11
       }
     ],
     "Hamburger SV": [
@@ -726,7 +870,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 19
       },
       {
         "match_id": "5881155",
@@ -745,7 +893,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 14
       },
       {
         "match_id": "5881168",
@@ -764,7 +916,11 @@
         "corners_against": 7,
         "total_corners": 14,
         "shots_on_target": 4,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 13
       },
       {
         "match_id": "5881174",
@@ -783,7 +939,11 @@
         "corners_against": 5,
         "total_corners": 8,
         "shots_on_target": 7,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       }
     ],
     "Hoffenheim": [
@@ -804,7 +964,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 14
       },
       {
         "match_id": "5881156",
@@ -823,7 +987,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 4,
+        "red_cards": 0,
+        "total_cards": 4,
+        "fouls": 13
       },
       {
         "match_id": "5881166",
@@ -842,7 +1010,11 @@
         "corners_against": 7,
         "total_corners": 12,
         "shots_on_target": 8,
-        "total_shots": 20
+        "total_shots": 20,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 15
       },
       {
         "match_id": "5881175",
@@ -861,7 +1033,11 @@
         "corners_against": 6,
         "total_corners": 11,
         "shots_on_target": 2,
-        "total_shots": 23
+        "total_shots": 23,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 14
       }
     ],
     "Mainz 05": [
@@ -882,7 +1058,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 8
       },
       {
         "match_id": "5881155",
@@ -901,7 +1081,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 19
       },
       {
         "match_id": "5881167",
@@ -920,7 +1104,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 5,
-        "total_shots": 18
+        "total_shots": 18,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 11
       },
       {
         "match_id": "5881172",
@@ -939,7 +1127,11 @@
         "corners_against": 6,
         "total_corners": 10,
         "shots_on_target": 8,
-        "total_shots": 17
+        "total_shots": 17,
+        "yellow_cards": 5,
+        "red_cards": 0,
+        "total_cards": 5,
+        "fouls": 14
       }
     ],
     "Paderborn": [
@@ -960,7 +1152,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 10
       },
       {
         "match_id": "5881157",
@@ -979,7 +1175,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 16
       },
       {
         "match_id": "5881162",
@@ -998,7 +1198,11 @@
         "corners_against": 7,
         "total_corners": 10,
         "shots_on_target": 0,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 7
       },
       {
         "match_id": "5881175",
@@ -1017,7 +1221,11 @@
         "corners_against": 5,
         "total_corners": 11,
         "shots_on_target": 5,
-        "total_shots": 13
+        "total_shots": 13,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 6
       }
     ],
     "RB Leipzig": [
@@ -1038,7 +1246,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5881160",
@@ -1057,7 +1269,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 8
       },
       {
         "match_id": "5881168",
@@ -1076,7 +1292,11 @@
         "corners_against": 7,
         "total_corners": 14,
         "shots_on_target": 6,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 11
       },
       {
         "match_id": "5881170",
@@ -1095,7 +1315,11 @@
         "corners_against": 9,
         "total_corners": 15,
         "shots_on_target": 3,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 8
       }
     ],
     "Schalke 04": [
@@ -1116,7 +1340,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 0,
+        "red_cards": 1,
+        "total_cards": 1,
+        "fouls": 6
       },
       {
         "match_id": "5881158",
@@ -1135,7 +1363,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 5
       },
       {
         "match_id": "5881169",
@@ -1154,7 +1386,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 10,
-        "total_shots": 19
+        "total_shots": 19,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       },
       {
         "match_id": "5881176",
@@ -1173,7 +1409,11 @@
         "corners_against": 4,
         "total_corners": 8,
         "shots_on_target": 1,
-        "total_shots": 13
+        "total_shots": 13,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 10
       }
     ],
     "Union Berlin": [
@@ -1194,7 +1434,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 11
       },
       {
         "match_id": "5881152",
@@ -1213,7 +1457,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 12
       },
       {
         "match_id": "5881169",
@@ -1232,7 +1480,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 8,
-        "total_shots": 20
+        "total_shots": 20,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 11
       },
       {
         "match_id": "5881171",
@@ -1251,7 +1503,11 @@
         "corners_against": 9,
         "total_corners": 11,
         "shots_on_target": 2,
-        "total_shots": 3
+        "total_shots": 3,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 9
       }
     ],
     "VfB Stuttgart": [
@@ -1272,7 +1528,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 17
       },
       {
         "match_id": "5881159",
@@ -1291,7 +1551,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 5
       },
       {
         "match_id": "5881166",
@@ -1310,7 +1574,11 @@
         "corners_against": 5,
         "total_corners": 12,
         "shots_on_target": 5,
-        "total_shots": 16
+        "total_shots": 16,
+        "yellow_cards": 0,
+        "red_cards": 0,
+        "total_cards": 0,
+        "fouls": 8
       },
       {
         "match_id": "5881177",
@@ -1329,7 +1597,11 @@
         "corners_against": 2,
         "total_corners": 8,
         "shots_on_target": 5,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 9
       }
     ],
     "Werder Bremen": [
@@ -1350,7 +1622,11 @@
         "corners_against": 5,
         "total_corners": 9,
         "shots_on_target": 3,
-        "total_shots": 10
+        "total_shots": 10,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 16
       },
       {
         "match_id": "5881160",
@@ -1369,7 +1645,11 @@
         "corners_against": 4,
         "total_corners": 9,
         "shots_on_target": 4,
-        "total_shots": 12
+        "total_shots": 12,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 13
       },
       {
         "match_id": "5881164",
@@ -1388,7 +1668,11 @@
         "corners_against": 8,
         "total_corners": 13,
         "shots_on_target": 5,
-        "total_shots": 14
+        "total_shots": 14,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 12
       },
       {
         "match_id": "5881178",
@@ -1407,7 +1691,11 @@
         "corners_against": 2,
         "total_corners": 4,
         "shots_on_target": 11,
-        "total_shots": 20
+        "total_shots": 20,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 10
       }
     ]
   },
@@ -1420,7 +1708,19 @@
       "corners_conceded_away": 4.0,
       "corners_conceded_gen": 4.25,
       "shots_on_target_gen": 4.5,
-      "total_shots_gen": 13.75
+      "total_shots_gen": 13.75,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 3.0,
+      "yellow_cards_avg": 2.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 3.0,
+      "total_cards_avg": 2.0,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 10.0,
+      "fouls_avg": 10.5
     },
     "Augsburg": {
       "corners_avg_home": 3.5,
@@ -1430,7 +1730,19 @@
       "corners_conceded_away": 3.5,
       "corners_conceded_gen": 6.25,
       "shots_on_target_gen": 4.0,
-      "total_shots_gen": 9.25
+      "total_shots_gen": 9.25,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 2.0,
+      "yellow_cards_avg": 1.75,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 1.75,
+      "fouls_avg_home": 5.5,
+      "fouls_avg_away": 12.0,
+      "fouls_avg": 8.75
     },
     "Bayer Leverkusen": {
       "corners_avg_home": 7.0,
@@ -1440,7 +1752,19 @@
       "corners_conceded_away": 3.5,
       "corners_conceded_gen": 4.25,
       "shots_on_target_gen": 4.5,
-      "total_shots_gen": 17.5
+      "total_shots_gen": 17.5,
+      "yellow_cards_avg_home": 2.0,
+      "yellow_cards_avg_away": 2.0,
+      "yellow_cards_avg": 2.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 2.0,
+      "fouls_avg_home": 12.5,
+      "fouls_avg_away": 13.5,
+      "fouls_avg": 13.0
     },
     "Bayern München": {
       "corners_avg_home": 7.0,
@@ -1450,7 +1774,19 @@
       "corners_conceded_away": 4.0,
       "corners_conceded_gen": 3.5,
       "shots_on_target_gen": 7.0,
-      "total_shots_gen": 18.25
+      "total_shots_gen": 18.25,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 1.0,
+      "yellow_cards_avg": 1.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 1.0,
+      "total_cards_avg": 1.0,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 10.0,
+      "fouls_avg": 10.5
     },
     "Borussia Dortmund": {
       "corners_avg_home": 6.0,
@@ -1460,7 +1796,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 4.5,
       "shots_on_target_gen": 4.25,
-      "total_shots_gen": 12.25
+      "total_shots_gen": 12.25,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 3.5,
+      "yellow_cards_avg": 2.5,
+      "red_cards_avg_home": 0.5,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.25,
+      "total_cards_avg_home": 2.0,
+      "total_cards_avg_away": 3.5,
+      "total_cards_avg": 2.75,
+      "fouls_avg_home": 12.0,
+      "fouls_avg_away": 10.5,
+      "fouls_avg": 11.25
     },
     "Borussia Mönchengladbach": {
       "corners_avg_home": 5.5,
@@ -1470,7 +1818,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 4.75,
       "shots_on_target_gen": 3.5,
-      "total_shots_gen": 12.0
+      "total_shots_gen": 12.0,
+      "yellow_cards_avg_home": 4.5,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 3.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.5,
+      "red_cards_avg": 0.25,
+      "total_cards_avg_home": 4.5,
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 3.25,
+      "fouls_avg_home": 15.0,
+      "fouls_avg_away": 14.5,
+      "fouls_avg": 14.75
     },
     "Eintracht Frankfurt": {
       "corners_avg_home": 4.0,
@@ -1480,7 +1840,19 @@
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 4.5,
       "shots_on_target_gen": 3.75,
-      "total_shots_gen": 10.75
+      "total_shots_gen": 10.75,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 3.0,
+      "yellow_cards_avg": 2.25,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 3.0,
+      "total_cards_avg": 2.25,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 9.5,
+      "fouls_avg": 10.25
     },
     "Elversberg": {
       "corners_avg_home": 4.0,
@@ -1490,7 +1862,19 @@
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 5.5,
       "shots_on_target_gen": 2.25,
-      "total_shots_gen": 9.5
+      "total_shots_gen": 9.5,
+      "yellow_cards_avg_home": 2.5,
+      "yellow_cards_avg_away": 2.0,
+      "yellow_cards_avg": 2.25,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.5,
+      "red_cards_avg": 0.25,
+      "total_cards_avg_home": 2.5,
+      "total_cards_avg_away": 2.5,
+      "total_cards_avg": 2.5,
+      "fouls_avg_home": 13.5,
+      "fouls_avg_away": 9.5,
+      "fouls_avg": 11.5
     },
     "Freiburg": {
       "corners_avg_home": 5.5,
@@ -1500,7 +1884,19 @@
       "corners_conceded_away": 4.0,
       "corners_conceded_gen": 3.5,
       "shots_on_target_gen": 5.75,
-      "total_shots_gen": 15.75
+      "total_shots_gen": 15.75,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 2.5,
+      "yellow_cards_avg": 1.75,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 2.5,
+      "total_cards_avg": 1.75,
+      "fouls_avg_home": 10.0,
+      "fouls_avg_away": 10.5,
+      "fouls_avg": 10.25
     },
     "Hamburger SV": {
       "corners_avg_home": 4.0,
@@ -1510,7 +1906,19 @@
       "corners_conceded_away": 6.0,
       "corners_conceded_gen": 5.25,
       "shots_on_target_gen": 4.5,
-      "total_shots_gen": 11.0
+      "total_shots_gen": 11.0,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.5,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.5,
+      "fouls_avg_home": 13.0,
+      "fouls_avg_away": 16.0,
+      "fouls_avg": 14.5
     },
     "Hoffenheim": {
       "corners_avg_home": 5.0,
@@ -1520,7 +1928,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 5.5,
       "shots_on_target_gen": 4.25,
-      "total_shots_gen": 16.25
+      "total_shots_gen": 16.25,
+      "yellow_cards_avg_home": 2.5,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 2.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 2.5,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 2.0,
+      "fouls_avg_home": 14.0,
+      "fouls_avg_away": 14.0,
+      "fouls_avg": 14.0
     },
     "Mainz 05": {
       "corners_avg_home": 4.5,
@@ -1530,7 +1950,19 @@
       "corners_conceded_away": 5.5,
       "corners_conceded_gen": 5.0,
       "shots_on_target_gen": 5.0,
-      "total_shots_gen": 14.25
+      "total_shots_gen": 14.25,
+      "yellow_cards_avg_home": 0.5,
+      "yellow_cards_avg_away": 4.0,
+      "yellow_cards_avg": 2.25,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 0.5,
+      "total_cards_avg_away": 4.0,
+      "total_cards_avg": 2.25,
+      "fouls_avg_home": 9.5,
+      "fouls_avg_away": 16.5,
+      "fouls_avg": 13.0
     },
     "Paderborn": {
       "corners_avg_home": 5.5,
@@ -1540,7 +1972,19 @@
       "corners_conceded_away": 6.0,
       "corners_conceded_gen": 5.25,
       "shots_on_target_gen": 3.0,
-      "total_shots_gen": 11.25
+      "total_shots_gen": 11.25,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.5,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.5,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 8.5,
+      "fouls_avg": 9.75
     },
     "RB Leipzig": {
       "corners_avg_home": 6.0,
@@ -1550,7 +1994,19 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 6.25,
       "shots_on_target_gen": 4.0,
-      "total_shots_gen": 13.25
+      "total_shots_gen": 13.25,
+      "yellow_cards_avg_home": 1.0,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.25,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.0,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.25,
+      "fouls_avg_home": 10.5,
+      "fouls_avg_away": 8.0,
+      "fouls_avg": 9.25
     },
     "Schalke 04": {
       "corners_avg_home": 4.5,
@@ -1560,7 +2016,19 @@
       "corners_conceded_away": 4.5,
       "corners_conceded_gen": 4.25,
       "shots_on_target_gen": 4.5,
-      "total_shots_gen": 13.5
+      "total_shots_gen": 13.5,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 0.5,
+      "yellow_cards_avg": 1.0,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.5,
+      "red_cards_avg": 0.25,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 1.0,
+      "total_cards_avg": 1.25,
+      "fouls_avg_home": 7.5,
+      "fouls_avg_away": 8.0,
+      "fouls_avg": 7.75
     },
     "Union Berlin": {
       "corners_avg_home": 4.5,
@@ -1570,7 +2038,19 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 5.75,
       "shots_on_target_gen": 4.25,
-      "total_shots_gen": 11.25
+      "total_shots_gen": 11.25,
+      "yellow_cards_avg_home": 2.5,
+      "yellow_cards_avg_away": 2.5,
+      "yellow_cards_avg": 2.5,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 2.5,
+      "total_cards_avg_away": 2.5,
+      "total_cards_avg": 2.5,
+      "fouls_avg_home": 11.0,
+      "fouls_avg_away": 10.5,
+      "fouls_avg": 10.75
     },
     "VfB Stuttgart": {
       "corners_avg_home": 5.5,
@@ -1580,7 +2060,19 @@
       "corners_conceded_away": 5.0,
       "corners_conceded_gen": 4.0,
       "shots_on_target_gen": 4.25,
-      "total_shots_gen": 12.5
+      "total_shots_gen": 12.5,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 1.5,
+      "yellow_cards_avg": 1.5,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 1.5,
+      "total_cards_avg": 1.5,
+      "fouls_avg_home": 7.0,
+      "fouls_avg_away": 12.5,
+      "fouls_avg": 9.75
     },
     "Werder Bremen": {
       "corners_avg_home": 3.5,
@@ -1590,7 +2082,19 @@
       "corners_conceded_away": 6.5,
       "corners_conceded_gen": 4.75,
       "shots_on_target_gen": 5.75,
-      "total_shots_gen": 14.0
+      "total_shots_gen": 14.0,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 1.0,
+      "yellow_cards_avg": 1.25,
+      "red_cards_avg_home": 0.0,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
+      "total_cards_avg_home": 1.5,
+      "total_cards_avg_away": 1.0,
+      "total_cards_avg": 1.25,
+      "fouls_avg_home": 11.5,
+      "fouls_avg_away": 14.0,
+      "fouls_avg": 12.75
     }
   },
   "upcoming_matches": [
@@ -1630,7 +2134,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 13
           },
           {
             "match_id": "5881156",
@@ -1649,7 +2157,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 7
           },
           {
             "match_id": "5881162",
@@ -1668,7 +2180,11 @@
             "corners_against": 3,
             "total_corners": 10,
             "shots_on_target": 8,
-            "total_shots": 14
+            "total_shots": 14,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 11
           },
           {
             "match_id": "5881177",
@@ -1687,7 +2203,11 @@
             "corners_against": 6,
             "total_corners": 8,
             "shots_on_target": 2,
-            "total_shots": 13
+            "total_shots": 13,
+            "yellow_cards": 5,
+            "red_cards": 0,
+            "total_cards": 5,
+            "fouls": 14
           }
         ],
         "away_last_5": [
@@ -1708,7 +2228,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 16
           },
           {
             "match_id": "5881160",
@@ -1727,7 +2251,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5881164",
@@ -1746,7 +2274,11 @@
             "corners_against": 8,
             "total_corners": 13,
             "shots_on_target": 5,
-            "total_shots": 14
+            "total_shots": 14,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           },
           {
             "match_id": "5881178",
@@ -1765,7 +2297,11 @@
             "corners_against": 2,
             "total_corners": 4,
             "shots_on_target": 11,
-            "total_shots": 20
+            "total_shots": 20,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           }
         ],
         "head_to_head": [
@@ -1822,7 +2358,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.5,
           "shots_on_target_gen": 4.25,
-          "total_shots_gen": 12.25
+          "total_shots_gen": 12.25,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 3.5,
+          "yellow_cards_avg": 2.5,
+          "red_cards_avg_home": 0.5,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.25,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 3.5,
+          "total_cards_avg": 2.75,
+          "fouls_avg_home": 12.0,
+          "fouls_avg_away": 10.5,
+          "fouls_avg": 11.25
         },
         "away_corner_stats": {
           "corners_avg_home": 3.5,
@@ -1832,7 +2380,19 @@
           "corners_conceded_away": 6.5,
           "corners_conceded_gen": 4.75,
           "shots_on_target_gen": 5.75,
-          "total_shots_gen": 14.0
+          "total_shots_gen": 14.0,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 1.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.0,
+          "total_cards_avg": 1.25,
+          "fouls_avg_home": 11.5,
+          "fouls_avg_away": 14.0,
+          "fouls_avg": 12.75
         },
         "projected_corners": 9.5,
         "summary": {
@@ -1841,7 +2401,8 @@
           "away_wins": 0,
           "avg_goals": 2.2,
           "text": "Borussia Dortmund 2 victorias • 2 empates • Werder Bremen 0 victorias"
-        }
+        },
+        "projected_cards": 3.5
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1881,7 +2442,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5881154",
@@ -1900,7 +2465,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5881161",
@@ -1919,7 +2488,11 @@
             "corners_against": 14,
             "total_corners": 16,
             "shots_on_target": 5,
-            "total_shots": 8
+            "total_shots": 8,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 6
           },
           {
             "match_id": "5881178",
@@ -1938,7 +2511,11 @@
             "corners_against": 2,
             "total_corners": 4,
             "shots_on_target": 4,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 11
           }
         ],
         "away_last_5": [
@@ -1959,7 +2536,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5881158",
@@ -1978,7 +2559,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5881163",
@@ -1997,7 +2582,11 @@
             "corners_against": 3,
             "total_corners": 12,
             "shots_on_target": 6,
-            "total_shots": 28
+            "total_shots": 28,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5881171",
@@ -2016,7 +2605,11 @@
             "corners_against": 2,
             "total_corners": 11,
             "shots_on_target": 15,
-            "total_shots": 23
+            "total_shots": 23,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -2073,7 +2666,19 @@
           "corners_conceded_away": 3.5,
           "corners_conceded_gen": 6.25,
           "shots_on_target_gen": 4.0,
-          "total_shots_gen": 9.25
+          "total_shots_gen": 9.25,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 1.75,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.75,
+          "fouls_avg_home": 5.5,
+          "fouls_avg_away": 12.0,
+          "fouls_avg": 8.75
         },
         "away_corner_stats": {
           "corners_avg_home": 7.0,
@@ -2083,7 +2688,19 @@
           "corners_conceded_away": 4.0,
           "corners_conceded_gen": 3.5,
           "shots_on_target_gen": 7.0,
-          "total_shots_gen": 18.25
+          "total_shots_gen": 18.25,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 1.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.0,
+          "total_cards_avg": 1.0,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 10.5
         },
         "projected_corners": 10.0,
         "summary": {
@@ -2092,7 +2709,8 @@
           "away_wins": 3,
           "avg_goals": 3.8,
           "text": "Augsburg 1 victorias • 0 empates • Bayern München 3 victorias"
-        }
+        },
+        "projected_cards": 2.6
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2132,7 +2750,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 14
           },
           {
             "match_id": "5881156",
@@ -2151,7 +2773,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 13
           },
           {
             "match_id": "5881166",
@@ -2170,7 +2796,11 @@
             "corners_against": 7,
             "total_corners": 12,
             "shots_on_target": 8,
-            "total_shots": 20
+            "total_shots": 20,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 15
           },
           {
             "match_id": "5881175",
@@ -2189,7 +2819,11 @@
             "corners_against": 6,
             "total_corners": 11,
             "shots_on_target": 2,
-            "total_shots": 23
+            "total_shots": 23,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 14
           }
         ],
         "away_last_5": [
@@ -2210,7 +2844,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 19
           },
           {
             "match_id": "5881155",
@@ -2229,7 +2867,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 14
           },
           {
             "match_id": "5881168",
@@ -2248,7 +2890,11 @@
             "corners_against": 7,
             "total_corners": 14,
             "shots_on_target": 4,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 13
           },
           {
             "match_id": "5881174",
@@ -2267,7 +2913,11 @@
             "corners_against": 5,
             "total_corners": 8,
             "shots_on_target": 7,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -2324,7 +2974,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.5,
           "shots_on_target_gen": 4.25,
-          "total_shots_gen": 16.25
+          "total_shots_gen": 16.25,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 2.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 2.0,
+          "fouls_avg_home": 14.0,
+          "fouls_avg_away": 14.0,
+          "fouls_avg": 14.0
         },
         "away_corner_stats": {
           "corners_avg_home": 4.0,
@@ -2334,7 +2996,19 @@
           "corners_conceded_away": 6.0,
           "corners_conceded_gen": 5.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 11.0
+          "total_shots_gen": 11.0,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.5,
+          "fouls_avg_home": 13.0,
+          "fouls_avg_away": 16.0,
+          "fouls_avg": 14.5
         },
         "projected_corners": 10.0,
         "summary": {
@@ -2343,7 +3017,8 @@
           "away_wins": 1,
           "avg_goals": 3.2,
           "text": "Hoffenheim 3 victorias • 0 empates • Hamburger SV 1 victorias"
-        }
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2383,7 +3058,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 8
           },
           {
             "match_id": "5881155",
@@ -2402,7 +3081,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 19
           },
           {
             "match_id": "5881167",
@@ -2421,7 +3104,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 5,
-            "total_shots": 18
+            "total_shots": 18,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 11
           },
           {
             "match_id": "5881172",
@@ -2440,7 +3127,11 @@
             "corners_against": 6,
             "total_corners": 10,
             "shots_on_target": 8,
-            "total_shots": 17
+            "total_shots": 17,
+            "yellow_cards": 5,
+            "red_cards": 0,
+            "total_cards": 5,
+            "fouls": 14
           }
         ],
         "away_last_5": [
@@ -2461,7 +3152,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 15
           },
           {
             "match_id": "5881152",
@@ -2480,7 +3175,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           },
           {
             "match_id": "5881161",
@@ -2499,7 +3198,11 @@
             "corners_against": 2,
             "total_corners": 16,
             "shots_on_target": 5,
-            "total_shots": 30
+            "total_shots": 30,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5881170",
@@ -2518,7 +3221,11 @@
             "corners_against": 6,
             "total_corners": 15,
             "shots_on_target": 6,
-            "total_shots": 18
+            "total_shots": 18,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 14
           }
         ],
         "head_to_head": [
@@ -2575,7 +3282,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 5.0,
-          "total_shots_gen": 14.25
+          "total_shots_gen": 14.25,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 4.0,
+          "yellow_cards_avg": 2.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 4.0,
+          "total_cards_avg": 2.25,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 16.5,
+          "fouls_avg": 13.0
         },
         "away_corner_stats": {
           "corners_avg_home": 7.0,
@@ -2585,7 +3304,19 @@
           "corners_conceded_away": 3.5,
           "corners_conceded_gen": 4.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 17.5
+          "total_shots_gen": 17.5,
+          "yellow_cards_avg_home": 2.0,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 2.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.0,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 2.0,
+          "fouls_avg_home": 12.5,
+          "fouls_avg_away": 13.5,
+          "fouls_avg": 13.0
         },
         "projected_corners": 12.9,
         "summary": {
@@ -2594,7 +3325,8 @@
           "away_wins": 2,
           "avg_goals": 3.5,
           "text": "Mainz 05 0 victorias • 2 empates • Bayer Leverkusen 2 victorias"
-        }
+        },
+        "projected_cards": 3.4
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2634,7 +3366,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           },
           {
             "match_id": "5881157",
@@ -2653,7 +3389,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 16
           },
           {
             "match_id": "5881162",
@@ -2672,7 +3412,11 @@
             "corners_against": 7,
             "total_corners": 10,
             "shots_on_target": 0,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           },
           {
             "match_id": "5881175",
@@ -2691,7 +3435,11 @@
             "corners_against": 5,
             "total_corners": 11,
             "shots_on_target": 5,
-            "total_shots": 13
+            "total_shots": 13,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 6
           }
         ],
         "away_last_5": [
@@ -2712,7 +3460,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 17
           },
           {
             "match_id": "5881159",
@@ -2731,7 +3483,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5881166",
@@ -2750,7 +3506,11 @@
             "corners_against": 5,
             "total_corners": 12,
             "shots_on_target": 5,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5881177",
@@ -2769,7 +3529,11 @@
             "corners_against": 2,
             "total_corners": 8,
             "shots_on_target": 5,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           }
         ],
         "head_to_head": [
@@ -2826,7 +3590,19 @@
           "corners_conceded_away": 6.0,
           "corners_conceded_gen": 5.25,
           "shots_on_target_gen": 3.0,
-          "total_shots_gen": 11.25
+          "total_shots_gen": 11.25,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.5,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 8.5,
+          "fouls_avg": 9.75
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
@@ -2836,7 +3612,19 @@
           "corners_conceded_away": 5.0,
           "corners_conceded_gen": 4.0,
           "shots_on_target_gen": 4.25,
-          "total_shots_gen": 12.5
+          "total_shots_gen": 12.5,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.5,
+          "fouls_avg_home": 7.0,
+          "fouls_avg_away": 12.5,
+          "fouls_avg": 9.75
         },
         "projected_corners": 10.5,
         "summary": {
@@ -2845,7 +3633,8 @@
           "away_wins": 2,
           "avg_goals": 1.5,
           "text": "Paderborn 0 victorias • 2 empates • VfB Stuttgart 2 victorias"
-        }
+        },
+        "projected_cards": 3.0
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2885,7 +3674,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           },
           {
             "match_id": "5881152",
@@ -2904,7 +3697,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           },
           {
             "match_id": "5881169",
@@ -2923,7 +3720,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 8,
-            "total_shots": 20
+            "total_shots": 20,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 11
           },
           {
             "match_id": "5881171",
@@ -2942,7 +3743,11 @@
             "corners_against": 9,
             "total_corners": 11,
             "shots_on_target": 2,
-            "total_shots": 3
+            "total_shots": 3,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 9
           }
         ],
         "away_last_5": [
@@ -2963,7 +3768,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 18
           },
           {
             "match_id": "5881153",
@@ -2982,7 +3791,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 9
           },
           {
             "match_id": "5881163",
@@ -3001,7 +3814,11 @@
             "corners_against": 9,
             "total_corners": 12,
             "shots_on_target": 1,
-            "total_shots": 5
+            "total_shots": 5,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5881176",
@@ -3020,7 +3837,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 1,
-            "total_shots": 11
+            "total_shots": 11,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           }
         ],
         "head_to_head": [],
@@ -3032,7 +3853,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.75,
           "shots_on_target_gen": 4.25,
-          "total_shots_gen": 11.25
+          "total_shots_gen": 11.25,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 2.5,
+          "yellow_cards_avg": 2.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 2.5,
+          "total_cards_avg_away": 2.5,
+          "total_cards_avg": 2.5,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 10.5,
+          "fouls_avg": 10.75
         },
         "away_corner_stats": {
           "corners_avg_home": 4.0,
@@ -3042,7 +3875,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 5.5,
           "shots_on_target_gen": 2.25,
-          "total_shots_gen": 9.5
+          "total_shots_gen": 9.5,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 2.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.25,
+          "total_cards_avg_home": 2.5,
+          "total_cards_avg_away": 2.5,
+          "total_cards_avg": 2.5,
+          "fouls_avg_home": 13.5,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 11.5
         },
         "projected_corners": 8.1,
         "summary": {
@@ -3051,7 +3896,8 @@
           "away_wins": 0,
           "avg_goals": 0.0,
           "text": "Union Berlin 0 victorias • 0 empates • Elversberg 0 victorias"
-        }
+        },
+        "projected_cards": 5.0
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3091,7 +3937,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5881160",
@@ -3110,7 +3960,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5881168",
@@ -3129,7 +3983,11 @@
             "corners_against": 7,
             "total_corners": 14,
             "shots_on_target": 6,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 11
           },
           {
             "match_id": "5881170",
@@ -3148,7 +4006,11 @@
             "corners_against": 9,
             "total_corners": 15,
             "shots_on_target": 3,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 8
           }
         ],
         "away_last_5": [
@@ -3169,7 +4031,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 10
           },
           {
             "match_id": "5881154",
@@ -3188,7 +4054,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5881167",
@@ -3207,7 +4077,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 5,
-            "total_shots": 11
+            "total_shots": 11,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5881173",
@@ -3226,7 +4100,11 @@
             "corners_against": 5,
             "total_corners": 8,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -3283,7 +4161,19 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 6.25,
           "shots_on_target_gen": 4.0,
-          "total_shots_gen": 13.25
+          "total_shots_gen": 13.25,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.25,
+          "fouls_avg_home": 10.5,
+          "fouls_avg_away": 8.0,
+          "fouls_avg": 9.25
         },
         "away_corner_stats": {
           "corners_avg_home": 4.0,
@@ -3293,7 +4183,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 4.5,
           "shots_on_target_gen": 3.75,
-          "total_shots_gen": 10.75
+          "total_shots_gen": 10.75,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 3.0,
+          "yellow_cards_avg": 2.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 3.0,
+          "total_cards_avg": 2.25,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 10.25
         },
         "projected_corners": 10.1,
         "summary": {
@@ -3302,7 +4204,8 @@
           "away_wins": 1,
           "avg_goals": 4.2,
           "text": "RB Leipzig 3 victorias • 0 empates • Eintracht Frankfurt 1 victorias"
-        }
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3342,7 +4245,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 11
           },
           {
             "match_id": "5881159",
@@ -3361,7 +4268,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 6
           },
           {
             "match_id": "5881164",
@@ -3380,7 +4291,11 @@
             "corners_against": 5,
             "total_corners": 13,
             "shots_on_target": 6,
-            "total_shots": 15
+            "total_shots": 15,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           },
           {
             "match_id": "5881174",
@@ -3399,7 +4314,11 @@
             "corners_against": 3,
             "total_corners": 8,
             "shots_on_target": 5,
-            "total_shots": 18
+            "total_shots": 18,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 14
           }
         ],
         "away_last_5": [
@@ -3420,7 +4339,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 13
           },
           {
             "match_id": "5881153",
@@ -3439,7 +4362,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 18
           },
           {
             "match_id": "5881165",
@@ -3458,7 +4385,11 @@
             "corners_against": 6,
             "total_corners": 8,
             "shots_on_target": 0,
-            "total_shots": 5
+            "total_shots": 5,
+            "yellow_cards": 3,
+            "red_cards": 1,
+            "total_cards": 4,
+            "fouls": 16
           },
           {
             "match_id": "5881172",
@@ -3477,7 +4408,11 @@
             "corners_against": 4,
             "total_corners": 10,
             "shots_on_target": 7,
-            "total_shots": 21
+            "total_shots": 21,
+            "yellow_cards": 6,
+            "red_cards": 0,
+            "total_cards": 6,
+            "fouls": 12
           }
         ],
         "head_to_head": [
@@ -3534,7 +4469,19 @@
           "corners_conceded_away": 4.0,
           "corners_conceded_gen": 4.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 13.75
+          "total_shots_gen": 13.75,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 3.0,
+          "yellow_cards_avg": 2.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 3.0,
+          "total_cards_avg": 2.0,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 10.5
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
@@ -3544,7 +4491,19 @@
           "corners_conceded_away": 5.5,
           "corners_conceded_gen": 4.75,
           "shots_on_target_gen": 3.5,
-          "total_shots_gen": 12.0
+          "total_shots_gen": 12.0,
+          "yellow_cards_avg_home": 4.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 3.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.25,
+          "total_cards_avg_home": 4.5,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 3.25,
+          "fouls_avg_home": 15.0,
+          "fouls_avg_away": 14.5,
+          "fouls_avg": 14.75
         },
         "projected_corners": 9.6,
         "summary": {
@@ -3553,7 +4512,8 @@
           "away_wins": 1,
           "avg_goals": 5.0,
           "text": "1. FC Köln 1 victorias • 2 empates • Borussia Mönchengladbach 1 victorias"
-        }
+        },
+        "projected_cards": 4.1
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3593,7 +4553,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5881157",
@@ -3612,7 +4576,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 10
           },
           {
             "match_id": "5881165",
@@ -3631,7 +4599,11 @@
             "corners_against": 2,
             "total_corners": 8,
             "shots_on_target": 9,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7
           },
           {
             "match_id": "5881173",
@@ -3650,7 +4622,11 @@
             "corners_against": 3,
             "total_corners": 8,
             "shots_on_target": 7,
-            "total_shots": 22
+            "total_shots": 22,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           }
         ],
         "away_last_5": [
@@ -3671,7 +4647,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 0,
+            "red_cards": 1,
+            "total_cards": 1,
+            "fouls": 6
           },
           {
             "match_id": "5881158",
@@ -3690,7 +4670,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 5
           },
           {
             "match_id": "5881169",
@@ -3709,7 +4693,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 10,
-            "total_shots": 19
+            "total_shots": 19,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5881176",
@@ -3728,7 +4716,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 1,
-            "total_shots": 13
+            "total_shots": 13,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           }
         ],
         "head_to_head": [
@@ -3785,7 +4777,19 @@
           "corners_conceded_away": 4.0,
           "corners_conceded_gen": 3.5,
           "shots_on_target_gen": 5.75,
-          "total_shots_gen": 15.75
+          "total_shots_gen": 15.75,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 2.5,
+          "yellow_cards_avg": 1.75,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 2.5,
+          "total_cards_avg": 1.75,
+          "fouls_avg_home": 10.0,
+          "fouls_avg_away": 10.5,
+          "fouls_avg": 10.25
         },
         "away_corner_stats": {
           "corners_avg_home": 4.5,
@@ -3795,7 +4799,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 4.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 13.5
+          "total_shots_gen": 13.5,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 0.5,
+          "yellow_cards_avg": 1.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.25,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.0,
+          "total_cards_avg": 1.25,
+          "fouls_avg_home": 7.5,
+          "fouls_avg_away": 8.0,
+          "fouls_avg": 7.75
         },
         "projected_corners": 9.8,
         "summary": {
@@ -3804,7 +4820,8 @@
           "away_wins": 0,
           "avg_goals": 3.0,
           "text": "Freiburg 4 victorias • 0 empates • Schalke 04 0 victorias"
-        }
+        },
+        "projected_cards": 2.5
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3844,7 +4861,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 4,
+            "red_cards": 0,
+            "total_cards": 4,
+            "fouls": 10
           },
           {
             "match_id": "5881154",
@@ -3863,7 +4884,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10
           },
           {
             "match_id": "5881167",
@@ -3882,7 +4907,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 5,
-            "total_shots": 11
+            "total_shots": 11,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5881173",
@@ -3901,7 +4930,11 @@
             "corners_against": 5,
             "total_corners": 8,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "away_last_5": [
@@ -3922,7 +4955,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 11
           },
           {
             "match_id": "5881159",
@@ -3941,7 +4978,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 6
           },
           {
             "match_id": "5881164",
@@ -3960,7 +5001,11 @@
             "corners_against": 5,
             "total_corners": 13,
             "shots_on_target": 6,
-            "total_shots": 15
+            "total_shots": 15,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 11
           },
           {
             "match_id": "5881174",
@@ -3979,7 +5024,11 @@
             "corners_against": 3,
             "total_corners": 8,
             "shots_on_target": 5,
-            "total_shots": 18
+            "total_shots": 18,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 14
           }
         ],
         "head_to_head": [
@@ -4036,7 +5085,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 4.5,
           "shots_on_target_gen": 3.75,
-          "total_shots_gen": 10.75
+          "total_shots_gen": 10.75,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 3.0,
+          "yellow_cards_avg": 2.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 3.0,
+          "total_cards_avg": 2.25,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 10.25
         },
         "away_corner_stats": {
           "corners_avg_home": 6.5,
@@ -4046,7 +5107,19 @@
           "corners_conceded_away": 4.0,
           "corners_conceded_gen": 4.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 13.75
+          "total_shots_gen": 13.75,
+          "yellow_cards_avg_home": 1.0,
+          "yellow_cards_avg_away": 3.0,
+          "yellow_cards_avg": 2.0,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.0,
+          "total_cards_avg_away": 3.0,
+          "total_cards_avg": 2.0,
+          "fouls_avg_home": 11.0,
+          "fouls_avg_away": 10.0,
+          "fouls_avg": 10.5
         },
         "projected_corners": 9.1,
         "summary": {
@@ -4055,7 +5128,8 @@
           "away_wins": 1,
           "avg_goals": 3.8,
           "text": "Eintracht Frankfurt 1 victorias • 2 empates • 1. FC Köln 1 victorias"
-        }
+        },
+        "projected_cards": 4.4
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4095,7 +5169,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 18
           },
           {
             "match_id": "5881153",
@@ -4114,7 +5192,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 9
           },
           {
             "match_id": "5881163",
@@ -4133,7 +5215,11 @@
             "corners_against": 9,
             "total_corners": 12,
             "shots_on_target": 1,
-            "total_shots": 5
+            "total_shots": 5,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           },
           {
             "match_id": "5881176",
@@ -4152,7 +5238,11 @@
             "corners_against": 4,
             "total_corners": 8,
             "shots_on_target": 1,
-            "total_shots": 11
+            "total_shots": 11,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 10
           }
         ],
         "away_last_5": [
@@ -4173,7 +5263,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5881154",
@@ -4192,7 +5286,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 13
           },
           {
             "match_id": "5881161",
@@ -4211,7 +5309,11 @@
             "corners_against": 14,
             "total_corners": 16,
             "shots_on_target": 5,
-            "total_shots": 8
+            "total_shots": 8,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 6
           },
           {
             "match_id": "5881178",
@@ -4230,7 +5332,11 @@
             "corners_against": 2,
             "total_corners": 4,
             "shots_on_target": 4,
-            "total_shots": 7
+            "total_shots": 7,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 11
           }
         ],
         "head_to_head": [
@@ -4254,7 +5360,19 @@
           "corners_conceded_away": 4.5,
           "corners_conceded_gen": 5.5,
           "shots_on_target_gen": 2.25,
-          "total_shots_gen": 9.5
+          "total_shots_gen": 9.5,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 2.25,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.5,
+          "red_cards_avg": 0.25,
+          "total_cards_avg_home": 2.5,
+          "total_cards_avg_away": 2.5,
+          "total_cards_avg": 2.5,
+          "fouls_avg_home": 13.5,
+          "fouls_avg_away": 9.5,
+          "fouls_avg": 11.5
         },
         "away_corner_stats": {
           "corners_avg_home": 3.5,
@@ -4264,7 +5382,19 @@
           "corners_conceded_away": 3.5,
           "corners_conceded_gen": 6.25,
           "shots_on_target_gen": 4.0,
-          "total_shots_gen": 9.25
+          "total_shots_gen": 9.25,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 1.75,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 1.75,
+          "fouls_avg_home": 5.5,
+          "fouls_avg_away": 12.0,
+          "fouls_avg": 8.75
         },
         "projected_corners": 7.1,
         "summary": {
@@ -4273,7 +5403,8 @@
           "away_wins": 1,
           "avg_goals": 4.0,
           "text": "Elversberg 0 victorias • 0 empates • Augsburg 1 victorias"
-        }
+        },
+        "projected_cards": 4.4
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4313,7 +5444,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 19
           },
           {
             "match_id": "5881155",
@@ -4332,7 +5467,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 14
           },
           {
             "match_id": "5881168",
@@ -4351,7 +5490,11 @@
             "corners_against": 7,
             "total_corners": 14,
             "shots_on_target": 4,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 13
           },
           {
             "match_id": "5881174",
@@ -4370,7 +5513,11 @@
             "corners_against": 5,
             "total_corners": 8,
             "shots_on_target": 7,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12
           }
         ],
         "away_last_5": [
@@ -4391,7 +5538,11 @@
             "corners_against": 5,
             "total_corners": 9,
             "shots_on_target": 3,
-            "total_shots": 10
+            "total_shots": 10,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 17
           },
           {
             "match_id": "5881159",
@@ -4410,7 +5561,11 @@
             "corners_against": 4,
             "total_corners": 9,
             "shots_on_target": 4,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 5
           },
           {
             "match_id": "5881166",
@@ -4429,7 +5584,11 @@
             "corners_against": 5,
             "total_corners": 12,
             "shots_on_target": 5,
-            "total_shots": 16
+            "total_shots": 16,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 8
           },
           {
             "match_id": "5881177",
@@ -4448,7 +5607,11 @@
             "corners_against": 2,
             "total_corners": 8,
             "shots_on_target": 5,
-            "total_shots": 12
+            "total_shots": 12,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 9
           }
         ],
         "head_to_head": [
@@ -4505,7 +5668,19 @@
           "corners_conceded_away": 6.0,
           "corners_conceded_gen": 5.25,
           "shots_on_target_gen": 4.5,
-          "total_shots_gen": 11.0
+          "total_shots_gen": 11.0,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.5,
+          "fouls_avg_home": 13.0,
+          "fouls_avg_away": 16.0,
+          "fouls_avg": 14.5
         },
         "away_corner_stats": {
           "corners_avg_home": 5.5,
@@ -4515,7 +5690,19 @@
           "corners_conceded_away": 5.0,
           "corners_conceded_gen": 4.0,
           "shots_on_target_gen": 4.25,
-          "total_shots_gen": 12.5
+          "total_shots_gen": 12.5,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.5,
+          "yellow_cards_avg": 1.5,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.5,
+          "total_cards_avg": 1.5,
+          "fouls_avg_home": 7.0,
+          "fouls_avg_away": 12.5,
+          "fouls_avg": 9.75
         },
         "projected_corners": 9.9,
         "summary": {
@@ -4524,7 +5711,8 @@
           "away_wins": 3,
           "avg_goals": 3.5,
           "text": "Hamburger SV 1 victorias • 0 empates • VfB Stuttgart 3 victorias"
-        }
+        },
+        "projected_cards": 3.0
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

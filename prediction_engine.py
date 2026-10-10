@@ -1,5 +1,6 @@
 import math
 import hashlib
+import re
 
 def deterministic_hash(text: str) -> int:
     """
@@ -1116,6 +1117,10 @@ LEAGUE_TEAMS_POOL = {
     "venezuela": [
         "Deportivo Táchira", "Caracas FC", "Academia Puerto Cabello", "Metropolitanos FC", "Monagas SC",
         "Carabobo FC", "Portuguesa FC", "Zamora FC", "Deportivo La Guaira", "Estudiantes de Mérida", "Rayo Zuliano", "Angostura FC"
+    ],
+    "armenia": [
+        "Pyunik Yerevan", "Urartu FC", "Ararat-Armenia", "FC Noah", "Alashkert FC",
+        "FC Van", "Shirak SC", "West Armenia", "BKMA Yerevan", "Gandzasar Kapan", "Ararat Yerevan"
     ]
 }
 
@@ -1365,6 +1370,14 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     ]
     if "venezuel" in c_low or "venezuel" in l_low or "ven.1" in l_low or "futve" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in venezuela_keywords):
         return "Liga FUTVE", "Venezuela", "🇻🇪", LEAGUE_TEAMS_POOL["venezuela"]
+
+    # 19.8 Armenia (Liga Premier de Armenia)
+    armenia_keywords = [
+        "pyunik", "urartu", "ararat-armenia", "fc noah", "noah", "alashkert",
+        "fc van", "shirak", "west armenia", "bkma", "gandzasar", "sardarapat"
+    ]
+    if "armenia" in c_low or "armenia" in l_low or "arm.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in armenia_keywords):
+        return "Liga Premier de Armenia", "Armenia", "🇦🇲", LEAGUE_TEAMS_POOL["armenia"]
 
     # 20. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [
