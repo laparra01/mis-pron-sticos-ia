@@ -871,10 +871,17 @@ def fetch_espn_live_soccer():
         resp = requests.get(url, timeout=4)
         if resp.status_code == 200:
             events = resp.json().get("events", [])
+            live_events = [e for e in events if e.get("status", {}).get("type", {}).get("state") == "in"]
+            
+            # Prefetch concurrente de detalles y estadísticas para todos los eventos en vivo
+            from concurrent.futures import ThreadPoolExecutor
+            event_ids = [str(e.get("id")) for e in live_events if e.get("id")]
+            if event_ids:
+                with ThreadPoolExecutor(max_workers=10) as executor:
+                    list(executor.map(fetch_espn_event_real_stats, event_ids))
+
             live_list = []
-            for e in events:
-                state = e.get("status", {}).get("type", {}).get("state")
-                if state == "in":
+            for e in live_events:
                     comp = e.get("competitions", [{}])[0]
                     competitors = comp.get("competitors", [])
                     home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0] if competitors else {})
@@ -1403,12 +1410,19 @@ def try_fetch_external_nba():
         print(f"[INFO] Error al conectar Balldontlie NBA ({e}).")
     return None
 
+_live_cache = {"data": {}, "timestamp": 0}
+
 def fetch_live_matches_data(sport_filter="all"):
     """
     Obtiene los partidos en vivo.
     Si USE_LIVE_API = True, trae ÚNICAMENTE partidos oficiales en juego reales.
     NUNCA devuelve simulaciones si USE_LIVE_API = True.
     """
+    global _live_cache
+    now = time.time()
+    if sport_filter in _live_cache["data"] and (now - _live_cache["timestamp"] < 30):
+        return _live_cache["data"][sport_filter]
+
     cfg = get_config()
     is_live_api = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
     if is_live_api:
@@ -1416,12 +1430,11 @@ def fetch_live_matches_data(sport_filter="all"):
         if sport_filter in ("all", "football"):
             # Trae partidos de fútbol en vivo (incluye Selección Mexicana y amistosos)
             live_results.extend(fetch_espn_live_soccer())
-            fd_live = try_fetch_external_live_football()
-            if fd_live:
-                live_results.extend(fd_live)
         if sport_filter in ("all", "nba"):
             # Trae partidos de la NBA en vivo (incluye Lakers vs Warriors)
             live_results.extend(fetch_espn_live_nba())
+        _live_cache["data"][sport_filter] = live_results
+        _live_cache["timestamp"] = now
         return live_results
 
     # Catálogo simulado (SOLO cuando USE_LIVE_API = False):

@@ -2,9 +2,19 @@ import os
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify, request
 from data_provider import fetch_matches_data, fetch_live_matches_data, get_config
+import gzip
 base_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = os.path.join(base_dir, "templates") if os.path.isdir(os.path.join(base_dir, "templates")) else base_dir
 app = Flask(__name__, template_folder=template_dir)
+
+@app.after_request
+def compress_response(response):
+    accept_encoding = request.headers.get('Accept-Encoding', '')
+    if 'gzip' in accept_encoding.lower() and response.status_code == 200 and not response.direct_passthrough and len(response.data) > 1024:
+        response.data = gzip.compress(response.data)
+        response.headers['Content-Encoding'] = 'gzip'
+        response.headers['Content-Length'] = len(response.data)
+    return response
 
 @app.route("/")
 def index():
