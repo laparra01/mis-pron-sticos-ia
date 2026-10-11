@@ -31,11 +31,13 @@ def select_ticket_1_tactical(matches):
         pred = m.get("prediction", {})
         sevens = pred.get("seven_predictions", [])
         
+        today_iso = datetime.now().strftime("%Y-%m-%d")
+        d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
         for p in sevens:
             prob = p.get("probability", 0)
             odds = p.get("fair_odds", 0)
             mkt = p.get("market", "")
-            if 52.0 <= prob <= 68.0 and 1.62 <= odds <= 2.10:
+            if 50.0 <= prob <= 75.0 and 1.55 <= odds <= 2.20:
                 priority = 3 if ("1X2" in mkt or "Doble" in mkt) else (2 if "Goles" in mkt else 1)
                 candidates.append({
                     "match_id": m.get("id"),
@@ -45,8 +47,10 @@ def select_ticket_1_tactical(matches):
                     "country": m.get("country"),
                     "country_code": m.get("country_code", ""),
                     "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
-                    "date": m.get("date", "Hoy"),
+                    "date": d_display,
+                    "date_iso": m.get("date_iso", ""),
                     "time": m.get("time", ""),
+                    "timestamp": m.get("timestamp") or 0,
                     "market": p.get("market"),
                     "pick": p.get("name"),
                     "probability": prob,
@@ -77,7 +81,7 @@ def select_ticket_2_goals_corners_cards(matches):
     """
     Ticket 2: ⚡ La Soñadora de Goles, Córners & Fricción (Cuota ~10.00 - 18.00)
     3 a 4 selecciones combinando mercados especiales:
-    1 de córners (+9.5 o +8.5), 1 de tarjetas (+4.5 o alta fricción), 1 o 2 de goles (Over 2.5 o BTTS SI)
+    1 de córners (+9.5 o +8.5), 1 de tarjetas (+4.5 o alta fricción), 1 o 2 de goles (Over 2.5, BTTS SI, etc.)
     """
     corners_candidates = []
     cards_candidates = []
@@ -87,6 +91,8 @@ def select_ticket_2_goals_corners_cards(matches):
         pred = m.get("prediction", {})
         sevens = pred.get("seven_predictions", [])
         
+        today_iso = datetime.now().strftime("%Y-%m-%d")
+        d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
         base_info = {
             "match_id": m.get("id"),
             "home_team": m.get("home_team"),
@@ -95,16 +101,18 @@ def select_ticket_2_goals_corners_cards(matches):
             "country": m.get("country"),
             "country_code": m.get("country_code", ""),
             "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
-            "date": m.get("date", "Hoy"),
+            "date": d_display,
+            "date_iso": m.get("date_iso", ""),
             "time": m.get("time", ""),
+            "timestamp": m.get("timestamp") or 0,
         }
 
         for p in sevens:
             mkt = p.get("market", "")
-            odds = p.get("fair_odds", 1.80)
-            prob = p.get("probability", 50.0)
+            odds = float(p.get("fair_odds", 1.80) or 1.80)
+            prob = float(p.get("probability", 50.0) or 50.0)
 
-            if "Córners" in mkt and odds >= 1.65:
+            if "Córners" in mkt and odds >= 1.50:
                 item = dict(base_info)
                 item.update({
                     "market": "Tiros de Esquina",
@@ -114,7 +122,7 @@ def select_ticket_2_goals_corners_cards(matches):
                     "explanation": p.get("explanation", "")
                 })
                 corners_candidates.append(item)
-            elif "Tarjetas" in mkt and odds >= 1.60:
+            elif "Tarjetas" in mkt and odds >= 1.50:
                 item = dict(base_info)
                 item.update({
                     "market": "Fricción & Tarjetas",
@@ -124,7 +132,7 @@ def select_ticket_2_goals_corners_cards(matches):
                     "explanation": p.get("explanation", "")
                 })
                 cards_candidates.append(item)
-            elif ("2.5" in mkt or "Ambos" in mkt) and odds >= 1.70 and "Menos" not in p.get("name", "") and "NO" not in p.get("name", ""):
+            elif ("2.5" in mkt or "1.5" in mkt or "Ambos" in mkt) and odds >= 1.50:
                 item = dict(base_info)
                 item.update({
                     "market": "Mercado de Goles",
@@ -167,33 +175,39 @@ def select_ticket_2_goals_corners_cards(matches):
             cur_odds = calculate_parley_odds(selected)
             if len(selected) >= 3 and cur_odds >= 9.8:
                 break
-            if len(selected) == 4:
+            if len(selected) >= 4:
                 break
 
-    # Si aún no alcanza 9.8, buscar una cuarta pata en córners o goles
-    if calculate_parley_odds(selected) < 9.8 and len(selected) < 4:
-        for c in (goals_candidates + corners_candidates):
+    # Si aún no alcanza 9.5, buscar patas adicionales en el conjunto combinado
+    cur_odds = calculate_parley_odds(selected)
+    if cur_odds < 9.5 and len(selected) < 5:
+        combined_pool = sorted(goals_candidates + corners_candidates + cards_candidates, key=lambda x: x["fair_odds"], reverse=True)
+        for c in combined_pool:
             tk = f"{c['home_team']}_{c['away_team']}"
             if tk not in used_teams:
                 selected.append(c)
                 used_teams.add(tk)
-                break
+                cur_odds = calculate_parley_odds(selected)
+                if cur_odds >= 9.5 or len(selected) >= 5:
+                    break
 
-    return selected[:4]
+    return selected[:5]
 
 def select_ticket_3_rompebancas_ultra(matches):
     """
     Ticket 3: 🚀 La Rompe-Bancas Ultra (Cuota ~25.00 - 45.00+)
-    4 selecciones con cuota atractiva (>= 1.90 - 3.20 cada una):
-    - Empates con alta paridad matemática
-    - Victorias visitantes con buen xG
-    - Value bets identificadas por el modelo de Poisson
+    3 a 4 selecciones con cuota atractiva y valor matemático:
+    - Empates tácticos con paridad esperada (p_draw >= 32.0%)
+    - Victorias visitantes o de valor
+    - Mercados cuantitativos de alto rendimiento (cuotas >= 1.70 - 2.80)
     """
     candidates = []
     for m in matches:
         pred = m.get("prediction", {})
         h_name = m.get("home_team")
         a_name = m.get("away_team")
+        today_iso = datetime.now().strftime("%Y-%m-%d")
+        d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
         base_info = {
             "match_id": m.get("id"),
             "home_team": h_name,
@@ -202,16 +216,17 @@ def select_ticket_3_rompebancas_ultra(matches):
             "country": m.get("country"),
             "country_code": m.get("country_code", ""),
             "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
-            "date": m.get("date", "Hoy"),
+            "date": d_display,
+            "date_iso": m.get("date_iso", ""),
             "time": m.get("time", ""),
+            "timestamp": m.get("timestamp") or 0,
         }
 
         p_draw = pred.get("prob_draw", 28.0)
         p_away = pred.get("prob_away", 30.0)
-        p_over25 = pred.get("prob_over_25", 50.0)
 
-        # Candidato Empate si hay paridad táctica
-        if 30.0 <= p_draw <= 36.0:
+        # 1. Candidato Empate si hay paridad táctica proyectada
+        if 32.0 <= p_draw <= 48.0:
             item = dict(base_info)
             odds = round(100.0 / p_draw, 2)
             item.update({
@@ -223,8 +238,8 @@ def select_ticket_3_rompebancas_ultra(matches):
             })
             candidates.append(item)
 
-        # Candidato Victoria Visitante con valor
-        if 36.0 <= p_away <= 48.0 and pred.get("mu_away", 1.0) >= 1.3:
+        # 2. Candidato Victoria Visitante con valor
+        if 36.0 <= p_away <= 60.0 and (pred.get("mu_away", 1.0) >= 1.2 or p_away >= 45.0):
             item = dict(base_info)
             odds = round(100.0 / p_away, 2)
             item.update({
@@ -232,45 +247,48 @@ def select_ticket_3_rompebancas_ultra(matches):
                 "pick": f"Victoria Visitante ({a_name})",
                 "probability": p_away,
                 "fair_odds": odds,
-                "explanation": f"Valor subestimado: {a_name} exhibe {pred.get('mu_away')} goles esperados de visita."
+                "explanation": f"Valor subestimado: {a_name} exhibe solvencia ofensiva visitante."
             })
             candidates.append(item)
 
-        # Candidato Over 2.5 goles
-        if p_over25 >= 55.0:
-            item = dict(base_info)
-            odds = round(100.0 / p_over25, 2)
-            item.update({
-                "market": "Total de Goles (+2.5)",
-                "pick": "Más de 2.5 Goles",
-                "probability": p_over25,
-                "fair_odds": odds,
-                "explanation": f"Duelo abierto con {round(pred.get('lambda_home', 1.5) + pred.get('mu_away', 1.2), 2)} goles esperados combinados."
-            })
-            candidates.append(item)
+        # 3. Candidatos de las 7 predicciones cuantitativas con cuota alta (>= 1.70)
+        for p in pred.get("seven_predictions", []):
+            p_odds = float(p.get("fair_odds", 0) or 0)
+            p_prob = float(p.get("probability", 0) or 0)
+            if 1.70 <= p_odds <= 2.80 and p_prob >= 35.0:
+                item = dict(base_info)
+                item.update({
+                    "market": p.get("market"),
+                    "pick": p.get("name"),
+                    "probability": p_prob,
+                    "fair_odds": p_odds,
+                    "explanation": p.get("explanation", "")
+                })
+                candidates.append(item)
 
-    # Ordenar buscando balance de cuotas para llegar al rango 25x - 45x
+    # Ordenar buscando cuotas altas
     candidates.sort(key=lambda x: x["fair_odds"], reverse=True)
     selected = []
     used_teams = set()
-    
-    # 1. Incluir un empate
+
+    # Priorizar hasta 2 empates si existen
     for c in candidates:
         if "Empate" in c["pick"]:
             tk = f"{c['home_team']}_{c['away_team']}"
             if tk not in used_teams:
                 selected.append(c)
                 used_teams.add(tk)
-                break
+                if len(selected) == 2:
+                    break
 
-    # 2. Rellenar con selecciones de buen valor cuidando que la cuota final quede entre ~28x y ~55x
+    # Rellenar con selecciones de valor hasta alcanzar cuota deseada (~25x - 45x)
     for c in candidates:
         tk = f"{c['home_team']}_{c['away_team']}"
         if tk not in used_teams:
             selected.append(c)
             used_teams.add(tk)
             cur_odds = calculate_parley_odds(selected)
-            if len(selected) >= 3 and cur_odds >= 28.0:
+            if len(selected) >= 3 and cur_odds >= 25.0:
                 break
             if len(selected) == 4:
                 break
@@ -329,15 +347,27 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 def build_dream_parleys_package(matches, force_gemini=False):
     """
     Construye el paquete completo con los 3 parleys soñadores diarios.
-    Filtra rigurosamente para incluir ÚNICAMENTE partidos que NO hayan comenzado aún.
+    Filtra rigurosamente para incluir ÚNICAMENTE partidos de HOY que NO hayan comenzado aún.
     """
+    today_iso = datetime.now().strftime("%Y-%m-%d")
     now_ts = time.time()
-    # Excluir partidos que ya hayan iniciado o concluido
-    pending_matches = [
+    
+    # 1. Priorizar rigurosamente los partidos de HOY que aún NO hayan comenzado
+    today_pending = [
         m for m in matches 
-        if (m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp")
+        if m.get("date_iso") == today_iso and ((m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp"))
     ]
-    source_matches = pending_matches if len(pending_matches) >= 5 else matches
+    
+    if len(today_pending) >= 3:
+        source_matches = today_pending
+    else:
+        # Fallback si hoy ya no quedan suficientes partidos por jugar (ej. madrugada o final del día)
+        pending_matches = [
+            m for m in matches 
+            if (m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp")
+        ]
+        pending_matches.sort(key=lambda x: (x.get("timestamp") or 9999999999))
+        source_matches = pending_matches[:30] if len(pending_matches) >= 3 else matches
 
     t1_legs = select_ticket_1_tactical(source_matches)
     t2_legs = select_ticket_2_goals_corners_cards(source_matches)
@@ -457,16 +487,51 @@ def build_dream_parleys_package(matches, force_gemini=False):
 
 def get_or_generate_dream_parleys(matches, force_regenerate=False):
     """
-    Retorna el paquete de parleys desde caché o lo genera si no existe o ha expirado.
+    Retorna el paquete de parleys desde caché o lo genera si no existe,
+    ha expirado, contiene partidos de días anteriores, o contiene partidos que ya iniciaron.
     """
+    today_iso = datetime.now().strftime("%Y-%m-%d")
+    now_ts = time.time()
+
     if not force_regenerate and os.path.exists(CACHE_FILE):
         try:
             with open(CACHE_FILE, "r", encoding="utf-8") as f:
                 data = json.load(f)
-            today_str = datetime.now().strftime("%Y-%m-%d")
-            if data.get("date_iso") == today_str and len(data.get("tickets", [])) == 3:
+            
+            # 1. Comprobar fecha del paquete y existencia de 3 tickets
+            cache_valid = (data.get("date_iso") == today_iso and len(data.get("tickets", [])) == 3)
+            
+            if cache_valid:
+                # Comprobar cuántos partidos de hoy están disponibles
+                today_pending_matches = [
+                    m for m in matches 
+                    if m.get("date_iso") == today_iso and ((m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp"))
+                ]
+                
+                # Validar cada pierna (leg) de cada ticket
+                for t in data.get("tickets", []):
+                    legs = t.get("legs", [])
+                    if not legs:
+                        cache_valid = False
+                        break
+                    for leg in legs:
+                        # Si hay al menos 3 partidos hoy, exigir que las selecciones sean estrictamente de hoy
+                        if len(today_pending_matches) >= 3:
+                            if leg.get("date_iso") != today_iso:
+                                cache_valid = False
+                                break
+                        # Si el partido ya arrancó hace más de 10 minutos, invalidar caché
+                        leg_ts = leg.get("timestamp") or 0
+                        if leg_ts and leg_ts < now_ts - 600:
+                            cache_valid = False
+                            break
+                    if not cache_valid:
+                        break
+
+            if cache_valid:
                 return data
-        except Exception:
+        except Exception as e:
+            print(f"[CACHE VALIDATION WARNING]: {e}")
             pass
 
     return build_dream_parleys_package(matches, force_gemini=force_regenerate)
