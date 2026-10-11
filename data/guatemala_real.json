@@ -3,7 +3,7 @@
   "league_id": 336,
   "country": "Guatemala",
   "country_code": "gt",
-  "last_updated": "2026-10-11T21:21:22.969442",
+  "last_updated": "2026-10-11T15:50:46.584173",
   "total_fixtures": 12,
   "team_histories": {
     "Antigua Guatemala": [
@@ -1932,9 +1932,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-02",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "02/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Comunicaciones FC",
             "match_away": "San Pedro",
             "home_score": 1,
@@ -2253,14 +2253,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-03",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "03/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Deportivo Marquense",
             "match_away": "CSD Municipal",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "19/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Marquense",
+            "match_away": "CSD Municipal",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "01/03/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Deportivo Marquense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "30/11/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Marquense",
+            "match_away": "CSD Municipal",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "20/09/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Deportivo Marquense",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
             "winner": "CSD Municipal"
           }
         ],
@@ -2311,11 +2355,11 @@
         "projected_corners": 11.4,
         "projected_cards": 3.1,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 5,
           "draws": 0,
           "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "CSD Municipal 1 victorias • 0 empates • Deportivo Marquense 0 victorias"
+          "avg_goals": 2.6,
+          "text": "CSD Municipal 5 victorias • 0 empates • Deportivo Marquense 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2574,15 +2618,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-19",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "19/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Coban Imperial",
             "match_away": "Antigua Guatemala",
             "home_score": 0,
             "away_score": 2,
             "score": "0 - 2",
             "winner": "Antigua Guatemala"
+          },
+          {
+            "date": "09/03/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Antigua Guatemala",
+            "match_away": "Coban Imperial",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "21/01/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "Antigua Guatemala",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Coban Imperial"
+          },
+          {
+            "date": "06/11/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Antigua Guatemala",
+            "match_away": "Coban Imperial",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "Antigua Guatemala",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -2633,10 +2721,10 @@
         "projected_cards": 4.0,
         "summary": {
           "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Antigua Guatemala 1 victorias • 0 empates • Coban Imperial 0 victorias"
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 3.2,
+          "text": "Antigua Guatemala 1 victorias • 3 empates • Coban Imperial 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2895,14 +2983,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-08",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "08/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Aurora FC",
             "match_away": "Comunicaciones FC",
             "home_score": 3,
             "away_score": 1,
             "score": "3 - 1",
+            "winner": "Aurora FC"
+          },
+          {
+            "date": "11/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Comunicaciones FC",
+            "match_away": "Aurora FC",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Comunicaciones FC"
+          },
+          {
+            "date": "22/02/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Aurora FC",
+            "match_away": "Comunicaciones FC",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Aurora FC"
+          },
+          {
+            "date": "05/11/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Aurora FC",
+            "match_away": "Comunicaciones FC",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "30/08/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Comunicaciones FC",
+            "match_away": "Aurora FC",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
             "winner": "Aurora FC"
           }
         ],
@@ -2953,11 +3085,11 @@
         "projected_corners": 9.4,
         "projected_cards": 4.2,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 4.0,
-          "text": "Comunicaciones FC 0 victorias • 0 empates • Aurora FC 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 1.8,
+          "text": "Comunicaciones FC 1 victorias • 1 empates • Aurora FC 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3216,14 +3348,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-09",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "09/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Antigua Guatemala",
             "match_away": "Guastatoya",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
+            "winner": "Antigua Guatemala"
+          },
+          {
+            "date": "16/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Guastatoya",
+            "match_away": "Antigua Guatemala",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Guastatoya"
+          },
+          {
+            "date": "25/02/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Antigua Guatemala",
+            "match_away": "Guastatoya",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Antigua Guatemala"
+          },
+          {
+            "date": "09/11/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Guastatoya",
+            "match_away": "Antigua Guatemala",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Antigua Guatemala"
+          },
+          {
+            "date": "07/09/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Antigua Guatemala",
+            "match_away": "Guastatoya",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
             "winner": "Antigua Guatemala"
           }
         ],
@@ -3274,11 +3450,11 @@
         "projected_corners": 9.6,
         "projected_cards": 2.9,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Guastatoya 0 victorias • 0 empates • Antigua Guatemala 1 victorias"
+          "away_wins": 4,
+          "avg_goals": 2.8,
+          "text": "Guastatoya 1 victorias • 0 empates • Antigua Guatemala 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3537,9 +3713,53 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-08",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "08/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Mixco",
+            "match_away": "Deportivo Marquense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Deportivo Mixco"
+          },
+          {
+            "date": "07/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Mixco",
+            "match_away": "Deportivo Marquense",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Deportivo Mixco"
+          },
+          {
+            "date": "20/02/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Marquense",
+            "match_away": "Deportivo Mixco",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Deportivo Marquense"
+          },
+          {
+            "date": "16/11/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Marquense",
+            "match_away": "Deportivo Mixco",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Deportivo Mixco"
+          },
+          {
+            "date": "12/09/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Deportivo Mixco",
             "match_away": "Deportivo Marquense",
             "home_score": 1,
@@ -3595,11 +3815,11 @@
         "projected_corners": 10.8,
         "projected_cards": 4.0,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "Deportivo Marquense 0 victorias • 0 empates • Deportivo Mixco 1 victorias"
+          "away_wins": 4,
+          "avg_goals": 2.2,
+          "text": "Deportivo Marquense 1 victorias • 0 empates • Deportivo Mixco 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3858,15 +4078,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-08",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "08/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Deportivo Malacateco",
             "match_away": "Club Xelajú",
             "home_score": 2,
             "away_score": 2,
             "score": "2 - 2",
             "winner": "Empate"
+          },
+          {
+            "date": "06/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Club Xelajú",
+            "match_away": "Deportivo Malacateco",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Club Xelajú"
+          },
+          {
+            "date": "19/02/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Malacateco",
+            "match_away": "Club Xelajú",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Deportivo Malacateco"
+          },
+          {
+            "date": "29/09/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Club Xelajú",
+            "match_away": "Deportivo Malacateco",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Club Xelajú"
+          },
+          {
+            "date": "20/07/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Malacateco",
+            "match_away": "Club Xelajú",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Club Xelajú"
           }
         ],
         "home_corner_stats": {
@@ -3916,11 +4180,11 @@
         "projected_corners": 10.3,
         "projected_cards": 3.0,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Club Xelajú 0 victorias • 1 empates • Deportivo Malacateco 0 victorias"
+          "away_wins": 1,
+          "avg_goals": 2.0,
+          "text": "Club Xelajú 3 victorias • 1 empates • Deportivo Malacateco 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4179,14 +4443,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-09",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "09/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "CSD Municipal",
             "match_away": "Coban Imperial",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "06/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Coban Imperial",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "18/02/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "CSD Municipal",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "12/10/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Coban Imperial",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "03/08/2025",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "CSD Municipal",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
             "winner": "CSD Municipal"
           }
         ],
@@ -4238,10 +4546,10 @@
         "projected_cards": 4.1,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Coban Imperial 0 victorias • 0 empates • CSD Municipal 1 victorias"
+          "draws": 2,
+          "away_wins": 3,
+          "avg_goals": 1.4,
+          "text": "Coban Imperial 0 victorias • 2 empates • CSD Municipal 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4500,9 +4808,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-09",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "09/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "San Pedro",
             "match_away": "CD Suchitepéquez",
             "home_score": 3,
@@ -4821,9 +5129,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-16",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "16/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "San Pedro",
             "match_away": "Aurora FC",
             "home_score": 2,
@@ -5142,15 +5450,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-15",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "15/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Coban Imperial",
             "match_away": "Deportivo Mixco",
             "home_score": 3,
             "away_score": 2,
             "score": "3 - 2",
             "winner": "Coban Imperial"
+          },
+          {
+            "date": "02/05/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Mixco",
+            "match_away": "Coban Imperial",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Deportivo Mixco"
+          },
+          {
+            "date": "29/04/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "Deportivo Mixco",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Coban Imperial"
+          },
+          {
+            "date": "21/03/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Coban Imperial",
+            "match_away": "Deportivo Mixco",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "31/01/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Deportivo Mixco",
+            "match_away": "Coban Imperial",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5200,11 +5552,11 @@
         "projected_corners": 10.6,
         "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 5.0,
-          "text": "Deportivo Mixco 0 victorias • 0 empates • Coban Imperial 1 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Deportivo Mixco 1 victorias • 2 empates • Coban Imperial 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5463,15 +5815,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-15",
-            "competition": "Liga Nacional de Guatemala",
-            "tournament": "Liga Nacional de Guatemala",
+            "date": "15/08/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
             "match_home": "Guastatoya",
             "match_away": "CSD Municipal",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Guastatoya"
+          },
+          {
+            "date": "03/05/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Guastatoya",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "01/05/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Guastatoya",
+            "match_away": "CSD Municipal",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "CSD Municipal"
+          },
+          {
+            "date": "22/03/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "Guastatoya",
+            "match_away": "CSD Municipal",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "31/01/2026",
+            "competition": "Liga Nacional Apertura",
+            "tournament": "Liga Nacional Apertura",
+            "match_home": "CSD Municipal",
+            "match_away": "Guastatoya",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "CSD Municipal"
           }
         ],
         "home_corner_stats": {
@@ -5521,11 +5917,11 @@
         "projected_corners": 9.9,
         "projected_cards": 4.1,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 3,
+          "draws": 1,
           "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "CSD Municipal 0 victorias • 0 empates • Guastatoya 1 victorias"
+          "avg_goals": 1.8,
+          "text": "CSD Municipal 3 victorias • 1 empates • Guastatoya 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

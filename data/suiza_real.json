@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-11T21:22:30.101263",
+  "last_updated": "2026-10-11T15:55:55.528359",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -1930,7 +1930,63 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "12/05/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Luzern",
+            "match_away": "FC Zürich",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Luzern"
+          },
+          {
+            "date": "14/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Zürich",
+            "match_away": "Luzern",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Luzern"
+          },
+          {
+            "date": "08/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Zürich",
+            "match_away": "Luzern",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "winner": "FC Zürich"
+          },
+          {
+            "date": "03/08/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Luzern",
+            "match_away": "FC Zürich",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "15/03/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Zürich",
+            "match_away": "Luzern",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "winner": "FC Zürich"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 4.5,
@@ -1978,11 +2034,11 @@
         "projected_corners": 9.4,
         "projected_cards": 4.1,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "FC Zürich 0 victorias • 0 empates • Luzern 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.6,
+          "text": "FC Zürich 2 victorias • 1 empates • Luzern 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2239,7 +2295,63 @@
             "fouls": 17
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "15/05/2021",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Vaduz",
+            "match_away": "Servette",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Servette"
+          },
+          {
+            "date": "21/03/2021",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Servette",
+            "match_away": "FC Vaduz",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "FC Vaduz"
+          },
+          {
+            "date": "23/12/2020",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Servette",
+            "match_away": "FC Vaduz",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "09/12/2020",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Vaduz",
+            "match_away": "Servette",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Servette"
+          },
+          {
+            "date": "23/05/2019",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "FC Vaduz",
+            "match_away": "Servette",
+            "home_score": 1,
+            "away_score": 5,
+            "score": "1 - 5",
+            "winner": "Servette"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 3.5,
           "corners_avg_away": 4.33,
@@ -2287,11 +2399,11 @@
         "projected_corners": 7.0,
         "projected_cards": 5.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Servette 0 victorias • 0 empates • FC Vaduz 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.4,
+          "text": "Servette 3 victorias • 1 empates • FC Vaduz 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2548,7 +2660,63 @@
             "fouls": 19
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "26/04/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "St. Gallen",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "St. Gallen"
+          },
+          {
+            "date": "11/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "St. Gallen",
+            "match_away": "Young Boys",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "St. Gallen"
+          },
+          {
+            "date": "09/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "St. Gallen",
+            "match_away": "Young Boys",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Young Boys"
+          },
+          {
+            "date": "19/10/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "St. Gallen",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "St. Gallen"
+          },
+          {
+            "date": "29/03/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "St. Gallen",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Young Boys"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 9.0,
           "corners_avg_away": 4.0,
@@ -2596,11 +2764,11 @@
         "projected_corners": 14.2,
         "projected_cards": 4.7,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Young Boys 0 victorias • 0 empates • St. Gallen 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.0,
+          "text": "Young Boys 2 victorias • 0 empates • St. Gallen 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2857,7 +3025,63 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25/04/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Thun",
+            "match_away": "Lugano",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Lugano"
+          },
+          {
+            "date": "04/04/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lugano",
+            "match_away": "Thun",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Lugano"
+          },
+          {
+            "date": "22/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Thun",
+            "match_away": "Lugano",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Lugano"
+          },
+          {
+            "date": "27/07/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lugano",
+            "match_away": "Thun",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Thun"
+          },
+          {
+            "date": "10/02/2022",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Thun",
+            "match_away": "Lugano",
+            "home_score": 3,
+            "away_score": 4,
+            "score": "3 - 4",
+            "winner": "Lugano"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 8.5,
           "corners_avg_away": 5.67,
@@ -2905,11 +3129,11 @@
         "projected_corners": 13.6,
         "projected_cards": 6.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Thun 0 victorias • 0 empates • Lugano 0 victorias"
+          "away_wins": 4,
+          "avg_goals": 2.6,
+          "text": "Thun 1 victorias • 0 empates • Lugano 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3166,7 +3390,63 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "05/03/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Grasshopper",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Basel"
+          },
+          {
+            "date": "23/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Grasshopper",
+            "match_away": "Basel",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "02/08/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Grasshopper",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Basel"
+          },
+          {
+            "date": "03/04/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Grasshopper",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Basel"
+          },
+          {
+            "date": "14/12/2024",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Grasshopper",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Grasshopper"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 3.33,
           "corners_avg_away": 4.0,
@@ -3214,11 +3494,11 @@
         "projected_corners": 9.2,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Basel 0 victorias • 0 empates • Grasshopper 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 2.0,
+          "text": "Basel 3 victorias • 1 empates • Grasshopper 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3475,7 +3755,63 @@
             "fouls": 16
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "12/04/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Sion",
+            "match_away": "Lausanne",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Sion"
+          },
+          {
+            "date": "09/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lausanne",
+            "match_away": "Sion",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "28/09/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Sion",
+            "match_away": "Lausanne",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "05/04/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lausanne",
+            "match_away": "Sion",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Lausanne"
+          },
+          {
+            "date": "23/11/2024",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lausanne",
+            "match_away": "Sion",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Lausanne"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 8.0,
           "corners_avg_away": 4.0,
@@ -3523,11 +3859,11 @@
         "projected_corners": 11.6,
         "projected_cards": 4.9,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Sion 0 victorias • 0 empates • Lausanne 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.0,
+          "text": "Sion 1 victorias • 2 empates • Lausanne 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3786,15 +4122,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-30",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "30/08/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "FC Vaduz",
             "match_away": "Grasshopper",
             "home_score": 5,
             "away_score": 2,
             "score": "5 - 2",
             "winner": "FC Vaduz"
+          },
+          {
+            "date": "03/07/2020",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "FC Vaduz",
+            "match_away": "Grasshopper",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Grasshopper"
+          },
+          {
+            "date": "31/01/2020",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "Grasshopper",
+            "match_away": "FC Vaduz",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "FC Vaduz"
+          },
+          {
+            "date": "25/10/2019",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "Grasshopper",
+            "match_away": "FC Vaduz",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          },
+          {
+            "date": "01/09/2019",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "FC Vaduz",
+            "match_away": "Grasshopper",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -3844,11 +4224,11 @@
         "projected_corners": 7.7,
         "projected_cards": 4.6,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 7.0,
-          "text": "Grasshopper 0 victorias • 0 empates • FC Vaduz 1 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 5.0,
+          "text": "Grasshopper 1 victorias • 2 empates • FC Vaduz 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4107,14 +4487,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-06",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "06/09/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "Servette",
             "match_away": "St. Gallen",
             "home_score": 0,
             "away_score": 2,
             "score": "0 - 2",
+            "winner": "St. Gallen"
+          },
+          {
+            "date": "21/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Servette",
+            "match_away": "St. Gallen",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "25/01/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "St. Gallen",
+            "match_away": "Servette",
+            "home_score": 2,
+            "away_score": 4,
+            "score": "2 - 4",
+            "winner": "Servette"
+          },
+          {
+            "date": "02/08/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Servette",
+            "match_away": "St. Gallen",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "St. Gallen"
+          },
+          {
+            "date": "06/04/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "St. Gallen",
+            "match_away": "Servette",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
             "winner": "St. Gallen"
           }
         ],
@@ -4165,11 +4589,11 @@
         "projected_corners": 11.7,
         "projected_cards": 5.2,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "St. Gallen 1 victorias • 0 empates • Servette 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.2,
+          "text": "St. Gallen 3 victorias • 1 empates • Servette 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4428,15 +4852,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-02",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "02/08/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "Sion",
             "match_away": "Luzern",
             "home_score": 3,
             "away_score": 0,
             "score": "3 - 0",
             "winner": "Sion"
+          },
+          {
+            "date": "07/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Sion",
+            "match_away": "Luzern",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "24/01/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Sion",
+            "match_away": "Luzern",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "04/10/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Luzern",
+            "match_away": "Sion",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          },
+          {
+            "date": "23/02/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Luzern",
+            "match_away": "Sion",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Luzern"
           }
         ],
         "home_corner_stats": {
@@ -4486,11 +4954,11 @@
         "projected_corners": 9.4,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 1,
+          "draws": 3,
           "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Luzern 0 victorias • 0 empates • Sion 1 victorias"
+          "avg_goals": 2.8,
+          "text": "Luzern 1 victorias • 3 empates • Sion 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4749,14 +5217,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-01",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "01/09/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "FC Zürich",
             "match_away": "Young Boys",
             "home_score": 2,
             "away_score": 4,
             "score": "2 - 4",
+            "winner": "Young Boys"
+          },
+          {
+            "date": "01/03/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "FC Zürich",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Young Boys"
+          },
+          {
+            "date": "01/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "FC Zürich",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Young Boys"
+          },
+          {
+            "date": "26/10/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "FC Zürich",
+            "match_away": "Young Boys",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Young Boys"
+          },
+          {
+            "date": "21/04/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Young Boys",
+            "match_away": "FC Zürich",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
             "winner": "Young Boys"
           }
         ],
@@ -4807,11 +5319,11 @@
         "projected_corners": 12.2,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 5,
           "draws": 0,
           "away_wins": 0,
-          "avg_goals": 6.0,
-          "text": "Young Boys 1 victorias • 0 empates • FC Zürich 0 victorias"
+          "avg_goals": 4.0,
+          "text": "Young Boys 5 victorias • 0 empates • FC Zürich 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5070,14 +5582,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-02",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "02/09/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "Thun",
             "match_away": "Lausanne",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "12/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Thun",
+            "match_away": "Lausanne",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Thun"
+          },
+          {
+            "date": "30/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lausanne",
+            "match_away": "Thun",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Lausanne"
+          },
+          {
+            "date": "03/08/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Thun",
+            "match_away": "Lausanne",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Thun"
+          },
+          {
+            "date": "19/05/2023",
+            "competition": "Challenge League",
+            "tournament": "Challenge League",
+            "match_home": "Thun",
+            "match_away": "Lausanne",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
             "winner": "Empate"
           }
         ],
@@ -5128,11 +5684,11 @@
         "projected_corners": 12.1,
         "projected_cards": 5.7,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Lausanne 0 victorias • 1 empates • Thun 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 3.6,
+          "text": "Lausanne 1 victorias • 2 empates • Thun 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5391,14 +5947,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-06",
-            "competition": "Super League de Suiza",
-            "tournament": "Super League de Suiza",
+            "date": "06/09/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
             "match_home": "Basel",
             "match_away": "Lugano",
             "home_score": 1,
             "away_score": 3,
             "score": "1 - 3",
+            "winner": "Lugano"
+          },
+          {
+            "date": "17/05/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lugano",
+            "match_away": "Basel",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Lugano"
+          },
+          {
+            "date": "15/02/2026",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Lugano",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "09/11/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Basel",
+            "match_away": "Lugano",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Lugano"
+          },
+          {
+            "date": "10/08/2025",
+            "competition": "Super League",
+            "tournament": "Super League",
+            "match_home": "Lugano",
+            "match_away": "Basel",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
             "winner": "Lugano"
           }
         ],
@@ -5449,11 +6049,11 @@
         "projected_corners": 8.8,
         "projected_cards": 5.3,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
+          "home_wins": 4,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Lugano 1 victorias • 0 empates • Basel 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Lugano 4 victorias • 1 empates • Basel 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

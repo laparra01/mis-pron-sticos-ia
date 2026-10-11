@@ -4,6 +4,7 @@ import time
 import requests
 from datetime import datetime, timezone, timedelta
 import hashlib
+import re
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -244,6 +245,15 @@ SUPPORTED_LEAGUES = [
         "flag": "🇦🇲",
         "max_upcoming": 12
     },
+    {
+        "id": 38,
+        "slug": "austria",
+        "name": "Bundesliga de Austria",
+        "country": "Austria",
+        "code": "at",
+        "flag": "🇦🇹",
+        "max_upcoming": 12
+    },
 
     # Torneos Internacionales UEFA
     {
@@ -441,26 +451,36 @@ def get_match_stats(match_id, cache, fetch_network=True):
     return fallback
 
 def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
-    url = f"https://www.fotmob.com/api/data/matchDetails?matchId={match_id}"
+    if not match_id:
+        return []
+    clean_id = re.findall(r'\d+', str(match_id))[-1] if re.findall(r'\d+', str(match_id)) else str(match_id)
+    url = f"https://www.fotmob.com/api/data/matchDetails?matchId={clean_id}"
     try:
         r = requests.get(url, headers=HEADERS, timeout=8)
         if r.status_code == 200:
             d = r.json()
             h2h_content = d.get("content", {}).get("h2h", {})
+            if not isinstance(h2h_content, dict):
+                return []
             raw_matches = h2h_content.get("matches", [])
+            if not isinstance(raw_matches, list):
+                return []
             direct = []
             today_date = datetime.now().date()
             for m in raw_matches:
+                if not isinstance(m, dict):
+                    continue
                 leg_name = m.get("league", {}).get("name", default_league_name)
                 # Excluir partidos amistosos no oficiales
-                if any(k in leg_name.lower() for k in ("friendly", "amistoso", "club friendlies", "exhibition")):
+                if any(k in str(leg_name).lower() for k in ("friendly", "amistoso", "club friendlies", "exhibition")):
                     continue
 
-                # Excluir partidos futuros o no finalizados (FotMob incluye partidos pendientes de jugar)
-                if m.get("finished") is False:
-                    continue
                 st_obj = m.get("status", {})
-                if st_obj.get("finished") is False:
+                if not isinstance(st_obj, dict):
+                    st_obj = {}
+
+                # Excluir partidos cancelados o explícitamente no terminados
+                if st_obj.get("cancelled") or st_obj.get("finished") is False:
                     continue
 
                 score_str = st_obj.get("scoreStr") or m.get("scoreStr") or ""
@@ -736,6 +756,15 @@ def scrape_single_league(cfg, match_cache=None):
                     "score": s_str,
                     "winner": pc["home"]["name"] if hs > as_ else (pc["away"]["name"] if as_ > hs else "Empate")
                 })
+
+        if not direct_h2h:
+            try:
+                from prediction_engine import generate_match_h2h
+                sim_h2h = generate_match_h2h(h_name, a_name, "football", l_name, country=c_name)
+                if sim_h2h and sim_h2h.get("head_to_head"):
+                    direct_h2h = sim_h2h["head_to_head"]
+            except Exception:
+                pass
 
         h_last5 = team_history.get(h_name, [])
         a_last5 = team_history.get(a_name, [])

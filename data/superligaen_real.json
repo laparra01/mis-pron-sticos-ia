@@ -3,7 +3,7 @@
   "league_id": 46,
   "country": "Dinamarca",
   "country_code": "dk",
-  "last_updated": "2026-10-11T21:22:19.607693",
+  "last_updated": "2026-10-11T15:54:54.291139",
   "total_fixtures": 12,
   "team_histories": {
     "AC Horsens": [
@@ -1930,7 +1930,63 @@
             "fouls": 15
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "03/05/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "Sønderjyske",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "AGF"
+          },
+          {
+            "date": "15/03/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "AGF",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "09/11/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "Sønderjyske",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "29/10/2025",
+            "competition": "DBU Pokalen",
+            "tournament": "DBU Pokalen",
+            "match_home": "AGF",
+            "match_away": "Sønderjyske",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "AGF"
+          },
+          {
+            "date": "20/07/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "AGF",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 8.0,
           "corners_avg_away": 3.67,
@@ -1978,11 +2034,11 @@
         "projected_corners": 11.1,
         "projected_cards": 3.6,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "AGF 0 victorias • 0 empates • Sønderjyske 0 victorias"
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "AGF 2 victorias • 2 empates • Sønderjyske 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2239,7 +2295,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "04/11/2022",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AC Horsens",
+            "match_away": "Randers FC",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "AC Horsens"
+          },
+          {
+            "date": "05/08/2022",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Randers FC",
+            "match_away": "AC Horsens",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Randers FC"
+          },
+          {
+            "date": "02/02/2021",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Randers FC",
+            "match_away": "AC Horsens",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Randers FC"
+          },
+          {
+            "date": "13/09/2020",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AC Horsens",
+            "match_away": "Randers FC",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Randers FC"
+          },
+          {
+            "date": "28/06/2020",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Randers FC",
+            "match_away": "AC Horsens",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "AC Horsens"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 3.0,
           "corners_avg_away": 3.0,
@@ -2287,11 +2399,11 @@
         "projected_corners": 7.0,
         "projected_cards": 4.7,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "AC Horsens 0 victorias • 0 empates • Randers FC 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "AC Horsens 2 victorias • 0 empates • Randers FC 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2548,7 +2660,63 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16/03/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Lyngby",
+            "match_away": "Nordsjælland",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Lyngby"
+          },
+          {
+            "date": "11/08/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "Lyngby",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "18/02/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "Lyngby",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "winner": "Nordsjælland"
+          },
+          {
+            "date": "03/09/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Lyngby",
+            "match_away": "Nordsjælland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/02/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Lyngby",
+            "match_away": "Nordsjælland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.67,
           "corners_avg_away": 4.5,
@@ -2596,11 +2764,11 @@
         "projected_corners": 8.7,
         "projected_cards": 4.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Lyngby 0 victorias • 0 empates • Nordsjælland 0 victorias"
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Lyngby 1 victorias • 3 empates • Nordsjælland 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2857,7 +3025,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16/02/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "Silkeborg",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Silkeborg",
+            "match_away": "Sønderjyske",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "11/05/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Silkeborg",
+            "match_away": "Sønderjyske",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Silkeborg"
+          },
+          {
+            "date": "30/03/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "Silkeborg",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "02/03/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "Silkeborg",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Silkeborg"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
           "corners_avg_away": 4.5,
@@ -2905,11 +3129,11 @@
         "projected_corners": 6.9,
         "projected_cards": 4.0,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Sønderjyske 0 victorias • 0 empates • Silkeborg 0 victorias"
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Sønderjyske 3 victorias • 0 empates • Silkeborg 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3166,7 +3390,63 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "27/10/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Brøndby IF",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Brøndby IF"
+          },
+          {
+            "date": "28/09/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Brøndby IF",
+            "match_away": "OB",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Brøndby IF"
+          },
+          {
+            "date": "25/02/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Brøndby IF",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Brøndby IF"
+          },
+          {
+            "date": "30/07/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Brøndby IF",
+            "match_away": "OB",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "OB"
+          },
+          {
+            "date": "06/11/2022",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "OB",
+            "match_away": "Brøndby IF",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 7.5,
           "corners_avg_away": 6.67,
@@ -3214,11 +3494,11 @@
         "projected_corners": 11.4,
         "projected_cards": 4.2,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "OB 0 victorias • 0 empates • Brøndby IF 0 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 3.8,
+          "text": "OB 1 victorias • 1 empates • Brøndby IF 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3475,7 +3755,63 @@
             "fouls": 6
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "30/11/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "FC København",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "AGF"
+          },
+          {
+            "date": "08/08/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC København",
+            "match_away": "AGF",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "AGF"
+          },
+          {
+            "date": "27/04/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "FC København",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "FC København"
+          },
+          {
+            "date": "21/04/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC København",
+            "match_away": "AGF",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "FC København"
+          },
+          {
+            "date": "10/11/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "FC København",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.5,
           "corners_avg_away": 2.67,
@@ -3523,11 +3859,11 @@
         "projected_corners": 8.5,
         "projected_cards": 4.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "FC København 0 victorias • 0 empates • AGF 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.4,
+          "text": "FC København 2 victorias • 1 empates • AGF 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3784,7 +4120,63 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "04/05/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC Midtjylland",
+            "match_away": "Viborg",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          },
+          {
+            "date": "22/03/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Viborg",
+            "match_away": "FC Midtjylland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "07/12/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Viborg",
+            "match_away": "FC Midtjylland",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/09/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC Midtjylland",
+            "match_away": "Viborg",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "FC Midtjylland"
+          },
+          {
+            "date": "10/11/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Viborg",
+            "match_away": "FC Midtjylland",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Viborg"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.5,
           "corners_avg_away": 6.33,
@@ -3832,11 +4224,11 @@
         "projected_corners": 9.6,
         "projected_cards": 3.0,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Viborg 0 victorias • 0 empates • FC Midtjylland 0 victorias"
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 3.4,
+          "text": "Viborg 1 victorias • 3 empates • FC Midtjylland 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4095,7 +4487,7 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-06",
+            "date": "06/09/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
             "match_home": "Brøndby IF",
@@ -4104,6 +4496,50 @@
             "away_score": 3,
             "score": "0 - 3",
             "winner": "Randers FC"
+          },
+          {
+            "date": "08/02/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Brøndby IF",
+            "match_away": "Randers FC",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "17/08/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Randers FC",
+            "match_away": "Brøndby IF",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Brøndby IF"
+          },
+          {
+            "date": "25/04/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Randers FC",
+            "match_away": "Brøndby IF",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "21/04/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Brøndby IF",
+            "match_away": "Randers FC",
+            "home_score": 4,
+            "away_score": 3,
+            "score": "4 - 3",
+            "winner": "Brøndby IF"
           }
         ],
         "home_corner_stats": {
@@ -4154,10 +4590,10 @@
         "projected_cards": 5.1,
         "summary": {
           "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Randers FC 1 victorias • 0 empates • Brøndby IF 0 victorias"
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.4,
+          "text": "Randers FC 1 victorias • 2 empates • Brøndby IF 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4416,7 +4852,7 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-16",
+            "date": "16/08/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
             "match_home": "Lyngby",
@@ -4425,6 +4861,50 @@
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
+          },
+          {
+            "date": "16/02/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC Midtjylland",
+            "match_away": "Lyngby",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "FC Midtjylland"
+          },
+          {
+            "date": "16/08/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Lyngby",
+            "match_away": "FC Midtjylland",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "FC Midtjylland"
+          },
+          {
+            "date": "27/10/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "FC Midtjylland",
+            "match_away": "Lyngby",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "FC Midtjylland"
+          },
+          {
+            "date": "06/08/2023",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Lyngby",
+            "match_away": "FC Midtjylland",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Lyngby"
           }
         ],
         "home_corner_stats": {
@@ -4474,11 +4954,11 @@
         "projected_corners": 9.3,
         "projected_cards": 3.7,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "FC Midtjylland 0 victorias • 1 empates • Lyngby 0 victorias"
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "FC Midtjylland 3 victorias • 1 empates • Lyngby 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4737,7 +5217,7 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-16",
+            "date": "16/08/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
             "match_home": "Nordsjælland",
@@ -4746,6 +5226,50 @@
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Nordsjælland"
+          },
+          {
+            "date": "07/12/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "Silkeborg",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "Nordsjælland"
+          },
+          {
+            "date": "10/08/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Silkeborg",
+            "match_away": "Nordsjælland",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Silkeborg"
+          },
+          {
+            "date": "20/10/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Nordsjælland",
+            "match_away": "Silkeborg",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "18/08/2024",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Silkeborg",
+            "match_away": "Nordsjælland",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Silkeborg"
           }
         ],
         "home_corner_stats": {
@@ -4795,11 +5319,11 @@
         "projected_corners": 7.4,
         "projected_cards": 2.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "Silkeborg 0 victorias • 0 empates • Nordsjælland 1 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.8,
+          "text": "Silkeborg 2 victorias • 1 empates • Nordsjælland 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5058,7 +5582,7 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-06",
+            "date": "06/09/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
             "match_home": "Sønderjyske",
@@ -5066,6 +5590,50 @@
             "home_score": 2,
             "away_score": 5,
             "score": "2 - 5",
+            "winner": "AC Horsens"
+          },
+          {
+            "date": "09/03/2024",
+            "competition": "1. Division",
+            "tournament": "1. Division",
+            "match_home": "AC Horsens",
+            "match_away": "Sønderjyske",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "12/08/2023",
+            "competition": "1. Division",
+            "tournament": "1. Division",
+            "match_home": "Sønderjyske",
+            "match_away": "AC Horsens",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "20/05/2021",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AC Horsens",
+            "match_away": "Sønderjyske",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Sønderjyske"
+          },
+          {
+            "date": "11/04/2021",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Sønderjyske",
+            "match_away": "AC Horsens",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
             "winner": "AC Horsens"
           }
         ],
@@ -5116,11 +5684,11 @@
         "projected_corners": 7.3,
         "projected_cards": 4.6,
         "summary": {
-          "home_wins": 1,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 7.0,
-          "text": "AC Horsens 1 victorias • 0 empates • Sønderjyske 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 5.0,
+          "text": "AC Horsens 2 victorias • 0 empates • Sønderjyske 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5379,7 +5947,7 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-08-14",
+            "date": "14/08/2026",
             "competition": "Superligaen",
             "tournament": "Superligaen",
             "match_home": "Viborg",
@@ -5388,6 +5956,50 @@
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Viborg"
+          },
+          {
+            "date": "17/05/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "Viborg",
+            "home_score": 6,
+            "away_score": 2,
+            "score": "6 - 2",
+            "winner": "AGF"
+          },
+          {
+            "date": "06/04/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Viborg",
+            "match_away": "AGF",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "AGF"
+          },
+          {
+            "date": "22/02/2026",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "AGF",
+            "match_away": "Viborg",
+            "home_score": 5,
+            "away_score": 2,
+            "score": "5 - 2",
+            "winner": "AGF"
+          },
+          {
+            "date": "14/09/2025",
+            "competition": "Superligaen",
+            "tournament": "Superligaen",
+            "match_home": "Viborg",
+            "match_away": "AGF",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "AGF"
           }
         ],
         "home_corner_stats": {
@@ -5437,11 +6049,11 @@
         "projected_corners": 12.9,
         "projected_cards": 2.5,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 4,
           "draws": 0,
           "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "AGF 0 victorias • 0 empates • Viborg 1 victorias"
+          "avg_goals": 4.8,
+          "text": "AGF 4 victorias • 0 empates • Viborg 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

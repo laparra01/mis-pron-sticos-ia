@@ -78,6 +78,12 @@ KNOWN_FOOTBALL_TEAMS = {
     "la galaxy": {"attack": 1.90, "defense": 1.35},
     "al hilal": {"attack": 2.45, "defense": 0.95},
     "al nassr": {"attack": 2.35, "defense": 1.10},
+    "salzburg": {"attack": 2.20, "defense": 0.95},
+    "red bull salzburg": {"attack": 2.20, "defense": 0.95},
+    "sturm graz": {"attack": 2.05, "defense": 1.00},
+    "rapid wien": {"attack": 1.85, "defense": 1.15},
+    "austria wien": {"attack": 1.75, "defense": 1.20},
+    "lask": {"attack": 1.75, "defense": 1.20},
     
     # Selecciones
     "argentina": {"attack": 2.35, "defense": 0.65},
@@ -1121,6 +1127,11 @@ LEAGUE_TEAMS_POOL = {
     "armenia": [
         "Pyunik Yerevan", "Urartu FC", "Ararat-Armenia", "FC Noah", "Alashkert FC",
         "FC Van", "Shirak SC", "West Armenia", "BKMA Yerevan", "Gandzasar Kapan", "Ararat Yerevan"
+    ],
+    "austria": [
+        "FC Red Bull Salzburg", "SK Sturm Graz", "SK Rapid Wien", "FK Austria Wien", "LASK",
+        "Wolfsberger AC", "TSV Hartberg", "SK Austria Klagenfurt", "SCR Altach", "WSG Tirol",
+        "FC Blau-Weiß Linz", "Grazer AK", "Austria Lustenau", "SV Ried"
     ]
 }
 
@@ -1378,6 +1389,15 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     ]
     if "armenia" in c_low or "armenia" in l_low or "arm.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in armenia_keywords):
         return "Liga Premier de Armenia", "Armenia", "🇦🇲", LEAGUE_TEAMS_POOL["armenia"]
+
+    # 19.9 Austria (Bundesliga de Austria)
+    austria_keywords = [
+        "salzburg", "sturm graz", "rapid wien", "austria wien", "lask",
+        "wolfsberger", "hartberg", "klagenfurt", "altach", "wsg tirol",
+        "blau-weiss linz", "grazer ak", "austria lustenau", "sv ried"
+    ]
+    if "austria" in c_low or "austria" in l_low or "aut.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in austria_keywords):
+        return "Bundesliga de Austria", "Austria", "🇦🇹", LEAGUE_TEAMS_POOL["austria"]
 
     # 20. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [

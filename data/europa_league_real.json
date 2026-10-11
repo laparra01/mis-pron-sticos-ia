@@ -3,7 +3,7 @@
   "league_id": 73,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-11T21:22:42.977404",
+  "last_updated": "2026-10-09T22:36:48.084568",
   "total_fixtures": 18,
   "team_histories": {
     "AFC Bournemouth": [
@@ -1770,7 +1770,73 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "23 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AZ Alkmaar",
+            "match_away": "Hapoel Beer Sheva",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Hapoel Beer Sheva",
+            "home_team": "AZ Alkmaar",
+            "away_team": "Hapoel Beer Sheva"
+          },
+          {
+            "date": "8 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Hapoel Beer Sheva",
+            "match_away": "AZ Alkmaar",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "AZ Alkmaar",
+            "home_team": "Hapoel Beer Sheva",
+            "away_team": "AZ Alkmaar"
+          },
+          {
+            "date": "19 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AZ Alkmaar",
+            "match_away": "Hapoel Beer Sheva",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Hapoel Beer Sheva",
+            "home_team": "AZ Alkmaar",
+            "away_team": "Hapoel Beer Sheva"
+          },
+          {
+            "date": "23 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Hapoel Beer Sheva",
+            "match_away": "AZ Alkmaar",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Hapoel Beer Sheva",
+            "away_team": "AZ Alkmaar"
+          },
+          {
+            "date": "23 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AZ Alkmaar",
+            "match_away": "Hapoel Beer Sheva",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "AZ Alkmaar",
+            "away_team": "Hapoel Beer Sheva"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -1816,14 +1882,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "AZ Alkmaar 0 victorias • 0 empates • Hapoel Beer Sheva 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "AZ Alkmaar 1 victorias • 2 empates • Hapoel Beer Sheva 2 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1895,7 +1961,73 @@
             "fouls": 16
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lech Poznań",
+            "match_away": "Bayer Leverkusen",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Lech Poznań",
+            "away_team": "Bayer Leverkusen"
+          },
+          {
+            "date": "6 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Bayer Leverkusen",
+            "match_away": "Lech Poznań",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Bayer Leverkusen",
+            "away_team": "Lech Poznań"
+          },
+          {
+            "date": "17 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lech Poznań",
+            "match_away": "Bayer Leverkusen",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Lech Poznań",
+            "home_team": "Lech Poznań",
+            "away_team": "Bayer Leverkusen"
+          },
+          {
+            "date": "12 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Bayer Leverkusen",
+            "match_away": "Lech Poznań",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Bayer Leverkusen",
+            "home_team": "Bayer Leverkusen",
+            "away_team": "Lech Poznań"
+          },
+          {
+            "date": "22 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lech Poznań",
+            "match_away": "Bayer Leverkusen",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Lech Poznań",
+            "home_team": "Lech Poznań",
+            "away_team": "Bayer Leverkusen"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -1941,14 +2073,14 @@
           "fouls_avg": 16.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Lech Poznań 0 victorias • 0 empates • Bayer Leverkusen 0 victorias"
-        }
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Lech Poznań 2 victorias • 2 empates • Bayer Leverkusen 1 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2020,7 +2152,73 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "21 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lyon",
+            "match_away": "Crystal Palace",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Lyon",
+            "home_team": "Lyon",
+            "away_team": "Crystal Palace"
+          },
+          {
+            "date": "20 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Crystal Palace",
+            "match_away": "Lyon",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Crystal Palace",
+            "home_team": "Crystal Palace",
+            "away_team": "Lyon"
+          },
+          {
+            "date": "13 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lyon",
+            "match_away": "Crystal Palace",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Lyon",
+            "home_team": "Lyon",
+            "away_team": "Crystal Palace"
+          },
+          {
+            "date": "15 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Crystal Palace",
+            "match_away": "Lyon",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Crystal Palace",
+            "home_team": "Crystal Palace",
+            "away_team": "Lyon"
+          },
+          {
+            "date": "14 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lyon",
+            "match_away": "Crystal Palace",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Crystal Palace",
+            "home_team": "Lyon",
+            "away_team": "Crystal Palace"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 4.0,
@@ -2066,14 +2264,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.4,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Lyon 0 victorias • 0 empates • Crystal Palace 0 victorias"
-        }
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Lyon 2 victorias • 0 empates • Crystal Palace 3 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2145,7 +2343,73 @@
             "fouls": 4
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "13 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NK Celje",
+            "match_away": "Omonia Nicosia",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "NK Celje",
+            "away_team": "Omonia Nicosia"
+          },
+          {
+            "date": "9 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Omonia Nicosia",
+            "match_away": "NK Celje",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Omonia Nicosia",
+            "away_team": "NK Celje"
+          },
+          {
+            "date": "25 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NK Celje",
+            "match_away": "Omonia Nicosia",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "NK Celje",
+            "home_team": "NK Celje",
+            "away_team": "Omonia Nicosia"
+          },
+          {
+            "date": "20 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Omonia Nicosia",
+            "match_away": "NK Celje",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Omonia Nicosia",
+            "home_team": "Omonia Nicosia",
+            "away_team": "NK Celje"
+          },
+          {
+            "date": "23 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NK Celje",
+            "match_away": "Omonia Nicosia",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "NK Celje",
+            "home_team": "NK Celje",
+            "away_team": "Omonia Nicosia"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 2.0,
@@ -2191,14 +2455,14 @@
           "fouls_avg": 4.0
         },
         "projected_corners": 6.9,
-        "projected_cards": 2.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "NK Celje 0 victorias • 0 empates • Omonia Nicosia 0 victorias"
-        }
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "NK Celje 2 victorias • 2 empates • Omonia Nicosia 1 victorias"
+        },
+        "projected_cards": 2.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2270,7 +2534,30 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "02/11/2022",
+            "competition": "Champions League Grp. E",
+            "tournament": "Champions League Grp. E",
+            "match_home": "Milan",
+            "match_away": "Salzburg",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Milan"
+          },
+          {
+            "date": "06/09/2022",
+            "competition": "Champions League Grp. E",
+            "tournament": "Champions League Grp. E",
+            "match_home": "Salzburg",
+            "match_away": "Milan",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 4.0,
@@ -2316,14 +2603,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 11.4,
-        "projected_cards": 5.3,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Salzburg 0 victorias • 0 empates • Milan 0 victorias"
-        }
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.0,
+          "text": "Salzburg 0 victorias • 1 empates • Milan 1 victorias"
+        },
+        "projected_cards": 5.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2395,7 +2682,73 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "11 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sparta Prague",
+            "match_away": "Lillestrøm",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Lillestrøm",
+            "home_team": "Sparta Prague",
+            "away_team": "Lillestrøm"
+          },
+          {
+            "date": "21 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lillestrøm",
+            "match_away": "Sparta Prague",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Sparta Prague",
+            "home_team": "Lillestrøm",
+            "away_team": "Sparta Prague"
+          },
+          {
+            "date": "21 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sparta Prague",
+            "match_away": "Lillestrøm",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Lillestrøm",
+            "home_team": "Sparta Prague",
+            "away_team": "Lillestrøm"
+          },
+          {
+            "date": "15 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Lillestrøm",
+            "match_away": "Sparta Prague",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Lillestrøm",
+            "away_team": "Sparta Prague"
+          },
+          {
+            "date": "17 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sparta Prague",
+            "match_away": "Lillestrøm",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sparta Prague",
+            "away_team": "Lillestrøm"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 13.0,
@@ -2441,14 +2794,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 16.4,
-        "projected_cards": 2.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Sparta Prague 0 victorias • 0 empates • Lillestrøm 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Sparta Prague 1 victorias • 2 empates • Lillestrøm 2 victorias"
+        },
+        "projected_cards": 2.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2520,7 +2873,73 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "23 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Torreense",
+            "match_away": "Sunderland",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Sunderland",
+            "home_team": "Torreense",
+            "away_team": "Sunderland"
+          },
+          {
+            "date": "14 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sunderland",
+            "match_away": "Torreense",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sunderland",
+            "away_team": "Torreense"
+          },
+          {
+            "date": "25 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Torreense",
+            "match_away": "Sunderland",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Torreense",
+            "away_team": "Sunderland"
+          },
+          {
+            "date": "19 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sunderland",
+            "match_away": "Torreense",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sunderland",
+            "away_team": "Torreense"
+          },
+          {
+            "date": "15 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Torreense",
+            "match_away": "Sunderland",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Torreense",
+            "home_team": "Torreense",
+            "away_team": "Sunderland"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 2.0,
@@ -2566,14 +2985,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 11.4,
-        "projected_cards": 6.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Torreense 0 victorias • 0 empates • Sunderland 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Torreense 1 victorias • 3 empates • Sunderland 1 victorias"
+        },
+        "projected_cards": 6.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2645,7 +3064,73 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "18 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Union St.Gilloise",
+            "match_away": "Real Sociedad",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Sociedad",
+            "home_team": "Union St.Gilloise",
+            "away_team": "Real Sociedad"
+          },
+          {
+            "date": "6 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Real Sociedad",
+            "match_away": "Union St.Gilloise",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Union St.Gilloise",
+            "home_team": "Real Sociedad",
+            "away_team": "Union St.Gilloise"
+          },
+          {
+            "date": "24 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Union St.Gilloise",
+            "match_away": "Real Sociedad",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Union St.Gilloise",
+            "away_team": "Real Sociedad"
+          },
+          {
+            "date": "25 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Real Sociedad",
+            "match_away": "Union St.Gilloise",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Real Sociedad",
+            "away_team": "Union St.Gilloise"
+          },
+          {
+            "date": "21 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Union St.Gilloise",
+            "match_away": "Real Sociedad",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Union St.Gilloise",
+            "away_team": "Real Sociedad"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 1.0,
@@ -2691,14 +3176,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Union St.Gilloise 0 victorias • 0 empates • Real Sociedad 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Union St.Gilloise 1 victorias • 3 empates • Real Sociedad 1 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2770,7 +3255,73 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AFC Bournemouth",
+            "match_away": "Sturm Graz",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "AFC Bournemouth",
+            "away_team": "Sturm Graz"
+          },
+          {
+            "date": "17 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sturm Graz",
+            "match_away": "AFC Bournemouth",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sturm Graz",
+            "away_team": "AFC Bournemouth"
+          },
+          {
+            "date": "26 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AFC Bournemouth",
+            "match_away": "Sturm Graz",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "AFC Bournemouth",
+            "away_team": "Sturm Graz"
+          },
+          {
+            "date": "11 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Sturm Graz",
+            "match_away": "AFC Bournemouth",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Sturm Graz",
+            "home_team": "Sturm Graz",
+            "away_team": "AFC Bournemouth"
+          },
+          {
+            "date": "26 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "AFC Bournemouth",
+            "match_away": "Sturm Graz",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "AFC Bournemouth",
+            "home_team": "AFC Bournemouth",
+            "away_team": "Sturm Graz"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -2816,14 +3367,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 5.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "AFC Bournemouth 0 victorias • 0 empates • Sturm Graz 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "AFC Bournemouth 1 victorias • 3 empates • Sturm Graz 1 victorias"
+        },
+        "projected_cards": 5.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2895,7 +3446,30 @@
             "fouls": 18
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "20/11/2012",
+            "competition": "Champions League grp. G",
+            "tournament": "Champions League grp. G",
+            "match_home": "Benfica",
+            "match_away": "Celtic",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Benfica"
+          },
+          {
+            "date": "19/09/2012",
+            "competition": "Champions League grp. G",
+            "tournament": "Champions League grp. G",
+            "match_home": "Celtic",
+            "match_away": "Benfica",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 1.0,
@@ -2941,14 +3515,14 @@
           "fouls_avg": 18.0
         },
         "projected_corners": 10.4,
-        "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 1,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Benfica 0 victorias • 0 empates • Celtic 0 victorias"
-        }
+          "avg_goals": 1.5,
+          "text": "Benfica 1 victorias • 1 empates • Celtic 0 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3020,7 +3594,73 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "15 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Celta Vigo",
+            "match_away": "Juventus",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Juventus",
+            "home_team": "Celta Vigo",
+            "away_team": "Juventus"
+          },
+          {
+            "date": "13 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Juventus",
+            "match_away": "Celta Vigo",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Celta Vigo",
+            "home_team": "Juventus",
+            "away_team": "Celta Vigo"
+          },
+          {
+            "date": "13 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Celta Vigo",
+            "match_away": "Juventus",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Juventus",
+            "home_team": "Celta Vigo",
+            "away_team": "Juventus"
+          },
+          {
+            "date": "18 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Juventus",
+            "match_away": "Celta Vigo",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Juventus",
+            "away_team": "Celta Vigo"
+          },
+          {
+            "date": "17 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Celta Vigo",
+            "match_away": "Juventus",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Celta Vigo",
+            "away_team": "Juventus"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 11.0,
@@ -3066,14 +3706,14 @@
           "fouls_avg": 9.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Celta Vigo 0 victorias • 0 empates • Juventus 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Celta Vigo 1 victorias • 2 empates • Juventus 2 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3145,7 +3785,30 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "13/12/2018",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Dinamo Zagreb",
+            "match_away": "Anderlecht",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "04/10/2018",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Anderlecht",
+            "match_away": "Dinamo Zagreb",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Dinamo Zagreb"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 2.0,
@@ -3191,14 +3854,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 2.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 1,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Dinamo Zagreb 0 victorias • 0 empates • Anderlecht 0 victorias"
-        }
+          "avg_goals": 1.0,
+          "text": "Dinamo Zagreb 1 victorias • 1 empates • Anderlecht 0 victorias"
+        },
+        "projected_cards": 2.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3270,7 +3933,41 @@
             "fouls": 13
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25/09/2025",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Ferencváros",
+            "match_away": "Viktoria Plzeň",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/02/2025",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Viktoria Plzeň",
+            "match_away": "Ferencváros",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Viktoria Plzeň"
+          },
+          {
+            "date": "13/02/2025",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Ferencváros",
+            "match_away": "Viktoria Plzeň",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Ferencváros"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3316,14 +4013,14 @@
           "fouls_avg": 13.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 4.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Ferencváros 0 victorias • 0 empates • Viktoria Plzeň 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 2.0,
+          "text": "Ferencváros 1 victorias • 1 empates • Viktoria Plzeň 1 victorias"
+        },
+        "projected_cards": 4.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3395,7 +4092,73 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Hoffenheim",
+            "match_away": "Beşiktaş",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Hoffenheim",
+            "away_team": "Beşiktaş"
+          },
+          {
+            "date": "6 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Beşiktaş",
+            "match_away": "Hoffenheim",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Beşiktaş",
+            "away_team": "Hoffenheim"
+          },
+          {
+            "date": "19 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Hoffenheim",
+            "match_away": "Beşiktaş",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Hoffenheim",
+            "home_team": "Hoffenheim",
+            "away_team": "Beşiktaş"
+          },
+          {
+            "date": "15 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Beşiktaş",
+            "match_away": "Hoffenheim",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Beşiktaş",
+            "home_team": "Beşiktaş",
+            "away_team": "Hoffenheim"
+          },
+          {
+            "date": "27 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Hoffenheim",
+            "match_away": "Beşiktaş",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Hoffenheim",
+            "home_team": "Hoffenheim",
+            "away_team": "Beşiktaş"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 8.0,
@@ -3441,14 +4204,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Hoffenheim 0 victorias • 0 empates • Beşiktaş 0 victorias"
-        }
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Hoffenheim 2 victorias • 2 empates • Beşiktaş 1 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3520,7 +4283,73 @@
             "fouls": 16
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Jagiellonia Białystok",
+            "match_away": "Ararat Armenia",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Jagiellonia Białystok",
+            "away_team": "Ararat Armenia"
+          },
+          {
+            "date": "17 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Ararat Armenia",
+            "match_away": "Jagiellonia Białystok",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Ararat Armenia",
+            "away_team": "Jagiellonia Białystok"
+          },
+          {
+            "date": "18 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Jagiellonia Białystok",
+            "match_away": "Ararat Armenia",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Jagiellonia Białystok",
+            "away_team": "Ararat Armenia"
+          },
+          {
+            "date": "27 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Ararat Armenia",
+            "match_away": "Jagiellonia Białystok",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Ararat Armenia",
+            "home_team": "Ararat Armenia",
+            "away_team": "Jagiellonia Białystok"
+          },
+          {
+            "date": "16 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Jagiellonia Białystok",
+            "match_away": "Ararat Armenia",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Jagiellonia Białystok",
+            "home_team": "Jagiellonia Białystok",
+            "away_team": "Ararat Armenia"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 0.0,
@@ -3566,14 +4395,14 @@
           "fouls_avg": 16.0
         },
         "projected_corners": 5.4,
-        "projected_cards": 5.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Jagiellonia Białystok 0 victorias • 0 empates • Ararat Armenia 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Jagiellonia Białystok 1 victorias • 3 empates • Ararat Armenia 1 victorias"
+        },
+        "projected_cards": 5.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3645,7 +4474,52 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "01/12/2020",
+            "competition": "Champions League Grp. C",
+            "tournament": "Champions League Grp. C",
+            "match_home": "Marseille",
+            "match_away": "Olympiacos",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Marseille"
+          },
+          {
+            "date": "21/10/2020",
+            "competition": "Champions League Grp. C",
+            "tournament": "Champions League Grp. C",
+            "match_home": "Olympiacos",
+            "match_away": "Marseille",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Olympiacos"
+          },
+          {
+            "date": "23/11/2011",
+            "competition": "Champions League Grp. C",
+            "tournament": "Champions League Grp. C",
+            "match_home": "Marseille",
+            "match_away": "Olympiacos",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Olympiacos"
+          },
+          {
+            "date": "13/09/2011",
+            "competition": "Champions League Grp. C",
+            "tournament": "Champions League Grp. C",
+            "match_home": "Olympiacos",
+            "match_away": "Marseille",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Marseille"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3691,14 +4565,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 12.4,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Marseille 0 victorias • 0 empates • Olympiacos 0 victorias"
-        }
+          "away_wins": 2,
+          "avg_goals": 1.5,
+          "text": "Marseille 2 victorias • 0 empates • Olympiacos 2 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3770,7 +4644,73 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NEC Nijmegen",
+            "match_away": "Levski Sofia",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "NEC Nijmegen",
+            "home_team": "NEC Nijmegen",
+            "away_team": "Levski Sofia"
+          },
+          {
+            "date": "17 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Levski Sofia",
+            "match_away": "NEC Nijmegen",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Levski Sofia",
+            "home_team": "Levski Sofia",
+            "away_team": "NEC Nijmegen"
+          },
+          {
+            "date": "16 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NEC Nijmegen",
+            "match_away": "Levski Sofia",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "NEC Nijmegen",
+            "home_team": "NEC Nijmegen",
+            "away_team": "Levski Sofia"
+          },
+          {
+            "date": "10 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Levski Sofia",
+            "match_away": "NEC Nijmegen",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "NEC Nijmegen",
+            "home_team": "Levski Sofia",
+            "away_team": "NEC Nijmegen"
+          },
+          {
+            "date": "21 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "NEC Nijmegen",
+            "match_away": "Levski Sofia",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Levski Sofia",
+            "home_team": "NEC Nijmegen",
+            "away_team": "Levski Sofia"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 1.0,
@@ -3816,14 +4756,14 @@
           "fouls_avg": 9.0
         },
         "projected_corners": 7.4,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "NEC Nijmegen 0 victorias • 0 empates • Levski Sofia 0 victorias"
-        }
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "NEC Nijmegen 3 victorias • 0 empates • Levski Sofia 2 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3895,7 +4835,73 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16 May 2024",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Rennes",
+            "match_away": "OFI Crete",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "OFI Crete",
+            "home_team": "Rennes",
+            "away_team": "OFI Crete"
+          },
+          {
+            "date": "9 Dic 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "OFI Crete",
+            "match_away": "Rennes",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Rennes",
+            "home_team": "OFI Crete",
+            "away_team": "Rennes"
+          },
+          {
+            "date": "25 Abr 2023",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Rennes",
+            "match_away": "OFI Crete",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Rennes",
+            "away_team": "OFI Crete"
+          },
+          {
+            "date": "26 Oct 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "OFI Crete",
+            "match_away": "Rennes",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "OFI Crete",
+            "away_team": "Rennes"
+          },
+          {
+            "date": "16 Mar 2022",
+            "competition": "UEFA Europa League",
+            "tournament": "UEFA Europa League",
+            "match_home": "Rennes",
+            "match_away": "OFI Crete",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Rennes",
+            "away_team": "OFI Crete"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 4.0,
@@ -3941,14 +4947,14 @@
           "fouls_avg": 8.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Rennes 0 victorias • 0 empates • OFI Crete 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Rennes 1 victorias • 3 empates • OFI Crete 1 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

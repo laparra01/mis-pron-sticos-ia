@@ -1592,9 +1592,17 @@ def load_scraped_matches():
                     h2h_data = item.get("h2h", {})
                     league = item.get("league", "Brasileirão Série A")
                     country = item.get("country", "Brasil")
+                    if not h2h_data.get("head_to_head"):
+                        sim = generate_match_h2h(h_name, a_name, "football", league, country=country)
+                        if sim and sim.get("head_to_head"):
+                            h2h_data["head_to_head"] = sim["head_to_head"]
+                        if not h2h_data.get("home_last_5") and sim.get("home_last_5"):
+                            h2h_data["home_last_5"] = sim["home_last_5"]
+                        if not h2h_data.get("away_last_5") and sim.get("away_last_5"):
+                            h2h_data["away_last_5"] = sim["away_last_5"]
 
-                    if "summary" not in h2h_data:
-                        dir_matches = h2h_data.get("head_to_head", [])
+                    dir_matches = h2h_data.get("head_to_head", [])
+                    if "summary" not in h2h_data or h2h_data["summary"].get("home_wins", 0) + h2h_data["summary"].get("draws", 0) + h2h_data["summary"].get("away_wins", 0) == 0:
                         w_h = sum(1 for m in dir_matches if m.get("winner") == h_name or (h_name.lower() in (m.get("winner") or "").lower()))
                         w_d = sum(1 for m in dir_matches if m.get("winner") == "Empate")
                         w_a = sum(1 for m in dir_matches if m.get("winner") == a_name or (a_name.lower() in (m.get("winner") or "").lower()))

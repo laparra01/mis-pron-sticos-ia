@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-10-11T21:21:48.493519",
+  "last_updated": "2026-10-11T15:51:52.000104",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -1870,7 +1870,7 @@
         "corners_for": 20,
         "corners_against": 5,
         "total_corners": 25,
-        "shots_on_target": 7,
+        "shots_on_target": 8,
         "total_shots": 24,
         "yellow_cards": 5,
         "red_cards": 0,
@@ -2217,7 +2217,7 @@
       "corners_conceded_home": 4.67,
       "corners_conceded_away": 3.5,
       "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 6.2,
+      "shots_on_target_gen": 6.4,
       "total_shots_gen": 19.0,
       "yellow_cards_avg_home": 3.0,
       "yellow_cards_avg_away": 4.0,
@@ -2488,15 +2488,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-10",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "10/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Nacional Potosí",
             "match_away": "Aurora",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Nacional Potosí"
+          },
+          {
+            "date": "27/09/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Aurora",
+            "match_away": "Nacional Potosí",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Nacional Potosí"
+          },
+          {
+            "date": "16/05/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Nacional Potosí",
+            "match_away": "Aurora",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Nacional Potosí"
+          },
+          {
+            "date": "17/12/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Aurora",
+            "match_away": "Nacional Potosí",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "14/09/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Nacional Potosí",
+            "match_away": "Aurora",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Aurora"
           }
         ],
         "home_corner_stats": {
@@ -2546,11 +2590,11 @@
         "projected_corners": 10.8,
         "projected_cards": 5.1,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Aurora 0 victorias • 0 empates • Nacional Potosí 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 3.0,
+          "text": "Aurora 1 victorias • 1 empates • Nacional Potosí 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -2809,15 +2853,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-10",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "10/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Blooming",
             "match_away": "Bolívar",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
+          },
+          {
+            "date": "18/10/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Blooming",
+            "match_away": "Bolívar",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Bolívar"
+          },
+          {
+            "date": "27/04/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Bolívar",
+            "match_away": "Blooming",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Bolívar"
+          },
+          {
+            "date": "27/10/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Bolívar",
+            "match_away": "Blooming",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "14/07/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Blooming",
+            "match_away": "Bolívar",
+            "home_score": 0,
+            "away_score": 5,
+            "score": "0 - 5",
+            "winner": "Bolívar"
           }
         ],
         "home_corner_stats": {
@@ -2867,11 +2955,11 @@
         "projected_corners": 11.6,
         "projected_cards": 4.4,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
+          "home_wins": 3,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Bolívar 0 victorias • 1 empates • Blooming 0 victorias"
+          "avg_goals": 2.8,
+          "text": "Bolívar 3 victorias • 2 empates • Blooming 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3130,14 +3218,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-09",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "09/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Guabirá",
             "match_away": "GV San José",
             "home_score": 3,
             "away_score": 0,
             "score": "3 - 0",
+            "winner": "Guabirá"
+          },
+          {
+            "date": "29/11/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Guabirá",
+            "match_away": "GV San José",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Guabirá"
+          },
+          {
+            "date": "20/06/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "GV San José",
+            "match_away": "Guabirá",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "GV San José"
+          },
+          {
+            "date": "17/11/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "GV San José",
+            "match_away": "Guabirá",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "GV San José"
+          },
+          {
+            "date": "28/07/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Guabirá",
+            "match_away": "GV San José",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
             "winner": "Guabirá"
           }
         ],
@@ -3188,11 +3320,11 @@
         "projected_corners": 6.9,
         "projected_cards": 5.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "GV San José 0 victorias • 0 empates • Guabirá 1 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.4,
+          "text": "GV San José 2 victorias • 0 empates • Guabirá 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3451,11 +3583,55 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-10",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "10/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Independiente Petrolero",
             "match_away": "Always Ready",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "14/12/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Independiente Petrolero",
+            "match_away": "Always Ready",
+            "home_score": 5,
+            "away_score": 2,
+            "score": "5 - 2",
+            "winner": "Independiente Petrolero"
+          },
+          {
+            "date": "20/07/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Always Ready",
+            "match_away": "Independiente Petrolero",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "Always Ready"
+          },
+          {
+            "date": "17/12/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Independiente Petrolero",
+            "match_away": "Always Ready",
+            "home_score": 3,
+            "away_score": 7,
+            "score": "3 - 7",
+            "winner": "Always Ready"
+          },
+          {
+            "date": "15/09/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Always Ready",
+            "match_away": "Independiente Petrolero",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
@@ -3509,11 +3685,11 @@
         "projected_corners": 6.4,
         "projected_cards": 4.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Always Ready 0 victorias • 1 empates • Independiente Petrolero 0 victorias"
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 4.4,
+          "text": "Always Ready 2 victorias • 2 empates • Independiente Petrolero 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3772,9 +3948,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-09",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "09/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Real Potosí",
             "match_away": "ABB",
             "home_score": 3,
@@ -4093,15 +4269,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-07",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "07/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "GV San José",
             "match_away": "Real Tomayapo",
             "home_score": 3,
             "away_score": 2,
             "score": "3 - 2",
             "winner": "GV San José"
+          },
+          {
+            "date": "03/08/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Real Tomayapo",
+            "match_away": "GV San José",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Real Tomayapo"
+          },
+          {
+            "date": "30/03/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "GV San José",
+            "match_away": "Real Tomayapo",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "GV San José"
+          },
+          {
+            "date": "24/09/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "GV San José",
+            "match_away": "Real Tomayapo",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "GV San José"
+          },
+          {
+            "date": "11/05/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Real Tomayapo",
+            "match_away": "GV San José",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Real Tomayapo"
           }
         ],
         "home_corner_stats": {
@@ -4151,11 +4371,11 @@
         "projected_corners": 7.8,
         "projected_cards": 5.9,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 5.0,
-          "text": "Real Tomayapo 0 victorias • 0 empates • GV San José 1 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.8,
+          "text": "Real Tomayapo 2 victorias • 0 empates • GV San José 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4414,14 +4634,36 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-13",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "13/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Aurora",
             "match_away": "CDT Real Oruro",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "17/09/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "CDT Real Oruro",
+            "match_away": "Aurora",
+            "home_score": 5,
+            "away_score": 3,
+            "score": "5 - 3",
+            "winner": "CDT Real Oruro"
+          },
+          {
+            "date": "25/04/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Aurora",
+            "match_away": "CDT Real Oruro",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
             "winner": "Empate"
           }
         ],
@@ -4472,11 +4714,11 @@
         "projected_corners": 10.5,
         "projected_cards": 4.0,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
+          "home_wins": 1,
+          "draws": 2,
           "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "CDT Real Oruro 0 victorias • 1 empates • Aurora 0 victorias"
+          "avg_goals": 4.7,
+          "text": "CDT Real Oruro 1 victorias • 2 empates • Aurora 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4608,7 +4850,7 @@
             "corners_for": 20,
             "corners_against": 5,
             "total_corners": 25,
-            "shots_on_target": 7,
+            "shots_on_target": 8,
             "total_shots": 24,
             "yellow_cards": 5,
             "red_cards": 0,
@@ -4735,15 +4977,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-12",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "12/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "San Antonio Bulo Bulo",
             "match_away": "Universitario de Vinto",
             "home_score": 0,
             "away_score": 2,
             "score": "0 - 2",
             "winner": "Universitario de Vinto"
+          },
+          {
+            "date": "29/11/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "San Antonio Bulo Bulo",
+            "match_away": "Universitario de Vinto",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "San Antonio Bulo Bulo"
+          },
+          {
+            "date": "21/06/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Universitario de Vinto",
+            "match_away": "San Antonio Bulo Bulo",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "06/12/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Universitario de Vinto",
+            "match_away": "San Antonio Bulo Bulo",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "San Antonio Bulo Bulo"
+          },
+          {
+            "date": "12/08/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "San Antonio Bulo Bulo",
+            "match_away": "Universitario de Vinto",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "San Antonio Bulo Bulo"
           }
         ],
         "home_corner_stats": {
@@ -4753,7 +5039,7 @@
           "corners_conceded_home": 4.67,
           "corners_conceded_away": 3.5,
           "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 6.2,
+          "shots_on_target_gen": 6.4,
           "total_shots_gen": 19.0,
           "yellow_cards_avg_home": 3.0,
           "yellow_cards_avg_away": 4.0,
@@ -4794,10 +5080,10 @@
         "projected_cards": 4.4,
         "summary": {
           "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Universitario de Vinto 1 victorias • 0 empates • San Antonio Bulo Bulo 0 victorias"
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 2.2,
+          "text": "Universitario de Vinto 1 victorias • 1 empates • San Antonio Bulo Bulo 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5056,15 +5342,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-13",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "13/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Independiente Petrolero",
             "match_away": "Blooming",
             "home_score": 3,
             "away_score": 1,
             "score": "3 - 1",
             "winner": "Independiente Petrolero"
+          },
+          {
+            "date": "15/09/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Independiente Petrolero",
+            "match_away": "Blooming",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Independiente Petrolero"
+          },
+          {
+            "date": "20/04/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Blooming",
+            "match_away": "Independiente Petrolero",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Blooming"
+          },
+          {
+            "date": "20/11/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Independiente Petrolero",
+            "match_away": "Blooming",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Independiente Petrolero"
+          },
+          {
+            "date": "27/07/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Blooming",
+            "match_away": "Independiente Petrolero",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Blooming"
           }
         ],
         "home_corner_stats": {
@@ -5114,11 +5444,11 @@
         "projected_corners": 10.9,
         "projected_cards": 4.2,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 1,
+          "away_wins": 3,
           "avg_goals": 4.0,
-          "text": "Blooming 0 victorias • 0 empates • Independiente Petrolero 1 victorias"
+          "text": "Blooming 2 victorias • 0 empates • Independiente Petrolero 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5377,15 +5707,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-14",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "14/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Bolívar",
             "match_away": "Nacional Potosí",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
+          },
+          {
+            "date": "05/12/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Bolívar",
+            "match_away": "Nacional Potosí",
+            "home_score": 5,
+            "away_score": 2,
+            "score": "5 - 2",
+            "winner": "Bolívar"
+          },
+          {
+            "date": "29/06/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Nacional Potosí",
+            "match_away": "Bolívar",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "24/11/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Bolívar",
+            "match_away": "Nacional Potosí",
+            "home_score": 5,
+            "away_score": 3,
+            "score": "5 - 3",
+            "winner": "Bolívar"
+          },
+          {
+            "date": "28/07/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Nacional Potosí",
+            "match_away": "Bolívar",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Nacional Potosí"
           }
         ],
         "home_corner_stats": {
@@ -5435,11 +5809,11 @@
         "projected_corners": 12.1,
         "projected_cards": 3.4,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Nacional Potosí 0 victorias • 1 empates • Bolívar 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 4.4,
+          "text": "Nacional Potosí 1 victorias • 2 empates • Bolívar 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5698,15 +6072,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-14",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "14/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Always Ready",
             "match_away": "The Strongest",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
             "winner": "The Strongest"
+          },
+          {
+            "date": "07/12/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "The Strongest",
+            "match_away": "Always Ready",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Always Ready"
+          },
+          {
+            "date": "06/07/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Always Ready",
+            "match_away": "The Strongest",
+            "home_score": 7,
+            "away_score": 2,
+            "score": "7 - 2",
+            "winner": "Always Ready"
+          },
+          {
+            "date": "27/11/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "The Strongest",
+            "match_away": "Always Ready",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "The Strongest"
+          },
+          {
+            "date": "02/08/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Always Ready",
+            "match_away": "The Strongest",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5756,11 +6174,11 @@
         "projected_corners": 10.4,
         "projected_cards": 3.8,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 1.0,
-          "text": "The Strongest 1 victorias • 0 empates • Always Ready 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.2,
+          "text": "The Strongest 2 victorias • 1 empates • Always Ready 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6019,15 +6437,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-15",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "15/05/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Oriente Petrolero",
             "match_away": "Guabirá",
             "home_score": 2,
             "away_score": 2,
             "score": "2 - 2",
             "winner": "Empate"
+          },
+          {
+            "date": "03/11/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Oriente Petrolero",
+            "match_away": "Guabirá",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Oriente Petrolero"
+          },
+          {
+            "date": "25/05/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Guabirá",
+            "match_away": "Oriente Petrolero",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Oriente Petrolero"
+          },
+          {
+            "date": "01/11/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Guabirá",
+            "match_away": "Oriente Petrolero",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Guabirá"
+          },
+          {
+            "date": "21/07/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Oriente Petrolero",
+            "match_away": "Guabirá",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Oriente Petrolero"
           }
         ],
         "home_corner_stats": {
@@ -6077,11 +6539,11 @@
         "projected_corners": 8.3,
         "projected_cards": 8.2,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Guabirá 0 victorias • 1 empates • Oriente Petrolero 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.4,
+          "text": "Guabirá 1 victorias • 1 empates • Oriente Petrolero 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6340,15 +6802,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-15",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "15/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Blooming",
             "match_away": "GV San José",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
+          },
+          {
+            "date": "21/09/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "GV San José",
+            "match_away": "Blooming",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Blooming"
+          },
+          {
+            "date": "05/05/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Blooming",
+            "match_away": "GV San José",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Blooming"
+          },
+          {
+            "date": "17/12/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "GV San José",
+            "match_away": "Blooming",
+            "home_score": 6,
+            "away_score": 0,
+            "score": "6 - 0",
+            "winner": "GV San José"
+          },
+          {
+            "date": "15/09/2024",
+            "competition": "Primera Division - Clausura",
+            "tournament": "Primera Division - Clausura",
+            "match_home": "Blooming",
+            "match_away": "GV San José",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "GV San José"
           }
         ],
         "home_corner_stats": {
@@ -6398,11 +6904,11 @@
         "projected_corners": 9.0,
         "projected_cards": 7.2,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "GV San José 0 victorias • 1 empates • Blooming 0 victorias"
+          "away_wins": 2,
+          "avg_goals": 4.4,
+          "text": "GV San José 2 victorias • 1 empates • Blooming 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6661,9 +7167,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-15",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "15/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "Real Potosí",
             "match_away": "San Antonio Bulo Bulo",
             "home_score": 5,
@@ -6982,15 +7488,37 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-07-16",
-            "competition": "Primera División de Bolivia",
-            "tournament": "Primera División de Bolivia",
+            "date": "16/07/2026",
+            "competition": "Primera División",
+            "tournament": "Primera División",
             "match_home": "ABB",
             "match_away": "Independiente Petrolero",
             "home_score": 3,
             "away_score": 1,
             "score": "3 - 1",
             "winner": "ABB"
+          },
+          {
+            "date": "21/11/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "Independiente Petrolero",
+            "match_away": "ABB",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Independiente Petrolero"
+          },
+          {
+            "date": "29/07/2025",
+            "competition": "Primera División",
+            "tournament": "Primera División",
+            "match_home": "ABB",
+            "match_away": "Independiente Petrolero",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Independiente Petrolero"
           }
         ],
         "home_corner_stats": {
@@ -7040,11 +7568,11 @@
         "projected_corners": 6.9,
         "projected_cards": 5.5,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
           "away_wins": 1,
-          "avg_goals": 4.0,
-          "text": "Independiente Petrolero 0 victorias • 0 empates • ABB 1 victorias"
+          "avg_goals": 3.0,
+          "text": "Independiente Petrolero 2 victorias • 0 empates • ABB 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

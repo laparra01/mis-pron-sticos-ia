@@ -2,6 +2,7 @@ import os
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify, request
 from data_provider import fetch_matches_data, fetch_live_matches_data, get_config
+from dream_parleys_engine import get_or_generate_dream_parleys
 import gzip
 base_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = os.path.join(base_dir, "templates") if os.path.isdir(os.path.join(base_dir, "templates")) else base_dir
@@ -53,7 +54,7 @@ def index():
             "Colombia": "🇨🇴", "Guatemala": "🇬🇹", "Noruega": "🇳🇴", "Dinamarca": "🇩🇰",
             "Bélgica": "🇧🇪", "Suiza": "🇨🇭", "Perú": "🇵🇪", "Bolivia": "🇧🇴",
             "Japón": "🇯🇵",
-            "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Armenia": "🇦🇲", "Internacional": "🌍"
+            "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Armenia": "🇦🇲", "Austria": "🇦🇹", "Internacional": "🌍"
         }
         country_codes = {
             "Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it",
@@ -62,7 +63,7 @@ def index():
             "Colombia": "co", "Guatemala": "gt", "Noruega": "no", "Dinamarca": "dk",
             "Bélgica": "be", "Suiza": "ch", "Perú": "pe", "Bolivia": "bo",
             "Japón": "jp",
-            "Europa": "eu", "Chile": "cl", "Uruguay": "uy", "Armenia": "am"
+            "Europa": "eu", "Chile": "cl", "Uruguay": "uy", "Armenia": "am", "Austria": "at"
         }
         country_map = {}
         country_code_map = {}
@@ -80,16 +81,27 @@ def index():
         ]
         unique_leagues = sorted(list(set(m.get("league", "") for m in all_matches if m.get("league"))))
 
+        try:
+            dream_parleys = get_or_generate_dream_parleys(upcoming_matches)
+        except Exception as ep:
+            print(f"[PARLEYS ERROR]: {ep}")
+            dream_parleys = {"tickets": []}
+
+        now_ts = datetime.now().timestamp()
+        today_pending_count = sum(1 for m in upcoming_matches if m.get("date_iso") == today_iso and (m.get("timestamp") or 0) >= now_ts - 300)
+
         context = dict(
             live_matches=live_matches,
             upcoming_matches=upcoming_matches,
             all_matches=all_matches,
+            dream_parleys=dream_parleys,
             stats=stats_summary,
             live_api_active=live_api_active,
             today_iso=today_iso,
             tomorrow_iso=tomorrow_iso,
             today_str=today_str,
             tomorrow_str=tomorrow_str,
+            today_pending_count=today_pending_count,
             countries=unique_countries,
             leagues=unique_leagues
         )
@@ -131,6 +143,24 @@ def api_matches():
         matches = [m for m in matches if m["prediction"]["is_value_bet"]]
 
     return jsonify({"matches": matches})
+
+@app.route("/api/dream-parleys")
+def api_dream_parleys():
+    try:
+        upcoming_matches = fetch_matches_data() or []
+        parleys = get_or_generate_dream_parleys(upcoming_matches)
+        return jsonify(parleys)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route("/api/dream-parleys/regenerate", methods=["POST"])
+def api_dream_parleys_regenerate():
+    try:
+        upcoming_matches = fetch_matches_data() or []
+        parleys = get_or_generate_dream_parleys(upcoming_matches, force_regenerate=True)
+        return jsonify(parleys)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 from ai_analyzer import generate_ai_analysis, generate_live_ai_analysis, generate_nba_ai_analysis, generate_nba_live_ai_analysis
 

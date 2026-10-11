@@ -3,7 +3,7 @@
   "league_id": 112,
   "country": "Argentina",
   "country_code": "ar",
-  "last_updated": "2026-10-11T21:21:51.705127",
+  "last_updated": "2026-10-11T15:52:09.317985",
   "total_fixtures": 15,
   "team_histories": {
     "Aldosivi": [
@@ -4434,14 +4434,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-23",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "23/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Argentinos Juniors",
             "match_away": "Club Atlético Platense",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "26/07/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Club Atlético Platense",
+            "match_away": "Argentinos Juniors",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "04/02/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Argentinos Juniors",
+            "match_away": "Club Atlético Platense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "27/10/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Club Atlético Platense",
+            "match_away": "Argentinos Juniors",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Club Atlético Platense"
+          },
+          {
+            "date": "26/02/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Argentinos Juniors",
+            "match_away": "Club Atlético Platense",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
             "winner": "Argentinos Juniors"
           }
         ],
@@ -4492,11 +4536,11 @@
         "projected_corners": 11.4,
         "projected_cards": 4.9,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "Club Atlético Platense 0 victorias • 0 empates • Argentinos Juniors 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 1.8,
+          "text": "Club Atlético Platense 1 victorias • 1 empates • Argentinos Juniors 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4755,15 +4799,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-23",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "23/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Independiente Rivadavia",
             "match_away": "Rosario Central",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Independiente Rivadavia"
+          },
+          {
+            "date": "05/11/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Independiente Rivadavia",
+            "match_away": "Rosario Central",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "08/02/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Rosario Central",
+            "match_away": "Independiente Rivadavia",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Rosario Central"
+          },
+          {
+            "date": "08/04/2013",
+            "competition": "Primera B Nacional",
+            "tournament": "Primera B Nacional",
+            "match_home": "Independiente Rivadavia",
+            "match_away": "Rosario Central",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Rosario Central"
+          },
+          {
+            "date": "08/10/2012",
+            "competition": "Primera B Nacional",
+            "tournament": "Primera B Nacional",
+            "match_home": "Rosario Central",
+            "match_away": "Independiente Rivadavia",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -4813,11 +4901,11 @@
         "projected_corners": 10.4,
         "projected_cards": 5.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 2,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Rosario Central 0 victorias • 0 empates • Independiente Rivadavia 1 victorias"
+          "avg_goals": 2.6,
+          "text": "Rosario Central 2 victorias • 2 empates • Independiente Rivadavia 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5076,15 +5164,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-22",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "19/08/2026",
+            "competition": "Copa Argentina",
+            "tournament": "Copa Argentina",
+            "match_home": "Racing Club",
+            "match_away": "Belgrano",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Racing Club"
+          },
+          {
+            "date": "22/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Belgrano",
             "match_away": "Racing Club",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Racing Club"
+          },
+          {
+            "date": "20/07/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Belgrano",
+            "match_away": "Racing Club",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Racing Club"
+          },
+          {
+            "date": "30/01/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Racing Club",
+            "match_away": "Belgrano",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Racing Club"
+          },
+          {
+            "date": "12/05/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Belgrano",
+            "match_away": "Racing Club",
+            "home_score": 4,
+            "away_score": 4,
+            "score": "4 - 4",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5134,11 +5266,11 @@
         "projected_corners": 10.5,
         "projected_cards": 4.3,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
+          "home_wins": 4,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Racing Club 1 victorias • 0 empates • Belgrano 0 victorias"
+          "avg_goals": 3.4,
+          "text": "Racing Club 4 victorias • 1 empates • Belgrano 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5397,15 +5529,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-21",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "21/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Independiente",
             "match_away": "Talleres",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Talleres"
+          },
+          {
+            "date": "21/07/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Independiente",
+            "match_away": "Talleres",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Talleres"
+          },
+          {
+            "date": "29/01/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Talleres",
+            "match_away": "Independiente",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Independiente"
+          },
+          {
+            "date": "11/05/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Independiente",
+            "match_away": "Talleres",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Talleres"
+          },
+          {
+            "date": "15/04/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Independiente",
+            "match_away": "Talleres",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5455,11 +5631,11 @@
         "projected_corners": 9.4,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Talleres 1 victorias • 0 empates • Independiente 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.8,
+          "text": "Talleres 3 victorias • 1 empates • Independiente 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5718,15 +5894,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-21",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "21/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Vélez Sarsfield",
             "match_away": "Lanús",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
             "winner": "Lanús"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Vélez Sarsfield",
+            "match_away": "Lanús",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Vélez Sarsfield"
+          },
+          {
+            "date": "22/05/2025",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Lanús",
+            "match_away": "Vélez Sarsfield",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Lanús"
+          },
+          {
+            "date": "22/02/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Lanús",
+            "match_away": "Vélez Sarsfield",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/11/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Vélez Sarsfield",
+            "match_away": "Lanús",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5776,11 +5996,11 @@
         "projected_corners": 7.9,
         "projected_cards": 3.1,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 1.0,
-          "text": "Lanús 1 victorias • 0 empates • Vélez Sarsfield 0 victorias"
+          "home_wins": 2,
+          "draws": 2,
+          "away_wins": 1,
+          "avg_goals": 1.2,
+          "text": "Lanús 2 victorias • 2 empates • Vélez Sarsfield 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6039,9 +6259,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-21",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "21/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Newell's Old Boys",
             "match_away": "Gimnasia Mendoza",
             "home_score": 1,
@@ -6360,14 +6580,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-03-15",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "15/03/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "River Plate",
             "match_away": "Sarmiento",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
+            "winner": "River Plate"
+          },
+          {
+            "date": "12/10/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "River Plate",
+            "match_away": "Sarmiento",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Sarmiento"
+          },
+          {
+            "date": "05/04/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Sarmiento",
+            "match_away": "River Plate",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "28/07/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "River Plate",
+            "match_away": "Sarmiento",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "River Plate"
+          },
+          {
+            "date": "20/03/2023",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Sarmiento",
+            "match_away": "River Plate",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
             "winner": "River Plate"
           }
         ],
@@ -6418,11 +6682,11 @@
         "projected_corners": 7.3,
         "projected_cards": 4.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Sarmiento 0 victorias • 0 empates • River Plate 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 1.6,
+          "text": "Sarmiento 1 victorias • 1 empates • River Plate 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6681,15 +6945,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-05",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "05/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Gimnasia LP",
             "match_away": "Huracán",
             "home_score": 0,
             "away_score": 3,
             "score": "0 - 3",
             "winner": "Huracán"
+          },
+          {
+            "date": "01/11/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Huracán",
+            "match_away": "Gimnasia LP",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/02/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Gimnasia LP",
+            "match_away": "Huracán",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Gimnasia LP"
+          },
+          {
+            "date": "20/09/2023",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Huracán",
+            "match_away": "Gimnasia LP",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Huracán"
+          },
+          {
+            "date": "13/06/2023",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Gimnasia LP",
+            "match_away": "Huracán",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Gimnasia LP"
           }
         ],
         "home_corner_stats": {
@@ -6739,11 +7047,11 @@
         "projected_corners": 8.1,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Huracán 1 victorias • 0 empates • Gimnasia LP 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.0,
+          "text": "Huracán 2 victorias • 1 empates • Gimnasia LP 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7002,15 +7310,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-07",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "07/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Instituto",
             "match_away": "Defensa y Justicia",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Instituto"
+          },
+          {
+            "date": "24/08/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Instituto",
+            "match_away": "Defensa y Justicia",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Instituto"
+          },
+          {
+            "date": "15/04/2023",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Defensa y Justicia",
+            "match_away": "Instituto",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Defensa y Justicia"
+          },
+          {
+            "date": "07/06/2014",
+            "competition": "Primera B Nacional",
+            "tournament": "Primera B Nacional",
+            "match_home": "Defensa y Justicia",
+            "match_away": "Instituto",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Defensa y Justicia"
+          },
+          {
+            "date": "08/12/2013",
+            "competition": "Primera B Nacional",
+            "tournament": "Primera B Nacional",
+            "match_home": "Instituto",
+            "match_away": "Defensa y Justicia",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -7060,11 +7412,11 @@
         "projected_corners": 9.5,
         "projected_cards": 5.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Defensa y Justicia 0 victorias • 0 empates • Instituto 1 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.2,
+          "text": "Defensa y Justicia 2 victorias • 1 empates • Instituto 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7323,15 +7675,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-02",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "02/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Talleres",
             "match_away": "Boca Juniors",
             "home_score": 0,
             "away_score": 1,
             "score": "0 - 1",
             "winner": "Boca Juniors"
+          },
+          {
+            "date": "23/11/2025",
+            "competition": "Liga Profesional Clausura Playoff",
+            "tournament": "Liga Profesional Clausura Playoff",
+            "match_home": "Boca Juniors",
+            "match_away": "Talleres",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Boca Juniors"
+          },
+          {
+            "date": "07/09/2024",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Boca Juniors",
+            "match_away": "Talleres",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "25/05/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Boca Juniors",
+            "match_away": "Talleres",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/10/2023",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Talleres",
+            "match_away": "Boca Juniors",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -7381,11 +7777,11 @@
         "projected_corners": 7.2,
         "projected_cards": 5.8,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
+          "home_wins": 2,
+          "draws": 3,
           "away_wins": 0,
-          "avg_goals": 1.0,
-          "text": "Boca Juniors 1 victorias • 0 empates • Talleres 0 victorias"
+          "avg_goals": 1.4,
+          "text": "Boca Juniors 2 victorias • 3 empates • Talleres 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7644,14 +8040,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-06",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "06/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Argentinos Juniors",
             "match_away": "Banfield",
             "home_score": 3,
             "away_score": 2,
             "score": "3 - 2",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "21/09/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Argentinos Juniors",
+            "match_away": "Banfield",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "07/03/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Banfield",
+            "match_away": "Argentinos Juniors",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "12/11/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Argentinos Juniors",
+            "match_away": "Banfield",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Argentinos Juniors"
+          },
+          {
+            "date": "10/02/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Argentinos Juniors",
+            "match_away": "Banfield",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
             "winner": "Argentinos Juniors"
           }
         ],
@@ -7704,9 +8144,9 @@
         "summary": {
           "home_wins": 0,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 5.0,
-          "text": "Banfield 0 victorias • 0 empates • Argentinos Juniors 1 victorias"
+          "away_wins": 5,
+          "avg_goals": 3.6,
+          "text": "Banfield 0 victorias • 0 empates • Argentinos Juniors 5 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7965,15 +8405,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-01",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "01/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Lanús",
             "match_away": "Club Atlético Platense",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
+          },
+          {
+            "date": "20/09/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Lanús",
+            "match_away": "Club Atlético Platense",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Lanús"
+          },
+          {
+            "date": "09/03/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Club Atlético Platense",
+            "match_away": "Lanús",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "11/11/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Lanús",
+            "match_away": "Club Atlético Platense",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "11/02/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Lanús",
+            "match_away": "Club Atlético Platense",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Lanús"
           }
         ],
         "home_corner_stats": {
@@ -8024,10 +8508,10 @@
         "projected_cards": 4.8,
         "summary": {
           "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Club Atlético Platense 0 victorias • 1 empates • Lanús 0 victorias"
+          "draws": 3,
+          "away_wins": 2,
+          "avg_goals": 1.2,
+          "text": "Club Atlético Platense 0 victorias • 3 empates • Lanús 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -8286,15 +8770,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-02",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "12/07/2026",
+            "competition": "Copa Argentina",
+            "tournament": "Copa Argentina",
+            "match_home": "Independiente Rivadavia",
+            "match_away": "Tigre",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Independiente Rivadavia"
+          },
+          {
+            "date": "02/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Tigre",
             "match_away": "Independiente Rivadavia",
             "home_score": 0,
             "away_score": 2,
             "score": "0 - 2",
             "winner": "Independiente Rivadavia"
+          },
+          {
+            "date": "06/09/2025",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Tigre",
+            "match_away": "Independiente Rivadavia",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Independiente Rivadavia"
+          },
+          {
+            "date": "22/08/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Tigre",
+            "match_away": "Independiente Rivadavia",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "15/02/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Independiente Rivadavia",
+            "match_away": "Tigre",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "winner": "Tigre"
           }
         ],
         "home_corner_stats": {
@@ -8344,11 +8872,11 @@
         "projected_corners": 7.4,
         "projected_cards": 4.9,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Independiente Rivadavia 1 victorias • 0 empates • Tigre 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Independiente Rivadavia 3 victorias • 1 empates • Tigre 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -8607,15 +9135,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-05",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "05/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Rosario Central",
             "match_away": "Atlético Tucumán",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Rosario Central"
+          },
+          {
+            "date": "09/08/2025",
+            "competition": "Liga Profesional Clausura",
+            "tournament": "Liga Profesional Clausura",
+            "match_home": "Atlético Tucumán",
+            "match_away": "Rosario Central",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "08/02/2025",
+            "competition": "Liga Profesional Apertura",
+            "tournament": "Liga Profesional Apertura",
+            "match_home": "Rosario Central",
+            "match_away": "Atlético Tucumán",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Rosario Central"
+          },
+          {
+            "date": "26/08/2024",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
+            "match_home": "Rosario Central",
+            "match_away": "Atlético Tucumán",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Rosario Central"
+          },
+          {
+            "date": "26/01/2024",
+            "competition": "Copa de la Liga Profesional",
+            "tournament": "Copa de la Liga Profesional",
+            "match_home": "Atlético Tucumán",
+            "match_away": "Rosario Central",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -8666,10 +9238,10 @@
         "projected_cards": 5.2,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "Atlético Tucumán 0 victorias • 0 empates • Rosario Central 1 victorias"
+          "draws": 2,
+          "away_wins": 3,
+          "avg_goals": 2.0,
+          "text": "Atlético Tucumán 0 victorias • 2 empates • Rosario Central 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -8928,9 +9500,9 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-03",
-            "competition": "Liga Profesional de Argentina",
-            "tournament": "Liga Profesional de Argentina",
+            "date": "03/04/2026",
+            "competition": "Liga Profesional",
+            "tournament": "Liga Profesional",
             "match_home": "Gimnasia Mendoza",
             "match_away": "Vélez Sarsfield",
             "home_score": 3,

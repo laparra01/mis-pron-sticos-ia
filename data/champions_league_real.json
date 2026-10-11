@@ -3,7 +3,7 @@
   "league_id": 42,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-11T21:22:38.739410",
+  "last_updated": "2026-10-09T22:36:32.459096",
   "total_fixtures": 18,
   "team_histories": {
     "AEK Athens": [
@@ -1770,7 +1770,73 @@
             "fouls": 13
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "11 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Lens",
+            "match_away": "Sporting CP",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Sporting CP",
+            "home_team": "Lens",
+            "away_team": "Sporting CP"
+          },
+          {
+            "date": "7 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Sporting CP",
+            "match_away": "Lens",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sporting CP",
+            "away_team": "Lens"
+          },
+          {
+            "date": "14 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Lens",
+            "match_away": "Sporting CP",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Lens",
+            "away_team": "Sporting CP"
+          },
+          {
+            "date": "15 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Sporting CP",
+            "match_away": "Lens",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sporting CP",
+            "away_team": "Lens"
+          },
+          {
+            "date": "22 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Lens",
+            "match_away": "Sporting CP",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Lens",
+            "home_team": "Lens",
+            "away_team": "Sporting CP"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 9.0,
@@ -1816,14 +1882,14 @@
           "fouls_avg": 13.0
         },
         "projected_corners": 9.4,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Lens 0 victorias • 0 empates • Sporting CP 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Lens 1 victorias • 3 empates • Sporting CP 1 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1895,7 +1961,73 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "20 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Sabah FK",
+            "match_away": "Slavia Prague",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Sabah FK",
+            "away_team": "Slavia Prague"
+          },
+          {
+            "date": "14 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Slavia Prague",
+            "match_away": "Sabah FK",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Slavia Prague",
+            "home_team": "Slavia Prague",
+            "away_team": "Sabah FK"
+          },
+          {
+            "date": "15 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Sabah FK",
+            "match_away": "Slavia Prague",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Sabah FK",
+            "home_team": "Sabah FK",
+            "away_team": "Slavia Prague"
+          },
+          {
+            "date": "13 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Slavia Prague",
+            "match_away": "Sabah FK",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Slavia Prague",
+            "home_team": "Slavia Prague",
+            "away_team": "Sabah FK"
+          },
+          {
+            "date": "27 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Sabah FK",
+            "match_away": "Slavia Prague",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Sabah FK",
+            "home_team": "Sabah FK",
+            "away_team": "Slavia Prague"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 2.0,
@@ -1941,14 +2073,14 @@
           "fouls_avg": 8.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Sabah FK 0 victorias • 0 empates • Slavia Prague 0 victorias"
-        }
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Sabah FK 2 victorias • 1 empates • Slavia Prague 2 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2020,7 +2152,73 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "18 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Arsenal",
+            "match_away": "Lille",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Lille",
+            "home_team": "Arsenal",
+            "away_team": "Lille"
+          },
+          {
+            "date": "16 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Lille",
+            "match_away": "Arsenal",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Arsenal",
+            "home_team": "Lille",
+            "away_team": "Arsenal"
+          },
+          {
+            "date": "20 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Arsenal",
+            "match_away": "Lille",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Arsenal",
+            "away_team": "Lille"
+          },
+          {
+            "date": "24 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Lille",
+            "match_away": "Arsenal",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Lille",
+            "away_team": "Arsenal"
+          },
+          {
+            "date": "18 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Arsenal",
+            "match_away": "Lille",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Arsenal",
+            "away_team": "Lille"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 6.0,
@@ -2066,14 +2264,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Arsenal 0 victorias • 0 empates • Lille 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Arsenal 1 victorias • 3 empates • Lille 1 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2145,7 +2343,30 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "15/03/2022",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester United",
+            "match_away": "Atlético Madrid",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Atlético Madrid"
+          },
+          {
+            "date": "23/02/2022",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Atlético Madrid",
+            "match_away": "Manchester United",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -2191,14 +2412,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 10.4,
-        "projected_cards": 3.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 1,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Atlético Madrid 0 victorias • 0 empates • Manchester United 0 victorias"
-        }
+          "avg_goals": 1.5,
+          "text": "Atlético Madrid 1 victorias • 1 empates • Manchester United 0 victorias"
+        },
+        "projected_cards": 3.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2270,7 +2491,30 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "17/03/2022",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Galatasaray",
+            "match_away": "Barcelona",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Barcelona"
+          },
+          {
+            "date": "10/03/2022",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Barcelona",
+            "match_away": "Galatasaray",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 4.0,
@@ -2316,14 +2560,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 4.8,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Galatasaray 0 victorias • 0 empates • Barcelona 0 victorias"
-        }
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 1.5,
+          "text": "Galatasaray 0 victorias • 1 empates • Barcelona 1 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2395,7 +2639,73 @@
             "fouls": 17
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Inter",
+            "match_away": "Club Brugge",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Inter",
+            "home_team": "Inter",
+            "away_team": "Club Brugge"
+          },
+          {
+            "date": "7 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Club Brugge",
+            "match_away": "Inter",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Club Brugge",
+            "home_team": "Club Brugge",
+            "away_team": "Inter"
+          },
+          {
+            "date": "22 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Inter",
+            "match_away": "Club Brugge",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Inter",
+            "home_team": "Inter",
+            "away_team": "Club Brugge"
+          },
+          {
+            "date": "9 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Club Brugge",
+            "match_away": "Inter",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Inter",
+            "home_team": "Club Brugge",
+            "away_team": "Inter"
+          },
+          {
+            "date": "14 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Inter",
+            "match_away": "Club Brugge",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Club Brugge",
+            "home_team": "Inter",
+            "away_team": "Club Brugge"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 11.0,
@@ -2441,14 +2751,14 @@
           "fouls_avg": 17.0
         },
         "projected_corners": 11.9,
-        "projected_cards": 5.3,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Inter 0 victorias • 0 empates • Club Brugge 0 victorias"
-        }
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Inter 3 victorias • 0 empates • Club Brugge 2 victorias"
+        },
+        "projected_cards": 5.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2520,7 +2830,73 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "RB Leipzig",
+            "match_away": "PSV Eindhoven",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "RB Leipzig",
+            "away_team": "PSV Eindhoven"
+          },
+          {
+            "date": "7 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "PSV Eindhoven",
+            "match_away": "RB Leipzig",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "PSV Eindhoven",
+            "away_team": "RB Leipzig"
+          },
+          {
+            "date": "22 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "RB Leipzig",
+            "match_away": "PSV Eindhoven",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "RB Leipzig",
+            "away_team": "PSV Eindhoven"
+          },
+          {
+            "date": "16 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "PSV Eindhoven",
+            "match_away": "RB Leipzig",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "PSV Eindhoven",
+            "home_team": "PSV Eindhoven",
+            "away_team": "RB Leipzig"
+          },
+          {
+            "date": "27 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "RB Leipzig",
+            "match_away": "PSV Eindhoven",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "RB Leipzig",
+            "home_team": "RB Leipzig",
+            "away_team": "PSV Eindhoven"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -2566,14 +2942,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 8.4,
-        "projected_cards": 5.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "RB Leipzig 0 victorias • 0 empates • PSV Eindhoven 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "RB Leipzig 1 victorias • 3 empates • PSV Eindhoven 1 victorias"
+        },
+        "projected_cards": 5.3
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2645,7 +3021,73 @@
             "fouls": 5
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "19 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Viking",
+            "match_away": "Bayern München",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Viking",
+            "home_team": "Viking",
+            "away_team": "Bayern München"
+          },
+          {
+            "date": "10 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Bayern München",
+            "match_away": "Viking",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Bayern München",
+            "home_team": "Bayern München",
+            "away_team": "Viking"
+          },
+          {
+            "date": "12 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Viking",
+            "match_away": "Bayern München",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Bayern München",
+            "home_team": "Viking",
+            "away_team": "Bayern München"
+          },
+          {
+            "date": "9 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Bayern München",
+            "match_away": "Viking",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Viking",
+            "home_team": "Bayern München",
+            "away_team": "Viking"
+          },
+          {
+            "date": "19 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Viking",
+            "match_away": "Bayern München",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Bayern München",
+            "home_team": "Viking",
+            "away_team": "Bayern München"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -2691,14 +3133,14 @@
           "fouls_avg": 5.0
         },
         "projected_corners": 9.9,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Viking 0 victorias • 0 empates • Bayern München 0 victorias"
-        }
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Viking 2 victorias • 0 empates • Bayern München 3 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2770,7 +3212,63 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25/02/2016",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Napoli",
+            "match_away": "Villarreal",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "18/02/2016",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Villarreal"
+          },
+          {
+            "date": "07/12/2011",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Napoli"
+          },
+          {
+            "date": "27/09/2011",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Napoli",
+            "match_away": "Villarreal",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Napoli"
+          },
+          {
+            "date": "24/02/2011",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Villarreal",
+            "match_away": "Napoli",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Villarreal"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 7.0,
@@ -2816,14 +3314,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 7.9,
-        "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Villarreal 0 victorias • 0 empates • Napoli 0 victorias"
-        }
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.0,
+          "text": "Villarreal 2 victorias • 1 empates • Napoli 2 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2895,7 +3393,73 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "13 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Feyenoord",
+            "match_away": "Como",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Feyenoord",
+            "home_team": "Feyenoord",
+            "away_team": "Como"
+          },
+          {
+            "date": "15 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Como",
+            "match_away": "Feyenoord",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Como",
+            "home_team": "Como",
+            "away_team": "Feyenoord"
+          },
+          {
+            "date": "20 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Feyenoord",
+            "match_away": "Como",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Feyenoord",
+            "home_team": "Feyenoord",
+            "away_team": "Como"
+          },
+          {
+            "date": "22 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Como",
+            "match_away": "Feyenoord",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Como",
+            "home_team": "Como",
+            "away_team": "Feyenoord"
+          },
+          {
+            "date": "18 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Feyenoord",
+            "match_away": "Como",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Como",
+            "home_team": "Feyenoord",
+            "away_team": "Como"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 1.0,
@@ -2941,14 +3505,14 @@
           "fouls_avg": 9.0
         },
         "projected_corners": 5.4,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Feyenoord 0 victorias • 0 empates • Como 0 victorias"
-        }
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Feyenoord 2 victorias • 0 empates • Como 3 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3020,7 +3584,30 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "30/11/2023",
+            "competition": "Europa League Grp. E",
+            "tournament": "Europa League Grp. E",
+            "match_home": "Liverpool",
+            "match_away": "LASK",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Liverpool"
+          },
+          {
+            "date": "21/09/2023",
+            "competition": "Europa League Grp. E",
+            "tournament": "Europa League Grp. E",
+            "match_home": "LASK",
+            "match_away": "Liverpool",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Liverpool"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3066,14 +3653,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.4,
-        "projected_cards": 3.8,
         "summary": {
           "home_wins": 0,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "LASK 0 victorias • 0 empates • Liverpool 0 victorias"
-        }
+          "away_wins": 2,
+          "avg_goals": 4.0,
+          "text": "LASK 0 victorias • 0 empates • Liverpool 2 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3145,7 +3732,19 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "22/01/2026",
+            "competition": "Europa League",
+            "tournament": "Europa League",
+            "match_home": "Fenerbahçe",
+            "match_away": "Aston Villa",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Aston Villa"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -3191,14 +3790,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 7.4,
-        "projected_cards": 5.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 0,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Aston Villa 0 victorias • 0 empates • Fenerbahçe 0 victorias"
-        }
+          "avg_goals": 1.0,
+          "text": "Aston Villa 1 victorias • 0 empates • Fenerbahçe 0 victorias"
+        },
+        "projected_cards": 5.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3270,7 +3869,19 @@
             "fouls": 15
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10/12/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Borussia Dortmund",
+            "match_away": "Bodø/Glimt",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3316,14 +3927,14 @@
           "fouls_avg": 15.0
         },
         "projected_corners": 10.4,
-        "projected_cards": 3.8,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Bodø/Glimt 0 victorias • 0 empates • Borussia Dortmund 0 victorias"
-        }
+          "avg_goals": 4.0,
+          "text": "Bodø/Glimt 0 victorias • 1 empates • Borussia Dortmund 0 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3395,7 +4006,63 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "22/01/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Paris Saint-Germain"
+          },
+          {
+            "date": "24/11/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester City",
+            "match_away": "Paris Saint-Germain",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Manchester City"
+          },
+          {
+            "date": "28/09/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Paris Saint-Germain"
+          },
+          {
+            "date": "04/05/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Manchester City",
+            "match_away": "Paris Saint-Germain",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Manchester City"
+          },
+          {
+            "date": "28/04/2021",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Paris Saint-Germain",
+            "match_away": "Manchester City",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Manchester City"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -3441,14 +4108,14 @@
           "fouls_avg": 8.0
         },
         "projected_corners": 10.4,
-        "projected_cards": 3.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Manchester City 0 victorias • 0 empates • Paris Saint-Germain 0 victorias"
-        }
+          "away_wins": 2,
+          "avg_goals": 3.2,
+          "text": "Manchester City 3 victorias • 0 empates • Paris Saint-Germain 2 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3520,7 +4187,73 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "17 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Real Betis",
+            "match_away": "FC Porto",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Real Betis",
+            "home_team": "Real Betis",
+            "away_team": "FC Porto"
+          },
+          {
+            "date": "23 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "FC Porto",
+            "match_away": "Real Betis",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "FC Porto",
+            "home_team": "FC Porto",
+            "away_team": "Real Betis"
+          },
+          {
+            "date": "14 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Real Betis",
+            "match_away": "FC Porto",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "FC Porto",
+            "home_team": "Real Betis",
+            "away_team": "FC Porto"
+          },
+          {
+            "date": "13 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "FC Porto",
+            "match_away": "Real Betis",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Betis",
+            "home_team": "FC Porto",
+            "away_team": "Real Betis"
+          },
+          {
+            "date": "14 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Real Betis",
+            "match_away": "FC Porto",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "FC Porto",
+            "home_team": "Real Betis",
+            "away_team": "FC Porto"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 5.0,
@@ -3566,14 +4299,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 7.9,
-        "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Real Betis 0 victorias • 0 empates • FC Porto 0 victorias"
-        }
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Real Betis 2 victorias • 0 empates • FC Porto 3 victorias"
+        },
+        "projected_cards": 4.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3645,7 +4378,63 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "27/11/2018",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Roma",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "19/09/2018",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "08/08/2018",
+            "competition": "Champions Cup",
+            "tournament": "Champions Cup",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "08/03/2016",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Real Madrid",
+            "match_away": "Roma",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "17/02/2016",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Roma",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Madrid"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3691,14 +4480,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 7.9,
-        "projected_cards": 3.8,
         "summary": {
           "home_wins": 0,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Roma 0 victorias • 0 empates • Real Madrid 0 victorias"
-        }
+          "away_wins": 5,
+          "avg_goals": 2.4,
+          "text": "Roma 0 victorias • 0 empates • Real Madrid 5 victorias"
+        },
+        "projected_cards": 3.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3770,7 +4559,73 @@
             "fouls": 7
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "11 May 2024",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Shakhtar Donetsk",
+            "match_away": "AEK Athens",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "AEK Athens",
+            "home_team": "Shakhtar Donetsk",
+            "away_team": "AEK Athens"
+          },
+          {
+            "date": "7 Dic 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "AEK Athens",
+            "match_away": "Shakhtar Donetsk",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "AEK Athens",
+            "away_team": "Shakhtar Donetsk"
+          },
+          {
+            "date": "14 Abr 2023",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Shakhtar Donetsk",
+            "match_away": "AEK Athens",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Shakhtar Donetsk",
+            "away_team": "AEK Athens"
+          },
+          {
+            "date": "27 Oct 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "AEK Athens",
+            "match_away": "Shakhtar Donetsk",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "AEK Athens",
+            "away_team": "Shakhtar Donetsk"
+          },
+          {
+            "date": "18 Mar 2022",
+            "competition": "UEFA Champions League",
+            "tournament": "UEFA Champions League",
+            "match_home": "Shakhtar Donetsk",
+            "match_away": "AEK Athens",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Shakhtar Donetsk",
+            "home_team": "Shakhtar Donetsk",
+            "away_team": "AEK Athens"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 3.0,
@@ -3816,14 +4671,14 @@
           "fouls_avg": 7.0
         },
         "projected_corners": 9.4,
-        "projected_cards": 6.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Shakhtar Donetsk 0 victorias • 0 empates • AEK Athens 0 victorias"
-        }
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Shakhtar Donetsk 1 victorias • 3 empates • AEK Athens 1 victorias"
+        },
+        "projected_cards": 6.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3895,7 +4750,41 @@
             "fouls": 13
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "21/01/2025",
+            "competition": "Champions League",
+            "tournament": "Champions League",
+            "match_home": "Slovan Bratislava",
+            "match_away": "VfB Stuttgart",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "VfB Stuttgart"
+          },
+          {
+            "date": "26/08/2010",
+            "competition": "Europa League Qualification",
+            "tournament": "Europa League Qualification",
+            "match_home": "VfB Stuttgart",
+            "match_away": "Slovan Bratislava",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/08/2010",
+            "competition": "Europa League Qualification",
+            "tournament": "Europa League Qualification",
+            "match_home": "Slovan Bratislava",
+            "match_away": "VfB Stuttgart",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "VfB Stuttgart"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.8,
           "corners_avg_away": 2.0,
@@ -3941,14 +4830,14 @@
           "fouls_avg": 13.0
         },
         "projected_corners": 6.9,
-        "projected_cards": 2.8,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Slovan Bratislava 0 victorias • 0 empates • VfB Stuttgart 0 victorias"
-        }
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.0,
+          "text": "Slovan Bratislava 0 victorias • 1 empates • VfB Stuttgart 2 victorias"
+        },
+        "projected_cards": 2.8
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

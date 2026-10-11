@@ -3,7 +3,7 @@
   "league_id": 55,
   "country": "Italia",
   "country_code": "it",
-  "last_updated": "2026-10-11T21:22:02.411972",
+  "last_updated": "2026-10-11T15:54:17.384121",
   "total_fixtures": 12,
   "team_histories": {
     "Atalanta": [
@@ -3042,7 +3042,63 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "01/03/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atalanta",
+            "match_away": "Venezia",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/10/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Venezia",
+            "match_away": "Atalanta",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "23/04/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Venezia",
+            "match_away": "Atalanta",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "12/01/2022",
+            "competition": "Coppa Italia",
+            "tournament": "Coppa Italia",
+            "match_home": "Atalanta",
+            "match_away": "Venezia",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "30/11/2021",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atalanta",
+            "match_away": "Venezia",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Atalanta"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 2.67,
           "corners_avg_away": 3.0,
@@ -3090,11 +3146,11 @@
         "projected_corners": 5.9,
         "projected_cards": 4.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
+          "home_wins": 4,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Atalanta 0 victorias • 0 empates • Venezia 0 victorias"
+          "avg_goals": 2.4,
+          "text": "Atalanta 4 victorias • 1 empates • Venezia 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3351,7 +3407,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "02/05/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Udinese",
+            "match_away": "Torino",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Udinese"
+          },
+          {
+            "date": "07/01/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Torino",
+            "match_away": "Udinese",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Udinese"
+          },
+          {
+            "date": "23/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Torino",
+            "match_away": "Udinese",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Torino"
+          },
+          {
+            "date": "29/12/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Udinese",
+            "match_away": "Torino",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/03/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Udinese",
+            "match_away": "Torino",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Torino"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 1.5,
           "corners_avg_away": 4.67,
@@ -3399,11 +3511,11 @@
         "projected_corners": 5.8,
         "projected_cards": 1.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Torino 0 victorias • 0 empates • Udinese 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Torino 2 victorias • 1 empates • Udinese 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3660,7 +3772,63 @@
             "fouls": 13
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "02/09/2026",
+            "competition": "Coppa Italia",
+            "tournament": "Coppa Italia",
+            "match_home": "Sassuolo",
+            "match_away": "Frosinone",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/05/2025",
+            "competition": "Serie B",
+            "tournament": "Serie B",
+            "match_home": "Sassuolo",
+            "match_away": "Frosinone",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Frosinone"
+          },
+          {
+            "date": "14/12/2024",
+            "competition": "Serie B",
+            "tournament": "Serie B",
+            "match_home": "Frosinone",
+            "match_away": "Sassuolo",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Sassuolo"
+          },
+          {
+            "date": "09/03/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Sassuolo",
+            "match_away": "Frosinone",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Sassuolo"
+          },
+          {
+            "date": "17/09/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Frosinone",
+            "match_away": "Sassuolo",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Frosinone"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 6.0,
@@ -3708,11 +3876,11 @@
         "projected_corners": 11.2,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Frosinone 0 victorias • 0 empates • Sassuolo 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Frosinone 2 victorias • 1 empates • Sassuolo 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3969,7 +4137,52 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "16/03/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Venezia",
+            "match_away": "Napoli",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "29/12/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Napoli",
+            "match_away": "Venezia",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Napoli"
+          },
+          {
+            "date": "06/02/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Venezia",
+            "match_away": "Napoli",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Napoli"
+          },
+          {
+            "date": "22/08/2021",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Napoli",
+            "match_away": "Venezia",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Napoli"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.67,
           "corners_avg_away": 2.5,
@@ -4018,10 +4231,10 @@
         "projected_cards": 4.2,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Venezia 0 victorias • 0 empates • Napoli 0 victorias"
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 1.2,
+          "text": "Venezia 0 victorias • 1 empates • Napoli 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4278,7 +4491,63 @@
             "fouls": 13
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "23/05/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Bologna",
+            "match_away": "Inter",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          },
+          {
+            "date": "04/01/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Inter",
+            "match_away": "Bologna",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Inter"
+          },
+          {
+            "date": "19/12/2025",
+            "competition": "Super Cup",
+            "tournament": "Super Cup",
+            "match_home": "Bologna",
+            "match_away": "Inter",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Bologna",
+            "match_away": "Inter",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Bologna"
+          },
+          {
+            "date": "15/01/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Inter",
+            "match_away": "Bologna",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.5,
           "corners_avg_away": 1.67,
@@ -4326,11 +4595,11 @@
         "projected_corners": 9.4,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Bologna 0 victorias • 0 empates • Inter 0 victorias"
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 3.4,
+          "text": "Bologna 1 victorias • 3 empates • Inter 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4587,7 +4856,63 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "08/03/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Genoa",
+            "match_away": "Roma",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Genoa"
+          },
+          {
+            "date": "29/12/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Roma",
+            "match_away": "Genoa",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Roma"
+          },
+          {
+            "date": "17/01/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Roma",
+            "match_away": "Genoa",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Roma"
+          },
+          {
+            "date": "15/09/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Genoa",
+            "match_away": "Roma",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/05/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Roma",
+            "match_away": "Genoa",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Roma"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 9.0,
           "corners_avg_away": 3.67,
@@ -4635,11 +4960,11 @@
         "projected_corners": 11.4,
         "projected_cards": 5.2,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Roma 0 victorias • 0 empates • Genoa 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 2.8,
+          "text": "Roma 3 victorias • 1 empates • Genoa 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4896,7 +5221,63 @@
             "fouls": 17
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "08/02/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Lecce",
+            "match_away": "Udinese",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Lecce"
+          },
+          {
+            "date": "25/10/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Udinese",
+            "match_away": "Lecce",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "winner": "Udinese"
+          },
+          {
+            "date": "21/02/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Lecce",
+            "match_away": "Udinese",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Udinese"
+          },
+          {
+            "date": "05/10/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Udinese",
+            "match_away": "Lecce",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Udinese"
+          },
+          {
+            "date": "13/05/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Lecce",
+            "match_away": "Udinese",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Udinese"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 6.33,
           "corners_avg_away": 2.0,
@@ -4944,11 +5325,11 @@
         "projected_corners": 9.9,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 4,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Udinese 0 victorias • 0 empates • Lecce 0 victorias"
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Udinese 4 victorias • 0 empates • Lecce 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5205,7 +5586,63 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "14/02/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Como",
+            "match_away": "Fiorentina",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Fiorentina"
+          },
+          {
+            "date": "27/01/2026",
+            "competition": "Coppa Italia",
+            "tournament": "Coppa Italia",
+            "match_home": "Fiorentina",
+            "match_away": "Como",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Como"
+          },
+          {
+            "date": "21/09/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Fiorentina",
+            "match_away": "Como",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Como"
+          },
+          {
+            "date": "16/02/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Fiorentina",
+            "match_away": "Como",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Como"
+          },
+          {
+            "date": "24/11/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Como",
+            "match_away": "Fiorentina",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Fiorentina"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 4.0,
@@ -5253,11 +5690,11 @@
         "projected_corners": 11.6,
         "projected_cards": 3.4,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Fiorentina 0 victorias • 0 empates • Como 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 2.8,
+          "text": "Fiorentina 2 victorias • 0 empates • Como 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5514,7 +5951,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10/05/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Milan",
+            "match_away": "Atalanta",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "28/10/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atalanta",
+            "match_away": "Milan",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "20/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Milan",
+            "match_away": "Atalanta",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "06/12/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atalanta",
+            "match_away": "Milan",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Atalanta"
+          },
+          {
+            "date": "25/02/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Milan",
+            "match_away": "Atalanta",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 2.0,
           "corners_avg_away": 3.67,
@@ -5563,10 +6056,10 @@
         "projected_cards": 3.2,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Milan 0 victorias • 0 empates • Atalanta 0 victorias"
+          "draws": 2,
+          "away_wins": 3,
+          "avg_goals": 2.6,
+          "text": "Milan 0 victorias • 2 empates • Atalanta 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5823,7 +6316,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "08/02/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Juventus",
+            "match_away": "Lazio",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "26/10/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Lazio",
+            "match_away": "Juventus",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Lazio"
+          },
+          {
+            "date": "10/05/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Lazio",
+            "match_away": "Juventus",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/10/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Juventus",
+            "match_away": "Lazio",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Juventus"
+          },
+          {
+            "date": "23/04/2024",
+            "competition": "Coppa Italia",
+            "tournament": "Coppa Italia",
+            "match_home": "Lazio",
+            "match_away": "Juventus",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Lazio"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 7.0,
           "corners_avg_away": 9.5,
@@ -5871,11 +6420,11 @@
         "projected_corners": 12.3,
         "projected_cards": 2.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Juventus 0 victorias • 0 empates • Lazio 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.2,
+          "text": "Juventus 1 victorias • 2 empates • Lazio 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6132,7 +6681,52 @@
             "fouls": 8
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "30/03/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Cagliari",
+            "match_away": "Monza",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Cagliari"
+          },
+          {
+            "date": "05/01/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Monza",
+            "match_away": "Cagliari",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Cagliari"
+          },
+          {
+            "date": "16/03/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Monza",
+            "match_away": "Cagliari",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Monza"
+          },
+          {
+            "date": "26/11/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Cagliari",
+            "match_away": "Monza",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 5.0,
           "corners_avg_away": 5.0,
@@ -6180,11 +6774,11 @@
         "projected_corners": 7.7,
         "projected_cards": 2.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Monza 0 victorias • 0 empates • Cagliari 0 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.2,
+          "text": "Monza 1 victorias • 1 empates • Cagliari 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6441,7 +7035,63 @@
             "fouls": 12
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "13/03/2026",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Torino",
+            "match_away": "Parma",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Torino"
+          },
+          {
+            "date": "29/09/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Parma",
+            "match_away": "Torino",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Parma"
+          },
+          {
+            "date": "08/03/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Parma",
+            "match_away": "Torino",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "05/01/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Torino",
+            "match_away": "Parma",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "03/05/2021",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Torino",
+            "match_away": "Parma",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Torino"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
           "corners_avg_away": 2.33,
@@ -6489,11 +7139,11 @@
         "projected_corners": 7.5,
         "projected_cards": 3.1,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Parma 0 victorias • 0 empates • Torino 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Parma 1 victorias • 2 empates • Torino 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

@@ -3,7 +3,7 @@
   "league_id": 268,
   "country": "Brasil",
   "country_code": "br",
-  "last_updated": "2026-10-11T21:21:38.146591",
+  "last_updated": "2026-10-11T15:51:02.730074",
   "total_fixtures": 15,
   "team_histories": {
     "Athletico Paranaense": [
@@ -3044,14 +3044,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-12",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "12/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Fluminense",
             "match_away": "Flamengo",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
+            "winner": "Flamengo"
+          },
+          {
+            "date": "08/03/2026",
+            "competition": "Carioca Taca Guanabara Playoff",
+            "tournament": "Carioca Taca Guanabara Playoff",
+            "match_home": "Fluminense",
+            "match_away": "Flamengo",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "25/01/2026",
+            "competition": "Carioca Taca Guanabara",
+            "tournament": "Carioca Taca Guanabara",
+            "match_home": "Fluminense",
+            "match_away": "Flamengo",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Fluminense"
+          },
+          {
+            "date": "20/11/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Fluminense",
+            "match_away": "Flamengo",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Fluminense"
+          },
+          {
+            "date": "20/07/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Flamengo",
+            "match_away": "Fluminense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
             "winner": "Flamengo"
           }
         ],
@@ -3102,11 +3146,11 @@
         "projected_corners": 12.2,
         "projected_cards": 5.4,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Flamengo 1 victorias • 0 empates • Fluminense 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.0,
+          "text": "Flamengo 2 victorias • 1 empates • Fluminense 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3365,15 +3409,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-11",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "03/09/2026",
+            "competition": "Copa do Brasil",
+            "tournament": "Copa do Brasil",
+            "match_home": "Grêmio",
+            "match_away": "Internacional",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Grêmio"
+          },
+          {
+            "date": "27/08/2026",
+            "competition": "Copa do Brasil",
+            "tournament": "Copa do Brasil",
             "match_home": "Internacional",
             "match_away": "Grêmio",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
+          },
+          {
+            "date": "11/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
+            "match_home": "Internacional",
+            "match_away": "Grêmio",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "08/03/2026",
+            "competition": "Gaucho Playoff",
+            "tournament": "Gaucho Playoff",
+            "match_home": "Internacional",
+            "match_away": "Grêmio",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "01/03/2026",
+            "competition": "Gaucho Playoff",
+            "tournament": "Gaucho Playoff",
+            "match_home": "Grêmio",
+            "match_away": "Internacional",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Grêmio"
           }
         ],
         "home_corner_stats": {
@@ -3423,11 +3511,11 @@
         "projected_corners": 5.7,
         "projected_cards": 7.9,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
+          "home_wins": 2,
+          "draws": 3,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Grêmio 0 victorias • 1 empates • Internacional 0 victorias"
+          "avg_goals": 1.8,
+          "text": "Grêmio 2 victorias • 3 empates • Internacional 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3686,15 +3774,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-12",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "12/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Corinthians",
             "match_away": "Palmeiras",
             "home_score": 0,
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
+          },
+          {
+            "date": "08/02/2026",
+            "competition": "Paulista A1",
+            "tournament": "Paulista A1",
+            "match_home": "Corinthians",
+            "match_away": "Palmeiras",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Palmeiras"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Corinthians",
+            "match_away": "Palmeiras",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "07/08/2025",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Palmeiras",
+            "match_away": "Corinthians",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Corinthians"
+          },
+          {
+            "date": "31/07/2025",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Corinthians",
+            "match_away": "Palmeiras",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Corinthians"
           }
         ],
         "home_corner_stats": {
@@ -3744,11 +3876,11 @@
         "projected_corners": 14.4,
         "projected_cards": 6.3,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Palmeiras 0 victorias • 1 empates • Corinthians 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 1.2,
+          "text": "Palmeiras 1 victorias • 2 empates • Corinthians 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4007,15 +4139,37 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-11",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "11/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Mirassol",
             "match_away": "Bahia",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Bahia"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Mirassol",
+            "match_away": "Bahia",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Mirassol"
+          },
+          {
+            "date": "13/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Bahia",
+            "match_away": "Mirassol",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -4066,10 +4220,10 @@
         "projected_cards": 5.8,
         "summary": {
           "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 3.0,
-          "text": "Bahia 1 victorias • 0 empates • Mirassol 0 victorias"
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 3.7,
+          "text": "Bahia 1 victorias • 1 empates • Mirassol 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4328,15 +4482,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-12",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "12/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Botafogo",
             "match_away": "Coritiba",
             "home_score": 2,
             "away_score": 2,
             "score": "2 - 2",
             "winner": "Empate"
+          },
+          {
+            "date": "30/11/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Coritiba",
+            "match_away": "Botafogo",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "30/07/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Botafogo",
+            "match_away": "Coritiba",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Botafogo"
+          },
+          {
+            "date": "17/09/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Botafogo",
+            "match_away": "Coritiba",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Botafogo"
+          },
+          {
+            "date": "29/05/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Coritiba",
+            "match_away": "Botafogo",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Coritiba"
           }
         ],
         "home_corner_stats": {
@@ -4386,11 +4584,11 @@
         "projected_corners": 9.8,
         "projected_cards": 4.0,
         "summary": {
-          "home_wins": 0,
-          "draws": 1,
-          "away_wins": 0,
-          "avg_goals": 4.0,
-          "text": "Coritiba 0 victorias • 1 empates • Botafogo 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Coritiba 1 victorias • 2 empates • Botafogo 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4649,15 +4847,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-12",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "12/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Athletico Paranaense",
             "match_away": "Chapecoense",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Athletico Paranaense"
+          },
+          {
+            "date": "17/09/2025",
+            "competition": "Serie B",
+            "tournament": "Serie B",
+            "match_home": "Chapecoense",
+            "match_away": "Athletico Paranaense",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Athletico Paranaense"
+          },
+          {
+            "date": "09/05/2025",
+            "competition": "Serie B",
+            "tournament": "Serie B",
+            "match_home": "Athletico Paranaense",
+            "match_away": "Chapecoense",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/10/2021",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Chapecoense",
+            "match_away": "Athletico Paranaense",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "27/06/2021",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Athletico Paranaense",
+            "match_away": "Chapecoense",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -4708,10 +4950,10 @@
         "projected_cards": 8.1,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Chapecoense 0 victorias • 0 empates • Athletico Paranaense 1 victorias"
+          "draws": 3,
+          "away_wins": 2,
+          "avg_goals": 3.0,
+          "text": "Chapecoense 0 victorias • 3 empates • Athletico Paranaense 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4970,9 +5212,53 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-12",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "12/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
+            "match_home": "Cruzeiro",
+            "match_away": "RB Bragantino",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Cruzeiro"
+          },
+          {
+            "date": "21/09/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Cruzeiro",
+            "match_away": "RB Bragantino",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Cruzeiro"
+          },
+          {
+            "date": "20/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "RB Bragantino",
+            "match_away": "Cruzeiro",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "RB Bragantino"
+          },
+          {
+            "date": "01/12/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "RB Bragantino",
+            "match_away": "Cruzeiro",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/07/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
             "match_home": "Cruzeiro",
             "match_away": "RB Bragantino",
             "home_score": 2,
@@ -5028,11 +5314,11 @@
         "projected_corners": 12.9,
         "projected_cards": 3.4,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "RB Bragantino 0 victorias • 0 empates • Cruzeiro 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 2.4,
+          "text": "RB Bragantino 1 victorias • 1 empates • Cruzeiro 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5291,15 +5577,37 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-19",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "19/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Internacional",
             "match_away": "Mirassol",
             "home_score": 1,
             "away_score": 2,
             "score": "1 - 2",
             "winner": "Mirassol"
+          },
+          {
+            "date": "15/10/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Mirassol",
+            "match_away": "Internacional",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Mirassol"
+          },
+          {
+            "date": "18/05/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Internacional",
+            "match_away": "Mirassol",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5349,11 +5657,11 @@
         "projected_corners": 10.1,
         "projected_cards": 6.6,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
+          "home_wins": 2,
+          "draws": 1,
           "away_wins": 0,
           "avg_goals": 3.0,
-          "text": "Mirassol 1 victorias • 0 empates • Internacional 0 victorias"
+          "text": "Mirassol 2 victorias • 1 empates • Internacional 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5612,15 +5920,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-18",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "14/05/2026",
+            "competition": "Copa do Brasil",
+            "tournament": "Copa do Brasil",
+            "match_home": "Chapecoense",
+            "match_away": "Botafogo",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Chapecoense"
+          },
+          {
+            "date": "21/04/2026",
+            "competition": "Copa do Brasil",
+            "tournament": "Copa do Brasil",
+            "match_home": "Botafogo",
+            "match_away": "Chapecoense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Botafogo"
+          },
+          {
+            "date": "18/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Chapecoense",
             "match_away": "Botafogo",
             "home_score": 1,
             "away_score": 4,
             "score": "1 - 4",
             "winner": "Botafogo"
+          },
+          {
+            "date": "27/11/2019",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Chapecoense",
+            "match_away": "Botafogo",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Botafogo"
+          },
+          {
+            "date": "26/08/2019",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Botafogo",
+            "match_away": "Chapecoense",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5670,11 +6022,11 @@
         "projected_corners": 9.1,
         "projected_cards": 5.3,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 5.0,
-          "text": "Botafogo 1 victorias • 0 empates • Chapecoense 0 victorias"
+          "home_wins": 3,
+          "draws": 1,
+          "away_wins": 1,
+          "avg_goals": 1.8,
+          "text": "Botafogo 3 victorias • 1 empates • Chapecoense 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5933,15 +6285,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-19",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "19/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Coritiba",
             "match_away": "Atlético-MG",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Coritiba"
+          },
+          {
+            "date": "08/10/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atlético-MG",
+            "match_away": "Coritiba",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Coritiba"
+          },
+          {
+            "date": "20/05/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Coritiba",
+            "match_away": "Atlético-MG",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Atlético-MG"
+          },
+          {
+            "date": "14/08/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Coritiba",
+            "match_away": "Atlético-MG",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Atlético-MG"
+          },
+          {
+            "date": "24/04/2022",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Atlético-MG",
+            "match_away": "Coritiba",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5991,11 +6387,11 @@
         "projected_corners": 10.9,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Atlético-MG 0 victorias • 0 empates • Coritiba 1 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.6,
+          "text": "Atlético-MG 2 victorias • 1 empates • Coritiba 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6254,15 +6650,59 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-19",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "19/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Palmeiras",
             "match_away": "Athletico Paranaense",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Palmeiras"
+          },
+          {
+            "date": "01/09/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Athletico Paranaense",
+            "match_away": "Palmeiras",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Palmeiras"
+          },
+          {
+            "date": "12/05/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Palmeiras",
+            "match_away": "Athletico Paranaense",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Athletico Paranaense"
+          },
+          {
+            "date": "05/11/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Palmeiras",
+            "match_away": "Athletico Paranaense",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Palmeiras"
+          },
+          {
+            "date": "02/07/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Athletico Paranaense",
+            "match_away": "Palmeiras",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -6312,11 +6752,11 @@
         "projected_corners": 14.4,
         "projected_cards": 5.9,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "Athletico Paranaense 0 victorias • 0 empates • Palmeiras 1 victorias"
+          "home_wins": 1,
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 2.0,
+          "text": "Athletico Paranaense 1 victorias • 1 empates • Palmeiras 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6575,14 +7015,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-18",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "18/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Vasco da Gama",
             "match_away": "São Paulo",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
+            "winner": "Vasco da Gama"
+          },
+          {
+            "date": "02/11/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Vasco da Gama",
+            "match_away": "São Paulo",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "São Paulo"
+          },
+          {
+            "date": "13/06/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "São Paulo",
+            "match_away": "Vasco da Gama",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Vasco da Gama"
+          },
+          {
+            "date": "17/10/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "São Paulo",
+            "match_away": "Vasco da Gama",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "São Paulo"
+          },
+          {
+            "date": "23/06/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Vasco da Gama",
+            "match_away": "São Paulo",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
             "winner": "Vasco da Gama"
           }
         ],
@@ -6633,11 +7117,11 @@
         "projected_corners": 16.0,
         "projected_cards": 4.3,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 3.0,
-          "text": "São Paulo 0 victorias • 0 empates • Vasco da Gama 1 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.4,
+          "text": "São Paulo 2 victorias • 0 empates • Vasco da Gama 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6896,14 +7380,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-19",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "19/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Santos",
             "match_away": "Fluminense",
             "home_score": 2,
             "away_score": 3,
             "score": "2 - 3",
+            "winner": "Fluminense"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Santos",
+            "match_away": "Fluminense",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/04/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Fluminense",
+            "match_away": "Santos",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Fluminense"
+          },
+          {
+            "date": "29/11/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Santos",
+            "match_away": "Fluminense",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Fluminense"
+          },
+          {
+            "date": "29/07/2023",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Fluminense",
+            "match_away": "Santos",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
             "winner": "Fluminense"
           }
         ],
@@ -6954,11 +7482,11 @@
         "projected_corners": 7.7,
         "projected_cards": 6.4,
         "summary": {
-          "home_wins": 1,
-          "draws": 0,
+          "home_wins": 4,
+          "draws": 1,
           "away_wins": 0,
-          "avg_goals": 5.0,
-          "text": "Fluminense 1 victorias • 0 empates • Santos 0 victorias"
+          "avg_goals": 2.0,
+          "text": "Fluminense 4 victorias • 1 empates • Santos 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7217,14 +7745,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-18",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "18/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Cruzeiro",
             "match_away": "Grêmio",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
+            "winner": "Cruzeiro"
+          },
+          {
+            "date": "05/11/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Grêmio",
+            "match_away": "Cruzeiro",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Cruzeiro"
+          },
+          {
+            "date": "13/07/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Cruzeiro",
+            "match_away": "Grêmio",
+            "home_score": 4,
+            "away_score": 1,
+            "score": "4 - 1",
+            "winner": "Cruzeiro"
+          },
+          {
+            "date": "28/11/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Cruzeiro",
+            "match_away": "Grêmio",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "10/07/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Grêmio",
+            "match_away": "Cruzeiro",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
             "winner": "Cruzeiro"
           }
         ],
@@ -7276,10 +7848,10 @@
         "projected_cards": 5.8,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Grêmio 0 victorias • 0 empates • Cruzeiro 1 victorias"
+          "draws": 1,
+          "away_wins": 4,
+          "avg_goals": 2.4,
+          "text": "Grêmio 0 victorias • 1 empates • Cruzeiro 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -7538,14 +8110,58 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-04-19",
-            "competition": "Brasileirão Série A",
-            "tournament": "Brasileirão Série A",
+            "date": "19/04/2026",
+            "competition": "Série A",
+            "tournament": "Série A",
             "match_home": "Flamengo",
             "match_away": "Bahia",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
+            "winner": "Flamengo"
+          },
+          {
+            "date": "05/10/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Bahia",
+            "match_away": "Flamengo",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Bahia"
+          },
+          {
+            "date": "11/05/2025",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Flamengo",
+            "match_away": "Bahia",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Flamengo"
+          },
+          {
+            "date": "05/10/2024",
+            "competition": "Serie A",
+            "tournament": "Serie A",
+            "match_home": "Bahia",
+            "match_away": "Flamengo",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Flamengo"
+          },
+          {
+            "date": "13/09/2024",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Flamengo",
+            "match_away": "Bahia",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
             "winner": "Flamengo"
           }
         ],
@@ -7596,11 +8212,11 @@
         "projected_corners": 12.9,
         "projected_cards": 6.3,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 1,
           "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 2.0,
-          "text": "Bahia 0 victorias • 0 empates • Flamengo 1 victorias"
+          "away_wins": 4,
+          "avg_goals": 1.4,
+          "text": "Bahia 1 victorias • 0 empates • Flamengo 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-10-11T21:22:00.338610",
+  "last_updated": "2026-10-11T15:53:55.515370",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -3042,7 +3042,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "23/04/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Sevilla",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Levante"
+          },
+          {
+            "date": "04/01/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Sevilla",
+            "match_away": "Levante",
+            "home_score": 0,
+            "away_score": 3,
+            "score": "0 - 3",
+            "winner": "Levante"
+          },
+          {
+            "date": "21/04/2022",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Sevilla",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "winner": "Sevilla"
+          },
+          {
+            "date": "24/10/2021",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Sevilla",
+            "match_away": "Levante",
+            "home_score": 5,
+            "away_score": 3,
+            "score": "5 - 3",
+            "winner": "Sevilla"
+          },
+          {
+            "date": "21/04/2021",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Sevilla",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Sevilla"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
           "corners_avg_away": 3.0,
@@ -3090,11 +3146,11 @@
         "projected_corners": 7.6,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Levante 0 victorias • 0 empates • Sevilla 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.8,
+          "text": "Levante 2 victorias • 0 empates • Sevilla 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3351,7 +3407,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "25/01/2025",
+            "competition": "LaLiga2",
+            "tournament": "LaLiga2",
+            "match_home": "Deportivo A Coruña",
+            "match_away": "Levante",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Levante"
+          },
+          {
+            "date": "24/10/2024",
+            "competition": "LaLiga2",
+            "tournament": "LaLiga2",
+            "match_home": "Levante",
+            "match_away": "Deportivo A Coruña",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Levante"
+          },
+          {
+            "date": "27/01/2018",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Deportivo A Coruña",
+            "match_away": "Levante",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "26/08/2017",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Deportivo A Coruña",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "19/03/2016",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Deportivo A Coruña",
+            "match_away": "Levante",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Deportivo A Coruña"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 7.5,
           "corners_avg_away": 6.0,
@@ -3399,11 +3511,11 @@
         "projected_corners": 10.2,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Deportivo A Coruña 0 victorias • 0 empates • Levante 0 victorias"
+          "home_wins": 1,
+          "draws": 2,
+          "away_wins": 2,
+          "avg_goals": 3.4,
+          "text": "Deportivo A Coruña 1 victorias • 2 empates • Levante 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3660,7 +3772,63 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "21/02/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Atlético Madrid",
+            "match_away": "Espanyol",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Atlético Madrid"
+          },
+          {
+            "date": "17/08/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Espanyol",
+            "match_away": "Atlético Madrid",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Espanyol"
+          },
+          {
+            "date": "29/03/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Espanyol",
+            "match_away": "Atlético Madrid",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "28/08/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Atlético Madrid",
+            "match_away": "Espanyol",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "24/05/2023",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Espanyol",
+            "match_away": "Atlético Madrid",
+            "home_score": 3,
+            "away_score": 3,
+            "score": "3 - 3",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 1.5,
           "corners_avg_away": 3.67,
@@ -3708,11 +3876,11 @@
         "projected_corners": 8.8,
         "projected_cards": 4.1,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Espanyol 0 victorias • 0 empates • Atlético Madrid 0 victorias"
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 3.4,
+          "text": "Espanyol 1 victorias • 3 empates • Atlético Madrid 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3969,7 +4137,63 @@
             "fouls": 19
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "08/03/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Villarreal",
+            "match_away": "Elche",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Villarreal"
+          },
+          {
+            "date": "03/01/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Elche",
+            "match_away": "Villarreal",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Villarreal"
+          },
+          {
+            "date": "04/02/2023",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Elche",
+            "match_away": "Villarreal",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Elche"
+          },
+          {
+            "date": "04/09/2022",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Villarreal",
+            "match_away": "Elche",
+            "home_score": 4,
+            "away_score": 0,
+            "score": "4 - 0",
+            "winner": "Villarreal"
+          },
+          {
+            "date": "16/01/2022",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Elche",
+            "match_away": "Villarreal",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Elche"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 7.0,
           "corners_avg_away": 5.5,
@@ -4017,11 +4241,11 @@
         "projected_corners": 9.4,
         "projected_cards": 4.4,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 3,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Villarreal 0 victorias • 0 empates • Elche 0 victorias"
+          "away_wins": 2,
+          "avg_goals": 3.2,
+          "text": "Villarreal 3 victorias • 0 empates • Elche 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4278,7 +4502,63 @@
             "fouls": 9
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "17/05/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Barcelona",
+            "match_away": "Real Betis",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Barcelona"
+          },
+          {
+            "date": "06/12/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Betis",
+            "match_away": "Barcelona",
+            "home_score": 3,
+            "away_score": 5,
+            "score": "3 - 5",
+            "winner": "Barcelona"
+          },
+          {
+            "date": "05/04/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Barcelona",
+            "match_away": "Real Betis",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "15/01/2025",
+            "competition": "Copa del Rey",
+            "tournament": "Copa del Rey",
+            "match_home": "Barcelona",
+            "match_away": "Real Betis",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Barcelona"
+          },
+          {
+            "date": "07/12/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Betis",
+            "match_away": "Barcelona",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 4.5,
@@ -4327,10 +4607,10 @@
         "projected_cards": 3.3,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Real Betis 0 victorias • 0 empates • Barcelona 0 victorias"
+          "draws": 2,
+          "away_wins": 3,
+          "avg_goals": 4.8,
+          "text": "Real Betis 0 victorias • 2 empates • Barcelona 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4587,7 +4867,63 @@
             "fouls": 0
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "10/05/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Athletic Club",
+            "match_away": "Valencia",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Valencia"
+          },
+          {
+            "date": "04/02/2026",
+            "competition": "Copa del Rey",
+            "tournament": "Copa del Rey",
+            "match_home": "Valencia",
+            "match_away": "Athletic Club",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Athletic Club"
+          },
+          {
+            "date": "20/09/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Valencia",
+            "match_away": "Athletic Club",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Valencia"
+          },
+          {
+            "date": "18/05/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Valencia",
+            "match_away": "Athletic Club",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Athletic Club"
+          },
+          {
+            "date": "28/08/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Athletic Club",
+            "match_away": "Valencia",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Athletic Club"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
           "corners_avg_away": 4.0,
@@ -4635,11 +4971,11 @@
         "projected_corners": 8.7,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Valencia 0 victorias • 0 empates • Athletic Club 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 1.6,
+          "text": "Valencia 2 victorias • 0 empates • Athletic Club 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4896,7 +5232,63 @@
             "fouls": 15
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "07/03/2015",
+            "competition": "Segunda Division",
+            "tournament": "Segunda Division",
+            "match_home": "Racing Santander",
+            "match_away": "Osasuna",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Racing Santander"
+          },
+          {
+            "date": "04/10/2014",
+            "competition": "Segunda Division",
+            "tournament": "Segunda Division",
+            "match_home": "Osasuna",
+            "match_away": "Racing Santander",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Racing Santander"
+          },
+          {
+            "date": "13/05/2012",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Racing Santander",
+            "match_away": "Osasuna",
+            "home_score": 2,
+            "away_score": 4,
+            "score": "2 - 4",
+            "winner": "Osasuna"
+          },
+          {
+            "date": "15/01/2012",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Osasuna",
+            "match_away": "Racing Santander",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Racing Santander"
+          },
+          {
+            "date": "13/03/2011",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Osasuna",
+            "match_away": "Racing Santander",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Osasuna"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 3.5,
           "corners_avg_away": 1.67,
@@ -4944,11 +5336,11 @@
         "projected_corners": 6.6,
         "projected_cards": 5.7,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Osasuna 0 victorias • 0 empates • Racing Santander 0 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Osasuna 2 victorias • 0 empates • Racing Santander 3 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5205,7 +5597,63 @@
             "fouls": 11
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "22/03/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Celta Vigo",
+            "match_away": "Deportivo Alavés",
+            "home_score": 3,
+            "away_score": 4,
+            "score": "3 - 4",
+            "winner": "Deportivo Alavés"
+          },
+          {
+            "date": "22/11/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Deportivo Alavés",
+            "match_away": "Celta Vigo",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Celta Vigo"
+          },
+          {
+            "date": "27/01/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Deportivo Alavés",
+            "match_away": "Celta Vigo",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/08/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Celta Vigo",
+            "match_away": "Deportivo Alavés",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "winner": "Celta Vigo"
+          },
+          {
+            "date": "27/04/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Deportivo Alavés",
+            "match_away": "Celta Vigo",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "winner": "Deportivo Alavés"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 2.0,
           "corners_avg_away": 3.33,
@@ -5253,11 +5701,11 @@
         "projected_corners": 5.4,
         "projected_cards": 3.2,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Celta Vigo 0 victorias • 0 empates • Deportivo Alavés 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.2,
+          "text": "Celta Vigo 2 victorias • 1 empates • Deportivo Alavés 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5514,7 +5962,63 @@
             "fouls": 14
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "07/01/2024",
+            "competition": "Copa del Rey",
+            "tournament": "Copa del Rey",
+            "match_home": "Málaga",
+            "match_away": "Real Sociedad",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Real Sociedad"
+          },
+          {
+            "date": "22/04/2018",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Málaga",
+            "match_away": "Real Sociedad",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Málaga"
+          },
+          {
+            "date": "10/12/2017",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Sociedad",
+            "match_away": "Málaga",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Málaga"
+          },
+          {
+            "date": "14/05/2017",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Sociedad",
+            "match_away": "Málaga",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
+            "date": "16/01/2017",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Málaga",
+            "match_away": "Real Sociedad",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Sociedad"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 6.0,
           "corners_avg_away": 7.0,
@@ -5562,11 +6066,11 @@
         "projected_corners": 13.1,
         "projected_cards": 6.2,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Málaga 0 victorias • 0 empates • Real Sociedad 0 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.2,
+          "text": "Málaga 2 victorias • 1 empates • Real Sociedad 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5823,7 +6327,63 @@
             "fouls": 10
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "17/05/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Sevilla",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "20/12/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Madrid",
+            "match_away": "Sevilla",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "18/05/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Sevilla",
+            "match_away": "Real Madrid",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "22/12/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Madrid",
+            "match_away": "Sevilla",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Real Madrid"
+          },
+          {
+            "date": "25/02/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Real Madrid",
+            "match_away": "Sevilla",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Real Madrid"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 10.0,
           "corners_avg_away": 5.33,
@@ -5871,11 +6431,11 @@
         "projected_corners": 12.5,
         "projected_cards": 7.0,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 5,
           "draws": 0,
           "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Real Madrid 0 victorias • 0 empates • Sevilla 0 victorias"
+          "avg_goals": 2.4,
+          "text": "Real Madrid 5 victorias • 0 empates • Sevilla 0 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6132,7 +6692,63 @@
             "fouls": 2
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "03/05/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Getafe",
+            "match_away": "Rayo Vallecano",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Rayo Vallecano"
+          },
+          {
+            "date": "02/01/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Rayo Vallecano",
+            "match_away": "Getafe",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate"
+          },
+          {
+            "date": "02/05/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Rayo Vallecano",
+            "match_away": "Getafe",
+            "home_score": 1,
+            "away_score": 0,
+            "score": "1 - 0",
+            "winner": "Rayo Vallecano"
+          },
+          {
+            "date": "24/08/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Getafe",
+            "match_away": "Rayo Vallecano",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "13/04/2024",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Rayo Vallecano",
+            "match_away": "Getafe",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 3.67,
           "corners_avg_away": 2.5,
@@ -6181,10 +6797,10 @@
         "projected_cards": 6.0,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Getafe 0 victorias • 0 empates • Rayo Vallecano 0 victorias"
+          "draws": 3,
+          "away_wins": 2,
+          "avg_goals": 1.0,
+          "text": "Getafe 0 victorias • 3 empates • Rayo Vallecano 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -6441,7 +7057,63 @@
             "fouls": 0
           }
         ],
-        "head_to_head": [],
+        "head_to_head": [
+          {
+            "date": "08/02/2026",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Athletic Club",
+            "match_away": "Levante",
+            "home_score": 4,
+            "away_score": 2,
+            "score": "4 - 2",
+            "winner": "Athletic Club"
+          },
+          {
+            "date": "29/11/2025",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Athletic Club",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Athletic Club"
+          },
+          {
+            "date": "07/03/2022",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Athletic Club",
+            "match_away": "Levante",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Athletic Club"
+          },
+          {
+            "date": "19/11/2021",
+            "competition": "LaLiga",
+            "tournament": "LaLiga",
+            "match_home": "Levante",
+            "match_away": "Athletic Club",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
+            "date": "04/03/2021",
+            "competition": "Copa del Rey",
+            "tournament": "Copa del Rey",
+            "match_home": "Levante",
+            "match_away": "Athletic Club",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Athletic Club"
+          }
+        ],
         "home_corner_stats": {
           "corners_avg_home": 4.0,
           "corners_avg_away": 3.0,
@@ -6490,10 +7162,10 @@
         "projected_cards": 2.9,
         "summary": {
           "home_wins": 0,
-          "draws": 0,
-          "away_wins": 0,
-          "avg_goals": 0.0,
-          "text": "Levante 0 victorias • 0 empates • Athletic Club 0 victorias"
+          "draws": 1,
+          "away_wins": 4,
+          "avg_goals": 3.0,
+          "text": "Levante 0 victorias • 1 empates • Athletic Club 4 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
