@@ -54,7 +54,8 @@ def index():
             "Colombia": "🇨🇴", "Guatemala": "🇬🇹", "Noruega": "🇳🇴", "Dinamarca": "🇩🇰",
             "Bélgica": "🇧🇪", "Suiza": "🇨🇭", "Perú": "🇵🇪", "Bolivia": "🇧🇴",
             "Japón": "🇯🇵",
-            "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Armenia": "🇦🇲", "Austria": "🇦🇹", "Internacional": "🌍"
+            "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Armenia": "🇦🇲", "Austria": "🇦🇹",
+            "Suecia": "🇸🇪", "Grecia": "🇬🇷", "Internacional": "🌍"
         }
         country_codes = {
             "Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it",
@@ -63,7 +64,8 @@ def index():
             "Colombia": "co", "Guatemala": "gt", "Noruega": "no", "Dinamarca": "dk",
             "Bélgica": "be", "Suiza": "ch", "Perú": "pe", "Bolivia": "bo",
             "Japón": "jp",
-            "Europa": "eu", "Chile": "cl", "Uruguay": "uy", "Armenia": "am", "Austria": "at"
+            "Europa": "eu", "Chile": "cl", "Uruguay": "uy", "Armenia": "am", "Austria": "at",
+            "Suecia": "se", "Grecia": "gr"
         }
         country_map = {}
         country_code_map = {}

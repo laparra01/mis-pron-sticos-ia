@@ -254,6 +254,24 @@ SUPPORTED_LEAGUES = [
         "flag": "🇦🇹",
         "max_upcoming": 12
     },
+    {
+        "id": 67,
+        "slug": "suecia",
+        "name": "Allsvenskan de Suecia",
+        "country": "Suecia",
+        "code": "se",
+        "flag": "🇸🇪",
+        "max_upcoming": 12
+    },
+    {
+        "id": 135,
+        "slug": "grecia",
+        "name": "Super League de Grecia",
+        "country": "Grecia",
+        "code": "gr",
+        "flag": "🇬🇷",
+        "max_upcoming": 12
+    },
 
     # Torneos Internacionales UEFA
     {
@@ -760,7 +778,7 @@ def scrape_single_league(cfg, match_cache=None):
         if not direct_h2h:
             try:
                 from prediction_engine import generate_match_h2h
-                sim_h2h = generate_match_h2h(h_name, a_name, "football", l_name, country=c_name)
+                sim_h2h = generate_match_h2h(h_name, a_name, "football", l_name, country=l_country)
                 if sim_h2h and sim_h2h.get("head_to_head"):
                     direct_h2h = sim_h2h["head_to_head"]
             except Exception:

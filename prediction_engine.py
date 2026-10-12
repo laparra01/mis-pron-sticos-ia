@@ -84,6 +84,20 @@ KNOWN_FOOTBALL_TEAMS = {
     "rapid wien": {"attack": 1.85, "defense": 1.15},
     "austria wien": {"attack": 1.75, "defense": 1.20},
     "lask": {"attack": 1.75, "defense": 1.20},
+    # Suecia
+    "malmö ff": {"attack": 2.10, "defense": 0.95},
+    "malmo": {"attack": 2.10, "defense": 0.95},
+    "hammarby": {"attack": 1.85, "defense": 1.05},
+    "djurgården": {"attack": 1.85, "defense": 1.05},
+    "aik": {"attack": 1.75, "defense": 1.10},
+    "elfsborg": {"attack": 1.80, "defense": 1.15},
+    "bk häcken": {"attack": 1.90, "defense": 1.25},
+    # Grecia
+    "olympiacos": {"attack": 2.15, "defense": 0.90},
+    "panathinaikos": {"attack": 2.05, "defense": 0.95},
+    "aek athens": {"attack": 2.05, "defense": 0.95},
+    "paok": {"attack": 2.10, "defense": 0.95},
+    "aris": {"attack": 1.70, "defense": 1.15},
     
     # Selecciones
     "argentina": {"attack": 2.35, "defense": 0.65},
@@ -1132,6 +1146,11 @@ LEAGUE_TEAMS_POOL = {
         "FC Red Bull Salzburg", "SK Sturm Graz", "SK Rapid Wien", "FK Austria Wien", "LASK",
         "Wolfsberger AC", "TSV Hartberg", "SK Austria Klagenfurt", "SCR Altach", "WSG Tirol",
         "FC Blau-Weiß Linz", "Grazer AK", "Austria Lustenau", "SV Ried"
+    ],
+    "grecia": [
+        "Olympiacos", "Panathinaikos", "AEK Athens", "PAOK", "Aris Thessaloniki",
+        "Atromitos", "Asteras Tripolis", "OFI Crete", "Volos NFC", "Lamia",
+        "Panetolikos", "Panserraikos", "Athens Kallithea", "Levadiakos"
     ]
 }
 
@@ -1398,6 +1417,15 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     ]
     if "austria" in c_low or "austria" in l_low or "aut.1" in l_low or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in austria_keywords):
         return "Bundesliga de Austria", "Austria", "🇦🇹", LEAGUE_TEAMS_POOL["austria"]
+
+    # 19.10 Grecia (Super League de Grecia)
+    greece_keywords = [
+        "olympiacos", "olympiakos", "panathinaikos", "aek athens", "aek", "paok",
+        "aris thessaloniki", "aris", "atromitos", "asteras", "ofi crete", "volos",
+        "lamia", "panetolikos", "panserraikos", "kallithea", "levadiakos"
+    ]
+    if "grecia" in c_low or "greece" in c_low or "gre.1" in l_low or ("super league" in l_low and ("grec" in l_low or "gree" in l_low)) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in greece_keywords):
+        return "Super League de Grecia", "Grecia", "🇬🇷", LEAGUE_TEAMS_POOL["grecia"]
 
     # 20. Inglaterra (Premier League / Championship / Copas Inglesas)
     english_keywords = [
