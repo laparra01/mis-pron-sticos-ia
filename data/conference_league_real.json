@@ -3,7 +3,7 @@
   "league_id": 10216,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-09T22:36:56.688406",
+  "last_updated": "2026-10-12T19:35:42.135287",
   "total_fixtures": 18,
   "team_histories": {
     "AGF": [],
@@ -856,130 +856,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Montpellier HSC",
-            "venue": "Local",
-            "match_home": "CSKA Sofia",
-            "match_away": "Montpellier HSC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "19 Sep",
-            "opponent": "Paris Saint-Germain",
-            "venue": "Visitante",
-            "match_home": "Paris Saint-Germain",
-            "match_away": "CSKA Sofia",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Olympique de Marseille",
-            "venue": "Local",
-            "match_home": "CSKA Sofia",
-            "match_away": "Olympique de Marseille",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "Le Havre AC",
-            "venue": "Visitante",
-            "match_home": "Le Havre AC",
-            "match_away": "CSKA Sofia",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "LOSC Lille",
-            "venue": "Local",
-            "match_home": "CSKA Sofia",
-            "match_away": "LOSC Lille",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "Toulouse FC",
-            "venue": "Visitante",
-            "match_home": "Toulouse FC",
-            "match_away": "Monaco",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "LOSC Lille",
-            "venue": "Local",
-            "match_home": "Monaco",
-            "match_away": "LOSC Lille",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Le Havre AC",
-            "venue": "Visitante",
-            "match_home": "Le Havre AC",
-            "match_away": "Monaco",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "2 Sep",
-            "opponent": "Olympique de Marseille",
-            "venue": "Local",
-            "match_home": "Monaco",
-            "match_away": "Olympique de Marseille",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Paris Saint-Germain",
-            "venue": "Visitante",
-            "match_home": "Paris Saint-Germain",
-            "match_away": "Monaco",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "17 May 2024",
@@ -1092,14 +970,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 0,
           "away_wins": 3,
           "avg_goals": 3.2,
           "text": "CSKA Sofia 2 victorias • 0 empates • Monaco 3 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1121,130 +999,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Lyngby BK",
-            "venue": "Local",
-            "match_home": "Egnatia",
-            "match_away": "Lyngby BK",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Randers FC",
-            "venue": "Visitante",
-            "match_home": "Randers FC",
-            "match_away": "Egnatia",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "FC Midtjylland",
-            "venue": "Local",
-            "match_home": "Egnatia",
-            "match_away": "FC Midtjylland",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Aalborg BK",
-            "venue": "Visitante",
-            "match_home": "Aalborg BK",
-            "match_away": "Egnatia",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "FC Nordsjælland",
-            "venue": "Local",
-            "match_home": "Egnatia",
-            "match_away": "FC Nordsjælland",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "29 Sep",
-            "opponent": "Silkeborg IF",
-            "venue": "Visitante",
-            "match_home": "Silkeborg IF",
-            "match_away": "FC Midtjylland",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Sep",
-            "opponent": "Viborg FF",
-            "venue": "Local",
-            "match_home": "FC Midtjylland",
-            "match_away": "Viborg FF",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "Aalborg BK",
-            "venue": "Visitante",
-            "match_home": "Aalborg BK",
-            "match_away": "FC Midtjylland",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "Lyngby BK",
-            "venue": "Local",
-            "match_home": "FC Midtjylland",
-            "match_away": "Lyngby BK",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Odense Boldklub",
-            "venue": "Visitante",
-            "match_home": "Odense Boldklub",
-            "match_away": "FC Midtjylland",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "11 May 2024",
@@ -1357,14 +1113,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 1,
           "draws": 2,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Egnatia 1 victorias • 2 empates • FC Midtjylland 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1386,130 +1142,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "Brøndby IF",
-            "venue": "Local",
-            "match_home": "Gent",
-            "match_away": "Brøndby IF",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "19 Sep",
-            "opponent": "Lyngby BK",
-            "venue": "Visitante",
-            "match_home": "Lyngby BK",
-            "match_away": "Gent",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "Randers FC",
-            "venue": "Local",
-            "match_home": "Gent",
-            "match_away": "Randers FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "FC Midtjylland",
-            "venue": "Visitante",
-            "match_home": "FC Midtjylland",
-            "match_away": "Gent",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Aalborg BK",
-            "venue": "Local",
-            "match_home": "Gent",
-            "match_away": "Aalborg BK",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "Lyngby BK",
-            "venue": "Visitante",
-            "match_home": "Lyngby BK",
-            "match_away": "AGF",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Odense Boldklub",
-            "venue": "Local",
-            "match_home": "AGF",
-            "match_away": "Odense Boldklub",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "FC København",
-            "venue": "Visitante",
-            "match_home": "FC København",
-            "match_away": "AGF",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "3 Sep",
-            "opponent": "FC Midtjylland",
-            "venue": "Local",
-            "match_home": "AGF",
-            "match_away": "FC Midtjylland",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Brøndby IF",
-            "venue": "Visitante",
-            "match_home": "Brøndby IF",
-            "match_away": "AGF",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "17 May 2024",
@@ -1622,14 +1256,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "Gent 1 victorias • 3 empates • AGF 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1651,130 +1285,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "PSV Eindhoven",
-            "venue": "Local",
-            "match_home": "Hajduk Split",
-            "match_away": "PSV Eindhoven",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "19 Sep",
-            "opponent": "SC Heerenveen",
-            "venue": "Visitante",
-            "match_home": "SC Heerenveen",
-            "match_away": "Hajduk Split",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "FC Utrecht",
-            "venue": "Local",
-            "match_home": "Hajduk Split",
-            "match_away": "FC Utrecht",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "31 Ago",
-            "opponent": "Feyenoord",
-            "venue": "Visitante",
-            "match_home": "Feyenoord",
-            "match_away": "Hajduk Split",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Sparta Rotterdam",
-            "venue": "Local",
-            "match_home": "Hajduk Split",
-            "match_away": "Sparta Rotterdam",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "PSV Eindhoven",
-            "venue": "Visitante",
-            "match_home": "PSV Eindhoven",
-            "match_away": "Ajax",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Feyenoord",
-            "venue": "Local",
-            "match_home": "Ajax",
-            "match_away": "Feyenoord",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "AZ Alkmaar",
-            "venue": "Visitante",
-            "match_home": "AZ Alkmaar",
-            "match_away": "Ajax",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "3 Sep",
-            "opponent": "FC Twente",
-            "venue": "Local",
-            "match_home": "Ajax",
-            "match_away": "FC Twente",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "FC Utrecht",
-            "venue": "Visitante",
-            "match_home": "FC Utrecht",
-            "match_away": "Ajax",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "10 May 2024",
@@ -1887,14 +1399,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 0,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Hajduk Split 3 victorias • 0 empates • Ajax 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -1916,130 +1428,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "Antalyaspor",
-            "venue": "Local",
-            "match_home": "KuPS",
-            "match_away": "Antalyaspor",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Fenerbahçe SK",
-            "venue": "Visitante",
-            "match_home": "Fenerbahçe SK",
-            "match_away": "KuPS",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Göztepe SK",
-            "venue": "Local",
-            "match_home": "KuPS",
-            "match_away": "Göztepe SK",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Gaziantep FK",
-            "venue": "Visitante",
-            "match_home": "Gaziantep FK",
-            "match_away": "KuPS",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Samsunspor",
-            "venue": "Local",
-            "match_home": "KuPS",
-            "match_away": "Samsunspor",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "Konyaspor",
-            "venue": "Visitante",
-            "match_home": "Konyaspor",
-            "match_away": "Trabzonspor",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Samsunspor",
-            "venue": "Local",
-            "match_home": "Trabzonspor",
-            "match_away": "Samsunspor",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Fenerbahçe SK",
-            "venue": "Visitante",
-            "match_home": "Fenerbahçe SK",
-            "match_away": "Trabzonspor",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "2 Sep",
-            "opponent": "Alanyaspor",
-            "venue": "Local",
-            "match_home": "Trabzonspor",
-            "match_away": "Alanyaspor",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Eyüpspor",
-            "venue": "Visitante",
-            "match_home": "Eyüpspor",
-            "match_away": "Trabzonspor",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "12 May 2024",
@@ -2152,14 +1542,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 1,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "KuPS 2 victorias • 1 empates • Trabzonspor 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2181,130 +1571,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "Servette FC",
-            "venue": "Local",
-            "match_home": "Lugano",
-            "match_away": "Servette FC",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "FC Lausanne-Sport",
-            "venue": "Visitante",
-            "match_home": "FC Lausanne-Sport",
-            "match_away": "Lugano",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "FC Luzern",
-            "venue": "Local",
-            "match_home": "Lugano",
-            "match_away": "FC Luzern",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "FC Basel",
-            "venue": "Visitante",
-            "match_home": "FC Basel",
-            "match_away": "Lugano",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Yverdon Sport",
-            "venue": "Local",
-            "match_home": "Lugano",
-            "match_away": "Yverdon Sport",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "FC Winterthur",
-            "venue": "Visitante",
-            "match_home": "FC Winterthur",
-            "match_away": "FK Crvena Zvezda",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "FC Luzern",
-            "venue": "Local",
-            "match_home": "FK Crvena Zvezda",
-            "match_away": "FC Luzern",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "FC St. Gallen",
-            "venue": "Visitante",
-            "match_home": "FC St. Gallen",
-            "match_away": "FK Crvena Zvezda",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "Servette FC",
-            "venue": "Local",
-            "match_home": "FK Crvena Zvezda",
-            "match_away": "Servette FC",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "25 Ago",
-            "opponent": "FC Lugano",
-            "venue": "Visitante",
-            "match_home": "FC Lugano",
-            "match_away": "FK Crvena Zvezda",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "22 May 2024",
@@ -2417,14 +1685,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "Lugano 1 victorias • 3 empates • FK Crvena Zvezda 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2446,130 +1714,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "AC Milan",
-            "venue": "Local",
-            "match_home": "Mjällby",
-            "match_away": "AC Milan",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "19 Sep",
-            "opponent": "Bologna FC",
-            "venue": "Visitante",
-            "match_home": "Bologna FC",
-            "match_away": "Mjällby",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "Udinese Calcio",
-            "venue": "Local",
-            "match_home": "Mjällby",
-            "match_away": "Udinese Calcio",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Juventus FC",
-            "venue": "Visitante",
-            "match_home": "Juventus FC",
-            "match_away": "Mjällby",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Torino FC",
-            "venue": "Local",
-            "match_home": "Mjällby",
-            "match_away": "Torino FC",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "29 Sep",
-            "opponent": "AC Milan",
-            "venue": "Visitante",
-            "match_home": "AC Milan",
-            "match_away": "Inter Club d'Escaldes",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Hellas Verona",
-            "venue": "Local",
-            "match_home": "Inter Club d'Escaldes",
-            "match_away": "Hellas Verona",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "Juventus FC",
-            "venue": "Visitante",
-            "match_home": "Juventus FC",
-            "match_away": "Inter Club d'Escaldes",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "3 Sep",
-            "opponent": "US Lecce",
-            "venue": "Local",
-            "match_home": "Inter Club d'Escaldes",
-            "match_away": "US Lecce",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "SSC Napoli",
-            "venue": "Visitante",
-            "match_home": "SSC Napoli",
-            "match_away": "Inter Club d'Escaldes",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "19 May 2024",
@@ -2682,14 +1828,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 0,
           "away_wins": 3,
           "avg_goals": 3.2,
           "text": "Mjällby 2 victorias • 0 empates • Inter Club d'Escaldes 3 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2771,14 +1917,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 0,
           "draws": 1,
           "away_wins": 0,
           "avg_goals": 2.0,
           "text": "Panathinaikos 0 victorias • 1 empates • Borac Banja Luka 0 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2800,130 +1946,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Inter Milan",
-            "venue": "Local",
-            "match_home": "Riga FC",
-            "match_away": "Inter Milan",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Sporting CP",
-            "venue": "Visitante",
-            "match_home": "Sporting CP",
-            "match_away": "Riga FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "Arsenal",
-            "venue": "Local",
-            "match_home": "Riga FC",
-            "match_away": "Arsenal",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "AC Milan",
-            "venue": "Visitante",
-            "match_home": "AC Milan",
-            "match_away": "Riga FC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Bayern München",
-            "venue": "Local",
-            "match_home": "Riga FC",
-            "match_away": "Bayern München",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "Aston Villa",
-            "venue": "Visitante",
-            "match_home": "Aston Villa",
-            "match_away": "Kairat Almaty",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Atlético de Madrid",
-            "venue": "Local",
-            "match_home": "Kairat Almaty",
-            "match_away": "Atlético de Madrid",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Bayern München",
-            "venue": "Visitante",
-            "match_home": "Bayern München",
-            "match_away": "Kairat Almaty",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "3 Sep",
-            "opponent": "Sporting CP",
-            "venue": "Local",
-            "match_home": "Kairat Almaty",
-            "match_away": "Sporting CP",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Borussia Dortmund",
-            "venue": "Visitante",
-            "match_home": "Borussia Dortmund",
-            "match_away": "Kairat Almaty",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "25 May 2024",
@@ -3036,14 +2060,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 0,
           "away_wins": 3,
           "avg_goals": 3.2,
           "text": "Riga FC 2 victorias • 0 empates • Kairat Almaty 3 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3065,130 +2089,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "FC Barcelona",
-            "venue": "Local",
-            "match_home": "Universitatea Craiova",
-            "match_away": "FC Barcelona",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Sevilla FC",
-            "venue": "Visitante",
-            "match_home": "Sevilla FC",
-            "match_away": "Universitatea Craiova",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "UD Las Palmas",
-            "venue": "Local",
-            "match_home": "Universitatea Craiova",
-            "match_away": "UD Las Palmas",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "Real Oviedo",
-            "venue": "Visitante",
-            "match_home": "Real Oviedo",
-            "match_away": "Universitatea Craiova",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Villarreal CF",
-            "venue": "Local",
-            "match_home": "Universitatea Craiova",
-            "match_away": "Villarreal CF",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "Sevilla FC",
-            "venue": "Visitante",
-            "match_home": "Sevilla FC",
-            "match_away": "Getafe",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Real Valladolid",
-            "venue": "Local",
-            "match_home": "Getafe",
-            "match_away": "Real Valladolid",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "Valencia CF",
-            "venue": "Visitante",
-            "match_home": "Valencia CF",
-            "match_away": "Getafe",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "CD Leganés",
-            "venue": "Local",
-            "match_home": "Getafe",
-            "match_away": "CD Leganés",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Villarreal CF",
-            "venue": "Visitante",
-            "match_home": "Villarreal CF",
-            "match_away": "Getafe",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "16 May 2024",
@@ -3301,14 +2203,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 1,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "Universitatea Craiova 3 victorias • 1 empates • Getafe 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3330,130 +2232,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Bologna FC",
-            "venue": "Local",
-            "match_home": "Atalanta",
-            "match_away": "Bologna FC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "19 Sep",
-            "opponent": "Udinese Calcio",
-            "venue": "Visitante",
-            "match_home": "Udinese Calcio",
-            "match_away": "Atalanta",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "AC Milan",
-            "venue": "Local",
-            "match_home": "Atalanta",
-            "match_away": "AC Milan",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "Torino FC",
-            "venue": "Visitante",
-            "match_home": "Torino FC",
-            "match_away": "Atalanta",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Empoli FC",
-            "venue": "Local",
-            "match_home": "Atalanta",
-            "match_away": "Empoli FC",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "AC Milan",
-            "venue": "Visitante",
-            "match_home": "AC Milan",
-            "match_away": "Pafos FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Sep",
-            "opponent": "Hellas Verona",
-            "venue": "Local",
-            "match_home": "Pafos FC",
-            "match_away": "Hellas Verona",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "Juventus FC",
-            "venue": "Visitante",
-            "match_home": "Juventus FC",
-            "match_away": "Pafos FC",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "US Lecce",
-            "venue": "Local",
-            "match_home": "Pafos FC",
-            "match_away": "US Lecce",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "SSC Napoli",
-            "venue": "Visitante",
-            "match_home": "SSC Napoli",
-            "match_away": "Pafos FC",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "10 May 2024",
@@ -3566,14 +2346,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 0,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Atalanta 3 victorias • 0 empates • Pafos FC 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3595,130 +2375,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Tromsø IL",
-            "venue": "Local",
-            "match_home": "Brann",
-            "match_away": "Tromsø IL",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Viking FK",
-            "venue": "Visitante",
-            "match_home": "Viking FK",
-            "match_away": "Brann",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "Sarpsborg 08",
-            "venue": "Local",
-            "match_home": "Brann",
-            "match_away": "Sarpsborg 08",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Rosenborg BK",
-            "venue": "Visitante",
-            "match_home": "Rosenborg BK",
-            "match_away": "Brann",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Sandefjord",
-            "venue": "Local",
-            "match_home": "Brann",
-            "match_away": "Sandefjord",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "Sarpsborg 08",
-            "venue": "Visitante",
-            "match_home": "Sarpsborg 08",
-            "match_away": "Lincoln Red Imps FC",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Strømsgodset IF",
-            "venue": "Local",
-            "match_home": "Lincoln Red Imps FC",
-            "match_away": "Strømsgodset IF",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "Tromsø IL",
-            "venue": "Visitante",
-            "match_home": "Tromsø IL",
-            "match_away": "Lincoln Red Imps FC",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "KFUM Oslo",
-            "venue": "Local",
-            "match_home": "Lincoln Red Imps FC",
-            "match_away": "KFUM Oslo",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "25 Ago",
-            "opponent": "Fredrikstad FK",
-            "venue": "Visitante",
-            "match_home": "Fredrikstad FK",
-            "match_away": "Lincoln Red Imps FC",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "12 May 2024",
@@ -3831,14 +2489,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "Brann 1 victorias • 3 empates • Lincoln Red Imps FC 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3860,130 +2518,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "Newcastle United",
-            "venue": "Local",
-            "match_home": "Brighton & Hove Albion",
-            "match_away": "Newcastle United",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Wolverhampton Wanderers",
-            "venue": "Visitante",
-            "match_home": "Wolverhampton Wanderers",
-            "match_away": "Brighton & Hove Albion",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Queens Park Rangers",
-            "venue": "Local",
-            "match_home": "Brighton & Hove Albion",
-            "match_away": "Queens Park Rangers",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Coventry City",
-            "venue": "Visitante",
-            "match_home": "Coventry City",
-            "match_away": "Brighton & Hove Albion",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Luton Town",
-            "venue": "Local",
-            "match_home": "Brighton & Hove Albion",
-            "match_away": "Luton Town",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "Arsenal FC",
-            "venue": "Visitante",
-            "match_home": "Arsenal FC",
-            "match_away": "FK Kauno Žalgiris",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Fulham FC",
-            "venue": "Local",
-            "match_home": "FK Kauno Žalgiris",
-            "match_away": "Fulham FC",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "Watford FC",
-            "venue": "Visitante",
-            "match_home": "Watford FC",
-            "match_away": "FK Kauno Žalgiris",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "2 Sep",
-            "opponent": "Luton Town",
-            "venue": "Local",
-            "match_home": "FK Kauno Žalgiris",
-            "match_away": "Luton Town",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "25 Ago",
-            "opponent": "Tottenham Hotspur",
-            "venue": "Visitante",
-            "match_home": "Tottenham Hotspur",
-            "match_away": "FK Kauno Žalgiris",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "14 May 2024",
@@ -4096,14 +2632,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 1,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Brighton & Hove Albion 2 victorias • 1 empates • FK Kauno Žalgiris 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4125,130 +2661,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "FC Nordsjælland",
-            "venue": "Local",
-            "match_home": "FC København",
-            "match_away": "FC Nordsjælland",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "FC Midtjylland",
-            "venue": "Visitante",
-            "match_home": "FC Midtjylland",
-            "match_away": "FC København",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "12 Sep",
-            "opponent": "Viborg FF",
-            "venue": "Local",
-            "match_home": "FC København",
-            "match_away": "Viborg FF",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "AGF Aarhus",
-            "venue": "Visitante",
-            "match_home": "AGF Aarhus",
-            "match_away": "FC København",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Odense Boldklub",
-            "venue": "Local",
-            "match_home": "FC København",
-            "match_away": "Odense Boldklub",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "29/08/2026",
-            "match_home": "São Paulo FC",
-            "match_away": "RB Bragantino",
-            "venue": "Visitante",
-            "opponent": "São Paulo FC",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Campeonato Brasileiro Série A"
-          },
-          {
-            "date": "05/09/2026",
-            "match_home": "RB Bragantino",
-            "match_away": "EC Bahia",
-            "venue": "Local",
-            "opponent": "EC Bahia",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "L",
-            "competition": "Campeonato Brasileiro Série A"
-          },
-          {
-            "date": "12/09/2026",
-            "match_home": "Botafogo FR",
-            "match_away": "RB Bragantino",
-            "venue": "Visitante",
-            "opponent": "Botafogo FR",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Campeonato Brasileiro Série A"
-          },
-          {
-            "date": "20/09/2026",
-            "match_home": "CR Flamengo",
-            "match_away": "RB Bragantino",
-            "venue": "Visitante",
-            "opponent": "CR Flamengo",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Campeonato Brasileiro Série A"
-          },
-          {
-            "date": "03/10/2026",
-            "match_home": "CA Mineiro",
-            "match_away": "RB Bragantino",
-            "venue": "Visitante",
-            "opponent": "CA Mineiro",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Campeonato Brasileiro Série A"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "24 May 2024",
@@ -4361,14 +2775,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 1,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "FC København 3 victorias • 1 empates • Braga 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4390,130 +2804,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "AFC Ajax",
-            "venue": "Local",
-            "match_home": "FC Twente",
-            "match_away": "AFC Ajax",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "NEC Nijmegen",
-            "venue": "Visitante",
-            "match_home": "NEC Nijmegen",
-            "match_away": "FC Twente",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "FC Utrecht",
-            "venue": "Local",
-            "match_home": "FC Twente",
-            "match_away": "FC Utrecht",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "31 Ago",
-            "opponent": "PSV Eindhoven",
-            "venue": "Visitante",
-            "match_home": "PSV Eindhoven",
-            "match_away": "FC Twente",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "SC Heerenveen",
-            "venue": "Local",
-            "match_home": "FC Twente",
-            "match_away": "SC Heerenveen",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "27 Sep",
-            "opponent": "SC Heerenveen",
-            "venue": "Visitante",
-            "match_home": "SC Heerenveen",
-            "match_away": "Thun",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Sparta Rotterdam",
-            "venue": "Local",
-            "match_home": "Thun",
-            "match_away": "Sparta Rotterdam",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "AFC Ajax",
-            "venue": "Visitante",
-            "match_home": "AFC Ajax",
-            "match_away": "Thun",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "3 Sep",
-            "opponent": "PSV Eindhoven",
-            "venue": "Local",
-            "match_home": "Thun",
-            "match_away": "PSV Eindhoven",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "25 Ago",
-            "opponent": "Feyenoord",
-            "venue": "Visitante",
-            "match_home": "Feyenoord",
-            "match_away": "Thun",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "24 May 2024",
@@ -4626,14 +2918,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "FC Twente 1 victorias • 3 empates • Thun 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4655,130 +2947,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "26 Sep",
-            "opponent": "1. FC Heidenheim",
-            "venue": "Local",
-            "match_home": "Freiburg",
-            "match_away": "1. FC Heidenheim",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Bayern München",
-            "venue": "Visitante",
-            "match_home": "Bayern München",
-            "match_away": "Freiburg",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "VfL Wolfsburg",
-            "venue": "Local",
-            "match_home": "Freiburg",
-            "match_away": "VfL Wolfsburg",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "31 Ago",
-            "opponent": "FC St. Pauli",
-            "venue": "Visitante",
-            "match_home": "FC St. Pauli",
-            "match_away": "Freiburg",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "Bayer 04 Leverkusen",
-            "venue": "Local",
-            "match_home": "Freiburg",
-            "match_away": "Bayer 04 Leverkusen",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "FC Schalke 04",
-            "venue": "Visitante",
-            "match_home": "FC Schalke 04",
-            "match_away": "Jablonec",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Sep",
-            "opponent": "Werder Bremen",
-            "venue": "Local",
-            "match_home": "Jablonec",
-            "match_away": "Werder Bremen",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "Hertha BSC",
-            "venue": "Visitante",
-            "match_home": "Hertha BSC",
-            "match_away": "Jablonec",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "FC Augsburg",
-            "venue": "Local",
-            "match_home": "Jablonec",
-            "match_away": "FC Augsburg",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "25 Ago",
-            "opponent": "Bayern München",
-            "venue": "Visitante",
-            "match_home": "Bayern München",
-            "match_away": "Jablonec",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "12 May 2024",
@@ -4891,14 +3061,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 2,
           "draws": 1,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Freiburg 2 victorias • 1 empates • Jablonec 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4920,130 +3090,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Aalborg BK",
-            "venue": "Local",
-            "match_home": "Heart of Midlothian",
-            "match_away": "Aalborg BK",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "FC Nordsjælland",
-            "venue": "Visitante",
-            "match_home": "FC Nordsjælland",
-            "match_away": "Heart of Midlothian",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "14 Sep",
-            "opponent": "FC København",
-            "venue": "Local",
-            "match_home": "Heart of Midlothian",
-            "match_away": "FC København",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "29 Ago",
-            "opponent": "Viborg FF",
-            "venue": "Visitante",
-            "match_home": "Viborg FF",
-            "match_away": "Heart of Midlothian",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "AGF Aarhus",
-            "venue": "Local",
-            "match_home": "Heart of Midlothian",
-            "match_away": "AGF Aarhus",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "28 Sep",
-            "opponent": "Aalborg BK",
-            "venue": "Visitante",
-            "match_home": "Aalborg BK",
-            "match_away": "Nordsjælland",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "20 Sep",
-            "opponent": "Lyngby BK",
-            "venue": "Local",
-            "match_home": "Nordsjælland",
-            "match_away": "Lyngby BK",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "15 Sep",
-            "opponent": "Odense Boldklub",
-            "venue": "Visitante",
-            "match_home": "Odense Boldklub",
-            "match_away": "Nordsjælland",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "2 Sep",
-            "opponent": "FC København",
-            "venue": "Local",
-            "match_home": "Nordsjælland",
-            "match_away": "FC København",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "24 Ago",
-            "opponent": "FC Midtjylland",
-            "venue": "Visitante",
-            "match_home": "FC Midtjylland",
-            "match_away": "Nordsjælland",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "18 May 2024",
@@ -5156,14 +3204,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 0,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Heart of Midlothian 3 victorias • 0 empates • Nordsjælland 2 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -5185,130 +3233,8 @@
       "timezone": "America/Guatemala",
       "round": "1",
       "h2h": {
-        "home_last_5": [
-          {
-            "date": "25 Sep",
-            "opponent": "Juventus",
-            "venue": "Local",
-            "match_home": "St.Truiden",
-            "match_away": "Juventus",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "FC Barcelona",
-            "venue": "Visitante",
-            "match_home": "FC Barcelona",
-            "match_away": "St.Truiden",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Borussia Dortmund",
-            "venue": "Local",
-            "match_home": "St.Truiden",
-            "match_away": "Borussia Dortmund",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "30 Ago",
-            "opponent": "Real Madrid",
-            "venue": "Visitante",
-            "match_home": "Real Madrid",
-            "match_away": "St.Truiden",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "22 Ago",
-            "opponent": "Inter Milan",
-            "venue": "Local",
-            "match_home": "St.Truiden",
-            "match_away": "Inter Milan",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          }
-        ],
-        "away_last_5": [
-          {
-            "date": "29 Sep",
-            "opponent": "Atlético de Madrid",
-            "venue": "Visitante",
-            "match_home": "Atlético de Madrid",
-            "match_away": "Iberia 1999",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "21 Sep",
-            "opponent": "Bayern München",
-            "venue": "Local",
-            "match_home": "Iberia 1999",
-            "match_away": "Bayern München",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "13 Sep",
-            "opponent": "Sporting CP",
-            "venue": "Visitante",
-            "match_home": "Sporting CP",
-            "match_away": "Iberia 1999",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "1 Sep",
-            "opponent": "Borussia Dortmund",
-            "venue": "Local",
-            "match_home": "Iberia 1999",
-            "match_away": "Borussia Dortmund",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "UEFA Conference League"
-          },
-          {
-            "date": "23 Ago",
-            "opponent": "Paris Saint-Germain",
-            "venue": "Visitante",
-            "match_home": "Paris Saint-Germain",
-            "match_away": "Iberia 1999",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "UEFA Conference League"
-          }
-        ],
+        "home_last_5": [],
+        "away_last_5": [],
         "head_to_head": [
           {
             "date": "18 May 2024",
@@ -5421,14 +3347,14 @@
           "fouls_avg": 11.5
         },
         "projected_corners": 8.9,
+        "projected_cards": 4.5,
         "summary": {
           "home_wins": 3,
           "draws": 1,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "St.Truiden 3 victorias • 1 empates • Iberia 1999 1 victorias"
-        },
-        "projected_cards": 4.5
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

@@ -3,7 +3,7 @@
   "league_id": 73,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-09T22:36:48.084568",
+  "last_updated": "2026-10-12T19:35:39.343255",
   "total_fixtures": 18,
   "team_histories": {
     "AFC Bournemouth": [
@@ -1882,14 +1882,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 9.9,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 1,
           "draws": 2,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "AZ Alkmaar 1 victorias • 2 empates • Hapoel Beer Sheva 2 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2073,14 +2073,14 @@
           "fouls_avg": 16.0
         },
         "projected_corners": 9.9,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 2,
           "draws": 2,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "Lech Poznań 2 victorias • 2 empates • Bayer Leverkusen 1 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2264,14 +2264,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.4,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 2,
           "draws": 0,
           "away_wins": 3,
           "avg_goals": 3.2,
           "text": "Lyon 2 victorias • 0 empates • Crystal Palace 3 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2455,14 +2455,14 @@
           "fouls_avg": 4.0
         },
         "projected_corners": 6.9,
+        "projected_cards": 2.3,
         "summary": {
           "home_wins": 2,
           "draws": 2,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "NK Celje 2 victorias • 2 empates • Omonia Nicosia 1 victorias"
-        },
-        "projected_cards": 2.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2603,14 +2603,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 11.4,
+        "projected_cards": 5.3,
         "summary": {
           "home_wins": 0,
           "draws": 1,
           "away_wins": 1,
           "avg_goals": 3.0,
           "text": "Salzburg 0 victorias • 1 empates • Milan 1 victorias"
-        },
-        "projected_cards": 5.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2794,14 +2794,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 16.4,
+        "projected_cards": 2.8,
         "summary": {
           "home_wins": 1,
           "draws": 2,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Sparta Prague 1 victorias • 2 empates • Lillestrøm 2 victorias"
-        },
-        "projected_cards": 2.8
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -2985,14 +2985,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 11.4,
+        "projected_cards": 6.3,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "Torreense 1 victorias • 3 empates • Sunderland 1 victorias"
-        },
-        "projected_cards": 6.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3176,14 +3176,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 9.9,
+        "projected_cards": 4.8,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "Union St.Gilloise 1 victorias • 3 empates • Real Sociedad 1 victorias"
-        },
-        "projected_cards": 4.8
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3367,14 +3367,14 @@
           "fouls_avg": 12.0
         },
         "projected_corners": 8.4,
+        "projected_cards": 5.3,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "AFC Bournemouth 1 victorias • 3 empates • Sturm Graz 1 victorias"
-        },
-        "projected_cards": 5.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3515,14 +3515,14 @@
           "fouls_avg": 18.0
         },
         "projected_corners": 10.4,
+        "projected_cards": 4.8,
         "summary": {
           "home_wins": 1,
           "draws": 1,
           "away_wins": 0,
           "avg_goals": 1.5,
           "text": "Benfica 1 victorias • 1 empates • Celtic 0 victorias"
-        },
-        "projected_cards": 4.8
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3706,14 +3706,14 @@
           "fouls_avg": 9.0
         },
         "projected_corners": 9.9,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 1,
           "draws": 2,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "Celta Vigo 1 victorias • 2 empates • Juventus 2 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3854,14 +3854,14 @@
           "fouls_avg": 14.0
         },
         "projected_corners": 8.4,
+        "projected_cards": 2.3,
         "summary": {
           "home_wins": 1,
           "draws": 1,
           "away_wins": 0,
           "avg_goals": 1.0,
           "text": "Dinamo Zagreb 1 victorias • 1 empates • Anderlecht 0 victorias"
-        },
-        "projected_cards": 2.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4013,14 +4013,14 @@
           "fouls_avg": 13.0
         },
         "projected_corners": 8.4,
+        "projected_cards": 4.3,
         "summary": {
           "home_wins": 1,
           "draws": 1,
           "away_wins": 1,
           "avg_goals": 2.0,
           "text": "Ferencváros 1 victorias • 1 empates • Viktoria Plzeň 1 victorias"
-        },
-        "projected_cards": 4.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4204,14 +4204,14 @@
           "fouls_avg": 11.0
         },
         "projected_corners": 9.9,
+        "projected_cards": 4.8,
         "summary": {
           "home_wins": 2,
           "draws": 2,
           "away_wins": 1,
           "avg_goals": 2.8,
           "text": "Hoffenheim 2 victorias • 2 empates • Beşiktaş 1 victorias"
-        },
-        "projected_cards": 4.8
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4395,14 +4395,14 @@
           "fouls_avg": 16.0
         },
         "projected_corners": 5.4,
+        "projected_cards": 5.3,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "Jagiellonia Białystok 1 victorias • 3 empates • Ararat Armenia 1 victorias"
-        },
-        "projected_cards": 5.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4565,14 +4565,14 @@
           "fouls_avg": 10.0
         },
         "projected_corners": 12.4,
+        "projected_cards": 3.8,
         "summary": {
           "home_wins": 2,
           "draws": 0,
           "away_wins": 2,
           "avg_goals": 1.5,
           "text": "Marseille 2 victorias • 0 empates • Olympiacos 2 victorias"
-        },
-        "projected_cards": 3.8
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4756,14 +4756,14 @@
           "fouls_avg": 9.0
         },
         "projected_corners": 7.4,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 3,
           "draws": 0,
           "away_wins": 2,
           "avg_goals": 2.8,
           "text": "NEC Nijmegen 3 victorias • 0 empates • Levski Sofia 2 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4947,14 +4947,14 @@
           "fouls_avg": 8.0
         },
         "projected_corners": 8.4,
+        "projected_cards": 3.3,
         "summary": {
           "home_wins": 1,
           "draws": 3,
           "away_wins": 1,
           "avg_goals": 2.4,
           "text": "Rennes 1 victorias • 3 empates • OFI Crete 1 victorias"
-        },
-        "projected_cards": 3.3
+        }
       },
       "source_api": "FotMob (Scraping Oficial)"
     }
