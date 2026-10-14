@@ -268,7 +268,7 @@
                                     <h4 class="font-bold text-base text-white">{{ m.home_team }}</h4>
                                     <span class="text-[11px] text-gray-400 font-mono">Local</span>
                                     {% if m.home_stats %}
-                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
                                 </div>
 
@@ -282,7 +282,7 @@
                                     <h4 class="font-bold text-base text-white">{{ m.away_team }}</h4>
                                     <span class="text-[11px] text-gray-400 font-mono">Visitante</span>
                                     {% if m.away_stats %}
-                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.away_stats.attack }}/{{ m.away_stats.defense }}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -298,7 +298,7 @@
                             <div>
                                 <div class="flex justify-between text-xs font-semibold mb-1">
                                     <span class="text-blue-400">{{ m.live_stats.possession_home }}%</span>
-                                    <span class="text-gray-400 font-normal text-[11px]">Posesión de Balón</span>
+                                    <span class="text-gray-400 font-normal text-[11px] flex items-center gap-1"><span>⚽</span><span>Posesión</span></span>
                                     <span class="text-rose-400">{{ m.live_stats.possession_away }}%</span>
                                 </div>
                                 <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden flex">
@@ -307,24 +307,24 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1 border-t border-gray-800/50">
-                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros a Puerta</span>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Tiros a Puerta">
+                                    <span class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>🎯</span><span>A Puerta</span></span>
                                     <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
                                         <span class="text-blue-400">{{ m.live_stats.shots_on_target_home }}</span>
                                         <span class="text-gray-500 text-[10px]">-</span>
                                         <span class="text-rose-400">{{ m.live_stats.shots_on_target_away }}</span>
                                     </div>
                                 </div>
-                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block mb-0.5">Tiros Totales</span>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Tiros Totales">
+                                    <span class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚡</span><span>Totales</span></span>
                                     <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
                                         <span class="text-blue-400">{{ m.live_stats.total_shots_home }}</span>
                                         <span class="text-gray-500 text-[10px]">-</span>
                                         <span class="text-rose-400">{{ m.live_stats.total_shots_away }}</span>
                                     </div>
                                 </div>
-                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60">
-                                    <span class="text-[10px] text-gray-400 block mb-0.5">Córners</span>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Tiros de Esquina">
+                                    <span class="text-[10px] text-cyan-400 flex items-center justify-center gap-1 mb-0.5"><span>🚩</span><span>Córners</span></span>
                                     <div class="flex items-center justify-center gap-1 font-mono font-bold text-xs">
                                         <span class="text-blue-400">{{ m.live_stats.corners_home }}</span>
                                         <span class="text-gray-500 text-[10px]">-</span>
@@ -665,14 +665,14 @@
                                 <div class="flex-1 text-left">
                                     <span class="font-bold text-base text-white block">{{ m.home_team }}</span>
                                     {% if m.home_stats %}
-                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}Local: Atq {{ m.home_stats.attack }} • Def {{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Loc: {{ m.home_stats.corners }} (Gen: {{ m.home_stats.corners_gen or m.home_stats.corners }})</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.home_stats.attack_gen }} • Def {{ m.home_stats.defense_gen }}</span>{% endif %}{% else %}Local: Off {{ m.home_stats.off_rating }} • Def {{ m.home_stats.def_rating }}{% if m.home_stats.off_rating_gen is defined and m.home_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.home_stats.off_rating_gen }} • Def {{ m.home_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %} <span class="text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.home_stats.corners }}</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
                                 </div>
                                 <span class="text-xs font-mono font-bold text-gray-500 px-3">vs</span>
                                 <div class="flex-1 text-right">
                                     <span class="font-bold text-base text-white block">{{ m.away_team }}</span>
                                     {% if m.away_stats %}
-                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}Visita: Atq {{ m.away_stats.attack }} • Def {{ m.away_stats.defense }}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9.5px] text-cyan-300 block font-mono">🚩 Corners Vis: {{ m.away_stats.corners }} (Gen: {{ m.away_stats.corners_gen or m.away_stats.corners }})</span>{% endif %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Atq {{ m.away_stats.attack_gen }} • Def {{ m.away_stats.defense_gen }}</span>{% endif %}{% else %}Visita: Off {{ m.away_stats.off_rating }} • Def {{ m.away_stats.def_rating }}{% if m.away_stats.off_rating_gen is defined and m.away_stats.off_rating_gen %}<span class="text-[9px] text-gray-400 block font-sans">Gen: Off {{ m.away_stats.off_rating_gen }} • Def {{ m.away_stats.def_rating_gen }}</span>{% endif %}{% endif %}</span>
+                                    <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.away_stats.corners }} </span>{% endif %}⚽ {{ m.away_stats.attack }}/{{ m.away_stats.defense }}{% else %}🏀 {{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -692,24 +692,24 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2 mt-4 text-center">
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
-                                    <span class="text-[10px] text-gray-400 block">+1.5 Goles</span>
-                                    <span class="text-xs font-bold text-cyan-400">{{ m.prediction.prob_over_15 }}%</span>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Más de 1.5 Goles">
+                                    <span class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>+1.5</span></span>
+                                    <span class="text-xs font-bold text-cyan-400 font-mono">{{ m.prediction.prob_over_15 }}%</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
-                                    <span class="text-[10px] text-gray-400 block">+2.5 Goles</span>
-                                    <span class="text-xs font-bold text-emerald-400">{{ m.prediction.prob_over_25 }}%</span>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Más de 2.5 Goles">
+                                    <span class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>+2.5</span></span>
+                                    <span class="text-xs font-bold text-emerald-400 font-mono">{{ m.prediction.prob_over_25 }}%</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
-                                    <span class="text-[10px] text-gray-400 block">Ambos Marcan</span>
-                                    <span class="text-xs font-bold text-gray-300">{{ m.prediction.prob_btts }}%</span>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Ambos Equipos Anotan">
+                                    <span class="text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>Ambos</span></span>
+                                    <span class="text-xs font-bold text-gray-300 font-mono">{{ m.prediction.prob_btts }}%</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
-                                    <span class="text-[10px] text-gray-400 block">Córners IA</span>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Córners proyectados por IA">
+                                    <span class="text-[10px] text-cyan-400 flex items-center justify-center gap-1 mb-0.5"><span>🚩</span><span>Córners</span></span>
                                     <span class="text-xs font-bold text-cyan-300 font-mono">{{ m.prediction.projected_corners or 9.5 }}</span>
                                 </div>
-                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg">
-                                    <span class="text-[10px] text-gray-400 block">Marcador IA</span>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Marcador más probable">
+                                    <span class="text-[10px] text-amber-400 flex items-center justify-center gap-1 mb-0.5"><span>🎯</span><span>Marcador</span></span>
                                     <span class="text-xs font-bold text-amber-400 font-mono">{{ m.prediction.top_scores[0].score }}</span>
                                 </div>
                             </div>
@@ -857,7 +857,7 @@
                             <i data-lucide="zap" class="w-4 h-4"></i>
                         </div>
                         <div>
-                            <span class="font-bold text-cyan-400 block">T2 • Goles, Córners & Tarjetas</span>
+                            <span class="font-bold text-cyan-400 block">T2 • ⚽ Goles, 🚩 Córners & 🟨 Tarjetas</span>
                             <span class="text-[11px] text-gray-400">Cuota ~10.00x - 18.00x • Mercados mixtos</span>
                         </div>
                     </div>
@@ -949,7 +949,10 @@
                                     <div class="flex items-center justify-between pt-1 gap-2">
                                         <div class="flex items-center gap-1.5 min-w-0">
                                             <span class="w-2 h-2 rounded-full {% if ticket.tier == 1 %}bg-emerald-400{% elif ticket.tier == 2 %}bg-cyan-400{% else %}bg-amber-400{% endif %} shrink-0"></span>
-                                            <span class="font-bold text-xs text-emerald-400 truncate">{{ leg.pick }}</span>
+                                            {% set plegh = leg.pick | lower %}
+                                            <span class="font-bold text-xs text-emerald-400 truncate">
+                                                {% if 'córner' in plegh or 'corner' in plegh %}🚩 {% elif 'tarjeta' in plegh %}🟨 {% elif 'gol' in plegh or 'anotan' in plegh or 'marcan' in plegh %}⚽ {% elif 'victoria' in plegh or 'gana' in plegh %}🏆 {% elif 'empate' in plegh or 'doble' in plegh %}🛡️ {% else %}🎯 {% endif %}{{ leg.pick }}
+                                            </span>
                                         </div>
                                         <div class="flex items-center gap-1.5 shrink-0">
                                             <span class="text-[10px] font-mono text-gray-400">({{ leg.probability }}%)</span>
@@ -1185,14 +1188,14 @@
 
                     <div id="modal-corners-shots-box" class="hidden bg-cyan-950/30 border border-cyan-800/50 p-3.5 rounded-xl">
                         <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider flex items-center gap-1 mb-1.5">
-                            <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400"></i> Análisis de Córners y Remates
+                            <i data-lucide="crosshair" class="w-3.5 h-3.5 text-cyan-400"></i> 🚩 Análisis de Córners y Remates
                         </span>
                         <p id="modal-corners-shots" class="text-gray-200 leading-relaxed font-sans"></p>
                     </div>
 
                     <div id="modal-cards-friction-box" class="hidden bg-amber-950/30 border border-amber-800/50 p-3.5 rounded-xl">
                         <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider flex items-center gap-1 mb-1.5">
-                            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i> Análisis de Tarjetas y Fricción Disciplinaria
+                            <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-amber-400"></i> 🟨 Análisis de Tarjetas y Fricción Disciplinaria
                         </span>
                         <p id="modal-cards-friction" class="text-gray-200 leading-relaxed font-sans"></p>
                     </div>
@@ -1488,6 +1491,7 @@
                 'Austria': '🇦🇹',
                 'Suecia': '🇸🇪',
                 'Grecia': '🇬🇷',
+                'Sudamérica': '🏆',
                 'Internacional': '🌎'
             };
 
@@ -1874,7 +1878,27 @@
                 const fairOdds = p.fair_odds || p.odds || "1.80";
                 const probability = p.probability || p.prob || 50;
 
-                const isCards = marketTitle.includes("Tarjetas");
+                const lowerMarket = marketTitle.toLowerCase();
+                let marketIcon = '🎯 ';
+                let marketColor = 'text-gray-400';
+                if (lowerMarket.includes('tarjeta')) {
+                    marketIcon = '🟨 ';
+                    marketColor = 'text-amber-400';
+                } else if (lowerMarket.includes('córner') || lowerMarket.includes('corner')) {
+                    marketIcon = '🚩 ';
+                    marketColor = 'text-cyan-400';
+                } else if (lowerMarket.includes('gol') || lowerMarket.includes('anotan') || lowerMarket.includes('marcan')) {
+                    marketIcon = '⚽ ';
+                    marketColor = 'text-emerald-400';
+                } else if (lowerMarket.includes('ganador') || lowerMarket.includes('resultado')) {
+                    marketIcon = '🏆 ';
+                    marketColor = 'text-blue-400';
+                } else if (lowerMarket.includes('doble') || lowerMarket.includes('empate')) {
+                    marketIcon = '🛡️ ';
+                    marketColor = 'text-indigo-400';
+                }
+
+                const isCards = lowerMarket.includes("tarjeta");
                 const cardBorder = isCards 
                     ? "border-amber-500/40 bg-gradient-to-b from-amber-950/20 to-gray-950/90 shadow-amber-950/20 shadow-sm" 
                     : "border-gray-800 bg-gray-950/80";
@@ -1889,8 +1913,8 @@
                     <div class="${cardBorder} border rounded-xl p-4 space-y-2.5 flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between pb-2 border-b border-gray-800/80">
-                                <span class="text-[10px] uppercase font-bold ${isCards ? 'text-amber-400' : 'text-gray-400'} tracking-wider flex items-center gap-1">
-                                    ${isCards ? '🟨 ' : ''}${marketTitle}
+                                <span class="text-[10px] uppercase font-bold ${marketColor} tracking-wider flex items-center gap-1">
+                                    ${marketIcon}${marketTitle}
                                 </span>
                                 <div class="flex items-center gap-1.5 flex-wrap justify-end">
                                     ${frictionBadge}
@@ -1939,9 +1963,9 @@
                 if (match.sport === 'football') {
                     homeStreakEl.innerHTML = `
                         <div class="flex flex-col items-end gap-0.5">
-                            <div><span class="text-emerald-400 font-bold">Goles Loc: ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></div>
-                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Loc: ${hs.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${hs.corners_gen || hs.corners || 0}</span></div>
-                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 Tarjetas Loc: ${hs.yellow_cards || 2.1}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${hs.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Faltas: ${hs.fouls || 11.5}</span></div>
+                            <div><span class="text-emerald-400 font-bold">⚽ ${hs.attack || 0}/${hs.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400 font-mono text-[9.5px]">Gen ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 ${hs.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen ${hs.corners_gen || hs.corners || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 ${hs.yellow_cards || 2.1}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${hs.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">⚠️ ${hs.fouls || 11.5}</span></div>
                         </div>
                     `;
                 } else {
@@ -1952,9 +1976,9 @@
                 if (match.sport === 'football') {
                     awayStreakEl.innerHTML = `
                         <div class="flex flex-col items-end gap-0.5">
-                            <div><span class="text-rose-400 font-bold">Goles Vis: ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></div>
-                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 Córners Vis: ${as.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen: ${as.corners_gen || as.corners || 0}</span></div>
-                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 Tarjetas Vis: ${as.yellow_cards || 2.4}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${as.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Faltas: ${as.fouls || 12.0}</span></div>
+                            <div><span class="text-rose-400 font-bold">⚽ ${as.attack || 0}/${as.defense || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400 font-mono text-[9.5px]">Gen ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-cyan-400 font-bold">🚩 ${as.corners || 0}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">Gen ${as.corners_gen || as.corners || 0}</span></div>
+                            <div class="text-[9.5px] font-mono"><span class="text-amber-400 font-bold">🟨 ${as.yellow_cards || 2.4}</span> <span class="text-gray-500">•</span> <span class="text-rose-400 font-bold">🟥 ${as.red_cards || 0.1}</span> <span class="text-gray-500">•</span> <span class="text-gray-400">⚠️ ${as.fouls || 12.0}</span></div>
                         </div>
                     `;
                 } else {
@@ -1995,9 +2019,9 @@
                         const rCards = m.red_cards !== undefined ? m.red_cards : 0;
                         extraStatsHtml = `
                             <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1 flex-wrap gap-1">
-                                <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 Córners: ${m.corners_for} <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
+                                <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 ${m.corners_for} <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
                                 <span class="text-amber-400 flex items-center gap-1 font-semibold">🟨 ${yCards} <span class="text-rose-400">🟥 ${rCards}</span></span>
-                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 Tiros: ${sot}</span>
+                                <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 ${sot}</span>
                             </div>
                         `;
                     }
@@ -2465,7 +2489,16 @@
                             <div class="flex items-center justify-between pt-1 gap-2">
                                 <div class="flex items-center gap-1.5 min-w-0">
                                     <span class="w-2 h-2 rounded-full ${dotColor} shrink-0"></span>
-                                    <span class="font-bold text-xs text-emerald-400 truncate">${leg.pick}</span>
+                                    ${(() => {
+                                        const lowerPick = (leg.pick || '').toLowerCase();
+                                        let pI = '🎯 ';
+                                        if (lowerPick.includes('córner') || lowerPick.includes('corner')) pI = '🚩 ';
+                                        else if (lowerPick.includes('tarjeta')) pI = '🟨 ';
+                                        else if (lowerPick.includes('gol') || lowerPick.includes('anotan') || lowerPick.includes('marcan')) pI = '⚽ ';
+                                        else if (lowerPick.includes('victoria') || lowerPick.includes('gana')) pI = '🏆 ';
+                                        else if (lowerPick.includes('empate') || lowerPick.includes('doble')) pI = '🛡️ ';
+                                        return `<span class="font-bold text-xs text-emerald-400 truncate">${pI}${leg.pick}</span>`;
+                                    })()}
                                 </div>
                                 <div class="flex items-center gap-1.5 shrink-0">
                                     <span class="text-[10px] font-mono text-gray-400">(${leg.probability}%)</span>

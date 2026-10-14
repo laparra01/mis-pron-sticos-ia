@@ -112,7 +112,7 @@ def select_ticket_2_goals_corners_cards(matches):
             odds = float(p.get("fair_odds", 1.80) or 1.80)
             prob = float(p.get("probability", 50.0) or 50.0)
 
-            if "Córners" in mkt and odds >= 1.50:
+            if "Córners" in mkt and 1.50 <= odds <= 2.50 and prob >= 35.0:
                 item = dict(base_info)
                 item.update({
                     "market": "Tiros de Esquina",
@@ -122,7 +122,7 @@ def select_ticket_2_goals_corners_cards(matches):
                     "explanation": p.get("explanation", "")
                 })
                 corners_candidates.append(item)
-            elif "Tarjetas" in mkt and odds >= 1.50:
+            elif "Tarjetas" in mkt and 1.50 <= odds <= 2.50 and prob >= 35.0:
                 item = dict(base_info)
                 item.update({
                     "market": "Fricción & Tarjetas",
@@ -132,7 +132,7 @@ def select_ticket_2_goals_corners_cards(matches):
                     "explanation": p.get("explanation", "")
                 })
                 cards_candidates.append(item)
-            elif ("2.5" in mkt or "1.5" in mkt or "Ambos" in mkt) and odds >= 1.50:
+            elif ("2.5" in mkt or "1.5" in mkt or "Ambos" in mkt) and 1.50 <= odds <= 2.50 and prob >= 35.0:
                 item = dict(base_info)
                 item.update({
                     "market": "Mercado de Goles",

@@ -1015,6 +1015,11 @@ LEAGUE_TEAMS_POOL = {
         "Atlético Mineiro", "Botafogo FR", "Grêmio FBPA", "Peñarol", "Nacional de Montevideo",
         "Colo-Colo", "Bolívar", "The Strongest", "Independiente del Valle", "Liga de Quito", "Cerro Porteño", "Olimpia"
     ],
+    "sudamericana": [
+        "Cruzeiro", "Corinthians", "Racing Club", "Lanús", "Athletico Paranaense",
+        "Fortaleza", "Independiente Medellín", "Libertad", "Boca Juniors", "Rosario Central",
+        "Belgrano", "Universidad Católica (Ecu)", "Sportivo Ameliano", "Cuiabá"
+    ],
     "champions": [
         "Real Madrid", "Manchester City", "FC Barcelona", "Bayern München", "Paris Saint-Germain",
         "Arsenal", "Liverpool", "Inter Milan", "Atlético de Madrid", "Borussia Dortmund", "Bayer Leverkusen",
@@ -1207,7 +1212,9 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     # 3. Torneos Continentales de Clubes
     if any(k in l_low for k in ["champions league", "uefa champions", "europa league"]):
         return "UEFA Champions League", "Europa", "🏆", LEAGUE_TEAMS_POOL["champions"]
-    if any(k in l_low for k in ["libertadores", "sudamericana", "conmebol"]):
+    if "sudamericana" in l_low:
+        return "Copa CONMEBOL Sudamericana", "Sudamérica", "🏆", LEAGUE_TEAMS_POOL["sudamericana"]
+    if any(k in l_low for k in ["libertadores", "conmebol"]):
         return "Copa CONMEBOL Libertadores", "Sudamérica", "🏆", LEAGUE_TEAMS_POOL["libertadores"]
 
     # 4. Turquía (Süper Lig)

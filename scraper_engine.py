@@ -301,6 +301,25 @@ SUPPORTED_LEAGUES = [
         "flag": "🏆",
         "max_upcoming": 18
     },
+    # Torneos Internacionales CONMEBOL
+    {
+        "id": 45,
+        "slug": "copa_libertadores",
+        "name": "Copa CONMEBOL Libertadores",
+        "country": "Sudamérica",
+        "code": "",
+        "flag": "🏆",
+        "max_upcoming": 18
+    },
+    {
+        "id": 299,
+        "slug": "copa_sudamericana",
+        "name": "Copa CONMEBOL Sudamericana",
+        "country": "Sudamérica",
+        "code": "",
+        "flag": "🏆",
+        "max_upcoming": 18
+    },
 
     # Asia
     {
@@ -752,6 +771,8 @@ def scrape_single_league(cfg, match_cache=None):
         m_id = m.get("id")
         h_name = m.get("home", {}).get("name", "Local")
         a_name = m.get("away", {}).get("name", "Visitante")
+        if any(bad in h_name.lower() or bad in a_name.lower() for bad in ["winner", "semi-final", "tbd", "por definir", "clasificado"]):
+            continue
         raw_utc = m.get("status", {}).get("utcTime", "")
         dt_iso, t_str, ts, pretty_date = parse_utc_to_guatemala(raw_utc)
 
