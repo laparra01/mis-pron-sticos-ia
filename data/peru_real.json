@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-10-15T22:06:24.346022",
+  "last_updated": "2026-10-16T14:28:12.518444",
   "total_fixtures": 15,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -7370,15 +7370,79 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-05-02",
-            "competition": "Liga 1 de Perú",
-            "tournament": "Liga 1 de Perú",
+            "date": "02/05/2026",
+            "competition": "Liga 1",
+            "tournament": "Liga 1",
             "match_home": "Asociación Deportiva Tarma",
             "match_away": "Atlético Grau",
+            "home_id": "1104719",
+            "away_id": "920789",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1104719.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/920789.png",
             "home_score": 1,
             "away_score": 0,
             "score": "1 - 0",
             "winner": "Asociación Deportiva Tarma"
+          },
+          {
+            "date": "31/08/2025",
+            "competition": "Liga 1 Clausura",
+            "tournament": "Liga 1 Clausura",
+            "match_home": "Atlético Grau",
+            "match_away": "Asociación Deportiva Tarma",
+            "home_id": "920789",
+            "away_id": "1104719",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/920789.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1104719.png",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Atlético Grau"
+          },
+          {
+            "date": "15/02/2025",
+            "competition": "Liga 1 Apertura",
+            "tournament": "Liga 1 Apertura",
+            "match_home": "Asociación Deportiva Tarma",
+            "match_away": "Atlético Grau",
+            "home_id": "1104719",
+            "away_id": "920789",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1104719.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/920789.png",
+            "home_score": 4,
+            "away_score": 3,
+            "score": "4 - 3",
+            "winner": "Asociación Deportiva Tarma"
+          },
+          {
+            "date": "04/08/2024",
+            "competition": "Liga 1 Clausura",
+            "tournament": "Liga 1 Clausura",
+            "match_home": "Asociación Deportiva Tarma",
+            "match_away": "Atlético Grau",
+            "home_id": "1104719",
+            "away_id": "920789",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1104719.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/920789.png",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "winner": "Atlético Grau"
+          },
+          {
+            "date": "25/02/2024",
+            "competition": "Liga 1 Apertura",
+            "tournament": "Liga 1 Apertura",
+            "match_home": "Atlético Grau",
+            "match_away": "Asociación Deportiva Tarma",
+            "home_id": "920789",
+            "away_id": "1104719",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/920789.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1104719.png",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -7428,11 +7492,11 @@
         "projected_corners": 7.6,
         "projected_cards": 4.8,
         "summary": {
-          "home_wins": 0,
-          "draws": 0,
-          "away_wins": 1,
-          "avg_goals": 1.0,
-          "text": "Atlético Grau 0 victorias • 0 empates • Asociación Deportiva Tarma 1 victorias"
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.4,
+          "text": "Atlético Grau 2 victorias • 1 empates • Asociación Deportiva Tarma 2 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"

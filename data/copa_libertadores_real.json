@@ -3,7 +3,7 @@
   "league_id": 45,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-10-15T22:09:01.164235",
+  "last_updated": "2026-10-16T14:30:01.403591",
   "total_fixtures": 2,
   "team_histories": {
     "2 de Mayo": [
@@ -7314,6 +7314,21 @@
         ],
         "head_to_head": [
           {
+            "date": "16/10/2026",
+            "competition": "Copa Libertadores",
+            "tournament": "Copa Libertadores",
+            "match_home": "Estudiantes",
+            "match_away": "Flamengo",
+            "home_id": "10094",
+            "away_id": "9770",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10094.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9770.png",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
+          {
             "date": "21/05/2026",
             "competition": "Copa Libertadores",
             "tournament": "Copa Libertadores",
@@ -7422,10 +7437,10 @@
         "projected_cards": 5.1,
         "summary": {
           "home_wins": 2,
-          "draws": 1,
+          "draws": 2,
           "away_wins": 1,
-          "avg_goals": 1.8,
-          "text": "Flamengo 2 victorias • 1 empates • Estudiantes 1 victorias"
+          "avg_goals": 1.4,
+          "text": "Flamengo 2 victorias • 2 empates • Estudiantes 1 victorias"
         }
       },
       "source_api": "FotMob (Scraping Oficial)"
