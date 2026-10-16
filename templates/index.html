@@ -168,22 +168,21 @@
 
         <!-- Secondary Section Switcher: EN VIVO vs PRÓXIMOS -->
         <section class="flex items-center justify-between border-b border-gray-800 mb-6 gap-2">
-            <div class="flex items-center gap-2 overflow-x-auto">
-                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap">
+            <div class="flex items-center gap-2">
+                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-2 pb-3 px-3 sm:px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap cursor-pointer group" title="Partidos En Vivo ({{ live_matches|length }})">
                     <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-live"></span>
-                    <span>Partidos En Vivo ({{ live_matches|length }})</span>
+                    <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30 font-bold group-hover:scale-105 transition-transform">({{ live_matches|length }})</span>
                 </button>
-                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap">
-                    <i data-lucide="calendar" class="w-4 h-4"></i>
-                    <span>Próximos Partidos ({{ upcoming_matches|length }})</span>
-                    {% if live_api_active %}
-                    <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold ml-1">Partidos Reales</span>
-                    {% endif %}
+                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group" title="Próximos Partidos ({{ upcoming_matches|length }})">
+                    <i data-lucide="calendar" class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform"></i>
+                    <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700 font-bold group-hover:scale-105 transition-transform">({{ upcoming_matches|length }})</span>
                 </button>
-                <button onclick="switchTab('parleys')" id="tab-btn-parleys" class="flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-amber-400/90 hover:text-amber-300 transition whitespace-nowrap">
-                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 animate-pulse"></i>
-                    <span>🎯 Parleys Soñadores (3)</span>
-                    <span class="bg-gradient-to-r from-amber-500/20 to-orange-500/20 text-amber-300 border border-amber-500/40 text-[10px] px-2 py-0.5 rounded-full font-bold ml-1">Gemini AI</span>
+                <button onclick="switchTab('parleys')" id="tab-btn-parleys" class="flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-amber-400/90 hover:text-amber-300 transition whitespace-nowrap cursor-pointer group" title="Parleys Soñadores (Gemini AI)">
+                    <span class="flex items-center gap-1">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 animate-pulse"></i>
+                        <span class="text-sm">🎯</span>
+                    </span>
+                    <span class="font-mono text-xs px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold group-hover:scale-105 transition-transform">({{ dream_parleys.tickets|length if dream_parleys and dream_parleys.tickets else 3 }})</span>
                 </button>
             </div>
             <div class="flex items-center gap-2 mb-3 shrink-0">
@@ -265,7 +264,7 @@
                         <div class="py-4">
                             <div class="flex items-center justify-between">
                                 <div class="flex-1 text-left">
-                                    <h4 class="font-bold text-base text-white">{{ m.home_team }}</h4>
+                                    <h4 class="font-bold text-base text-white flex items-center gap-2">{% if m.home_logo %}<img src="{{ m.home_logo }}" alt="{{ m.home_team }}" class="w-5 h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}<span>{{ m.home_team }}</span></h4>
                                     <span class="text-[11px] text-gray-400 font-mono">Local</span>
                                     {% if m.home_stats %}
                                     <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
@@ -279,7 +278,7 @@
                                 </div>
 
                                 <div class="flex-1 text-right">
-                                    <h4 class="font-bold text-base text-white">{{ m.away_team }}</h4>
+                                    <h4 class="font-bold text-base text-white flex items-center justify-end gap-2"><span>{{ m.away_team }}</span>{% if m.away_logo %}<img src="{{ m.away_logo }}" alt="{{ m.away_team }}" class="w-5 h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}</h4>
                                     <span class="text-[11px] text-gray-400 font-mono">Visitante</span>
                                     {% if m.away_stats %}
                                     <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.away_stats.attack }}/{{ m.away_stats.defense }}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }}{% endif %}</span>
@@ -663,14 +662,14 @@
                         <div class="py-4">
                             <div class="flex items-center justify-between mb-3">
                                 <div class="flex-1 text-left">
-                                    <span class="font-bold text-base text-white block">{{ m.home_team }}</span>
+                                    <span class="font-bold text-base text-white flex items-center gap-2">{% if m.home_logo %}<img src="{{ m.home_logo }}" alt="{{ m.home_team }}" class="w-5 h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}<span class="truncate">{{ m.home_team }}</span></span>
                                     {% if m.home_stats %}
                                     <span class="text-[10px] text-emerald-400 font-mono block">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %} <span class="text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.home_stats.corners }}</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
                                 </div>
                                 <span class="text-xs font-mono font-bold text-gray-500 px-3">vs</span>
                                 <div class="flex-1 text-right">
-                                    <span class="font-bold text-base text-white block">{{ m.away_team }}</span>
+                                    <span class="font-bold text-base text-white flex items-center justify-end gap-2"><span class="truncate">{{ m.away_team }}</span>{% if m.away_logo %}<img src="{{ m.away_logo }}" alt="{{ m.away_team }}" class="w-5 h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}</span>
                                     {% if m.away_stats %}
                                     <span class="text-[10px] text-rose-400 font-mono block">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.away_stats.corners }} </span>{% endif %}⚽ {{ m.away_stats.attack }}/{{ m.away_stats.defense }}{% else %}🏀 {{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }}{% endif %}</span>
                                     {% endif %}
@@ -942,8 +941,12 @@
                                         <span class="text-[10px] font-mono text-emerald-400 font-semibold shrink-0">{{ leg.date }} • {{ leg.time }} GT</span>
                                     </div>
 
-                                    <div class="font-bold text-xs text-white">
-                                        {{ leg.home_team }} <span class="text-gray-500 font-normal">vs</span> {{ leg.away_team }}
+                                    <div class="font-bold text-xs text-white flex items-center gap-1.5 flex-wrap">
+                                        {% if leg.home_logo %}<img src="{{ leg.home_logo }}" alt="{{ leg.home_team }}" class="w-3.5 h-3.5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}
+                                        <span>{{ leg.home_team }}</span>
+                                        <span class="text-gray-500 font-normal text-[11px]">vs</span>
+                                        <span>{{ leg.away_team }}</span>
+                                        {% if leg.away_logo %}<img src="{{ leg.away_logo }}" alt="{{ leg.away_team }}" class="w-3.5 h-3.5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}
                                     </div>
 
                                     <div class="flex items-center justify-between pt-1 gap-2">
@@ -1042,19 +1045,19 @@
                 </button>
             </div>
 
-            <!-- Modal Sub-Navigation Tabs -->
-            <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-4 text-xs font-bold overflow-x-auto">
-                <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap">
+            <!-- Modal Sub-Navigation Tabs (Solo Íconos) -->
+            <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-3 sm:gap-6 text-sm font-bold">
+                <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 px-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110" title="Pronósticos, Córners y Tarjetas">
                     <i data-lucide="target" class="w-4 h-4"></i>
-                    <span>🎯 Pronósticos, Córners y Tarjetas</span>
+                    <span class="text-base">🎯</span>
                 </button>
-                <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
+                <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110" title="Historial H2H y Estadísticas">
                     <i data-lucide="history" class="w-4 h-4"></i>
-                    <span>📊 Historial H2H y Estadísticas</span>
+                    <span class="text-base">📊</span>
                 </button>
-                <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap">
+                <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110" title="Análisis Deportivo Google Gemini">
                     <i data-lucide="bot" class="w-4 h-4"></i>
-                    <span>🧠 Análisis Deportivo Google Gemini</span>
+                    <span class="text-base">🧠</span>
                 </button>
             </div>
 
@@ -1078,17 +1081,56 @@
                 <div id="modal-content-h2h" class="hidden space-y-4">
                     <div class="flex items-center justify-between pb-1">
                         <div>
-                            <h4 class="font-bold text-sm text-white">Historial de Rendimiento y Cara a Cara (H2H)</h4>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-2">
+                                <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+                                Historial de Rendimiento y Cara a Cara (H2H)
+                            </h4>
                             <p class="text-gray-400 text-[11px]">Últimos 5 partidos del local, últimos 5 del visitante y los 5 enfrentamientos directos entre ellos.</p>
                         </div>
                     </div>
+
+                    <!-- Banner de Enfrentamiento Directo con Escudos -->
+                    <div id="h2h-matchup-banner" class="bg-gradient-to-r from-blue-950/40 via-gray-900/90 to-rose-950/40 border border-gray-800 rounded-2xl p-4 flex items-center justify-between shadow-xl relative overflow-hidden">
+                        <!-- Equipo Local -->
+                        <div class="flex items-center gap-3 min-w-0 flex-1 z-10">
+                            <div id="h2h-home-logo-wrap" class="w-12 h-12 rounded-2xl bg-gray-950/90 border border-gray-800/90 flex items-center justify-center p-2 shadow-inner shrink-0 relative">
+                                <img id="h2h-home-badge" src="" alt="Local" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://images.fotmob.com/image_resources/logo/teamlogo/default.png';">
+                            </div>
+                            <div class="min-w-0">
+                                <span class="text-[10px] uppercase font-bold text-blue-400 tracking-wider flex items-center gap-1">
+                                    <i data-lucide="home" class="w-3 h-3"></i> LOCAL
+                                </span>
+                                <h5 id="h2h-home-name-banner" class="font-bold text-sm text-white truncate">Local</h5>
+                            </div>
+                        </div>
+
+                        <!-- VS & Resumen -->
+                        <div class="px-3 text-center shrink-0 z-10">
+                            <span class="font-black text-xs tracking-wider bg-gray-950/90 text-amber-400 border border-amber-500/30 px-3 py-1 rounded-xl shadow-md inline-block font-mono">VS</span>
+                            <div id="h2h-summary-badge" class="text-[10px] text-gray-300 font-mono mt-1 whitespace-nowrap"></div>
+                        </div>
+
+                        <!-- Equipo Visitante -->
+                        <div class="flex items-center justify-end gap-3 min-w-0 flex-1 text-right z-10">
+                            <div class="min-w-0">
+                                <span class="text-[10px] uppercase font-bold text-rose-400 tracking-wider flex items-center justify-end gap-1">
+                                    VISITANTE <i data-lucide="plane" class="w-3 h-3"></i>
+                                </span>
+                                <h5 id="h2h-away-name-banner" class="font-bold text-sm text-white truncate">Visitante</h5>
+                            </div>
+                            <div id="h2h-away-logo-wrap" class="w-12 h-12 rounded-2xl bg-gray-950/90 border border-gray-800/90 flex items-center justify-center p-2 shadow-inner shrink-0 relative">
+                                <img id="h2h-away-badge" src="" alt="Visitante" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://images.fotmob.com/image_resources/logo/teamlogo/default.png';">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-3.5" id="modal-h2h-grid">
                         <!-- Columna Local -->
                         <div class="bg-gray-950/70 border border-gray-800 rounded-xl p-3.5 flex flex-col justify-between">
                             <div>
                                 <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
                                     <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
-                                        <i data-lucide="home" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
+                                        <span id="h2h-home-col-shield" class="shrink-0 flex items-center"></span>
                                         <span id="h2h-home-title">Últimos 5 Local</span>
                                     </span>
                                     <span id="h2h-home-streak" class="text-[10px] text-gray-400 font-mono"></span>
@@ -1103,7 +1145,7 @@
                             <div>
                                 <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
                                     <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
-                                        <i data-lucide="plane" class="w-3.5 h-3.5 text-rose-400 shrink-0"></i>
+                                        <span id="h2h-away-col-shield" class="shrink-0 flex items-center"></span>
                                         <span id="h2h-away-title">Últimos 5 Visitante</span>
                                     </span>
                                     <span id="h2h-away-streak" class="text-[10px] text-gray-400 font-mono"></span>
@@ -1118,7 +1160,7 @@
                             <div>
                                 <div class="flex items-center justify-between pb-2 mb-2 border-b border-gray-800">
                                     <span class="font-bold text-gray-200 text-xs flex items-center gap-1.5 truncate">
-                                        <i data-lucide="swords" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                                        <span id="h2h-direct-col-shields" class="shrink-0 flex items-center gap-1"></span>
                                         <span>Cara a Cara Directo</span>
                                     </span>
                                     <span class="text-[10px] text-amber-400 font-mono">5 Partidos</span>
@@ -1235,6 +1277,40 @@
         lucide.createIcons();
 
         const allMatchesData = {{ all_matches | tojson }};
+        const teamLogosMap = {{ team_logos | tojson if team_logos else '{}' }};
+        const teamLogosMapNorm = {{ team_logos_norm | tojson if team_logos_norm else '{}' }};
+        window.teamLogosMap = teamLogosMap;
+        window.teamLogosMapNorm = teamLogosMapNorm;
+
+        function getTeamLogoUrl(teamName, currentMatch) {
+            if (!teamName) return '';
+            if (currentMatch) {
+                if (teamName === currentMatch.home_team && currentMatch.home_logo) return currentMatch.home_logo;
+                if (teamName === currentMatch.away_team && currentMatch.away_logo) return currentMatch.away_logo;
+            }
+            if (window.teamLogosMap && window.teamLogosMap[teamName]) {
+                return window.teamLogosMap[teamName];
+            }
+            const norm = teamName.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+            if (window.teamLogosMapNorm && window.teamLogosMapNorm[norm]) {
+                return window.teamLogosMapNorm[norm];
+            }
+            if (window.teamLogosMapNorm) {
+                for (const [k, v] of Object.entries(window.teamLogosMapNorm)) {
+                    if (k && (k.includes(norm) || norm.includes(k))) return v;
+                }
+            }
+            return '';
+        }
+
+        function renderTeamLogoHtml(logoUrl, teamName, sizeClass = "w-4 h-4") {
+            const cleanName = teamName ? teamName.replace(/"/g, '&quot;') : '';
+            const abbr = (teamName || '').substring(0, 3).toUpperCase();
+            if (logoUrl) {
+                return `<img src="${logoUrl}" alt="${cleanName}" title="${cleanName}" class="${sizeClass} object-contain inline-block shrink-0 rounded-xs align-middle" loading="lazy" onerror="this.onerror=null; this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.classList.remove('hidden');"><span class="hidden ${sizeClass} text-[9px] font-bold font-mono bg-gray-800 text-gray-300 rounded border border-gray-700 inline-flex items-center justify-center shrink-0" title="${cleanName}">${abbr || '🛡️'}</span>`;
+            }
+            return `<span class="${sizeClass} text-[9px] font-bold font-mono bg-gray-800 text-gray-300 rounded border border-gray-700 inline-flex items-center justify-center shrink-0" title="${cleanName}">${abbr || '🛡️'}</span>`;
+        }
 
         let currentCategory = 'all';
         let currentDateFilter = 'all';
@@ -1796,23 +1872,23 @@
                 if (liveSec) liveSec.classList.remove('hidden');
                 if (upcomingSec) upcomingSec.classList.add('hidden');
                 if (parleysSec) parleysSec.classList.add('hidden');
-                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap";
-                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap";
-                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-amber-300 transition whitespace-nowrap";
+                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-bold text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap cursor-pointer group";
+                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group";
+                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-amber-300 transition whitespace-nowrap cursor-pointer group";
             } else if (tab === 'upcoming') {
                 if (liveSec) liveSec.classList.add('hidden');
                 if (upcomingSec) upcomingSec.classList.remove('hidden');
                 if (parleysSec) parleysSec.classList.add('hidden');
-                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap";
-                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap";
-                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-amber-300 transition whitespace-nowrap";
+                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group";
+                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-bold text-sm border-b-2 border-emerald-500 text-emerald-400 transition whitespace-nowrap cursor-pointer group";
+                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-amber-300 transition whitespace-nowrap cursor-pointer group";
             } else if (tab === 'parleys') {
                 if (liveSec) liveSec.classList.add('hidden');
                 if (upcomingSec) upcomingSec.classList.add('hidden');
                 if (parleysSec) parleysSec.classList.remove('hidden');
-                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap";
-                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap";
-                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-4 font-bold text-sm border-b-2 border-amber-400 text-amber-300 transition whitespace-nowrap";
+                if (tabLive) tabLive.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group";
+                if (tabUpcoming) tabUpcoming.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-semibold text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group";
+                if (tabParleys) tabParleys.className = "flex items-center gap-2 pb-3 px-3 sm:px-4 font-bold text-sm border-b-2 border-amber-400 text-amber-300 transition whitespace-nowrap cursor-pointer group";
             }
             if (window.lucide) { lucide.createIcons(); }
         }
@@ -1829,8 +1905,8 @@
             const contentH2h = document.getElementById('modal-content-h2h');
             const contentGemini = document.getElementById('modal-content-gemini');
 
-            const activeClass = "pb-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap";
-            const inactiveClass = "pb-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap";
+            const activeClass = "pb-3 px-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
+            const inactiveClass = "pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
 
             if (tab === 'picks') {
                 btnPicks.className = activeClass;
@@ -1952,6 +2028,56 @@
             const awayList = document.getElementById('h2h-away-list');
             const directList = document.getElementById('h2h-direct-list');
 
+            const homeLogo = match.home_logo || getTeamLogoUrl(match.home_team, match);
+            const awayLogo = match.away_logo || getTeamLogoUrl(match.away_team, match);
+
+            // Actualizar Banner Superior de Enfrentamiento Directo
+            const homeBadgeEl = document.getElementById('h2h-home-badge');
+            if (homeBadgeEl) {
+                if (homeLogo) {
+                    homeBadgeEl.src = homeLogo;
+                    homeBadgeEl.classList.remove('hidden');
+                } else {
+                    homeBadgeEl.classList.add('hidden');
+                }
+            }
+            const awayBadgeEl = document.getElementById('h2h-away-badge');
+            if (awayBadgeEl) {
+                if (awayLogo) {
+                    awayBadgeEl.src = awayLogo;
+                    awayBadgeEl.classList.remove('hidden');
+                } else {
+                    awayBadgeEl.classList.add('hidden');
+                }
+            }
+
+            const homeBannerName = document.getElementById('h2h-home-name-banner');
+            if (homeBannerName) homeBannerName.innerText = match.home_team;
+            const awayBannerName = document.getElementById('h2h-away-name-banner');
+            if (awayBannerName) awayBannerName.innerText = match.away_team;
+
+            const summaryBadge = document.getElementById('h2h-summary-badge');
+            if (summaryBadge) {
+                const sum = h2h.summary || {};
+                summaryBadge.innerText = sum.text || (sum.home_wins !== undefined ? `${sum.home_wins}V • ${sum.draws}E • ${sum.away_wins}V` : 'Cara a cara');
+            }
+
+            // Actualizar Encabezados de Columnas con Escudos
+            const homeColShield = document.getElementById('h2h-home-col-shield');
+            if (homeColShield) homeColShield.innerHTML = renderTeamLogoHtml(homeLogo, match.home_team, 'w-4 h-4');
+
+            const awayColShield = document.getElementById('h2h-away-col-shield');
+            if (awayColShield) awayColShield.innerHTML = renderTeamLogoHtml(awayLogo, match.away_team, 'w-4 h-4');
+
+            const directColShields = document.getElementById('h2h-direct-col-shields');
+            if (directColShields) {
+                directColShields.innerHTML = `
+                    ${renderTeamLogoHtml(homeLogo, match.home_team, 'w-3.5 h-3.5')}
+                    <span class="text-gray-500 text-[10px]">vs</span>
+                    ${renderTeamLogoHtml(awayLogo, match.away_team, 'w-3.5 h-3.5')}
+                `;
+            }
+
             document.getElementById('h2h-home-title').innerText = `${match.home_team}`;
             document.getElementById('h2h-away-title').innerText = `${match.away_team}`;
 
@@ -2009,6 +2135,11 @@
                         awayTeam = isTargetLoc ? m.opponent : targetTeam;
                     }
 
+                    const localLogo = m.home_logo || getTeamLogoUrl(localTeam, match);
+                    const awayLogo = m.away_logo || getTeamLogoUrl(awayTeam, match);
+                    const localLogoHtml = renderTeamLogoHtml(localLogo, localTeam, "w-7 h-7");
+                    const awayLogoHtml = renderTeamLogoHtml(awayLogo, awayTeam, "w-7 h-7");
+
                     const scoreText = m.score || `${m.home_score || 0} - ${m.away_score || 0}`;
 
                     let extraStatsHtml = '';
@@ -2026,21 +2157,36 @@
                         `;
                     }
 
+                    const isLocalTarget = (localTeam === targetTeam);
+                    const isAwayTarget = (awayTeam === targetTeam);
+
                     const itemHtml = `
-                        <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                        <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-2 shadow-sm">
                             <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
-                                <span>${m.date} • ${m.competition || ''}</span>
+                                <span class="truncate max-w-[170px]" title="${m.date} • ${m.competition || ''}">${m.date} • ${m.competition || ''}</span>
                                 <span class="px-2 py-0.5 rounded-full font-bold ${badgeClass}">${resLabel}</span>
                             </div>
-                            <div class="flex items-center justify-between font-sans">
-                                <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
-                                    <span class="${localTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${localTeam}</span>
-                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
-                                    <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
-                                    <span class="${awayTeam === targetTeam ? 'text-white font-bold bg-gray-800/90 px-1.5 py-0.5 rounded' : 'text-gray-300'} truncate">${awayTeam}</span>
-                                    <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                            <div class="flex items-center justify-between font-sans py-1">
+                                <div class="flex items-center gap-3">
+                                    <!-- Escudo Local (Sin texto de nombre) -->
+                                    <div class="flex items-center gap-1.5 cursor-pointer group" title="${localTeam} (Local)">
+                                        <div class="${isLocalTarget ? 'ring-2 ring-emerald-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-emerald-950/60' : 'p-1 bg-gray-950/80 rounded-xl border border-gray-800/80'} flex items-center justify-center shrink-0 transition group-hover:scale-110">
+                                            ${localLogoHtml}
+                                        </div>
+                                        <span class="text-[9px] font-mono font-bold px-1 py-0.5 rounded ${isLocalTarget ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-gray-800/80 text-gray-400'}">L</span>
+                                    </div>
+
+                                    <span class="text-gray-600 text-xs font-mono font-bold">vs</span>
+
+                                    <!-- Escudo Visitante (Sin texto de nombre) -->
+                                    <div class="flex items-center gap-1.5 cursor-pointer group" title="${awayTeam} (Visitante)">
+                                        <div class="${isAwayTarget ? 'ring-2 ring-emerald-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-emerald-950/60' : 'p-1 bg-gray-950/80 rounded-xl border border-gray-800/80'} flex items-center justify-center shrink-0 transition group-hover:scale-110">
+                                            ${awayLogoHtml}
+                                        </div>
+                                        <span class="text-[9px] font-mono font-bold px-1 py-0.5 rounded ${isAwayTarget ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/30' : 'bg-gray-800/80 text-gray-400'}">V</span>
+                                    </div>
                                 </div>
-                                <span class="font-mono font-bold text-emerald-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${scoreText}</span>
+                                <span class="font-mono font-bold text-emerald-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner tracking-wider">${scoreText}</span>
                             </div>
                             ${extraStatsHtml}
                         </div>
@@ -2069,21 +2215,51 @@
                         const vTeam = d.match_away || d.away_team || match.away_team;
                         const score = d.score || "0 - 0";
 
+                        const lLogo = d.home_logo || getTeamLogoUrl(lTeam, match);
+                        const vLogo = d.away_logo || getTeamLogoUrl(vTeam, match);
+                        const lLogoHtml = renderTeamLogoHtml(lLogo, lTeam, "w-7 h-7");
+                        const vLogoHtml = renderTeamLogoHtml(vLogo, vTeam, "w-7 h-7");
+
+                        const isLocalHome = (lTeam === match.home_team);
+                        const isLocalAway = (lTeam === match.away_team);
+                        const isVisitHome = (vTeam === match.home_team);
+                        const isVisitAway = (vTeam === match.away_team);
+
+                        const lRingClass = isLocalHome 
+                            ? 'ring-2 ring-blue-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-blue-950/60'
+                            : (isLocalAway ? 'ring-2 ring-rose-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-rose-950/60' : 'p-1 bg-gray-950/80 rounded-xl border border-gray-800/80');
+
+                        const vRingClass = isVisitHome 
+                            ? 'ring-2 ring-blue-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-blue-950/60'
+                            : (isVisitAway ? 'ring-2 ring-rose-500/80 rounded-xl p-1 bg-gray-800/95 shadow-md shadow-rose-950/60' : 'p-1 bg-gray-950/80 rounded-xl border border-gray-800/80');
+
                         const directHtml = `
-                            <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-1.5 shadow-sm">
+                            <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-2 shadow-sm">
                                 <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
-                                    <span>${d.date} • ${d.tournament || d.competition || ''}</span>
+                                    <span class="truncate max-w-[170px]" title="${d.date} • ${d.tournament || d.competition || ''}">${d.date} • ${d.tournament || d.competition || ''}</span>
                                     <span class="px-2 py-0.5 rounded-full font-bold ${winBadge}">${winText === 'Empate' ? 'Empate' : 'Ganó ' + winText}</span>
                                 </div>
-                                <div class="flex items-center justify-between font-sans">
-                                    <div class="flex items-center gap-1.5 truncate flex-1 mr-2 text-xs">
-                                        <span class="text-gray-200 font-semibold truncate">${lTeam}</span>
-                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(L)</span>
-                                        <span class="text-gray-600 text-xs font-mono shrink-0">vs</span>
-                                        <span class="text-gray-200 font-semibold truncate">${vTeam}</span>
-                                        <span class="text-gray-500 text-[10px] font-mono shrink-0">(V)</span>
+                                <div class="flex items-center justify-between font-sans py-1">
+                                    <div class="flex items-center gap-3">
+                                        <!-- Escudo Local (Sin texto de nombre) -->
+                                        <div class="flex items-center gap-1.5 cursor-pointer group" title="${lTeam} (Local)">
+                                            <div class="${lRingClass} flex items-center justify-center shrink-0 transition group-hover:scale-110">
+                                                ${lLogoHtml}
+                                            </div>
+                                            <span class="text-[9px] font-mono font-bold px-1 py-0.5 rounded ${isLocalHome ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : (isLocalAway ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30' : 'bg-gray-800/80 text-gray-400')}">L</span>
+                                        </div>
+
+                                        <span class="text-gray-600 text-xs font-mono font-bold">vs</span>
+
+                                        <!-- Escudo Visitante (Sin texto de nombre) -->
+                                        <div class="flex items-center gap-1.5 cursor-pointer group" title="${vTeam} (Visitante)">
+                                            <div class="${vRingClass} flex items-center justify-center shrink-0 transition group-hover:scale-110">
+                                                ${vLogoHtml}
+                                            </div>
+                                            <span class="text-[9px] font-mono font-bold px-1 py-0.5 rounded ${isVisitHome ? 'bg-blue-500/20 text-blue-300 border border-blue-500/30' : (isVisitAway ? 'bg-rose-500/20 text-rose-300 border border-rose-500/30' : 'bg-gray-800/80 text-gray-400')}">V</span>
+                                        </div>
                                     </div>
-                                    <span class="font-mono font-bold text-blue-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner">${score}</span>
+                                    <span class="font-mono font-bold text-blue-400 shrink-0 bg-gray-950 px-2.5 py-1 rounded-lg border border-gray-800 text-xs shadow-inner tracking-wider">${score}</span>
                                 </div>
                             </div>
                         `;
@@ -2237,7 +2413,15 @@
             activeMatchId = matchId;
             const match = allMatchesData.find(m => m.id === matchId);
             if (!match) return;
-            document.getElementById('modal-match-title').innerText = `${match.home_team} vs ${match.away_team}`;
+            const homeLogo = match.home_logo || getTeamLogoUrl(match.home_team, match);
+            const awayLogo = match.away_logo || getTeamLogoUrl(match.away_team, match);
+            const homeLogoHtml = renderTeamLogoHtml(homeLogo, match.home_team, "w-5 h-5");
+            const awayLogoHtml = renderTeamLogoHtml(awayLogo, match.away_team, "w-5 h-5");
+            document.getElementById('modal-match-title').innerHTML = `
+                <span class="inline-flex items-center gap-1.5">${homeLogoHtml} <span>${match.home_team}</span></span>
+                <span class="text-gray-500 font-normal text-xs px-1">vs</span>
+                <span class="inline-flex items-center gap-1.5">${awayLogoHtml} <span>${match.away_team}</span></span>
+            `;
             const isBrazil = match.country === 'Brasil' || (match.league && match.league.includes('Brasileir')) || match.country_code === 'br';
             const flagMarkup = isBrazil 
                 ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`

@@ -540,6 +540,11 @@ def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
                 h_name = m.get("home", {}).get("name", "Local")
                 a_name = m.get("away", {}).get("name", "Visitante")
 
+                h_id = m.get("home", {}).get("id")
+                a_id = m.get("away", {}).get("id")
+                h_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{h_id}.png" if h_id else ""
+                a_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{a_id}.png" if a_id else ""
+
                 parts = score_str.split("-")
                 h_sc = int(parts[0].strip()) if len(parts) == 2 and parts[0].strip().isdigit() else 0
                 a_sc = int(parts[1].strip()) if len(parts) == 2 and parts[1].strip().isdigit() else 0
@@ -556,6 +561,10 @@ def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
                     "tournament": leg_name or default_league_name,
                     "match_home": h_name,
                     "match_away": a_name,
+                    "home_id": h_id,
+                    "away_id": a_id,
+                    "home_logo": h_logo,
+                    "away_logo": a_logo,
                     "home_score": h_sc,
                     "away_score": a_sc,
                     "score": score_str,
@@ -651,6 +660,10 @@ def scrape_single_league(cfg, match_cache=None):
             m_id = m.get("id")
             h_name = m.get("home", {}).get("name", "Local")
             a_name = m.get("away", {}).get("name", "Visitante")
+            h_id = m.get("home", {}).get("id")
+            a_id = m.get("away", {}).get("id")
+            h_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{h_id}.png" if h_id else ""
+            a_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{a_id}.png" if a_id else ""
             is_loc = (h_name.lower() == team.lower())
             opp_name = a_name if is_loc else h_name
 
@@ -717,6 +730,10 @@ def scrape_single_league(cfg, match_cache=None):
                 "venue": "Local" if is_loc else "Visitante",
                 "match_home": h_name,
                 "match_away": a_name,
+                "home_id": h_id,
+                "away_id": a_id,
+                "home_logo": h_logo,
+                "away_logo": a_logo,
                 "home_score": h_sc,
                 "away_score": a_sc,
                 "score": score_str,
@@ -771,6 +788,10 @@ def scrape_single_league(cfg, match_cache=None):
         m_id = m.get("id")
         h_name = m.get("home", {}).get("name", "Local")
         a_name = m.get("away", {}).get("name", "Visitante")
+        h_id = m.get("home", {}).get("id")
+        a_id = m.get("away", {}).get("id")
+        h_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{h_id}.png" if h_id else ""
+        a_logo = f"https://images.fotmob.com/image_resources/logo/teamlogo/{a_id}.png" if a_id else ""
         if any(bad in h_name.lower() or bad in a_name.lower() for bad in ["winner", "semi-final", "tbd", "por definir", "clasificado"]):
             continue
         raw_utc = m.get("status", {}).get("utcTime", "")
@@ -846,6 +867,10 @@ def scrape_single_league(cfg, match_cache=None):
             "country_flag": l_flag,
             "home_team": h_name,
             "away_team": a_name,
+            "home_id": h_id,
+            "away_id": a_id,
+            "home_logo": h_logo,
+            "away_logo": a_logo,
             "date": pretty_date,
             "date_iso": dt_iso,
             "time": t_str,

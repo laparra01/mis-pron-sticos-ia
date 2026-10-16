@@ -1,12 +1,15 @@
 import os
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify, request
-from data_provider import fetch_matches_data, fetch_live_matches_data, get_config
+from data_provider import fetch_matches_data, fetch_live_matches_data, get_config, load_team_logos
 from dream_parleys_engine import get_or_generate_dream_parleys
 import gzip
 base_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = os.path.join(base_dir, "templates") if os.path.isdir(os.path.join(base_dir, "templates")) else base_dir
 app = Flask(__name__, template_folder=template_dir)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+app.jinja_env.auto_reload = True
+
 
 @app.after_request
 def compress_response(response):
@@ -91,6 +94,7 @@ def index():
 
         now_ts = datetime.now().timestamp()
         today_pending_count = sum(1 for m in upcoming_matches if m.get("date_iso") == today_iso and (m.get("timestamp") or 0) >= now_ts - 300)
+        team_logos, team_logos_norm = load_team_logos()
 
         context = dict(
             live_matches=live_matches,
@@ -105,7 +109,9 @@ def index():
             tomorrow_str=tomorrow_str,
             today_pending_count=today_pending_count,
             countries=unique_countries,
-            leagues=unique_leagues
+            leagues=unique_leagues,
+            team_logos=team_logos,
+            team_logos_norm=team_logos_norm
         )
 
         try:

@@ -3,6 +3,7 @@ import json
 import requests
 import re
 import time
+import unicodedata
 from datetime import datetime
 import importlib
 try:
@@ -20,6 +21,86 @@ def get_config():
     except Exception:
         config = None
     return config
+
+_TEAM_LOGOS = {}
+_TEAM_LOGOS_NORM = {}
+
+def load_team_logos():
+    global _TEAM_LOGOS, _TEAM_LOGOS_NORM
+    if _TEAM_LOGOS:
+        return _TEAM_LOGOS, _TEAM_LOGOS_NORM
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    fpath = os.path.join(base_dir, "data", "team_logos.json")
+    if os.path.exists(fpath):
+        try:
+            with open(fpath, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                _TEAM_LOGOS = data.get("logos", {})
+                _TEAM_LOGOS_NORM = data.get("normalized", {})
+        except Exception:
+            pass
+    return _TEAM_LOGOS, _TEAM_LOGOS_NORM
+
+def get_team_logo(team_name, sport="football", team_id=None):
+    if team_id:
+        return f"https://images.fotmob.com/image_resources/logo/teamlogo/{team_id}.png"
+    if not team_name:
+        return ""
+    logos, norm_logos = load_team_logos()
+    if team_name in logos:
+        return logos[team_name]
+    norm = unicodedata.normalize("NFKD", str(team_name)).encode("ASCII", "ignore").decode("utf-8").lower().strip()
+    if norm in norm_logos:
+        return norm_logos[norm]
+    # Búsqueda parcial o insensible
+    for k, v in norm_logos.items():
+        if k and (k in norm or norm in k):
+            return v
+    return ""
+
+def enrich_h2h_with_logos(h2h_data, home_team=None, away_team=None, home_logo="", away_logo=""):
+    if not isinstance(h2h_data, dict):
+        return h2h_data
+    
+    for sub_match in h2h_data.get("home_last_5", []):
+        m_home = sub_match.get("match_home")
+        m_away = sub_match.get("match_away")
+        if not m_home and sub_match.get("venue") == "Local":
+            m_home = home_team
+            m_away = sub_match.get("opponent")
+        elif not m_home and sub_match.get("venue") == "Visitante":
+            m_home = sub_match.get("opponent")
+            m_away = home_team
+        
+        if not sub_match.get("home_logo"):
+            sub_match["home_logo"] = home_logo if (m_home == home_team and home_logo) else get_team_logo(m_home)
+        if not sub_match.get("away_logo"):
+            sub_match["away_logo"] = away_logo if (m_away == away_team and away_logo) else get_team_logo(m_away)
+
+    for sub_match in h2h_data.get("away_last_5", []):
+        m_home = sub_match.get("match_home")
+        m_away = sub_match.get("match_away")
+        if not m_home and sub_match.get("venue") == "Local":
+            m_home = away_team
+            m_away = sub_match.get("opponent")
+        elif not m_home and sub_match.get("venue") == "Visitante":
+            m_home = sub_match.get("opponent")
+            m_away = away_team
+
+        if not sub_match.get("home_logo"):
+            sub_match["home_logo"] = home_logo if (m_home == home_team and home_logo) else get_team_logo(m_home)
+        if not sub_match.get("away_logo"):
+            sub_match["away_logo"] = away_logo if (m_away == away_team and away_logo) else get_team_logo(m_away)
+
+    for d in h2h_data.get("head_to_head", []):
+        m_home = d.get("match_home") or d.get("home_team") or home_team
+        m_away = d.get("match_away") or d.get("away_team") or away_team
+        if not d.get("home_logo"):
+            d["home_logo"] = home_logo if (m_home == home_team and home_logo) else get_team_logo(m_home)
+        if not d.get("away_logo"):
+            d["away_logo"] = away_logo if (m_away == away_team and away_logo) else get_team_logo(m_away)
+
+    return h2h_data
 
 
 from prediction_engine import (
@@ -975,6 +1056,10 @@ def fetch_espn_live_soccer():
                         "display_clock": display_clock
                     }, pred, live_stats)
 
+                    home_logo = home.get("team", {}).get("logo") or get_team_logo(home_name, "football")
+                    away_logo = away.get("team", {}).get("logo") or get_team_logo(away_name, "football")
+                    enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
                     live_list.append({
                         "id": f"espn_soc_{e.get('id')}",
                         "sport": "football",
@@ -984,6 +1069,8 @@ def fetch_espn_live_soccer():
                         "country_flag": flag,
                         "home_team": home_name,
                         "away_team": away_name,
+                        "home_logo": home_logo,
+                        "away_logo": away_logo,
                         "minute": minute,
                         "display_clock": display_clock,
                         "clock_label": clock_label,
@@ -1079,6 +1166,10 @@ def fetch_espn_live_nba():
                     )
                     ai_resp = generate_nba_live_ai_analysis({"home_team": home_name, "away_team": away_name}, pred, live_stats)
 
+                    home_logo = home.get("team", {}).get("logo") or get_team_logo(home_name, "nba")
+                    away_logo = away.get("team", {}).get("logo") or get_team_logo(away_name, "nba")
+                    enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
                     live_list.append({
                         "id": f"espn_nba_{e.get('id')}",
                         "sport": "nba",
@@ -1088,6 +1179,8 @@ def fetch_espn_live_nba():
                         "country_flag": "🇺🇸",
                         "home_team": home_name,
                         "away_team": away_name,
+                        "home_logo": home_logo,
+                        "away_logo": away_logo,
                         "quarter": q_label,
                         "score_home": score_h,
                         "score_away": score_a,
@@ -1454,6 +1547,9 @@ def fetch_live_matches_data(sport_filter="all"):
                 live_stats=item["live_stats"]
             )
             ai_resp = generate_live_ai_analysis(item, pred, item["live_stats"])
+            h_logo = get_team_logo(item["home_team"], "football")
+            a_logo = get_team_logo(item["away_team"], "football")
+            enrich_h2h_with_logos(h2h_data, home_team=item["home_team"], away_team=item["away_team"], home_logo=h_logo, away_logo=a_logo)
             c_code_map = {"Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it", "Alemania": "de", "Francia": "fr", "Estados Unidos": "us", "México": "mx", "Argentina": "ar", "Colombia": "co"}
             c_code = c_code_map.get(c_name, "")
             results.append({
@@ -1466,6 +1562,8 @@ def fetch_live_matches_data(sport_filter="all"):
                 "country_flag": c_flag,
                 "home_team": item["home_team"],
                 "away_team": item["away_team"],
+                "home_logo": h_logo,
+                "away_logo": a_logo,
                 "minute": item["minute"],
                 "score_home": item["score_home"],
                 "score_away": item["score_away"],
@@ -1493,6 +1591,9 @@ def fetch_live_matches_data(sport_filter="all"):
                 live_stats=item["live_stats"]
             )
             ai_resp = generate_nba_live_ai_analysis(item, pred, item["live_stats"])
+            h_logo = get_team_logo(item["home_team"], "nba")
+            a_logo = get_team_logo(item["away_team"], "nba")
+            enrich_h2h_with_logos(h2h_data, home_team=item["home_team"], away_team=item["away_team"], home_logo=h_logo, away_logo=a_logo)
             results.append({
                 "id": item["id"],
                 "sport": "nba",
@@ -1503,6 +1604,8 @@ def fetch_live_matches_data(sport_filter="all"):
                 "country_flag": "🇺🇸",
                 "home_team": item["home_team"],
                 "away_team": item["away_team"],
+                "home_logo": h_logo,
+                "away_logo": a_logo,
                 "quarter": item["quarter"],
                 "score_home": item["score_home"],
                 "score_away": item["score_away"],
@@ -1624,6 +1727,9 @@ def load_scraped_matches():
                     c_code = item.get("country_code") or ""
                     l_flag = item.get("league_flag") or "⚽"
                     c_flag = item.get("country_flag") or "⚽"
+                    h_logo = item.get("home_logo") or get_team_logo(h_name, "football", item.get("home_id"))
+                    a_logo = item.get("away_logo") or get_team_logo(a_name, "football", item.get("away_id"))
+                    enrich_h2h_with_logos(h2h_data, home_team=h_name, away_team=a_name, home_logo=h_logo, away_logo=a_logo)
                     scraped_list.append({
                         "id": item.get("id"),
                         "sport": "football",
@@ -1634,6 +1740,10 @@ def load_scraped_matches():
                         "country_flag": c_flag,
                         "home_team": h_name,
                         "away_team": a_name,
+                        "home_logo": h_logo,
+                        "away_logo": a_logo,
+                        "home_id": item.get("home_id"),
+                        "away_id": item.get("away_id"),
                         "date": item.get("date"),
                         "date_iso": item.get("date_iso"),
                         "time": item.get("time"),
