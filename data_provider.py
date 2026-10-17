@@ -1719,9 +1719,10 @@ def load_scraped_matches():
                             "text": f"{h_name} {w_h} victorias • {w_d} empates • {a_name} {w_a} victorias"
                         }
 
+                    ref_info = item.get("referee")
                     home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
                     away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-                    pred = calculate_match_probabilities(home_stats, away_stats, home_team=h_name, away_team=a_name)
+                    pred = calculate_match_probabilities(home_stats, away_stats, home_team=h_name, away_team=a_name, referee=ref_info)
                     analysis = generate_ai_analysis(item, pred)
 
                     c_code = item.get("country_code") or ""
@@ -1732,6 +1733,7 @@ def load_scraped_matches():
                     enrich_h2h_with_logos(h2h_data, home_team=h_name, away_team=a_name, home_logo=h_logo, away_logo=a_logo)
                     scraped_list.append({
                         "id": item.get("id"),
+                        "match_id": item.get("match_id"),
                         "sport": "football",
                         "league": league,
                         "country": country,
@@ -1754,6 +1756,7 @@ def load_scraped_matches():
                         "prediction": pred,
                         "h2h": h2h_data,
                         "ai_analysis": analysis,
+                        "referee": ref_info,
                         "is_live": False,
                         "is_external": True,
                         "source_api": "FotMob (Scraping Oficial)"
@@ -1777,3 +1780,17 @@ def fetch_matches_data(sport_filter="all"):
 
     # Cargar exclusivamente los partidos oficiales escrapeados de FotMob
     return load_scraped_matches()
+
+def get_match_referee(match_id):
+    """
+    Obtiene la información oficial del árbitro en tiempo real o caché para un partido específico.
+    """
+    if not match_id:
+        return None
+    try:
+        from scraper_engine import fetch_referee_from_fotmob
+        return fetch_referee_from_fotmob(match_id)
+    except Exception as e:
+        print(f"[REFEREE ERROR]: {e}")
+        return None
+

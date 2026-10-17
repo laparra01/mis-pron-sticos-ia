@@ -487,6 +487,112 @@ def get_match_stats(match_id, cache, fetch_network=True):
     cache[str_id] = fallback
     return fallback
 
+_REFEREE_CACHE = {}
+
+def parse_fotmob_referee(ref_data):
+    """
+    Parsea y normaliza la información y estadísticas oficiales del árbitro desde FotMob matchDetails.
+    """
+    if not ref_data:
+        return None
+    if isinstance(ref_data, str):
+        ref_data = {"text": ref_data.strip()}
+    if not isinstance(ref_data, dict):
+        return None
+
+    name = ref_data.get("text") or ref_data.get("name") or ""
+    if not name or name.lower() in ("por designar", "to be announced", "tbd", "unknown", "none", "n/a"):
+        return None
+
+    country = ref_data.get("country", "")
+    country_code = ref_data.get("countryCode", "")
+    flag_url = ref_data.get("imgUrl", "")
+
+    stats_list = ref_data.get("stats", []) or []
+    stats_dict = {}
+    for s in stats_list:
+        if isinstance(s, dict) and "type" in s:
+            stats_dict[s["type"]] = s
+
+    # Parse numeric stats
+    matches = int(stats_dict.get("matches", {}).get("value", 0))
+
+    yc_stat = stats_dict.get("yellowCards", {})
+    yc_per_match = float(yc_stat.get("value", 4.2)) if yc_stat.get("value") is not None else 4.2
+    yc_total = int(yc_stat.get("total", 0)) if yc_stat.get("total") is not None else int(round(yc_per_match * matches))
+    yc_league_avg = float(yc_stat.get("average", 4.5)) if yc_stat.get("average") is not None else 4.5
+    yc_tendency = str(yc_stat.get("averageType", "average")).lower()
+
+    rc_stat = stats_dict.get("redCards", {})
+    rc_total = int(rc_stat.get("value", rc_stat.get("total", 0))) if rc_stat.get("value") is not None else 0
+
+    pen_stat = stats_dict.get("penalties", {})
+    pen_total = int(pen_stat.get("value", pen_stat.get("total", 0))) if pen_stat.get("value") is not None else 0
+
+    fouls_stat = stats_dict.get("fouls", {})
+    fouls_per_match = float(fouls_stat.get("value", 25.0)) if fouls_stat.get("value") is not None else 25.0
+    fouls_league_avg = float(fouls_stat.get("average", 25.0)) if fouls_stat.get("average") is not None else 25.0
+
+    # Determinar nivel de rigor y tendencia para mercados de tarjetas
+    if yc_per_match >= 5.0 or (yc_tendency == "above" and yc_per_match >= 4.7):
+        rigor_level = "Riguroso / Tarjetero"
+        rigor_color = "rose"
+        verdict = f"Colegiado tarjetero ({yc_per_match} 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5)."
+        over_cards_favorable = True
+    elif yc_per_match < 3.8 or (yc_tendency == "below" and yc_per_match <= 4.0):
+        rigor_level = "Permisivo / Dejar Jugar"
+        rigor_color = "emerald"
+        verdict = f"Árbitro dialogante y permisivo ({yc_per_match} 🟨/p). Favorece el ritmo y mercado Under de tarjetas."
+        over_cards_favorable = False
+    else:
+        rigor_level = "Estándar / Moderado"
+        rigor_color = "amber"
+        verdict = f"Colegiado equilibrado con {yc_per_match} amarillas y {fouls_per_match} faltas por encuentro."
+        over_cards_favorable = False
+
+    return {
+        "name": name,
+        "country": country,
+        "country_code": country_code,
+        "flag_url": flag_url,
+        "matches": matches,
+        "yellow_cards_per_match": round(yc_per_match, 2),
+        "yellow_cards_total": yc_total,
+        "yellow_cards_avg_league": round(yc_league_avg, 2),
+        "yellow_cards_tendency": yc_tendency,
+        "red_cards_total": rc_total,
+        "penalties_total": pen_total,
+        "fouls_per_match": round(fouls_per_match, 1),
+        "fouls_avg_league": round(fouls_league_avg, 1),
+        "rigor_level": rigor_level,
+        "rigor_color": rigor_color,
+        "verdict": verdict,
+        "over_cards_favorable": over_cards_favorable
+    }
+
+def fetch_referee_from_fotmob(match_id):
+    """
+    Obtiene los datos del árbitro de un partido en tiempo real o desde caché.
+    """
+    if not match_id:
+        return None
+    clean_id = re.findall(r'\d+', str(match_id))[-1] if re.findall(r'\d+', str(match_id)) else str(match_id)
+    if clean_id in _REFEREE_CACHE:
+        return _REFEREE_CACHE[clean_id]
+    url = f"https://www.fotmob.com/api/data/matchDetails?matchId={clean_id}"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=8)
+        if r.status_code == 200:
+            d = r.json()
+            ref_raw = d.get("content", {}).get("matchFacts", {}).get("infoBox", {}).get("Referee")
+            ref_obj = parse_fotmob_referee(ref_raw)
+            if ref_obj:
+                _REFEREE_CACHE[clean_id] = ref_obj
+            return ref_obj
+    except Exception:
+        pass
+    return None
+
 def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
     if not match_id:
         return []
@@ -496,6 +602,12 @@ def fetch_direct_h2h_from_fotmob(match_id, default_league_name):
         r = requests.get(url, headers=HEADERS, timeout=8)
         if r.status_code == 200:
             d = r.json()
+            # Cachear árbitro automáticamente para no repetir peticiones
+            ref_raw = d.get("content", {}).get("matchFacts", {}).get("infoBox", {}).get("Referee")
+            ref_obj = parse_fotmob_referee(ref_raw)
+            if ref_obj and clean_id:
+                _REFEREE_CACHE[clean_id] = ref_obj
+
             h2h_content = d.get("content", {}).get("h2h", {})
             if not isinstance(h2h_content, dict):
                 return []
@@ -887,6 +999,7 @@ def scrape_single_league(cfg, match_cache=None):
                 "projected_cards": proj_cards,
                 "summary": h2h_summary
             },
+            "referee": _REFEREE_CACHE.get(str(m_id)),
             "source_api": "FotMob (Scraping Oficial)"
         })
 

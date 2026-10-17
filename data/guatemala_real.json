@@ -3,7 +3,7 @@
   "league_id": 336,
   "country": "Guatemala",
   "country_code": "gt",
-  "last_updated": "2026-10-16T20:23:37.842929",
+  "last_updated": "2026-10-16T21:12:31.306904",
   "total_fixtures": 12,
   "team_histories": {
     "Antigua Guatemala": [
@@ -2285,6 +2285,7 @@
           "text": "Aurora FC 0 victorias • 0 empates • San Pedro 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2714,6 +2715,7 @@
           "text": "Deportivo Mixco 1 victorias • 2 empates • Coban Imperial 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3143,6 +3145,7 @@
           "text": "CSD Municipal 3 victorias • 1 empates • Guastatoya 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3572,6 +3575,7 @@
           "text": "Deportivo Marquense 3 victorias • 1 empates • CD Suchitepéquez 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4001,6 +4005,7 @@
           "text": "Antigua Guatemala 1 victorias • 2 empates • Club Xelajú 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4430,6 +4435,7 @@
           "text": "Deportivo Malacateco 2 victorias • 0 empates • Comunicaciones FC 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4859,6 +4865,7 @@
           "text": "Club Xelajú 1 victorias • 0 empates • CSD Municipal 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5288,6 +5295,7 @@
           "text": "Guastatoya 2 victorias • 0 empates • Deportivo Mixco 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5717,6 +5725,7 @@
           "text": "Comunicaciones FC 2 victorias • 0 empates • Antigua Guatemala 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6146,6 +6155,7 @@
           "text": "Coban Imperial 2 victorias • 0 empates • Deportivo Marquense 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6515,6 +6525,7 @@
           "text": "San Pedro 0 victorias • 0 empates • Deportivo Malacateco 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6884,6 +6895,7 @@
           "text": "CD Suchitepéquez 0 victorias • 0 empates • Aurora FC 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

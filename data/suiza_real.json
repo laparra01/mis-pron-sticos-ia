@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-16T20:24:32.100804",
+  "last_updated": "2026-10-16T21:14:39.842624",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2345,6 +2345,7 @@
           "text": "FC Zürich 2 victorias • 1 empates • Luzern 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2774,6 +2775,7 @@
           "text": "Servette 3 victorias • 1 empates • FC Vaduz 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3203,6 +3205,7 @@
           "text": "Young Boys 2 victorias • 0 empates • St. Gallen 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3632,6 +3635,7 @@
           "text": "Thun 1 victorias • 0 empates • Lugano 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4061,6 +4065,7 @@
           "text": "Basel 3 victorias • 1 empates • Grasshopper 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4490,6 +4495,7 @@
           "text": "Sion 1 victorias • 2 empates • Lausanne 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4919,6 +4925,7 @@
           "text": "Grasshopper 1 victorias • 2 empates • FC Vaduz 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5348,6 +5355,7 @@
           "text": "St. Gallen 3 victorias • 1 empates • Servette 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5777,6 +5785,7 @@
           "text": "Luzern 1 victorias • 3 empates • Sion 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6206,6 +6215,7 @@
           "text": "Young Boys 5 victorias • 0 empates • FC Zürich 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6635,6 +6645,7 @@
           "text": "Lausanne 1 victorias • 2 empates • Thun 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7064,6 +7075,7 @@
           "text": "Lugano 4 victorias • 1 empates • Basel 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

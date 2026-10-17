@@ -3,7 +3,7 @@
   "league_id": 59,
   "country": "Noruega",
   "country_code": "no",
-  "last_updated": "2026-10-16T20:24:22.000844",
+  "last_updated": "2026-10-16T21:14:19.300734",
   "total_fixtures": 12,
   "team_histories": {
     "Aalesund": [
@@ -2981,6 +2981,25 @@
           "text": "Hamarkameratene 1 victorias • 0 empates • Bodø/Glimt 4 victorias"
         }
       },
+      "referee": {
+        "name": "Jørgen Haugen",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 8,
+        "yellow_cards_per_match": 3.63,
+        "yellow_cards_total": 29,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 3,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.63 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3409,6 +3428,25 @@
           "avg_goals": 3.8,
           "text": "Kristiansund 3 victorias • 1 empates • Aalesund 1 victorias"
         }
+      },
+      "referee": {
+        "name": "Mischa Huru",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 6,
+        "yellow_cards_per_match": 2.0,
+        "yellow_cards_total": 12,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 23.2,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.0 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3839,6 +3877,25 @@
           "text": "Viking 3 victorias • 1 empates • Fredrikstad 1 victorias"
         }
       },
+      "referee": {
+        "name": "Marius Hansen Grøtta",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.48,
+        "yellow_cards_total": 115,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 10,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.48 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4267,6 +4324,25 @@
           "avg_goals": 3.6,
           "text": "Sarpsborg 08 1 victorias • 3 empates • Rosenborg 1 victorias"
         }
+      },
+      "referee": {
+        "name": "Espen Eskås",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 23,
+        "yellow_cards_per_match": 2.91,
+        "yellow_cards_total": 67,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 6,
+        "fouls_per_match": 22.2,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.91 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4697,6 +4773,25 @@
           "text": "Molde 4 victorias • 1 empates • Start 0 victorias"
         }
       },
+      "referee": {
+        "name": "Stian Røvig Sletner",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 25,
+        "yellow_cards_per_match": 3.2,
+        "yellow_cards_total": 80,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 22.2,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.2 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5125,6 +5220,25 @@
           "avg_goals": 3.0,
           "text": "Sandefjord 2 victorias • 0 empates • Lillestrøm 3 victorias"
         }
+      },
+      "referee": {
+        "name": "Tore Hansen",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.46,
+        "yellow_cards_total": 121,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 11,
+        "fouls_per_match": 21.5,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.46 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -5555,6 +5669,25 @@
           "text": "Vålerenga 2 victorias • 0 empates • Brann 3 victorias"
         }
       },
+      "referee": {
+        "name": "Rohit Saggi",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 36,
+        "yellow_cards_per_match": 3.75,
+        "yellow_cards_total": 135,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 8,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.75 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5983,6 +6116,25 @@
           "avg_goals": 2.0,
           "text": "Tromsø 2 victorias • 1 empates • KFUM 2 victorias"
         }
+      },
+      "referee": {
+        "name": "Sigurd Smehus Kringstad",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.79,
+        "yellow_cards_total": 125,
+        "yellow_cards_avg_league": 3.31,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 12,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.79 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -6413,6 +6565,7 @@
           "text": "Bodø/Glimt 4 victorias • 0 empates • Vålerenga 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6842,6 +6995,7 @@
           "text": "Hamarkameratene 1 victorias • 0 empates • Rosenborg 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7271,6 +7425,7 @@
           "text": "Viking 2 victorias • 2 empates • Tromsø 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7700,6 +7855,7 @@
           "text": "Kristiansund 1 victorias • 2 empates • KFUM 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

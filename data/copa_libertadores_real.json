@@ -3,7 +3,7 @@
   "league_id": 45,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-10-16T20:24:55.627941",
+  "last_updated": "2026-10-16T21:15:36.913798",
   "total_fixtures": 2,
   "team_histories": {
     "2 de Mayo": [
@@ -7014,6 +7014,7 @@
           "text": "Palmeiras 3 victorias • 1 empates • Fluminense 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7443,6 +7444,7 @@
           "text": "Flamengo 2 victorias • 2 empates • Estudiantes 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

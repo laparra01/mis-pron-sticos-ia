@@ -3,7 +3,7 @@
   "league_id": 46,
   "country": "Dinamarca",
   "country_code": "dk",
-  "last_updated": "2026-10-16T20:24:25.052729",
+  "last_updated": "2026-10-16T21:14:25.816863",
   "total_fixtures": 12,
   "team_histories": {
     "AC Horsens": [
@@ -2345,6 +2345,25 @@
           "text": "Lyngby 1 victorias • 3 empates • Nordsjælland 1 victorias"
         }
       },
+      "referee": {
+        "name": "Aydin Uslu",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 27,
+        "yellow_cards_per_match": 3.3,
+        "yellow_cards_total": 89,
+        "yellow_cards_avg_league": 3.46,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 14,
+        "fouls_per_match": 23.0,
+        "fouls_avg_league": 22.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.3 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2773,6 +2792,25 @@
           "avg_goals": 2.6,
           "text": "Sønderjyske 3 victorias • 0 empates • Silkeborg 2 victorias"
         }
+      },
+      "referee": {
+        "name": "Svend Funder",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 15,
+        "yellow_cards_per_match": 3.13,
+        "yellow_cards_total": 47,
+        "yellow_cards_avg_league": 3.46,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 4,
+        "fouls_per_match": 20.3,
+        "fouls_avg_league": 22.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.13 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3203,6 +3241,25 @@
           "text": "OB 1 victorias • 1 empates • Brøndby IF 3 victorias"
         }
       },
+      "referee": {
+        "name": "Michael Tykgaard",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 23,
+        "yellow_cards_per_match": 3.43,
+        "yellow_cards_total": 79,
+        "yellow_cards_avg_league": 3.46,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 4,
+        "fouls_per_match": 22.5,
+        "fouls_avg_league": 22.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.43 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3631,6 +3688,25 @@
           "avg_goals": 3.4,
           "text": "FC København 2 victorias • 1 empates • AGF 2 victorias"
         }
+      },
+      "referee": {
+        "name": "Lasse Graagaard",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 28,
+        "yellow_cards_per_match": 2.68,
+        "yellow_cards_total": 75,
+        "yellow_cards_avg_league": 3.46,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 22.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.68 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4061,6 +4137,25 @@
           "text": "Viborg 1 victorias • 3 empates • FC Midtjylland 1 victorias"
         }
       },
+      "referee": {
+        "name": "Sandi Putros",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 32,
+        "yellow_cards_per_match": 3.91,
+        "yellow_cards_total": 125,
+        "yellow_cards_avg_league": 3.46,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 13,
+        "fouls_per_match": 23.0,
+        "fouls_avg_league": 22.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.91 amarillas y 23.03 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4490,6 +4585,7 @@
           "text": "Randers FC 1 victorias • 2 empates • Brøndby IF 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4919,6 +5015,7 @@
           "text": "FC Midtjylland 3 victorias • 1 empates • Lyngby 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5348,6 +5445,7 @@
           "text": "Silkeborg 2 victorias • 1 empates • Nordsjælland 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5777,6 +5875,7 @@
           "text": "AC Horsens 2 victorias • 0 empates • Sønderjyske 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6206,6 +6305,7 @@
           "text": "AGF 4 victorias • 0 empates • Viborg 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6635,6 +6735,7 @@
           "text": "FC København 2 victorias • 2 empates • OB 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7064,6 +7165,7 @@
           "text": "Lyngby 1 victorias • 2 empates • Randers FC 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

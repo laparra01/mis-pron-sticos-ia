@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-10-16T20:23:51.237429",
+  "last_updated": "2026-10-16T21:13:08.471082",
   "total_fixtures": 15,
   "team_histories": {
     "Alianza FC": [
@@ -3617,6 +3617,7 @@
           "text": "Chicó FC 1 victorias • 1 empates • Atlético Nacional 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4046,6 +4047,7 @@
           "text": "Millonarios 1 victorias • 1 empates • CD Jaguares 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4475,6 +4477,7 @@
           "text": "Independiente Medellín 3 victorias • 1 empates • Once Caldas 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4904,6 +4907,7 @@
           "text": "Águilas Doradas 1 victorias • 0 empates • Tolima 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5333,6 +5337,7 @@
           "text": "Bucaramanga 0 victorias • 1 empates • América de Cali 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5732,6 +5737,7 @@
           "text": "Llaneros FC 2 victorias • 0 empates • Santa Fe 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6161,6 +6167,7 @@
           "text": "Deportivo Cali 1 victorias • 2 empates • Junior FC 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6590,6 +6597,7 @@
           "text": "Deportivo Pasto 1 victorias • 3 empates • Alianza FC 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7019,6 +7027,7 @@
           "text": "Deportivo Pereira 2 victorias • 2 empates • Chicó FC 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7036,10 +7045,10 @@
       "away_id": "244167",
       "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/47240.png",
       "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/244167.png",
-      "date": "Mar 20 Oct, 17:00",
+      "date": "Mar 20 Oct, 17:15",
       "date_iso": "2026-10-20",
-      "time": "17:00",
-      "timestamp": 1792537200,
+      "time": "17:15",
+      "timestamp": 1792538100,
       "timezone": "America/Guatemala",
       "round": "Clausura - Round 15",
       "h2h": {
@@ -7448,6 +7457,7 @@
           "text": "Internacional de Bogotá 0 victorias • 1 empates • Fortaleza FC 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7877,6 +7887,7 @@
           "text": "Cúcuta 0 victorias • 1 empates • Atlético Nacional 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8306,6 +8317,7 @@
           "text": "Millonarios 1 victorias • 4 empates • Once Caldas 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8705,6 +8717,7 @@
           "text": "Llaneros FC 1 victorias • 1 empates • Deportivo Cali 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9133,6 +9146,25 @@
           "avg_goals": 2.6,
           "text": "Santa Fe 2 victorias • 1 empates • CD Jaguares 2 victorias"
         }
+      },
+      "referee": {
+        "name": "Ferney Ossa",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 11,
+        "yellow_cards_per_match": 5.18,
+        "yellow_cards_total": 57,
+        "yellow_cards_avg_league": 5.47,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.18 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -9563,6 +9595,7 @@
           "text": "Atlético Nacional 4 victorias • 1 empates • Deportivo Pasto 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

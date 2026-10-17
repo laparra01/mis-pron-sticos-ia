@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-10-16T20:24:42.896405",
+  "last_updated": "2026-10-16T21:14:59.569869",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,6 +2981,25 @@
           "text": "AIK 4 victorias • 0 empates • IFK Göteborg 1 victorias"
         }
       },
+      "referee": {
+        "name": "Kristoffer Karlsson",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 40,
+        "yellow_cards_per_match": 3.9,
+        "yellow_cards_total": 156,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 7,
+        "penalties_total": 2,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.9 amarillas y 25.68 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3409,6 +3428,25 @@
           "avg_goals": 4.6,
           "text": "Sirius 4 victorias • 0 empates • Elfsborg 1 victorias"
         }
+      },
+      "referee": {
+        "name": "Adi Aganovic",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 37,
+        "yellow_cards_per_match": 3.46,
+        "yellow_cards_total": 128,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 21.7,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.46 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -3839,6 +3877,25 @@
           "text": "Västerås SK 1 victorias • 2 empates • Mjällby 2 victorias"
         }
       },
+      "referee": {
+        "name": "Fredrik Klitte",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 40,
+        "yellow_cards_per_match": 4.05,
+        "yellow_cards_total": 162,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 27.3,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.05 amarillas y 27.33 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4267,6 +4324,25 @@
           "avg_goals": 1.8,
           "text": "Halmstads BK 2 victorias • 1 empates • Hammarby 2 victorias"
         }
+      },
+      "referee": {
+        "name": "Joakim Sars",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 15,
+        "yellow_cards_per_match": 4.4,
+        "yellow_cards_total": 66,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 0,
+        "penalties_total": 7,
+        "fouls_per_match": 26.5,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.4 amarillas y 26.53 faltas por encuentro.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4697,6 +4773,25 @@
           "text": "Malmö FF 2 victorias • 2 empates • Häcken 1 victorias"
         }
       },
+      "referee": {
+        "name": "Glenn Nyberg",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 25,
+        "yellow_cards_per_match": 3.96,
+        "yellow_cards_total": 99,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 27.3,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.96 amarillas y 27.28 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5125,6 +5220,25 @@
           "avg_goals": 3.2,
           "text": "Örgryte 1 victorias • 0 empates • GAIS 4 victorias"
         }
+      },
+      "referee": {
+        "name": "Oscar Johnson",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 40,
+        "yellow_cards_per_match": 4.28,
+        "yellow_cards_total": 171,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 9,
+        "fouls_per_match": 26.5,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.28 amarillas y 26.53 faltas por encuentro.",
+        "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -5555,6 +5669,7 @@
           "text": "Degerfors 1 victorias • 0 empates • Kalmar FF 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5984,6 +6099,7 @@
           "text": "Elfsborg 1 victorias • 1 empates • Malmö FF 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6413,6 +6529,7 @@
           "text": "Västerås SK 2 victorias • 2 empates • Halmstads BK 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6842,6 +6959,7 @@
           "text": "Häcken 1 victorias • 2 empates • Degerfors 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7271,6 +7389,7 @@
           "text": "Sirius 3 victorias • 0 empates • AIK 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7655,6 +7774,7 @@
           "text": "Djurgården 1 victorias • 1 empates • Örgryte 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

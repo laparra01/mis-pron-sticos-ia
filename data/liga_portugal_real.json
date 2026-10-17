@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-16T20:24:19.542834",
+  "last_updated": "2026-10-16T21:14:13.334878",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -3299,6 +3299,7 @@
           "text": "Braga 2 victorias • 1 empates • Gil Vicente 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3728,6 +3729,7 @@
           "text": "Vitória de Guimarães 4 victorias • 1 empates • Marítimo 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4157,6 +4159,7 @@
           "text": "Estrela da Amadora 3 victorias • 0 empates • Casa Pia AC 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4541,6 +4544,7 @@
           "text": "Alverca 1 victorias • 0 empates • Arouca 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4970,6 +4974,7 @@
           "text": "Gil Vicente 1 victorias • 1 empates • FC Porto 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5399,6 +5404,7 @@
           "text": "Estoril 0 victorias • 3 empates • Moreirense 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5828,6 +5834,7 @@
           "text": "Nacional 1 victorias • 0 empates • Braga 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6257,6 +6264,7 @@
           "text": "Rio Ave 0 victorias • 3 empates • Famalicão 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6676,6 +6684,7 @@
           "text": "Sporting CP 2 victorias • 0 empates • Académico Viseu 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7105,6 +7114,7 @@
           "text": "Santa Clara 0 victorias • 1 empates • Benfica 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7534,6 +7544,7 @@
           "text": "Casa Pia AC 0 victorias • 0 empates • Sporting CP 5 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7963,6 +7974,7 @@
           "text": "Moreirense 1 victorias • 3 empates • Estrela da Amadora 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

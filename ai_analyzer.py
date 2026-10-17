@@ -84,12 +84,20 @@ def generate_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool 
     analisis_cr = f"El modelo proyecta una línea de {proj_corners} tiros de esquina totales ({prob_corners}% para Más de 8.5 córners), impulsado por la vocación ofensiva por bandas de {home} y las transiciones de {away}."
 
     tot_fouls = round(float(h_f) + float(a_f), 1)
+    ref = match_data.get('referee')
+    ref_desc = ""
+    if ref and isinstance(ref, dict) and ref.get('name'):
+        ref_desc = f" Árbitro oficial: {ref.get('name')} ({ref.get('country', '')}), perfil '{ref.get('rigor_level')}', promedia {ref.get('yellow_cards_per_match')} amarillas/partido y {ref.get('fouls_per_match')} faltas/partido."
+
     if proj_cards >= 5.2 or tot_fouls >= 27:
         analisis_tf = f"Duelo catalogado bajo el índice de '{friction_idx}' con {proj_cards} tarjetas y {tot_fouls} faltas combinadas proyectadas. La intensidad física en zonas de recuperación será elevada, con {home} promediando {h_y} amarillas de local frente a {a_y} de {away} de visita, lo que abre gran valor en líneas Over de amonestaciones (+4.5)."
     elif proj_cards >= 3.9:
         analisis_tf = f"Compromiso con índice de '{friction_idx}'. Se proyectan {proj_cards} amonestaciones totales y {tot_fouls} faltas combinadas. El duelo en la medular entre {home} ({h_y} tarjetas de local) y {away} ({a_y} de visita) sugiere un encuentro de fricción controlada con alta probabilidad para superar la línea de 3.5 tarjetas."
     else:
         analisis_tf = f"Encuentro calificado bajo el índice de '{friction_idx}' con una proyección moderada de {proj_cards} tarjetas y {tot_fouls} faltas. Ambos clubes se caracterizan por una presión limpia y pocas infracciones tácticas ({home} {h_y} tarjetas de local vs {a_y} de {away}), perfilando valor en líneas Under de tarjetas disciplinarias."
+
+    if ref and isinstance(ref, dict) and ref.get('name'):
+        analisis_tf += f" Designación arbitral: {ref.get('name')} ({ref.get('yellow_cards_per_match')} 🟨/partido - {ref.get('rigor_level')})."
 
     if force_gemini:
         prompt = f"""
@@ -100,7 +108,7 @@ Goles esperados: Local {prediction.get('lambda_home')} - Visitante {prediction.g
 Probabilidades: Local {prediction.get('prob_home')}%, Empate {prediction.get('prob_draw')}%, Visitante {prediction.get('prob_away')}%
 Over 2.5: {prediction.get('prob_over_25')}%, Ambos marcan: {prediction.get('prob_btts')}%
 Córners proyectados: {proj_corners} (Probabilidad Más de 8.5 Córners: {prob_corners}%)
-Tarjetas proyectadas: {proj_cards} amonestaciones totales (Índice de Fricción: {friction_idx}). {match_data.get('home_team')} promedia {h_y} amarillas de local; {match_data.get('away_team')} promedia {a_y} de visita ({tot_fouls} faltas combinadas estimadas).
+Tarjetas proyectadas: {proj_cards} amonestaciones totales (Índice de Fricción: {friction_idx}). {match_data.get('home_team')} promedia {h_y} amarillas de local; {match_data.get('away_team')} promedia {a_y} de visita ({tot_fouls} faltas combinadas estimadas).{ref_desc}
 Pronóstico Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence')}%)
 
 Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:

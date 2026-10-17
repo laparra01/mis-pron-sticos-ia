@@ -585,7 +585,8 @@ def generate_four_picks_football(
     home_stats: dict = None,
     away_stats: dict = None,
     projected_corners: float = None,
-    projected_cards: float = None
+    projected_cards: float = None,
+    referee: dict = None
 ) -> list:
     picks = []
     
@@ -811,24 +812,28 @@ def generate_four_picks_football(
         friction_level = "Juego Limpio (Baja Fricción)"
         friction_color = "emerald"
 
+    ref_note = ""
+    if referee and isinstance(referee, dict) and referee.get("name"):
+        ref_note = f" Designación arbitral: {referee.get('name')} ({referee.get('yellow_cards_per_match')} 🟨/partido - Perfil {referee.get('rigor_level')})."
+
     if exp_cards >= 5.2:
         p7_market = "Total de Tarjetas (Línea 4.5)"
         p7_name = "Más de 4.5 Tarjetas (+4.5)"
         p7_prob = p_over_45_cards
         p7_risk = "Bajo" if p_over_45_cards >= 65 else "Medio"
-        p7_exp = f"Duelo con alta intensidad en balones divididos ({tot_fouls} faltas combinadas estimadas). {home_team} promedia {h_cards} tarjetas y {away_team} {a_cards}. Se proyectan {exp_cards} amonestaciones totales."
+        p7_exp = f"Duelo con alta intensidad en balones divididos ({tot_fouls} faltas combinadas estimadas). {home_team} promedia {h_cards} tarjetas y {away_team} {a_cards}. Se proyectan {exp_cards} amonestaciones totales.{ref_note}"
     elif exp_cards >= 4.1:
         p7_market = "Total de Tarjetas (Línea 3.5)"
         p7_name = "Más de 3.5 Tarjetas (+3.5)"
         p7_prob = p_over_35_cards
         p7_risk = "Bajo" if p_over_35_cards >= 65 else "Medio"
-        p7_exp = f"Partido con fricción en la medular. Se proyectan {exp_cards} tarjetas combinadas ({h_cards} de {home_team} vs {a_cards} de {away_team}), con {p_over_35_cards}% de probabilidad para superar la línea de 3.5 tarjetas."
+        p7_exp = f"Partido con fricción en la medular. Se proyectan {exp_cards} tarjetas combinadas ({h_cards} de {home_team} vs {a_cards} de {away_team}), con {p_over_35_cards}% de probabilidad para superar la línea de 3.5 tarjetas.{ref_note}"
     else:
         p7_market = "Total de Tarjetas (Línea 4.5)"
         p7_name = "Menos de 4.5 Tarjetas (-4.5)"
         p7_prob = round(100.0 - p_over_45_cards, 1)
         p7_risk = "Bajo" if p7_prob >= 65 else "Medio"
-        p7_exp = f"Encuentro fluido con escasa interrupción táctica ({tot_fouls} faltas proyectadas). Tendencia de fair play con {p7_prob}% de probabilidad favorable al 'Under 4.5 tarjetas'."
+        p7_exp = f"Encuentro fluido con escasa interrupción táctica ({tot_fouls} faltas proyectadas). Tendencia de fair play con {p7_prob}% de probabilidad favorable al 'Under 4.5 tarjetas'.{ref_note}"
 
     odds7 = round(100.0 / max(p7_prob, 1.0), 2)
     picks.append({
@@ -843,6 +848,30 @@ def generate_four_picks_football(
         "friction_index": friction_level,
         "friction_color": friction_color,
         "projected_cards": exp_cards
+    })
+
+    # 8. Goles por Equipo (Al menos 1 Gol / Over 0.5 Goles Individual)
+    p_h_sc = round((1.0 - math.exp(-lam_h)) * 100, 1)
+    p_a_sc = round((1.0 - math.exp(-mu_a)) * 100, 1)
+    if p_h_sc >= p_a_sc:
+        p8_team = home_team
+        p8_prob = p_h_sc
+    else:
+        p8_team = away_team
+        p8_prob = p_a_sc
+
+    p8_risk = "Bajo" if p8_prob >= 75 else ("Medio" if p8_prob >= 58 else "Alto")
+    p8_odds = round(100.0 / max(p8_prob, 1.0), 2)
+    p8_exp = f"{home_team} tiene {p_h_sc}% de probabilidad de marcar al menos un gol ({lam_h} xG) y {away_team} {p_a_sc}% ({mu_a} xG). Selección con sólido respaldo estadístico para que {p8_team} anote por lo menos un gol en el encuentro."
+    picks.append({
+        "id": 8,
+        "market": f"Goles por Equipo ({p8_team})",
+        "name": f"{p8_team} Anota al menos 1 Gol (+0.5)",
+        "probability": p8_prob,
+        "fair_odds": p8_odds,
+        "risk_level": p8_risk,
+        "risk_color": "emerald" if p8_risk == "Bajo" else ("amber" if p8_risk == "Medio" else "rose"),
+        "explanation": p8_exp
     })
 
     return picks
@@ -4301,7 +4330,7 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             }
         }
 
-def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg_home_goals=1.55, league_avg_away_goals=1.20, home_team="Local", away_team="Visitante") -> dict:
+def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg_home_goals=1.55, league_avg_away_goals=1.20, home_team="Local", away_team="Visitante", referee=None) -> dict:
     """
     Calcula probabilidades cuantitativas basadas en la distribución de Poisson
     (modelo adaptado Dixon-Coles / Poisson bivariado para fútbol).
@@ -4390,6 +4419,12 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
     pct_under = round(prob_under_25 * 100, 1)
     pct_btts = round(prob_btts_yes * 100, 1)
 
+    # Probabilidad de que el local y visita anoten por lo menos un gol (Over 0.5 goles individuales)
+    prob_home_scores = 1.0 - math.exp(-lambda_home)
+    prob_away_scores = 1.0 - math.exp(-mu_away)
+    pct_home_score = round(max(1.0, min(99.0, prob_home_scores * 100)), 1)
+    pct_away_score = round(max(1.0, min(99.0, prob_away_scores * 100)), 1)
+
     # Determinación del Pick Principal y Nivel de Riesgo
     candidates = [
         {"type": "Victoria Local", "prob": pct_home, "fair_odds": round(100 / max(pct_home, 1), 2)},
@@ -4429,6 +4464,13 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
     a_cards_gen = float(away_stats.get("total_cards_gen", 2.5) or 2.5)
     exp_cards = round((h_cards * 0.5 + h_cards_gen * 0.5) + (a_cards * 0.5 + a_cards_gen * 0.5), 1)
 
+    # Ponderación por perfil del árbitro si está disponible
+    if referee and isinstance(referee, dict) and referee.get("yellow_cards_per_match"):
+        ref_yc = float(referee.get("yellow_cards_per_match", 4.5))
+        ref_avg = float(referee.get("yellow_cards_avg_league", 4.5)) or 4.5
+        ref_mult = max(0.80, min(1.35, ref_yc / ref_avg))
+        exp_cards = round(exp_cards * (0.60 + 0.40 * ref_mult), 1)
+
     four_predictions = generate_four_picks_football(
         home_team=home_team,
         away_team=away_team,
@@ -4445,7 +4487,8 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         home_stats=home_stats,
         away_stats=away_stats,
         projected_corners=exp_c,
-        projected_cards=exp_cards
+        projected_cards=exp_cards,
+        referee=referee
     )
 
     return {
@@ -4459,6 +4502,10 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "prob_over_25": pct_over,
         "prob_under_25": pct_under,
         "prob_btts": pct_btts,
+        "prob_home_score": pct_home_score,
+        "prob_away_score": pct_away_score,
+        "home_team_over_05": pct_home_score,
+        "away_team_over_05": pct_away_score,
         "projected_corners": exp_c,
         "projected_cards": exp_cards,
         "top_scores": [{"score": s["score"], "prob": round(s["prob"] * 100, 1)} for s in top_scores],
@@ -4469,7 +4516,8 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "risk_color": risk_color,
         "is_value_bet": is_value_bet,
         "four_predictions": four_predictions,
-        "seven_predictions": four_predictions
+        "seven_predictions": four_predictions,
+        "eight_predictions": four_predictions
     }
 
 def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict, is_halftime: bool = False) -> dict:
@@ -4804,6 +4852,17 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         }
     ]
 
+    # Probabilidad en vivo de anotar por lo menos un gol en el encuentro
+    if current_h > 0:
+        pct_home_score_live = 100.0
+    else:
+        pct_home_score_live = round(max(1.0, min(99.0, (1.0 - math.exp(-lambda_rem)) * 100)), 1)
+
+    if current_a > 0:
+        pct_away_score_live = 100.0
+    else:
+        pct_away_score_live = round(max(1.0, min(99.0, (1.0 - math.exp(-mu_rem)) * 100)), 1)
+
     return {
         "minute": minute,
         "current_score": f"{current_h}-{current_a}",
@@ -4813,6 +4872,10 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "prob_next_home": prob_next_goal_home,
         "prob_next_away": prob_next_goal_away,
         "prob_no_more_goals": prob_no_more_goals,
+        "prob_home_score": pct_home_score_live,
+        "prob_away_score": pct_away_score_live,
+        "home_team_over_05": pct_home_score_live,
+        "away_team_over_05": pct_away_score_live,
         "recommended_pick": live_pick,
         "confidence": conf,
         "risk_level": risk,
@@ -4820,7 +4883,8 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "is_halftime": is_halftime,
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
-        "seven_predictions": four_predictions
+        "seven_predictions": four_predictions,
+        "eight_predictions": four_predictions
     }
 
 def normal_cdf(x: float) -> float:

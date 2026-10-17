@@ -206,6 +206,21 @@ def api_match_gemini(match_id):
     match["ai_analysis"] = ai_data
     return jsonify(ai_data)
 
+@app.route("/api/match/<match_id>/referee")
+def api_match_referee(match_id):
+    from data_provider import get_match_referee
+    all_m = fetch_live_matches_data() + fetch_matches_data()
+    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
+    if match and match.get("referee"):
+        return jsonify({"referee": match["referee"]})
+
+    clean_id = match.get("match_id") if match else match_id
+    ref = get_match_referee(clean_id)
+    if match and ref:
+        match["referee"] = ref
+    return jsonify({"referee": ref})
+
+
 @app.route("/api/trigger-scrape", methods=["POST"])
 def api_trigger_scrape():
     """

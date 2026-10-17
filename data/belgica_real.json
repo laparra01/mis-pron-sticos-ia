@@ -3,7 +3,7 @@
   "league_id": 40,
   "country": "Bélgica",
   "country_code": "be",
-  "last_updated": "2026-10-16T20:24:28.754128",
+  "last_updated": "2026-10-16T21:14:32.532994",
   "total_fixtures": 12,
   "team_histories": {
     "Anderlecht": [
@@ -3299,6 +3299,7 @@
           "text": "Kortrijk 1 victorias • 0 empates • KV Mechelen 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3728,6 +3729,7 @@
           "text": "Royal Antwerp 0 victorias • 1 empates • Sporting Charleroi 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4157,6 +4159,7 @@
           "text": "OH Leuven 4 victorias • 0 empates • Lommel 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4586,6 +4589,7 @@
           "text": "RAAL La Louvière 0 victorias • 3 empates • Zulte Waregem 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5015,6 +5019,7 @@
           "text": "Westerlo 2 victorias • 1 empates • SK Beveren 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5444,6 +5449,7 @@
           "text": "Genk 1 victorias • 2 empates • Standard Liège 2 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5873,6 +5879,7 @@
           "text": "Club Brugge 3 victorias • 1 empates • St.Truiden 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6302,6 +6309,7 @@
           "text": "Gent 1 victorias • 1 empates • Anderlecht 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6731,6 +6739,7 @@
           "text": "Union St.Gilloise 2 victorias • 2 empates • Cercle Brugge 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7160,6 +7169,7 @@
           "text": "Zulte Waregem 0 victorias • 1 empates • Club Brugge 4 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7589,6 +7599,7 @@
           "text": "KV Mechelen 1 victorias • 1 empates • Genk 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8018,6 +8029,7 @@
           "text": "Standard Liège 1 victorias • 1 empates • Kortrijk 3 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

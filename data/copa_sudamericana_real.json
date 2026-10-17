@@ -3,7 +3,7 @@
   "league_id": 299,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-10-16T20:24:56.353163",
+  "last_updated": "2026-10-16T21:15:39.212166",
   "total_fixtures": 2,
   "team_histories": {
     "Academia Puerto Cabello": [
@@ -7143,6 +7143,7 @@
           "text": "Vasco da Gama 1 victorias • 0 empates • Boca Juniors 0 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7512,6 +7513,7 @@
           "text": "Montevideo City Torque 0 victorias • 0 empates • Atlético-MG 1 victorias"
         }
       },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
