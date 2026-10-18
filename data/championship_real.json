@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-17T19:58:56.752905",
+  "last_updated": "2026-10-18T13:44:00.153368",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -4248,18 +4248,18 @@
         "country": "England",
         "country_code": "ENG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
-        "matches": 30,
+        "matches": 31,
         "yellow_cards_per_match": 3.9,
-        "yellow_cards_total": 117,
-        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_total": 121,
+        "yellow_cards_avg_league": 3.78,
         "yellow_cards_tendency": "average",
         "red_cards_total": 2,
         "penalties_total": 6,
-        "fouls_per_match": 22.0,
-        "fouls_avg_league": 23.1,
+        "fouls_per_match": 22.1,
+        "fouls_avg_league": 23.2,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 3.9 amarillas y 22.04 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.9 amarillas y 22.07 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
