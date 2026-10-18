@@ -3,7 +3,7 @@
   "league_id": 8976,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-10-18T13:43:16.189261",
+  "last_updated": "2026-10-18T19:57:47.291641",
   "total_fixtures": 12,
   "team_histories": {
     "Alacranes de Durango": [
@@ -2981,7 +2981,25 @@
           "text": "Leones Negros 2 victorias • 2 empates • Alebrijes Oaxaca 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lizzet García",
+        "country": "Mexico",
+        "country_code": "MEX",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/mex.png",
+        "matches": 15,
+        "yellow_cards_per_match": 5.8,
+        "yellow_cards_total": 87,
+        "yellow_cards_avg_league": 5.57,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 3,
+        "fouls_per_match": 33.5,
+        "fouls_avg_league": 26.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.8 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
