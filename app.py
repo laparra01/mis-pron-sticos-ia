@@ -20,6 +20,82 @@ def compress_response(response):
         response.headers['Content-Length'] = len(response.data)
     return response
 
+def slim_match_for_client(m):
+    p = m.get("prediction", {})
+    picks = p.get("four_predictions") or p.get("seven_predictions") or p.get("eight_predictions") or []
+    ref = m.get("referee") or {}
+    slim_pred = {
+        "prob_home": p.get("prob_home"),
+        "prob_draw": p.get("prob_draw"),
+        "prob_away": p.get("prob_away"),
+        "prob_over_15": p.get("prob_over_15"),
+        "prob_under_15": p.get("prob_under_15"),
+        "prob_over_25": p.get("prob_over_25"),
+        "prob_under_25": p.get("prob_under_25"),
+        "prob_btts": p.get("prob_btts"),
+        "prob_home_score": p.get("prob_home_score") or p.get("home_team_over_05"),
+        "prob_away_score": p.get("prob_away_score") or p.get("away_team_over_05"),
+        "home_team_over_05": p.get("home_team_over_05") or p.get("prob_home_score"),
+        "away_team_over_05": p.get("away_team_over_05") or p.get("prob_away_score"),
+        "recommended_pick": p.get("recommended_pick"),
+        "confidence": p.get("confidence"),
+        "fair_odds": p.get("fair_odds"),
+        "risk_level": p.get("risk_level"),
+        "risk_color": p.get("risk_color"),
+        "is_value_bet": p.get("is_value_bet"),
+        "projected_corners": p.get("projected_corners"),
+        "projected_cards": p.get("projected_cards"),
+        "total_points": p.get("total_points"),
+        "over_under_line": p.get("over_under_line"),
+        "spread_home": p.get("spread_home"),
+        "quarters_breakdown": p.get("quarters_breakdown"),
+        "top_scores": p.get("top_scores", [])[:1],
+        "four_predictions": picks[:4],
+    }
+    ref_clean = None
+    if ref.get("name"):
+        ref_clean = {
+            "name": ref.get("name"),
+            "yellow_cards_per_match": ref.get("yellow_cards_per_match"),
+            "rigor_level": ref.get("rigor_level"),
+            "matches_analyzed": ref.get("matches_analyzed"),
+            "fouls_per_match": ref.get("fouls_per_match"),
+            "penalty_percentage": ref.get("penalty_percentage")
+        }
+    return {
+        "id": m.get("id"),
+        "match_id": m.get("match_id"),
+        "sport": m.get("sport"),
+        "league": m.get("league"),
+        "country": m.get("country"),
+        "country_code": m.get("country_code", ""),
+        "league_flag": m.get("league_flag", ""),
+        "country_flag": m.get("country_flag", ""),
+        "home_team": m.get("home_team"),
+        "away_team": m.get("away_team"),
+        "home_logo": m.get("home_logo", ""),
+        "away_logo": m.get("away_logo", ""),
+        "date": m.get("date"),
+        "date_iso": m.get("date_iso"),
+        "time": m.get("time"),
+        "timestamp": m.get("timestamp") or 0,
+        "is_live": m.get("is_live", False),
+        "is_halftime": m.get("is_halftime", False),
+        "minute": m.get("minute"),
+        "quarter": m.get("quarter"),
+        "display_clock": m.get("display_clock"),
+        "score_home": m.get("score_home", 0),
+        "score_away": m.get("score_away", 0),
+        "is_external": m.get("is_external", False),
+        "source_api": m.get("source_api", ""),
+        "home_stats": m.get("home_stats"),
+        "away_stats": m.get("away_stats"),
+        "referee": ref_clean,
+        "prediction": slim_pred,
+        "h2h": {"summary": (m.get("h2h") or {}).get("summary", {})},
+        "ai_analysis": m.get("ai_analysis")
+    }
+
 @app.route("/")
 def index():
     try:
@@ -96,10 +172,14 @@ def index():
         today_pending_count = sum(1 for m in upcoming_matches if m.get("date_iso") == today_iso and (m.get("timestamp") or 0) >= now_ts - 300)
         team_logos, team_logos_norm = load_team_logos()
 
+        upcoming_initial = upcoming_matches[:40]
+        slim_all_matches = [slim_match_for_client(m) for m in all_matches]
+
         context = dict(
             live_matches=live_matches,
-            upcoming_matches=upcoming_matches,
-            all_matches=all_matches,
+            upcoming_matches=upcoming_initial,
+            total_upcoming_matches=len(upcoming_matches),
+            all_matches=slim_all_matches,
             dream_parleys=dream_parleys,
             stats=stats_summary,
             live_api_active=live_api_active,
@@ -175,7 +255,7 @@ from ai_analyzer import generate_ai_analysis, generate_live_ai_analysis, generat
 @app.route("/api/match/<match_id>")
 def api_match_detail(match_id):
     all_m = fetch_live_matches_data() + fetch_matches_data()
-    match = next((m for m in all_m if m["id"] == match_id), None)
+    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
     return jsonify(match)
@@ -183,7 +263,7 @@ def api_match_detail(match_id):
 @app.route("/api/match/<match_id>/gemini_analysis")
 def api_match_gemini(match_id):
     all_m = fetch_live_matches_data() + fetch_matches_data()
-    match = next((m for m in all_m if m["id"] == match_id), None)
+    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
 

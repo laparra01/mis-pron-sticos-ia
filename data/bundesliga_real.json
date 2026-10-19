@@ -3,7 +3,7 @@
   "league_id": 54,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-18T19:58:19.466059",
+  "last_updated": "2026-10-18T19:49:22.590948",
   "total_fixtures": 12,
   "team_histories": {
     "1. FC Köln": [
@@ -684,11 +684,11 @@
         "corners_against": 5,
         "total_corners": 10,
         "shots_on_target": 2,
-        "total_shots": 12,
+        "total_shots": 10,
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 13
       }
     ],
     "Borussia Mönchengladbach": [
@@ -2570,7 +2570,7 @@
       "corners_conceded_away": 7.0,
       "corners_conceded_gen": 5.4,
       "shots_on_target_gen": 5.2,
-      "total_shots_gen": 14.2,
+      "total_shots_gen": 13.8,
       "yellow_cards_avg_home": 1.5,
       "yellow_cards_avg_away": 3.33,
       "yellow_cards_avg": 2.6,
@@ -2581,8 +2581,8 @@
       "total_cards_avg_away": 3.33,
       "total_cards_avg": 2.6,
       "fouls_avg_home": 10.5,
-      "fouls_avg_away": 11.0,
-      "fouls_avg": 10.8
+      "fouls_avg_away": 11.33,
+      "fouls_avg": 11.0
     },
     "Borussia Mönchengladbach": {
       "corners_avg_home": 7.33,
@@ -5559,11 +5559,11 @@
             "corners_against": 5,
             "total_corners": 10,
             "shots_on_target": 2,
-            "total_shots": 12,
+            "total_shots": 10,
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 13
           }
         ],
         "away_last_5": [
@@ -5788,7 +5788,7 @@
           "corners_conceded_away": 7.0,
           "corners_conceded_gen": 5.4,
           "shots_on_target_gen": 5.2,
-          "total_shots_gen": 14.2,
+          "total_shots_gen": 13.8,
           "yellow_cards_avg_home": 1.5,
           "yellow_cards_avg_away": 3.33,
           "yellow_cards_avg": 2.6,
@@ -5799,8 +5799,8 @@
           "total_cards_avg_away": 3.33,
           "total_cards_avg": 2.6,
           "fouls_avg_home": 10.5,
-          "fouls_avg_away": 11.0,
-          "fouls_avg": 10.8
+          "fouls_avg_away": 11.33,
+          "fouls_avg": 11.0
         },
         "away_corner_stats": {
           "corners_avg_home": 6.33,

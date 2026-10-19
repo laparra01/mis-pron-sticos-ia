@@ -1667,12 +1667,26 @@ def check_and_auto_update_scraped_matches(max_age_hours=6):
     except Exception as e:
         print(f"[AUTO-SCRAPER] Error comprobando ligas: {e}")
 
-def load_scraped_matches():
+_SCRAPED_MATCHES_CACHE = None
+_SCRAPED_MATCHES_CACHE_TIME = 0
+
+def invalidate_scraped_matches_cache():
+    global _SCRAPED_MATCHES_CACHE, _SCRAPED_MATCHES_CACHE_TIME
+    _SCRAPED_MATCHES_CACHE = None
+    _SCRAPED_MATCHES_CACHE_TIME = 0
+
+def load_scraped_matches(force_reload=False):
     """
     Carga partidos oficiales reales obtenidos por web scraping especializado de FotMob
     (Brasileirão Série A, Liga BetPlay Dimayor y otras ligas clave).
     Prioriza estos partidos con estadísticas 100% verificadas, H2H oficial y córners reales.
+    Usa caché en memoria de 60 segundos para respuestas instantáneas.
     """
+    global _SCRAPED_MATCHES_CACHE, _SCRAPED_MATCHES_CACHE_TIME
+    now = time.time()
+    if not force_reload and _SCRAPED_MATCHES_CACHE is not None and (now - _SCRAPED_MATCHES_CACHE_TIME < 60):
+        return _SCRAPED_MATCHES_CACHE
+
     check_and_auto_update_scraped_matches(max_age_hours=6)
 
     scraped_list = []
@@ -1766,6 +1780,8 @@ def load_scraped_matches():
 
     # Ordenar cronológicamente por hora/timestamp de Guatemala (los más próximos primero)
     scraped_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+    _SCRAPED_MATCHES_CACHE = scraped_list
+    _SCRAPED_MATCHES_CACHE_TIME = time.time()
     return scraped_list
 
 def fetch_matches_data(sport_filter="all"):

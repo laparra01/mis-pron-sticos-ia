@@ -859,6 +859,14 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <!-- Botón Cargar Más Partidos -->
+            <div id="load-more-container" class="mt-6 mb-2 text-center">
+                <button onclick="loadMoreMatches()" id="btn-load-more" class="px-6 py-2.5 bg-gray-900 hover:bg-gray-800 text-gray-200 hover:text-white border border-gray-700/80 hover:border-emerald-500/60 rounded-xl font-bold text-xs transition shadow-md inline-flex items-center gap-2 cursor-pointer active:scale-95">
+                    <i data-lucide="chevrons-down" class="w-4 h-4 text-emerald-400"></i>
+                    <span id="load-more-text">Cargar más partidos</span>
+                </button>
+            </div>
         </div>
 
         <!-- ========================================== -->
@@ -1408,18 +1416,333 @@
             }
         }
 
-        function applyAllFilters() {
-            let upcomingVisibleCount = 0;
-            const nowSeconds = Math.floor(Date.now() / 1000);
+        let renderedUpcomingLimit = 40;
+        let currentFilteredUpcoming = [];
 
-            document.querySelectorAll('#upcoming-grid .match-card').forEach(card => {
-                const isNat = card.dataset.isNational === 'true';
-                const sport = card.dataset.sport;
-                const cardDate = card.dataset.date;
-                const cardCountry = card.dataset.country;
-                const cardLeague = card.dataset.league;
-                const isValue = card.dataset.valueBet === 'true';
-                const cardTs = parseInt(card.dataset.timestamp || '0', 10);
+        function renderMatchCardHtml(m) {
+            const isBrazil = m.country === 'Brasil' || (m.league && m.league.includes('Brasileir')) || m.country_code === 'br';
+            let flagMarkup = '';
+            if (isBrazil) {
+                flagMarkup = '<img src="https://flagcdn.com/20x15/br.png" alt="Brasil" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">';
+            } else if (m.country_code) {
+                flagMarkup = `<img src="https://flagcdn.com/20x15/${m.country_code}.png" alt="${m.country || ''}" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs align-middle">`;
+            } else if (m.league_flag) {
+                flagMarkup = `<span>${m.league_flag}</span>`;
+            }
+
+            const isNat = m.league && m.league.includes('Selecciones');
+            let badgeMarkup = '';
+            if (m.is_external) {
+                badgeMarkup = `
+                    <span class="bg-emerald-950 text-emerald-400 border border-emerald-700 px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>API Real: ${m.source_api || 'FotMob'}</span>
+                    </span>`;
+            } else if (isNat) {
+                badgeMarkup = `<span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>`;
+            } else if (m.sport === 'nba') {
+                badgeMarkup = `<span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>`;
+            }
+
+            const pred = m.prediction || {};
+            const valueBadge = pred.is_value_bet ? `
+                <span class="bg-cyan-950 text-cyan-300 border border-cyan-700/80 px-1.5 py-0.2 rounded text-[10px] font-bold flex items-center gap-1">
+                    <span>💎</span><span>Valor</span>
+                </span>` : '';
+
+            const refBadge = (m.referee && m.referee.name) ? `
+                <span class="bg-gray-950/90 text-gray-300 border border-gray-700/80 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1 shadow-xs" title="Árbitro Oficial: ${m.referee.name} (${m.referee.yellow_cards_per_match || 0} 🟨/p • ${m.referee.rigor_level || 'Normal'})">
+                    <span>⚖️</span>
+                    <span class="truncate max-w-[105px]">${m.referee.name}</span>
+                    <span class="text-amber-400 font-bold">(${m.referee.yellow_cards_per_match || 0} 🟨)</span>
+                </span>` : '';
+
+            const homeLogoUrl = m.home_logo || getTeamLogoUrl(m.home_team, m);
+            const awayLogoUrl = m.away_logo || getTeamLogoUrl(m.away_team, m);
+            const homeLogoImg = homeLogoUrl ? `<img src="${homeLogoUrl}" alt="${m.home_team}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">` : '';
+            const awayLogoImg = awayLogoUrl ? `<img src="${awayLogoUrl}" alt="${m.away_team}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">` : '';
+
+            let homeStatsTxt = '';
+            let awayStatsTxt = '';
+            if (m.home_stats) {
+                if (m.sport === 'football') {
+                    const hs = m.home_stats;
+                    const corn = hs.corners ? ` <span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 ${hs.corners}</span>` : '';
+                    const gen = hs.attack_gen ? ` <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${hs.attack_gen}/${hs.defense_gen})</span>` : '';
+                    homeStatsTxt = `⚽ ${hs.attack || 0}/${hs.defense || 0}${corn}${gen}`;
+                } else {
+                    homeStatsTxt = `🏀 ${m.home_stats.off_rating || 0}/${m.home_stats.def_rating || 0}`;
+                }
+            }
+            if (m.away_stats) {
+                if (m.sport === 'football') {
+                    const as = m.away_stats;
+                    const gen = as.attack_gen ? `<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${as.attack_gen}/${as.defense_gen}) </span>` : '';
+                    const corn = as.corners ? `<span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 ${as.corners} </span>` : '';
+                    awayStatsTxt = `${gen}${corn}⚽ ${as.attack || 0}/${as.defense || 0}`;
+                } else {
+                    awayStatsTxt = `🏀 ${m.away_stats.off_rating || 0}/${m.away_stats.def_rating || 0}`;
+                }
+            }
+
+            let midContentHtml = '';
+            if (m.sport === 'football') {
+                const pHome = pred.prob_home || 40;
+                const pDraw = pred.prob_draw || 25;
+                const pAway = pred.prob_away || 35;
+                const pHomeScore = pred.prob_home_score || pred.home_team_over_05 || 75.0;
+                const pAwayScore = pred.prob_away_score || pred.away_team_over_05 || 65.0;
+                const pOver15 = pred.prob_over_15 || 75;
+                const pOver25 = pred.prob_over_25 || 50;
+                const pBtts = pred.prob_btts || 50;
+                const cornProj = pred.projected_corners || 9.5;
+                const topScore = (pred.top_scores && pred.top_scores[0]) ? pred.top_scores[0].score : '1-1';
+
+                midContentHtml = `
+                    <div class="space-y-1 mt-3">
+                        <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                            <span class="text-blue-400 font-semibold">1 (${pHome}%)</span>
+                            <span class="text-gray-400">X (${pDraw}%)</span>
+                            <span class="text-rose-400 font-semibold">2 (${pAway}%)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                            <div class="bg-blue-500 prob-bar-fill" style="width: ${pHome}%"></div>
+                            <div class="bg-gray-600 prob-bar-fill" style="width: ${pDraw}%"></div>
+                            <div class="bg-rose-500 prob-bar-fill" style="width: ${pAway}%"></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-1.5 sm:gap-2 mt-2.5 font-mono text-[11px]">
+                        <div class="bg-gray-950/80 border border-blue-900/40 rounded-xl p-2 flex items-center justify-between gap-1.5 shadow-xs" title="Probabilidad de que ${m.home_team} anote por lo menos un gol">
+                            <div class="flex items-center gap-1.5 min-w-0">
+                                <span class="text-blue-400 text-xs shrink-0">⚽</span>
+                                <span class="text-gray-300 font-sans text-[10.5px] sm:text-[11px] truncate">${m.home_team} anota:</span>
+                            </div>
+                            <span class="font-bold text-blue-400 shrink-0 text-xs">${pHomeScore}%</span>
+                        </div>
+                        <div class="bg-gray-950/80 border border-rose-900/40 rounded-xl p-2 flex items-center justify-between gap-1.5 shadow-xs" title="Probabilidad de que ${m.away_team} anote por lo menos un gol">
+                            <div class="flex items-center gap-1.5 min-w-0">
+                                <span class="text-rose-400 text-xs shrink-0">⚽</span>
+                                <span class="text-gray-300 font-sans text-[10.5px] sm:text-[11px] truncate">${m.away_team} anota:</span>
+                            </div>
+                            <span class="font-bold text-rose-400 shrink-0 text-xs">${pAwayScore}%</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 sm:gap-2 mt-2 text-center">
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Más de 1.5 Goles">
+                            <span class="text-[9.5px] sm:text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>+1.5</span></span>
+                            <span class="text-[11px] sm:text-xs font-bold text-cyan-400 font-mono">${pOver15}%</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Más de 2.5 Goles">
+                            <span class="text-[9.5px] sm:text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>+2.5</span></span>
+                            <span class="text-[11px] sm:text-xs font-bold text-emerald-400 font-mono">${pOver25}%</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Ambos Equipos Anotan">
+                            <span class="text-[9.5px] sm:text-[10px] text-gray-400 flex items-center justify-center gap-1 mb-0.5"><span>⚽</span><span>Ambos</span></span>
+                            <span class="text-[11px] sm:text-xs font-bold text-gray-300 font-mono">${pBtts}%</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Córners proyectados por IA">
+                            <span class="text-[9.5px] sm:text-[10px] text-cyan-400 flex items-center justify-center gap-1 mb-0.5"><span>🚩</span><span>Córners</span></span>
+                            <span class="text-[11px] sm:text-xs font-bold text-cyan-300 font-mono">${cornProj}</span>
+                        </div>
+                        <div class="col-span-2 sm:col-span-1 bg-gray-950/60 border border-gray-800/80 p-1.5 sm:p-2 rounded-lg" title="Marcador más probable">
+                            <span class="text-[9.5px] sm:text-[10px] text-amber-400 flex items-center justify-center gap-1 mb-0.5"><span>🎯</span><span>Marcador</span></span>
+                            <span class="text-[11px] sm:text-xs font-bold text-amber-400 font-mono">${topScore}</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                const pHome = pred.prob_home || 50;
+                const pAway = pred.prob_away || 50;
+                const totPts = pred.total_points || 220;
+                const ouLine = pred.over_under_line || 'O 218.5';
+                const spread = pred.spread_home || '-3.5';
+                let qBreak = '';
+                if (pred.quarters_breakdown) {
+                    const q = pred.quarters_breakdown;
+                    qBreak = `
+                        <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-2.5 mt-3">
+                            <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider block mb-1">
+                                Ganador por Cuartos & Mitades:
+                            </span>
+                            <div class="grid grid-cols-4 gap-1 text-center text-[10px] font-mono">
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">1Q</span>
+                                    <span class="font-bold text-emerald-400">${q.q1 ? (q.q1.predicted_winner || q.q1.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">2Q</span>
+                                    <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">1ª Mitad</span>
+                                    <span class="font-bold text-emerald-400">${q.first_half ? (q.first_half.predicted_winner || q.first_half.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">Q3 & Q4</span>
+                                    <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                midContentHtml = `
+                    <div class="space-y-1 mt-3">
+                        <div class="flex justify-between text-[11px] text-gray-400 font-mono gap-2">
+                            <span class="text-blue-400 font-semibold truncate">${m.home_team} (${pHome}%)</span>
+                            <span class="text-rose-400 font-semibold truncate text-right">${m.away_team} (${pAway}%)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                            <div class="bg-blue-500 prob-bar-fill" style="width: ${pHome}%"></div>
+                            <div class="bg-rose-500 prob-bar-fill" style="width: ${pAway}%"></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-4 text-center">
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Total Puntos</span>
+                            <span class="text-xs font-bold text-orange-400">${totPts} pts</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Línea O/U</span>
+                            <span class="text-xs font-bold text-emerald-400">${ouLine}</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Hándicap Proy.</span>
+                            <span class="text-xs font-bold text-cyan-400 font-mono">${spread}</span>
+                        </div>
+                    </div>
+                    ${qBreak}
+                `;
+            }
+
+            const calcProb = (pred.prob_home && pred.prob_away && pred.prob_home > pred.prob_away) ? pred.prob_home : (pred.prob_away || 50);
+
+            return `
+                <div class="match-card bg-gray-900/90 border border-gray-800 hover:border-gray-700 transition rounded-2xl p-5 flex flex-col justify-between"
+                     data-sport="${m.sport}"
+                     data-is-national="${isNat ? 'true' : 'false'}"
+                     data-league="${m.league || ''}"
+                     data-country="${m.country || ''}"
+                     data-value-bet="${pred.is_value_bet ? 'true' : 'false'}"
+                     data-date="${m.date_iso || ''}"
+                     data-timestamp="${m.timestamp || 0}"
+                     data-time="${m.time || '00:00'}"
+                     data-prob="${calcProb}">
+                    <div>
+                        <div class="flex items-center justify-between pb-3 border-b border-gray-800 text-xs text-gray-400">
+                            <span class="flex items-center gap-1.5 font-medium text-gray-300 flex-wrap">
+                                ${flagMarkup}
+                                <span>${m.league || ''}</span>
+                                ${(m.country && m.country !== 'Internacional') ? `<span class="text-gray-400 text-[11px]">(${m.country})</span>` : ''}
+                                ${valueBadge}
+                                ${badgeMarkup}
+                                ${refBadge}
+                            </span>
+                            <span class="bg-gray-800/90 border border-gray-700/70 px-2.5 py-1 rounded-lg text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1.5 shadow-xs" title="Hora local de Guatemala (GMT-6)">
+                                <i data-lucide="clock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
+                                <span>${m.date || ''}</span>
+                                <span class="text-[9px] text-emerald-300 font-bold bg-emerald-950/90 border border-emerald-700/60 px-1 py-0.2 rounded font-sans tracking-wide">GT</span>
+                            </span>
+                        </div>
+
+                        <div class="py-3 sm:py-4">
+                            <div class="flex items-center justify-between mb-3 gap-1 sm:gap-2">
+                                <div class="flex-1 text-left min-w-0">
+                                    <span class="font-bold text-xs sm:text-sm md:text-base text-white flex items-center gap-1.5 sm:gap-2">
+                                        ${homeLogoImg}
+                                        <span class="truncate" title="${m.home_team}">${m.home_team}</span>
+                                    </span>
+                                    ${homeStatsTxt ? `<span class="text-[9px] sm:text-[10px] text-emerald-400 font-mono block truncate">${homeStatsTxt}</span>` : ''}
+                                </div>
+                                <span class="text-[11px] sm:text-xs font-mono font-bold text-gray-500 px-1.5 sm:px-3 shrink-0">vs</span>
+                                <div class="flex-1 text-right min-w-0">
+                                    <span class="font-bold text-xs sm:text-sm md:text-base text-white flex items-center justify-end gap-1.5 sm:gap-2">
+                                        <span class="truncate" title="${m.away_team}">${m.away_team}</span>
+                                        ${awayLogoImg}
+                                    </span>
+                                    ${awayStatsTxt ? `<span class="text-[9px] sm:text-[10px] text-rose-400 font-mono block truncate">${awayStatsTxt}</span>` : ''}
+                                </div>
+                            </div>
+
+                            ${midContentHtml}
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-800 mt-2">
+                        <div class="flex items-center justify-between mb-3 gap-2">
+                            <div class="min-w-0 flex-1">
+                                <span class="text-[9.5px] sm:text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Pronóstico Sugerido</span>
+                                <div class="flex items-center gap-1.5 mt-0.5 min-w-0">
+                                    <span class="text-xs sm:text-sm font-extrabold text-emerald-400 truncate" title="${pred.recommended_pick || '1X'}">${pred.recommended_pick || '1X'}</span>
+                                    <span class="text-[10px] sm:text-xs text-gray-400 font-mono shrink-0">(${pred.confidence || 60}%)</span>
+                                </div>
+                            </div>
+                            <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-800 rounded-md text-[10px] font-bold shrink-0">
+                                ${pred.risk_level || 'Bajo'}
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="openAiModal('${m.id}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('${m.id}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button onclick="openAiModal('${m.id}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                                <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function sortFilteredMatches(list) {
+            list.sort((a, b) => {
+                const tsA = parseInt(a.timestamp || '0', 10);
+                const tsB = parseInt(b.timestamp || '0', 10);
+                const dateA = a.date_iso || '';
+                const dateB = b.date_iso || '';
+                const timeA = a.time || '';
+                const timeB = b.time || '';
+
+                if (currentSortOrder === 'time-asc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsA - tsB;
+                    if (dateA !== dateB) return dateA.localeCompare(dateB);
+                    return timeA.localeCompare(timeB);
+                } else if (currentSortOrder === 'time-desc') {
+                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsB - tsA;
+                    if (dateA !== dateB) return dateB.localeCompare(dateA);
+                    return timeB.localeCompare(timeA);
+                } else if (currentSortOrder === 'prob-desc') {
+                    const predA = a.prediction || {};
+                    const predB = b.prediction || {};
+                    const pA = (predA.prob_home && predA.prob_away && predA.prob_home > predA.prob_away) ? predA.prob_home : (predA.prob_away || 50);
+                    const pB = (predB.prob_home && predB.prob_away && predB.prob_home > predB.prob_away) ? predB.prob_home : (predB.prob_away || 50);
+                    if (pA !== pB) return pB - pA;
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                } else if (currentSortOrder === 'league') {
+                    const lA = (a.league || '').toLowerCase();
+                    const lB = (b.league || '').toLowerCase();
+                    if (lA !== lB) return lA.localeCompare(lB);
+                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
+                }
+                return 0;
+            });
+        }
+
+        function applyAllFilters() {
+            const nowSeconds = Math.floor(Date.now() / 1000);
+            const upcomingList = allMatchesData.filter(m => !m.is_live);
+
+            currentFilteredUpcoming = upcomingList.filter(m => {
+                const isNat = m.league && m.league.includes('Selecciones');
+                const sport = m.sport;
+                const cardDate = m.date_iso;
+                const cardCountry = m.country;
+                const cardLeague = m.league;
+                const isValue = m.prediction && m.prediction.is_value_bet;
+                const cardTs = parseInt(m.timestamp || '0', 10);
 
                 let matchCat = false;
                 if (currentCategory === 'all') matchCat = true;
@@ -1427,35 +1750,45 @@
                 else if (currentCategory === 'national' && isNat) matchCat = true;
                 else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
 
-                let matchDate = false;
-                if (currentDateFilter === 'all') matchDate = true;
-                else if (cardDate === currentDateFilter) matchDate = true;
+                let matchDate = (currentDateFilter === 'all') || (cardDate === currentDateFilter);
+                let matchCountry = (currentCountryFilter === 'all') || (cardCountry === currentCountryFilter);
+                let matchLeague = (currentLeagueFilter === 'all') || (cardLeague === currentLeagueFilter);
+                let matchValue = (!onlyValuePicks) || isValue;
+                let matchPending = (!onlyPendingMatches) || (cardTs === 0 || cardTs >= (nowSeconds - 300));
 
-                let matchCountry = false;
-                if (currentCountryFilter === 'all') matchCountry = true;
-                else if (cardCountry === currentCountryFilter) matchCountry = true;
-
-                let matchLeague = false;
-                if (currentLeagueFilter === 'all') matchLeague = true;
-                else if (cardLeague === currentLeagueFilter) matchLeague = true;
-
-                let matchValue = true;
-                if (onlyValuePicks) {
-                    matchValue = isValue;
-                }
-
-                let matchPending = true;
-                // Si la opción está activa y el partido ya comenzó (con margen de 5 min)
-                if (onlyPendingMatches && cardTs > 0 && cardTs < (nowSeconds - 300)) {
-                    matchPending = false;
-                }
-
-                const show = matchCat && matchDate && matchCountry && matchLeague && matchValue && matchPending;
-                card.style.display = show ? 'flex' : 'none';
-                if (show) upcomingVisibleCount++;
+                return matchCat && matchDate && matchCountry && matchLeague && matchValue && matchPending;
             });
 
-            // Sincronizar también con partidos en vivo si corresponden a los filtros
+            sortFilteredMatches(currentFilteredUpcoming);
+
+            // Renderizar tarjetas visibles
+            const grid = document.getElementById('upcoming-grid');
+            if (grid) {
+                const visibleSlice = currentFilteredUpcoming.slice(0, renderedUpcomingLimit);
+                let html = '';
+                visibleSlice.forEach(m => {
+                    html += renderMatchCardHtml(m);
+                });
+                grid.innerHTML = html;
+                if (window.lucide) lucide.createIcons();
+            }
+
+            // Gestionar botón "Cargar más partidos"
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const loadMoreText = document.getElementById('load-more-text');
+            if (loadMoreContainer) {
+                if (currentFilteredUpcoming.length > renderedUpcomingLimit) {
+                    loadMoreContainer.classList.remove('hidden');
+                    const remaining = currentFilteredUpcoming.length - renderedUpcomingLimit;
+                    if (loadMoreText) {
+                        loadMoreText.innerText = `Cargar más partidos (${remaining} restantes)`;
+                    }
+                } else {
+                    loadMoreContainer.classList.add('hidden');
+                }
+            }
+
+            // Sincronizar partidos en vivo (#live-grid)
             document.querySelectorAll('#live-grid .match-card').forEach(card => {
                 const isNat = card.dataset.isNational === 'true';
                 const sport = card.dataset.sport;
@@ -1469,18 +1802,9 @@
                 else if (currentCategory === 'national' && isNat) matchCat = true;
                 else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
 
-                let matchCountry = false;
-                if (currentCountryFilter === 'all') matchCountry = true;
-                else if (cardCountry === currentCountryFilter) matchCountry = true;
-
-                let matchLeague = false;
-                if (currentLeagueFilter === 'all') matchLeague = true;
-                else if (cardLeague === currentLeagueFilter) matchLeague = true;
-
-                let matchValue = true;
-                if (onlyValuePicks) {
-                    matchValue = isValue;
-                }
+                let matchCountry = (currentCountryFilter === 'all') || (cardCountry === currentCountryFilter);
+                let matchLeague = (currentLeagueFilter === 'all') || (cardLeague === currentLeagueFilter);
+                let matchValue = (!onlyValuePicks) || isValue;
 
                 const show = matchCat && matchCountry && matchLeague && matchValue;
                 card.style.display = show ? 'flex' : 'none';
@@ -1489,13 +1813,14 @@
             // Actualizar contador
             const counterEl = document.getElementById('filtered-matches-counter');
             if (counterEl) {
-                counterEl.innerHTML = `Mostrando <strong class="text-white">${upcomingVisibleCount}</strong> de {{ upcoming_matches|length }} partidos`;
+                const totalAll = upcomingList.length;
+                counterEl.innerHTML = `Mostrando <strong class="text-white">${Math.min(currentFilteredUpcoming.length, renderedUpcomingLimit)}</strong> de ${currentFilteredUpcoming.length} partidos filtrados (${totalAll} en total)`;
             }
 
             // Alerta de sin resultados
             const alertBox = document.getElementById('no-matches-date-alert');
             if (alertBox) {
-                if (upcomingVisibleCount === 0) alertBox.classList.remove('hidden');
+                if (currentFilteredUpcoming.length === 0) alertBox.classList.remove('hidden');
                 else alertBox.classList.add('hidden');
             }
 
@@ -1513,8 +1838,12 @@
             }
         }
 
+        function loadMoreMatches() {
+            renderedUpcomingLimit += 40;
+            applyAllFilters();
+        }
+
         function updateDynamicFilters() {
-            const cards = document.querySelectorAll('#upcoming-grid .match-card');
             const countrySelect = document.getElementById('country-select');
             const leagueSelect = document.getElementById('league-select');
             if (!countrySelect || !leagueSelect) return;
@@ -1522,15 +1851,15 @@
             const countryCounts = {};
             const leagueCounts = {};
             let totalAvailable = 0;
-
             const nowSeconds = Math.floor(Date.now() / 1000);
+            const upcomingList = allMatchesData.filter(m => !m.is_live);
 
-            cards.forEach(card => {
-                const sport = card.dataset.sport;
-                const isNat = card.dataset.isNational === 'true';
-                const cardDate = card.dataset.date;
-                const isValue = card.dataset.valueBet === 'true';
-                const cardTs = parseInt(card.dataset.timestamp || '0', 10);
+            upcomingList.forEach(m => {
+                const sport = m.sport;
+                const isNat = m.league && m.league.includes('Selecciones');
+                const cardDate = m.date_iso;
+                const isValue = m.prediction && m.prediction.is_value_bet;
+                const cardTs = parseInt(m.timestamp || '0', 10);
 
                 // Categoría
                 let matchCat = false;
@@ -1551,12 +1880,12 @@
 
                 if (matchCat && matchDate && matchVal && matchPending) {
                     totalAvailable++;
-                    const c = card.dataset.country || 'Internacional';
+                    const c = m.country || 'Internacional';
                     countryCounts[c] = (countryCounts[c] || 0) + 1;
 
                     // Si coincide con el país seleccionado (o si está en 'all')
-                    if (currentCountryFilter === 'all' || card.dataset.country === currentCountryFilter) {
-                        const l = card.dataset.league;
+                    if (currentCountryFilter === 'all' || m.country === currentCountryFilter) {
+                        const l = m.league;
                         if (l) leagueCounts[l] = (leagueCounts[l] || 0) + 1;
                     }
                 }
@@ -1832,41 +2161,7 @@
             if (sortSelect && sortSelect.value !== order) {
                 sortSelect.value = order;
             }
-            const grid = document.getElementById('upcoming-grid');
-            if (!grid) return;
-            const cards = Array.from(grid.querySelectorAll('.match-card'));
-
-            cards.sort((a, b) => {
-                const tsA = parseInt(a.dataset.timestamp || '0', 10);
-                const tsB = parseInt(b.dataset.timestamp || '0', 10);
-                const dateA = a.dataset.date || '';
-                const dateB = b.dataset.date || '';
-                const timeA = a.dataset.time || '';
-                const timeB = b.dataset.time || '';
-
-                if (order === 'time-asc') {
-                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsA - tsB;
-                    if (dateA !== dateB) return dateA.localeCompare(dateB);
-                    return timeA.localeCompare(timeB);
-                } else if (order === 'time-desc') {
-                    if (tsA !== tsB && tsA > 0 && tsB > 0) return tsB - tsA;
-                    if (dateA !== dateB) return dateB.localeCompare(dateA);
-                    return timeB.localeCompare(timeA);
-                } else if (order === 'prob-desc') {
-                    const pA = parseFloat(a.dataset.prob || '0');
-                    const pB = parseFloat(b.dataset.prob || '0');
-                    if (pA !== pB) return pB - pA;
-                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
-                } else if (order === 'league') {
-                    const lA = (a.dataset.league || '').toLowerCase();
-                    const lB = (b.dataset.league || '').toLowerCase();
-                    if (lA !== lB) return lA.localeCompare(lB);
-                    return (tsA > 0 && tsB > 0) ? (tsA - tsB) : 0;
-                }
-                return 0;
-            });
-
-            cards.forEach(card => grid.appendChild(card));
+            applyAllFilters();
         }
 
         function resetAllFilters() {
@@ -1876,6 +2171,7 @@
             currentLeagueFilter = 'all';
             onlyValuePicks = false;
             currentSortOrder = 'time-asc';
+            renderedUpcomingLimit = 40;
 
             const sortSelect = document.getElementById('sort-select');
             if (sortSelect) sortSelect.value = 'time-asc';
@@ -2717,6 +3013,34 @@
                         }
                     })
                     .catch(e => console.error("Error auto-cargando árbitro:", e));
+            }
+
+            // Cargar detalle completo H2H / IA en segundo plano si aún no está en memoria
+            if (!match.h2h || !match.h2h.home_last_5 || match.h2h.home_last_5.length === 0) {
+                const directList = document.getElementById('h2h-direct-list');
+                const homeList = document.getElementById('h2h-home-list');
+                const awayList = document.getElementById('h2h-away-list');
+                if (directList) directList.innerHTML = `<div class="py-4 text-center text-gray-400 flex items-center justify-center gap-2 font-mono"><i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin text-emerald-400"></i><span>Cargando H2H oficial...</span></div>`;
+                if (homeList) homeList.innerHTML = `<div class="py-4 text-center text-gray-400 flex items-center justify-center gap-2 font-mono"><i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin text-emerald-400"></i><span>Cargando...</span></div>`;
+                if (awayList) awayList.innerHTML = `<div class="py-4 text-center text-gray-400 flex items-center justify-center gap-2 font-mono"><i data-lucide="refresh-cw" class="w-3.5 h-3.5 animate-spin text-emerald-400"></i><span>Cargando...</span></div>`;
+                if (window.lucide) lucide.createIcons();
+
+                fetch(`/api/match/${matchId}`)
+                    .then(r => r.json())
+                    .then(fullData => {
+                        if (fullData && !fullData.error) {
+                            Object.assign(match, fullData);
+                            if (activeMatchId === matchId) {
+                                renderRefereeCard(match);
+                                renderTeamGoalsBanner(match);
+                                renderModalPicks(match);
+                                renderModalH2H(match);
+                                updateGeminiUI(match.ai_analysis || {});
+                                if (window.lucide) lucide.createIcons();
+                            }
+                        }
+                    })
+                    .catch(e => console.error("Error auto-cargando H2H:", e));
             }
 
             // Render Quarters and Halves si es NBA
