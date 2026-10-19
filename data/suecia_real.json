@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-10-18T19:51:06.961119",
+  "last_updated": "2026-10-19T16:46:11.764820",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,7 +2981,25 @@
           "text": "Degerfors 1 victorias • 0 empates • Kalmar FF 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mohammed Al Hakim",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 42,
+        "yellow_cards_per_match": 2.67,
+        "yellow_cards_total": 112,
+        "yellow_cards_avg_league": 3.57,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 2,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.67 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

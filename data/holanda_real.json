@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-10-18T19:50:34.555488",
+  "last_updated": "2026-10-19T16:46:02.659394",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -3299,7 +3299,25 @@
           "text": "Go Ahead Eagles 2 victorias • 1 empates • Telstar 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Robin Hensgens",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 27,
+        "yellow_cards_per_match": 3.11,
+        "yellow_cards_total": 84,
+        "yellow_cards_avg_league": 3.11,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 3,
+        "fouls_per_match": 22.8,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.11 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "FC Utrecht 3 victorias • 2 empates • PEC Zwolle 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Martijn Vos",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 36,
+        "yellow_cards_per_match": 3.42,
+        "yellow_cards_total": 123,
+        "yellow_cards_avg_league": 3.38,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 9,
+        "fouls_per_match": 26.6,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.42 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

@@ -3,7 +3,7 @@
   "league_id": 42,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-18T19:51:24.047921",
+  "last_updated": "2026-10-19T16:46:16.249200",
   "total_fixtures": 18,
   "team_histories": {
     "AEK Athens": [
@@ -3053,7 +3053,25 @@
           "text": "Fenerbahçe 1 victorias • 0 empates • Slavia Prague 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ricardo de Burgos Bengoetxea",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.9,
+        "yellow_cards_total": 152,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 14,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.9 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3311,7 +3329,25 @@
           "text": "Sabah FK 3 victorias • 1 empates • Borussia Dortmund 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Javier Alberola Rojas",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 41,
+        "yellow_cards_per_match": 3.83,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 10,
+        "penalties_total": 19,
+        "fouls_per_match": 27.8,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.83 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3569,7 +3605,25 @@
           "text": "FC Porto 1 victorias • 3 empates • PSV Eindhoven 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Daniel Siebert",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.85,
+        "yellow_cards_total": 127,
+        "yellow_cards_avg_league": 3.8,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 10,
+        "fouls_per_match": 22.4,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.85 amarillas y 22.37 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3822,7 +3876,25 @@
           "text": "Liverpool 3 victorias • 0 empates • Villarreal 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Szymon Marciniak",
+        "country": "Poland",
+        "country_code": "POL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/pol.png",
+        "matches": 43,
+        "yellow_cards_per_match": 3.47,
+        "yellow_cards_total": 149,
+        "yellow_cards_avg_league": 4.01,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 13,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.47 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4080,7 +4152,25 @@
           "text": "Manchester City 2 victorias • 0 empates • AEK Athens 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Willy Delajod",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 37,
+        "yellow_cards_per_match": 3.35,
+        "yellow_cards_total": 124,
+        "yellow_cards_avg_league": 3.73,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 14,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.35 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4348,7 +4438,25 @@
           "text": "Paris Saint-Germain 3 victorias • 1 empates • Barcelona 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Michael Oliver",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 55,
+        "yellow_cards_per_match": 3.45,
+        "yellow_cards_total": 190,
+        "yellow_cards_avg_league": 3.91,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 6,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 21.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.45 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4571,7 +4679,25 @@
           "text": "Roma 0 victorias • 1 empates • Slovan Bratislava 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sandro Schärer",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 22,
+        "yellow_cards_per_match": 4.18,
+        "yellow_cards_total": 92,
+        "yellow_cards_avg_league": 4.52,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 6,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.18 amarillas y 28.4 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4829,7 +4955,25 @@
           "text": "Napoli 1 victorias • 2 empates • Bodø/Glimt 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José María Sánchez Martínez",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.67,
+        "yellow_cards_total": 154,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 27.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.67 amarillas y 27.04 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5087,7 +5231,25 @@
           "text": "VfB Stuttgart 1 victorias • 3 empates • Atlético Madrid 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Serdar Gözübüyük",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 58,
+        "yellow_cards_per_match": 3.5,
+        "yellow_cards_total": 203,
+        "yellow_cards_avg_league": 3.11,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 21.6,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.5 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5345,7 +5507,25 @@
           "text": "Como 3 victorias • 1 empates • Manchester United 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sven Jablonski",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 32,
+        "yellow_cards_per_match": 3.13,
+        "yellow_cards_total": 100,
+        "yellow_cards_avg_league": 3.8,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 20.9,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.13 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5603,7 +5783,25 @@
           "text": "Lille 1 victorias • 3 empates • Galatasaray 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rade Obrenović",
+        "country": "Slovenia",
+        "country_code": "SVN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/svn.png",
+        "matches": 5,
+        "yellow_cards_per_match": 4.4,
+        "yellow_cards_total": 22,
+        "yellow_cards_avg_league": 4.12,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.4 amarillas y 23.6 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5861,7 +6059,25 @@
           "text": "Aston Villa 3 victorias • 0 empates • Viking 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sebastian Gishamer",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 29,
+        "yellow_cards_per_match": 4.38,
+        "yellow_cards_total": 127,
+        "yellow_cards_avg_league": 4.22,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.38 amarillas y 24.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6129,7 +6345,25 @@
           "text": "Bayern München 1 victorias • 2 empates • Arsenal 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Davide Massa",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.47,
+        "yellow_cards_total": 161,
+        "yellow_cards_avg_league": 3.75,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 7,
+        "penalties_total": 7,
+        "fouls_per_match": 26.1,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.47 amarillas y 26.15 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6387,7 +6621,25 @@
           "text": "Club Brugge 1 victorias • 3 empates • Lens 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luís Godinho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 36,
+        "yellow_cards_per_match": 5.17,
+        "yellow_cards_total": 186,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 27.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.17 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6655,7 +6907,25 @@
           "text": "Inter 2 victorias • 3 empates • Shakhtar Donetsk 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Harm Osmers",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 27,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 108,
+        "yellow_cards_avg_league": 3.8,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 9,
+        "fouls_per_match": 20.6,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.0 amarillas y 20.63 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6863,7 +7133,25 @@
           "text": "Real Betis 1 victorias • 0 empates • Feyenoord 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Simone Sozza",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.79,
+        "yellow_cards_total": 125,
+        "yellow_cards_avg_league": 3.75,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 20,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.79 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7116,7 +7404,25 @@
           "text": "Real Madrid 2 victorias • 1 empates • RB Leipzig 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "István Kovács",
+        "country": "Romania",
+        "country_code": "ROU",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/rou.png",
+        "matches": 34,
+        "yellow_cards_per_match": 4.82,
+        "yellow_cards_total": 164,
+        "yellow_cards_avg_league": 4.24,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 7,
+        "penalties_total": 17,
+        "fouls_per_match": 25.4,
+        "fouls_avg_league": 23.9,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.82 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7354,7 +7660,25 @@
           "text": "Sporting CP 1 victorias • 0 empates • LASK 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Nick Walsh",
+        "country": "Scotland",
+        "country_code": "SCO",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sco.png",
+        "matches": 50,
+        "yellow_cards_per_match": 4.14,
+        "yellow_cards_total": 207,
+        "yellow_cards_avg_league": 3.81,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 14,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 23.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.14 amarillas y 24.98 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
