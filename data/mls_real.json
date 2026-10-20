@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-19T21:55:31.796968",
+  "last_updated": "2026-10-20T14:37:17.575905",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -5207,7 +5207,25 @@
           "text": "FC Cincinnati 2 victorias • 1 empates • DC United 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Timothy Ford",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 26,
+        "yellow_cards_per_match": 4.12,
+        "yellow_cards_total": 107,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 21.8,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.12 amarillas y 21.8 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

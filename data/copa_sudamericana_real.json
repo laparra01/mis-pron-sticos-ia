@@ -3,7 +3,7 @@
   "league_id": 299,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-10-19T21:56:49.390722",
+  "last_updated": "2026-10-20T14:39:34.446900",
   "total_fixtures": 2,
   "team_histories": {
     "Academia Puerto Cabello": [
@@ -7143,7 +7143,25 @@
           "text": "Vasco da Gama 1 victorias • 0 empates • Boca Juniors 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jesús Valenzuela",
+        "country": "Venezuela",
+        "country_code": "VEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ven.png",
+        "matches": 49,
+        "yellow_cards_per_match": 5.24,
+        "yellow_cards_total": 257,
+        "yellow_cards_avg_league": 5.88,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 7,
+        "penalties_total": 16,
+        "fouls_per_match": 25.9,
+        "fouls_avg_league": 28.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.24 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7513,7 +7531,25 @@
           "text": "Montevideo City Torque 0 victorias • 0 empates • Atlético-MG 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Cristián Garay",
+        "country": "Chile",
+        "country_code": "CHI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/chi.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.87,
+        "yellow_cards_total": 146,
+        "yellow_cards_avg_league": 5.29,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 12,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.87 amarillas y 23.1 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
