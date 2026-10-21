@@ -4,7 +4,7 @@ import requests
 import re
 import time
 import unicodedata
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 import importlib
 try:
     import config
@@ -588,9 +588,20 @@ ESPN_SLUG_PREFIXES = [
     ("par.", "Primera División de Paraguay", "Paraguay", "🇵🇾"),
     ("bra.", "Brasileirão Série A", "Brasil", "🇧🇷"),
     ("mex.", "Liga MX", "México", "🇲🇽"),
+    ("esp.w.", "Liga F (Femenil)", "España", "🇪🇸"),
+    ("esp.copa_del_rey", "Copa del Rey", "España", "🇪🇸"),
     ("esp.2", "LaLiga Hypermotion", "España", "🇪🇸"),
+    ("esp.1", "LaLiga EA Sports", "España", "🇪🇸"),
     ("esp.", "LaLiga EA Sports", "España", "🇪🇸"),
+    ("eng.w.league_cup", "English WSL Cup (Femenil)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.w.", "FA Women's Super League (WSL)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.fa", "FA Cup", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.league_cup", "Carabao Cup (EFL Cup)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.trophy", "EFL Trophy", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.1", "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("eng.2", "Championship", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.3", "League One", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("eng.4", "League Two", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("eng.5", "National League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("eng.", "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("ger.2", "2. Bundesliga", "Alemania", "🇩🇪"),
@@ -653,6 +664,10 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
         return "Jupiler Pro League", "Bélgica", "🇧🇪"
     if "japón" in comp_lower or "japon" in comp_lower or "japan" in comp_lower or "jpn.1" in comp_lower or "j1" in comp_lower:
         return "J1 League", "Japón", "🇯🇵"
+    if "wsl" in comp_lower or "players cup" in comp_lower or "w.league" in comp_lower:
+        return "English WSL Cup (Femenil)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    if "women" in comp_lower or "femenil" in comp_lower or "fem." in comp_lower:
+        return "Competición Femenil", "Inglaterra" if ("eng" in comp_lower or "birmingham" in comp_lower) else "Internacional", "⚽"
     if "premier" in comp_lower:
         return "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     if "championship" in comp_lower:
@@ -1021,7 +1036,9 @@ def fetch_espn_live_soccer():
                         espn_lid = real_event_info["league_id"]
 
                     raw_league = ""
-                    if real_event_info and real_event_info.get("league_slug"):
+                    if real_event_info and real_event_info.get("league_name") and real_event_info.get("league_name").lower() not in ("clausura", "apertura", "regular-season", "league-phase", "group-stage"):
+                        raw_league = real_event_info["league_name"]
+                    elif real_event_info and real_event_info.get("league_slug"):
                         raw_league = real_event_info["league_slug"]
                     elif real_event_info and real_event_info.get("league_name"):
                         raw_league = real_event_info["league_name"]
@@ -1172,9 +1189,11 @@ def fetch_espn_live_nba():
 
                     live_list.append({
                         "id": f"espn_nba_{e.get('id')}",
+                        "match_id": str(e.get("id")),
                         "sport": "nba",
                         "league": "NBA",
                         "country": "Estados Unidos",
+                        "country_code": "us",
                         "league_flag": "🏀",
                         "country_flag": "🇺🇸",
                         "home_team": home_name,
@@ -1784,18 +1803,157 @@ def load_scraped_matches(force_reload=False):
     _SCRAPED_MATCHES_CACHE_TIME = time.time()
     return scraped_list
 
+_ESPN_UPCOMING_NBA_CACHE = {"data": None, "timestamp": 0}
+
+def _parse_espn_nba_datetime(iso_str):
+    try:
+        clean = iso_str.replace("Z", "+00:00")
+        dt_utc = datetime.fromisoformat(clean)
+        gt_tz = timezone(timedelta(hours=-6))
+        dt_gt = dt_utc.astimezone(gt_tz)
+        days_es = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]
+        months_es = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+        day_name = days_es[dt_gt.weekday()]
+        month_name = months_es[dt_gt.month - 1]
+        date_formatted = f"{day_name} {dt_gt.day} {month_name}, {dt_gt.hour:02d}:{dt_gt.minute:02d}"
+        date_iso = dt_gt.strftime("%Y-%m-%d")
+        time_str = f"{dt_gt.hour:02d}:{dt_gt.minute:02d}"
+        timestamp = int(dt_utc.timestamp())
+        return date_formatted, date_iso, time_str, timestamp
+    except Exception as ex:
+        now_dt = datetime.now()
+        return "Hoy", now_dt.strftime("%Y-%m-%d"), "19:00", int(now_dt.timestamp())
+
+def fetch_espn_upcoming_nba():
+    """
+    Obtiene los partidos programados oficiales de la NBA directamente desde ESPN Scoreboard.
+    Carga los juegos de hoy y mañana que se encuentren en estado 'pre' (programados).
+    Calcula probabilidades cuantitativas de baloncesto, desglose por cuartos, hándicap y over/under.
+    """
+    global _ESPN_UPCOMING_NBA_CACHE
+    now = time.time()
+    if _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 300):
+        return _ESPN_UPCOMING_NBA_CACHE["data"]
+
+    events = []
+    try:
+        # Scoreboard de hoy
+        r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard", timeout=5)
+        if r1.status_code == 200:
+            events.extend(r1.json().get("events", []))
+        
+        # Scoreboard de mañana para cobertura de próximos juegos
+        tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
+        r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={tomorrow_str}", timeout=5)
+        if r2.status_code == 200:
+            events.extend(r2.json().get("events", []))
+    except Exception as ex:
+        print(f"[ESPN NBA] Error al consultar scoreboard: {ex}")
+        if _ESPN_UPCOMING_NBA_CACHE["data"]:
+            return _ESPN_UPCOMING_NBA_CACHE["data"]
+
+    seen_ids = set()
+    upcoming_list = []
+
+    for e in events:
+        eid = e.get("id")
+        if not eid or eid in seen_ids:
+            continue
+        seen_ids.add(eid)
+
+        state = e.get("status", {}).get("type", {}).get("state")
+        # Solo partidos programados (pre-match)
+        if state != "pre":
+            continue
+
+        comp = e.get("competitions", [{}])[0]
+        competitors = comp.get("competitors", [])
+        if len(competitors) < 2:
+            continue
+
+        home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+        away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+
+        home_team_data = home.get("team", {})
+        away_team_data = away.get("team", {})
+        home_name = home_team_data.get("displayName", "Local")
+        away_name = away_team_data.get("displayName", "Visitante")
+
+        home_logo = home_team_data.get("logo") or get_team_logo(home_name, "nba")
+        away_logo = away_team_data.get("logo") or get_team_logo(away_name, "nba")
+
+        raw_date = e.get("date", "")
+        date_formatted, date_iso, time_str, timestamp = _parse_espn_nba_datetime(raw_date)
+
+        h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
+        h_ratings = get_nba_team_ratings(home_name, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+        a_ratings = get_nba_team_ratings(away_name, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
+        pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
+        ai_resp = generate_nba_ai_analysis({"home_team": home_name, "away_team": away_name}, pred)
+        enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
+        upcoming_list.append({
+            "id": f"espn_nba_{eid}",
+            "match_id": str(eid),
+            "sport": "nba",
+            "league": "NBA",
+            "country": "Estados Unidos",
+            "country_code": "us",
+            "league_flag": "🏀",
+            "country_flag": "🇺🇸",
+            "home_team": home_name,
+            "away_team": away_name,
+            "home_logo": home_logo,
+            "away_logo": away_logo,
+            "home_id": home_team_data.get("id"),
+            "away_id": away_team_data.get("id"),
+            "date": date_formatted,
+            "date_iso": date_iso,
+            "time": time_str,
+            "timestamp": timestamp,
+            "timezone": "America/Guatemala",
+            "home_stats": h_ratings,
+            "away_stats": a_ratings,
+            "prediction": pred,
+            "h2h": h2h_data,
+            "ai_analysis": ai_resp,
+            "referee": None,
+            "is_live": False,
+            "is_external": True,
+            "source_api": "ESPN NBA (Oficial)"
+        })
+
+    # Ordenar cronológicamente
+    upcoming_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+    _ESPN_UPCOMING_NBA_CACHE["data"] = upcoming_list
+    _ESPN_UPCOMING_NBA_CACHE["timestamp"] = now
+    if upcoming_list:
+        print(f"[ESPN NBA] Se sincronizaron {len(upcoming_list)} partidos oficiales programados de la NBA.")
+    return upcoming_list
+
+
 def fetch_matches_data(sport_filter="all"):
     """
     Obtiene los partidos programados (pre-match).
-    ÚNICAMENTE devuelve partidos analizados mediante la extracción oficial de FotMob
-    con estadísticas 100% reales, H2H directo y córners verificados.
-    Se eliminan todos los partidos de las otras APIs pre-partido para mantener solo datos reales.
+    - Fútbol: Partidos analizados mediante extracción oficial de FotMob con estadísticas 100% reales.
+    - NBA: Partidos oficiales en vivo y programados vía ESPN Oficial Scoreboard.
     """
-    if sport_filter not in ("all", "football"):
-        return []
+    results = []
 
-    # Cargar exclusivamente los partidos oficiales escrapeados de FotMob
-    return load_scraped_matches()
+    # 1. Fútbol oficial escrapeado de FotMob
+    if sport_filter in ("all", "football"):
+        results.extend(load_scraped_matches())
+
+    # 2. NBA oficial vía ESPN Scoreboard
+    if sport_filter in ("all", "nba"):
+        results.extend(fetch_espn_upcoming_nba())
+
+    # Ordenar cronológicamente si hay partidos combinados
+    if sport_filter == "all":
+        results.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+
+    return results
+
 
 def get_match_referee(match_id):
     """

@@ -490,16 +490,21 @@
                             </span>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-2">
-                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                        <div class="grid {% if m.sport == 'football' %}grid-cols-4{% else %}grid-cols-3{% endif %} gap-1.5 sm:gap-2">
+                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos, Córners y Tarjetas" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Estadísticas" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Deportivo Google Gemini" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
+                            {% if m.sport == 'football' %}
+                            <button onclick="openAiModal('{{ m.id }}', 'matrix')" title="Matriz Cuantitativa Top 10 (Goles, Remates, Córners, Tarjetas)" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
+                                <i data-lucide="table-2" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            {% endif %}
                         </div>
                     </div>
 
@@ -844,16 +849,21 @@
                             </span>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-2">
-                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                        <div class="grid {% if m.sport == 'football' %}grid-cols-4{% else %}grid-cols-3{% endif %} gap-1.5 sm:gap-2">
+                            <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Pronósticos IA" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
+                            {% if m.sport == 'football' %}
+                            <button onclick="openAiModal('{{ m.id }}', 'matrix')" title="Matriz Cuantitativa Top 10 (Goles, Remates, Córners, Tarjetas)" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
+                                <i data-lucide="table-2" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -1127,6 +1137,10 @@
                     <i data-lucide="bot" class="w-4 h-4"></i>
                     <span class="text-base">🧠</span>
                 </button>
+                <button onclick="switchModalTab('matrix')" id="modal-tab-btn-matrix" class="pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110" title="Matriz Cuantitativa Top 10 (Goles, Remates, Córners, Tarjetas)">
+                    <i data-lucide="table-2" class="w-4 h-4"></i>
+                    <span class="text-base">🔢</span>
+                </button>
             </div>
 
             <!-- Modal Scrollable Body -->
@@ -1330,6 +1344,106 @@
                             <span class="text-gray-300 font-semibold">Marcador / Proyección Final:</span>
                         </div>
                         <span id="modal-score" class="font-mono text-base font-extrabold text-amber-400 px-3 py-1 bg-amber-950/50 rounded-lg border border-amber-800/40"></span>
+                    </div>
+
+                    <!-- Box de Análisis de Matriz por Gemini en el tab Gemini -->
+                    <div id="modal-gemini-matrix-box" class="hidden bg-purple-950/30 border border-purple-800/50 p-3.5 rounded-xl">
+                        <span class="text-[10px] uppercase font-bold text-purple-400 tracking-wider flex items-center gap-1 mb-1.5 font-mono">
+                            <i data-lucide="table-2" class="w-3.5 h-3.5 text-purple-400"></i> 🔢 Análisis Multivariable de la Matriz Cuantitativa
+                        </span>
+                        <p id="modal-gemini-matrix-analysis" class="text-gray-200 leading-relaxed font-sans"></p>
+                    </div>
+                </div>
+
+                <!-- SECCIÓN TAB 4: MATRIZ DE PROYECCIONES CUANTITATIVAS (ENTREGABLE GT) -->
+                <div id="modal-content-matrix" class="hidden space-y-4">
+                    <!-- Banner de Análisis Gemini AI para la Matriz -->
+                    <div id="modal-matrix-gemini-card" class="bg-gradient-to-r from-purple-950/70 via-indigo-950/60 to-purple-900/40 border border-purple-700/60 p-4 rounded-xl shadow-lg shadow-purple-950/40">
+                        <div class="flex items-center justify-between gap-3 mb-2">
+                            <span class="text-[11px] uppercase font-bold text-purple-300 tracking-wider flex items-center gap-1.5 font-mono">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-purple-400"></i> Análisis Cuantitativo de la Matriz • Gemini AI
+                            </span>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-900/80 text-purple-200 border border-purple-500/60 font-mono">
+                                MULTIVARIABLE
+                            </span>
+                        </div>
+                        <p id="modal-matrix-gemini-text" class="text-gray-200 leading-relaxed font-sans text-xs sm:text-[13px]">
+                            Interpretando correlaciones multivariables de Poisson, eficiencia de remates y volumen de córners...
+                        </p>
+                    </div>
+
+                    <!-- Resumen Métricas Clave Top 1 -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-center">
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Marcador FT</span>
+                            <span id="matrix-top-ft" class="text-xs font-mono font-bold text-emerald-400">-</span>
+                        </div>
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">1T Descanso</span>
+                            <span id="matrix-top-ht" class="text-xs font-mono font-bold text-cyan-400">-</span>
+                        </div>
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Remates Totales</span>
+                            <span id="matrix-top-shots" class="text-xs font-mono font-bold text-blue-400">-</span>
+                        </div>
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Tiros al Arco</span>
+                            <span id="matrix-top-sot" class="text-xs font-mono font-bold text-amber-400">-</span>
+                        </div>
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Córners</span>
+                            <span id="matrix-top-corners" class="text-xs font-mono font-bold text-purple-400">-</span>
+                        </div>
+                        <div class="bg-gray-950/80 p-2.5 rounded-xl border border-gray-800">
+                            <span class="text-[9px] uppercase font-bold text-gray-400 block tracking-wider">Tarjetas Amarillas</span>
+                            <span id="matrix-top-cards" class="text-xs font-mono font-bold text-rose-400">-</span>
+                        </div>
+                    </div>
+
+                    <!-- Tabla de 6 Columnas Top 10 -->
+                    <div class="bg-gray-950/90 rounded-xl border border-gray-800 overflow-hidden shadow-inner">
+                        <div class="p-3 border-b border-gray-800/80 flex items-center justify-between flex-wrap gap-2">
+                            <div>
+                                <h4 class="text-xs font-bold text-gray-200 flex items-center gap-1.5 font-semibold">
+                                    <i data-lucide="table-2" class="w-3.5 h-3.5 text-emerald-400"></i>
+                                    <span>Top 10 Combinaciones Más Probables</span>
+                                </h4>
+                                <p class="text-[10px] text-gray-400 mt-0.5">
+                                    Modelo de Poisson bivariado con covarianza dinámica por posesión y ratio ofensivo
+                                </p>
+                            </div>
+                            <span class="text-[10px] text-emerald-400 bg-emerald-950/50 border border-emerald-800/50 px-2 py-0.5 rounded font-mono">
+                                50,000 Simulaciones / Bivariado
+                            </span>
+                        </div>
+
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse text-[11px] font-mono whitespace-nowrap">
+                                <thead>
+                                    <tr class="bg-gray-900/80 text-gray-400 text-[10px] border-b border-gray-800 uppercase tracking-wider font-sans">
+                                        <th class="p-2 sm:p-2.5 text-center w-8">#</th>
+                                        <th class="p-2 sm:p-2.5 text-center">FTHG-FTAG<span class="block text-[8px] text-gray-500 font-normal">Final</span></th>
+                                        <th class="p-2 sm:p-2.5 text-center">HTHG-HTAG<span class="block text-[8px] text-gray-500 font-normal">1er T</span></th>
+                                        <th class="p-2 sm:p-2.5 text-center">HS-AS<span class="block text-[8px] text-gray-500 font-normal">Remates</span></th>
+                                        <th class="p-2 sm:p-2.5 text-center">HST-AST<span class="block text-[8px] text-gray-500 font-normal">Al Arco</span></th>
+                                        <th class="p-2 sm:p-2.5 text-center">HC-AC<span class="block text-[8px] text-gray-500 font-normal">Córners</span></th>
+                                        <th class="p-2 sm:p-2.5 text-center">HY-AY<span class="block text-[8px] text-gray-500 font-normal">Tarjetas</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="modal-matrix-table-body" class="divide-y divide-gray-800/60">
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Leyenda explicativa al pie -->
+                        <div class="p-2.5 bg-gray-900/40 border-t border-gray-800/60 text-[9px] text-gray-400 font-sans grid grid-cols-2 sm:grid-cols-3 gap-1.5 leading-tight">
+                            <div><span class="text-gray-300 font-semibold font-mono">FTHG-FTAG:</span> Marcador tiempo completo</div>
+                            <div><span class="text-gray-300 font-semibold font-mono">HTHG-HTAG:</span> Marcador primer tiempo</div>
+                            <div><span class="text-gray-300 font-semibold font-mono">HS-AS:</span> Remates totales (Local-Visita)</div>
+                            <div><span class="text-gray-300 font-semibold font-mono">HST-AST:</span> Remates a puerta (Local-Visita)</div>
+                            <div><span class="text-gray-300 font-semibold font-mono">HC-AC:</span> Tiros de esquina (Local-Visita)</div>
+                            <div><span class="text-gray-300 font-semibold font-mono">HY-AY:</span> Tarjetas amarillas (Local-Visita)</div>
+                        </div>
                     </div>
                 </div>
 
@@ -1681,16 +1795,21 @@
                             </span>
                         </div>
 
-                        <div class="grid grid-cols-3 gap-2">
-                            <button onclick="openAiModal('${m.id}', 'picks')" title="Pronósticos IA" class="py-2.5 px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                        <div class="grid ${m.sport === 'football' ? 'grid-cols-4' : 'grid-cols-3'} gap-1.5 sm:gap-2">
+                            <button onclick="openAiModal('${m.id}', 'picks')" title="Pronósticos, Córners y Tarjetas" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="target" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('${m.id}', 'h2h')" title="Historial H2H y Córners" class="py-2.5 px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('${m.id}', 'h2h')" title="Historial H2H y Estadísticas" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="history" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
-                            <button onclick="openAiModal('${m.id}', 'gemini')" title="Análisis Google Gemini AI" class="py-2.5 px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group">
+                            <button onclick="openAiModal('${m.id}', 'gemini')" title="Análisis Deportivo Google Gemini" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
                                 <i data-lucide="bot" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
                             </button>
+                            ${m.sport === 'football' ? `
+                            <button onclick="openAiModal('${m.id}', 'matrix')" title="Matriz Cuantitativa Top 10 (Goles, Remates, Córners, Tarjetas)" class="py-2.5 px-2 sm:px-3 bg-gray-800/80 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer">
+                                <i data-lucide="table-2" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            ` : ''}
                         </div>
                     </div>
                 </div>
@@ -2264,35 +2383,24 @@
             const btnPicks = document.getElementById('modal-tab-btn-picks');
             const btnH2h = document.getElementById('modal-tab-btn-h2h');
             const btnGemini = document.getElementById('modal-tab-btn-gemini');
+            const btnMatrix = document.getElementById('modal-tab-btn-matrix');
             const contentPicks = document.getElementById('modal-content-picks');
             const contentH2h = document.getElementById('modal-content-h2h');
             const contentGemini = document.getElementById('modal-content-gemini');
+            const contentMatrix = document.getElementById('modal-content-matrix');
 
             const activeClass = "pb-3 px-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
             const inactiveClass = "pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
 
-            if (tab === 'picks') {
-                btnPicks.className = activeClass;
-                btnH2h.className = inactiveClass;
-                btnGemini.className = inactiveClass;
-                contentPicks.classList.remove('hidden');
-                contentH2h.classList.add('hidden');
-                contentGemini.classList.add('hidden');
-            } else if (tab === 'h2h') {
-                btnPicks.className = inactiveClass;
-                btnH2h.className = activeClass;
-                btnGemini.className = inactiveClass;
-                contentPicks.classList.add('hidden');
-                contentH2h.classList.remove('hidden');
-                contentGemini.classList.add('hidden');
-            } else if (tab === 'gemini') {
-                btnPicks.className = inactiveClass;
-                btnH2h.className = inactiveClass;
-                btnGemini.className = activeClass;
-                contentPicks.classList.add('hidden');
-                contentH2h.classList.add('hidden');
-                contentGemini.classList.remove('hidden');
-            }
+            if (btnPicks) btnPicks.className = (tab === 'picks') ? activeClass : inactiveClass;
+            if (btnH2h) btnH2h.className = (tab === 'h2h') ? activeClass : inactiveClass;
+            if (btnGemini) btnGemini.className = (tab === 'gemini') ? activeClass : inactiveClass;
+            if (btnMatrix) btnMatrix.className = (tab === 'matrix') ? activeClass : inactiveClass;
+
+            if (contentPicks) contentPicks.classList.toggle('hidden', tab !== 'picks');
+            if (contentH2h) contentH2h.classList.toggle('hidden', tab !== 'h2h');
+            if (contentGemini) contentGemini.classList.toggle('hidden', tab !== 'gemini');
+            if (contentMatrix) contentMatrix.classList.toggle('hidden', tab !== 'matrix');
         }
 
         function renderRefereeCard(match) {
@@ -2831,6 +2939,77 @@
             }
         }
 
+        function renderModalMatrix(match) {
+            const tableBody = document.getElementById('modal-matrix-table-body');
+            if (!tableBody) return;
+
+            const p = match.prediction || {};
+            const matrix = p.projections_matrix;
+            const ai = match.ai_analysis || {};
+
+            // Actualizar análisis Gemini de la matriz
+            const matrixAiText = document.getElementById('modal-matrix-gemini-text');
+            if (matrixAiText) {
+                matrixAiText.innerText = ai.analisis_matriz_gemini || "Análisis multivariable algorítmico en proceso de interpretación...";
+            }
+
+            if (!matrix || !matrix.rows || matrix.rows.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="7" class="py-6 text-center text-gray-500 font-sans">Proyecciones multivariables no disponibles para este formato o liga.</td></tr>`;
+                return;
+            }
+
+            // Actualizar badges de métricas clave (Top 1)
+            const sum = matrix.summary || {};
+            const setElem = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = val || '-';
+            };
+            setElem('matrix-top-ft', sum.top_ft);
+            setElem('matrix-top-ht', sum.top_ht);
+            setElem('matrix-top-shots', sum.top_shots);
+            setElem('matrix-top-sot', sum.top_sot);
+            setElem('matrix-top-corners', sum.top_corners);
+            setElem('matrix-top-cards', sum.top_cards);
+
+            const formatCell = (item, isTop) => {
+                if (!item || item.length < 2) return '<span class="text-gray-600">-</span>';
+                const pair = item[0];
+                const pct = item[1];
+                const badgeBg = isTop ? 'bg-emerald-950/90 text-emerald-300 border-emerald-500/60 font-bold' : 'bg-gray-900/90 text-gray-300 border-gray-700/60';
+                return `
+                    <div class="inline-flex items-center justify-center gap-1.5 px-1 py-0.5">
+                        <span class="font-bold ${isTop ? 'text-white' : 'text-gray-200'} font-mono">${pair}</span>
+                        <span class="text-[9.5px] px-1 py-0.2 rounded border font-mono ${badgeBg}">(${pct}%)</span>
+                    </div>
+                `;
+            };
+
+            let html = '';
+            matrix.rows.forEach((row, idx) => {
+                const isTop = idx === 0;
+                const rowClass = isTop 
+                    ? 'bg-emerald-950/20 border-l-2 border-l-emerald-400 hover:bg-emerald-950/30 transition' 
+                    : (idx % 2 === 0 ? 'bg-gray-950/50 hover:bg-gray-900/40 transition' : 'hover:bg-gray-900/40 transition');
+                const rankBadge = isTop
+                    ? '<span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center font-bold text-[10px] mx-auto">1</span>'
+                    : `<span class="text-gray-500 font-mono text-[10px]">${row.rank || idx + 1}</span>`;
+
+                html += `
+                    <tr class="${rowClass}">
+                        <td class="p-2 sm:p-2.5 text-center font-bold">${rankBadge}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.ft, isTop)}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.ht, isTop)}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.shots, isTop)}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.sot, isTop)}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.corners, isTop)}</td>
+                        <td class="p-2 sm:p-2.5 text-center">${formatCell(row.cards, isTop)}</td>
+                    </tr>
+                `;
+            });
+
+            tableBody.innerHTML = html;
+        }
+
         function updateGeminiUI(ai) {
             document.getElementById('modal-summary').innerText = ai.resumen || "Análisis en progreso...";
             document.getElementById('modal-justification').innerText = ai.justificacion_estadistica || "";
@@ -2854,6 +3033,21 @@
                 cardsEl.innerText = ai.analisis_tarjetas_friccion;
             } else if (cardsBox) {
                 cardsBox.classList.add('hidden');
+            }
+
+            const geminiMatrixBox = document.getElementById('modal-gemini-matrix-box');
+            const geminiMatrixEl = document.getElementById('modal-gemini-matrix-analysis');
+            const matrixAiText = document.getElementById('modal-matrix-gemini-text');
+            if (ai.analisis_matriz_gemini) {
+                if (geminiMatrixBox && geminiMatrixEl) {
+                    geminiMatrixBox.classList.remove('hidden');
+                    geminiMatrixEl.innerText = ai.analisis_matriz_gemini;
+                }
+                if (matrixAiText) {
+                    matrixAiText.innerText = ai.analisis_matriz_gemini;
+                }
+            } else if (geminiMatrixBox) {
+                geminiMatrixBox.classList.add('hidden');
             }
 
             const badge = document.getElementById('modal-gemini-badge');
@@ -2975,6 +3169,9 @@
             activeMatchId = matchId;
             const match = allMatchesData.find(m => m.id === matchId);
             if (!match) return;
+            if (match.sport === 'nba' && initialTab === 'matrix') {
+                initialTab = 'picks';
+            }
             const homeLogo = match.home_logo || getTeamLogoUrl(match.home_team, match);
             const awayLogo = match.away_logo || getTeamLogoUrl(match.away_team, match);
             const homeLogoHtml = renderTeamLogoHtml(homeLogo, match.home_team, "w-4 h-4 sm:w-5 sm:h-5 shrink-0");
@@ -2997,7 +3194,17 @@
             renderTeamGoalsBanner(match);
             renderModalPicks(match);
             renderModalH2H(match);
+            renderModalMatrix(match);
             updateGeminiUI(match.ai_analysis || {});
+
+            const btnMatrix = document.getElementById('modal-tab-btn-matrix');
+            if (btnMatrix) {
+                if (match.sport === 'nba') {
+                    btnMatrix.classList.add('hidden');
+                } else {
+                    btnMatrix.classList.remove('hidden');
+                }
+            }
 
             // Consultar árbitro en segundo plano si aún no tiene datos y es fútbol
             if (!match.referee && match.sport === 'football') {
@@ -3035,6 +3242,7 @@
                                 renderTeamGoalsBanner(match);
                                 renderModalPicks(match);
                                 renderModalH2H(match);
+                                renderModalMatrix(match);
                                 updateGeminiUI(match.ai_analysis || {});
                                 if (window.lucide) lucide.createIcons();
                             }

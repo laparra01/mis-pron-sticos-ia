@@ -4330,6 +4330,154 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             }
         }
 
+def calculate_projections_matrix(home_stats: dict, away_stats: dict, lambda_home: float, mu_away: float, referee: dict = None) -> dict:
+    """
+    Calcula la matriz multivariable de proyecciones cuantitativas (Top 10 combinaciones
+    más probables para FTHG-FTAG, HTHG-HTAG, HS-AS, HST-AST, HC-AC, HY-AY)
+    utilizando distribución de Poisson bivariada con covarianza dinámica.
+    Adaptado del entregable analítico 'predicciones_gt.ipynb'.
+    Todos los valores y ratios son 100% dinámicos en base a los equipos enfrentados.
+    """
+    att_h = float(home_stats.get("attack", 1.5) or 1.5)
+    def_h = float(home_stats.get("defense", 1.1) or 1.1)
+    att_a = float(away_stats.get("attack", 1.2) or 1.2)
+    def_a = float(away_stats.get("defense", 1.3) or 1.3)
+
+    # 1. Posesión histórica / proyectada 100% dinámica
+    pos_h = home_stats.get("possession")
+    if pos_h is None or float(pos_h) == 50.0:
+        # Se deriva de la asimetría ofensiva y defensiva de ambos clubes
+        pos_h = round(max(35.0, min(69.0, 51.0 + (lambda_home - mu_away) * 7.8 + (att_h - att_a) * 3.2 + (def_a - def_h) * 2.2)), 1)
+        pos_a = round(100.0 - pos_h, 1)
+    else:
+        pos_h = float(pos_h)
+        pos_a = float(away_stats.get("possession", 100.0 - pos_h) or 50.0)
+
+    avg_possession = round((pos_h + pos_a) / 2.0, 1)
+    # Covarianza bivariada dinámica sensible a la disparidad de posesión
+    cov_dynamic = round(max(0.03, min(0.20, 0.05 + (pos_h - 50.0) * 0.005)), 4)
+
+    l_h_pure = max(0.01, lambda_home - cov_dynamic)
+    l_a_pure = max(0.01, mu_away - cov_dynamic)
+
+    # 1. Marcador Final Exacto (FTHG-FTAG) - Bivariado Poisson con covarianza
+    probs_ft = {}
+    for x in range(8):
+        for y in range(8):
+            s = 0.0
+            for k in range(min(x, y) + 1):
+                s += poisson_prob(cov_dynamic, k) * poisson_prob(l_h_pure, x - k) * poisson_prob(l_a_pure, y - k)
+            probs_ft[f"{x}-{y}"] = s
+    tot_ft = sum(probs_ft.values()) or 1.0
+    top_ft = [[k, round((v / tot_ft) * 100, 1)] for k, v in sorted(probs_ft.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    # 2. Marcador Primer Tiempo (HTHG-HTAG) con ratio dinámico según intensidad en 3/4
+    c_h = float(home_stats.get("corners", 5.0) or 5.0)
+    c_a = float(away_stats.get("corners", 4.2) or 4.2)
+
+    p3rd_h = home_stats.get("p3rd")
+    if p3rd_h is None:
+        p3rd_h = round(max(2.0, min(8.0, 2.2 + (lambda_home * 1.5) + (c_h * 0.2))), 2)
+    else:
+        p3rd_h = float(p3rd_h)
+
+    ratio_1t = max(0.40, min(0.48, 0.40 + (p3rd_h / 20.0) * 0.02))
+    lam_h_ht = lambda_home * ratio_1t
+    lam_a_ht = mu_away * ratio_1t
+    probs_ht = {}
+    for h in range(6):
+        for a in range(6):
+            probs_ht[f"{h}-{a}"] = poisson_prob(lam_h_ht, h) * poisson_prob(lam_a_ht, a)
+    tot_ht = sum(probs_ht.values()) or 1.0
+    top_ht = [[k, round((v / tot_ht) * 100, 1)] for k, v in sorted(probs_ht.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    # 3. Disparos Totales (HS-AS) y Tiros al Arco (HST-AST) dinámicos
+    sot_h = round(max(2.0, min(9.0, 1.8 + (lambda_home * 1.45) + (c_h * 0.12))), 1)
+    sot_a = round(max(1.5, min(8.0, 1.5 + (mu_away * 1.35) + (c_a * 0.10))), 1)
+
+    touches_h = round(max(5.0, min(26.0, 6.0 + (lambda_home * 4.2) + (pos_h - 50.0) * 0.25)), 1)
+    touches_a = round(max(4.0, min(22.0, 5.0 + (mu_away * 3.6) + (pos_a - 50.0) * 0.25)), 1)
+
+    lambda_hs = round((sot_h * 1.5) + (touches_h * 0.25), 1)
+    lambda_as = round((sot_a * 1.5) + (touches_a * 0.25), 1)
+
+    probs_s = {}
+    min_hs = max(1, int(lambda_hs - 6))
+    max_hs = int(lambda_hs + 7)
+    min_as = max(1, int(lambda_as - 6))
+    max_as = int(lambda_as + 7)
+    for h in range(min_hs, max_hs):
+        for a in range(min_as, max_as):
+            probs_s[f"{h}-{a}"] = poisson_prob(lambda_hs, h) * poisson_prob(lambda_as, a)
+    tot_s = sum(probs_s.values()) or 1.0
+    top_s = [[k, round((v / tot_s) * 100, 1)] for k, v in sorted(probs_s.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    # 4. Disparos a Puerta (HST-AST)
+    probs_st = {}
+    for h in range(12):
+        for a in range(12):
+            probs_st[f"{h}-{a}"] = poisson_prob(sot_h, h) * poisson_prob(sot_a, a)
+    tot_st = sum(probs_st.values()) or 1.0
+    top_st = [[k, round((v / tot_st) * 100, 1)] for k, v in sorted(probs_st.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    # 5. Córners (HC-AC) dinámicos considerando la defensa del rival
+    exp_c_h = round((c_h * 0.60) + (float(away_stats.get("corners_against", 4.5) or 4.5) * 0.40), 1)
+    exp_c_a = round((c_a * 0.60) + (float(home_stats.get("corners_against", 4.5) or 4.5) * 0.40), 1)
+    probs_c = {}
+    for h in range(15):
+        for a in range(15):
+            probs_c[f"{h}-{a}"] = poisson_prob(exp_c_h, h) * poisson_prob(exp_c_a, a)
+    tot_c = sum(probs_c.values()) or 1.0
+    top_c = [[k, round((v / tot_c) * 100, 1)] for k, v in sorted(probs_c.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    # 6. Tarjetas Amarillas (HY-AY) con ponderación arbitral
+    y_h = float(home_stats.get("yellow_cards", 2.1) or 2.1)
+    y_a = float(away_stats.get("yellow_cards", 2.3) or 2.3)
+    if referee and isinstance(referee, dict) and referee.get("yellow_cards_per_match"):
+        ref_yc = float(referee.get("yellow_cards_per_match", 4.5))
+        ref_avg = float(referee.get("yellow_cards_avg_league", 4.5)) or 4.5
+        ref_mult = max(0.80, min(1.35, ref_yc / ref_avg))
+        y_h = round(y_h * (0.60 + 0.40 * ref_mult), 2)
+        y_a = round(y_a * (0.60 + 0.40 * ref_mult), 2)
+    probs_y = {}
+    for h in range(9):
+        for a in range(9):
+            probs_y[f"{h}-{a}"] = poisson_prob(y_h, h) * poisson_prob(y_a, a)
+    tot_y = sum(probs_y.values()) or 1.0
+    top_y = [[k, round((v / tot_y) * 100, 1)] for k, v in sorted(probs_y.items(), key=lambda i: i[1], reverse=True)[:10]]
+
+    rows = []
+    for i in range(10):
+        rows.append({
+            "rank": i + 1,
+            "ft": top_ft[i] if i < len(top_ft) else ["-", 0],
+            "ht": top_ht[i] if i < len(top_ht) else ["-", 0],
+            "shots": top_s[i] if i < len(top_s) else ["-", 0],
+            "sot": top_st[i] if i < len(top_st) else ["-", 0],
+            "corners": top_c[i] if i < len(top_c) else ["-", 0],
+            "cards": top_y[i] if i < len(top_y) else ["-", 0],
+        })
+
+    return {
+        "ft": top_ft,
+        "ht": top_ht,
+        "shots": top_s,
+        "sot": top_st,
+        "corners": top_c,
+        "cards": top_y,
+        "rows": rows,
+        "possession_home": pos_h,
+        "possession_away": pos_a,
+        "summary": {
+            "top_ft": f"{top_ft[0][0]} ({top_ft[0][1]}%)",
+            "top_ht": f"{top_ht[0][0]} ({top_ht[0][1]}%)",
+            "top_shots": f"{top_s[0][0]} ({top_s[0][1]}%)",
+            "top_sot": f"{top_st[0][0]} ({top_st[0][1]}%)",
+            "top_corners": f"{top_c[0][0]} ({top_c[0][1]}%)",
+            "top_cards": f"{top_y[0][0]} ({top_y[0][1]}%)",
+        }
+    }
+
 def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg_home_goals=1.55, league_avg_away_goals=1.20, home_team="Local", away_team="Visitante", referee=None) -> dict:
     """
     Calcula probabilidades cuantitativas basadas en la distribución de Poisson
@@ -4458,6 +4606,16 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
     a_c_gen = float(away_stats.get("corners_gen", 4.5) or 4.5)
     exp_c = round((h_c_loc * 0.5 + h_c_gen * 0.5) + (a_c_vis * 0.5 + a_c_gen * 0.5), 1)
 
+    def calc_corner_tail_local(lmbda, min_k):
+        s = 0.0
+        for k in range(min_k, 35):
+            s += (math.exp(-lmbda) * (lmbda ** k)) / math.factorial(k)
+        return round(min(0.99, max(0.01, s)) * 100, 1)
+
+    pct_corners_over_85 = calc_corner_tail_local(exp_c, 9)
+    pct_corners_over_95 = calc_corner_tail_local(exp_c, 10)
+    pct_corners_over_105 = calc_corner_tail_local(exp_c, 11)
+
     h_cards = float(home_stats.get("total_cards", 2.2) or 2.2)
     h_cards_gen = float(home_stats.get("total_cards_gen", 2.3) or 2.3)
     a_cards = float(away_stats.get("total_cards", 2.4) or 2.4)
@@ -4470,6 +4628,15 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         ref_avg = float(referee.get("yellow_cards_avg_league", 4.5)) or 4.5
         ref_mult = max(0.80, min(1.35, ref_yc / ref_avg))
         exp_cards = round(exp_cards * (0.60 + 0.40 * ref_mult), 1)
+
+    # Proyecciones multivariables Top 10 (entregable bivariado)
+    projections_matrix = calculate_projections_matrix(
+        home_stats=home_stats,
+        away_stats=away_stats,
+        lambda_home=round(lambda_home, 2),
+        mu_away=round(mu_away, 2),
+        referee=referee
+    )
 
     four_predictions = generate_four_picks_football(
         home_team=home_team,
@@ -4507,6 +4674,10 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "home_team_over_05": pct_home_score,
         "away_team_over_05": pct_away_score,
         "projected_corners": exp_c,
+        "pct_corners_over": pct_corners_over_85,
+        "pct_corners_over_85": pct_corners_over_85,
+        "pct_corners_over_95": pct_corners_over_95,
+        "pct_corners_over_105": pct_corners_over_105,
         "projected_cards": exp_cards,
         "top_scores": [{"score": s["score"], "prob": round(s["prob"] * 100, 1)} for s in top_scores],
         "recommended_pick": best_pick["type"],
@@ -4517,7 +4688,8 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "is_value_bet": is_value_bet,
         "four_predictions": four_predictions,
         "seven_predictions": four_predictions,
-        "eight_predictions": four_predictions
+        "eight_predictions": four_predictions,
+        "projections_matrix": projections_matrix
     }
 
 def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict, is_halftime: bool = False) -> dict:
@@ -4863,6 +5035,13 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
     else:
         pct_away_score_live = round(max(1.0, min(99.0, (1.0 - math.exp(-mu_rem)) * 100)), 1)
 
+    projections_matrix = calculate_projections_matrix(
+        home_stats=home_stats,
+        away_stats=away_stats,
+        lambda_home=round(float(home_stats.get("attack", 1.5) or 1.5), 2),
+        mu_away=round(float(away_stats.get("attack", 1.2) or 1.2), 2)
+    )
+
     return {
         "minute": minute,
         "current_score": f"{current_h}-{current_a}",
@@ -4884,7 +5063,8 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
         "seven_predictions": four_predictions,
-        "eight_predictions": four_predictions
+        "eight_predictions": four_predictions,
+        "projections_matrix": projections_matrix
     }
 
 def normal_cdf(x: float) -> float:

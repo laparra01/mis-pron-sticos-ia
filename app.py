@@ -24,6 +24,24 @@ def slim_match_for_client(m):
     p = m.get("prediction", {})
     picks = p.get("four_predictions") or p.get("seven_predictions") or p.get("eight_predictions") or []
     ref = m.get("referee") or {}
+
+    p_exp_c = float(p.get("projected_corners", 9.5) or 9.5)
+    pct_c_85 = p.get("pct_corners_over_85") or p.get("pct_corners_over")
+    if pct_c_85 is None or pct_c_85 == 55.0:
+        import math
+        s = 0.0
+        for k in range(9, 35):
+            s += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
+        pct_c_85 = round(min(0.99, max(0.01, s)) * 100, 1)
+
+    pct_c_95 = p.get("pct_corners_over_95")
+    if pct_c_95 is None:
+        import math
+        s95 = 0.0
+        for k in range(10, 35):
+            s95 += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
+        pct_c_95 = round(min(0.99, max(0.01, s95)) * 100, 1)
+
     slim_pred = {
         "prob_home": p.get("prob_home"),
         "prob_draw": p.get("prob_draw"),
@@ -43,7 +61,10 @@ def slim_match_for_client(m):
         "risk_level": p.get("risk_level"),
         "risk_color": p.get("risk_color"),
         "is_value_bet": p.get("is_value_bet"),
-        "projected_corners": p.get("projected_corners"),
+        "projected_corners": p_exp_c,
+        "pct_corners_over": pct_c_85,
+        "pct_corners_over_85": pct_c_85,
+        "pct_corners_over_95": pct_c_95,
         "projected_cards": p.get("projected_cards"),
         "total_points": p.get("total_points"),
         "over_under_line": p.get("over_under_line"),
@@ -51,6 +72,7 @@ def slim_match_for_client(m):
         "quarters_breakdown": p.get("quarters_breakdown"),
         "top_scores": p.get("top_scores", [])[:1],
         "four_predictions": picks[:4],
+        "projections_matrix": p.get("projections_matrix"),
     }
     ref_clean = None
     if ref.get("name"):

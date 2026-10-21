@@ -3,7 +3,7 @@
   "league_id": 146,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-21T14:48:50.149954",
+  "last_updated": "2026-10-21T12:20:11.681987",
   "total_fixtures": 10,
   "team_histories": {
     "1. FC Nürnberg": [
@@ -3299,7 +3299,25 @@
           "text": "Bochum 1 victorias • 1 empates • Wolfsburg 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Eric-Dominic Weisbach",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 25,
+        "yellow_cards_per_match": 4.76,
+        "yellow_cards_total": 119,
+        "yellow_cards_avg_league": 4.64,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.76 amarillas y 25.09 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Darmstadt 2 victorias • 1 empates • St. Pauli 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Timo Gansloweit",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 5,
+        "yellow_cards_per_match": 4.8,
+        "yellow_cards_total": 24,
+        "yellow_cards_avg_league": 4.91,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 1,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.8 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4149,7 +4185,25 @@
           "text": "FC Heidenheim 1 victorias • 3 empates • Energie Cottbus 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Patrick Schwengers",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 20,
+        "yellow_cards_per_match": 4.4,
+        "yellow_cards_total": 88,
+        "yellow_cards_avg_league": 4.64,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 24.3,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.4 amarillas y 24.33 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4579,7 +4633,25 @@
           "text": "Hertha BSC 1 victorias • 3 empates • Arminia Bielefeld 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Christian Ballweg",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 24,
+        "yellow_cards_per_match": 4.08,
+        "yellow_cards_total": 98,
+        "yellow_cards_avg_league": 4.99,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.08 amarillas y 23.77 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5009,7 +5081,25 @@
           "text": "Magdeburg 0 victorias • 1 empates • Karlsruher SC 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Felix Wagner",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 9,
+        "yellow_cards_per_match": 4.56,
+        "yellow_cards_total": 41,
+        "yellow_cards_avg_league": 4.91,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 24.3,
+        "fouls_avg_league": 24.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.56 amarillas y 24.33 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5439,7 +5529,25 @@
           "text": "1. FC Nürnberg 2 victorias • 3 empates • Kaiserslautern 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Max Burda",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 26,
+        "yellow_cards_per_match": 5.0,
+        "yellow_cards_total": 130,
+        "yellow_cards_avg_league": 4.64,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 11,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.0 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5869,7 +5977,25 @@
           "text": "Eintracht Braunschweig 1 victorias • 2 empates • Hannover 96 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Tobias Reichel",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 23,
+        "yellow_cards_per_match": 3.91,
+        "yellow_cards_total": 90,
+        "yellow_cards_avg_league": 3.81,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 8,
+        "fouls_per_match": 23.4,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.91 amarillas y 23.35 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6299,7 +6425,25 @@
           "text": "Holstein Kiel 3 victorias • 1 empates • Dynamo Dresden 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Timo Gerach",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 17,
+        "yellow_cards_per_match": 4.06,
+        "yellow_cards_total": 69,
+        "yellow_cards_avg_league": 3.81,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 8,
+        "fouls_per_match": 19.6,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.06 amarillas y 19.57 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6729,7 +6873,25 @@
           "text": "VfL Osnabrück 2 victorias • 1 empates • Greuther Fürth 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Justin Hasmann",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 24,
+        "yellow_cards_per_match": 5.67,
+        "yellow_cards_total": 136,
+        "yellow_cards_avg_league": 4.99,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 26.6,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.67 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
