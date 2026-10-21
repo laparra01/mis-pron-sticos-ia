@@ -3,7 +3,7 @@
   "league_id": 45,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-10-20T21:09:07.315232",
+  "last_updated": "2026-10-21T14:49:27.999680",
   "total_fixtures": 2,
   "team_histories": {
     "2 de Mayo": [
@@ -7014,7 +7014,25 @@
           "text": "Palmeiras 3 victorias • 1 empates • Fluminense 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Esteban Ostojich",
+        "country": "Uruguay",
+        "country_code": "URU",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/uru.png",
+        "matches": 7,
+        "yellow_cards_per_match": 5.71,
+        "yellow_cards_total": 40,
+        "yellow_cards_avg_league": 4.55,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 2,
+        "fouls_per_match": 21.9,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.71 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7444,7 +7462,25 @@
           "text": "Flamengo 2 victorias • 2 empates • Estudiantes 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Gustavo Tejera",
+        "country": "Uruguay",
+        "country_code": "URU",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/uru.png",
+        "matches": 12,
+        "yellow_cards_per_match": 4.83,
+        "yellow_cards_total": 58,
+        "yellow_cards_avg_league": 4.74,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 2,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 22.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.83 amarillas y 25.75 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
