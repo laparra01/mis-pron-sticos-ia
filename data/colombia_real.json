@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-10-22T10:11:33.298323",
+  "last_updated": "2026-10-22T21:06:25.764244",
   "total_fixtures": 15,
   "team_histories": {
     "Alianza FC": [
@@ -3617,7 +3617,25 @@
           "text": "Atlético Nacional 4 victorias • 1 empates • Deportivo Pasto 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Márquez",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 42,
+        "yellow_cards_per_match": 6.88,
+        "yellow_cards_total": 289,
+        "yellow_cards_avg_league": 5.74,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 9,
+        "penalties_total": 15,
+        "fouls_per_match": 25.2,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.88 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

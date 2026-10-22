@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-22T10:12:59.511406",
+  "last_updated": "2026-10-22T21:07:32.402280",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2345,7 +2345,25 @@
           "text": "FC Zürich 2 victorias • 1 empates • Luzern 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Nico Gianforte",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 29,
+        "yellow_cards_per_match": 4.66,
+        "yellow_cards_total": 135,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 9,
+        "penalties_total": 10,
+        "fouls_per_match": 25.6,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.66 amarillas y 25.59 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2775,7 +2793,25 @@
           "text": "Servette 3 victorias • 1 empates • FC Vaduz 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luca Cibelli",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 40,
+        "yellow_cards_per_match": 5.1,
+        "yellow_cards_total": 204,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 13,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.1 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
