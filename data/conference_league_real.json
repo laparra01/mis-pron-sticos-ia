@@ -3,7 +3,7 @@
   "league_id": 10216,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-10-22T14:50:34.578497",
+  "last_updated": "2026-10-22T10:13:51.066861",
   "total_fixtures": 18,
   "team_histories": {
     "AGF": [
@@ -2047,7 +2047,25 @@
           "text": "Kairat Almaty 2 victorias • 1 empates • Panathinaikos 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Allard Lindhout",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 44,
+        "yellow_cards_per_match": 2.7,
+        "yellow_cards_total": 119,
+        "yellow_cards_avg_league": 3.1,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 4,
+        "fouls_per_match": 19.2,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.7 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

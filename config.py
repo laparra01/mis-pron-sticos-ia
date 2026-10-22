@@ -18,3 +18,8 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 # 4. GITHUB ACTIONS (Para actualizar bajo demanda con 1 clic desde la web):
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "laparra01/mis-pron-sticos-ia")
+
+# 5. SEGURIDAD & ADMINISTRADOR:
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin123")
+SECRET_KEY = os.environ.get("SECRET_KEY", "mis-pronosticos-ai-secret-key-2026")
+

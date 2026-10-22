@@ -1,6 +1,7 @@
 import os
 from datetime import datetime, timedelta
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify, request, session, redirect, url_for
+import security_manager
 from data_provider import fetch_matches_data, fetch_live_matches_data, get_config, load_team_logos
 from dream_parleys_engine import get_or_generate_dream_parleys
 import gzip
@@ -9,10 +10,39 @@ template_dir = os.path.join(base_dir, "templates") if os.path.isdir(os.path.join
 app = Flask(__name__, template_folder=template_dir)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.jinja_env.auto_reload = True
+cfg_init = get_config()
+app.secret_key = getattr(cfg_init, "SECRET_KEY", "mis-pronosticos-ai-secret-key-2026")
+
+
+@app.before_request
+def security_and_access_control():
+    # Permitir archivos estáticos
+    if request.path.startswith('/static'):
+        return None
+
+    client_ip = security_manager.get_client_ip(request)
+    client_dev = request.headers.get("X-Device-Id") or request.args.get("device_id")
+
+    # Verificación de lista negra (bloqueados)
+    if security_manager.is_blocked(client_ip, client_dev):
+        if request.path == "/blocked":
+            return None
+        if request.path.startswith("/api/"):
+            return jsonify({"error": "Acceso restringido", "blocked": True}), 403
+        return redirect("/blocked")
+
+    # Protección Anti-Scraping / Flood para APIs
+    if request.path.startswith("/api/") and request.path not in ("/api/ping", "/api/heartbeat"):
+        if not security_manager.check_rate_limit(client_ip):
+            return jsonify({"error": "Demasiadas peticiones por minuto (Anti-Scraping). Espera un momento.", "rate_limited": True}), 429
 
 
 @app.after_request
-def compress_response(response):
+def compress_and_secure_response(response):
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+
     accept_encoding = request.headers.get('Accept-Encoding', '')
     if 'gzip' in accept_encoding.lower() and response.status_code == 200 and not response.direct_passthrough and len(response.data) > 1024:
         response.data = gzip.compress(response.data)
@@ -213,7 +243,9 @@ def index():
             countries=unique_countries,
             leagues=unique_leagues,
             team_logos=team_logos,
-            team_logos_norm=team_logos_norm
+            team_logos_norm=team_logos_norm,
+            online_users=security_manager.get_active_count(),
+            is_owner=bool(session.get("is_admin") or session.get("is_owner"))
         )
 
         try:
@@ -377,6 +409,113 @@ def api_trigger_scrape():
             "method": "local_background",
             "message": "Extracción iniciada en segundo plano en el servidor. Los datos se actualizarán en breve."
         })
+
+
+# ==============================================================
+# SEGURIDAD, HEARTBEAT, PING (KEEP-ALIVE) Y ADMIN PANEL
+# ==============================================================
+@app.route("/blocked")
+def page_blocked():
+    client_ip = security_manager.get_client_ip(request)
+    return render_template("blocked.html", ip=client_ip)
+
+@app.route("/api/heartbeat", methods=["POST"])
+def api_heartbeat():
+    data = request.get_json(silent=True) or {}
+    device_id = data.get("device_id") or request.headers.get("X-Device-Id")
+    client_ip = security_manager.get_client_ip(request)
+    ua = request.headers.get("User-Agent", "")
+    res = security_manager.register_heartbeat(device_id, client_ip, ua)
+    return jsonify(res)
+
+@app.route("/api/ping")
+def api_ping():
+    """Endpoint ultraliviano para el robot Keep-Alive (UptimeRobot / Cron-job)"""
+    return jsonify({
+        "status": "online",
+        "app": "Mis Pronósticos AI",
+        "server_time": datetime.now().isoformat(),
+        "online_users": security_manager.get_active_count()
+    })
+
+
+@app.route("/owner")
+@app.route("/dueno")
+def activate_owner_vip():
+    """Ruta VIP directa para el Dueño con pase libre garantizado 24/7"""
+    cfg = get_config()
+    pw = request.args.get("pass") or request.args.get("key") or request.args.get("clave") or ""
+    expected_pw = getattr(cfg, "ADMIN_PASSWORD", "admin123") or "admin123"
+    if pw == expected_pw:
+        session.permanent = True
+        session["is_admin"] = True
+        session["is_owner"] = True
+        return redirect("/?vip=owner")
+    elif session.get("is_admin") or session.get("is_owner"):
+        return redirect("/?vip=owner")
+    return redirect("/admin")
+
+@app.route("/admin")
+def admin_dashboard():
+    is_auth = bool(session.get("is_admin"))
+    if not is_auth:
+        return render_template("admin.html", authenticated=False, error=request.args.get("error"))
+    sessions_list = security_manager.get_active_sessions_list()
+    blacklist_list = security_manager.get_blacklist_records()
+    stats_info = security_manager.get_stats_summary()
+    return render_template("admin.html", authenticated=True, sessions=sessions_list, blacklist=blacklist_list, stats=stats_info)
+
+@app.route("/admin/login", methods=["POST"])
+def admin_login():
+    cfg = get_config()
+    expected_pw = getattr(cfg, "ADMIN_PASSWORD", "admin123") or "admin123"
+    provided_pw = request.form.get("password", "")
+    if provided_pw == expected_pw:
+        session.permanent = True
+        session["is_admin"] = True
+        session["is_owner"] = True
+        return redirect("/admin")
+    return render_template("admin.html", authenticated=False, error="Contraseña incorrecta. Acceso denegado.")
+
+@app.route("/admin/logout", methods=["POST", "GET"])
+def admin_logout():
+    session.pop("is_admin", None)
+    return redirect("/admin")
+
+@app.route("/admin/api/sessions")
+def admin_api_sessions():
+    if not session.get("is_admin"):
+        return jsonify({"error": "No autorizado"}), 401
+    return jsonify({
+        "sessions": security_manager.get_active_sessions_list(),
+        "blacklist": security_manager.get_blacklist_records(),
+        "stats": security_manager.get_stats_summary()
+    })
+
+@app.route("/admin/api/block", methods=["POST"])
+def admin_api_block():
+    if not session.get("is_admin"):
+        return jsonify({"error": "No autorizado"}), 401
+    data = request.get_json(silent=True) or {}
+    t_type = data.get("type", "auto")
+    value = data.get("value", "")
+    reason = data.get("reason", "Bloqueo desde panel de administración")
+    if not value:
+        return jsonify({"error": "Valor no proporcionado"}), 400
+    security_manager.block_target(t_type, value, reason=reason)
+    return jsonify({"success": True, "value": value})
+
+@app.route("/admin/api/unblock", methods=["POST"])
+def admin_api_unblock():
+    if not session.get("is_admin"):
+        return jsonify({"error": "No autorizado"}), 401
+    data = request.get_json(silent=True) or {}
+    t_type = data.get("type", "auto")
+    value = data.get("value", "")
+    if not value:
+        return jsonify({"error": "Valor no proporcionado"}), 400
+    security_manager.unblock_target(t_type, value)
+    return jsonify({"success": True, "value": value})
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

@@ -51,9 +51,22 @@
                         <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
                     </div>
                     <div>
-                        <h1 class="font-extrabold text-lg tracking-tight text-white flex items-center gap-2">
-                            Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
-                        </h1>
+                        <div class="flex items-center gap-2">
+                            <h1 class="font-extrabold text-base sm:text-lg tracking-tight text-white flex items-center gap-1.5">
+                                Mis Pronósticos <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">AI</span>
+                            </h1>
+                            <span id="live-online-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-950/80 border border-emerald-800/80 text-[10px] font-mono text-emerald-400 shadow-xs" title="Personas conectadas en tiempo real">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                <span id="online-counter">{{ online_users or 1 }}</span>
+                                <span class="hidden sm:inline">en línea</span>
+                            </span>
+                            {% if is_owner or session.get('is_admin') %}
+                            <a href="/admin" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-950/80 border border-amber-600/70 text-[10px] font-bold text-amber-300 shadow-xs hover:scale-105 transition" title="Sesión de Dueño VIP - Conexión garantizada 24/7">
+                                <span>👑</span>
+                                <span class="hidden sm:inline">Dueño</span>
+                            </a>
+                            {% endif %}
+                        </div>
                         <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
                     </div>
                 </div>
@@ -99,70 +112,29 @@
     <!-- Main Container -->
     <main class="max-w-6xl mx-auto px-4 pt-6">
 
-        {% if live_api_active %}
-        <!-- Live API Active Alert Banner -->
-        <div class="mb-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-950/80 to-blue-950/80 border border-emerald-500/40 text-emerald-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xl">
-            <div class="flex items-center gap-3.5">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 shrink-0">
-                    <i data-lucide="radio" class="w-5 h-5 animate-pulse"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-sm text-emerald-200 flex items-center gap-2">
-                        <span>🟢 Modo API en Vivo Activo</span>
-                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono">CONECTADO</span>
-                    </h3>
-                    <p class="text-xs text-gray-300 mt-0.5">Partidos oficiales sincronizados en vivo desde <strong>ESPN Live (Selecciones FIFA & NBA)</strong> y <strong>Football-Data.org</strong>.</p>
-                </div>
-            </div>
-            <button onclick="switchTab('upcoming')" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-emerald-900/40 flex items-center gap-2 shrink-0">
-                <span>Ver Partidos Programados ({{ upcoming_matches|length }})</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-        </div>
-        {% endif %}
 
-        <!-- Stat Highlights Cards -->
-        <section class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
+
+        <!-- Stat Highlights Cards (Solo Cartelera y En Vivo con Estadísticas) -->
+        <section class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
+            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-2xl shadow-sm">
                 <div class="flex items-center justify-between text-gray-400 mb-1">
                     <span class="text-xs font-medium">Partidos en Cartelera</span>
                     <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
                 </div>
-                <div class="text-2xl font-bold text-white">{{ stats.total_analyzed }}</div>
+                <div class="text-2xl sm:text-3xl font-bold text-white">{{ stats.total_analyzed }}</div>
                 <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol Mundial + 🏀 NBA</p>
             </div>
 
-            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
+            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-2xl shadow-sm">
                 <div class="flex items-center justify-between text-gray-400 mb-1">
                     <span class="text-xs font-medium">En Vivo con Estadísticas</span>
                     <i data-lucide="activity" class="w-4 h-4 text-rose-400"></i>
                 </div>
-                <div class="text-2xl font-bold text-rose-400 flex items-center gap-2">
+                <div class="text-2xl sm:text-3xl font-bold text-rose-400 flex items-center gap-2">
                     <span>{{ stats.live_count }}</span>
                     <span class="w-2 h-2 rounded-full bg-rose-500 animate-live"></span>
                 </div>
                 <p class="text-[11px] text-gray-500 mt-1">Minuto a minuto & Cuartos Q2-Q4</p>
-            </div>
-
-            <div onclick="toggleValuePicks()" class="bg-gray-900/80 border border-gray-800 hover:border-cyan-500/50 cursor-pointer transition p-4 rounded-xl shadow-sm group">
-                <div class="flex items-center justify-between text-gray-400 mb-1">
-                    <span class="text-xs font-medium group-hover:text-cyan-400 transition">Picks de Alto Valor</span>
-                    <i data-lucide="gem" class="w-4 h-4 text-cyan-400"></i>
-                </div>
-                <div class="text-2xl font-bold text-cyan-400 flex items-center justify-between">
-                    <span>{{ stats.value_picks }}</span>
-                    <span class="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800/80 px-2 py-0.5 rounded-full font-mono font-semibold">Filtrar 💎</span>
-                </div>
-                <p class="text-[11px] text-gray-500 mt-1">Margen matemático positivo</p>
-            </div>
-
-            <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-xl shadow-sm">
-                <div class="flex items-center justify-between text-gray-400 mb-1">
-                    <span class="text-xs font-medium">Tasa de Acierto Global</span>
-                    <i data-lucide="trending-up" class="w-4 h-4 text-indigo-400"></i>
-                </div>
-                <div class="text-2xl font-bold text-indigo-400">{{ stats.historical_accuracy }}</div>
-                <p class="text-[11px] text-gray-500 mt-1">Modelos cuantitativos</p>
             </div>
         </section>
 
@@ -976,26 +948,12 @@
                                 <p class="text-xs text-gray-400 mt-1 italic leading-relaxed">{{ ticket.lema }}</p>
                             </div>
 
-                            <!-- Métricas del Parley (Cuota, Probabilidad, Payout) -->
-                            <div class="grid grid-cols-3 gap-2 bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 text-center">
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Cuota Total</span>
-                                    <span class="text-xl font-black font-mono {% if ticket.tier == 1 %}text-emerald-400{% elif ticket.tier == 2 %}text-cyan-400{% else %}text-amber-400{% endif %}">
-                                        {{ ticket.total_odds }}x
-                                    </span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Prob. Combinada</span>
-                                    <span class="text-sm font-bold font-mono text-gray-200 mt-1 block">
-                                        {{ ticket.combined_prob }}%
-                                    </span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Retorno Q100</span>
-                                    <span class="text-sm font-black font-mono {% if ticket.tier == 1 %}text-emerald-300{% elif ticket.tier == 2 %}text-cyan-300{% else %}text-amber-300{% endif %} mt-1 block">
-                                        Q{{ ticket.payout_example }}
-                                    </span>
-                                </div>
+                            <!-- Métrica del Parley: Solo Probabilidad Combinada -->
+                            <div class="bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 text-center">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Probabilidad Combinada</span>
+                                <span class="text-2xl font-black font-mono {% if ticket.tier == 1 %}text-emerald-400{% elif ticket.tier == 2 %}text-cyan-400{% else %}text-amber-400{% endif %} mt-0.5 block">
+                                    {{ ticket.combined_prob }}%
+                                </span>
                             </div>
 
                             <!-- Lista de Selecciones (Legs) -->
@@ -3339,9 +3297,7 @@
             let text = `🎯 *MIS PRONÓSTICOS AI - PARLEY SOÑADOR*\n`;
             text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
             text += `🏆 *${ticket.badge}* (${ticket.titulo})\n`;
-            text += `🔥 *Cuota Total:* ${ticket.total_odds}x\n`;
-            text += `💰 *Ejemplo:* Apostando Q100 ➔ Retorno de Q${ticket.payout_example}\n`;
-            text += `📊 *Probabilidad Cuantitativa:* ${ticket.combined_prob}%\n`;
+            text += `📊 *Probabilidad Combinada:* ${ticket.combined_prob}%\n`;
             text += `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n`;
             text += `*SELECCIONES:*\n\n`;
 
@@ -3544,25 +3500,11 @@
                                 <p class="text-xs text-gray-400 mt-1 italic leading-relaxed">${ticket.lema}</p>
                             </div>
 
-                            <div class="grid grid-cols-3 gap-2 bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 text-center">
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Cuota Total</span>
-                                    <span class="text-xl font-black font-mono ${oddsColor}">
-                                        ${ticket.total_odds}x
-                                    </span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Prob. Combinada</span>
-                                    <span class="text-sm font-bold font-mono text-gray-200 mt-1 block">
-                                        ${ticket.combined_prob}%
-                                    </span>
-                                </div>
-                                <div>
-                                    <span class="text-[10px] uppercase font-bold text-gray-500 block">Retorno Q100</span>
-                                    <span class="text-sm font-black font-mono ${payoutColor} mt-1 block">
-                                        Q${ticket.payout_example}
-                                    </span>
-                                </div>
+                            <div class="bg-gray-950/80 p-3 rounded-xl border border-gray-800/80 text-center">
+                                <span class="text-[10px] uppercase font-bold text-gray-400 block tracking-wider">Probabilidad Combinada</span>
+                                <span class="text-2xl font-black font-mono ${oddsColor} mt-0.5 block">
+                                    ${ticket.combined_prob}%
+                                </span>
                             </div>
 
                             <div class="space-y-3 pt-1">
@@ -3601,6 +3543,49 @@
             switchTab('upcoming');
             {% endif %}
         });
+
+        // ==============================================================
+        // CONTROL DE CONEXIÓN EN TIEMPO REAL & HEARTBEAT (ULTRALIVIANO)
+        // ==============================================================
+        (function initSecurityAndHeartbeat() {
+            let devId = localStorage.getItem('mp_device_id');
+            if (!devId) {
+                devId = 'dev_' + Math.random().toString(36).substring(2, 9) + Date.now().toString(36);
+                localStorage.setItem('mp_device_id', devId);
+            }
+
+            function sendHeartbeat() {
+                if (document.hidden) return; // Pausar si el teléfono está bloqueado o pestaña oculta
+                fetch('/api/heartbeat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-Device-Id': devId
+                    },
+                    body: JSON.stringify({ device_id: devId })
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data && data.blocked) {
+                        window.location.href = '/blocked';
+                        return;
+                    }
+                    if (data && data.online !== undefined) {
+                        const counterEl = document.getElementById('online-counter');
+                        if (counterEl) counterEl.innerText = data.online;
+                    }
+                })
+                .catch(() => {});
+            }
+
+            // Primer latido tras 1.5s, luego cada 60s
+            setTimeout(sendHeartbeat, 1500);
+            setInterval(sendHeartbeat, 60000);
+
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) sendHeartbeat();
+            });
+        })();
     </script>
 </body>
 </html>

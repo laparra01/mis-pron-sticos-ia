@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control & Seguridad - Mis Pronósticos AI</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: #0A0E17;
+            color: #E2E8F0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        @keyframes pulse-live {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .animate-live {
+            animation: pulse-live 1.8s infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-16">
+
+    {% if not authenticated %}
+    <!-- PANTALLA DE ACCESO ADMINISTRADOR -->
+    <div class="min-h-screen flex items-center justify-center p-4">
+        <div class="max-w-sm w-full bg-gray-900 border border-gray-800 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+            <div class="text-center space-y-2">
+                <div class="w-12 h-12 mx-auto rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                </div>
+                <h1 class="text-lg font-bold text-white tracking-tight">Acceso de Administrador</h1>
+                <p class="text-xs text-gray-400">Ingresa la clave maestra para gestionar conexiones y bloqueos.</p>
+            </div>
+
+            {% if error %}
+            <div class="p-3 bg-rose-950/80 border border-rose-800/80 rounded-xl text-xs text-rose-300 text-center font-medium">
+                {{ error }}
+            </div>
+            {% endif %}
+
+            <form action="/admin/login" method="POST" class="space-y-4">
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-300 uppercase tracking-wider mb-1.5">Contraseña de Control</label>
+                    <input type="password" name="password" required autofocus placeholder="Introduce tu clave..." class="w-full bg-gray-950 border border-gray-800 focus:border-emerald-500 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-gray-600 focus:outline-none transition">
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl text-sm transition shadow-md shadow-emerald-950/40 cursor-pointer flex items-center justify-center gap-2">
+                    <i data-lucide="lock" class="w-4 h-4"></i> Entrar al Panel
+                </button>
+            </form>
+            <div class="text-center">
+                <a href="/" class="text-[11px] text-gray-500 hover:text-emerald-400 transition">← Volver a Mis Pronósticos AI</a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+
+    <!-- TOP HEADER -->
+    <header class="border-b border-gray-800 bg-gray-900/95 sticky top-0 z-30 shadow-md backdrop-blur">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center shadow-md">
+                    <i data-lucide="shield" class="w-5 h-5 text-white"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-white text-base flex items-center gap-2">
+                        Panel de Control <span class="text-xs px-2 py-0.5 rounded-full bg-emerald-950 text-emerald-400 border border-emerald-800 font-mono">ADMIN</span>
+                    </h1>
+                    <p class="text-[11px] text-gray-400">Gestión de conexiones, lista negra y seguridad</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="fetchSessionsData()" class="p-2 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-xl transition border border-gray-700 cursor-pointer text-xs flex items-center gap-1.5" title="Recargar conexiones">
+                    <i data-lucide="refresh-cw" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span class="hidden sm:inline">Actualizar</span>
+                </button>
+                <a href="/owner" class="px-3 py-1.5 bg-amber-950/80 hover:bg-amber-900/80 text-amber-300 border border-amber-600/70 rounded-xl transition text-xs font-bold flex items-center gap-1.5 shadow-sm" title="Activar Pase VIP Permanente de Dueño en este navegador">
+                    <span>👑</span>
+                    <span class="hidden sm:inline">Pase VIP Dueño</span>
+                </a>
+                <a href="/" target="_blank" class="px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-300 hover:text-white rounded-xl transition border border-gray-700 text-xs flex items-center gap-1.5 font-medium" title="Abrir la app en otra pestaña">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5 text-cyan-400"></i>
+                    <span class="hidden sm:inline">Ver App</span>
+                </a>
+                <form action="/admin/logout" method="POST" class="inline">
+                    <button type="submit" class="px-3 py-1.5 bg-rose-950/60 hover:bg-rose-900/80 text-rose-300 border border-rose-800 rounded-xl transition text-xs font-bold flex items-center gap-1.5 cursor-pointer">
+                        <i data-lucide="log-out" class="w-3.5 h-3.5"></i>
+                        <span>Salir</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 space-y-6">
+
+        <!-- RESUMEN EN VIVO (KPIs) -->
+        <section class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <div class="bg-gray-900/90 border border-gray-800 p-4 rounded-2xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1 text-xs font-medium">
+                    <span>En Línea Ahora</span>
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-live"></span>
+                </div>
+                <div class="text-2xl sm:text-3xl font-black text-emerald-400 font-mono" id="kpi-online">{{ stats.online_now }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">Conexiones activas (últimos 3 min)</p>
+            </div>
+
+            <div class="bg-gray-900/90 border border-gray-800 p-4 rounded-2xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1 text-xs font-medium">
+                    <span>Visitantes Únicos Hoy</span>
+                    <i data-lucide="users" class="w-4 h-4 text-cyan-400"></i>
+                </div>
+                <div class="text-2xl sm:text-3xl font-black text-cyan-400 font-mono" id="kpi-today">{{ stats.today_unique }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">Dispositivos distintos registrados</p>
+            </div>
+
+            <div class="bg-gray-900/90 border border-gray-800 p-4 rounded-2xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1 text-xs font-medium">
+                    <span>Lista Negra (Bloqueados)</span>
+                    <i data-lucide="shield-x" class="w-4 h-4 text-rose-400"></i>
+                </div>
+                <div class="text-2xl sm:text-3xl font-black text-rose-400 font-mono" id="kpi-blocked">{{ stats.blocked_total }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">IPs o dispositivos restringidos</p>
+            </div>
+
+            <div class="bg-gray-900/90 border border-gray-800 p-4 rounded-2xl shadow-sm">
+                <div class="flex items-center justify-between text-gray-400 mb-1 text-xs font-medium">
+                    <span>Sesiones en Memoria</span>
+                    <i data-lucide="cpu" class="w-4 h-4 text-purple-400"></i>
+                </div>
+                <div class="text-2xl sm:text-3xl font-black text-purple-400 font-mono" id="kpi-sessions">{{ stats.active_devices_tracked }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">Sin sobrecarga (0.01% RAM)</p>
+            </div>
+        </section>
+
+        <!-- HERRAMIENTA DE BLOQUEO RÁPIDO MANUAL -->
+        <section class="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 sm:p-5 shadow-sm space-y-3">
+            <div class="flex items-center gap-2">
+                <i data-lucide="ban" class="w-4 h-4 text-rose-400"></i>
+                <h3 class="font-bold text-sm text-white">Bloqueo Manual Directo</h3>
+                <span class="text-[11px] text-gray-400 font-normal">Expulsa de inmediato cualquier IP o ID de dispositivo</span>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <input type="text" id="manual-block-input" placeholder="Ejemplo: 190.86.12.45 o dev_abc123" class="flex-1 bg-gray-950 border border-gray-800 focus:border-rose-500 rounded-xl px-3.5 py-2 text-xs font-mono text-white placeholder-gray-600 focus:outline-none">
+                <input type="text" id="manual-block-reason" placeholder="Motivo (opcional)..." class="sm:w-64 bg-gray-950 border border-gray-800 focus:border-rose-500 rounded-xl px-3.5 py-2 text-xs text-white placeholder-gray-600 focus:outline-none">
+                <button onclick="submitManualBlock()" class="px-4 py-2 bg-rose-600 hover:bg-rose-500 text-white rounded-xl text-xs font-bold transition shadow cursor-pointer flex items-center justify-center gap-1.5 shrink-0">
+                    <i data-lucide="user-x" class="w-3.5 h-3.5"></i> Bloquear Ahora
+                </button>
+            </div>
+        </section>
+
+        <!-- TABLA 1: DISPOSITIVOS Y USUARIOS CONECTADOS -->
+        <section class="bg-gray-900/90 border border-gray-800 rounded-2xl shadow-sm overflow-hidden">
+            <div class="p-4 sm:p-5 border-b border-gray-800 flex items-center justify-between">
+                <div>
+                    <h2 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                        <span>Dispositivos Conectados en Tiempo Real</span>
+                        <span id="badge-total-active" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-950 text-emerald-400 border border-emerald-800">
+                            {{ sessions | length }} registrados
+                        </span>
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-0.5">Se actualiza automáticamente cada 12 segundos sin recargar</p>
+                </div>
+                <div class="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>En vivo</span>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-gray-950/80 text-gray-400 uppercase text-[10px] font-mono border-b border-gray-800">
+                        <tr>
+                            <th class="py-3 px-4">Dispositivo / Navegador</th>
+                            <th class="py-3 px-4">Dirección IP</th>
+                            <th class="py-3 px-4">Estado</th>
+                            <th class="py-3 px-4">Última Actividad</th>
+                            <th class="py-3 px-4">Peticiones</th>
+                            <th class="py-3 px-4 text-right">Acción de Control</th>
+                        </tr>
+                    </thead>
+                    <tbody id="sessions-table-body" class="divide-y divide-gray-800 font-mono">
+                        {% for s in sessions %}
+                        <tr class="hover:bg-gray-800/40 transition">
+                            <td class="py-3 px-4">
+                                <div class="font-sans font-medium text-gray-200">{{ s.device_info }}</div>
+                                <div class="text-[10px] text-gray-500 font-mono">{{ s.device_id }}</div>
+                            </td>
+                            <td class="py-3 px-4 text-cyan-400 font-bold">
+                                {{ s.ip }}
+                            </td>
+                            <td class="py-3 px-4">
+                                {% if s.is_online %}
+                                <span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold inline-flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> En línea
+                                </span>
+                                {% else %}
+                                <span class="px-2 py-0.5 rounded-full text-[10px] bg-gray-800 text-gray-400 border border-gray-700">
+                                    Inactivo
+                                </span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4 text-gray-300">
+                                {{ s.last_seen_text }}
+                            </td>
+                            <td class="py-3 px-4 text-gray-400 font-semibold">
+                                {{ s.requests_count }}
+                            </td>
+                            <td class="py-3 px-4 text-right space-x-1">
+                                <button onclick="blockAction('ip', '{{ s.ip }}')" class="px-2.5 py-1 bg-rose-950/70 hover:bg-rose-900 text-rose-300 border border-rose-800 rounded-lg text-[11px] font-bold transition cursor-pointer" title="Bloquea esta dirección IP">
+                                    🔴 Bloquear IP
+                                </button>
+                                <button onclick="blockAction('device', '{{ s.device_id }}')" class="px-2.5 py-1 bg-amber-950/70 hover:bg-amber-900 text-amber-300 border border-amber-800 rounded-lg text-[11px] font-bold transition cursor-pointer" title="Bloquea solo este dispositivo/navegador">
+                                    ⛔ Dispositivo
+                                </button>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="py-8 text-center text-gray-500 font-sans">
+                                No hay conexiones registradas todavía. Las sesiones aparecerán cuando los usuarios abran la app.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TABLA 2: LISTA NEGRA (USUARIOS/IPS BLOQUEADOS) -->
+        <section class="bg-gray-900/90 border border-gray-800 rounded-2xl shadow-sm overflow-hidden">
+            <div class="p-4 sm:p-5 border-b border-gray-800 flex items-center justify-between">
+                <div>
+                    <h2 class="text-sm sm:text-base font-bold text-white flex items-center gap-2">
+                        <i data-lucide="shield-alert" class="w-4 h-4 text-rose-400"></i>
+                        <span>Lista Negra Activa (Acceso Restringido)</span>
+                        <span id="badge-total-blacklist" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-950 text-rose-400 border border-rose-800">
+                            {{ blacklist | length }} bloqueados
+                        </span>
+                    </h2>
+                    <p class="text-xs text-gray-400 mt-0.5">Estos usuarios o IPs reciben la pantalla de acceso restringido de inmediato</p>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-gray-950/80 text-gray-400 uppercase text-[10px] font-mono border-b border-gray-800">
+                        <tr>
+                            <th class="py-3 px-4">Tipo</th>
+                            <th class="py-3 px-4">Valor Bloqueado (IP o ID)</th>
+                            <th class="py-3 px-4">Motivo</th>
+                            <th class="py-3 px-4">Fecha de Bloqueo</th>
+                            <th class="py-3 px-4 text-right">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blacklist-table-body" class="divide-y divide-gray-800 font-mono">
+                        {% for b in blacklist %}
+                        <tr class="hover:bg-gray-800/40 transition">
+                            <td class="py-3 px-4">
+                                {% if b.type == 'ip' %}
+                                <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-400 border border-blue-800 text-[10px] font-bold">IP</span>
+                                {% else %}
+                                <span class="px-2 py-0.5 rounded bg-purple-950 text-purple-400 border border-purple-800 text-[10px] font-bold">Dispositivo</span>
+                                {% endif %}
+                            </td>
+                            <td class="py-3 px-4 text-white font-bold">{{ b.value }}</td>
+                            <td class="py-3 px-4 text-gray-400 font-sans">{{ b.reason }}</td>
+                            <td class="py-3 px-4 text-gray-500">{{ b.created_at }}</td>
+                            <td class="py-3 px-4 text-right">
+                                <button onclick="unblockAction('{{ b.type }}', '{{ b.value }}')" class="px-3 py-1 bg-emerald-950 hover:bg-emerald-900 text-emerald-300 border border-emerald-800 rounded-lg text-[11px] font-bold transition cursor-pointer">
+                                    🟢 Desbloquear
+                                </button>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="py-6 text-center text-gray-500 font-sans">
+                                Ningún usuario o IP está bloqueado actualmente. Todo el tráfico tiene acceso normal.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        function blockAction(targetType, value) {
+            if (!confirm(`¿Confirmas que deseas BLOQUEAR y EXPULSAR este ${targetType === 'ip' ? 'rango IP' : 'dispositivo'}?\nValor: ${value}`)) {
+                return;
+            }
+            fetch('/admin/api/block', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type: targetType, value: value, reason: 'Bloqueo manual desde panel de admin' })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    fetchSessionsData();
+                } else {
+                    alert('Error al bloquear: ' + (data.error || 'Desconocido'));
+                }
+            })
+            .catch(e => alert('Error de conexión: ' + e));
+        }
+
+        function unblockAction(targetType, value) {
+            if (!confirm(`¿Deseas DESBLOQUEAR y permitir acceso nuevamente a: ${value}?`)) {
+                return;
+            }
+            fetch('/admin/api/unblock', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ type: targetType, value: value })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    fetchSessionsData();
+                } else {
+                    alert('Error al desbloquear: ' + (data.error || 'Desconocido'));
+                }
+            })
+            .catch(e => alert('Error de conexión: ' + e));
+        }
+
+        function submitManualBlock() {
+            const input = document.getElementById('manual-block-input');
+            const reasonInput = document.getElementById('manual-block-reason');
+            const val = (input.value || '').trim();
+            const reason = (reasonInput.value || '').trim() || 'Bloqueo manual';
+            if (!val) {
+                alert('Ingresa una IP o ID de dispositivo');
+                return;
+            }
+            fetch('/admin/api/block', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ value: val, reason: reason })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (data.success) {
+                    input.value = '';
+                    reasonInput.value = '';
+                    fetchSessionsData();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(e => alert('Error: ' + e));
+        }
+
+        function fetchSessionsData() {
+            fetch('/admin/api/sessions')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.error) return;
+                    
+                    // Update KPIs
+                    if (data.stats) {
+                        document.getElementById('kpi-online').innerText = data.stats.online_now;
+                        document.getElementById('kpi-today').innerText = data.stats.today_unique;
+                        document.getElementById('kpi-blocked').innerText = data.stats.blocked_total;
+                        document.getElementById('kpi-sessions').innerText = data.stats.active_devices_tracked;
+                    }
+
+                    // Render Sessions
+                    const tbody = document.getElementById('sessions-table-body');
+                    if (tbody && data.sessions) {
+                        document.getElementById('badge-total-active').innerText = `${data.sessions.length} registrados`;
+                        if (data.sessions.length === 0) {
+                            tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-gray-500 font-sans">No hay conexiones activas en este momento.</td></tr>`;
+                        } else {
+                            tbody.innerHTML = data.sessions.map(s => `
+                                <tr class="hover:bg-gray-800/40 transition">
+                                    <td class="py-3 px-4">
+                                        <div class="font-sans font-medium text-gray-200">${s.device_info}</div>
+                                        <div class="text-[10px] text-gray-500 font-mono">${s.device_id}</div>
+                                    </td>
+                                    <td class="py-3 px-4 text-cyan-400 font-bold">${s.ip}</td>
+                                    <td class="py-3 px-4">
+                                        ${s.is_online ? `
+                                            <span class="px-2 py-0.5 rounded-full text-[10px] bg-emerald-950 text-emerald-400 border border-emerald-800 font-bold inline-flex items-center gap-1">
+                                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> En línea
+                                            </span>
+                                        ` : `
+                                            <span class="px-2 py-0.5 rounded-full text-[10px] bg-gray-800 text-gray-400 border border-gray-700">
+                                                Inactivo
+                                            </span>
+                                        `}
+                                    </td>
+                                    <td class="py-3 px-4 text-gray-300">${s.last_seen_text}</td>
+                                    <td class="py-3 px-4 text-gray-400 font-semibold">${s.requests_count}</td>
+                                    <td class="py-3 px-4 text-right space-x-1">
+                                        <button onclick="blockAction('ip', '${s.ip}')" class="px-2.5 py-1 bg-rose-950/70 hover:bg-rose-900 text-rose-300 border border-rose-800 rounded-lg text-[11px] font-bold transition cursor-pointer" title="Bloquear IP">
+                                            🔴 Bloquear IP
+                                        </button>
+                                        <button onclick="blockAction('device', '${s.device_id}')" class="px-2.5 py-1 bg-amber-950/70 hover:bg-amber-900 text-amber-300 border border-amber-800 rounded-lg text-[11px] font-bold transition cursor-pointer" title="Bloquear Dispositivo">
+                                            ⛔ Dispositivo
+                                        </button>
+                                    </td>
+                                </tr>
+                            `).join('');
+                        }
+                    }
+
+                    // Render Blacklist
+                    const bbody = document.getElementById('blacklist-table-body');
+                    if (bbody && data.blacklist) {
+                        document.getElementById('badge-total-blacklist').innerText = `${data.blacklist.length} bloqueados`;
+                        if (data.blacklist.length === 0) {
+                            bbody.innerHTML = `<tr><td colspan="5" class="py-6 text-center text-gray-500 font-sans">Ningún usuario o IP está bloqueado actualmente. Todo el tráfico tiene acceso normal.</td></tr>`;
+                        } else {
+                            bbody.innerHTML = data.blacklist.map(b => `
+                                <tr class="hover:bg-gray-800/40 transition">
+                                    <td class="py-3 px-4">
+                                        <span class="px-2 py-0.5 rounded ${b.type === 'ip' ? 'bg-blue-950 text-blue-400 border border-blue-800' : 'bg-purple-950 text-purple-400 border border-purple-800'} text-[10px] font-bold uppercase">${b.type}</span>
+                                    </td>
+                                    <td class="py-3 px-4 text-white font-bold">${b.value}</td>
+                                    <td class="py-3 px-4 text-gray-400 font-sans">${b.reason || 'Bloqueado'}</td>
+                                    <td class="py-3 px-4 text-gray-500">${b.created_at || '-'}</td>
+                                    <td class="py-3 px-4 text-right">
+                                        <button onclick="unblockAction('${b.type}', '${b.value}')" class="px-3 py-1 bg-emerald-950 hover:bg-emerald-900 text-emerald-300 border border-emerald-800 rounded-lg text-[11px] font-bold transition cursor-pointer">
+                                            🟢 Desbloquear
+                                        </button>
+                                    </td>
+                                </tr>
+                            `).join('');
+                        }
+                    }
+
+                    if (window.lucide) lucide.createIcons();
+                })
+                .catch(e => console.error("Error actualizando panel:", e));
+        }
+
+        // Auto-refresh every 12 seconds
+        setInterval(fetchSessionsData, 12000);
+    </script>
+    {% endif %}
+
+    <script>
+        if (window.lucide) lucide.createIcons();
+    </script>
+</body>
+</html>
+
