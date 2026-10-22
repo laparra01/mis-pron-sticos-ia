@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-22T21:07:32.402280",
+  "last_updated": "2026-10-22T16:16:09.452494",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -3241,7 +3241,25 @@
           "text": "Young Boys 2 victorias • 0 empates • St. Gallen 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lukas Fähndrich",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 34,
+        "yellow_cards_per_match": 3.38,
+        "yellow_cards_total": 115,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 12,
+        "fouls_per_match": 25.3,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.38 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

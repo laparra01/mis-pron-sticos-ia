@@ -1532,7 +1532,7 @@ def fetch_live_matches_data(sport_filter="all"):
     """
     global _live_cache
     now = time.time()
-    if sport_filter in _live_cache["data"] and (now - _live_cache["timestamp"] < 30):
+    if sport_filter in _live_cache["data"] and (now - _live_cache["timestamp"] < 90):
         return _live_cache["data"][sport_filter]
 
     cfg = get_config()
@@ -1548,6 +1548,71 @@ def fetch_live_matches_data(sport_filter="all"):
         _live_cache["data"][sport_filter] = live_results
         _live_cache["timestamp"] = now
         return live_results
+
+    # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
+        results = []
+        if sport_filter in ("all", "football"):
+            for item in SOCCER_LIVE_MATCHES:
+                l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football", item["home_team"], item["away_team"])
+                h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
+                home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
+                away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
+                pred = calculate_live_probabilities(
+                    current_h=item["score_home"],
+                    current_a=item["score_away"],
+                    minute=item["minute"],
+                    home_stats=home_stats,
+                    away_stats=away_stats,
+                    live_stats=item["live_stats"]
+                )
+                ai_resp = generate_live_ai_analysis(item, pred, item["live_stats"])
+                h_logo = get_team_logo(item["home_team"], "football")
+                a_logo = get_team_logo(item["away_team"], "football")
+                enrich_h2h_with_logos(h2h_data, home_team=item["home_team"], away_team=item["away_team"], home_logo=h_logo, away_logo=a_logo)
+                c_code_map = {"Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it", "Alemania": "de", "Francia": "fr", "Estados Unidos": "us", "México": "mx", "Argentina": "ar", "Colombia": "co"}
+                c_code = c_code_map.get(c_name, "")
+                results.append({
+                    "id": item["id"],
+                    "sport": "football",
+                    "league": l_clean,
+                    "country": c_name,
+                    "country_code": c_code,
+                    "league_flag": c_flag,
+                    "country_flag": c_flag,
+                    "home_team": item["home_team"],
+                    "away_team": item["away_team"],
+                    "home_logo": h_logo,
+                    "away_logo": a_logo,
+                    "date": "HOY",
+                    "date_iso": datetime.now().strftime("%Y-%m-%d"),
+                    "time": "EN VIVO",
+                    "timestamp": int(now),
+                    "is_live": True,
+                    "is_halftime": False,
+                    "minute": item["minute"],
+                    "score_home": item["score_home"],
+                    "score_away": item["score_away"],
+                    "live_stats": item["live_stats"],
+                    "home_stats": home_stats,
+                    "away_stats": away_stats,
+                    "prediction": pred,
+                    "h2h": h2h_data,
+                    "ai_analysis": ai_resp
+                })
+        return results
+
+    # Si ya tenemos datos en caché (en RAM o recuperados de disco):
+    if sport_filter in _live_cache["data"]:
+        # Si tiene más de 60 segundos de antigüedad, disparamos refresco asíncrono
+        if (now - _live_cache["timestamp"] >= 60) and not _live_cache.get("updating"):
+            threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
+        # Retorno INSTANTÁNEO en 0.0001 segundos
+        return _live_cache["data"][sport_filter]
+
+    # Si está totalmente vacío (ej. primera ejecución sin caché en disco):
+    # Se consulta de inmediato y se guarda
+    _refresh_live_cache_worker(sport_filter)
+    return _live_cache["data"].get(sport_filter, [])
 
     # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
     results = []
@@ -1703,7 +1768,7 @@ def load_scraped_matches(force_reload=False):
     """
     global _SCRAPED_MATCHES_CACHE, _SCRAPED_MATCHES_CACHE_TIME
     now = time.time()
-    if not force_reload and _SCRAPED_MATCHES_CACHE is not None and (now - _SCRAPED_MATCHES_CACHE_TIME < 60):
+    if not force_reload and _SCRAPED_MATCHES_CACHE is not None and (now - _SCRAPED_MATCHES_CACHE_TIME < 1800):
         return _SCRAPED_MATCHES_CACHE
 
     check_and_auto_update_scraped_matches(max_age_hours=6)
@@ -1832,7 +1897,7 @@ def fetch_espn_upcoming_nba():
     """
     global _ESPN_UPCOMING_NBA_CACHE
     now = time.time()
-    if _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 300):
+    if _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 900):
         return _ESPN_UPCOMING_NBA_CACHE["data"]
 
     events = []

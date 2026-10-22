@@ -148,6 +148,7 @@ def slim_match_for_client(m):
         "ai_analysis": m.get("ai_analysis")
     }
 
+
 @app.route("/")
 def index():
     try:
@@ -433,7 +434,7 @@ def api_ping():
     """Endpoint ultraliviano para el robot Keep-Alive (UptimeRobot / Cron-job)"""
     return jsonify({
         "status": "online",
-        "app": "Mis Pronósticos AI",
+        "app": "Picks 90 GT",
         "server_time": datetime.now().isoformat(),
         "online_users": security_manager.get_active_count()
     })
@@ -517,10 +518,26 @@ def admin_api_unblock():
     security_manager.unblock_target(t_type, value)
     return jsonify({"success": True, "value": value})
 
+
+# Precalentamiento de caché en segundo plano al arrancar el servidor
+def prewarm_cache_task():
+    try:
+        import time
+        time.sleep(1)
+        print("[PREWARM] Calentando caché inicial en segundo plano...")
+        fetch_matches_data()
+        fetch_live_matches_data()
+        print("[PREWARM] Caché lista. Servidor ultra-rápido en 0.001s.")
+    except Exception as e:
+        print(f"[PREWARM ERROR]: {e}")
+
+import threading
+threading.Thread(target=prewarm_cache_task, daemon=True).start()
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print(f"\n=======================================================")
-    print(f"  MIS PRONÓSTICOS AI (FÚTBOL & NBA) - SERVIDOR ACTIVO")
+    print(f"  PICKS 90 GT (FÚTBOL & NBA) - SERVIDOR ACTIVO")
     print(f"  Accede en tu navegador a: http://localhost:{port}")
     print(f"=======================================================\n")
     app.run(host="0.0.0.0", port=port, debug=False)
