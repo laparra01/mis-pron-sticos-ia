@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-21T21:07:36.536229",
+  "last_updated": "2026-10-22T14:49:55.890820",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -3299,7 +3299,25 @@
           "text": "Vitória de Guimarães 4 victorias • 1 empates • Marítimo 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Diogo Rosa",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 8,
+        "yellow_cards_per_match": 6.13,
+        "yellow_cards_total": 49,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 0,
+        "penalties_total": 4,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.13 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Estrela da Amadora 3 victorias • 0 empates • Casa Pia AC 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bruno Pires Costa",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 25,
+        "yellow_cards_per_match": 3.84,
+        "yellow_cards_total": 96,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 9,
+        "fouls_per_match": 26.0,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.84 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4114,7 +4150,25 @@
           "text": "Alverca 1 victorias • 0 empates • Arouca 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Pedro Ramalho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 19,
+        "yellow_cards_per_match": 5.95,
+        "yellow_cards_total": 113,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 9,
+        "fouls_per_match": 28.0,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.95 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4544,7 +4598,25 @@
           "text": "Gil Vicente 1 victorias • 1 empates • FC Porto 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luís Godinho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 36,
+        "yellow_cards_per_match": 5.17,
+        "yellow_cards_total": 186,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.17 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4974,7 +5046,25 @@
           "text": "Estoril 0 victorias • 3 empates • Moreirense 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Macedo",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 25,
+        "yellow_cards_per_match": 3.76,
+        "yellow_cards_total": 94,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 11,
+        "fouls_per_match": 26.6,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.76 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5404,7 +5494,25 @@
           "text": "Nacional 1 victorias • 0 empates • Braga 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José Bessa",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 22,
+        "yellow_cards_per_match": 6.5,
+        "yellow_cards_total": 143,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 9,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.5 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5834,7 +5942,25 @@
           "text": "Rio Ave 0 victorias • 3 empates • Famalicão 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Hélder Carvalho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 22,
+        "yellow_cards_per_match": 3.45,
+        "yellow_cards_total": 76,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 13,
+        "fouls_per_match": 28.5,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.45 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6254,7 +6380,25 @@
           "text": "Sporting CP 2 victorias • 0 empates • Académico Viseu 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Nogueira",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.78,
+        "yellow_cards_total": 172,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 15,
+        "fouls_per_match": 26.1,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.78 amarillas y 26.13 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6684,7 +6828,25 @@
           "text": "Santa Clara 0 victorias • 1 empates • Benfica 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Cláudio Pereira",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 29,
+        "yellow_cards_per_match": 4.83,
+        "yellow_cards_total": 140,
+        "yellow_cards_avg_league": 4.98,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.83 amarillas y 28.44 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

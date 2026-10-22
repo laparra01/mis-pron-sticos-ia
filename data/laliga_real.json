@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-10-21T21:07:25.544011",
+  "last_updated": "2026-10-22T14:49:38.483732",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -3617,7 +3617,25 @@
           "text": "Deportivo Alavés 4 victorias • 0 empates • Málaga 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Muñiz Muñoz",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.69,
+        "yellow_cards_total": 144,
+        "yellow_cards_avg_league": 5.03,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 7,
+        "penalties_total": 17,
+        "fouls_per_match": 25.3,
+        "fouls_avg_league": 26.6,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.69 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

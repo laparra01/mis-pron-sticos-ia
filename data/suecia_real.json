@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-10-21T21:07:59.379617",
+  "last_updated": "2026-10-22T14:50:21.804810",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,7 +2981,25 @@
           "text": "Elfsborg 1 victorias • 1 empates • Malmö FF 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Granit Maqedonci",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.08,
+        "yellow_cards_total": 120,
+        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 5,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.08 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3411,7 +3429,25 @@
           "text": "Västerås SK 2 victorias • 2 empates • Halmstads BK 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Glenn Nyberg",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 26,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 104,
+        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 27.2,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.0 amarillas y 27.19 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

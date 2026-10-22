@@ -3,7 +3,7 @@
   "league_id": 40,
   "country": "Bélgica",
   "country_code": "be",
-  "last_updated": "2026-10-21T21:07:45.164938",
+  "last_updated": "2026-10-22T14:50:06.359114",
   "total_fixtures": 12,
   "team_histories": {
     "Anderlecht": [
@@ -3299,7 +3299,25 @@
           "text": "Kortrijk 1 victorias • 0 empates • KV Mechelen 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bram van Driessche",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 45,
+        "yellow_cards_per_match": 3.91,
+        "yellow_cards_total": 176,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 16,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.91 amarillas y 22.69 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Royal Antwerp 0 victorias • 1 empates • Sporting Charleroi 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Wim Smet",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 20,
+        "yellow_cards_per_match": 2.4,
+        "yellow_cards_total": 48,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 5,
+        "fouls_per_match": 22.0,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.4 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4159,7 +4195,25 @@
           "text": "OH Leuven 4 victorias • 0 empates • Lommel 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jan Boterberg",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 47,
+        "yellow_cards_per_match": 3.81,
+        "yellow_cards_total": 179,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 22,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.81 amarillas y 21.19 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4589,7 +4643,25 @@
           "text": "RAAL La Louvière 0 victorias • 3 empates • Zulte Waregem 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Massimiliano Ledda",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 31,
+        "yellow_cards_per_match": 4.97,
+        "yellow_cards_total": 154,
+        "yellow_cards_avg_league": 4.47,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 10,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 26.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.97 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5019,7 +5091,25 @@
           "text": "Westerlo 2 victorias • 1 empates • SK Beveren 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Anthony Letellier",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 14,
+        "yellow_cards_per_match": 2.71,
+        "yellow_cards_total": 38,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 4,
+        "fouls_per_match": 22.1,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.71 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5449,7 +5539,25 @@
           "text": "Genk 1 victorias • 2 empates • Standard Liège 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jasper Vergoote",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 50,
+        "yellow_cards_per_match": 3.28,
+        "yellow_cards_total": 164,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 10,
+        "penalties_total": 13,
+        "fouls_per_match": 21.4,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.28 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5879,7 +5987,25 @@
           "text": "Club Brugge 3 victorias • 1 empates • St.Truiden 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Nathan Verboomen",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 43,
+        "yellow_cards_per_match": 4.3,
+        "yellow_cards_total": 185,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 13,
+        "fouls_per_match": 22.1,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.3 amarillas y 22.12 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6309,7 +6435,25 @@
           "text": "Gent 1 victorias • 1 empates • Anderlecht 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Erik Lambrechts",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 34,
+        "yellow_cards_per_match": 4.18,
+        "yellow_cards_total": 142,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 9,
+        "fouls_per_match": 22.3,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.18 amarillas y 22.32 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6739,7 +6883,25 @@
           "text": "Union St.Gilloise 2 victorias • 2 empates • Cercle Brugge 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Wesli De Cremer",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 23,
+        "yellow_cards_per_match": 4.52,
+        "yellow_cards_total": 104,
+        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 10,
+        "fouls_per_match": 24.9,
+        "fouls_avg_league": 22.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.52 amarillas y 24.87 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
