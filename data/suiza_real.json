@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-23T14:36:02.620024",
+  "last_updated": "2026-10-23T20:53:31.581997",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -3689,7 +3689,25 @@
           "text": "Thun 1 victorias • 0 empates • Lugano 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mirel Turkes",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 16,
+        "yellow_cards_per_match": 5.06,
+        "yellow_cards_total": 81,
+        "yellow_cards_avg_league": 4.86,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 9,
+        "fouls_per_match": 29.2,
+        "fouls_avg_league": 26.9,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.06 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4119,7 +4137,25 @@
           "text": "Basel 3 victorias • 1 empates • Grasshopper 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sandro Schärer",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 21,
+        "yellow_cards_per_match": 4.05,
+        "yellow_cards_total": 85,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 6,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.05 amarillas y 28.4 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4549,7 +4585,25 @@
           "text": "Sion 1 victorias • 2 empates • Lausanne 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Johannes von Mandach",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 32,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 14,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.91 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
