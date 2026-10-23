@@ -3,7 +3,7 @@
   "league_id": 146,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-22T16:15:36.952560",
+  "last_updated": "2026-10-23T14:35:48.478252",
   "total_fixtures": 10,
   "team_histories": {
     "1. FC Nürnberg": [
@@ -3755,7 +3755,7 @@
         "matches": 5,
         "yellow_cards_per_match": 4.8,
         "yellow_cards_total": 24,
-        "yellow_cards_avg_league": 4.91,
+        "yellow_cards_avg_league": 4.92,
         "yellow_cards_tendency": "average",
         "red_cards_total": 0,
         "penalties_total": 1,
@@ -5086,10 +5086,10 @@
         "country": "Germany",
         "country_code": "GER",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
-        "matches": 9,
-        "yellow_cards_per_match": 4.56,
-        "yellow_cards_total": 41,
-        "yellow_cards_avg_league": 4.91,
+        "matches": 8,
+        "yellow_cards_per_match": 4.5,
+        "yellow_cards_total": 36,
+        "yellow_cards_avg_league": 4.92,
         "yellow_cards_tendency": "average",
         "red_cards_total": 0,
         "penalties_total": 0,
@@ -5097,7 +5097,7 @@
         "fouls_avg_league": 24.6,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.56 amarillas y 24.33 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 4.5 amarillas y 24.33 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

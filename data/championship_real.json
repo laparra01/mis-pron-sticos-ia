@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-22T16:15:12.017663",
+  "last_updated": "2026-10-23T14:35:38.380442",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -6023,7 +6023,7 @@
         "matches": 19,
         "yellow_cards_per_match": 4.58,
         "yellow_cards_total": 87,
-        "yellow_cards_avg_league": 4.01,
+        "yellow_cards_avg_league": 4.0,
         "yellow_cards_tendency": "above",
         "red_cards_total": 1,
         "penalties_total": 2,
@@ -8200,9 +8200,9 @@
         "country": "England",
         "country_code": "ENG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
-        "matches": 34,
-        "yellow_cards_per_match": 3.62,
-        "yellow_cards_total": 123,
+        "matches": 33,
+        "yellow_cards_per_match": 3.64,
+        "yellow_cards_total": 120,
         "yellow_cards_avg_league": 3.79,
         "yellow_cards_tendency": "average",
         "red_cards_total": 2,
@@ -8211,7 +8211,7 @@
         "fouls_avg_league": 22.0,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (3.62 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (3.64 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

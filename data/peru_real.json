@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-10-22T16:14:41.785587",
+  "last_updated": "2026-10-23T14:35:24.192035",
   "total_fixtures": 15,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -3299,7 +3299,25 @@
           "text": "CD UT Cajamarca 0 victorias • 0 empates • FBC Melgar 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Junior Rivera",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 7,
+        "yellow_cards_per_match": 4.29,
+        "yellow_cards_total": 30,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 1,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.29 amarillas y 24.14 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Atlético Grau 2 victorias • 1 empates • Asociación Deportiva Tarma 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Daniel Ureta Pereda",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 42,
+        "yellow_cards_per_match": 5.17,
+        "yellow_cards_total": 217,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 14,
+        "penalties_total": 24,
+        "fouls_per_match": 23.4,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.17 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4159,7 +4195,25 @@
           "text": "Sport Huancayo 2 victorias • 2 empates • Alianza Atlético 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Kevin Paolo Ortega",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 38,
+        "yellow_cards_per_match": 4.58,
+        "yellow_cards_total": 174,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 15,
+        "penalties_total": 12,
+        "fouls_per_match": 21.8,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.58 amarillas y 21.82 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4589,7 +4643,25 @@
           "text": "Cusco FC 2 victorias • 1 empates • Sporting Cristal 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Augusto Alfredo Menéndez",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 31,
+        "yellow_cards_per_match": 5.81,
+        "yellow_cards_total": 180,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 16,
+        "penalties_total": 17,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.81 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4989,7 +5061,25 @@
           "text": "Universitario de Deportes 2 victorias • 0 empates • ADC Juan Pablo II 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joel Alonso Alarcón",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 47,
+        "yellow_cards_per_match": 3.4,
+        "yellow_cards_total": 160,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 14,
+        "penalties_total": 20,
+        "fouls_per_match": 20.4,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.4 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
