@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-23T20:52:29.755393",
+  "last_updated": "2026-10-24T13:47:10.356601",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -10529,8 +10529,8 @@
         "country_code": "USA",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
         "matches": 48,
-        "yellow_cards_per_match": 4.98,
-        "yellow_cards_total": 239,
+        "yellow_cards_per_match": 5.0,
+        "yellow_cards_total": 240,
         "yellow_cards_avg_league": 4.16,
         "yellow_cards_tendency": "above",
         "red_cards_total": 3,
@@ -10539,7 +10539,7 @@
         "fouls_avg_league": 24.1,
         "rigor_level": "Riguroso / Tarjetero",
         "rigor_color": "rose",
-        "verdict": "Colegiado tarjetero (4.98 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "verdict": "Colegiado tarjetero (5.0 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
         "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"

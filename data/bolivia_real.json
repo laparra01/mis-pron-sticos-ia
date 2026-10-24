@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-10-23T20:52:47.615758",
+  "last_updated": "2026-10-24T13:47:25.729265",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -2981,7 +2981,25 @@
           "text": "GV San José 2 victorias • 1 empates • Blooming 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bladimir Rueda",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 19,
+        "yellow_cards_per_match": 6.63,
+        "yellow_cards_total": 126,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 11,
+        "fouls_per_match": 26.3,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.63 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3351,7 +3369,25 @@
           "text": "San Antonio Bulo Bulo 0 victorias • 0 empates • Real Potosí 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luis Miguel Villarroel",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 24,
+        "yellow_cards_per_match": 5.79,
+        "yellow_cards_total": 139,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 7,
+        "penalties_total": 16,
+        "fouls_per_match": 24.5,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.79 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3751,7 +3787,25 @@
           "text": "Independiente Petrolero 2 victorias • 0 empates • ABB 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Héctor Sandoval",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 6,
+        "yellow_cards_per_match": 6.5,
+        "yellow_cards_total": 39,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 4,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.5 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4151,7 +4205,25 @@
           "text": "Always Ready 2 victorias • 1 empates • CDT Real Oruro 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jordy Alemán",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 33,
+        "yellow_cards_per_match": 5.79,
+        "yellow_cards_total": 191,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 21,
+        "penalties_total": 20,
+        "fouls_per_match": 25.3,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.79 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4581,7 +4653,25 @@
           "text": "Aurora 1 victorias • 2 empates • Real Tomayapo 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Javier Revollo",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 32,
+        "yellow_cards_per_match": 6.31,
+        "yellow_cards_total": 202,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 15,
+        "penalties_total": 17,
+        "fouls_per_match": 25.2,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.31 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5011,7 +5101,25 @@
           "text": "Oriente Petrolero 1 victorias • 0 empates • The Strongest 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bruno Vera",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 19,
+        "yellow_cards_per_match": 4.63,
+        "yellow_cards_total": 88,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 7,
+        "penalties_total": 8,
+        "fouls_per_match": 22.2,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.63 amarillas y 22.16 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
