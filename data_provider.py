@@ -971,13 +971,15 @@ def fetch_espn_live_soccer():
             events = resp.json().get("events", [])
             live_events = [e for e in events if e.get("status", {}).get("type", {}).get("state") == "in"]
             
-            # Prefetch concurrente de detalles y estadísticas para todos los eventos en vivo
-            from concurrent.futures import ThreadPoolExecutor
+            # Prefetch no-bloqueante de detalles y estadísticas para eventos en vivo
             event_ids = [str(e.get("id")) for e in live_events if e.get("id")]
             if event_ids:
                 try:
-                    with ThreadPoolExecutor(max_workers=8) as executor:
-                        list(executor.map(fetch_espn_event_real_stats, event_ids, timeout=3.5))
+                    from concurrent.futures import ThreadPoolExecutor, wait
+                    executor = ThreadPoolExecutor(max_workers=4)
+                    futures = [executor.submit(fetch_espn_event_real_stats, eid) for eid in event_ids[:6]]
+                    wait(futures, timeout=2.0)
+                    executor.shutdown(wait=False, cancel_futures=True)
                 except Exception:
                     pass
 
@@ -1527,7 +1529,7 @@ def try_fetch_external_nba():
         print(f"[INFO] Error al conectar Balldontlie NBA ({e}).")
     return None
 
-_live_cache = {"data": {}, "timestamp": 0, "updating": False}
+_live_cache = {"data": {}, "timestamp": 0, "updating": False, "updating_start": 0}
 _LIVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "live_cache_persist.json")
 
 def _load_persisted_live_cache():
@@ -1537,9 +1539,15 @@ def _load_persisted_live_cache():
             with open(_LIVE_CACHE_FILE, "r", encoding="utf-8") as f:
                 saved = json.load(f)
                 if isinstance(saved, dict) and "data" in saved:
-                    for k, v in saved.get("data", {}).items():
-                        _live_cache["data"][k] = v
-                    _live_cache["timestamp"] = saved.get("timestamp", 0)
+                    saved_ts = saved.get("timestamp", 0)
+                    # Si el archivo en disco tiene mas de 5 minutos (300s), los partidos son obsoletos
+                    if (time.time() - saved_ts) < 300:
+                        for k, v in saved.get("data", {}).items():
+                            _live_cache["data"][k] = v
+                        _live_cache["timestamp"] = saved_ts
+                    else:
+                        _live_cache["data"] = {}
+                        _live_cache["timestamp"] = 0
         except Exception:
             pass
 
@@ -1559,12 +1567,18 @@ _load_persisted_live_cache()
 
 def _refresh_live_cache_worker(sport_filter="all"):
     """
-    Actualiza la cache de partidos en vivo en segundo plano sin congelar las peticiones HTTP.
+    Actualiza la cache de partidos en vivo con auto-desbloqueo y sincronizacion multi-deporte.
     """
     global _live_cache
+    now = time.time()
+    
+    # Auto-desbloqueo: si lleva mas de 12s en 'updating', considerar hilo muerto
     if _live_cache.get("updating"):
-        return
+        if (now - _live_cache.get("updating_start", 0)) < 12:
+            return
+
     _live_cache["updating"] = True
+    _live_cache["updating_start"] = now
     try:
         live_results = []
         if sport_filter in ("all", "football"):
@@ -1574,6 +1588,12 @@ def _refresh_live_cache_worker(sport_filter="all"):
         
         now = time.time()
         _live_cache["data"][sport_filter] = live_results
+        
+        # Sincronizar sub-filtros si se consulto all
+        if sport_filter == "all":
+            _live_cache["data"]["football"] = [m for m in live_results if m.get("sport") == "football"]
+            _live_cache["data"]["nba"] = [m for m in live_results if m.get("sport") == "nba"]
+            
         _live_cache["timestamp"] = now
         _save_persisted_live_cache()
     except Exception as ex:
@@ -1581,12 +1601,11 @@ def _refresh_live_cache_worker(sport_filter="all"):
     finally:
         _live_cache["updating"] = False
 
-def fetch_live_matches_data(sport_filter="all"):
+def fetch_live_matches_data(sport_filter="all", force_refresh=False):
     """
-    Obtiene los partidos en vivo.
-    Si USE_LIVE_API = True, trae UNICAMENTE partidos oficiales en juego reales.
-    Usa Stale-While-Revalidate: Si ya hay datos, responde en 0.0001s y actualiza
-    en segundo plano para que el usuario NUNCA experimente esperas ni timeouts 500.
+    Obtiene los partidos en vivo oficiales reales (ESPN Futbol & NBA).
+    - Si force_refresh=True o cache vencida (>75s): actualizacion inmediata sincrona.
+    - Si cache fresca (<75s): respuesta inmediata ultra-rapida.
     """
     global _live_cache
     now = time.time()
@@ -1594,21 +1613,29 @@ def fetch_live_matches_data(sport_filter="all"):
     is_live_api = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
 
     if is_live_api:
-        # 1. Si tenemos datos en memoria:
+        # Auto-desbloqueo preventivo
+        if _live_cache.get("updating") and (now - _live_cache.get("updating_start", 0) > 12):
+            _live_cache["updating"] = False
+
+        cache_age = now - _live_cache.get("timestamp", 0)
+
+        # Si el usuario solicito refrescar manualmente o la cache tiene mas de 75s o esta vacia:
+        if force_refresh or cache_age >= 75 or (sport_filter not in _live_cache.get("data", {})):
+            _refresh_live_cache_worker(sport_filter)
+            return _live_cache["data"].get(sport_filter, [])
+
+        # Si tenemos datos en memoria frescos (<75s):
         if sport_filter in _live_cache["data"]:
-            # Si tienen mas de 45s de antiguedad, actualizamos asincronamente en background
-            if (now - _live_cache["timestamp"] >= 45) and not _live_cache.get("updating"):
+            if cache_age >= 30 and not _live_cache.get("updating"):
                 threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
-            # Retorno instantaneo garantizado
             return _live_cache["data"][sport_filter]
 
-        # 2. Si memoria esta vacia, intentamos cargar disco
+        # Cargar de disco si memoria esta vacia y no es obsoleto
         _load_persisted_live_cache()
         if sport_filter in _live_cache["data"]:
-            threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
             return _live_cache["data"][sport_filter]
 
-        # 3. Primer arranque sin cache: sincronizamos una vez directamente
+        # Primer arranque sin cache: sincronizar directamente
         _refresh_live_cache_worker(sport_filter)
         return _live_cache["data"].get(sport_filter, [])
 

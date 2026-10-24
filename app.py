@@ -1,3 +1,4 @@
+import time
 import os
 from datetime import datetime, timedelta
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
@@ -157,7 +158,8 @@ def index():
     try:
         cfg = get_config()
         live_api_active = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
-        live_matches = fetch_live_matches_data() or []
+        force_refresh = bool(request.args.get("refresh") or request.args.get("force"))
+        live_matches = fetch_live_matches_data(force_refresh=force_refresh) or []
         upcoming_matches = fetch_matches_data() or []
         all_matches = live_matches + upcoming_matches
 
@@ -309,6 +311,14 @@ def index():
 </body>
 </html>'''), 500
 
+@app.after_request
+def add_cache_control_headers(response):
+    if request.path in ("/", "/api/live"):
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    return response
+
 @app.errorhandler(500)
 def handle_500_error(e):
     import traceback
@@ -340,7 +350,14 @@ def handle_500_error(e):
 @app.route("/api/live")
 def api_live():
     sport = request.args.get("sport", "all")
-    return jsonify({"live_matches": fetch_live_matches_data(sport)})
+    force = bool(request.args.get("force") or request.args.get("refresh"))
+    matches = fetch_live_matches_data(sport, force_refresh=force)
+    return jsonify({
+        "success": True,
+        "count": len(matches),
+        "live_matches": matches,
+        "timestamp": time.time()
+    })
 
 @app.route("/api/matches")
 def api_matches():

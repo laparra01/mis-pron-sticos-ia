@@ -1125,27 +1125,22 @@
                 </button>
             </div>
 
-            <!-- Modal Sub-Navigation Tabs -->
-            <div class="flex items-center px-4 sm:px-6 pt-3 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-4 text-xs sm:text-sm font-bold overflow-x-auto no-scrollbar">
-                <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-3 px-2.5 sm:px-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-105" title="Pronósticos, Córners y Tarjetas">
-                    <span class="text-sm">🎯</span>
-                    <span>Picks</span>
+            <!-- Modal Sub-Navigation Tabs (Solo Íconos para Evitar Desbordamiento) -->
+            <div class="flex items-center justify-around sm:justify-start px-2 sm:px-6 pt-2.5 border-b border-gray-800 bg-gray-950/70 gap-2 sm:gap-6 text-sm font-bold overflow-x-auto no-scrollbar">
+                <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-2.5 px-3 sm:px-4 border-b-2 border-emerald-500 text-emerald-400 flex items-center justify-center transition cursor-pointer hover:scale-110" title="🎯 Picks (Pronósticos y Probabilidades)">
+                    <span class="text-base sm:text-lg">🎯</span>
                 </button>
-                <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-3 px-2.5 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-105" title="Historial H2H y Estadísticas">
-                    <span class="text-sm">📊</span>
-                    <span>H2H</span>
+                <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="📊 Historial H2H y Estadísticas">
+                    <span class="text-base sm:text-lg">📊</span>
                 </button>
-                <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-3 px-2.5 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-105" title="Análisis Deportivo Google Gemini">
-                    <span class="text-sm">🧠</span>
-                    <span>Gemini</span>
+                <button onclick="switchModalTab('gemini')" id="modal-tab-btn-gemini" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="🧠 Análisis Google Gemini AI">
+                    <span class="text-base sm:text-lg">🧠</span>
                 </button>
-                <button onclick="switchModalTab('matrix')" id="modal-tab-btn-matrix" class="pb-3 px-2.5 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-105" title="Matriz Cuantitativa Top 10 (Goles, Remates, Córners, Tarjetas)">
-                    <span class="text-sm">🔢</span>
-                    <span>Matriz</span>
+                <button onclick="switchModalTab('matrix')" id="modal-tab-btn-matrix" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="🔢 Matriz Cuantitativa Top 10">
+                    <span class="text-base sm:text-lg">🔢</span>
                 </button>
-                <button onclick="switchModalTab('momentum')" id="modal-tab-btn-momentum" class="pb-3 px-2.5 sm:px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-105" title="Gráfico de Momentum y Presión Ofensiva">
-                    <span class="text-sm">📈</span>
-                    <span>Momentum</span>
+                <button onclick="switchModalTab('momentum')" id="modal-tab-btn-momentum" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="📈 Momentum y Presión Ofensiva">
+                    <span class="text-base sm:text-lg">📈</span>
                 </button>
             </div>
 
@@ -2558,8 +2553,8 @@
             const contentMatrix = document.getElementById('modal-content-matrix');
             const contentMomentum = document.getElementById('modal-content-momentum');
 
-            const activeClass = "pb-3 px-3 border-b-2 border-emerald-500 text-emerald-400 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
-            const inactiveClass = "pb-3 px-3 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer hover:scale-110";
+            const activeClass = "pb-2.5 px-3 sm:px-4 border-b-2 border-emerald-500 text-emerald-400 flex items-center justify-center transition cursor-pointer hover:scale-110";
+            const inactiveClass = "pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110";
 
             if (btnPicks) btnPicks.className = (tab === 'picks') ? activeClass : inactiveClass;
             if (btnH2h) btnH2h.className = (tab === 'h2h') ? activeClass : inactiveClass;
@@ -3806,7 +3801,7 @@
             }
         }
 
-        function refreshApp() {
+        async function refreshApp() {
             const btns = document.querySelectorAll('.btn-refresh-trigger');
             const icons = document.querySelectorAll('.icon-refresh-trigger');
             icons.forEach(ic => ic.classList.add('animate-spin'));
@@ -3814,10 +3809,49 @@
                 b.classList.add('opacity-60');
                 b.disabled = true;
             });
+
+            if (typeof showNotificationToast === 'function') {
+                showNotificationToast("⚡ Sincronizando partidos en vivo con ESPN oficial...", false);
+            }
+
+            try {
+                // Petición directa forzando actualización inmediata en el backend
+                const resp = await fetch('/api/live?force=1&t=' + Date.now());
+                if (resp.ok) {
+                    const data = await resp.json();
+                    const count = data.count || (data.live_matches ? data.live_matches.length : 0);
+                    if (typeof showNotificationToast === 'function') {
+                        showNotificationToast(`✅ Partidos en vivo actualizados (${count} en disputa)`, false);
+                    }
+                }
+            } catch (err) {
+                console.warn("[REFRESH LIVE ERROR]:", err);
+            }
+
+            // Recargar con parámetro para saltar caché de navegador
             setTimeout(() => {
-                window.location.reload();
-            }, 300);
+                const u = new URL(window.location.href);
+                u.searchParams.set('refresh', '1');
+                u.searchParams.set('_t', Date.now().toString());
+                window.location.href = u.toString();
+            }, 450);
         }
+
+        // Auto-sincronización periódica de marcadores en vivo cada 60s
+        setInterval(async () => {
+            if (document.hidden) return;
+            try {
+                const res = await fetch('/api/live?t=' + Date.now());
+                if (res.ok) {
+                    const data = await res.json();
+                    const liveMatches = data.live_matches || [];
+                    const liveTabBadge = document.querySelector('#tab-btn-live span');
+                    if (liveTabBadge) {
+                        liveTabBadge.innerText = `(${liveMatches.length})`;
+                    }
+                }
+            } catch (e) {}
+        }, 60000);
 
         function showNotificationToast(msg, isError = false) {
             let toast = document.getElementById('notification-toast');
