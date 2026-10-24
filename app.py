@@ -586,6 +586,23 @@ def prewarm_cache_task():
 import threading
 threading.Thread(target=prewarm_cache_task, daemon=True).start()
 
+def self_keep_alive_task():
+    import time, requests
+    if not (os.environ.get('RENDER') or os.environ.get('RENDER_EXTERNAL_URL')):
+        return
+    time.sleep(60)
+    while True:
+        try:
+            render_url = os.environ.get('RENDER_EXTERNAL_URL') or 'https://mis-pronosticos.onrender.com'
+            if render_url:
+                ping_url = f"{render_url.rstrip('/')}/api/ping"
+                requests.get(ping_url, headers={'User-Agent': 'RenderKeepAlive/1.0'}, timeout=15)
+        except Exception:
+            pass
+        time.sleep(480)
+
+threading.Thread(target=self_keep_alive_task, daemon=True).start()
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     print(f"\n=======================================================")
