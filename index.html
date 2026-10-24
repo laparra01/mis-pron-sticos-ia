@@ -3012,15 +3012,55 @@
                     directList.innerHTML = `<span class="text-gray-500 text-[10px] block text-center py-2">Sin enfrentamientos previos</span>`;
                 } else {
                     directs.forEach(d => {
-                        let winText = d.winner || "Empate";
-                        let winBadge = "bg-gray-800 text-gray-300 border border-gray-700";
-                        if (winText.includes(match.home_team)) winBadge = "bg-blue-500/20 text-blue-400 border border-blue-500/40";
-                        else if (winText.includes(match.away_team)) winBadge = "bg-rose-500/20 text-rose-400 border border-rose-500/40";
-                        else if (winText === "Empate") winBadge = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
-
                         const lTeam = d.match_home || d.home_team || match.home_team;
                         const vTeam = d.match_away || d.away_team || match.away_team;
                         const score = d.score || "0 - 0";
+
+                        let rawWin = (d.winner || "").trim();
+                        let isLocalWinner = false;
+                        let isAwayWinner = false;
+                        let isDraw = false;
+
+                        const lLower = (lTeam || "").toLowerCase();
+                        const vLower = (vTeam || "").toLowerCase();
+                        const wLower = rawWin.toLowerCase();
+
+                        if (wLower === "empate" || wLower === "draw" || wLower === "tie") {
+                            isDraw = true;
+                        } else if (wLower && (wLower === lLower || lLower.includes(wLower) || wLower.includes(lLower))) {
+                            isLocalWinner = true;
+                        } else if (wLower && (wLower === vLower || vLower.includes(wLower) || wLower.includes(vLower))) {
+                            isAwayWinner = true;
+                        } else if (d.home_score !== undefined && d.away_score !== undefined && d.home_score !== null && d.away_score !== null) {
+                            if (d.home_score > d.away_score) isLocalWinner = true;
+                            else if (d.away_score > d.home_score) isAwayWinner = true;
+                            else isDraw = true;
+                        } else if (score && score.includes("-")) {
+                            const scParts = score.split("-").map(s => parseInt(s.trim()));
+                            if (scParts.length === 2 && !isNaN(scParts[0]) && !isNaN(scParts[1])) {
+                                if (scParts[0] > scParts[1]) isLocalWinner = true;
+                                else if (scParts[1] > scParts[0]) isAwayWinner = true;
+                                else isDraw = true;
+                            }
+                        }
+
+                        let winLabel = "Empate";
+                        let winBadge = "bg-amber-500/20 text-amber-400 border border-amber-500/40";
+                        let winnerFull = "Empate";
+
+                        if (isLocalWinner) {
+                            winLabel = "Ganó L";
+                            winnerFull = lTeam;
+                            winBadge = (lTeam === match.home_team || (match.home_team && lTeam && lTeam.toLowerCase().includes(match.home_team.toLowerCase())))
+                                ? "bg-blue-500/20 text-blue-400 border border-blue-500/40"
+                                : "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+                        } else if (isAwayWinner) {
+                            winLabel = "Ganó V";
+                            winnerFull = vTeam;
+                            winBadge = (vTeam === match.home_team || (match.home_team && vTeam && vTeam.toLowerCase().includes(match.home_team.toLowerCase())))
+                                ? "bg-blue-500/20 text-blue-400 border border-blue-500/40"
+                                : "bg-rose-500/20 text-rose-400 border border-rose-500/40";
+                        }
 
                         const lLogo = d.home_logo || getTeamLogoUrl(lTeam, match);
                         const vLogo = d.away_logo || getTeamLogoUrl(vTeam, match);
@@ -3044,7 +3084,7 @@
                             <div class="p-2.5 rounded-xl bg-gray-900/90 border border-gray-800 text-[11px] space-y-2 shadow-sm">
                                 <div class="flex items-center justify-between text-[10px] text-gray-400 font-mono">
                                     <span class="truncate max-w-[170px]" title="${d.date} • ${d.tournament || d.competition || ''}">${d.date} • ${d.tournament || d.competition || ''}</span>
-                                    <span class="px-2 py-0.5 rounded-full font-bold ${winBadge}">${winText === 'Empate' ? 'Empate' : 'Ganó ' + winText}</span>
+                                    <span class="px-2 py-0.5 rounded-full font-bold ${winBadge}" title="Ganó ${winnerFull}">${winLabel}</span>
                                 </div>
                                 <div class="flex items-center justify-between font-sans py-1">
                                     <div class="flex items-center gap-3">
