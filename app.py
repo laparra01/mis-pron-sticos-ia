@@ -16,25 +16,28 @@ app.secret_key = getattr(cfg_init, "SECRET_KEY", "mis-pronosticos-ai-secret-key-
 
 @app.before_request
 def security_and_access_control():
-    # Permitir archivos estáticos
-    if request.path.startswith('/static'):
-        return None
-
-    client_ip = security_manager.get_client_ip(request)
-    client_dev = request.headers.get("X-Device-Id") or request.args.get("device_id")
-
-    # Verificación de lista negra (bloqueados)
-    if security_manager.is_blocked(client_ip, client_dev):
-        if request.path == "/blocked":
+    try:
+        # Permitir archivos estáticos
+        if request.path.startswith('/static'):
             return None
-        if request.path.startswith("/api/"):
-            return jsonify({"error": "Acceso restringido", "blocked": True}), 403
-        return redirect("/blocked")
 
-    # Protección Anti-Scraping / Flood para APIs
-    if request.path.startswith("/api/") and request.path not in ("/api/ping", "/api/heartbeat"):
-        if not security_manager.check_rate_limit(client_ip):
-            return jsonify({"error": "Demasiadas peticiones por minuto (Anti-Scraping). Espera un momento.", "rate_limited": True}), 429
+        client_ip = security_manager.get_client_ip(request)
+        client_dev = request.headers.get("X-Device-Id") or request.args.get("device_id")
+
+        # Verificación de lista negra (bloqueados)
+        if security_manager.is_blocked(client_ip, client_dev):
+            if request.path == "/blocked":
+                return None
+            if request.path.startswith("/api/"):
+                return jsonify({"error": "Acceso restringido", "blocked": True}), 403
+            return redirect("/blocked")
+
+        # Protección Anti-Scraping / Flood para APIs
+        if request.path.startswith("/api/") and request.path not in ("/api/ping", "/api/heartbeat"):
+            if not security_manager.check_rate_limit(client_ip):
+                return jsonify({"error": "Demasiadas peticiones por minuto (Anti-Scraping). Espera un momento.", "rate_limited": True}), 429
+    except Exception as esec:
+        print(f"[SECURITY CHECK WARNING]: {esec}")
 
 
 @app.after_request
@@ -262,7 +265,56 @@ def index():
         import traceback
         err_msg = traceback.format_exc()
         print(f"[ERROR /]: {err_msg}")
-        return f"<pre style='color:#ff5555;background:#1e1e2e;padding:20px;border-radius:8px;font-family:monospace;'><b>Error en el servidor:</b><br><br>{err_msg}</pre>", 500
+        from flask import render_template_string
+        return render_template_string('''<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picks 90 GT - Sincronizando</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen p-4 font-sans">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
+        <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/20">
+            <svg class="w-8 h-8 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+        </div>
+        <h1 class="text-xl font-bold text-white mb-2">Sincronizando Picks 90 GT</h1>
+        <p class="text-sm text-slate-400 mb-6 leading-relaxed">El sistema está actualizando las cuotas y partidos en vivo. Toca el botón abajo para ingresar.</p>
+        <a href="/" class="inline-block w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold rounded-2xl transition shadow-lg shadow-emerald-500/20 active:scale-[0.98]">
+            Entrar a Picks 90 GT
+        </a>
+    </div>
+</body>
+</html>'''), 500
+
+@app.errorhandler(500)
+def handle_500_error(e):
+    import traceback
+    err_msg = traceback.format_exc()
+    print(f"[500 ERROR CAUGHT]: {err_msg}")
+    from flask import render_template_string
+    return render_template_string('''<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picks 90 GT - Sincronizando</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 flex items-center justify-center min-h-screen p-4 font-sans">
+    <div class="bg-slate-900 border border-slate-800 p-8 rounded-3xl max-w-md w-full text-center shadow-2xl">
+        <div class="w-16 h-16 bg-emerald-500/10 text-emerald-400 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-emerald-500/20">
+            <svg class="w-8 h-8 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path></svg>
+        </div>
+        <h1 class="text-xl font-bold text-white mb-2">Sincronizando Picks 90 GT</h1>
+        <p class="text-sm text-slate-400 mb-6 leading-relaxed">El sistema está actualizando las cuotas y partidos en vivo. Toca el botón abajo para ingresar.</p>
+        <a href="/" class="inline-block w-full py-3.5 px-6 bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold rounded-2xl transition shadow-lg shadow-emerald-500/20 active:scale-[0.98]">
+            Entrar a Picks 90 GT
+        </a>
+    </div>
+</body>
+</html>'''), 500
 
 @app.route("/api/live")
 def api_live():

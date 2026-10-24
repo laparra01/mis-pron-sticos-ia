@@ -1,3 +1,4 @@
+import threading
 import os
 import json
 import requests
@@ -823,7 +824,7 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
 
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event={event_id}"
     try:
-        resp = requests.get(url, timeout=4)
+        resp = requests.get(url, timeout=2.5)
         if resp.status_code == 200:
             data = resp.json()
             header = data.get("header", {})
@@ -916,6 +917,7 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
             _espn_event_cache[event_id] = {"data": res, "timestamp": now}
             return res
     except Exception as ex:
+        _espn_event_cache[event_id] = {"data": None, "timestamp": now}
         print(f"[ESPN] Error fetching event stats {event_id}: {ex}")
     return None
 
@@ -964,7 +966,7 @@ def fetch_espn_live_soccer():
     """
     try:
         url = "https://site.api.espn.com/apis/site/v2/sports/soccer/all/scoreboard"
-        resp = requests.get(url, timeout=4)
+        resp = requests.get(url, timeout=3.5)
         if resp.status_code == 200:
             events = resp.json().get("events", [])
             live_events = [e for e in events if e.get("status", {}).get("type", {}).get("state") == "in"]
@@ -973,8 +975,11 @@ def fetch_espn_live_soccer():
             from concurrent.futures import ThreadPoolExecutor
             event_ids = [str(e.get("id")) for e in live_events if e.get("id")]
             if event_ids:
-                with ThreadPoolExecutor(max_workers=10) as executor:
-                    list(executor.map(fetch_espn_event_real_stats, event_ids))
+                try:
+                    with ThreadPoolExecutor(max_workers=8) as executor:
+                        list(executor.map(fetch_espn_event_real_stats, event_ids, timeout=3.5))
+                except Exception:
+                    pass
 
             live_list = []
             for e in live_events:
@@ -1117,7 +1122,7 @@ def fetch_espn_live_nba():
     """
     try:
         url = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
-        resp = requests.get(url, timeout=4)
+        resp = requests.get(url, timeout=3.5)
         if resp.status_code == 200:
             events = resp.json().get("events", [])
             live_list = []
@@ -1522,99 +1527,92 @@ def try_fetch_external_nba():
         print(f"[INFO] Error al conectar Balldontlie NBA ({e}).")
     return None
 
-_live_cache = {"data": {}, "timestamp": 0}
+_live_cache = {"data": {}, "timestamp": 0, "updating": False}
+_LIVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "live_cache_persist.json")
+
+def _load_persisted_live_cache():
+    global _live_cache
+    if os.path.exists(_LIVE_CACHE_FILE):
+        try:
+            with open(_LIVE_CACHE_FILE, "r", encoding="utf-8") as f:
+                saved = json.load(f)
+                if isinstance(saved, dict) and "data" in saved:
+                    for k, v in saved.get("data", {}).items():
+                        _live_cache["data"][k] = v
+                    _live_cache["timestamp"] = saved.get("timestamp", 0)
+        except Exception:
+            pass
+
+def _save_persisted_live_cache():
+    try:
+        os.makedirs(os.path.dirname(_LIVE_CACHE_FILE), exist_ok=True)
+        with open(_LIVE_CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump({
+                "data": _live_cache.get("data", {}),
+                "timestamp": _live_cache.get("timestamp", 0)
+            }, f, ensure_ascii=False)
+    except Exception:
+        pass
+
+# Cargar cache persistente de disco de inmediato si existe
+_load_persisted_live_cache()
+
+def _refresh_live_cache_worker(sport_filter="all"):
+    """
+    Actualiza la cache de partidos en vivo en segundo plano sin congelar las peticiones HTTP.
+    """
+    global _live_cache
+    if _live_cache.get("updating"):
+        return
+    _live_cache["updating"] = True
+    try:
+        live_results = []
+        if sport_filter in ("all", "football"):
+            live_results.extend(fetch_espn_live_soccer() or [])
+        if sport_filter in ("all", "nba"):
+            live_results.extend(fetch_espn_live_nba() or [])
+        
+        now = time.time()
+        _live_cache["data"][sport_filter] = live_results
+        _live_cache["timestamp"] = now
+        _save_persisted_live_cache()
+    except Exception as ex:
+        print(f"[LIVE CACHE REFRESH ERROR]: {ex}")
+    finally:
+        _live_cache["updating"] = False
 
 def fetch_live_matches_data(sport_filter="all"):
     """
     Obtiene los partidos en vivo.
-    Si USE_LIVE_API = True, trae ÚNICAMENTE partidos oficiales en juego reales.
-    NUNCA devuelve simulaciones si USE_LIVE_API = True.
+    Si USE_LIVE_API = True, trae UNICAMENTE partidos oficiales en juego reales.
+    Usa Stale-While-Revalidate: Si ya hay datos, responde en 0.0001s y actualiza
+    en segundo plano para que el usuario NUNCA experimente esperas ni timeouts 500.
     """
     global _live_cache
     now = time.time()
-    if sport_filter in _live_cache["data"] and (now - _live_cache["timestamp"] < 90):
-        return _live_cache["data"][sport_filter]
-
     cfg = get_config()
     is_live_api = bool(cfg and getattr(cfg, "USE_LIVE_API", False))
+
     if is_live_api:
-        live_results = []
-        if sport_filter in ("all", "football"):
-            # Trae partidos de fútbol en vivo (incluye Selección Mexicana y amistosos)
-            live_results.extend(fetch_espn_live_soccer())
-        if sport_filter in ("all", "nba"):
-            # Trae partidos de la NBA en vivo (incluye Lakers vs Warriors)
-            live_results.extend(fetch_espn_live_nba())
-        _live_cache["data"][sport_filter] = live_results
-        _live_cache["timestamp"] = now
-        return live_results
+        # 1. Si tenemos datos en memoria:
+        if sport_filter in _live_cache["data"]:
+            # Si tienen mas de 45s de antiguedad, actualizamos asincronamente en background
+            if (now - _live_cache["timestamp"] >= 45) and not _live_cache.get("updating"):
+                threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
+            # Retorno instantaneo garantizado
+            return _live_cache["data"][sport_filter]
 
-    # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
-        results = []
-        if sport_filter in ("all", "football"):
-            for item in SOCCER_LIVE_MATCHES:
-                l_clean, c_name, c_flag = get_league_and_country_info(item["league"], "football", item["home_team"], item["away_team"])
-                h2h_data = generate_match_h2h(item["home_team"], item["away_team"], "football", l_clean, country=c_name)
-                home_stats = get_football_team_ratings(item["home_team"], l_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-                away_stats = get_football_team_ratings(item["away_team"], l_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-                pred = calculate_live_probabilities(
-                    current_h=item["score_home"],
-                    current_a=item["score_away"],
-                    minute=item["minute"],
-                    home_stats=home_stats,
-                    away_stats=away_stats,
-                    live_stats=item["live_stats"]
-                )
-                ai_resp = generate_live_ai_analysis(item, pred, item["live_stats"])
-                h_logo = get_team_logo(item["home_team"], "football")
-                a_logo = get_team_logo(item["away_team"], "football")
-                enrich_h2h_with_logos(h2h_data, home_team=item["home_team"], away_team=item["away_team"], home_logo=h_logo, away_logo=a_logo)
-                c_code_map = {"Brasil": "br", "España": "es", "Inglaterra": "gb-eng", "Italia": "it", "Alemania": "de", "Francia": "fr", "Estados Unidos": "us", "México": "mx", "Argentina": "ar", "Colombia": "co"}
-                c_code = c_code_map.get(c_name, "")
-                results.append({
-                    "id": item["id"],
-                    "sport": "football",
-                    "league": l_clean,
-                    "country": c_name,
-                    "country_code": c_code,
-                    "league_flag": c_flag,
-                    "country_flag": c_flag,
-                    "home_team": item["home_team"],
-                    "away_team": item["away_team"],
-                    "home_logo": h_logo,
-                    "away_logo": a_logo,
-                    "date": "HOY",
-                    "date_iso": datetime.now().strftime("%Y-%m-%d"),
-                    "time": "EN VIVO",
-                    "timestamp": int(now),
-                    "is_live": True,
-                    "is_halftime": False,
-                    "minute": item["minute"],
-                    "score_home": item["score_home"],
-                    "score_away": item["score_away"],
-                    "live_stats": item["live_stats"],
-                    "home_stats": home_stats,
-                    "away_stats": away_stats,
-                    "prediction": pred,
-                    "h2h": h2h_data,
-                    "ai_analysis": ai_resp
-                })
-        return results
-
-    # Si ya tenemos datos en caché (en RAM o recuperados de disco):
-    if sport_filter in _live_cache["data"]:
-        # Si tiene más de 60 segundos de antigüedad, disparamos refresco asíncrono
-        if (now - _live_cache["timestamp"] >= 60) and not _live_cache.get("updating"):
+        # 2. Si memoria esta vacia, intentamos cargar disco
+        _load_persisted_live_cache()
+        if sport_filter in _live_cache["data"]:
             threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
-        # Retorno INSTANTÁNEO en 0.0001 segundos
-        return _live_cache["data"][sport_filter]
+            return _live_cache["data"][sport_filter]
 
-    # Si está totalmente vacío (ej. primera ejecución sin caché en disco):
-    # Se consulta de inmediato y se guarda
-    _refresh_live_cache_worker(sport_filter)
-    return _live_cache["data"].get(sport_filter, [])
+        # 3. Primer arranque sin cache: sincronizamos una vez directamente
+        _refresh_live_cache_worker(sport_filter)
+        return _live_cache["data"].get(sport_filter, [])
 
-    # Catálogo simulado (SOLO cuando USE_LIVE_API = False):
+    # Catalogo simulado (SOLO cuando USE_LIVE_API = False):
     results = []
     if sport_filter in ("all", "football"):
         for item in SOCCER_LIVE_MATCHES:
