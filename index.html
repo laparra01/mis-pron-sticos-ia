@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='46'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='50' height='50' fill='%23ffffff'/%3E%3Cpolygon points='28,14 40,22 36,36 21,36 17,22' fill='%230f172a'/%3E%3Crect y='50' width='50' height='50' fill='%23ea580c'/%3E%3Cpath d='M 4 64 C 20 64 34 74 42 96' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3Crect x='50' width='15.3' height='100' fill='%234997D0'/%3E%3Crect x='65.3' width='15.4' height='100' fill='%23ffffff'/%3E%3Crect x='80.7' width='20' height='100' fill='%234997D0'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%230f172a' stroke-width='3'/%3E%3Cline x1='4' y1='50' x2='50' y2='50' stroke='%230f172a' stroke-width='3'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3C/svg%3E">
     <title>Picks 90 GT - Fútbol & NBA en Tiempo Real</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,6 +58,8 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.3; }
         }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .animate-live {
             animation: pulse-live 1.8s infinite;
         }
@@ -69,8 +72,82 @@
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-blue-600 flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
-                        <i data-lucide="brain-circuit" class="w-6 h-6 text-white"></i>
+                    <div class="w-10 h-10 rounded-xl bg-gray-950 border border-gray-800 flex items-center justify-center shadow-lg shadow-cyan-500/10 shrink-0 group transition hover:border-emerald-500/50 hover:scale-105" title="Picks 90 GT - Fútbol, NBA & Guatemala">
+                        <svg viewBox="0 0 100 100" class="w-8 h-8 drop-shadow-md select-none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <clipPath id="logo-ball-clip">
+                                    <circle cx="50" cy="50" r="46"/>
+                                </clipPath>
+                                <radialGradient id="logo-ball-lighting" cx="32%" cy="28%" r="70%">
+                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                                    <stop offset="45%" stop-color="#ffffff" stop-opacity="0.05"/>
+                                    <stop offset="85%" stop-color="#000000" stop-opacity="0.35"/>
+                                    <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+                                </radialGradient>
+                                <linearGradient id="logo-bball-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+                                    <stop offset="0%" stop-color="#fb923c"/>
+                                    <stop offset="40%" stop-color="#ea580c"/>
+                                    <stop offset="100%" stop-color="#9a3412"/>
+                                </linearGradient>
+                                <linearGradient id="logo-soccer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff"/>
+                                    <stop offset="100%" stop-color="#e2e8f0"/>
+                                </linearGradient>
+                            </defs>
+                            <g clip-path="url(#logo-ball-clip)">
+                                <!-- 1. Cuarto Superior Izquierdo: FÚTBOL -->
+                                <rect x="0" y="0" width="50" height="50" fill="url(#logo-soccer-grad)"/>
+                                <polygon points="28,14 40,22 36,36 21,36 17,22" fill="#0f172a"/>
+                                <line x1="28" y1="14" x2="28" y2="4" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                <line x1="40" y1="22" x2="50" y2="20" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                <line x1="36" y1="36" x2="44" y2="50" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                <line x1="21" y1="36" x2="12" y2="48" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                <line x1="17" y1="22" x2="4" y2="22" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                                <polygon points="4,4 14,4 8,15 4,14" fill="#0f172a"/>
+                                <polygon points="4,42 12,48 4,50" fill="#0f172a"/>
+
+                                <!-- 2. Cuarto Inferior Izquierdo: BASKETBALL -->
+                                <rect x="0" y="50" width="50" height="50" fill="url(#logo-bball-grad)"/>
+                                <path d="M 4 64 C 20 64 34 74 42 96" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M 22 50 C 26 66 22 80 12 94" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="18" cy="58" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="28" cy="62" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="36" cy="68" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="14" cy="74" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="28" cy="78" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="34" cy="88" r="1" fill="#7c2d12" opacity="0.6"/>
+                                <circle cx="22" cy="86" r="1" fill="#7c2d12" opacity="0.6"/>
+
+                                <!-- 3. Mitad Derecha: BANDERA DE GUATEMALA (Azul, Blanco, Azul) -->
+                                <rect x="50" y="0" width="15.3" height="100" fill="#4997D0"/>
+                                <rect x="65.3" y="0" width="15.4" height="100" fill="#FFFFFF"/>
+                                <rect x="80.7" y="0" width="20" height="100" fill="#4997D0"/>
+
+                                <!-- Escudo Nacional de Guatemala -->
+                                <path d="M 69 56 C 66.5 50 67 43 73 39" fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round"/>
+                                <path d="M 77 56 C 79.5 50 79 43 73 39" fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="68" cy="46" r="1" fill="#15803d"/>
+                                <circle cx="78" cy="46" r="1" fill="#15803d"/>
+                                <circle cx="69.5" cy="52" r="1" fill="#15803d"/>
+                                <circle cx="76.5" cy="52" r="1" fill="#15803d"/>
+                                <line x1="68" y1="44" x2="78" y2="54" stroke="#78350f" stroke-width="1" stroke-linecap="round"/>
+                                <line x1="78" y1="44" x2="68" y2="54" stroke="#78350f" stroke-width="1" stroke-linecap="round"/>
+                                <rect x="70.5" y="46.5" width="5" height="6.5" rx="1" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8"/>
+                                <line x1="71.5" y1="48.5" x2="74.5" y2="48.5" stroke="#a16207" stroke-width="0.6"/>
+                                <line x1="71.5" y1="50.5" x2="74.5" y2="50.5" stroke="#a16207" stroke-width="0.6"/>
+                                <path d="M 73 42 C 71 41 70.5 44 72 46.5 L 74 46.5 C 75.5 44 75 41 73 42 Z" fill="#047857"/>
+                                <circle cx="73" cy="44.5" r="1.1" fill="#dc2626"/>
+                                <path d="M 72 46.5 Q 69.5 53 72 60" fill="none" stroke="#047857" stroke-width="1.6" stroke-linecap="round"/>
+
+                                <!-- Divisores Principales -->
+                                <line x1="50" y1="4" x2="50" y2="96" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                                <line x1="4" y1="50" x2="50" y2="50" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+
+                                <!-- Iluminación Esférica 3D -->
+                                <circle cx="50" cy="50" r="46" fill="url(#logo-ball-lighting)" pointer-events="none"/>
+                            </g>
+                            <circle cx="50" cy="50" r="46" fill="none" stroke="#0f172a" stroke-width="3"/>
+                        </svg>
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
@@ -530,10 +607,10 @@
 
             <!-- Toolbar de Filtros Avanzados (Fechas, País, Liga, Picks de Valor) -->
             <div class="bg-gray-900/90 border border-gray-800 rounded-2xl p-4 shadow-sm space-y-3.5">
-                <!-- Fila 1: Filtro por Fecha y Botón Picks de Alto Valor -->
-                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3">
+                <!-- Fila 1: Header + Toggles Rápidos -->
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
                     <div class="flex items-center gap-3">
-                        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30 shrink-0">
                             <i data-lucide="calendar-days" class="w-5 h-5"></i>
                         </div>
                         <div>
@@ -548,32 +625,16 @@
                         </div>
                     </div>
 
+                    <!-- Toggles: Solo por jugar & Picks de Alto Valor -->
                     <div class="flex items-center flex-wrap gap-2 text-xs">
-                        <!-- Presets de Fecha -->
-                        <button onclick="setDateFilter('all')" id="date-btn-all" class="date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow">
-                            Todos ({{ upcoming_matches|length }})
-                        </button>
-                        <button onclick="setDateFilter('{{ today_iso }}')" id="date-btn-today" class="date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white" title="Partidos pendientes por jugarse hoy">
-                            ⚡ Hoy ({{ today_pending_count }} por jugar)
-                        </button>
-                        <button onclick="setDateFilter('{{ tomorrow_iso }}')" id="date-btn-tomorrow" class="date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white">
-                            🌅 Mañana ({{ tomorrow_str }})
-                        </button>
-
-                        <!-- Selector Calendario -->
-                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-700/80 rounded-xl px-2.5 py-1.5">
-                            <i data-lucide="calendar-search" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            <input type="date" id="date-picker-input" onchange="setDateFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none font-mono">
-                        </div>
-
                         <!-- Botón Solo Partidos No Comenzados (Por Jugar) -->
-                        <button onclick="togglePendingOnly()" id="btn-pending-only" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-emerald-950/80 border-emerald-600/70 text-emerald-300 hover:border-emerald-500 shadow-xs cursor-pointer" title="Mostrar únicamente partidos que aún no han comenzado">
+                        <button type="button" onclick="togglePendingOnly()" id="btn-pending-only" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-emerald-950/80 border-emerald-600/70 text-emerald-300 hover:border-emerald-500 shadow-xs cursor-pointer text-xs" title="Mostrar únicamente partidos que aún no han comenzado">
                             <i data-lucide="clock-arrow-up" class="w-3.5 h-3.5 text-emerald-400"></i>
                             <span id="text-pending-only">Solo por jugar (No iniciados)</span>
                         </button>
 
                         <!-- Botón Picks de Alto Valor -->
-                        <button onclick="toggleValuePicks()" id="btn-value-filter" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-gray-950 border-gray-800 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950/40">
+                        <button type="button" onclick="toggleValuePicks()" id="btn-value-filter" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold border transition bg-gray-950 border-gray-800 text-cyan-400 hover:border-cyan-500 hover:bg-cyan-950/40 text-xs">
                             <i data-lucide="gem" class="w-3.5 h-3.5 text-cyan-400"></i>
                             <span>💎 Picks Alto Valor</span>
                             <span id="badge-value-count" class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-[10px] px-1.5 py-0.2 rounded-full font-mono">{{ stats.value_picks }}</span>
@@ -581,11 +642,40 @@
                     </div>
                 </div>
 
-                <!-- Fila 2: Selectores de País, Liga, Orden por Hora + Botón Restablecer -->
-                <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-3 border-t border-gray-800/80 text-xs">
-                    <div class="flex flex-wrap items-center gap-2.5 flex-1">
+                <!-- Fila 2: Carrusel Horizontal de Fechas Dinámico -->
+                <div class="pt-2.5 border-t border-gray-800/60">
+                    <div class="flex items-center gap-2">
+                        <!-- Contenedor con scroll horizontal suave -->
+                        <div id="dates-scroll-container" class="flex items-center gap-1.5 overflow-x-auto no-scrollbar scroll-smooth py-1 flex-1">
+                            <button type="button" onclick="setDateFilter('all')" data-date-iso="all" id="date-btn-all" class="date-filter-btn px-4 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow-md shrink-0 cursor-pointer transition active:scale-95 text-xs whitespace-nowrap">
+                                Todos
+                            </button>
+                            <button type="button" onclick="setDateFilter('{{ today_iso }}')" data-date-iso="{{ today_iso }}" id="date-btn-{{ today_iso }}" class="date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap" title="Hoy ({{ today_str }})">
+                                {{ today_str }}
+                            </button>
+                            <button type="button" onclick="setDateFilter('{{ tomorrow_iso }}')" data-date-iso="{{ tomorrow_iso }}" id="date-btn-{{ tomorrow_iso }}" class="date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap" title="Mañana ({{ tomorrow_str }})">
+                                {{ tomorrow_str }}
+                            </button>
+                            {% if after_tomorrow_iso is defined and after_tomorrow_iso %}
+                            <button type="button" onclick="setDateFilter('{{ after_tomorrow_iso }}')" data-date-iso="{{ after_tomorrow_iso }}" id="date-btn-{{ after_tomorrow_iso }}" class="date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap" title="Pasado Mañana ({{ after_tomorrow_str }})">
+                                {{ after_tomorrow_str }}
+                            </button>
+                            {% endif %}
+                        </div>
+
+                        <!-- Selector Calendario Manual (Compacto) -->
+                        <div class="relative shrink-0 flex items-center bg-gray-950 border border-gray-800 hover:border-gray-700 rounded-xl px-2.5 py-1.5 text-xs text-gray-300 transition" title="Seleccionar fecha específica en el calendario">
+                            <i data-lucide="calendar" class="w-3.5 h-3.5 text-emerald-400 mr-1.5"></i>
+                            <input type="date" id="date-picker-input" onchange="setDateFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none font-mono cursor-pointer">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fila 3: Selectores de País, Liga, Orden por Hora + Botón Restablecer -->
+                <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-2.5 pt-2.5 border-t border-gray-800/80 text-xs">
+                    <div class="flex flex-wrap items-center gap-2 flex-1">
                         <!-- Selector País con Banderas Reales -->
-                        <div class="relative flex-1 sm:flex-none min-w-[190px]" id="country-dropdown-wrapper">
+                        <div class="relative flex-1 sm:flex-none min-w-[170px]" id="country-dropdown-wrapper">
                             <button type="button" id="country-dropdown-btn" onclick="toggleCountryDropdown(event)" class="w-full flex items-center justify-between gap-2 bg-gray-950 border border-gray-800 hover:border-gray-700 rounded-xl px-3 py-1.5 text-xs text-gray-200 transition focus:outline-none cursor-pointer">
                                 <div class="flex items-center gap-2 truncate" id="country-selected-label">
                                     <i data-lucide="globe" class="w-3.5 h-3.5 text-blue-400 shrink-0"></i>
@@ -605,7 +695,7 @@
                         </div>
 
                         <!-- Selector Liga -->
-                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[210px]">
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[200px]">
                             <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
                             <select id="league-select" onchange="setLeagueFilter(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer">
                                 <option value="all" class="bg-gray-900 text-gray-200">🏆 Todas las Ligas</option>
@@ -616,7 +706,7 @@
                         </div>
 
                         <!-- Selector Orden por Hora / Criterio -->
-                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[200px]">
+                        <div class="flex items-center gap-2 bg-gray-950 border border-gray-800 rounded-xl px-3 py-1.5 flex-1 sm:flex-none min-w-[190px]">
                             <i data-lucide="arrow-up-down" class="w-3.5 h-3.5 text-emerald-400 shrink-0"></i>
                             <select id="sort-select" onchange="setSortOrder(this.value)" class="bg-transparent text-gray-200 text-xs focus:outline-none w-full cursor-pointer font-medium">
                                 <option value="time-asc" class="bg-gray-900 text-gray-200">⏰ Hora más próxima (GT)</option>
@@ -628,7 +718,7 @@
                     </div>
 
                     <!-- Contador de Resultados y Botón Reset -->
-                    <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0">
+                    <div class="flex items-center justify-between sm:justify-end gap-3 shrink-0 pt-1 lg:pt-0">
                         <span id="filtered-matches-counter" class="text-[11px] text-gray-400 font-mono">
                             Mostrando <strong class="text-white">{{ upcoming_matches|length }}</strong> partidos
                         </span>
@@ -1672,9 +1762,12 @@
             if (!statusEl) return;
             let parts = [];
             if (currentDateFilter !== 'all') {
-                if (currentDateFilter === '{{ today_iso }}') parts.push('Hoy');
-                else if (currentDateFilter === '{{ tomorrow_iso }}') parts.push('Mañana');
-                else parts.push(currentDateFilter);
+                if (currentDateFilter === '{{ today_iso }}') parts.push('Hoy ({{ today_str }})');
+                else if (currentDateFilter === '{{ tomorrow_iso }}') parts.push('Mañana ({{ tomorrow_str }})');
+                else {
+                    const segs = currentDateFilter.split('-');
+                    parts.push(segs.length === 3 ? `${segs[2]}/${segs[1]}` : currentDateFilter);
+                }
             }
             if (currentCountryFilter !== 'all') parts.push(currentCountryFilter);
             if (currentLeagueFilter !== 'all') parts.push(currentLeagueFilter);
@@ -2343,28 +2436,19 @@
         function setDateFilter(dateVal) {
             currentDateFilter = dateVal;
             document.querySelectorAll('.date-filter-btn').forEach(b => {
-                b.className = "date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white";
+                const bDate = b.getAttribute('data-date-iso');
+                if (bDate === dateVal) {
+                    b.className = "date-filter-btn px-4 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow-md shrink-0 cursor-pointer transition text-xs whitespace-nowrap";
+                    try {
+                        b.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                    } catch (e) {}
+                } else {
+                    b.className = "date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap";
+                }
             });
 
-            if (dateVal === 'all') {
-                const btn = document.getElementById('date-btn-all');
-                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
-                const picker = document.getElementById('date-picker-input');
-                if (picker) picker.value = '';
-            } else if (dateVal === '{{ today_iso }}') {
-                const btn = document.getElementById('date-btn-today');
-                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
-                const picker = document.getElementById('date-picker-input');
-                if (picker) picker.value = dateVal;
-            } else if (dateVal === '{{ tomorrow_iso }}') {
-                const btn = document.getElementById('date-btn-tomorrow');
-                if (btn) btn.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
-                const picker = document.getElementById('date-picker-input');
-                if (picker) picker.value = dateVal;
-            } else {
-                const picker = document.getElementById('date-picker-input');
-                if (picker) picker.value = dateVal;
-            }
+            const picker = document.getElementById('date-picker-input');
+            if (picker) picker.value = (dateVal === 'all') ? '' : dateVal;
 
             updateDynamicFilters();
             applyAllFilters();
@@ -2472,10 +2556,13 @@
             if (catAll) catAll.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
 
             document.querySelectorAll('.date-filter-btn').forEach(b => {
-                b.className = "date-filter-btn px-3 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white";
+                const bDate = b.getAttribute('data-date-iso');
+                if (bDate === 'all') {
+                    b.className = "date-filter-btn px-4 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow-md shrink-0 cursor-pointer transition text-xs whitespace-nowrap";
+                } else {
+                    b.className = "date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap";
+                }
             });
-            const dateAll = document.getElementById('date-btn-all');
-            if (dateAll) dateAll.className = "date-filter-btn px-3 py-1.5 rounded-xl font-bold bg-emerald-600 text-white shadow";
 
             onlyPendingMatches = true;
             const btnPending = document.getElementById('btn-pending-only');
@@ -4402,7 +4489,57 @@
         }
 
         // Gestión inteligente de pestañas y filtros al cargar
+        function renderDynamicDateStrip() {
+            const container = document.getElementById('dates-scroll-container');
+            if (!container || !window.allMatchesData) return;
+
+            const existingDates = new Set();
+            container.querySelectorAll('.date-filter-btn').forEach(btn => {
+                const iso = btn.getAttribute('data-date-iso');
+                if (iso && iso !== 'all') existingDates.add(iso);
+            });
+
+            // Recopilar fechas únicas de los partidos pre-match
+            const matchDates = new Set();
+            (window.allMatchesData || []).forEach(m => {
+                if (!m.is_live && m.date_iso && m.date_iso.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                    matchDates.add(m.date_iso);
+                }
+            });
+
+            // Ordenar cronológicamente
+            const allSortedDates = Array.from(new Set([...existingDates, ...matchDates])).sort();
+
+            allSortedDates.forEach(dateIso => {
+                if (!existingDates.has(dateIso)) {
+                    const parts = dateIso.split('-');
+                    if (parts.length === 3) {
+                        const dayMonth = `${parts[2]}/${parts[1]}`;
+                        const btn = document.createElement('button');
+                        btn.type = 'button';
+                        btn.onclick = () => setDateFilter(dateIso);
+                        btn.setAttribute('data-date-iso', dateIso);
+                        btn.id = `date-btn-${dateIso}`;
+                        btn.className = "date-filter-btn px-3.5 py-1.5 rounded-xl font-semibold bg-gray-950 border border-gray-800 text-gray-300 hover:text-white shrink-0 cursor-pointer transition text-xs whitespace-nowrap";
+                        btn.innerText = dayMonth;
+                        btn.title = `Partidos del ${dayMonth}`;
+                        container.appendChild(btn);
+                        existingDates.add(dateIso);
+                    }
+                }
+            });
+
+            // Scroll horizontal suave con rueda del ratón en escritorio
+            container.addEventListener('wheel', function(e) {
+                if (e.deltaY !== 0) {
+                    e.preventDefault();
+                    container.scrollLeft += e.deltaY;
+                }
+            }, { passive: false });
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            renderDynamicDateStrip();
             setSortOrder('time-asc');
             updateDynamicFilters();
             applyAllFilters();

@@ -183,6 +183,9 @@ def index():
         tomorrow_iso = tomorrow_dt.strftime("%Y-%m-%d")
         today_str = today_dt.strftime("%d/%m")
         tomorrow_str = tomorrow_dt.strftime("%d/%m")
+        after_tomorrow_dt = today_dt + timedelta(days=2)
+        after_tomorrow_iso = after_tomorrow_dt.strftime("%Y-%m-%d")
+        after_tomorrow_str = after_tomorrow_dt.strftime("%d/%m")
 
         country_flags = {
             "Brasil": "🇧🇷", "España": "🇪🇸", "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Italia": "🇮🇹",
@@ -245,6 +248,8 @@ def index():
             tomorrow_iso=tomorrow_iso,
             today_str=today_str,
             tomorrow_str=tomorrow_str,
+            after_tomorrow_iso=after_tomorrow_iso,
+            after_tomorrow_str=after_tomorrow_str,
             today_pending_count=today_pending_count,
             countries=unique_countries,
             leagues=unique_leagues,
