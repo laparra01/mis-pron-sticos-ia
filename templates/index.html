@@ -140,11 +140,11 @@
         <section class="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
             <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-2xl shadow-sm">
                 <div class="flex items-center justify-between text-gray-400 mb-1">
-                    <span class="text-xs font-medium">Partidos en Cartelera</span>
-                    <i data-lucide="trophy" class="w-4 h-4 text-amber-400"></i>
+                    <span class="text-xs font-medium">Pendientes de Hoy</span>
+                    <i data-lucide="calendar-clock" class="w-4 h-4 text-emerald-400"></i>
                 </div>
-                <div class="text-2xl sm:text-3xl font-bold text-white">{{ stats.total_analyzed }}</div>
-                <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol Mundial + 🏀 NBA</p>
+                <div class="text-2xl sm:text-3xl font-bold text-white" id="stat-today-pending-count">{{ today_pending_count }}</div>
+                <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol & 🏀 NBA por disputarse hoy</p>
             </div>
 
             <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-2xl shadow-sm">
@@ -163,19 +163,16 @@
         <!-- Secondary Section Switcher: EN VIVO vs PRÓXIMOS -->
         <section class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gray-800 mb-6 gap-2">
             <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
-                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-4 font-bold text-xs sm:text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap cursor-pointer group" title="Partidos En Vivo ({{ live_matches|length }})">
-                    <span class="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-rose-500 animate-live shrink-0"></span>
-                    <span class="font-bold">En Vivo</span>
+                <button onclick="switchTab('live')" id="tab-btn-live" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-3 font-bold text-xs sm:text-sm border-b-2 border-rose-500 text-rose-400 transition whitespace-nowrap cursor-pointer group" title="En Vivo ({{ live_matches|length }})">
+                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-live shrink-0"></span>
                     <span class="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/30 font-bold group-hover:scale-105 transition-transform">({{ live_matches|length }})</span>
                 </button>
-                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group" title="Partidos en Cartelera ({{ upcoming_matches|length }})">
-                    <span class="text-xs sm:text-sm">📅</span>
-                    <span class="font-bold">Cartelera</span>
+                <button onclick="switchTab('upcoming')" id="tab-btn-upcoming" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-3 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-gray-400 hover:text-gray-200 transition whitespace-nowrap cursor-pointer group" title="Cartelera ({{ upcoming_matches|length }})">
+                    <span class="text-sm sm:text-base">📅</span>
                     <span class="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-gray-800 text-gray-300 border border-gray-700 font-bold group-hover:scale-105 transition-transform">({{ upcoming_matches|length }})</span>
                 </button>
-                <button onclick="switchTab('parleys')" id="tab-btn-parleys" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-4 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-amber-400/90 hover:text-amber-300 transition whitespace-nowrap cursor-pointer group" title="Parleys Soñadores (Gemini AI)">
-                    <span class="text-xs sm:text-sm">🎯</span>
-                    <span class="font-bold">Parleys</span>
+                <button onclick="switchTab('parleys')" id="tab-btn-parleys" class="flex items-center gap-1.5 sm:gap-2 pb-2.5 sm:pb-3 px-2.5 sm:px-3 font-semibold text-xs sm:text-sm border-b-2 border-transparent text-amber-400/90 hover:text-amber-300 transition whitespace-nowrap cursor-pointer group" title="Parleys Soñadores (Gemini AI)">
+                    <span class="text-sm sm:text-base">🎯</span>
                     <span class="font-mono text-[11px] sm:text-xs px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-bold group-hover:scale-105 transition-transform">({{ dream_parleys.tickets|length if dream_parleys and dream_parleys.tickets else 3 }})</span>
                 </button>
             </div>
@@ -921,11 +918,22 @@
                             <span>🎯 Parleys Soñadores del Día</span>
                         </h2>
                         <p class="text-xs sm:text-sm text-gray-400 max-w-2xl leading-relaxed">
-                            3 combinadas calculadas matemáticamente con modelos Poisson, xG, córners y tarjetas, optimizadas por Google Gemini para equilibrar cuota acumulada y probabilidad real.
+                            3 combinadas calculadas matemáticamente con modelos Poisson, xG, córners y tarjetas, optimizadas por Google Gemini para maximizar probabilidad estadística y valor esperado.
                         </p>
                     </div>
 
-                    <div class="flex items-center gap-3 shrink-0">
+                    <div class="flex items-center gap-2.5 shrink-0 flex-wrap">
+                        <!-- Filtro de Ligas para Parleys -->
+                        <div class="flex items-center gap-2 bg-gray-950/90 px-3 py-2 rounded-xl border border-amber-500/30 shadow-inner">
+                            <i data-lucide="filter" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                            <select id="parleys-league-filter" onchange="filterParleysByLeague(this.value)" class="bg-transparent text-white font-bold text-xs focus:outline-none cursor-pointer max-w-[170px] sm:max-w-[210px] truncate">
+                                <option value="all" class="bg-gray-900 text-white">🏆 Todas las Ligas</option>
+                                {% for lg in leagues %}
+                                <option value="{{ lg }}" class="bg-gray-900 text-white">{{ lg }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
                         <button onclick="regenerateDreamParleys()" id="btn-regenerate-parleys" class="w-full sm:w-auto px-4 py-2.5 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs rounded-xl transition shadow-lg shadow-amber-950/80 flex items-center justify-center gap-2 border border-amber-400/40 cursor-pointer active:scale-95">
                             <i data-lucide="refresh-cw" id="icon-regenerate-parleys" class="w-4 h-4 text-amber-200"></i>
                             <span id="text-regenerate-parleys">Regenerar con Gemini</span>
@@ -941,7 +949,7 @@
                         </div>
                         <div>
                             <span class="font-bold text-emerald-400 block">T1 • Soñadora Táctica</span>
-                            <span class="text-[11px] text-gray-400">Cuota ~5.00x - 7.50x • Alta convicción</span>
+                            <span class="text-[11px] text-gray-400">Alta convicción • 3 selecciones</span>
                         </div>
                     </div>
 
@@ -951,7 +959,7 @@
                         </div>
                         <div>
                             <span class="font-bold text-cyan-400 block">T2 • ⚽ Goles, 🚩 Córners & 🟨 Tarjetas</span>
-                            <span class="text-[11px] text-gray-400">Cuota ~10.00x - 18.00x • Mercados mixtos</span>
+                            <span class="text-[11px] text-gray-400">Mercados mixtos • 3 a 4 selecciones</span>
                         </div>
                     </div>
 
@@ -961,7 +969,7 @@
                         </div>
                         <div>
                             <span class="font-bold text-amber-400 block">T3 • Rompe-Bancas Ultra</span>
-                            <span class="text-[11px] text-gray-400">Cuota ~28.00x - 45.00x+ • Longshot con valor</span>
+                            <span class="text-[11px] text-gray-400">Alto valor • 3 a 4 selecciones</span>
                         </div>
                     </div>
                 </div>
@@ -1038,9 +1046,8 @@
                                             </span>
                                         </div>
                                         <div class="flex items-center gap-1.5 shrink-0">
-                                            <span class="text-[10px] font-mono text-gray-400">({{ leg.probability }}%)</span>
-                                            <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-gray-900 border border-gray-700/80 text-white">
-                                                @{{ leg.fair_odds }}
+                                            <span class="px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold bg-emerald-950/80 border border-emerald-700/60 text-emerald-300">
+                                                {{ leg.probability }}%
                                             </span>
                                         </div>
                                     </div>
@@ -1152,7 +1159,7 @@
                     <div class="flex items-center justify-between pb-1">
                         <div>
                             <h4 class="font-bold text-sm text-white">Pronósticos Calculados por Inteligencia Artificial</h4>
-                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan, Córners y Tarjetas con cuota justa e índice de fricción.</p>
+                            <p class="text-gray-400 text-[11px]">Mercados cuantitativos: 1X2, Cobertura, +1.5 Goles, 2.5 Goles, Ambos Anotan, Córners y Tarjetas con probabilidad matemática e índice de fricción.</p>
                         </div>
                     </div>
 
@@ -2852,7 +2859,7 @@
                             </div>
                             <div class="flex items-center justify-between mt-2.5 flex-wrap gap-1.5">
                                 <span class="text-xs sm:text-sm font-extrabold text-white">${pickTitle}</span>
-                                <span class="text-[10px] sm:text-xs font-mono font-bold text-amber-400 bg-amber-950/50 px-2 py-0.5 rounded border border-amber-800/50">Cuota justa: ${fairOdds}</span>
+                                <span class="text-xs sm:text-sm font-mono font-extrabold ${isCards ? 'text-amber-400' : 'text-emerald-400'}">${probability}%</span>
                             </div>
                             <div class="mt-2">
                                 <div class="flex justify-between text-[11px] font-mono text-gray-400 mb-1">
@@ -4131,7 +4138,7 @@
                 text += `   • *Competición:* ${leg.league} (${leg.date} ${leg.time} GT)\n`;
                 text += `   • *Selección:* ${leg.pick}\n`;
                 text += `   • *Mercado:* ${leg.market}\n`;
-                text += `   • *Cuota:* @${leg.fair_odds} (Prob: ${leg.probability}%)\n`;
+                text += `   • *Probabilidad:* ${leg.probability}%\n`;
                 if (leg.explanation) {
                     text += `   • *Análisis:* ${leg.explanation}\n`;
                 }
@@ -4187,6 +4194,43 @@
             }, 2500);
         }
 
+        async function filterParleysByLeague(league) {
+            const container = document.getElementById('parleys-container');
+            if (!container) return;
+
+            container.innerHTML = `
+                <div class="col-span-3 py-16 px-6 rounded-2xl bg-gray-900/80 border border-gray-800 text-center flex flex-col items-center justify-center space-y-3 shadow-xl">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center animate-spin">
+                        <i data-lucide="refresh-cw" class="w-5 h-5"></i>
+                    </div>
+                    <p class="text-xs text-gray-300 font-bold">Generando combinadas para ${league === 'all' ? 'todas las ligas' : league}...</p>
+                </div>
+            `;
+            if (window.lucide) safeCreateIcons();
+
+            try {
+                const res = await fetch('/api/dream-parleys?league=' + encodeURIComponent(league));
+                const data = await res.json();
+                if (data && data.tickets && data.tickets.length > 0) {
+                    window.DREAM_PARLEYS_DATA = data;
+                    renderDreamParleys(data.tickets);
+                } else {
+                    container.innerHTML = `
+                        <div class="col-span-3 py-16 px-6 rounded-2xl bg-gray-900/80 border border-gray-800 text-center flex flex-col items-center justify-center space-y-3 shadow-xl">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center">
+                                <i data-lucide="alert-circle" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-sm">Sin suficientes partidos en ${league}</h4>
+                            <p class="text-xs text-gray-400 max-w-md">Esta liga no cuenta con suficientes partidos pendientes hoy para armar combinadas completas. Selecciona otra liga o elige "Todas las Ligas".</p>
+                        </div>
+                    `;
+                    if (window.lucide) safeCreateIcons();
+                }
+            } catch (e) {
+                console.error("Error filtrando parleys:", e);
+            }
+        }
+
         async function regenerateDreamParleys() {
             const btn = document.getElementById('btn-regenerate-parleys');
             const icon = document.getElementById('icon-regenerate-parleys');
@@ -4215,7 +4259,9 @@
             }
 
             try {
-                const res = await fetch('/api/dream-parleys/regenerate', { method: 'POST' });
+                const lSelect = document.getElementById('parleys-league-filter');
+            const selLg = lSelect ? lSelect.value : 'all';
+            const res = await fetch('/api/dream-parleys/regenerate?league=' + encodeURIComponent(selLg), { method: 'POST' });
                 const data = await res.json();
                 if (data && data.tickets && data.tickets.length > 0) {
                     window.DREAM_PARLEYS_DATA = data;
@@ -4281,9 +4327,8 @@
                                     })()}
                                 </div>
                                 <div class="flex items-center gap-1.5 shrink-0">
-                                    <span class="text-[10px] font-mono text-gray-400">(${leg.probability}%)</span>
-                                    <span class="px-2 py-0.5 rounded text-xs font-mono font-bold bg-gray-900 border border-gray-700/80 text-white">
-                                        @${leg.fair_odds}
+                                    <span class="px-2.5 py-0.5 rounded-lg text-xs font-mono font-bold bg-emerald-950/80 border border-emerald-700/60 text-emerald-300">
+                                        ${leg.probability}%
                                     </span>
                                 </div>
                             </div>

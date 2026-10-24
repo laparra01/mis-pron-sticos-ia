@@ -29,7 +29,7 @@ def select_ticket_1_tactical(matches):
     candidates = []
     for m in matches:
         pred = m.get("prediction", {})
-        sevens = pred.get("seven_predictions", [])
+        sevens = pred.get("seven_predictions") or pred.get("four_predictions") or []
         
         today_iso = datetime.now().strftime("%Y-%m-%d")
         d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
@@ -77,6 +77,88 @@ def select_ticket_1_tactical(matches):
             elif len(selected) == 4:
                 break
 
+    if not selected and candidates:
+        selected = candidates[:3]
+    if not selected:
+        for m in matches[:3]:
+            preds = (m.get("prediction", {}).get("seven_predictions") or m.get("prediction", {}).get("four_predictions") or [])
+            if preds:
+                p = preds[0]
+                selected.append({
+                    "match_id": m.get("id"),
+                    "home_team": m.get("home_team"),
+                    "away_team": m.get("away_team"),
+                    "home_logo": m.get("home_logo", ""),
+                    "away_logo": m.get("away_logo", ""),
+                    "league": m.get("league"),
+                    "country": m.get("country"),
+                    "country_code": m.get("country_code", ""),
+                    "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
+                    "date": "Hoy",
+                    "date_iso": m.get("date_iso", ""),
+                    "time": m.get("time", ""),
+                    "timestamp": m.get("timestamp") or 0,
+                    "market": p.get("market"),
+                    "pick": p.get("name"),
+                    "probability": p.get("probability", 60.0),
+                    "fair_odds": p.get("fair_odds", 1.65),
+                    "explanation": p.get("explanation", ""),
+                    "priority": 1
+                })
+    if not selected and candidates:
+        selected = candidates[:3]
+    if not selected:
+        for m in matches[:3]:
+            preds = (m.get("prediction", {}).get("seven_predictions") or m.get("prediction", {}).get("four_predictions") or [])
+            if preds:
+                p = preds[-1] if len(preds) > 1 else preds[0]
+                selected.append({
+                    "match_id": m.get("id"),
+                    "home_team": m.get("home_team"),
+                    "away_team": m.get("away_team"),
+                    "home_logo": m.get("home_logo", ""),
+                    "away_logo": m.get("away_logo", ""),
+                    "league": m.get("league"),
+                    "country": m.get("country"),
+                    "country_code": m.get("country_code", ""),
+                    "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
+                    "date": "Hoy",
+                    "date_iso": m.get("date_iso", ""),
+                    "time": m.get("time", ""),
+                    "timestamp": m.get("timestamp") or 0,
+                    "market": p.get("market"),
+                    "pick": p.get("name"),
+                    "probability": p.get("probability", 55.0),
+                    "fair_odds": p.get("fair_odds", 1.85),
+                    "explanation": p.get("explanation", "")
+                })
+    if not selected and candidates:
+        selected = candidates[:3]
+    if not selected:
+        for m in matches[:3]:
+            preds = (m.get("prediction", {}).get("seven_predictions") or m.get("prediction", {}).get("four_predictions") or [])
+            if preds:
+                p = preds[1] if len(preds) > 1 else preds[0]
+                selected.append({
+                    "match_id": m.get("id"),
+                    "home_team": m.get("home_team"),
+                    "away_team": m.get("away_team"),
+                    "home_logo": m.get("home_logo", ""),
+                    "away_logo": m.get("away_logo", ""),
+                    "league": m.get("league"),
+                    "country": m.get("country"),
+                    "country_code": m.get("country_code", ""),
+                    "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
+                    "date": "Hoy",
+                    "date_iso": m.get("date_iso", ""),
+                    "time": m.get("time", ""),
+                    "timestamp": m.get("timestamp") or 0,
+                    "market": p.get("market"),
+                    "pick": p.get("name"),
+                    "probability": p.get("probability", 50.0),
+                    "fair_odds": p.get("fair_odds", 2.00),
+                    "explanation": p.get("explanation", "")
+                })
     return selected
 
 def select_ticket_2_goals_corners_cards(matches):
@@ -91,7 +173,7 @@ def select_ticket_2_goals_corners_cards(matches):
 
     for m in matches:
         pred = m.get("prediction", {})
-        sevens = pred.get("seven_predictions", [])
+        sevens = pred.get("seven_predictions") or pred.get("four_predictions") or []
         
         today_iso = datetime.now().strftime("%Y-%m-%d")
         d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
@@ -195,6 +277,31 @@ def select_ticket_2_goals_corners_cards(matches):
                 if cur_odds >= 9.5 or len(selected) >= 5:
                     break
 
+    if not selected:
+        for m in matches[:4]:
+            preds = (m.get("prediction", {}).get("seven_predictions") or m.get("prediction", {}).get("four_predictions") or [])
+            if preds:
+                p = preds[-1] if len(preds) > 1 else preds[0]
+                selected.append({
+                    "match_id": m.get("id"),
+                    "home_team": m.get("home_team"),
+                    "away_team": m.get("away_team"),
+                    "home_logo": m.get("home_logo", ""),
+                    "away_logo": m.get("away_logo", ""),
+                    "league": m.get("league"),
+                    "country": m.get("country"),
+                    "country_code": m.get("country_code", ""),
+                    "league_flag": m.get("league_flag") or m.get("country_flag") or "⚽",
+                    "date": "Hoy",
+                    "date_iso": m.get("date_iso", ""),
+                    "time": m.get("time", ""),
+                    "timestamp": m.get("timestamp") or 0,
+                    "market": p.get("market"),
+                    "pick": p.get("name"),
+                    "probability": p.get("probability", 55.0),
+                    "fair_odds": p.get("fair_odds", 1.85),
+                    "explanation": p.get("explanation", "")
+                })
     return selected[:5]
 
 def select_ticket_3_rompebancas_ultra(matches):
@@ -258,7 +365,7 @@ def select_ticket_3_rompebancas_ultra(matches):
             candidates.append(item)
 
         # 3. Candidatos de las 7 predicciones cuantitativas con cuota alta (>= 1.70)
-        for p in pred.get("seven_predictions", []):
+        for p in (pred.get("seven_predictions") or pred.get("four_predictions") or []):
             p_odds = float(p.get("fair_odds", 0) or 0)
             p_prob = float(p.get("probability", 0) or 0)
             if 1.70 <= p_odds <= 2.80 and p_prob >= 35.0:
@@ -350,30 +457,44 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
         print(f"[PARLEYS GEMINI WARNING]: {e}")
     return None
 
-def build_dream_parleys_package(matches, force_gemini=False):
+def build_dream_parleys_package(matches, force_gemini=False, league_filter=None):
     """
     Construye el paquete completo con los 3 parleys soñadores diarios.
-    Filtra rigurosamente para incluir ÚNICAMENTE partidos de HOY que NO hayan comenzado aún.
+    Soporta filtro por liga específica.
     """
     today_iso = datetime.now().strftime("%Y-%m-%d")
     now_ts = time.time()
     
+    filtered_matches = matches
+    if league_filter and league_filter.lower() != "all":
+        filtered_matches = [m for m in matches if league_filter.lower() in (m.get("league") or "").lower()]
+    
     # 1. Priorizar rigurosamente los partidos de HOY que aún NO hayan comenzado
     today_pending = [
-        m for m in matches 
+        m for m in filtered_matches 
         if m.get("date_iso") == today_iso and ((m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp"))
     ]
     
     if len(today_pending) >= 3:
         source_matches = today_pending
+    elif len(today_pending) >= 1:
+        source_matches = today_pending
     else:
-        # Fallback si hoy ya no quedan suficientes partidos por jugar (ej. madrugada o final del día)
         pending_matches = [
-            m for m in matches 
+            m for m in filtered_matches 
             if (m.get("timestamp") or 0) >= now_ts - 300 or not m.get("timestamp")
         ]
         pending_matches.sort(key=lambda x: (x.get("timestamp") or 9999999999))
-        source_matches = pending_matches[:30] if len(pending_matches) >= 3 else matches
+        source_matches = pending_matches[:30] if pending_matches else filtered_matches
+
+    if not source_matches:
+        return {
+            "date_iso": today_iso,
+            "generated_at": datetime.now().strftime("%d/%m/%Y - %H:%M"),
+            "is_ai_powered": False,
+            "powered_by": "Google Gemini AI & Modelos Poisson Cuantitativos",
+            "tickets": []
+        }
 
     t1_legs = select_ticket_1_tactical(source_matches)
     t2_legs = select_ticket_2_goals_corners_cards(source_matches)
@@ -491,7 +612,9 @@ def build_dream_parleys_package(matches, force_gemini=False):
 
     return package
 
-def get_or_generate_dream_parleys(matches, force_regenerate=False):
+def get_or_generate_dream_parleys(matches, force_regenerate=False, league_filter=None):
+    if league_filter and league_filter.lower() != "all":
+        return build_dream_parleys_package(matches, force_gemini=force_regenerate, league_filter=league_filter)
     """
     Retorna el paquete de parleys desde caché o lo genera si no existe,
     ha expirado, contiene partidos de días anteriores, o contiene partidos que ya iniciaron.

@@ -380,8 +380,9 @@ def api_matches():
 @app.route("/api/dream-parleys")
 def api_dream_parleys():
     try:
+        league = request.args.get("league", "all")
         upcoming_matches = fetch_matches_data() or []
-        parleys = get_or_generate_dream_parleys(upcoming_matches)
+        parleys = get_or_generate_dream_parleys(upcoming_matches, league_filter=league)
         return jsonify(parleys)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -389,8 +390,10 @@ def api_dream_parleys():
 @app.route("/api/dream-parleys/regenerate", methods=["POST"])
 def api_dream_parleys_regenerate():
     try:
+        data = request.get_json(silent=True) or {}
+        league = request.args.get("league") or data.get("league", "all")
         upcoming_matches = fetch_matches_data() or []
-        parleys = get_or_generate_dream_parleys(upcoming_matches, force_regenerate=True)
+        parleys = get_or_generate_dream_parleys(upcoming_matches, force_regenerate=True, league_filter=league)
         return jsonify(parleys)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
