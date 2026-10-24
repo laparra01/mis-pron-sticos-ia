@@ -252,15 +252,36 @@ def index():
             is_owner=bool(session.get("is_admin") or session.get("is_owner"))
         )
 
-        try:
-            return render_template("index.html", **context)
-        except Exception:
+        # Priorizar la plantilla index.html mas actualizada (soporta templates/index.html y raiz index.html)
+        root_tpl = os.path.join(base_dir, "index.html")
+        dir_tpl = os.path.join(base_dir, "templates", "index.html")
+        target_path = None
+
+        if os.path.exists(root_tpl) and os.path.exists(dir_tpl):
+            try:
+                with open(root_tpl, "r", encoding="utf-8") as f_r:
+                    root_c = f_r.read()
+                with open(dir_tpl, "r", encoding="utf-8") as f_d:
+                    dir_c = f_d.read()
+                if "btn-share-matrix-whatsapp" in root_c and "btn-share-matrix-whatsapp" not in dir_c:
+                    target_path = root_tpl
+                elif os.path.getmtime(root_tpl) > os.path.getmtime(dir_tpl):
+                    target_path = root_tpl
+                else:
+                    target_path = dir_tpl
+            except Exception:
+                target_path = dir_tpl
+        elif os.path.exists(root_tpl):
+            target_path = root_tpl
+        elif os.path.exists(dir_tpl):
+            target_path = dir_tpl
+
+        if target_path:
             from flask import render_template_string
-            for loc in ["index.html", os.path.join(base_dir, "index.html"), os.path.join(base_dir, "templates", "index.html")]:
-                if os.path.exists(loc):
-                    with open(loc, "r", encoding="utf-8") as f:
-                        return render_template_string(f.read(), **context)
-            raise
+            with open(target_path, "r", encoding="utf-8") as f:
+                return render_template_string(f.read(), **context)
+
+        return render_template("index.html", **context)
     except Exception as e:
         import traceback
         err_msg = traceback.format_exc()
