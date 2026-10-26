@@ -1407,10 +1407,10 @@
                     <div id="modal-corners-shots-box" class="bg-gradient-to-r from-cyan-950/40 via-gray-900/95 to-blue-950/40 border border-cyan-500/40 rounded-xl p-3.5 sm:p-4 space-y-2.5 shadow-md shadow-cyan-950/20">
                         <div class="flex items-center justify-between pb-2 border-b border-cyan-900/40 flex-wrap gap-2">
                             <span class="text-xs uppercase font-extrabold text-cyan-400 tracking-wider flex items-center gap-2">
-                                <i data-lucide="crosshair" class="w-4 h-4 text-cyan-400"></i>
-                                <span>🚩 Análisis de Córners y Remates a Puerta</span>
+                                <i data-lucide="crosshair" id="modal-corners-icon" class="w-4 h-4 text-cyan-400"></i>
+                                <span id="modal-corners-label">🚩 Análisis de Córners y Remates a Puerta</span>
                             </span>
-                            <span class="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider">
+                            <span id="modal-corners-badge" class="text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider">
                                 FOCO ESTRATÉGICO
                             </span>
                         </div>
@@ -4332,68 +4332,155 @@
         }
 
         function updateGeminiUI(ai) {
-            document.getElementById('modal-summary').innerText = ai.resumen || "Análisis táctico multivariable en progreso...";
-            document.getElementById('modal-justification').innerText = ai.justificacion_estadistica || "Justificación estadística cuantitativa basada en expectativa de goles y solvencia defensiva.";
-            document.getElementById('modal-factor').innerText = ai.factor_clave || "Control posicional y velocidad de transición en mediocampo.";
-            document.getElementById('modal-risk-warning').innerText = ai.advertencia_riesgo || "Riesgo estándar de varianza por jugadas a balón parado o faltas tempranas.";
+            let match = null;
+            if (typeof activeMatchId !== 'undefined') {
+                match = (window.liveMatchesData || []).find(x => x.id === activeMatchId || String(x.match_id) === String(activeMatchId))
+                    || (window.allMatchesData || []).find(x => x.id === activeMatchId || String(x.match_id) === String(activeMatchId));
+            }
+
+            const isNba = Boolean((match && match.sport === 'nba') || (ai && ai.sport === 'nba'));
+
+            const defaultSummary = isNba
+                ? "Análisis táctico NBA de posesiones, ratings ofensivos y proyección de puntos en progreso..."
+                : "Análisis táctico multivariable en progreso...";
+
+            const defaultJustification = isNba
+                ? "Justificación estadística cuantitativa basada en ratings ofensivos/defensivos (Off/Def Rating) y proyección de ritmo (Pace)."
+                : "Justificación estadística cuantitativa basada en expectativa de goles y solvencia defensiva.";
+
+            const defaultFactor = isNba
+                ? "Efectividad en tiros de campo (FG%), porcentaje de triples y dominio en los tableros."
+                : "Control posicional y velocidad de transición en mediocampo.";
+
+            const defaultRisk = isNba
+                ? "Riesgo estándar de varianza por rachas de tiro perimetral, rotación de banquillo y faltas personales."
+                : "Riesgo estándar de varianza por jugadas a balón parado o faltas tempranas.";
+
+            document.getElementById('modal-summary').innerText = ai.resumen || defaultSummary;
+            document.getElementById('modal-justification').innerText = ai.justificacion_estadistica || defaultJustification;
+            document.getElementById('modal-factor').innerText = ai.factor_clave || defaultFactor;
+            document.getElementById('modal-risk-warning').innerText = ai.advertencia_riesgo || defaultRisk;
             document.getElementById('modal-score').innerText = ai.marcador_sugerido || "Pendiente";
 
-            // ⭐ FOCO DESTACADO: Córners y Remates
+            // ⭐ FOCO DESTACADO: Córners y Remates en Fútbol | Ritmo, Pace y Eficiencia en NBA
             const csBox = document.getElementById('modal-corners-shots-box');
             const csEl = document.getElementById('modal-corners-shots');
+            const csLabel = document.getElementById('modal-corners-label');
+            const csBadge = document.getElementById('modal-corners-badge');
+            const csIcon = document.getElementById('modal-corners-icon');
             const statsPill = document.getElementById('modal-corners-stats-pill');
 
             if (csBox && csEl) {
-                let cornerText = ai.analisis_corners_remates;
-                const match = (typeof activeMatchId !== 'undefined' && typeof allMatchesData !== 'undefined')
-                    ? allMatchesData.find(x => x.id === activeMatchId || String(x.match_id) === String(activeMatchId))
-                    : null;
+                csBox.classList.remove('hidden');
 
-                if (!cornerText && match) {
-                    const hs = match.home_stats || {};
-                    const as = match.away_stats || {};
-                    const hc = hs.corners || 5.0;
-                    const ac = as.corners || 4.5;
-                    const totC = (hc + ac).toFixed(1);
-                    cornerText = `El modelo proyecta una línea estimada de ${totC} tiros de esquina totales (${match.home_team}: ${hc} de local, ${match.away_team}: ${ac} de visita). Enfoque en asedio por bandas y centros al área.`;
-                }
+                if (isNba) {
+                    // Configuración Visual para Baloncesto NBA
+                    csBox.className = "bg-gradient-to-r from-orange-950/40 via-gray-900/95 to-amber-950/40 border border-orange-500/40 rounded-xl p-3.5 sm:p-4 space-y-2.5 shadow-md shadow-orange-950/20";
+                    if (csLabel) csLabel.innerText = "🏀 Ritmo de Juego (Pace) y Eficiencia Ofensiva";
+                    if (csBadge) {
+                        csBadge.innerText = "FOCO NBA";
+                        csBadge.className = "text-[10px] bg-orange-500/20 text-orange-300 border border-orange-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                    }
+                    if (csIcon) {
+                        csIcon.setAttribute('data-lucide', 'activity');
+                        csIcon.className = "w-4 h-4 text-orange-400";
+                    }
 
-                if (cornerText) {
-                    csBox.classList.remove('hidden');
-                    csEl.innerText = cornerText;
-                }
+                    const hs = (match && match.home_stats) || {};
+                    const as = (match && match.away_stats) || {};
+                    const pred = (match && match.prediction) || {};
+                    const paceVal = hs.pace || as.pace || 100.5;
+                    const ptsH = pred.projected_pts_home || 115;
+                    const ptsA = pred.projected_pts_away || 112;
+                    const totPts = pred.total_points || Math.round(ptsH + ptsA);
+                    const ouLine = pred.over_under_line || totPts;
 
-                if (statsPill && match) {
-                    const hs = match.home_stats || {};
-                    const as = match.away_stats || {};
-                    if (match.is_live) {
-                        const ls = match.live_stats || {};
-                        const liveCornH = ls.corners_home !== undefined ? ls.corners_home : (match.corners_home || 0);
-                        const liveCornA = ls.corners_away !== undefined ? ls.corners_away : (match.corners_away || 0);
-                        const liveShotH = ls.shots_on_target_home !== undefined ? ls.shots_on_target_home : (match.shots_home || 0);
-                        const liveShotA = ls.shots_on_target_away !== undefined ? ls.shots_on_target_away : (match.shots_away || 0);
-                        const totCorn = liveCornH + liveCornA;
-                        const totShots = liveShotH + liveShotA;
-                        statsPill.innerHTML = `
-                            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners en Vivo: ${totCorn} (${liveCornH} - ${liveCornA})</span>
-                            <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 font-bold">🎯 Tiros a Puerta: ${totShots} (${liveShotH} - ${liveShotA})</span>
-                        `;
-                    } else if (hs.corners !== undefined || as.corners !== undefined) {
+                    let nbaText = ai.analisis_ritmo_tiros;
+                    if (!nbaText && match) {
+                        nbaText = `El modelo proyecta un total combinado de ${totPts} puntos con línea Over/Under de ${ouLine} pts. Ritmo de juego calculado en ~${paceVal} posesiones por 48 minutos (${match.home_team}: ~${Math.round(ptsH)} pts, ${match.away_team}: ~${Math.round(ptsA)} pts). Claves: porcentaje de tiros de campo (FG%), transición rápida y rebote defensivo.`;
+                    }
+                    csEl.innerText = nbaText || "Proyección NBA basada en ritmo de posesiones (Pace) y rating ofensivo.";
+                    csEl.className = "text-gray-200 leading-relaxed font-sans text-xs sm:text-[13px] bg-gray-950/70 p-3 rounded-lg border border-orange-900/30 shadow-inner";
+
+                    if (statsPill && match) {
+                        if (match.is_live) {
+                            const ls = match.live_stats || {};
+                            const scoreH = match.score_home !== undefined ? match.score_home : (ls.score_home || 0);
+                            const scoreA = match.score_away !== undefined ? match.score_away : (ls.score_away || 0);
+                            const fgH = ls.fg_pct_home || hs.fg_pct || 46;
+                            const fgA = ls.fg_pct_away || as.fg_pct || 45;
+                            const qLabel = match.quarter || 'En Juego';
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-orange-950/80 border border-orange-800/60 text-orange-300 font-bold">🏀 Marcador: ${scoreH} - ${scoreA} (${qLabel})</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-950/80 border border-amber-800/60 text-amber-300 font-bold">🎯 FG%: ${fgH}% - ${fgA}%</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 font-bold">🔥 Total Proyectado: ~${Math.round(pred.projected_total || totPts)} pts</span>
+                            `;
+                        } else {
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-orange-950/80 border border-orange-800/60 text-orange-300 font-bold">🏀 Ritmo (Pace): ~${paceVal} pos</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-950/80 border border-amber-800/60 text-amber-300 font-bold">🔥 Off Rtg Local: ${hs.off_rating || 115}</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🛡️ Def Rtg Visita: ${as.def_rating || 114}</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-900 border border-gray-800 text-gray-300 font-bold">Total Est: ~${totPts} pts</span>
+                            `;
+                        }
+                    }
+                } else {
+                    // Configuración Visual para FÚTBOL
+                    csBox.className = "bg-gradient-to-r from-cyan-950/40 via-gray-900/95 to-blue-950/40 border border-cyan-500/40 rounded-xl p-3.5 sm:p-4 space-y-2.5 shadow-md shadow-cyan-950/20";
+                    if (csLabel) csLabel.innerText = "🚩 Análisis de Córners y Remates a Puerta";
+                    if (csBadge) {
+                        csBadge.innerText = "FOCO ESTRATÉGICO";
+                        csBadge.className = "text-[10px] bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                    }
+                    if (csIcon) {
+                        csIcon.setAttribute('data-lucide', 'crosshair');
+                        csIcon.className = "w-4 h-4 text-cyan-400";
+                    }
+
+                    let cornerText = ai.analisis_corners_remates;
+                    if (!cornerText && match) {
+                        const hs = match.home_stats || {};
+                        const as = match.away_stats || {};
                         const hc = hs.corners || 5.0;
                         const ac = as.corners || 4.5;
                         const totC = (hc + ac).toFixed(1);
-                        statsPill.innerHTML = `
-                            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners Local: ${hc}</span>
-                            <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners Visita: ${ac}</span>
-                            <span class="px-2 py-0.5 rounded bg-gray-900 border border-gray-800 text-gray-300">Total Proyectado: ~${totC}</span>
-                        `;
+                        cornerText = `El modelo proyecta una línea estimada de ${totC} tiros de esquina totales (${match.home_team}: ${hc} de local, ${match.away_team}: ${ac} de visita). Enfoque en asedio por bandas y centros al área.`;
+                    }
+                    csEl.innerText = cornerText || "";
+                    csEl.className = "text-gray-200 leading-relaxed font-sans text-xs sm:text-[13px] bg-gray-950/70 p-3 rounded-lg border border-cyan-900/30 shadow-inner";
+
+                    if (statsPill && match) {
+                        const hs = match.home_stats || {};
+                        const as = match.away_stats || {};
+                        if (match.is_live) {
+                            const ls = match.live_stats || {};
+                            const liveCornH = ls.corners_home !== undefined ? ls.corners_home : (match.corners_home || 0);
+                            const liveCornA = ls.corners_away !== undefined ? ls.corners_away : (match.corners_away || 0);
+                            const liveShotH = ls.shots_on_target_home !== undefined ? ls.shots_on_target_home : (match.shots_home || 0);
+                            const liveShotA = ls.shots_on_target_away !== undefined ? ls.shots_on_target_away : (match.shots_away || 0);
+                            const totCorn = liveCornH + liveCornA;
+                            const totShots = liveShotH + liveShotA;
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners en Vivo: ${totCorn} (${liveCornH} - ${liveCornA})</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 font-bold">🎯 Tiros a Puerta: ${totShots} (${liveShotH} - ${liveShotA})</span>
+                            `;
+                        } else if (hs.corners !== undefined || as.corners !== undefined) {
+                            const hc = hs.corners || 5.0;
+                            const ac = as.corners || 4.5;
+                            const totC = (hc + ac).toFixed(1);
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners Local: ${hc}</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🚩 Córners Visita: ${ac}</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-900 border border-gray-800 text-gray-300">Total Proyectado: ~${totC}</span>
+                            `;
+                        }
                     }
                 }
             }
 
             const cardsBox = document.getElementById('modal-cards-friction-box');
             const cardsEl = document.getElementById('modal-cards-friction');
-            if (ai.analisis_tarjetas_friccion && cardsBox && cardsEl) {
+            if (!isNba && ai.analisis_tarjetas_friccion && cardsBox && cardsEl) {
                 cardsBox.classList.remove('hidden');
                 cardsEl.innerText = ai.analisis_tarjetas_friccion;
             } else if (cardsBox) {
@@ -4424,12 +4511,16 @@
                 if (badge) badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-950 text-purple-300 border border-purple-500/80 flex items-center gap-1 font-mono shadow-sm shadow-purple-900/50";
                 if (badgeText) badgeText.innerText = "✨ Google Gemini AI";
                 if (provTitle) provTitle.innerText = "✨ Verificado con Google Gemini AI";
-                if (provDesc) provDesc.innerText = `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Rigor táctico, xG y actualidad.`;
+                if (provDesc) provDesc.innerText = isNba
+                    ? `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Ratings avanzados, Pace y desglose de cuartos.`
+                    : `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Rigor táctico, xG y actualidad.`;
             } else {
                 if (badge) badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-700 flex items-center gap-1 font-mono";
                 if (badgeText) badgeText.innerText = "Motor Cuantitativo";
-                if (provTitle) provTitle.innerText = "Análisis Predictivo Cuantitativo";
-                if (provDesc) provDesc.innerText = "Modelo de Poisson y calificaciones tácticas de equipo.";
+                if (provTitle) provTitle.innerText = isNba ? "Análisis Predictivo NBA" : "Análisis Predictivo Cuantitativo";
+                if (provDesc) provDesc.innerText = isNba
+                    ? "Modelo cuantitativo de posesiones NBA y ratings ofensivos/defensivos."
+                    : "Modelo de Poisson y calificaciones tácticas de equipo.";
             }
 
             if (window.lucide) safeCreateIcons();
@@ -4563,7 +4654,7 @@
             fetch(`/api/match/${activeMatchId}/gemini_analysis`)
                 .then(r => r.json())
                 .then(ai => {
-                    const match = allMatchesData.find(m => m.id === activeMatchId);
+                    const match = (window.liveMatchesData || []).find(m => m.id === activeMatchId || String(m.match_id) === String(activeMatchId)) || (window.allMatchesData || []).find(m => m.id === activeMatchId || String(m.match_id) === String(activeMatchId));
                     if (match) match.ai_analysis = ai;
                     updateGeminiUI(ai);
                 })

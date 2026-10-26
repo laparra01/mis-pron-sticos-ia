@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-10-26T22:10:03.178341",
+  "last_updated": "2026-10-26T17:04:16.137920",
   "total_fixtures": 15,
   "team_histories": {
     "Alianza FC": [
@@ -3617,7 +3617,25 @@
           "text": "CD Jaguares 1 victorias • 3 empates • Llaneros FC 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jairo Mayorga",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 43,
+        "yellow_cards_per_match": 6.33,
+        "yellow_cards_total": 272,
+        "yellow_cards_avg_league": 5.72,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 7,
+        "penalties_total": 12,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.33 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

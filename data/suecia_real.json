@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-10-26T22:10:48.533780",
+  "last_updated": "2026-10-26T10:30:39.355169",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,25 +2981,7 @@
           "text": "AIK 3 victorias • 1 empates • Elfsborg 1 victorias"
         }
       },
-      "referee": {
-        "name": "Joakim Sars",
-        "country": "Sweden",
-        "country_code": "SWE",
-        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
-        "matches": 17,
-        "yellow_cards_per_match": 4.12,
-        "yellow_cards_total": 70,
-        "yellow_cards_avg_league": 3.58,
-        "yellow_cards_tendency": "above",
-        "red_cards_total": 0,
-        "penalties_total": 7,
-        "fouls_per_match": 25.7,
-        "fouls_avg_league": 24.8,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.12 amarillas y 25.71 faltas por encuentro.",
-        "over_cards_favorable": false
-      },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

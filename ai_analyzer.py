@@ -375,6 +375,7 @@ Devuelve ÚNICAMENTE este formato JSON:
   "justificacion_estadistica": "Explicación de ratings ofensivos/defensivos, pace y tiros de campo",
   "factor_clave": "Duelo clave (triples, pintura o rebotes)",
   "advertencia_riesgo": "Riesgo de rotación o faltas de estrellas",
+  "analisis_ritmo_tiros": "Análisis específico del ritmo de posesiones (pace), tiros de campo (FG%) y puntos proyectados",
   "marcador_sugerido": "{round(pts_h)} - {round(pts_a)}"
 }}
 """
@@ -394,12 +395,18 @@ Devuelve ÚNICAMENTE este formato JSON:
     )
     factor = f"Ritmo de posesiones (Pace), eficacia en triples y quinteto titular en el 1Q."
     advertencia = f"Gestión de minutos de estrellas y porcentaje de tiros libres en el cierre."
+    analisis_ritmo = (
+        f"El modelo proyecta un total combinado de {total} puntos con línea Over/Under de {prediction.get('over_under_line', 226.5)} pts. "
+        f"Ritmo de juego estimado en posesiones de alta intensidad ({round(pts_h)} pts local vs {round(pts_a)} pts visita). "
+        f"Factores clave: efectividad en tiros de campo (FG%), transición rápida y tiro perimetral."
+    )
 
     return {
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
+        "analisis_ritmo_tiros": analisis_ritmo,
         "marcador_sugerido": f"{round(pts_h)} - {round(pts_a)}",
         "powered_by": "Motor Analítico Poisson Cuantitativo",
         "is_gemini": False
@@ -431,6 +438,7 @@ Devuelve ÚNICAMENTE este formato JSON:
   "justificacion_estadistica": "Explicación del ritmo de tiro y ganador de cuartos restantes",
   "factor_clave": "Control de rebotes y eficacia en triples",
   "advertencia_riesgo": "Rachas rápidas que alteren el clutch",
+  "analisis_ritmo_tiros": "Lectura en tiempo real del ritmo de posesiones (pace), tiros de campo (FG%) y puntos proyectados",
   "marcador_sugerido": "{live_pred.get('projected_final', score)}"
 }}
 """
@@ -454,12 +462,17 @@ Devuelve ÚNICAMENTE este formato JSON:
     )
     factor = f"Efectividad en la pintura, control del rebote y rotación de banca."
     advertencia = f"Rachas rápidas de triples que cambian ventajas en segundos."
+    analisis_ritmo = (
+        f"En vivo durante el {q}: {home} registra {fg_h}% en tiros de campo (FG%) frente al {fg_a}% de {away}. "
+        f"Proyección total ajustada en {live_pred.get('projected_total', 225)} puntos con marcador actual de {score}."
+    )
 
     return {
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
+        "analisis_ritmo_tiros": analisis_ritmo,
         "marcador_sugerido": live_pred.get('projected_final', score),
         "powered_by": "Motor Analítico Poisson Cuantitativo",
         "is_gemini": False

@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-10-26T22:10:41.099335",
+  "last_updated": "2026-10-26T10:30:14.862397",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -5987,25 +5987,7 @@
           "text": "Excelsior 1 victorias • 2 empates • FC Twente 2 victorias"
         }
       },
-      "referee": {
-        "name": "Erwin Blank",
-        "country": "Netherlands",
-        "country_code": "NED",
-        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 26,
-        "yellow_cards_per_match": 2.96,
-        "yellow_cards_total": 77,
-        "yellow_cards_avg_league": 3.11,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 1,
-        "penalties_total": 3,
-        "fouls_per_match": 22.8,
-        "fouls_avg_league": 21.4,
-        "rigor_level": "Permisivo / Dejar Jugar",
-        "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (2.96 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
-        "over_cards_favorable": false
-      },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

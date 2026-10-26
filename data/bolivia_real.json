@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-10-26T22:10:08.026262",
+  "last_updated": "2026-10-26T17:05:23.958830",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -2981,7 +2981,25 @@
           "text": "Nacional Potosí 2 victorias • 1 empates • Guabirá 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Dilio Rodríguez",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 35,
+        "yellow_cards_per_match": 5.29,
+        "yellow_cards_total": 185,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 16,
+        "penalties_total": 15,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.29 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
