@@ -3,7 +3,7 @@
   "league_id": 8976,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-10-26T16:24:54.827037",
+  "last_updated": "2026-10-26T10:26:58.201962",
   "total_fixtures": 8,
   "team_histories": {
     "Alacranes de Durango": [
@@ -685,9 +685,9 @@
         "total_corners": 12,
         "shots_on_target": 4,
         "total_shots": 11,
-        "yellow_cards": 2,
+        "yellow_cards": 3,
         "red_cards": 0,
-        "total_cards": 2,
+        "total_cards": 3,
         "fouls": 13
       }
     ],
@@ -2298,14 +2298,14 @@
       "shots_on_target_gen": 4.0,
       "total_shots_gen": 11.8,
       "yellow_cards_avg_home": 3.0,
-      "yellow_cards_avg_away": 3.0,
-      "yellow_cards_avg": 3.0,
+      "yellow_cards_avg_away": 3.33,
+      "yellow_cards_avg": 3.2,
       "red_cards_avg_home": 1.0,
       "red_cards_avg_away": 0.0,
       "red_cards_avg": 0.4,
       "total_cards_avg_home": 4.0,
-      "total_cards_avg_away": 3.0,
-      "total_cards_avg": 3.4,
+      "total_cards_avg_away": 3.33,
+      "total_cards_avg": 3.6,
       "fouls_avg_home": 15.5,
       "fouls_avg_away": 11.67,
       "fouls_avg": 13.2
@@ -4802,9 +4802,9 @@
             "total_corners": 12,
             "shots_on_target": 4,
             "total_shots": 11,
-            "yellow_cards": 2,
+            "yellow_cards": 3,
             "red_cards": 0,
-            "total_cards": 2,
+            "total_cards": 3,
             "fouls": 13
           }
         ],
@@ -5032,14 +5032,14 @@
           "shots_on_target_gen": 4.0,
           "total_shots_gen": 11.8,
           "yellow_cards_avg_home": 3.0,
-          "yellow_cards_avg_away": 3.0,
-          "yellow_cards_avg": 3.0,
+          "yellow_cards_avg_away": 3.33,
+          "yellow_cards_avg": 3.2,
           "red_cards_avg_home": 1.0,
           "red_cards_avg_away": 0.0,
           "red_cards_avg": 0.4,
           "total_cards_avg_home": 4.0,
-          "total_cards_avg_away": 3.0,
-          "total_cards_avg": 3.4,
+          "total_cards_avg_away": 3.33,
+          "total_cards_avg": 3.6,
           "fouls_avg_home": 15.5,
           "fouls_avg_away": 11.67,
           "fouls_avg": 13.2
@@ -5067,7 +5067,7 @@
           "fouls_avg": 12.6
         },
         "projected_corners": 10.8,
-        "projected_cards": 7.5,
+        "projected_cards": 7.6,
         "summary": {
           "home_wins": 1,
           "draws": 1,

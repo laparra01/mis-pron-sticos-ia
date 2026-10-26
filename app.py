@@ -149,7 +149,12 @@ def slim_match_for_client(m):
         "referee": ref_clean,
         "prediction": slim_pred,
         "h2h": {"summary": (m.get("h2h") or {}).get("summary", {})},
-        "ai_analysis": m.get("ai_analysis")
+        "ai_analysis": m.get("ai_analysis"),
+        "live_stats": m.get("live_stats"),
+        "corners_home": (m.get("live_stats") or {}).get("corners_home") if m.get("live_stats") else m.get("corners_home"),
+        "corners_away": (m.get("live_stats") or {}).get("corners_away") if m.get("live_stats") else m.get("corners_away"),
+        "shots_home": (m.get("live_stats") or {}).get("shots_on_target_home") if m.get("live_stats") else m.get("shots_home"),
+        "shots_away": (m.get("live_stats") or {}).get("shots_on_target_away") if m.get("live_stats") else m.get("shots_away")
     }
 
 
@@ -231,9 +236,9 @@ def index():
 
         now_ts = datetime.now().timestamp()
         today_pending_count = sum(1 for m in upcoming_matches if m.get("date_iso") == today_iso and (m.get("timestamp") or 0) >= now_ts - 300)
+        today_upcoming = [m for m in upcoming_matches if m.get("date_iso") == today_iso]
+        upcoming_initial = today_upcoming if today_upcoming else upcoming_matches[:40]
         team_logos, team_logos_norm = load_team_logos()
-
-        upcoming_initial = upcoming_matches[:40]
         slim_all_matches = [slim_match_for_client(m) for m in all_matches]
 
         context = dict(

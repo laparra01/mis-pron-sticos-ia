@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-10-26T16:25:56.871175",
+  "last_updated": "2026-10-26T10:30:14.862397",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -685,9 +685,9 @@
         "total_corners": 11,
         "shots_on_target": 2,
         "total_shots": 6,
-        "yellow_cards": 2,
+        "yellow_cards": 1,
         "red_cards": 0,
-        "total_cards": 2,
+        "total_cards": 1,
         "fouls": 13
       }
     ],
@@ -2572,14 +2572,14 @@
       "shots_on_target_gen": 2.2,
       "total_shots_gen": 8.2,
       "yellow_cards_avg_home": 1.0,
-      "yellow_cards_avg_away": 1.67,
-      "yellow_cards_avg": 1.4,
+      "yellow_cards_avg_away": 1.33,
+      "yellow_cards_avg": 1.2,
       "red_cards_avg_home": 0.0,
       "red_cards_avg_away": 0.0,
       "red_cards_avg": 0.0,
       "total_cards_avg_home": 1.0,
-      "total_cards_avg_away": 1.67,
-      "total_cards_avg": 1.4,
+      "total_cards_avg_away": 1.33,
+      "total_cards_avg": 1.2,
       "fouls_avg_home": 9.5,
       "fouls_avg_away": 11.67,
       "fouls_avg": 10.8
@@ -5713,9 +5713,9 @@
             "total_corners": 11,
             "shots_on_target": 2,
             "total_shots": 6,
-            "yellow_cards": 2,
+            "yellow_cards": 1,
             "red_cards": 0,
-            "total_cards": 2,
+            "total_cards": 1,
             "fouls": 13
           }
         ],
@@ -5943,14 +5943,14 @@
           "shots_on_target_gen": 2.2,
           "total_shots_gen": 8.2,
           "yellow_cards_avg_home": 1.0,
-          "yellow_cards_avg_away": 1.67,
-          "yellow_cards_avg": 1.4,
+          "yellow_cards_avg_away": 1.33,
+          "yellow_cards_avg": 1.2,
           "red_cards_avg_home": 0.0,
           "red_cards_avg_away": 0.0,
           "red_cards_avg": 0.0,
           "total_cards_avg_home": 1.0,
-          "total_cards_avg_away": 1.67,
-          "total_cards_avg": 1.4,
+          "total_cards_avg_away": 1.33,
+          "total_cards_avg": 1.2,
           "fouls_avg_home": 9.5,
           "fouls_avg_away": 11.67,
           "fouls_avg": 10.8
@@ -5978,7 +5978,7 @@
           "fouls_avg": 13.6
         },
         "projected_corners": 10.1,
-        "projected_cards": 2.8,
+        "projected_cards": 2.7,
         "summary": {
           "home_wins": 1,
           "draws": 2,
@@ -5987,25 +5987,7 @@
           "text": "Excelsior 1 victorias • 2 empates • FC Twente 2 victorias"
         }
       },
-      "referee": {
-        "name": "Erwin Blank",
-        "country": "Netherlands",
-        "country_code": "NED",
-        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 26,
-        "yellow_cards_per_match": 2.96,
-        "yellow_cards_total": 77,
-        "yellow_cards_avg_league": 3.11,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 1,
-        "penalties_total": 3,
-        "fouls_per_match": 22.8,
-        "fouls_avg_league": 21.4,
-        "rigor_level": "Permisivo / Dejar Jugar",
-        "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (2.96 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
-        "over_cards_favorable": false
-      },
+      "referee": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
