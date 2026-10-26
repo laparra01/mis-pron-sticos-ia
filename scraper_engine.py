@@ -330,6 +330,53 @@ SUPPORTED_LEAGUES = [
         "code": "jp",
         "flag": "🇯🇵",
         "max_upcoming": 15
+    },
+
+    # Copas Nacionales Europeas
+    {
+        "id": 133,
+        "slug": "carabao_cup",
+        "name": "Carabao Cup (EFL Cup)",
+        "country": "Inglaterra",
+        "code": "gb-eng",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "max_upcoming": 15
+    },
+    {
+        "id": 132,
+        "slug": "fa_cup",
+        "name": "FA Cup",
+        "country": "Inglaterra",
+        "code": "gb-eng",
+        "flag": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+        "max_upcoming": 15
+    },
+    {
+        "id": 138,
+        "slug": "copa_del_rey",
+        "name": "Copa del Rey",
+        "country": "España",
+        "code": "es",
+        "flag": "🇪🇸",
+        "max_upcoming": 15
+    },
+    {
+        "id": 141,
+        "slug": "coppa_italia",
+        "name": "Copa de Italia (Coppa Italia)",
+        "country": "Italia",
+        "code": "it",
+        "flag": "🇮🇹",
+        "max_upcoming": 15
+    },
+    {
+        "id": 209,
+        "slug": "dfb_pokal",
+        "name": "Copa de Alemania (DFB-Pokal)",
+        "country": "Alemania",
+        "code": "de",
+        "flag": "🇩🇪",
+        "max_upcoming": 15
     }
 ]
 

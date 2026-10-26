@@ -1238,7 +1238,17 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         t_title = "UEFA Nations League / Eliminatorias" if ("uefa" in l_low or "nations" in l_low or "playoff" in l_low or "europe" in l_low) else "Selecciones FIFA"
         return t_title, "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
 
-    # 3. Torneos Continentales de Clubes
+    # 3. Torneos Continentales y Copas Nacionales
+    if any(k in l_low for k in ["copa del rey", "copa-del-rey", "copa rey"]):
+        return "Copa del Rey", "España", "🇪🇸", LEAGUE_TEAMS_POOL["espana"]
+    if any(k in l_low for k in ["carabao", "efl cup"]) or ("league cup" in l_low and "wsl" not in l_low):
+        return "Carabao Cup (EFL Cup)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", LEAGUE_TEAMS_POOL["inglaterra"]
+    if any(k in l_low for k in ["fa cup", "the fa cup", "facup"]):
+        return "FA Cup", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿", LEAGUE_TEAMS_POOL["inglaterra"]
+    if any(k in l_low for k in ["coppa italia", "copa italia", "copa de italia"]):
+        return "Copa de Italia (Coppa Italia)", "Italia", "🇮🇹", LEAGUE_TEAMS_POOL["italia"]
+    if any(k in l_low for k in ["dfb-pokal", "dfb pokal", "copa de alemania", "german cup"]):
+        return "Copa de Alemania (DFB-Pokal)", "Alemania", "🇩🇪", LEAGUE_TEAMS_POOL["alemania"]
     if any(k in l_low for k in ["champions league", "uefa champions", "europa league"]):
         return "UEFA Champions League", "Europa", "🏆", LEAGUE_TEAMS_POOL["champions"]
     if "sudamericana" in l_low:

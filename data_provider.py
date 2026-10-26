@@ -505,19 +505,24 @@ ESPN_LEAGUES_BY_ID = {
     "740": ("LaLiga EA Sports", "España", "🇪🇸"),
     "741": ("LaLiga Hypermotion", "España", "🇪🇸"),
     "3928": ("LaLiga Hypermotion", "España", "🇪🇸"),
+    "3951": ("Copa del Rey", "España", "🇪🇸"),
     # Inglaterra
     "382": ("Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     "3914": ("Championship", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     "3917": ("National League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    "3920": ("Carabao Cup (EFL Cup)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    "3918": ("FA Cup", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     # Alemania
     "720": ("Bundesliga", "Alemania", "🇩🇪"),
     "3927": ("2. Bundesliga", "Alemania", "🇩🇪"),
+    "3954": ("Copa de Alemania (DFB-Pokal)", "Alemania", "🇩🇪"),
     # Francia
     "710": ("Ligue 1", "Francia", "🇫🇷"),
     "3926": ("Ligue 2", "Francia", "🇫🇷"),
     # Italia
     "705": ("Serie A", "Italia", "🇮🇹"),
     "3931": ("Serie B", "Italia", "🇮🇹"),
+    "3956": ("Copa de Italia (Coppa Italia)", "Italia", "🇮🇹"),
     # Países Bajos
     "725": ("Eredivisie", "Países Bajos", "🇳🇱"),
     "3933": ("Keuken Kampioen Divisie", "Países Bajos", "🇳🇱"),
@@ -605,10 +610,14 @@ ESPN_SLUG_PREFIXES = [
     ("eng.4", "League Two", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("eng.5", "National League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
     ("eng.", "Premier League", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"),
+    ("ger.dfb_pokal", "Copa de Alemania (DFB-Pokal)", "Alemania", "🇩🇪"),
+    ("ger.cup", "Copa de Alemania (DFB-Pokal)", "Alemania", "🇩🇪"),
     ("ger.2", "2. Bundesliga", "Alemania", "🇩🇪"),
     ("ger.", "Bundesliga", "Alemania", "🇩🇪"),
     ("fra.2", "Ligue 2", "Francia", "🇫🇷"),
     ("fra.", "Ligue 1", "Francia", "🇫🇷"),
+    ("ita.coppa_italia", "Copa de Italia (Coppa Italia)", "Italia", "🇮🇹"),
+    ("ita.cup", "Copa de Italia (Coppa Italia)", "Italia", "🇮🇹"),
     ("ita.2", "Serie B", "Italia", "🇮🇹"),
     ("ita.", "Serie A", "Italia", "🇮🇹"),
     ("por.", "Primeira Liga", "Portugal", "🇵🇹"),
@@ -639,6 +648,17 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
             return t_name, c_name, flag
 
     # 2. Casos directos por nombre explícito de país o liga
+    # Copas Nacionales Principales
+    if "copa del rey" in comp_lower or "copa-del-rey" in comp_lower or "copa rey" in comp_lower:
+        return "Copa del Rey", "España", "🇪🇸"
+    if "carabao" in comp_lower or "efl cup" in comp_lower or ("league cup" in comp_lower and "wsl" not in comp_lower and "women" not in comp_lower):
+        return "Carabao Cup (EFL Cup)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    if "fa cup" in comp_lower or "the fa cup" in comp_lower or "facup" in comp_lower:
+        return "FA Cup", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+    if "coppa italia" in comp_lower or "copa italia" in comp_lower or "copa de italia" in comp_lower:
+        return "Copa de Italia (Coppa Italia)", "Italia", "🇮🇹"
+    if "dfb-pokal" in comp_lower or "dfb pokal" in comp_lower or "copa de alemania" in comp_lower or "copa alemana" in comp_lower or "german cup" in comp_lower:
+        return "Copa de Alemania (DFB-Pokal)", "Alemania", "🇩🇪"
     if sport == "nba" or "nba" in comp_lower:
         return "NBA", "Estados Unidos", "🏀"
     if "salvador" in comp_lower or "slv.1" in comp_lower:
@@ -729,7 +749,7 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
         return "Selecciones FIFA", "Internacional", "🌎"
 
     # España: ÚNICAMENTE si dice explícitamente LaLiga, España o EA Sports
-    if "laliga" in comp_lower or "hypermotion" in comp_lower or "copa del rey" in comp_lower or (("la liga" in comp_lower or "primera division" in comp_lower) and any(k in comp_lower for k in ["españ", "spain", "ea sports", "santander"])):
+    if "laliga" in comp_lower or "hypermotion" in comp_lower or (("la liga" in comp_lower or "primera division" in comp_lower) and any(k in comp_lower for k in ["españ", "spain", "ea sports", "santander"])):
         t_spain = "LaLiga Hypermotion" if ("hypermotion" in comp_lower or "segunda" in comp_lower) else "LaLiga EA Sports"
         return t_spain, "España", "🇪🇸"
 
