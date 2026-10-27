@@ -3,7 +3,7 @@
   "league_id": 268,
   "country": "Brasil",
   "country_code": "br",
-  "last_updated": "2026-10-27T15:40:32.381707",
+  "last_updated": "2026-10-27T21:41:56.029187",
   "total_fixtures": 15,
   "team_histories": {
     "Athletico Paranaense": [
@@ -8067,7 +8067,25 @@
           "text": "RB Bragantino 1 victorias • 2 empates • Santos 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Edina Alves Batista",
+        "country": "Brazil",
+        "country_code": "BRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
+        "matches": 16,
+        "yellow_cards_per_match": 5.13,
+        "yellow_cards_total": 82,
+        "yellow_cards_avg_league": 4.9,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 3,
+        "fouls_per_match": 28.9,
+        "fouls_avg_league": 28.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.13 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
