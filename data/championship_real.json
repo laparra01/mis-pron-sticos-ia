@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-26T10:28:32.374667",
+  "last_updated": "2026-10-27T15:41:16.802534",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -4253,7 +4253,25 @@
           "text": "Sheffield United 2 victorias • 1 empates • Wrexham 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "David Webb",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 49,
+        "yellow_cards_per_match": 2.67,
+        "yellow_cards_total": 131,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 7,
+        "fouls_per_match": 20.6,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.67 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4653,7 +4671,25 @@
           "text": "Lincoln City 0 victorias • 0 empates • Birmingham City 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lewis Smith",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 42,
+        "yellow_cards_per_match": 3.57,
+        "yellow_cards_total": 150,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 20.3,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.57 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5083,7 +5119,25 @@
           "text": "Norwich City 3 victorias • 0 empates • Watford 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ben Speedie",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 15,
+        "yellow_cards_per_match": 2.67,
+        "yellow_cards_total": 40,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 1,
+        "fouls_per_match": 21.5,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.67 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5513,7 +5567,25 @@
           "text": "Stoke City 1 victorias • 3 empates • Preston North End 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Adam Herczeg",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.86,
+        "yellow_cards_total": 135,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 6,
+        "fouls_per_match": 22.4,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.86 amarillas y 22.43 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5943,7 +6015,25 @@
           "text": "Bolton Wanderers 1 victorias • 1 empates • Bristol City 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Robert Madley",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 28,
+        "yellow_cards_per_match": 4.39,
+        "yellow_cards_total": 123,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 7,
+        "fouls_per_match": 22.0,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.39 amarillas y 22.04 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6373,7 +6463,25 @@
           "text": "Burnley 2 victorias • 2 empates • Portsmouth 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ruebyn Ricardo",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.97,
+        "yellow_cards_total": 149,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 6,
+        "fouls_per_match": 22.8,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.97 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6803,7 +6911,25 @@
           "text": "Middlesbrough 3 victorias • 0 empates • Charlton Athletic 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Will Finnie",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 22,
+        "yellow_cards_per_match": 3.5,
+        "yellow_cards_total": 77,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 2,
+        "fouls_per_match": 20.8,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.5 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7233,7 +7359,25 @@
           "text": "Millwall 3 victorias • 2 empates • Derby County 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Anthony Backhouse",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 41,
+        "yellow_cards_per_match": 4.37,
+        "yellow_cards_total": 179,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 8,
+        "fouls_per_match": 21.1,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.37 amarillas y 21.05 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7663,7 +7807,25 @@
           "text": "Southampton 5 victorias • 0 empates • Queens Park Rangers 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Tim Robinson",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 19,
+        "yellow_cards_per_match": 4.58,
+        "yellow_cards_total": 87,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 2,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.58 amarillas y 25.11 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8093,7 +8255,25 @@
           "text": "Swansea City 4 victorias • 0 empates • Blackburn Rovers 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Gavin Ward",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 48,
+        "yellow_cards_per_match": 3.44,
+        "yellow_cards_total": 165,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 9,
+        "fouls_per_match": 20.7,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.44 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8523,7 +8703,25 @@
           "text": "West Ham United 3 victorias • 1 empates • West Bromwich Albion 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Robert Jones",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.97,
+        "yellow_cards_total": 155,
+        "yellow_cards_avg_league": 3.88,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 10,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.97 amarillas y 23.46 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8953,7 +9151,25 @@
           "text": "Wolverhampton Wanderers 3 victorias • 0 empates • Cardiff City 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Josh Smith",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 47,
+        "yellow_cards_per_match": 3.96,
+        "yellow_cards_total": 186,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 12,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 22.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.96 amarillas y 21.19 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

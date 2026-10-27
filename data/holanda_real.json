@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-10-26T10:30:14.862397",
+  "last_updated": "2026-10-27T15:42:24.978420",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -3304,18 +3304,18 @@
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 39,
-        "yellow_cards_per_match": 3.08,
-        "yellow_cards_total": 120,
+        "matches": 38,
+        "yellow_cards_per_match": 3.03,
+        "yellow_cards_total": 115,
         "yellow_cards_avg_league": 3.11,
         "yellow_cards_tendency": "average",
-        "red_cards_total": 4,
-        "penalties_total": 14,
-        "fouls_per_match": 22.9,
+        "red_cards_total": 3,
+        "penalties_total": 13,
+        "fouls_per_match": 22.8,
         "fouls_avg_league": 21.4,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (3.08 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (3.03 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5987,7 +5987,25 @@
           "text": "Excelsior 1 victorias • 2 empates • FC Twente 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Erwin Blank",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 25,
+        "yellow_cards_per_match": 2.92,
+        "yellow_cards_total": 73,
+        "yellow_cards_avg_league": 3.11,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.92 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
