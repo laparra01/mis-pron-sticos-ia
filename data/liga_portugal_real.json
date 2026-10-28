@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-28T16:25:23.638665",
+  "last_updated": "2026-10-28T13:20:07.166872",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -2193,8 +2193,8 @@
         "shots_on_target": 6,
         "total_shots": 13,
         "yellow_cards": 4,
-        "red_cards": 0,
-        "total_cards": 4,
+        "red_cards": 1,
+        "total_cards": 5,
         "fouls": 17
       }
     ],
@@ -2816,12 +2816,12 @@
       "yellow_cards_avg_home": 3.0,
       "yellow_cards_avg_away": 4.5,
       "yellow_cards_avg": 3.6,
-      "red_cards_avg_home": 0.0,
+      "red_cards_avg_home": 0.33,
       "red_cards_avg_away": 0.5,
-      "red_cards_avg": 0.2,
-      "total_cards_avg_home": 3.0,
+      "red_cards_avg": 0.4,
+      "total_cards_avg_home": 3.33,
       "total_cards_avg_away": 5.0,
-      "total_cards_avg": 3.8,
+      "total_cards_avg": 4.0,
       "fouls_avg_home": 14.0,
       "fouls_avg_away": 12.5,
       "fouls_avg": 13.4
@@ -5283,8 +5283,8 @@
             "shots_on_target": 6,
             "total_shots": 13,
             "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
+            "red_cards": 1,
+            "total_cards": 5,
             "fouls": 17
           }
         ],
@@ -5399,12 +5399,12 @@
           "yellow_cards_avg_home": 3.0,
           "yellow_cards_avg_away": 4.5,
           "yellow_cards_avg": 3.6,
-          "red_cards_avg_home": 0.0,
+          "red_cards_avg_home": 0.33,
           "red_cards_avg_away": 0.5,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 3.0,
+          "red_cards_avg": 0.4,
+          "total_cards_avg_home": 3.33,
           "total_cards_avg_away": 5.0,
-          "total_cards_avg": 3.8,
+          "total_cards_avg": 4.0,
           "fouls_avg_home": 14.0,
           "fouls_avg_away": 12.5,
           "fouls_avg": 13.4

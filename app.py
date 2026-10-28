@@ -43,15 +43,18 @@ def security_and_access_control():
 
 @app.after_request
 def compress_and_secure_response(response):
-    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
-    response.headers['X-Content-Type-Options'] = 'nosniff'
-    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+    try:
+        response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+        response.headers['X-Content-Type-Options'] = 'nosniff'
+        response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
 
-    accept_encoding = request.headers.get('Accept-Encoding', '')
-    if 'gzip' in accept_encoding.lower() and response.status_code == 200 and not response.direct_passthrough and len(response.data) > 1024:
-        response.data = gzip.compress(response.data)
-        response.headers['Content-Encoding'] = 'gzip'
-        response.headers['Content-Length'] = len(response.data)
+        accept_encoding = request.headers.get('Accept-Encoding', '')
+        if 'gzip' in accept_encoding.lower() and response.status_code == 200 and not response.direct_passthrough and len(response.data) > 1024:
+            response.data = gzip.compress(response.data)
+            response.headers['Content-Encoding'] = 'gzip'
+            response.headers['Content-Length'] = len(response.data)
+    except Exception as ec:
+        print(f"[COMPRESS WARNING]: {ec}")
     return response
 
 def slim_match_for_client(m):
@@ -319,7 +322,7 @@ def index():
         </a>
     </div>
 </body>
-</html>'''), 500
+</html>'''), 200
 
 @app.after_request
 def add_cache_control_headers(response):
@@ -355,7 +358,7 @@ def handle_500_error(e):
         </a>
     </div>
 </body>
-</html>'''), 500
+</html>'''), 200
 
 @app.route("/api/live")
 def api_live():

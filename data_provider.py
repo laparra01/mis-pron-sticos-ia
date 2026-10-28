@@ -829,7 +829,7 @@ def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, sc
 
 _espn_event_cache = {}
 
-def fetch_espn_event_real_stats(event_id: str) -> dict:
+def fetch_espn_event_real_stats(event_id: str, allow_network: bool = True) -> dict:
     """
     Consulta las estadísticas oficiales en vivo de ESPN (boxscore en tiempo real):
     tiros a puerta, tiros totales, córners reales, posesión exacta, faltas y tarjetas.
@@ -839,8 +839,11 @@ def fetch_espn_event_real_stats(event_id: str) -> dict:
     now = time.time()
     if event_id in _espn_event_cache:
         cached = _espn_event_cache[event_id]
-        if now - cached["timestamp"] < 30:
+        if now - cached["timestamp"] < 45:
             return cached["data"]
+
+    if not allow_network:
+        return None
 
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event={event_id}"
     try:
@@ -997,7 +1000,7 @@ def fetch_espn_live_soccer():
                 try:
                     from concurrent.futures import ThreadPoolExecutor, wait
                     executor = ThreadPoolExecutor(max_workers=4)
-                    futures = [executor.submit(fetch_espn_event_real_stats, eid) for eid in event_ids[:6]]
+                    futures = [executor.submit(fetch_espn_event_real_stats, eid, True) for eid in event_ids[:6]]
                     wait(futures, timeout=2.0)
                     executor.shutdown(wait=False, cancel_futures=True)
                 except Exception:
@@ -1050,7 +1053,7 @@ def fetch_espn_live_soccer():
                         clock_label = display_clock
 
                     event_id = str(e.get('id', ''))
-                    real_event_info = fetch_espn_event_real_stats(event_id) if event_id else None
+                    real_event_info = fetch_espn_event_real_stats(event_id, allow_network=False) if event_id else None
 
                     espn_lid = ""
                     uid = e.get("uid", "")
@@ -1639,23 +1642,22 @@ def fetch_live_matches_data(sport_filter="all", force_refresh=False):
 
         cache_age = now - _live_cache.get("timestamp", 0)
 
-        # Si el usuario solicito refrescar manualmente o la cache tiene mas de 75s o esta vacia:
-        if force_refresh or cache_age >= 75 or (sport_filter not in _live_cache.get("data", {})):
-            _refresh_live_cache_worker(sport_filter)
-            return _live_cache["data"].get(sport_filter, [])
+        # 1. Si ya tenemos datos en memoria (Stale-While-Revalidate):
+        if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter] is not None:
+            # Si estan envejeciendo (>35s) o se solicito refresco, lanzar actualizacion asincrona en segundo plano:
+            if (force_refresh or cache_age >= 35) and not _live_cache.get("updating"):
+                threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
+            # Retorno instantaneo sin bloquear nunca al usuario ni al servidor:
+            return _live_cache["data"][sport_filter]
 
-        # Si tenemos datos en memoria frescos (<75s):
-        if sport_filter in _live_cache["data"]:
-            if cache_age >= 30 and not _live_cache.get("updating"):
+        # 2. Si memoria esta vacia, cargar cache persistida en disco
+        _load_persisted_live_cache()
+        if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter]:
+            if not _live_cache.get("updating"):
                 threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
             return _live_cache["data"][sport_filter]
 
-        # Cargar de disco si memoria esta vacia y no es obsoleto
-        _load_persisted_live_cache()
-        if sport_filter in _live_cache["data"]:
-            return _live_cache["data"][sport_filter]
-
-        # Primer arranque sin cache: sincronizar directamente
+        # 3. Solo en arranque en frio absoluto sin cache previa: sincronizar
         _refresh_live_cache_worker(sport_filter)
         return _live_cache["data"].get(sport_filter, [])
 
