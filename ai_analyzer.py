@@ -50,6 +50,9 @@ def call_gemini_api(prompt: str) -> dict:
                     parsed = json.loads(raw_text)
                     parsed["powered_by"] = f"Google Gemini AI ({model_name})"
                     parsed["is_gemini"] = True
+                    if len(_ai_cache) > 40:
+                        oldest_k = next(iter(_ai_cache))
+                        _ai_cache.pop(oldest_k, None)
                     _ai_cache[cache_key] = parsed
                     return parsed
         except Exception:

@@ -242,7 +242,15 @@ def index():
         today_upcoming = [m for m in upcoming_matches if m.get("date_iso") == today_iso]
         upcoming_initial = today_upcoming if today_upcoming else upcoming_matches[:40]
         team_logos, team_logos_norm = load_team_logos()
-        slim_all_matches = [slim_match_for_client(m) for m in all_matches]
+
+        # OPTIMIZACION DE MEMORIA: Enviar en el HTML inicial los partidos de los proximos 3 dias (Hoy, Mañana y Pasado),
+        # reduciendo la carga de memoria de 470 partidos a ~120 (reduccion del 75% en memoria y peso).
+        target_dates = {today_iso, tomorrow_iso, after_tomorrow_iso}
+        initial_upcoming = [m for m in upcoming_matches if m.get("date_iso") in target_dates]
+        if not initial_upcoming:
+            initial_upcoming = upcoming_matches[:60]
+        initial_all_matches = live_matches + initial_upcoming
+        slim_all_matches = [slim_match_for_client(m) for m in initial_all_matches]
 
         context = dict(
             live_matches=live_matches,
@@ -371,6 +379,36 @@ def api_live():
         "live_matches": matches,
         "timestamp": time.time()
     })
+
+@app.route("/api/matches/future")
+def api_matches_future():
+    try:
+        today_dt = datetime.now()
+        d0 = today_dt.strftime("%Y-%m-%d")
+        d1 = (today_dt + timedelta(days=1)).strftime("%Y-%m-%d")
+        d2 = (today_dt + timedelta(days=2)).strftime("%Y-%m-%d")
+        target_dates = {d0, d1, d2}
+
+        upcoming = fetch_matches_data() or []
+        future = [m for m in upcoming if m.get("date_iso") not in target_dates]
+        slim_future = [slim_match_for_client(m) for m in future]
+        return jsonify({
+            "success": True,
+            "future_matches": slim_future,
+            "count": len(slim_future)
+        })
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e), "future_matches": []}), 500
+
+@app.after_request
+def cleanup_memory_gc(response):
+    if request.path == "/":
+        try:
+            import gc
+            gc.collect(1)
+        except Exception:
+            pass
+    return response
 
 @app.route("/api/matches")
 def api_matches():

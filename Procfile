@@ -1,1 +1,1 @@
-web: gunicorn --timeout 120 --workers 1 --threads 4 --max-requests 500 --max-requests-jitter 50 app:app
+web: env MALLOC_ARENA_MAX=2 PYTHONOPTIMIZE=1 gunicorn --timeout 120 --workers 1 --threads 4 --max-requests 200 --max-requests-jitter 20 app:app

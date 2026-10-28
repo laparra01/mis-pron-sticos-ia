@@ -2246,9 +2246,47 @@
             }
         }
 
+        let futureMatchesLoaded = false;
+        let futureMatchesLoading = false;
+
+        function loadFutureMatchesIfNeeded(callback) {
+            if (futureMatchesLoaded || futureMatchesLoading) {
+                if (callback) callback();
+                return;
+            }
+            futureMatchesLoading = true;
+            fetch('/api/matches/future')
+                .then(r => r.json())
+                .then(data => {
+                    if (data && data.future_matches && data.future_matches.length > 0) {
+                        const existingIds = new Set((window.allMatchesData || []).map(m => m.id));
+                        data.future_matches.forEach(m => {
+                            if (!existingIds.has(m.id)) {
+                                window.allMatchesData.push(m);
+                                existingIds.add(m.id);
+                            }
+                        });
+                        futureMatchesLoaded = true;
+                        updateDynamicFilters();
+                        renderDynamicDateStrip();
+                    }
+                })
+                .catch(e => console.error("Error cargando partidos futuros:", e))
+                .finally(() => {
+                    futureMatchesLoading = false;
+                    if (callback) callback();
+                });
+        }
+
         function loadMoreMatches() {
             renderedUpcomingLimit += 40;
-            applyAllFilters();
+            if (!futureMatchesLoaded) {
+                loadFutureMatchesIfNeeded(() => {
+                    applyAllFilters();
+                });
+            } else {
+                applyAllFilters();
+            }
         }
 
         function updateDynamicFilters() {
@@ -2462,9 +2500,17 @@
             if (activeBtn) {
                 activeBtn.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
             }
-            updateDynamicFilters();
-            applyAllFilters();
-            updateFilterStatusText();
+            if (!futureMatchesLoaded && dateVal !== 'all') {
+                loadFutureMatchesIfNeeded(() => {
+                    updateDynamicFilters();
+                    applyAllFilters();
+                    updateFilterStatusText();
+                });
+            } else {
+                updateDynamicFilters();
+                applyAllFilters();
+                updateFilterStatusText();
+            }
         }
 
         function setDateFilter(dateVal) {
@@ -5262,6 +5308,13 @@
             // Primer latido tras 1.5s, luego cada 60s
             setTimeout(sendHeartbeat, 1500);
             setInterval(sendHeartbeat, 60000);
+
+            // Carga silenciosa en segundo plano de partidos posteriores (a los 4s)
+            setTimeout(() => {
+                if (typeof loadFutureMatchesIfNeeded === 'function') {
+                    loadFutureMatchesIfNeeded();
+                }
+            }, 4000);
 
             document.addEventListener('visibilitychange', () => {
                 if (!document.hidden) sendHeartbeat();

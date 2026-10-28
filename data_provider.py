@@ -845,6 +845,10 @@ def fetch_espn_event_real_stats(event_id: str, allow_network: bool = True) -> di
     if not allow_network:
         return None
 
+    if len(_espn_event_cache) > 40:
+        oldest_k = next(iter(_espn_event_cache))
+        _espn_event_cache.pop(oldest_k, None)
+
     url = f"https://site.api.espn.com/apis/site/v2/sports/soccer/all/summary?event={event_id}"
     try:
         resp = requests.get(url, timeout=2.5)
@@ -1561,12 +1565,17 @@ def _load_persisted_live_cache():
         try:
             with open(_LIVE_CACHE_FILE, "r", encoding="utf-8") as f:
                 saved = json.load(f)
-                if isinstance(saved, dict) and "data" in saved:
+                if isinstance(saved, dict):
                     saved_ts = saved.get("timestamp", 0)
-                    # Si el archivo en disco tiene mas de 5 minutos (300s), los partidos son obsoletos
                     if (time.time() - saved_ts) < 300:
-                        for k, v in saved.get("data", {}).items():
-                            _live_cache["data"][k] = v
+                        if "matches" in saved:
+                            all_list = saved["matches"]
+                            _live_cache["data"]["all"] = all_list
+                            _live_cache["data"]["football"] = [m for m in all_list if m.get("sport") == "football"]
+                            _live_cache["data"]["nba"] = [m for m in all_list if m.get("sport") == "nba"]
+                        elif "data" in saved:
+                            for k, v in saved.get("data", {}).items():
+                                _live_cache["data"][k] = v
                         _live_cache["timestamp"] = saved_ts
                     else:
                         _live_cache["data"] = {}
@@ -1577,9 +1586,10 @@ def _load_persisted_live_cache():
 def _save_persisted_live_cache():
     try:
         os.makedirs(os.path.dirname(_LIVE_CACHE_FILE), exist_ok=True)
+        all_list = _live_cache.get("data", {}).get("all", [])
         with open(_LIVE_CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump({
-                "data": _live_cache.get("data", {}),
+                "matches": all_list,
                 "timestamp": _live_cache.get("timestamp", 0)
             }, f, ensure_ascii=False)
     except Exception:
