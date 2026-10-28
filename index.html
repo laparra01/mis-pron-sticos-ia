@@ -2710,6 +2710,21 @@
                 const match = (window.allMatchesData || []).find(m => m.id === activeMatchId);
                 if (match) renderModalMomentum(match);
             }
+
+            if (tab === 'gemini' && activeMatchId) {
+                const match = (window.liveMatchesData || []).find(m => m.id === activeMatchId) || (window.allMatchesData || []).find(m => m.id === activeMatchId);
+                if (match && (!match.ai_analysis || !match.ai_analysis.is_gemini)) {
+                    fetch(`/api/match/${activeMatchId}/gemini_analysis`)
+                        .then(r => r.json())
+                        .then(geminiData => {
+                            match.ai_analysis = geminiData;
+                            if (activeMatchId === match.id) {
+                                updateGeminiUI(geminiData);
+                            }
+                        })
+                        .catch(e => console.error("Error cargando Gemini:", e));
+                }
+            }
         }
 
         function renderRefereeCard(match) {
@@ -4791,6 +4806,13 @@
                         }
                     })
                     .catch(e => console.error("Error auto-cargando H2H:", e));
+            } else {
+                renderRefereeCard(match);
+                renderTeamGoalsBanner(match);
+                renderModalPicks(match);
+                renderModalH2H(match);
+                renderModalMatrix(match);
+                if (match.ai_analysis) updateGeminiUI(match.ai_analysis);
             }
 
             // Render Quarters and Halves si es NBA
@@ -4834,19 +4856,6 @@
             } else {
                 qContainer.classList.add('hidden');
                 qGrid.innerHTML = '';
-            }
-
-            // Consultar Gemini en segundo plano si aún no está analizado por Gemini
-            if (!match.ai_analysis || !match.ai_analysis.is_gemini) {
-                fetch(`/api/match/${matchId}/gemini_analysis`)
-                    .then(r => r.json())
-                    .then(geminiData => {
-                        match.ai_analysis = geminiData;
-                        if (activeMatchId === matchId) {
-                            updateGeminiUI(geminiData);
-                        }
-                    })
-                    .catch(e => console.error("Error auto-cargando Gemini:", e));
             }
 
             switchModalTab(initialTab);

@@ -415,18 +415,21 @@ from ai_analyzer import generate_ai_analysis, generate_live_ai_analysis, generat
 
 @app.route("/api/match/<match_id>")
 def api_match_detail(match_id):
-    all_m = fetch_live_matches_data() + fetch_matches_data()
-    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
+    from data_provider import get_match_by_id
+    match = get_match_by_id(match_id)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
     return jsonify(match)
 
 @app.route("/api/match/<match_id>/gemini_analysis")
 def api_match_gemini(match_id):
-    all_m = fetch_live_matches_data() + fetch_matches_data()
-    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
+    from data_provider import get_match_by_id
+    match = get_match_by_id(match_id)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
+
+    if match.get("ai_analysis") and match["ai_analysis"].get("is_gemini"):
+        return jsonify(match["ai_analysis"])
 
     sport = match.get("sport", "football")
     is_live = match.get("is_live", False)
@@ -449,9 +452,8 @@ def api_match_gemini(match_id):
 
 @app.route("/api/match/<match_id>/referee")
 def api_match_referee(match_id):
-    from data_provider import get_match_referee
-    all_m = fetch_live_matches_data() + fetch_matches_data()
-    match = next((m for m in all_m if m.get("id") == match_id or str(m.get("match_id")) == str(match_id)), None)
+    from data_provider import get_match_by_id, get_match_referee
+    match = get_match_by_id(match_id)
     if match and match.get("referee"):
         return jsonify({"referee": match["referee"]})
 
