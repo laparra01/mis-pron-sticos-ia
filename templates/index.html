@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1d2432">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Picks 90 GT">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='46'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='50' height='50' fill='%23ffffff'/%3E%3Cpolygon points='28,14 40,22 36,36 21,36 17,22' fill='%230f172a'/%3E%3Crect y='50' width='50' height='50' fill='%23ea580c'/%3E%3Cpath d='M 4 64 C 20 64 34 74 42 96' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3Crect x='50' width='15.3' height='100' fill='%234997D0'/%3E%3Crect x='65.3' width='15.4' height='100' fill='%23ffffff'/%3E%3Crect x='80.7' width='20' height='100' fill='%234997D0'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%230f172a' stroke-width='3'/%3E%3Cline x1='4' y1='50' x2='50' y2='50' stroke='%230f172a' stroke-width='3'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3C/svg%3E">
     <title>Picks 90 GT - Fútbol & NBA en Tiempo Real</title>
     <!-- Tailwind CSS CDN -->
@@ -70,9 +74,129 @@
         .animate-live {
             animation: pulse-live 1.8s infinite;
         }
+
+        @keyframes splash-progress {
+            0% { transform: translateX(-100%); width: 35%; }
+            50% { transform: translateX(60%); width: 65%; }
+            100% { transform: translateX(250%); width: 35%; }
+        }
+        .animate-splash-progress {
+            animation: splash-progress 1.3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+        }
     </style>
 </head>
 <body class="min-h-screen pb-16">
+
+    <!-- ============================================================== -->
+    <!-- PANTALLA DE CARGA INICIAL (SPLASH SCREEN NATIVA PICKS 90 GT)  -->
+    <!-- ============================================================== -->
+    <div id="app-splash-screen" class="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-[#1d2432] select-none transition-opacity duration-500 ease-out">
+        <div class="flex flex-col items-center text-center px-6 max-w-sm w-full">
+            <!-- Contenedor del Logo con halo luminoso -->
+            <div class="relative mb-5">
+                <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gray-950 border border-gray-800 flex items-center justify-center shadow-2xl shadow-cyan-500/25 p-2 relative">
+                    <svg viewBox="0 0 100 100" class="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-lg" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <clipPath id="splash-ball-clip">
+                                <circle cx="50" cy="50" r="46"/>
+                            </clipPath>
+                            <radialGradient id="splash-ball-lighting" cx="32%" cy="28%" r="70%">
+                                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+                                <stop offset="45%" stop-color="#ffffff" stop-opacity="0.05"/>
+                                <stop offset="85%" stop-color="#000000" stop-opacity="0.35"/>
+                                <stop offset="100%" stop-color="#000000" stop-opacity="0.6"/>
+                            </radialGradient>
+                            <linearGradient id="splash-bball-grad" x1="10%" y1="10%" x2="90%" y2="90%">
+                                <stop offset="0%" stop-color="#fb923c"/>
+                                <stop offset="40%" stop-color="#ea580c"/>
+                                <stop offset="100%" stop-color="#9a3412"/>
+                            </linearGradient>
+                            <linearGradient id="splash-soccer-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffffff"/>
+                                <stop offset="100%" stop-color="#e2e8f0"/>
+                            </linearGradient>
+                        </defs>
+                        <g clip-path="url(#splash-ball-clip)">
+                            <!-- 1. Cuarto Superior Izquierdo: FÚTBOL -->
+                            <rect x="0" y="0" width="50" height="50" fill="url(#splash-soccer-grad)"/>
+                            <polygon points="28,14 40,22 36,36 21,36 17,22" fill="#0f172a"/>
+                            <line x1="28" y1="14" x2="28" y2="4" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                            <line x1="40" y1="22" x2="50" y2="20" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                            <line x1="36" y1="36" x2="44" y2="50" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                            <line x1="21" y1="36" x2="12" y2="48" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                            <line x1="17" y1="22" x2="4" y2="22" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round"/>
+                            <polygon points="4,4 14,4 8,15 4,14" fill="#0f172a"/>
+                            <polygon points="4,42 12,48 4,50" fill="#0f172a"/>
+
+                            <!-- 2. Cuarto Inferior Izquierdo: BASKETBALL -->
+                            <rect x="0" y="50" width="50" height="50" fill="url(#splash-bball-grad)"/>
+                            <path d="M 4 64 C 20 64 34 74 42 96" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M 22 50 C 26 66 22 80 12 94" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="18" cy="58" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="28" cy="62" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="36" cy="68" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="14" cy="74" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="28" cy="78" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="34" cy="88" r="1" fill="#7c2d12" opacity="0.6"/>
+                            <circle cx="22" cy="86" r="1" fill="#7c2d12" opacity="0.6"/>
+
+                            <!-- 3. Mitad Derecha: BANDERA DE GUATEMALA -->
+                            <rect x="50" y="0" width="15.3" height="100" fill="#4997D0"/>
+                            <rect x="65.3" y="0" width="15.4" height="100" fill="#FFFFFF"/>
+                            <rect x="80.7" y="0" width="20" height="100" fill="#4997D0"/>
+
+                            <!-- Escudo Nacional de Guatemala -->
+                            <path d="M 69 56 C 66.5 50 67 43 73 39" fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round"/>
+                            <path d="M 77 56 C 79.5 50 79 43 73 39" fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round"/>
+                            <circle cx="68" cy="46" r="1" fill="#15803d"/>
+                            <circle cx="78" cy="46" r="1" fill="#15803d"/>
+                            <circle cx="69.5" cy="52" r="1" fill="#15803d"/>
+                            <circle cx="76.5" cy="52" r="1" fill="#15803d"/>
+                            <line x1="68" y1="44" x2="78" y2="54" stroke="#78350f" stroke-width="1" stroke-linecap="round"/>
+                            <line x1="78" y1="44" x2="68" y2="54" stroke="#78350f" stroke-width="1" stroke-linecap="round"/>
+                            <rect x="70.5" y="46.5" width="5" height="6.5" rx="1" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8"/>
+                            <line x1="71.5" y1="48.5" x2="74.5" y2="48.5" stroke="#a16207" stroke-width="0.6"/>
+                            <line x1="71.5" y1="50.5" x2="74.5" y2="50.5" stroke="#a16207" stroke-width="0.6"/>
+                            <path d="M 73 42 C 71 41 70.5 44 72 46.5 L 74 46.5 C 75.5 44 75 41 73 42 Z" fill="#047857"/>
+                            <circle cx="73" cy="44.5" r="1.1" fill="#dc2626"/>
+                            <path d="M 72 46.5 Q 69.5 53 72 60" fill="none" stroke="#047857" stroke-width="1.6" stroke-linecap="round"/>
+
+                            <!-- Divisores Principales -->
+                            <line x1="50" y1="4" x2="50" y2="96" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+                            <line x1="4" y1="50" x2="50" y2="50" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+
+                            <!-- Iluminación Esférica 3D -->
+                            <circle cx="50" cy="50" r="46" fill="url(#splash-ball-lighting)" pointer-events="none"/>
+                        </g>
+                        <circle cx="50" cy="50" r="46" fill="none" stroke="#0f172a" stroke-width="3"/>
+                    </svg>
+                </div>
+                <!-- Resplandor dinámico -->
+                <div class="absolute -inset-2 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-cyan-500/25 to-blue-500/20 blur-md -z-10 animate-pulse"></div>
+            </div>
+
+            <!-- Nombre de la App -->
+            <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center justify-center gap-1.5 mb-1.5 font-sans">
+                Picks 90 <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">GT</span>
+            </h1>
+
+            <!-- Leyenda oficial -->
+            <p class="text-xs sm:text-sm text-gray-300 font-medium tracking-wide mb-6">
+                Fútbol & NBA en Tiempo Real
+            </p>
+
+            <!-- Barra animada de progreso -->
+            <div class="w-48 sm:w-56 h-1.5 bg-gray-900 rounded-full overflow-hidden border border-gray-800/80 p-0.5 shadow-inner mb-3">
+                <div class="h-full bg-gradient-to-r from-emerald-400 via-cyan-400 to-emerald-400 rounded-full animate-splash-progress"></div>
+            </div>
+
+            <span class="text-[11px] text-gray-400 font-mono tracking-wider flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                <span>Cargando pronósticos...</span>
+            </span>
+        </div>
+    </div>
+
 
     <!-- Top Navigation -->
     <header class="border-b border-gray-800 bg-gray-900/95 backdrop-blur sticky top-0 z-30 shadow-md">
@@ -5319,6 +5443,35 @@
             document.addEventListener('visibilitychange', () => {
                 if (!document.hidden) sendHeartbeat();
             });
+        })();
+
+        // ==============================================================
+        // DESVANECIMIENTO AUTOMÁTICO DE PANTALLA DE CARGA (SPLASH SCREEN)
+        // ==============================================================
+        (function initSplashScreen() {
+            let dismissed = false;
+            function dismissSplash() {
+                if (dismissed) return;
+                dismissed = true;
+                const splash = document.getElementById('app-splash-screen');
+                if (!splash) return;
+                splash.style.opacity = '0';
+                splash.style.pointerEvents = 'none';
+                setTimeout(() => {
+                    if (splash && splash.parentNode) {
+                        splash.parentNode.removeChild(splash);
+                    }
+                }, 520);
+            }
+
+            // Desvanecer cuando todo el DOM e imágenes iniciales estén listos (mínimo 400ms para lucir la marca)
+            if (document.readyState === 'complete') {
+                setTimeout(dismissSplash, 450);
+            } else {
+                window.addEventListener('load', () => setTimeout(dismissSplash, 450));
+            }
+            // Respaldo de seguridad garantizado (máximo 2.2s)
+            setTimeout(dismissSplash, 2200);
         })();
     </script>
 </body>
