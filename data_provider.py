@@ -1759,6 +1759,11 @@ def check_and_auto_update_scraped_matches(max_age_hours=6):
     Si están desactualizados o faltan, lanza los scrapers en un hilo en segundo plano,
     sin bloquear la carga de la página ni la experiencia del usuario.
     """
+    # En la nube (Render con 512MB RAM), el scraping lo realiza GitHub Actions de forma aislada.
+    # Evitamos ejecutar scrapers pesados en el proceso web para no exceder la memoria.
+    if os.environ.get("RENDER") or os.environ.get("RENDER_EXTERNAL_URL"):
+        return
+
     global _last_auto_scrape_check
     import time
     now = time.time()

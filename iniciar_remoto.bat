@@ -6,7 +6,9 @@ echo =======================================================
 echo.
 
 set "PY_CMD=python"
-if exist "C:\Users\Jonathan Laparra\miniconda3\python.exe" (
+if exist "C:\Users\Jonathan Laparra\anaconda3\python.exe" (
+    set "PY_CMD=C:\Users\Jonathan Laparra\anaconda3\python.exe"
+) else if exist "C:\Users\Jonathan Laparra\miniconda3\python.exe" (
     set "PY_CMD=C:\Users\Jonathan Laparra\miniconda3\python.exe"
 )
 
