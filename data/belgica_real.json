@@ -3,7 +3,7 @@
   "league_id": 40,
   "country": "Bélgica",
   "country_code": "be",
-  "last_updated": "2026-10-27T21:42:30.471467",
+  "last_updated": "2026-10-28T16:25:39.638697",
   "total_fixtures": 12,
   "team_histories": {
     "Anderlecht": [
@@ -7084,18 +7084,18 @@
         "country": "Belgium",
         "country_code": "BEL",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
-        "matches": 45,
-        "yellow_cards_per_match": 3.91,
-        "yellow_cards_total": 176,
+        "matches": 44,
+        "yellow_cards_per_match": 3.89,
+        "yellow_cards_total": 171,
         "yellow_cards_avg_league": 3.8,
         "yellow_cards_tendency": "average",
         "red_cards_total": 6,
         "penalties_total": 16,
         "fouls_per_match": 22.7,
-        "fouls_avg_league": 22.2,
+        "fouls_avg_league": 22.1,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 3.91 amarillas y 22.69 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.89 amarillas y 22.73 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

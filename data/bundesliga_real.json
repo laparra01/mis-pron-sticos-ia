@@ -3,7 +3,7 @@
   "league_id": 54,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-27T21:42:16.414608",
+  "last_updated": "2026-10-28T16:25:12.893286",
   "total_fixtures": 12,
   "team_histories": {
     "1. FC Köln": [
@@ -6120,6 +6120,21 @@
         ],
         "head_to_head": [
           {
+            "date": "27/10/2026",
+            "competition": "DFB Pokal",
+            "tournament": "DFB Pokal",
+            "match_home": "1. FC Köln",
+            "match_away": "Union Berlin",
+            "home_id": "8722",
+            "away_id": "8149",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8722.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8149.png",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "winner": "1. FC Köln"
+          },
+          {
             "date": "02/05/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -6178,21 +6193,6 @@
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Union Berlin"
-          },
-          {
-            "date": "04/03/2023",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Union Berlin",
-            "match_away": "1. FC Köln",
-            "home_id": "8149",
-            "away_id": "8722",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8149.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8722.png",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -6243,10 +6243,10 @@
         "projected_cards": 5.1,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Union Berlin 2 victorias • 2 empates • 1. FC Köln 1 victorias"
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 3.4,
+          "text": "Union Berlin 2 victorias • 1 empates • 1. FC Köln 2 victorias"
         }
       },
       "referee": null,

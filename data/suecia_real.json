@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-10-27T21:42:43.457405",
+  "last_updated": "2026-10-28T16:26:03.774329",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2989,7 +2989,7 @@
         "matches": 37,
         "yellow_cards_per_match": 3.49,
         "yellow_cards_total": 129,
-        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_avg_league": 3.6,
         "yellow_cards_tendency": "average",
         "red_cards_total": 4,
         "penalties_total": 5,
@@ -3437,7 +3437,7 @@
         "matches": 40,
         "yellow_cards_per_match": 3.13,
         "yellow_cards_total": 125,
-        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_avg_league": 3.6,
         "yellow_cards_tendency": "below",
         "red_cards_total": 0,
         "penalties_total": 5,
@@ -3885,7 +3885,7 @@
         "matches": 41,
         "yellow_cards_per_match": 3.85,
         "yellow_cards_total": 158,
-        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_avg_league": 3.6,
         "yellow_cards_tendency": "above",
         "red_cards_total": 7,
         "penalties_total": 2,
@@ -4330,18 +4330,18 @@
         "country": "Sweden",
         "country_code": "SWE",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
-        "matches": 41,
-        "yellow_cards_per_match": 3.29,
-        "yellow_cards_total": 135,
-        "yellow_cards_avg_league": 3.59,
+        "matches": 40,
+        "yellow_cards_per_match": 3.33,
+        "yellow_cards_total": 133,
+        "yellow_cards_avg_league": 3.6,
         "yellow_cards_tendency": "below",
         "red_cards_total": 3,
-        "penalties_total": 14,
-        "fouls_per_match": 24.7,
+        "penalties_total": 13,
+        "fouls_per_match": 24.6,
         "fouls_avg_league": 24.9,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (3.29 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (3.33 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4773,7 +4773,25 @@
           "text": "Hammarby 2 victorias • 1 empates • Sirius 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Glenn Nyberg",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 27,
+        "yellow_cards_per_match": 3.89,
+        "yellow_cards_total": 105,
+        "yellow_cards_avg_league": 3.6,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.89 amarillas y 26.67 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5203,7 +5221,25 @@
           "text": "Kalmar FF 1 victorias • 2 empates • GAIS 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fredrik Klitte",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 39,
+        "yellow_cards_per_match": 4.1,
+        "yellow_cards_total": 160,
+        "yellow_cards_avg_league": 3.6,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 27.7,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.1 amarillas y 27.67 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5633,7 +5669,25 @@
           "text": "Örgryte 2 victorias • 1 empates • Mjällby 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mohammed Al Hakim",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 42,
+        "yellow_cards_per_match": 2.81,
+        "yellow_cards_total": 118,
+        "yellow_cards_avg_league": 3.6,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.81 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

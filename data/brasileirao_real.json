@@ -3,7 +3,7 @@
   "league_id": 268,
   "country": "Brasil",
   "country_code": "br",
-  "last_updated": "2026-10-27T21:41:56.029187",
+  "last_updated": "2026-10-28T16:24:30.595352",
   "total_fixtures": 15,
   "team_histories": {
     "Athletico Paranaense": [
@@ -8515,7 +8515,25 @@
           "text": "Chapecoense 0 victorias • 1 empates • Mirassol 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lucas Paulo Torezin",
+        "country": "Brazil",
+        "country_code": "BRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
+        "matches": 14,
+        "yellow_cards_per_match": 6.14,
+        "yellow_cards_total": 86,
+        "yellow_cards_avg_league": 4.9,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 28.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.14 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8945,7 +8963,25 @@
           "text": "Internacional 2 victorias • 2 empates • Coritiba 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fernando Antonio Mendes de Salles Nascimento Fill",
+        "country": "Brazil",
+        "country_code": "BRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
+        "matches": 22,
+        "yellow_cards_per_match": 5.27,
+        "yellow_cards_total": 116,
+        "yellow_cards_avg_league": 4.9,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 4,
+        "fouls_per_match": 27.9,
+        "fouls_avg_league": 28.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.27 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9375,7 +9411,25 @@
           "text": "Athletico Paranaense 2 victorias • 0 empates • Vasco da Gama 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ramon Abatti Abel",
+        "country": "Brazil",
+        "country_code": "BRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
+        "matches": 37,
+        "yellow_cards_per_match": 5.11,
+        "yellow_cards_total": 189,
+        "yellow_cards_avg_league": 4.82,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 11,
+        "fouls_per_match": 29.5,
+        "fouls_avg_league": 27.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.11 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9805,7 +9859,25 @@
           "text": "Flamengo 3 victorias • 1 empates • Grêmio 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Paulo Cezar Zanovelli Da Silva",
+        "country": "Brazil",
+        "country_code": "BRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
+        "matches": 33,
+        "yellow_cards_per_match": 5.24,
+        "yellow_cards_total": 173,
+        "yellow_cards_avg_league": 4.82,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 13,
+        "fouls_per_match": 29.8,
+        "fouls_avg_league": 27.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.24 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
