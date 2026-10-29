@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-10-28T22:05:45.411451",
+  "last_updated": "2026-10-29T16:33:40.925418",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -3617,7 +3617,25 @@
           "text": "Villarreal 5 victorias • 0 empates • Espanyol 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José María Sánchez Martínez",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.67,
+        "yellow_cards_total": 154,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.67 amarillas y 26.69 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

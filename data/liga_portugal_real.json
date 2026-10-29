@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-28T22:05:55.883116",
+  "last_updated": "2026-10-29T16:33:50.628553",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -3299,7 +3299,25 @@
           "text": "Casa Pia AC 0 victorias • 0 empates • Sporting CP 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Fonseca",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Moreirense 1 victorias • 3 empates • Estrela da Amadora 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joao Pinheiro",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

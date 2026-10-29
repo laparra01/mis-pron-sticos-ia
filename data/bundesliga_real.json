@@ -3,7 +3,7 @@
   "league_id": 54,
   "country": "Alemania",
   "country_code": "de",
-  "last_updated": "2026-10-28T22:05:50.090635",
+  "last_updated": "2026-10-29T16:33:44.354354",
   "total_fixtures": 12,
   "team_histories": {
     "1. FC Köln": [
@@ -3254,7 +3254,25 @@
           "text": "Elversberg 0 victorias • 1 empates • Mainz 05 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sascha Stegemann",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 29,
+        "yellow_cards_per_match": 3.17,
+        "yellow_cards_total": 92,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 8,
+        "fouls_per_match": 20.6,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.17 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3684,7 +3702,25 @@
           "text": "Augsburg 2 victorias • 2 empates • Freiburg 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Christian Dingert",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 24,
+        "yellow_cards_per_match": 3.79,
+        "yellow_cards_total": 91,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 3,
+        "fouls_per_match": 22.6,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.79 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4114,7 +4150,25 @@
           "text": "Bayer Leverkusen 1 victorias • 2 empates • VfB Stuttgart 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Benjamin Brand",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 30,
+        "yellow_cards_per_match": 3.83,
+        "yellow_cards_total": 115,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 7,
+        "fouls_per_match": 20.8,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.83 amarillas y 20.79 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4529,7 +4583,25 @@
           "text": "Borussia Mönchengladbach 4 victorias • 0 empates • Paderborn 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Timo Gerach",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 13,
+        "yellow_cards_per_match": 4.77,
+        "yellow_cards_total": 62,
+        "yellow_cards_avg_league": 4.62,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 9,
+        "fouls_per_match": 22.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.77 amarillas y 22.15 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4959,7 +5031,25 @@
           "text": "Schalke 04 0 victorias • 0 empates • RB Leipzig 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Max Burda",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 27,
+        "yellow_cards_per_match": 5.0,
+        "yellow_cards_total": 135,
+        "yellow_cards_avg_league": 4.62,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 11,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.0 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5389,7 +5479,25 @@
           "text": "Werder Bremen 1 victorias • 0 empates • Hoffenheim 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Tobias Reichel",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 22,
+        "yellow_cards_per_match": 3.95,
+        "yellow_cards_total": 87,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 8,
+        "fouls_per_match": 23.4,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.95 amarillas y 23.35 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5819,7 +5927,25 @@
           "text": "Bayern München 3 victorias • 2 empates • Borussia Dortmund 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Tobias Stieler",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 29,
+        "yellow_cards_per_match": 3.34,
+        "yellow_cards_total": 97,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 8,
+        "fouls_per_match": 19.6,
+        "fouls_avg_league": 21.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.34 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6249,7 +6375,25 @@
           "text": "Union Berlin 2 victorias • 1 empates • 1. FC Köln 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Richard Hempel",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 23,
+        "yellow_cards_per_match": 5.65,
+        "yellow_cards_total": 130,
+        "yellow_cards_avg_league": 4.62,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 5,
+        "fouls_per_match": 27.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.65 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6679,7 +6823,25 @@
           "text": "Eintracht Frankfurt 3 victorias • 1 empates • Hamburger SV 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Florian Exner",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 12,
+        "yellow_cards_per_match": 4.67,
+        "yellow_cards_total": 56,
+        "yellow_cards_avg_league": 4.62,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.67 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

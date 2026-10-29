@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-28T22:05:41.167530",
+  "last_updated": "2026-10-29T16:33:34.822602",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -5728,6 +5728,21 @@
         ],
         "head_to_head": [
           {
+            "date": "28/10/2026",
+            "competition": "EFL Cup",
+            "tournament": "EFL Cup",
+            "match_home": "Manchester City",
+            "match_away": "Brighton & Hove Albion",
+            "home_id": "8456",
+            "away_id": "10204",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8456.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10204.png",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
             "date": "07/01/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -5786,21 +5801,6 @@
             "away_score": 1,
             "score": "2 - 1",
             "winner": "Brighton & Hove Albion"
-          },
-          {
-            "date": "25/04/2024",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Brighton & Hove Albion",
-            "match_away": "Manchester City",
-            "home_id": "10204",
-            "away_id": "8456",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10204.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8456.png",
-            "home_score": 0,
-            "away_score": 4,
-            "score": "0 - 4",
-            "winner": "Manchester City"
           }
         ],
         "home_corner_stats": {
@@ -5850,11 +5850,11 @@
         "projected_corners": 8.8,
         "projected_cards": 3.0,
         "summary": {
-          "home_wins": 1,
-          "draws": 2,
+          "home_wins": 0,
+          "draws": 3,
           "away_wins": 2,
           "avg_goals": 3.2,
-          "text": "Manchester City 1 victorias • 2 empates • Brighton & Hove Albion 2 victorias"
+          "text": "Manchester City 0 victorias • 3 empates • Brighton & Hove Albion 2 victorias"
         }
       },
       "referee": {

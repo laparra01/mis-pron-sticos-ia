@@ -3,7 +3,7 @@
   "league_id": 38,
   "country": "Austria",
   "country_code": "at",
-  "last_updated": "2026-10-28T22:06:16.472048",
+  "last_updated": "2026-10-29T16:34:14.758978",
   "total_fixtures": 12,
   "team_histories": {
     "Altach": [
@@ -5764,6 +5764,21 @@
         ],
         "head_to_head": [
           {
+            "date": "28/10/2026",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "LASK",
+            "match_away": "Ried",
+            "home_id": "9977",
+            "away_id": "10017",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9977.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10017.png",
+            "home_score": 5,
+            "away_score": 4,
+            "score": "5 - 4",
+            "winner": "LASK"
+          },
+          {
             "date": "14/08/2026",
             "competition": "Bundesliga",
             "tournament": "Bundesliga",
@@ -5822,21 +5837,6 @@
             "away_score": 3,
             "score": "1 - 3",
             "winner": "Ried"
-          },
-          {
-            "date": "18/02/2023",
-            "competition": "Bundesliga",
-            "tournament": "Bundesliga",
-            "match_home": "Ried",
-            "match_away": "LASK",
-            "home_id": "10017",
-            "away_id": "9977",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10017.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9977.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -5887,10 +5887,10 @@
         "projected_cards": 4.0,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 3.2,
-          "text": "Ried 1 victorias • 2 empates • LASK 2 victorias"
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 4.6,
+          "text": "Ried 1 victorias • 1 empates • LASK 3 victorias"
         }
       },
       "referee": null,
