@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-29T16:34:04.563290",
+  "last_updated": "2026-10-29T22:18:54.959670",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2345,7 +2345,25 @@
           "text": "Grasshopper 1 victorias • 2 empates • FC Vaduz 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luca Piccolo",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 29,
+        "yellow_cards_per_match": 5.17,
+        "yellow_cards_total": 150,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 18,
+        "fouls_per_match": 28.2,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.17 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2775,7 +2793,25 @@
           "text": "St. Gallen 3 victorias • 1 empates • Servette 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mirel Turkes",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 16,
+        "yellow_cards_per_match": 5.06,
+        "yellow_cards_total": 81,
+        "yellow_cards_avg_league": 4.86,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 9,
+        "fouls_per_match": 29.2,
+        "fouls_avg_league": 26.9,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.06 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

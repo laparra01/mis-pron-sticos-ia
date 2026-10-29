@@ -3,7 +3,7 @@
   "league_id": 61,
   "country": "Portugal",
   "country_code": "pt",
-  "last_updated": "2026-10-29T16:33:50.628553",
+  "last_updated": "2026-10-29T22:18:42.348135",
   "total_fixtures": 12,
   "team_histories": {
     "Académico Viseu": [
@@ -4195,7 +4195,25 @@
           "text": "FC Porto 4 victorias • 0 empates • Estoril 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Nogueira",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4625,7 +4643,25 @@
           "text": "Arouca 4 victorias • 0 empates • Nacional 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luis Godinho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5025,7 +5061,25 @@
           "text": "Académico Viseu 1 victorias • 0 empates • Rio Ave 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joao Goncalves",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5455,7 +5509,25 @@
           "text": "Marítimo 1 victorias • 2 empates • Santa Clara 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Macedo",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5756,6 +5828,21 @@
         ],
         "head_to_head": [
           {
+            "date": "29/10/2026",
+            "competition": "League Cup",
+            "tournament": "League Cup",
+            "match_home": "Braga",
+            "match_away": "Famalicão",
+            "home_id": "10264",
+            "away_id": "1634",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10264.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1634.png",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
             "date": "19/04/2026",
             "competition": "Liga Portugal",
             "tournament": "Liga Portugal",
@@ -5814,21 +5901,6 @@
             "away_score": 3,
             "score": "3 - 3",
             "winner": "Empate"
-          },
-          {
-            "date": "18/01/2024",
-            "competition": "Liga Portugal",
-            "tournament": "Liga Portugal",
-            "match_home": "Famalicão",
-            "match_away": "Braga",
-            "home_id": "1634",
-            "away_id": "10264",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1634.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10264.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "Braga"
           }
         ],
         "home_corner_stats": {
@@ -5878,14 +5950,32 @@
         "projected_corners": 8.4,
         "projected_cards": 3.6,
         "summary": {
-          "home_wins": 2,
-          "draws": 3,
+          "home_wins": 1,
+          "draws": 4,
           "away_wins": 0,
-          "avg_goals": 3.6,
-          "text": "Braga 2 victorias • 3 empates • Famalicão 0 victorias"
+          "avg_goals": 3.8,
+          "text": "Braga 1 victorias • 4 empates • Famalicão 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "David Silva",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6270,7 +6360,25 @@
           "text": "Benfica 2 victorias • 0 empates • Alverca 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bruno Costa",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6700,7 +6808,25 @@
           "text": "Gil Vicente 0 victorias • 1 empates • Vitória de Guimarães 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Helder Carvalho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

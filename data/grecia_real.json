@@ -3,7 +3,7 @@
   "league_id": 135,
   "country": "Grecia",
   "country_code": "gr",
-  "last_updated": "2026-10-29T16:34:21.107073",
+  "last_updated": "2026-10-29T22:19:09.947268",
   "total_fixtures": 12,
   "team_histories": {
     "AEK Athens": [
@@ -4759,6 +4759,21 @@
         ],
         "head_to_head": [
           {
+            "date": "29/10/2026",
+            "competition": "Cup Group Stage",
+            "tournament": "Cup Group Stage",
+            "match_home": "NFC Volos",
+            "match_away": "Atromitos",
+            "home_id": "885256",
+            "away_id": "10187",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/885256.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10187.png",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Atromitos"
+          },
+          {
             "date": "19/01/2026",
             "competition": "Super League",
             "tournament": "Super League",
@@ -4817,21 +4832,6 @@
             "away_score": 1,
             "score": "0 - 1",
             "winner": "Atromitos"
-          },
-          {
-            "date": "05/10/2024",
-            "competition": "Super League",
-            "tournament": "Super League",
-            "match_home": "Atromitos",
-            "match_away": "NFC Volos",
-            "home_id": "10187",
-            "away_id": "885256",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10187.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/885256.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "NFC Volos"
           }
         ],
         "home_corner_stats": {
@@ -4881,11 +4881,11 @@
         "projected_corners": 7.3,
         "projected_cards": 6.1,
         "summary": {
-          "home_wins": 2,
+          "home_wins": 3,
           "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.0,
-          "text": "Atromitos 2 victorias • 1 empates • NFC Volos 2 victorias"
+          "away_wins": 1,
+          "avg_goals": 2.2,
+          "text": "Atromitos 3 victorias • 1 empates • NFC Volos 1 victorias"
         }
       },
       "referee": {
