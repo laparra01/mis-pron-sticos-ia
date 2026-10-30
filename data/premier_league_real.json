@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-29T22:18:25.770218",
+  "last_updated": "2026-10-30T16:26:28.297259",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -7520,6 +7520,21 @@
         ],
         "head_to_head": [
           {
+            "date": "29/10/2026",
+            "competition": "EFL Cup",
+            "tournament": "EFL Cup",
+            "match_home": "Everton",
+            "match_away": "Newcastle United",
+            "home_id": "8668",
+            "away_id": "10261",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8668.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10261.png",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Everton"
+          },
+          {
             "date": "28/02/2026",
             "competition": "Premier League",
             "tournament": "Premier League",
@@ -7578,21 +7593,6 @@
             "away_score": 0,
             "score": "0 - 0",
             "winner": "Empate"
-          },
-          {
-            "date": "02/04/2024",
-            "competition": "Premier League",
-            "tournament": "Premier League",
-            "match_home": "Newcastle United",
-            "match_away": "Everton",
-            "home_id": "10261",
-            "away_id": "8668",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10261.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8668.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
           }
         ],
         "home_corner_stats": {
@@ -7643,10 +7643,10 @@
         "projected_cards": 4.9,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.6,
-          "text": "Newcastle United 1 victorias • 2 empates • Everton 2 victorias"
+          "draws": 1,
+          "away_wins": 3,
+          "avg_goals": 3.0,
+          "text": "Newcastle United 1 victorias • 1 empates • Everton 3 victorias"
         }
       },
       "referee": {

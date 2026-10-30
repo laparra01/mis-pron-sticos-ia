@@ -3,7 +3,7 @@
   "league_id": 112,
   "country": "Argentina",
   "country_code": "ar",
-  "last_updated": "2026-10-29T22:18:22.176719",
+  "last_updated": "2026-10-30T16:26:24.480169",
   "total_fixtures": 15,
   "team_histories": {
     "Aldosivi": [
@@ -6048,18 +6048,18 @@
         "country": "Argentina",
         "country_code": "ARG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
-        "matches": 65,
-        "yellow_cards_per_match": 5.2,
-        "yellow_cards_total": 338,
+        "matches": 64,
+        "yellow_cards_per_match": 5.19,
+        "yellow_cards_total": 332,
         "yellow_cards_avg_league": 5.19,
         "yellow_cards_tendency": "average",
-        "red_cards_total": 13,
+        "red_cards_total": 12,
         "penalties_total": 15,
-        "fouls_per_match": 24.5,
+        "fouls_per_match": 24.4,
         "fouls_avg_league": 24.7,
         "rigor_level": "Riguroso / Tarjetero",
         "rigor_color": "rose",
-        "verdict": "Colegiado tarjetero (5.2 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "verdict": "Colegiado tarjetero (5.19 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
         "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"

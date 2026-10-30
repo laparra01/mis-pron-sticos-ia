@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-29T22:18:54.959670",
+  "last_updated": "2026-10-30T16:26:53.033717",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -3241,7 +3241,25 @@
           "text": "Luzern 1 victorias • 3 empates • Sion 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alessandro Dudic",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.83,
+        "yellow_cards_total": 145,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 18,
+        "fouls_per_match": 25.3,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.83 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3671,7 +3689,25 @@
           "text": "Young Boys 5 victorias • 0 empates • FC Zürich 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Urs Schnyder",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 40,
+        "yellow_cards_per_match": 4.3,
+        "yellow_cards_total": 172,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 16,
+        "fouls_per_match": 24.8,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.3 amarillas y 24.79 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

@@ -3,7 +3,7 @@
   "league_id": 10282,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-10-29T22:18:07.460693",
+  "last_updated": "2026-10-30T16:26:05.941914",
   "total_fixtures": 2,
   "team_histories": {
     "Atlanta United 2": [
@@ -5207,7 +5207,25 @@
           "text": "Ventura County FC 2 victorias • 2 empates • Los Angeles FC II 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Atahan Yaya",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 21,
+        "yellow_cards_per_match": 4.38,
+        "yellow_cards_total": 92,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 6,
+        "fouls_per_match": 24.7,
+        "fouls_avg_league": 27.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.38 amarillas y 24.71 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5607,7 +5625,25 @@
           "text": "Chattanooga FC 2 victorias • 0 empates • Columbus Crew 2 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "John Griggs",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 19,
+        "yellow_cards_per_match": 4.16,
+        "yellow_cards_total": 79,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 5,
+        "fouls_per_match": 26.9,
+        "fouls_avg_league": 27.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.16 amarillas y 26.89 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

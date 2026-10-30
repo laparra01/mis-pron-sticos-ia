@@ -3,7 +3,7 @@
   "league_id": 48,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-10-29T22:18:27.827691",
+  "last_updated": "2026-10-30T16:26:30.479736",
   "total_fixtures": 12,
   "team_histories": {
     "Birmingham City": [
@@ -7360,22 +7360,22 @@
         }
       },
       "referee": {
-        "name": "Anthony Backhouse",
+        "name": "John Busby",
         "country": "England",
         "country_code": "ENG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
-        "matches": 41,
-        "yellow_cards_per_match": 4.37,
-        "yellow_cards_total": 179,
+        "matches": 46,
+        "yellow_cards_per_match": 3.57,
+        "yellow_cards_total": 164,
         "yellow_cards_avg_league": 3.78,
-        "yellow_cards_tendency": "above",
-        "red_cards_total": 1,
-        "penalties_total": 8,
-        "fouls_per_match": 21.1,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 9,
+        "fouls_per_match": 21.2,
         "fouls_avg_league": 22.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.37 amarillas y 21.05 faltas por encuentro.",
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.57 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

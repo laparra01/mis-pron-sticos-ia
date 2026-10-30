@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-10-29T22:18:18.519674",
+  "last_updated": "2026-10-30T16:26:21.142300",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -2951,7 +2951,25 @@
           "text": "Real Potosí 1 victorias • 0 empates • Independiente Petrolero 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Guildo Quenta",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 22,
+        "yellow_cards_per_match": 6.68,
+        "yellow_cards_total": 147,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 9,
+        "penalties_total": 6,
+        "fouls_per_match": 25.4,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.68 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3381,7 +3399,25 @@
           "text": "Oriente Petrolero 2 victorias • 1 empates • Aurora 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Cristian Condori",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 32,
+        "yellow_cards_per_match": 6.38,
+        "yellow_cards_total": 204,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 11,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.38 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3781,7 +3817,25 @@
           "text": "CDT Real Oruro 2 victorias • 0 empates • Nacional Potosí 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Vargas",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4181,7 +4235,25 @@
           "text": "ABB 1 victorias • 0 empates • San Antonio Bulo Bulo 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Dilio Rodríguez",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 35,
+        "yellow_cards_per_match": 5.11,
+        "yellow_cards_total": 179,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 15,
+        "penalties_total": 15,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.11 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4611,7 +4683,25 @@
           "text": "The Strongest 3 victorias • 1 empates • GV San José 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ivo Méndez",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 46,
+        "yellow_cards_per_match": 4.8,
+        "yellow_cards_total": 221,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 23,
+        "penalties_total": 32,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.8 amarillas y 23.78 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5041,7 +5131,25 @@
           "text": "Guabirá 0 victorias • 0 empates • Bolívar 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bladimir Rueda",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 20,
+        "yellow_cards_per_match": 6.8,
+        "yellow_cards_total": 136,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.8 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5471,7 +5579,25 @@
           "text": "Universitario de Vinto 1 victorias • 0 empates • Always Ready 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mijail Lopez",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 13,
+        "yellow_cards_per_match": 5.08,
+        "yellow_cards_total": 66,
+        "yellow_cards_avg_league": 5.69,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 22.9,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.08 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5489,10 +5615,10 @@
       "away_id": "49678",
       "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1074622.png",
       "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49678.png",
-      "date": "Lun 2 Nov, 13:00",
+      "date": "Lun 2 Nov, 15:15",
       "date_iso": "2026-11-02",
-      "time": "13:00",
-      "timestamp": 1793646000,
+      "time": "15:15",
+      "timestamp": 1793654100,
       "timezone": "America/Guatemala",
       "round": "24",
       "h2h": {
