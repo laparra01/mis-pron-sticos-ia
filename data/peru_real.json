@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-10-31T15:35:20.729116",
+  "last_updated": "2026-10-31T20:52:09.518318",
   "total_fixtures": 15,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -3269,7 +3269,25 @@
           "text": "Alianza Atlético 1 victorias • 0 empates • ADC Juan Pablo II 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mike Israel Palomino",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 41,
+        "yellow_cards_per_match": 4.59,
+        "yellow_cards_total": 188,
+        "yellow_cards_avg_league": 4.65,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 11,
+        "penalties_total": 13,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.59 amarillas y 23.65 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
