@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-10-30T21:53:25.304020",
+  "last_updated": "2026-10-31T15:36:31.964428",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -3752,9 +3752,9 @@
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 52,
-        "yellow_cards_per_match": 2.96,
-        "yellow_cards_total": 154,
+        "matches": 51,
+        "yellow_cards_per_match": 2.9,
+        "yellow_cards_total": 148,
         "yellow_cards_avg_league": 3.11,
         "yellow_cards_tendency": "average",
         "red_cards_total": 3,
@@ -3763,7 +3763,7 @@
         "fouls_avg_league": 21.4,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (2.96 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (2.9 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

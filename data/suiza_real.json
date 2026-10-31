@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-10-30T21:53:21.428421",
+  "last_updated": "2026-10-31T15:36:28.933452",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2806,7 +2806,7 @@
         "red_cards_total": 1,
         "penalties_total": 9,
         "fouls_per_match": 29.2,
-        "fouls_avg_league": 26.9,
+        "fouls_avg_league": 26.8,
         "rigor_level": "Riguroso / Tarjetero",
         "rigor_color": "rose",
         "verdict": "Colegiado tarjetero (5.06 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
@@ -3246,18 +3246,18 @@
         "country": "Switzerland",
         "country_code": "SUI",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
-        "matches": 30,
-        "yellow_cards_per_match": 4.83,
-        "yellow_cards_total": 145,
+        "matches": 29,
+        "yellow_cards_per_match": 4.79,
+        "yellow_cards_total": 139,
         "yellow_cards_avg_league": 4.49,
         "yellow_cards_tendency": "above",
         "red_cards_total": 8,
-        "penalties_total": 18,
+        "penalties_total": 17,
         "fouls_per_match": 25.3,
         "fouls_avg_league": 25.5,
         "rigor_level": "Riguroso / Tarjetero",
         "rigor_color": "rose",
-        "verdict": "Colegiado tarjetero (4.83 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "verdict": "Colegiado tarjetero (4.79 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
         "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4137,7 +4137,25 @@
           "text": "Lausanne 1 victorias • 2 empates • Thun 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fedayi San",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 31,
+        "yellow_cards_per_match": 4.94,
+        "yellow_cards_total": 153,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 21,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.94 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4567,7 +4585,25 @@
           "text": "Lugano 4 victorias • 1 empates • Basel 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Johannes von Mandach",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 32,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 13,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 25.5,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.91 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
