@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-11-02T19:57:08.875645",
+  "last_updated": "2026-11-03T17:29:25.356038",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -3752,8 +3752,8 @@
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 31,
-        "yellow_cards_per_match": 2.94,
+        "matches": 30,
+        "yellow_cards_per_match": 3.03,
         "yellow_cards_total": 91,
         "yellow_cards_avg_league": 3.11,
         "yellow_cards_tendency": "average",
@@ -3763,7 +3763,7 @@
         "fouls_avg_league": 21.4,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (2.94 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (3.03 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5096,18 +5096,18 @@
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 52,
-        "yellow_cards_per_match": 2.88,
+        "matches": 51,
+        "yellow_cards_per_match": 2.94,
         "yellow_cards_total": 150,
         "yellow_cards_avg_league": 3.11,
-        "yellow_cards_tendency": "below",
+        "yellow_cards_tendency": "average",
         "red_cards_total": 3,
         "penalties_total": 19,
         "fouls_per_match": 21.0,
         "fouls_avg_league": 21.4,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (2.88 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (2.94 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
