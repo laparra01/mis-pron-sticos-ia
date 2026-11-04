@@ -3,7 +3,7 @@
   "league_id": 8976,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-11-04T17:41:27.028417",
+  "last_updated": "2026-11-04T23:04:40.696034",
   "total_fixtures": 12,
   "team_histories": {
     "1st ranked": [],
@@ -3073,7 +3073,25 @@
           "text": "Venados FC 2 victorias • 1 empates • Atlético Morelia 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Erick González Miranda",
+        "country": "Mexico",
+        "country_code": "MEX",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/mex.png",
+        "matches": 15,
+        "yellow_cards_per_match": 6.8,
+        "yellow_cards_total": 102,
+        "yellow_cards_avg_league": 5.63,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 10,
+        "fouls_per_match": 29.2,
+        "fouls_avg_league": 25.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.8 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

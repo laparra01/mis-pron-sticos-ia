@@ -3,7 +3,7 @@
   "league_id": 112,
   "country": "Argentina",
   "country_code": "ar",
-  "last_updated": "2026-11-04T17:42:07.379226",
+  "last_updated": "2026-11-04T23:04:57.730666",
   "total_fixtures": 15,
   "team_histories": {
     "Aldosivi": [
@@ -5207,7 +5207,25 @@
           "text": "Aldosivi 1 victorias • 0 empates • River Plate 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bryan Ferreyra",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 15,
+        "yellow_cards_per_match": 5.0,
+        "yellow_cards_total": 75,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 1,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.0 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5637,7 +5655,25 @@
           "text": "Gimnasia LP 2 victorias • 0 empates • Belgrano 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luis Lobo Medina",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 64,
+        "yellow_cards_per_match": 5.41,
+        "yellow_cards_total": 346,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 9,
+        "penalties_total": 10,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.41 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6067,7 +6103,25 @@
           "text": "Barracas Central 1 victorias • 2 empates • Racing Club 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Darío Herrera",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 61,
+        "yellow_cards_per_match": 5.95,
+        "yellow_cards_total": 363,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 11,
+        "penalties_total": 10,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.95 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6497,7 +6551,25 @@
           "text": "Independiente 2 victorias • 1 empates • Deportivo Riestra 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Juan Pafundi",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 43,
+        "yellow_cards_per_match": 4.44,
+        "yellow_cards_total": 191,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 9,
+        "penalties_total": 5,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.44 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6927,7 +6999,25 @@
           "text": "San Lorenzo 3 victorias • 0 empates • Club Atlético Platense 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Felipe Viola",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 52,
+        "yellow_cards_per_match": 5.44,
+        "yellow_cards_total": 283,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 14,
+        "penalties_total": 8,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.44 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7357,7 +7447,25 @@
           "text": "Unión 2 victorias • 2 empates • Vélez Sarsfield 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Andrés Carlos Gariano",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 62,
+        "yellow_cards_per_match": 4.66,
+        "yellow_cards_total": 289,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 13,
+        "penalties_total": 21,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.66 amarillas y 23.6 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7787,7 +7895,25 @@
           "text": "Banfield 1 victorias • 3 empates • Atlético Tucumán 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Maximiliano Manduca",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 29,
+        "yellow_cards_per_match": 5.34,
+        "yellow_cards_total": 155,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 11,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.34 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8217,7 +8343,25 @@
           "text": "Tigre 1 victorias • 2 empates • Sarmiento 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Gonzalo Pereira",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 43,
+        "yellow_cards_per_match": 4.53,
+        "yellow_cards_total": 195,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 11,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.53 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8647,7 +8791,25 @@
           "text": "Gimnasia Mendoza 3 victorias • 0 empates • Independiente Rivadavia 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Facundo Tello",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 46,
+        "yellow_cards_per_match": 5.59,
+        "yellow_cards_total": 257,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 6,
+        "fouls_per_match": 27.4,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.59 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9077,7 +9239,25 @@
           "text": "Talleres 2 victorias • 1 empates • Estudiantes 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Maximiliano Macheroni",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 55,
+        "yellow_cards_per_match": 4.87,
+        "yellow_cards_total": 268,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 16,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.87 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9507,7 +9687,25 @@
           "text": "Argentinos Juniors 2 victorias • 2 empates • Huracán 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Pablo Dóvalo",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 52,
+        "yellow_cards_per_match": 4.08,
+        "yellow_cards_total": 212,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 11,
+        "penalties_total": 11,
+        "fouls_per_match": 24.4,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.08 amarillas y 24.44 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9937,7 +10135,25 @@
           "text": "Boca Juniors 2 victorias • 2 empates • Defensa y Justicia 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sebastián Zunino",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 60,
+        "yellow_cards_per_match": 5.08,
+        "yellow_cards_total": 305,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 13,
+        "penalties_total": 13,
+        "fouls_per_match": 24.7,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.08 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -10307,7 +10523,25 @@
           "text": "Rosario Central 1 victorias • 0 empates • Estudiantes de Río Cuarto 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Hernán Mastrángelo",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 49,
+        "yellow_cards_per_match": 4.94,
+        "yellow_cards_total": 242,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 6,
+        "fouls_per_match": 26.3,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.94 amarillas y 26.33 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -10707,7 +10941,25 @@
           "text": "Instituto 2 victorias • 1 empates • Newell's Old Boys 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Leandro Rey Hilfer",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 63,
+        "yellow_cards_per_match": 5.16,
+        "yellow_cards_total": 325,
+        "yellow_cards_avg_league": 5.2,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 15,
+        "fouls_per_match": 25.2,
+        "fouls_avg_league": 24.7,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.16 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -11137,7 +11389,25 @@
           "text": "Central Córdoba de Santiago 2 victorias • 2 empates • Lanús 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Álvaro Carranza",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 48,
+        "yellow_cards_per_match": 5.27,
+        "yellow_cards_total": 253,
+        "yellow_cards_avg_league": 4.88,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 6,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.27 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
