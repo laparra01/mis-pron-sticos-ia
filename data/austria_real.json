@@ -3,7 +3,7 @@
   "league_id": 38,
   "country": "Austria",
   "country_code": "at",
-  "last_updated": "2026-11-03T22:47:47.155754",
+  "last_updated": "2026-11-04T17:43:07.816043",
   "total_fixtures": 12,
   "team_histories": {
     "Altach": [
@@ -4142,9 +4142,9 @@
         "country": "Austria",
         "country_code": "AUT",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
-        "matches": 24,
-        "yellow_cards_per_match": 3.38,
-        "yellow_cards_total": 81,
+        "matches": 23,
+        "yellow_cards_per_match": 3.35,
+        "yellow_cards_total": 77,
         "yellow_cards_avg_league": 4.16,
         "yellow_cards_tendency": "below",
         "red_cards_total": 4,
@@ -4153,7 +4153,7 @@
         "fouls_avg_league": 22.2,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
-        "verdict": "Árbitro dialogante y permisivo (3.38 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "verdict": "Árbitro dialogante y permisivo (3.35 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

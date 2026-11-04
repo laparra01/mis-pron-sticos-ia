@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-11-03T22:47:16.337120",
+  "last_updated": "2026-11-04T17:42:10.084060",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -4956,18 +4956,18 @@
         "country": "England",
         "country_code": "ENG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
-        "matches": 39,
-        "yellow_cards_per_match": 3.97,
-        "yellow_cards_total": 155,
+        "matches": 38,
+        "yellow_cards_per_match": 3.87,
+        "yellow_cards_total": 147,
         "yellow_cards_avg_league": 3.86,
         "yellow_cards_tendency": "average",
         "red_cards_total": 0,
-        "penalties_total": 10,
-        "fouls_per_match": 23.5,
+        "penalties_total": 9,
+        "fouls_per_match": 23.2,
         "fouls_avg_league": 21.9,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 3.97 amarillas y 23.46 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.87 amarillas y 23.21 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
