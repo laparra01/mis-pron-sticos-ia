@@ -69,6 +69,32 @@ KNOWN_FOOTBALL_TEAMS = {
     "monterrey": {"attack": 1.90, "defense": 1.10},
     "toluca": {"attack": 1.95, "defense": 1.20},
     "pumas unam": {"attack": 1.60, "defense": 1.25},
+    # Liga MX Femenil
+    "tigres (w)": {"attack": 2.10, "defense": 0.85},
+    "tigres femenil": {"attack": 2.10, "defense": 0.85},
+    "cf américa (w)": {"attack": 2.05, "defense": 0.90},
+    "américa (w)": {"attack": 2.05, "defense": 0.90},
+    "america (w)": {"attack": 2.05, "defense": 0.90},
+    "américa femenil": {"attack": 2.05, "defense": 0.90},
+    "monterrey (w)": {"attack": 2.00, "defense": 0.90},
+    "rayadas": {"attack": 2.00, "defense": 0.90},
+    "chivas (w)": {"attack": 1.85, "defense": 0.95},
+    "chivas femenil": {"attack": 1.85, "defense": 0.95},
+    "pachuca (w)": {"attack": 1.95, "defense": 1.00},
+    "pachuca femenil": {"attack": 1.95, "defense": 1.00},
+    "toluca (w)": {"attack": 1.55, "defense": 1.15},
+    "pumas (w)": {"attack": 1.50, "defense": 1.15},
+    "atlas (w)": {"attack": 1.40, "defense": 1.25},
+    "fc juárez (w)": {"attack": 1.45, "defense": 1.20},
+    "club tijuana (w)": {"attack": 1.40, "defense": 1.25},
+    "club león (w)": {"attack": 1.30, "defense": 1.35},
+    "querétaro (w)": {"attack": 1.25, "defense": 1.35},
+    "cruz azul (w)": {"attack": 1.25, "defense": 1.40},
+    "necaxa (w)": {"attack": 1.10, "defense": 1.50},
+    "puebla (w)": {"attack": 1.10, "defense": 1.55},
+    "santos laguna (w)": {"attack": 1.15, "defense": 1.50},
+    "atlético de san luis (w)": {"attack": 1.15, "defense": 1.45},
+    "atlante (w)": {"attack": 1.05, "defense": 1.60},
     "boca juniors": {"attack": 1.70, "defense": 0.95},
     "river plate": {"attack": 1.85, "defense": 0.90},
     "flamengo": {"attack": 2.05, "defense": 1.05},
@@ -713,56 +739,75 @@ def generate_four_picks_football(
         "explanation": p5_exp
     })
 
-    # 6. Total de Córners (Proyección Cuantitativa de Saques de Esquina)
+    # 6. Total de Córners (Proyección Cuantitativa Bivariada Calibrada)
     hs = home_stats or {}
     as_ = away_stats or {}
-    h_c = float(hs.get("corners", 5.2) or 5.2)
-    h_cg = float(hs.get("corners_gen", 5.0) or 5.0)
-    a_c = float(as_.get("corners", 4.2) or 4.2)
-    a_cg = float(as_.get("corners_gen", 4.5) or 4.5)
+    h_c_for = float(hs.get("corners", 4.8) or 4.8)
+    h_c_against = float(hs.get("corners_against", 4.4) or 4.4)
+    h_c_gen_for = float(hs.get("corners_gen", 4.6) or 4.6)
+    h_c_gen_against = float(hs.get("corners_against_gen", 4.4) or 4.4)
+
+    a_c_for = float(as_.get("corners", 4.0) or 4.0)
+    a_c_against = float(as_.get("corners_against", 4.8) or 4.8)
+    a_c_gen_for = float(as_.get("corners_gen", 4.2) or 4.2)
+    a_c_gen_against = float(as_.get("corners_against_gen", 4.6) or 4.6)
 
     if projected_corners is not None and projected_corners > 0:
         exp_c = float(projected_corners)
     else:
-        exp_c = round((h_c * 0.5 + h_cg * 0.5) + (a_c * 0.5 + a_cg * 0.5), 1)
+        # Ponderación bivariada: ataque vs resistencia defensiva del rival
+        home_att_c = h_c_for * 0.60 + h_c_gen_for * 0.40
+        away_def_c = a_c_against * 0.60 + a_c_gen_against * 0.40
+        exp_h_c = (home_att_c + away_def_c) / 2.0
+
+        away_att_c = a_c_for * 0.60 + a_c_gen_for * 0.40
+        home_def_c = h_c_against * 0.60 + h_c_gen_against * 0.40
+        exp_a_c = (away_att_c + home_def_c) / 2.0
+
+        exp_c = round(exp_h_c + exp_a_c, 1)
         if exp_c <= 0:
-            exp_c = 9.5
+            exp_c = 9.0
 
     def poisson_tail_corners(lmbda, min_k):
         p_acc = 0.0
-        for k in range(min_k, 30):
+        for k in range(min_k, 35):
             p_k = (math.exp(-lmbda) * (lmbda ** k)) / math.factorial(k)
             p_acc += p_k
-        return min(0.95, max(0.05, p_acc))
+        return min(0.99, max(0.01, p_acc))
 
     p_over_85 = round(poisson_tail_corners(exp_c, 9) * 100, 1)
     p_over_95 = round(poisson_tail_corners(exp_c, 10) * 100, 1)
-    p_over_105 = round(poisson_tail_corners(exp_c, 11) * 100, 1)
+    p_under_105 = round((1.0 - poisson_tail_corners(exp_c, 11)) * 100, 1)
+    p_under_95 = round((1.0 - poisson_tail_corners(exp_c, 10)) * 100, 1)
 
-    if exp_c >= 10.2:
+    # CALIBRACIÓN DE ALTA SEGURIDAD:
+    # Solo recomienda "Más de" si la probabilidad real alcanza al menos 62.0% (evita monedas al aire del 51%)
+    # En duelos moderados/equilibrados, protege al apostador con "Menos de 10.5" (colchón seguro con ~65-80% de acierto)
+    if p_over_95 >= 62.0:
         p6_market = "Total de Córners (Línea 9.5)"
         p6_name = "Más de 9.5 Córners (+9.5)"
         p6_prob = p_over_95
-        p6_risk = "Bajo" if p_over_95 >= 65 else "Medio"
-        p6_exp = f"{home_team} promedia {h_c} córners de local ({h_cg} gen) y {away_team} {a_c} de visita ({a_cg} gen). La proyección combinada asciende a {exp_c} tiros de esquina totales."
-    elif exp_c >= 8.8:
+        p6_risk = "Bajo" if p_over_95 >= 68 else "Medio"
+        p6_exp = f"Alta verticalidad y constante ataque por bandas. Se proyectan {exp_c} córners combinados con un sólido {p_over_95}% de probabilidad para superar la línea de 9.5 saques de esquina."
+    elif p_over_85 >= 62.0:
         p6_market = "Total de Córners (Línea 8.5)"
         p6_name = "Más de 8.5 Córners (+8.5)"
         p6_prob = p_over_85
-        p6_risk = "Bajo" if p_over_85 >= 65 else "Medio"
-        p6_exp = f"Juego vertical con dinámica en bandas. Se proyectan {exp_c} córners combinados ({h_c} para {home_team} y {a_c} para {away_team}), con {p_over_85}% de probabilidad para superar los 8.5 tiros de esquina."
+        p6_risk = "Bajo" if p_over_85 >= 68 else "Medio"
+        p6_exp = f"Juego vertical con dinámica exterior. Se proyectan {exp_c} córners combinados, con un sólido {p_over_85}% de probabilidad respaldando el 'Over 8.5' con margen cuantitativo positivo."
     elif exp_c <= 7.8:
         p6_market = "Total de Córners (Línea 9.5)"
         p6_name = "Menos de 9.5 Córners (-9.5)"
-        p6_prob = round(100.0 - p_over_95, 1)
-        p6_risk = "Bajo" if p6_prob >= 65 else "Medio"
-        p6_exp = f"Trámite centralizado y reducido desborde exterior ({exp_c} córners proyectados). Alta probabilidad ({p6_prob}%) para la línea de menos de 9.5 córners."
+        p6_prob = p_under_95
+        p6_risk = "Bajo" if p_under_95 >= 68 else "Medio"
+        p6_exp = f"Trámite centralizado, juego pausado y reducido desborde exterior ({exp_c} córners proyectados). Alta probabilidad ({p_under_95}%) para la línea de menos de 9.5 córners."
     else:
+        # Zona intermedia (7.9 a 9.5 córners): Cobertura segura favorable al apostador
         p6_market = "Total de Córners (Línea 10.5)"
         p6_name = "Menos de 10.5 Córners (-10.5)"
-        p6_prob = round(100.0 - p_over_105, 1)
-        p6_risk = "Bajo"
-        p6_exp = f"Expectativa equilibrada de {exp_c} córners combinados ({h_c} de {home_team} vs {a_c} de {away_team}). Cobertura con {p6_prob}% de probabilidad favorable al 'Under 10.5'."
+        p6_prob = p_under_105
+        p6_risk = "Bajo" if p_under_105 >= 68 else "Medio"
+        p6_exp = f"Expectativa equilibrada de {exp_c} córners combinados. Cobertura de seguridad amplia respaldando el 'Under 10.5' con {p_under_105}% de probabilidad favorable."
 
     odds6 = round(100.0 / max(p6_prob, 1.0), 2)
     picks.append({
@@ -980,6 +1025,13 @@ LEAGUE_TEAMS_POOL = {
         "Club América", "Chivas Guadalajara", "Cruz Azul", "Pumas UNAM", "Tigres UANL", "CF Monterrey",
         "Deportivo Toluca", "CF Pachuca", "Santos Laguna", "Club León", "Atlas FC", "Club Tijuana",
         "Club Necaxa", "Club Puebla", "Mazatlán FC", "Querétaro FC", "FC Juárez", "Atlético de San Luis"
+    ],
+    "mexico_femenil": [
+        "Tigres (W)", "CF América (W)", "Chivas (W)", "Monterrey (W)",
+        "Pachuca (W)", "Toluca (W)", "Atlas (W)", "Pumas (W)",
+        "Club Tijuana (W)", "FC Juárez (W)", "Club León (W)", "Querétaro (W)",
+        "Cruz Azul (W)", "Atlético de San Luis (W)", "Necaxa (W)",
+        "Puebla (W)", "Santos Laguna (W)", "Atlante (W)"
     ],
     "inglaterra": [
         "Manchester City", "Arsenal FC", "Liverpool FC", "Aston Villa", "Tottenham Hotspur", "Chelsea FC",
@@ -1498,6 +1550,10 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     ]
     if "brasil" in c_low or "bra.1" in l_low or any(k in l_low for k in ["brasil", "brasileir", "série a", "serie a brasil", "paulista", "carioca", "copa do brasil"]) or any(_match_kw(k, h_low) or _match_kw(k, a_low) for k in brazil_keywords):
         return "Brasileirão Série A", "Brasil", "🇧🇷", LEAGUE_TEAMS_POOL["brasil"]
+
+    # 21.9 México (Liga MX Femenil)
+    if "femenil" in l_low or "mex.w" in l_low or ("liga mx" in l_low and any(k in l_low or k in h_low or k in a_low for k in ["femenil", "(w)", "(f)"])):
+        return "Liga MX Femenil", "México", "🇲🇽", LEAGUE_TEAMS_POOL.get("mexico_femenil", LEAGUE_TEAMS_POOL["mexico"])
 
     # 22. México (Liga MX)
     mexico_keywords = [
@@ -4610,11 +4666,27 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
 
     is_value_bet = best_pick["prob"] >= 60
 
-    h_c_loc = float(home_stats.get("corners", 5.2) or 5.2)
-    h_c_gen = float(home_stats.get("corners_gen", 5.0) or 5.0)
-    a_c_vis = float(away_stats.get("corners", 4.2) or 4.2)
-    a_c_gen = float(away_stats.get("corners_gen", 4.5) or 4.5)
-    exp_c = round((h_c_loc * 0.5 + h_c_gen * 0.5) + (a_c_vis * 0.5 + a_c_gen * 0.5), 1)
+    h_c_loc = float(home_stats.get("corners", 4.8) or 4.8)
+    h_c_against = float(home_stats.get("corners_against", 4.4) or 4.4)
+    h_c_gen = float(home_stats.get("corners_gen", 4.6) or 4.6)
+    h_c_gen_against = float(home_stats.get("corners_against_gen", 4.4) or 4.4)
+
+    a_c_vis = float(away_stats.get("corners", 4.0) or 4.0)
+    a_c_against = float(away_stats.get("corners_against", 4.8) or 4.8)
+    a_c_gen = float(away_stats.get("corners_gen", 4.2) or 4.2)
+    a_c_gen_against = float(away_stats.get("corners_against_gen", 4.6) or 4.6)
+
+    home_att_c = h_c_loc * 0.60 + h_c_gen * 0.40
+    away_def_c = a_c_against * 0.60 + a_c_gen_against * 0.40
+    exp_h_c = (home_att_c + away_def_c) / 2.0
+
+    away_att_c = a_c_vis * 0.60 + a_c_gen * 0.40
+    home_def_c = h_c_against * 0.60 + h_c_gen_against * 0.40
+    exp_a_c = (away_att_c + home_def_c) / 2.0
+
+    exp_c = round(exp_h_c + exp_a_c, 1)
+    if exp_c <= 0:
+        exp_c = 9.0
 
     def calc_corner_tail_local(lmbda, min_k):
         s = 0.0

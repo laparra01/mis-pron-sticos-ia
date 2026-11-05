@@ -198,7 +198,7 @@ def select_ticket_2_goals_corners_cards(matches):
             odds = float(p.get("fair_odds", 1.80) or 1.80)
             prob = float(p.get("probability", 50.0) or 50.0)
 
-            if "Córners" in mkt and 1.50 <= odds <= 2.50 and prob >= 35.0:
+            if "Córners" in mkt and 1.25 <= odds <= 2.40 and prob >= 60.0:
                 item = dict(base_info)
                 item.update({
                     "market": "Tiros de Esquina",

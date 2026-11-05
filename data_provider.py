@@ -545,6 +545,7 @@ ESPN_LEAGUES_BY_ID = {
     # México
     "760": ("Liga MX", "México", "🇲🇽"),
     "3932": ("Liga de Expansión MX", "México", "🇲🇽"),
+    "23541": ("Liga MX Femenil", "México", "🇲🇽"),
     # Centroamérica
     "3943": ("Primera División de El Salvador", "El Salvador", "🇸🇻"),
     "4005": ("Primera División de Costa Rica", "Costa Rica", "🇨🇷"),
@@ -593,6 +594,7 @@ ESPN_SLUG_PREFIXES = [
     ("chi.", "Primera División de Chile", "Chile", "🇨🇱"),
     ("par.", "Primera División de Paraguay", "Paraguay", "🇵🇾"),
     ("bra.", "Brasileirão Série A", "Brasil", "🇧🇷"),
+    ("mex.w.", "Liga MX Femenil", "México", "🇲🇽"),
     ("mex.", "Liga MX", "México", "🇲🇽"),
     ("esp.w.", "Liga F (Femenil)", "España", "🇪🇸"),
     ("esp.copa_del_rey", "Copa del Rey", "España", "🇪🇸"),
@@ -685,6 +687,8 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
         return "Jupiler Pro League", "Bélgica", "🇧🇪"
     if "japón" in comp_lower or "japon" in comp_lower or "japan" in comp_lower or "jpn.1" in comp_lower or "j1" in comp_lower:
         return "J1 League", "Japón", "🇯🇵"
+    if "mex.w" in comp_lower or ("femenil" in comp_lower and ("mex" in comp_lower or "liga mx" in comp_lower)):
+        return "Liga MX Femenil", "México", "🇲🇽"
     if "wsl" in comp_lower or "players cup" in comp_lower or "w.league" in comp_lower:
         return "English WSL Cup (Femenil)", "Inglaterra", "🏴󠁧󠁢󠁥󠁮󠁧󠁿"
     if "women" in comp_lower or "femenil" in comp_lower or "fem." in comp_lower:

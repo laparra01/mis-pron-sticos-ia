@@ -37,6 +37,15 @@ SUPPORTED_LEAGUES = [
         "max_upcoming": 12
     },
     {
+        "id": 9906,
+        "slug": "liga_mx_femenil",
+        "name": "Liga MX Femenil",
+        "country": "México",
+        "code": "mx",
+        "flag": "🇲🇽",
+        "max_upcoming": 12
+    },
+    {
         "id": 8976,
         "slug": "expansion_mx",
         "name": "Liga de Expansión MX",
@@ -992,9 +1001,17 @@ def scrape_single_league(cfg, match_cache=None):
 
         h_ch = h_corners.get("corners_avg_home", 4.8)
         h_cg = h_corners.get("corners_avg_gen", 4.5)
+        h_con_h = h_corners.get("corners_conceded_home", 4.0)
+        h_con_g = h_corners.get("corners_conceded_gen", 4.4)
+
         a_ca = a_corners.get("corners_avg_away", 4.0)
         a_cg = a_corners.get("corners_avg_gen", 4.3)
-        proj_corners = round((h_ch * 0.5 + h_cg * 0.5) + (a_ca * 0.5 + a_cg * 0.5), 1)
+        a_con_a = a_corners.get("corners_conceded_away", 4.8)
+        a_con_g = a_corners.get("corners_conceded_gen", 4.5)
+
+        home_exp_c = ((h_ch * 0.6 + h_cg * 0.4) + (a_con_a * 0.6 + a_con_g * 0.4)) / 2.0
+        away_exp_c = ((a_ca * 0.6 + a_cg * 0.4) + (h_con_h * 0.6 + h_con_g * 0.4)) / 2.0
+        proj_corners = round(home_exp_c + away_exp_c, 1)
 
         h_cards_h = h_corners.get("total_cards_avg_home", 2.1)
         h_cards_g = h_corners.get("total_cards_avg", 2.2)
