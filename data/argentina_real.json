@@ -3,7 +3,7 @@
   "league_id": 112,
   "country": "Argentina",
   "country_code": "ar",
-  "last_updated": "2026-11-04T23:04:57.730666",
+  "last_updated": "2026-11-05T17:48:14.888981",
   "total_fixtures": 15,
   "team_histories": {
     "Aldosivi": [
@@ -7452,9 +7452,9 @@
         "country": "Argentina",
         "country_code": "ARG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
-        "matches": 62,
-        "yellow_cards_per_match": 4.66,
-        "yellow_cards_total": 289,
+        "matches": 61,
+        "yellow_cards_per_match": 4.64,
+        "yellow_cards_total": 283,
         "yellow_cards_avg_league": 5.2,
         "yellow_cards_tendency": "below",
         "red_cards_total": 13,
@@ -7463,7 +7463,7 @@
         "fouls_avg_league": 24.7,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.66 amarillas y 23.6 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 4.64 amarillas y 23.56 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

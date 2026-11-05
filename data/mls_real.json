@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-11-04T23:04:42.185807",
+  "last_updated": "2026-11-05T17:47:56.710656",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -5207,7 +5207,25 @@
           "text": "CF Montréal 1 victorias • 2 empates • Vancouver Whitecaps 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Marcos de Oliveira",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 36,
+        "yellow_cards_per_match": 3.44,
+        "yellow_cards_total": 124,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 10,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.44 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5637,7 +5655,25 @@
           "text": "Chicago Fire FC 1 victorias • 1 empates • Columbus Crew 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rosendo Mendoza",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 48,
+        "yellow_cards_per_match": 4.94,
+        "yellow_cards_total": 237,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 14,
+        "fouls_per_match": 27.0,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.94 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6067,7 +6103,25 @@
           "text": "DC United 2 victorias • 2 empates • New York City FC 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Matthew Thompson",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 27,
+        "yellow_cards_per_match": 5.22,
+        "yellow_cards_total": 141,
+        "yellow_cards_avg_league": 4.64,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 7,
+        "fouls_per_match": 30.8,
+        "fouls_avg_league": 27.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.22 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6497,7 +6551,25 @@
           "text": "FC Cincinnati 2 victorias • 1 empates • Nashville SC 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Tori Penso",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 35,
+        "yellow_cards_per_match": 4.11,
+        "yellow_cards_total": 144,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 1,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.11 amarillas y 21.2 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6927,7 +6999,25 @@
           "text": "Inter Miami CF 2 victorias • 2 empates • Charlotte FC 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rubiel Vazquez",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 49,
+        "yellow_cards_per_match": 3.84,
+        "yellow_cards_total": 188,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 18,
+        "fouls_per_match": 23.3,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.84 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7357,7 +7447,25 @@
           "text": "Orlando City 3 victorias • 1 empates • New England Revolution 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Guido Gonzales Jr.",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 41,
+        "yellow_cards_per_match": 4.34,
+        "yellow_cards_total": 178,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 8,
+        "penalties_total": 10,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.34 amarillas y 24.07 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7787,7 +7895,25 @@
           "text": "Philadelphia Union 1 victorias • 3 empates • Toronto FC 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Timothy Ford",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 27,
+        "yellow_cards_per_match": 4.3,
+        "yellow_cards_total": 116,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 22.3,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.3 amarillas y 22.3 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8217,7 +8343,25 @@
           "text": "Red Bull New York 1 victorias • 2 empates • Atlanta United 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Pierre-Luc Lauzière",
+        "country": "Canada",
+        "country_code": "CAN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/can.png",
+        "matches": 42,
+        "yellow_cards_per_match": 3.88,
+        "yellow_cards_total": 163,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 14,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.88 amarillas y 24.07 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -8647,7 +8791,25 @@
           "text": "Austin FC 2 victorias • 1 empates • Portland Timbers 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Víctor Manuel Rivas",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 47,
+        "yellow_cards_per_match": 4.68,
+        "yellow_cards_total": 220,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 10,
+        "penalties_total": 17,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.68 amarillas y 23.15 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9077,7 +9239,25 @@
           "text": "FC Dallas 2 victorias • 1 empates • Colorado Rapids 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Drew Fischer",
+        "country": "Canada",
+        "country_code": "CAN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/can.png",
+        "matches": 47,
+        "yellow_cards_per_match": 4.26,
+        "yellow_cards_total": 200,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 24.9,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.26 amarillas y 24.91 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9507,7 +9687,25 @@
           "text": "Houston Dynamo FC 2 victorias • 1 empates • St. Louis City 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Allen Chapman",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 51,
+        "yellow_cards_per_match": 3.27,
+        "yellow_cards_total": 167,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 19,
+        "fouls_per_match": 19.8,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.27 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -9937,7 +10135,25 @@
           "text": "Minnesota United 4 victorias • 0 empates • San Jose Earthquakes 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alexis Da Silva",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 41,
+        "yellow_cards_per_match": 4.71,
+        "yellow_cards_total": 193,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 25.4,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.71 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -10367,7 +10583,25 @@
           "text": "Real Salt Lake 1 victorias • 1 empates • LA Galaxy 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joe Dickerson",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 35,
+        "yellow_cards_per_match": 4.43,
+        "yellow_cards_total": 155,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 8,
+        "penalties_total": 12,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.43 amarillas y 25.71 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -10767,7 +11001,25 @@
           "text": "San Diego FC 2 victorias • 1 empates • Sporting Kansas City 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ramy Touchan",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 17,
+        "yellow_cards_per_match": 4.88,
+        "yellow_cards_total": 83,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 2,
+        "fouls_per_match": 28.0,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.88 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -11197,7 +11449,25 @@
           "text": "Seattle Sounders FC 2 victorias • 0 empates • Los Angeles FC 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Filip Dujic",
+        "country": "Canada",
+        "country_code": "CAN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/can.png",
+        "matches": 47,
+        "yellow_cards_per_match": 3.89,
+        "yellow_cards_total": 183,
+        "yellow_cards_avg_league": 4.16,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 8,
+        "penalties_total": 16,
+        "fouls_per_match": 25.5,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.89 amarillas y 25.49 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

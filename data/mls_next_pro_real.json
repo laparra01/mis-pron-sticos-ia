@@ -3,7 +3,7 @@
   "league_id": 10282,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-11-04T23:04:43.057031",
+  "last_updated": "2026-11-05T17:47:57.742296",
   "total_fixtures": 1,
   "team_histories": {
     "Atlanta United 2": [
@@ -5197,7 +5197,25 @@
           "text": "Chattanooga FC 1 victorias • 3 empates • Los Angeles FC II 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rodrigo Albuquerque",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 23,
+        "yellow_cards_per_match": 4.48,
+        "yellow_cards_total": 103,
+        "yellow_cards_avg_league": 4.64,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 8,
+        "fouls_per_match": 26.3,
+        "fouls_avg_league": 27.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.48 amarillas y 26.26 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

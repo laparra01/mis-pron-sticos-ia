@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-11-04T23:05:39.251218",
+  "last_updated": "2026-11-05T17:48:57.842326",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,7 +2981,25 @@
           "text": "Hammarby 4 victorias • 1 empates • Elfsborg 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Kristoffer Karlsson",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 41,
+        "yellow_cards_per_match": 3.8,
+        "yellow_cards_total": 156,
+        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 7,
+        "penalties_total": 2,
+        "fouls_per_match": 25.4,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.8 amarillas y 25.41 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
