@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-11-06T17:06:14.279512",
+  "last_updated": "2026-11-06T22:37:43.630162",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -2981,7 +2981,25 @@
           "text": "Independiente Petrolero 2 victorias • 1 empates • Real Tomayapo 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ivo Méndez",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 47,
+        "yellow_cards_per_match": 4.83,
+        "yellow_cards_total": 227,
+        "yellow_cards_avg_league": 5.68,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 23,
+        "penalties_total": 36,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.83 amarillas y 23.81 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
