@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-11-05T23:12:50.237686",
+  "last_updated": "2026-11-06T17:07:18.449331",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -3241,7 +3241,25 @@
           "text": "Grasshopper 2 victorias • 2 empates • Lausanne 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Hüseyin Sanli",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 5,
+        "yellow_cards_per_match": 4.6,
+        "yellow_cards_total": 23,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 24.8,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.6 amarillas y 24.8 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3671,7 +3689,25 @@
           "text": "St. Gallen 3 victorias • 1 empates • Lugano 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sven Wolfensberger",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.75,
+        "yellow_cards_total": 171,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 15,
+        "fouls_per_match": 28.3,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.75 amarillas y 28.26 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-11-05T23:11:40.439992",
+  "last_updated": "2026-11-06T17:06:35.240487",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -4065,7 +4065,25 @@
           "text": "Málaga 0 victorias • 2 empates • Racing Santander 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Isidro Díaz de Mera Escuderos",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 39,
+        "yellow_cards_per_match": 4.74,
+        "yellow_cards_total": 185,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 10,
+        "fouls_per_match": 24.5,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.74 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4495,7 +4513,25 @@
           "text": "Espanyol 3 victorias • 2 empates • Deportivo A Coruña 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alejandro Quintero González",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 37,
+        "yellow_cards_per_match": 4.3,
+        "yellow_cards_total": 159,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 17,
+        "penalties_total": 21,
+        "fouls_per_match": 26.3,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.3 amarillas y 26.34 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4925,7 +4961,25 @@
           "text": "Osasuna 1 victorias • 2 empates • Athletic Club 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Sesma Espinosa",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 26,
+        "yellow_cards_per_match": 3.77,
+        "yellow_cards_total": 98,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 12,
+        "fouls_per_match": 26.8,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.77 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5355,7 +5409,25 @@
           "text": "Valencia 1 victorias • 1 empates • Real Madrid 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Francisco José Hernández Maeso",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 38,
+        "yellow_cards_per_match": 3.74,
+        "yellow_cards_total": 142,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 23.9,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.74 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

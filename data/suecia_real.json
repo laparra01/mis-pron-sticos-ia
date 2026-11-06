@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-11-05T23:13:27.214877",
+  "last_updated": "2026-11-06T17:07:39.431444",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -3893,7 +3893,7 @@
         "fouls_avg_league": 24.8,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.25 amarillas y 26.3 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 4.25 amarillas y 26.28 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"

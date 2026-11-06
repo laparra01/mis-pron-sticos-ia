@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-11-05T23:10:33.176978",
+  "last_updated": "2026-11-06T17:06:00.952396",
   "total_fixtures": 10,
   "team_histories": {
     "Alianza FC": [
@@ -3617,7 +3617,25 @@
           "text": "Chicó FC 2 victorias • 1 empates • Internacional de Bogotá 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Ortega",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 51,
+        "yellow_cards_per_match": 5.53,
+        "yellow_cards_total": 282,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 18,
+        "penalties_total": 24,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.53 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4047,7 +4065,25 @@
           "text": "Fortaleza FC 0 victorias • 1 empates • Independiente Medellín 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José Bautista",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 12,
+        "yellow_cards_per_match": 4.75,
+        "yellow_cards_total": 57,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 5,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.75 amarillas y 25.67 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4477,7 +4513,25 @@
           "text": "Once Caldas 2 victorias • 2 empates • Águilas Doradas 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jhon Ospina",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 44,
+        "yellow_cards_per_match": 6.32,
+        "yellow_cards_total": 278,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 18,
+        "penalties_total": 20,
+        "fouls_per_match": 21.8,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.32 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4907,7 +4961,25 @@
           "text": "Atlético Nacional 1 victorias • 1 empates • Deportivo Pereira 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Wilmar Hernando Montaño Guevara",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 25,
+        "yellow_cards_per_match": 6.52,
+        "yellow_cards_total": 163,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 10,
+        "penalties_total": 11,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.52 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5337,7 +5409,25 @@
           "text": "América de Cali 2 victorias • 2 empates • Deportivo Cali 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Andrés Betancur",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 49,
+        "yellow_cards_per_match": 5.18,
+        "yellow_cards_total": 254,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 11,
+        "penalties_total": 20,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.18 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5767,7 +5857,25 @@
           "text": "Santa Fe 1 victorias • 2 empates • Deportivo Pasto 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ferney Ossa",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 5,
+        "yellow_cards_per_match": 4.8,
+        "yellow_cards_total": 24,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 2,
+        "fouls_per_match": 28.4,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.8 amarillas y 28.4 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6197,7 +6305,25 @@
           "text": "CD Jaguares 0 victorias • 3 empates • Bucaramanga 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Andrés José Rojas Noguera",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 49,
+        "yellow_cards_per_match": 5.82,
+        "yellow_cards_total": 285,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 21,
+        "penalties_total": 16,
+        "fouls_per_match": 25.2,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.82 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6627,7 +6753,25 @@
           "text": "Tolima 2 victorias • 0 empates • Millonarios 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ferney Trujillo",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 33,
+        "yellow_cards_per_match": 5.94,
+        "yellow_cards_total": 196,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 13,
+        "penalties_total": 10,
+        "fouls_per_match": 24.6,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.94 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7027,7 +7171,25 @@
           "text": "Alianza FC 2 victorias • 1 empates • Llaneros FC 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bismarks Elias Santiago Pitalua",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 34,
+        "yellow_cards_per_match": 5.65,
+        "yellow_cards_total": 192,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 9,
+        "penalties_total": 2,
+        "fouls_per_match": 23.2,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.65 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7457,7 +7619,25 @@
           "text": "Junior FC 3 victorias • 1 empates • Cúcuta 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Wilmar Alexander Roldán Pérez",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 59,
+        "yellow_cards_per_match": 4.8,
+        "yellow_cards_total": 283,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 22,
+        "penalties_total": 22,
+        "fouls_per_match": 18.9,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.8 amarillas y 18.93 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
