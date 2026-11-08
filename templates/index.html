@@ -4809,7 +4809,10 @@
                 .then(r => r.json())
                 .then(data => {
                     if (data.success) {
-                        showNotificationToast(data.message || '¡Extracción en marcha! Los partidos estarán listos en 1 minuto.', false);
+                        showNotificationToast(data.message || '¡Extracción en marcha! Actualizando cartelera...', false);
+                        setTimeout(() => {
+                            if (typeof refreshApp === 'function') refreshApp();
+                        }, 5000);
                     } else {
                         showNotificationToast(data.error || 'No se pudo iniciar la actualización.', true);
                     }

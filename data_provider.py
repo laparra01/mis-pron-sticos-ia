@@ -1816,6 +1816,7 @@ def check_and_auto_update_scraped_matches(max_age_hours=6):
                     try:
                         scrape_single_league(lg, cache)
                         save_match_cache(cache)
+                        invalidate_scraped_matches_cache()
                     except Exception as err:
                         print(f"[AUTO-SCRAPER] Error en {lg['name']}: {err}")
             threading.Thread(target=run_bg, daemon=True).start()

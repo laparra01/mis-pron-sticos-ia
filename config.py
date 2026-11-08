@@ -16,7 +16,7 @@ NBA_API_KEY = os.environ.get("NBA_API_KEY", "1d3b81d6-ef83-4a40-947b-019f00a55e6
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
 
 # 4. GITHUB ACTIONS (Para actualizar bajo demanda con 1 clic desde la web):
-GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "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")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 GITHUB_REPO = os.environ.get("GITHUB_REPO", "laparra01/mis-pron-sticos-ia")
 
 # 5. SEGURIDAD & ADMINISTRADOR:

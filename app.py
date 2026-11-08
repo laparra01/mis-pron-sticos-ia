@@ -506,15 +506,33 @@ def api_match_referee(match_id):
 def api_trigger_scrape():
     """
     Inicia la actualización bajo demanda:
-    - Si GITHUB_TOKEN está configurado, invoca GitHub Actions para procesar en la nube y persistir en el repo.
-    - Si no hay GITHUB_TOKEN (ej. local o prueba), corre scraper_engine en segundo plano.
+    - Si GITHUB_TOKEN está configurado y responde OK, invoca GitHub Actions para persistir en repo.
+    - Si GITHUB_TOKEN falla (401/404) o no está configurado, corre scraper_engine en segundo plano
+      e invalida la caché en tiempo real para que los partidos aparezcan de inmediato.
     """
     import threading
     import requests
+    import data_provider
 
     cfg = get_config()
     token = getattr(cfg, "GITHUB_TOKEN", "") or os.environ.get("GITHUB_TOKEN", "")
     repo = getattr(cfg, "GITHUB_REPO", "") or os.environ.get("GITHUB_REPO", "laparra01/mis-pron-sticos-ia")
+
+    def run_background_scrape():
+        try:
+            import scraper_engine
+            print("[TRIGGER SCRAPE] Ejecutando extracción en segundo plano en el servidor...")
+            match_cache = scraper_engine.load_match_cache()
+            for lg in scraper_engine.SUPPORTED_LEAGUES:
+                try:
+                    scraper_engine.scrape_single_league(lg, match_cache)
+                    scraper_engine.save_match_cache(match_cache)
+                    data_provider.invalidate_scraped_matches_cache()
+                except Exception as err:
+                    print(f"[TRIGGER SCRAPE] Error en {lg['name']}: {err}")
+            print("[TRIGGER SCRAPE] Extracción finalizada con éxito.")
+        except Exception as ex:
+            print(f"[TRIGGER SCRAPE ERROR]: {ex}")
 
     if token:
         url = f"https://api.github.com/repos/{repo}/actions/workflows/update_matches.yml/dispatches"
@@ -525,7 +543,7 @@ def api_trigger_scrape():
         }
         data = {"ref": "main"}
         try:
-            resp = requests.post(url, headers=headers, json=data, timeout=10)
+            resp = requests.post(url, headers=headers, json=data, timeout=8)
             if resp.status_code in (204, 200, 201):
                 return jsonify({
                     "success": True,
@@ -533,29 +551,17 @@ def api_trigger_scrape():
                     "message": "¡GitHub Action iniciada con éxito! El robot está extrayendo los datos y tu web se actualizará en aproximadamente 1 minuto."
                 })
             else:
-                return jsonify({
-                    "success": False,
-                    "method": "github_action",
-                    "error": f"GitHub API respondió {resp.status_code}: {resp.text}"
-                }), 400
+                print(f"[TRIGGER SCRAPE] GitHub API respondió {resp.status_code}. Aplicando fallback local...")
         except Exception as e:
-            return jsonify({"success": False, "error": str(e)}), 500
-    else:
-        def run_background_scrape():
-            try:
-                import scraper_engine
-                print("[TRIGGER SCRAPE] Ejecutando extracción local en segundo plano...")
-                scraper_engine.scrape_all_leagues()
-                print("[TRIGGER SCRAPE] Extracción local finalizada con éxito.")
-            except Exception as ex:
-                print(f"[TRIGGER SCRAPE ERROR]: {ex}")
+            print(f"[TRIGGER SCRAPE] Error conectando a GitHub ({e}). Aplicando fallback local...")
 
-        threading.Thread(target=run_background_scrape, daemon=True).start()
-        return jsonify({
-            "success": True,
-            "method": "local_background",
-            "message": "Extracción iniciada en segundo plano en el servidor. Los datos se actualizarán en breve."
-        })
+    # Fallback local garantizado
+    threading.Thread(target=run_background_scrape, daemon=True).start()
+    return jsonify({
+        "success": True,
+        "method": "local_background",
+        "message": "Extracción iniciada con FotMob. Los partidos se actualizarán automáticamente en segundo plano."
+    })
 
 
 # ==============================================================
