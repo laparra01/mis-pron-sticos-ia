@@ -333,8 +333,26 @@ SUPPORTED_LEAGUES = [
     # Asia
     {
         "id": 223,
-        "slug": "japon",
-        "name": "J1 League de Japón",
+        "slug": "j1_league",
+        "name": "J1 League",
+        "country": "Japón",
+        "code": "jp",
+        "flag": "🇯🇵",
+        "max_upcoming": 15
+    },
+    {
+        "id": 8974,
+        "slug": "j2_league",
+        "name": "J2 League",
+        "country": "Japón",
+        "code": "jp",
+        "flag": "🇯🇵",
+        "max_upcoming": 15
+    },
+    {
+        "id": 9136,
+        "slug": "j3_league",
+        "name": "J3 League",
         "country": "Japón",
         "code": "jp",
         "flag": "🇯🇵",

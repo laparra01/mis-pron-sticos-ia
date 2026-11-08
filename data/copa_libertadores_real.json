@@ -3,7 +3,7 @@
   "league_id": 45,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-11-07T21:20:05.039679",
+  "last_updated": "2026-10-28T13:22:12.005443",
   "total_fixtures": 1,
   "team_histories": {
     "2 de Mayo": [
@@ -6556,10 +6556,10 @@
       "away_id": "10094",
       "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10283.png",
       "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10094.png",
-      "date": "Sáb 28 Nov, 14:00",
-      "date_iso": "2026-11-28",
-      "time": "14:00",
-      "timestamp": 1795896000,
+      "date": "Vie 27 Nov, 18:00",
+      "date_iso": "2026-11-27",
+      "time": "18:00",
+      "timestamp": 1795824000,
       "timezone": "America/Guatemala",
       "round": "Final",
       "h2h": {
@@ -6948,7 +6948,7 @@
           "fouls_avg_away": 14.33,
           "fouls_avg": 14.6
         },
-        "projected_corners": 8.5,
+        "projected_corners": 9.0,
         "projected_cards": 5.9,
         "summary": {
           "home_wins": 1,

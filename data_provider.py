@@ -627,6 +627,8 @@ ESPN_SLUG_PREFIXES = [
     ("ned.", "Eredivisie", "Países Bajos", "🇳🇱"),
     ("bel.", "Jupiler Pro League", "Bélgica", "🇧🇪"),
     ("sui.", "Super League Suiza", "Suiza", "🇨🇭"),
+    ("jpn.3", "J3 League", "Japón", "🇯🇵"),
+    ("jpn.2", "J2 League", "Japón", "🇯🇵"),
     ("jpn.", "J1 League", "Japón", "🇯🇵"),
     ("tur.", "Süper Lig", "Turquía", "🇹🇷"),
     ("swe.", "Allsvenskan", "Suecia", "🇸🇪"),
@@ -685,6 +687,10 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
         return "Super League Suiza", "Suiza", "🇨🇭"
     if "bélgic" in comp_lower or "belgic" in comp_lower or "belgium" in comp_lower or "bel.1" in comp_lower or "jupiler" in comp_lower:
         return "Jupiler Pro League", "Bélgica", "🇧🇪"
+    if "j3" in comp_lower or "j.league 3" in comp_lower or "j league 3" in comp_lower or "jpn.3" in comp_lower:
+        return "J3 League", "Japón", "🇯🇵"
+    if "j2" in comp_lower or "j.league 2" in comp_lower or "j league 2" in comp_lower or "jpn.2" in comp_lower:
+        return "J2 League", "Japón", "🇯🇵"
     if "japón" in comp_lower or "japon" in comp_lower or "japan" in comp_lower or "jpn.1" in comp_lower or "j1" in comp_lower:
         return "J1 League", "Japón", "🇯🇵"
     if "mex.w" in comp_lower or ("femenil" in comp_lower and ("mex" in comp_lower or "liga mx" in comp_lower)):

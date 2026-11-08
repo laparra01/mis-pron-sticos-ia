@@ -1129,9 +1129,22 @@ LEAGUE_TEAMS_POOL = {
         "KFUM Oslo", "Tromsø IL", "Strømsgodset IF", "Sarpsborg 08", "Kristiansund BK", "Sandefjord"
     ],
     "japon": [
-        "Vissel Kobe", "Sanfrecce Hiroshima", "Machida Zelvia", "Gamba Osaka", "Kashima Antlers",
-        "Tokyo Verdy", "Cerezo Osaka", "FC Tokyo", "Urawa Red Diamonds", "Yokohama F. Marinos",
-        "Kawasaki Frontale", "Nagoya Grampus", "Kashiwa Reysol", "Avispa Fukuoka", "Shonan Bellmare"
+        "Avispa Fukuoka", "Cerezo Osaka", "FC Tokyo", "Fagiano Okayama FC", "Gamba Osaka",
+        "JEF United Chiba", "Kashima Antlers", "Kashiwa Reysol", "Kawasaki Frontale", "Kyoto Sanga FC",
+        "Machida Zelvia", "Mito Hollyhock", "Nagoya Grampus", "Sanfrecce Hiroshima", "Shimizu S-Pulse",
+        "Tokyo Verdy", "Urawa Red Diamonds", "V-Varen Nagasaki", "Vissel Kobe", "Yokohama F.Marinos"
+    ],
+    "japon_j2": [
+        "Albirex Niigata", "Blaublitz Akita", "FC Imabari", "Fujieda MYFC", "Hokkaido Consadole Sapporo",
+        "Iwaki FC", "Júbilo Iwata", "Kataller Toyama", "Montedio Yamagata", "Oita Trinita",
+        "RB Omiya Ardija", "Sagan Tosu", "Shonan Bellmare", "Tegevajaro Miyazaki", "Tochigi City FC",
+        "Tokushima Vortis", "Vanraure Hachinohe", "Vegalta Sendai", "Ventforet Kofu", "Yokohama FC"
+    ],
+    "japon_j3": [
+        "Ehime FC", "FC Gifu", "FC Osaka", "FC Ryūkyū", "Fukushima United",
+        "Gainare Tottori", "Giravanz Kitakyushu", "Kagoshima United", "Kamatamare Sanuki", "Kochi United SC",
+        "Matsumoto Yamaga", "Nagano Parceiro", "Nara Club", "Reilac Shiga", "Renofa Yamaguchi",
+        "Roasso Kumamoto", "SC Sagamihara", "Thespa Gunma", "Tochigi SC", "Zweigen Kanazawa"
     ],
     "bolivia": [
         "Club Bolívar", "The Strongest", "Club Always Ready", "Club Blooming", "Oriente Petrolero",
@@ -1333,10 +1346,32 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
     if "eliteserien" in l_low or "noruega" in c_low or "norway" in c_low or any(k in h_low or k in a_low for k in norway_keywords):
         return "Eliteserien", "Noruega", "🇳🇴", LEAGUE_TEAMS_POOL["noruega"]
 
-    # 7. Japón (J1 League)
+    # 7. Japón (J3 League) - Debe evaluarse antes de J2 y J1 para evitar colisiones
+    japan_j3_keywords = [
+        "ehime", "fc gifu", "gifu", "fc osaka", "ryūkyū", "ryukyu", "fukushima", "gainare tottori", "tottori",
+        "giravanz kitakyushu", "kitakyushu", "kagoshima", "kamatamare sanuki", "sanuki", "kochi united",
+        "matsumoto yamaga", "yamaga", "nagano parceiro", "parceiro", "nara club", "reilac shiga",
+        "renofa yamaguchi", "yamaguchi", "roasso kumamoto", "kumamoto", "sagamihara", "thespa gunma", "gunma",
+        "tochigi sc", "zweigen kanazawa", "kanazawa"
+    ]
+    if "j3" in l_low or "j-league 3" in l_low or "j.league 3" in l_low or "j league 3" in l_low or any(k in h_low or k in a_low for k in japan_j3_keywords):
+        return "J3 League", "Japón", "🇯🇵", LEAGUE_TEAMS_POOL.get("japon_j3", LEAGUE_TEAMS_POOL["japon"])
+
+    # 7b. Japón (J2 League) - Debe evaluarse ANTES de J1 League para evitar colisión con 'j-league'
+    japan_j2_keywords = [
+        "albirex niigata", "blaublitz akita", "imabari", "fujieda", "consadole sapporo", "sapporo",
+        "iwaki", "júbilo iwata", "jubilo iwata", "kataller toyama", "montedio yamagata", "oita trinita",
+        "omiya ardija", "sagan tosu", "shonan bellmare", "tegevajaro", "tochigi city", "tokushima vortis",
+        "vanraure hachinohe", "vegalta sendai", "ventforet kofu", "yokohama fc"
+    ]
+    if "j2" in l_low or "j-league 2" in l_low or "j.league 2" in l_low or "j league 2" in l_low or any(k in h_low or k in a_low for k in japan_j2_keywords):
+        return "J2 League", "Japón", "🇯🇵", LEAGUE_TEAMS_POOL.get("japon_j2", LEAGUE_TEAMS_POOL["japon"])
+
+    # 7c. Japón (J1 League)
     japan_keywords = [
         "kashima", "vissel kobe", "gamba osaka", "urawa", "sanfrecce", "machida", "cerezo osaka",
-        "kashiwa", "kawasaki frontale", "marinos", "tokyo verdy", "fc tokyo", "nagoya grampus", "shonan"
+        "kashiwa", "kawasaki frontale", "marinos", "tokyo verdy", "fc tokyo", "nagoya grampus",
+        "fukuoka", "sanga", "fagiano", "jef united", "mito hollyhock", "s-pulse", "nagasaki"
     ]
     if "j-league" in l_low or "j1" in l_low or "japón" in c_low or "japon" in c_low or "japan" in c_low or any(k in h_low or k in a_low for k in japan_keywords):
         return "J1 League", "Japón", "🇯🇵", LEAGUE_TEAMS_POOL["japon"]
