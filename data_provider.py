@@ -636,6 +636,12 @@ ESPN_SLUG_PREFIXES = [
     ("den.", "Superligaen", "Dinamarca", "🇩🇰"),
     ("chn.", "Chinese Super League", "China", "🇨🇳"),
     ("ksa.", "Saudi Pro League", "Arabia Saudita", "🇸🇦"),
+    ("uefa.nations", "UEFA Nations League", "Europa", "🇪🇺"),
+    ("concacaf.nations", "Concacaf Nations League", "Concacaf", "🌎"),
+    ("fifa.worldq.conmebol", "Eliminatorias CONMEBOL", "Sudamérica", "🌎"),
+    ("fifa.worldq.concacaf", "Clasificatorias Concacaf", "Concacaf", "🌎"),
+    ("fifa.worldq.uefa", "Clasificatorias UEFA", "Europa", "🇪🇺"),
+    ("fifa.friendly", "Amistoso Internacional", "Internacional", "🌎"),
 ]
 
 def get_league_and_country_info(comp_name, sport="football", home_team="", away_team="", espn_league_id=""):
@@ -753,8 +759,13 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
         return "Copa CONMEBOL Sudamericana", "Sudamérica", "🏆"
     if "champions" in comp_lower:
         return "UEFA Champions League", "Europa", "🏆"
-    if "nations" in comp_lower:
-        return "UEFA Nations League", "Europa", "🇪🇺"
+    if "concacaf" in comp_lower and "nations" in comp_lower:
+        return "Concacaf Nations League", "Concacaf", "🌎"
+    if "nations" in comp_lower or "uefa" in comp_lower:
+        t_uefa = "UEFA Nations League B" if ("league b" in comp_lower or "nations_b" in comp_lower or "league_b" in comp_lower) else "UEFA Nations League"
+        return t_uefa, "Europa", "🇪🇺"
+    if "conmebol" in comp_lower or "sudameric" in comp_lower:
+        return "Eliminatorias CONMEBOL", "Sudamérica", "🌎"
     if "selección" in comp_lower or "amistoso" in comp_lower or "fifa" in comp_lower or "friendly" in comp_lower:
         return "Selecciones FIFA", "Internacional", "🌎"
 
@@ -771,6 +782,119 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
     # 4. Fallback limpio
     clean_title = comp_name if (comp_name and not comp_name.lower().startswith("202") and comp_name.lower() not in ("regular-season", "pre-season", "post-season", "oficial", "desconocida", "first-stage", "group-stage", "fall-season")) else "Competición Oficial"
     return clean_title, "Internacional", "⚽"
+
+LEAGUE_TOTAL_ROUNDS = {
+    "liga_mx": 17,
+    "liga_mx_femenil": 17,
+    "expansion_mx": 15,
+    "guatemala": 22,
+    "colombia": 20,
+    "peru": 17,
+    "argentina": 27,
+    "brasileirao": 38,
+    "suecia": 30,
+    "eliteserien": 30,
+    "j1_league": 38,
+    "j2_league": 38,
+    "j3_league": 38,
+    "premier_league": 38,
+    "laliga": 38,
+    "serie_a": 38,
+    "bundesliga": 34,
+    "francia": 34,
+    "holanda": 34,
+    "liga_portugal": 34,
+    "belgica": 30,
+    "suiza": 38,
+    "austria": 22,
+    "superligaen": 22,
+    "grecia": 26,
+    "turquia": 38,
+    "uefa_nations_league": 6,
+    "uefa_nations_league_b": 6,
+    "champions_league": 8,
+    "europa_league": 8,
+    "conference_league": 6,
+}
+
+def analyze_season_phase(league_slug: str, league_name: str, round_val: str, date_iso: str = "") -> dict:
+    """
+    Identifica si un torneo está en su recta final, últimas fechas o fase de playoffs/copa.
+    Alerta sobre descompresión competitiva, rotación de plantillas y merma de rendimiento
+    en clubes sin objetivos pendientes o ya campeones.
+    """
+    import re
+    r_str = str(round_val or "").lower().strip()
+    is_playoff = any(k in r_str for k in ["final", "semi", "cuartos", "playoff", "octavos", "1/8", "1/4", "repechaje", "play-in"])
+    if is_playoff:
+        rnd_title = str(round_val).title() if round_val else "Playoffs"
+        return {
+            "is_closing_phase": True,
+            "phase_type": "playoff",
+            "stage_label": f"Fase Final ({rnd_title})",
+            "alert_title": "🏆 Eliminatoria Directa / Playoffs",
+            "alert_message": "Duelo de eliminación directa o fase de copa. Suele primar el orden defensivo, mayor tensión táctica y menor margen de goles.",
+            "badge_bg": "bg-purple-950/90 text-purple-300 border-purple-600/60"
+        }
+
+    num_match = re.search(r'\b(\d{1,2})\b', r_str)
+    cur_round = int(num_match.group(1)) if num_match else None
+
+    l_key = f"{(league_slug or '').lower()} {(league_name or '').lower()}"
+    tot_rounds = None
+    for k, v in LEAGUE_TOTAL_ROUNDS.items():
+        if k in l_key or k.replace("_", " ") in l_key:
+            tot_rounds = v
+            break
+
+    is_annual_closing_month = False
+    if date_iso and len(date_iso) >= 7:
+        month = date_iso[5:7]
+        if month in ("11", "12"):
+            annual_leagues = ["brasil", "brasileir", "suecia", "allsvenskan", "noruega", "eliteserien", "japon", "j1", "j2", "j3", "mls", "bolivia", "peru", "guatemala"]
+            if any(al in l_key for al in annual_leagues):
+                is_annual_closing_month = True
+
+    if cur_round and tot_rounds:
+        pct = cur_round / float(tot_rounds)
+        remaining = tot_rounds - cur_round
+        if remaining <= 2 and remaining >= 0:
+            return {
+                "is_closing_phase": True,
+                "phase_type": "critical_end",
+                "stage_label": f"Últimas Fechas ({cur_round}/{tot_rounds})",
+                "alert_title": "⚠️ Alerta Fin de Temporada & Descompresión",
+                "alert_message": f"Faltan solo {remaining} fechas para concluir el torneo. Atención con la descompresión competitiva: clubes sin riesgo de descenso o con objetivos asegurados tienden a rotar titulares y bajar intensidad física.",
+                "badge_bg": "bg-rose-950/90 text-rose-300 border-rose-600/60"
+            }
+        elif pct >= 0.76 or is_annual_closing_month:
+            return {
+                "is_closing_phase": True,
+                "phase_type": "closing_stretch",
+                "stage_label": f"Recta Final ({cur_round}/{tot_rounds})",
+                "alert_title": "🏁 Recta Final de Temporada",
+                "alert_message": f"Jornada {cur_round} de {tot_rounds}. Evalúa la motivación: clubes que pelean títulos o permanencia rinden al límite, mientras que equipos en zona media sin objetivos suelen registrar desempeños irregulares.",
+                "badge_bg": "bg-amber-950/90 text-amber-300 border-amber-600/60"
+            }
+
+    if is_annual_closing_month:
+        return {
+            "is_closing_phase": True,
+            "phase_type": "closing_stretch",
+            "stage_label": "Tramo Final de Torneo",
+            "alert_title": "🏁 Cierre de Año Calendario",
+            "alert_message": "Torneo en sus semanas decisivas de fin de año. Revisa los objetivos puntuales de cada equipo antes de apostar a cuotas desbalanceadas.",
+            "badge_bg": "bg-amber-950/90 text-amber-300 border-amber-600/60"
+        }
+
+    return {
+        "is_closing_phase": False,
+        "phase_type": "regular",
+        "stage_label": f"Jornada {cur_round}" if cur_round else "",
+        "alert_title": "",
+        "alert_message": "",
+        "badge_bg": ""
+    }
 
 def generate_dynamic_live_stats(home_name: str, away_name: str, score_h: int, score_a: int, minute: int, h_ratings: dict = None, a_ratings: dict = None) -> dict:
     """
@@ -1142,6 +1266,7 @@ def fetch_espn_live_soccer():
                         "away_stats": a_ratings,
                         "live_stats": live_stats,
                         "prediction": pred,
+                        "season_phase": analyze_season_phase(raw_league, league_title, "", str(e.get("date", ""))[:10]),
                         "h2h": h2h_data,
                         "ai_analysis": ai_resp,
                         "is_live": True,
@@ -1251,6 +1376,7 @@ def fetch_espn_live_nba():
                         "away_stats": a_ratings,
                         "live_stats": live_stats,
                         "prediction": pred,
+                        "season_phase": analyze_season_phase("nba", "NBA", "", str(e.get("date", ""))[:10]),
                         "h2h": h2h_data,
                         "ai_analysis": ai_resp,
                         "is_live": True,
@@ -1922,6 +2048,8 @@ def load_scraped_matches(force_reload=False):
                         "time": item.get("time"),
                         "timestamp": item.get("timestamp") or 0,
                         "timezone": item.get("timezone", "America/Guatemala"),
+                        "round": item.get("round", ""),
+                        "season_phase": analyze_season_phase(fname.replace("_real.json", ""), league, item.get("round", ""), item.get("date_iso", "")),
                         "home_stats": home_stats,
                         "away_stats": away_stats,
                         "prediction": pred,
@@ -2053,6 +2181,7 @@ def fetch_espn_upcoming_nba():
             "home_stats": h_ratings,
             "away_stats": a_ratings,
             "prediction": pred,
+            "season_phase": analyze_season_phase("nba", "NBA", "", date_iso),
             "h2h": h2h_data,
             "ai_analysis": ai_resp,
             "referee": None,

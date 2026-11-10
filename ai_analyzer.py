@@ -150,11 +150,16 @@ def generate_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool 
         f"refleja una disputa rigurosa con {top_y} en amonestaciones."
     )
 
+    sp = match_data.get('season_phase') or {}
+    sp_prompt_ctx = ""
+    if sp.get('is_closing_phase'):
+        sp_prompt_ctx = f"\nEtapa de Competición: {sp.get('stage_label', '')} - {sp.get('alert_title', '')}. Alerta contextual: {sp.get('alert_message', '')}. Evalúa descompresión competitiva, rotación de plantillas o merma de rendimiento en clubes sin objetivos en disputa o campeones anticipados."
+
     if force_gemini:
         prompt = f"""
 Actúa como analista deportivo experto para predicciones de fútbol (estilo 'Mis Pronósticos AI').
 Analiza este partido con rigor táctico y actualidad de plantillas:
-Partido: {match_data.get('home_team')} vs {match_data.get('away_team')} (Liga: {match_data.get('league')})
+Partido: {match_data.get('home_team')} vs {match_data.get('away_team')} (Liga: {match_data.get('league')}){sp_prompt_ctx}
 Goles esperados: Local {prediction.get('lambda_home')} - Visitante {prediction.get('mu_away')}
 Probabilidades: Local {prediction.get('prob_home')}%, Empate {prediction.get('prob_draw')}%, Visitante {prediction.get('prob_away')}%
 Over 2.5: {prediction.get('prob_over_25')}%, Ambos marcan: {prediction.get('prob_btts')}%
@@ -214,6 +219,9 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
         justificacion = f"Paridad técnica con probabilidad de empate de {prediction.get('prob_draw', 30)}%."
         factor = f"Estructuras tácticas conservadoras y prioridad por el orden en mediocampo."
         advertencia = f"Una tarjeta roja temprana que rompa el orden posicional."
+
+    if sp.get('is_closing_phase'):
+        advertencia += f" [Alerta {sp.get('stage_label', 'Cierre de Torneo')}: {sp.get('alert_message', '')}]"
 
     return {
         "resumen": resumen,

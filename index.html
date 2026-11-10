@@ -458,6 +458,12 @@
                                 {% elif m.sport == 'nba' %}
                                 <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
                                 {% endif %}
+                                {% if m.season_phase and m.season_phase.is_closing_phase %}
+                                <span class="{{ m.season_phase.badge_bg or 'bg-amber-950/90 text-amber-300 border-amber-600/60' }} border px-1.5 py-0.2 rounded text-[10px] font-bold flex items-center gap-1 shadow-xs cursor-help" title="{{ m.season_phase.alert_message }}">
+                                    <span>🏁</span>
+                                    <span>{{ m.season_phase.stage_label }}</span>
+                                </span>
+                                {% endif %}
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full {% if m.is_halftime %}bg-amber-950 text-amber-400 border border-amber-800{% else %}bg-rose-950 text-rose-400 border border-rose-800{% endif %} font-mono font-bold text-[10.5px] sm:text-xs shrink-0 whitespace-nowrap ml-auto">
                                 <span class="w-1.5 h-1.5 rounded-full {% if m.is_halftime %}bg-amber-400{% else %}bg-rose-500 animate-live{% endif %}"></span>
@@ -922,6 +928,12 @@
                                     <span class="text-amber-400 font-bold">({{ m.referee.yellow_cards_per_match }} 🟨)</span>
                                 </span>
                                 {% endif %}
+                                {% if m.season_phase and m.season_phase.is_closing_phase %}
+                                <span class="{{ m.season_phase.badge_bg or 'bg-amber-950/90 text-amber-300 border-amber-600/60' }} border px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1 shadow-xs cursor-help" title="{{ m.season_phase.alert_message }}">
+                                    <span>🏁</span>
+                                    <span>{{ m.season_phase.stage_label }}</span>
+                                </span>
+                                {% endif %}
                             </div>
                             <span class="bg-gray-800/90 border border-gray-700/70 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1 shadow-xs ml-auto whitespace-nowrap" title="Hora local de Guatemala (GMT-6)">
                                 <i data-lucide="clock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
@@ -1371,6 +1383,9 @@
 
             <!-- Modal Scrollable Body -->
             <div class="p-4 sm:p-6 overflow-y-auto space-y-4 flex-1 text-xs">
+
+                <!-- Alerta Contextual Global: Cierre de Temporada / Playoffs / Recta Final -->
+                <div id="modal-season-phase-banner"></div>
 
                 <!-- SECCIÓN TAB 1: PRONÓSTICOS DETALLADOS -->
                 <div id="modal-content-picks" class="space-y-4">
@@ -1968,6 +1983,13 @@
                     <span class="text-amber-400 font-bold">(${m.referee.yellow_cards_per_match || 0} 🟨)</span>
                 </span>` : '';
 
+            const sp = m.season_phase || {};
+            const seasonPhaseBadge = sp.is_closing_phase ? `
+                <span class="${sp.badge_bg || 'bg-amber-950/90 text-amber-300 border-amber-600/60'} border px-2 py-0.5 rounded text-[10px] font-bold flex items-center gap-1 shadow-xs cursor-help" title="${sp.alert_message || 'Fase de cierre de torneo'}">
+                    <span>🏁</span>
+                    <span>${sp.stage_label || 'Recta Final'}</span>
+                </span>` : '';
+
             const homeLogoUrl = m.home_logo || getTeamLogoUrl(m.home_team, m);
             const awayLogoUrl = m.away_logo || getTeamLogoUrl(m.away_team, m);
             const homeLogoImg = homeLogoUrl ? `<img src="${homeLogoUrl}" alt="${m.home_team}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">` : '';
@@ -2147,6 +2169,7 @@
                                 ${valueBadge}
                                 ${badgeMarkup}
                                 ${refBadge}
+                                ${seasonPhaseBadge}
                             </div>
                             <span class="bg-gray-800/90 border border-gray-700/70 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1 shadow-xs ml-auto whitespace-nowrap" title="Hora local de Guatemala (GMT-6)">
                                 <i data-lucide="clock" class="w-3 h-3 text-emerald-400 shrink-0"></i>
@@ -2895,6 +2918,63 @@
                         .catch(e => console.error("Error cargando Gemini:", e));
                 }
             }
+        }
+
+        function renderSeasonPhaseAlert(match) {
+            const container = document.getElementById('modal-season-phase-banner');
+            if (!container) return;
+            const sp = match.season_phase;
+            if (!sp || !sp.is_closing_phase) {
+                container.innerHTML = '';
+                container.classList.add('hidden');
+                return;
+            }
+            container.classList.remove('hidden');
+            const alertTitle = sp.alert_title || '🏁 Recta Final / Cierre de Torneo';
+            const stageLabel = sp.stage_label || 'Etapa Decisiva';
+            const alertMsg = sp.alert_message || 'Competición en fase decisiva o de cierre. Equipos clasificados o matemáticamente descartados pueden rotar titulares o reducir intensidad competitiva.';
+            const isCritical = sp.phase_type === 'critical_end';
+            const isPlayoff = sp.phase_type === 'playoff';
+
+            const borderBg = isCritical 
+                ? 'border-rose-500/50 bg-rose-950/40 text-rose-200' 
+                : (isPlayoff ? 'border-purple-500/50 bg-purple-950/40 text-purple-200' : 'border-amber-500/50 bg-amber-950/40 text-amber-200');
+            const iconBg = isCritical 
+                ? 'bg-rose-900/60 text-rose-400' 
+                : (isPlayoff ? 'bg-purple-900/60 text-purple-400' : 'bg-amber-900/60 text-amber-400');
+            const titleColor = isCritical 
+                ? 'text-rose-300' 
+                : (isPlayoff ? 'text-purple-300' : 'text-amber-300');
+            const badgeBg = isCritical
+                ? 'bg-rose-900/80 text-rose-200 border-rose-600/60'
+                : (isPlayoff ? 'bg-purple-900/80 text-purple-200 border-purple-600/60' : 'bg-amber-900/80 text-amber-200 border-amber-600/60');
+            const iconSymbol = isPlayoff ? '🏆' : (isCritical ? '⚠️' : '🏁');
+
+            container.innerHTML = `
+                <div class="p-3 sm:p-4 rounded-xl border ${borderBg} flex items-start gap-3 shadow-lg animate-in fade-in transition duration-150 mb-1">
+                    <div class="p-2 sm:p-2.5 ${iconBg} rounded-xl shrink-0 text-base sm:text-lg flex items-center justify-center shadow-xs">
+                        ${iconSymbol}
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="font-extrabold text-xs sm:text-sm ${titleColor} flex items-center gap-1.5">
+                                <span>Alerta de Contexto Competitivo:</span>
+                                <span>${alertTitle}</span>
+                            </span>
+                            <span class="${badgeBg} border px-2 py-0.5 rounded text-[10.5px] font-mono font-bold tracking-wide">
+                                ${stageLabel}
+                            </span>
+                        </div>
+                        <p class="text-xs ${isCritical ? 'text-rose-200/90' : (isPlayoff ? 'text-purple-200/90' : 'text-amber-200/90')} mt-1.5 leading-relaxed font-sans">
+                            ${alertMsg}
+                        </p>
+                        <div class="mt-2 pt-2 border-t border-white/10 flex items-center gap-2 text-[11px] text-gray-300 flex-wrap">
+                            <span class="font-bold text-amber-400">💡 Criterio del Modelo:</span>
+                            <span>En instancias de cierre o campeonatos resueltos, los equipos sin objetivos activos reducen drásticamente su volumen ofensivo y rotan alineaciones. Ten precaución con líneas de córners elevadas o favoritismos excesivos.</span>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
         function renderRefereeCard(match) {
@@ -4904,10 +4984,13 @@
                 ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`
                 : (match.country_code ? `<img src="https://flagcdn.com/20x15/${match.country_code}.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="${match.country}">` : `${match.league_flag} `);
             const liveClock = match.is_halftime ? 'DESCANSO (HT)' : (match.quarter || (match.display_clock || match.minute + "'"));
-            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${liveClock} EN VIVO (${match.score_home}-${match.score_away})` : `${flagMarkup} ${match.league} • ${match.date}`;
+            const sp = match.season_phase;
+            const spPill = (sp && sp.is_closing_phase) ? ` <span class="${sp.badge_bg || 'bg-amber-950 text-amber-300 border-amber-700/60'} ml-1.5 border px-1.5 py-0.2 rounded text-[10px] font-bold inline-flex items-center gap-1"><span>🏁</span><span>${sp.stage_label}</span></span>` : '';
+            const sub = match.is_live ? `${flagMarkup} ${match.league} • ${liveClock} EN VIVO (${match.score_home}-${match.score_away})${spPill}` : `${flagMarkup} ${match.league} • ${match.date}${spPill}`;
             document.getElementById('modal-league').innerHTML = sub;
 
-            // Renderizar perfil arbitral, goles por equipo y secciones del modal
+            // Renderizar alerta de contexto competitivo, perfil arbitral, goles por equipo y secciones del modal
+            renderSeasonPhaseAlert(match);
             renderRefereeCard(match);
             renderTeamGoalsBanner(match);
             renderModalPicks(match);
@@ -4968,6 +5051,7 @@
                         if (fullData && !fullData.error) {
                             Object.assign(match, fullData);
                             if (activeMatchId === matchId) {
+                                renderSeasonPhaseAlert(match);
                                 renderRefereeCard(match);
                                 renderTeamGoalsBanner(match);
                                 renderModalPicks(match);
@@ -4980,6 +5064,7 @@
                     })
                     .catch(e => console.error("Error auto-cargando H2H:", e));
             } else {
+                renderSeasonPhaseAlert(match);
                 renderRefereeCard(match);
                 renderTeamGoalsBanner(match);
                 renderModalPicks(match);

@@ -141,6 +141,35 @@ KNOWN_FOOTBALL_TEAMS = {
     "uruguay": {"attack": 1.90, "defense": 0.80},
     "italia": {"attack": 1.85, "defense": 0.95},
     "bélgica": {"attack": 1.95, "defense": 1.15},
+    "croacia": {"attack": 1.80, "defense": 1.05},
+    "turquía": {"attack": 1.75, "defense": 1.15},
+    "türkiye": {"attack": 1.75, "defense": 1.15},
+    "turkey": {"attack": 1.75, "defense": 1.15},
+    "república checa": {"attack": 1.65, "defense": 1.15},
+    "czechia": {"attack": 1.65, "defense": 1.15},
+    "suiza": {"attack": 1.70, "defense": 1.10},
+    "dinamarca": {"attack": 1.75, "defense": 1.10},
+    "austria": {"attack": 1.75, "defense": 1.15},
+    "noruega": {"attack": 1.70, "defense": 1.20},
+    "escocia": {"attack": 1.55, "defense": 1.25},
+    "polonia": {"attack": 1.60, "defense": 1.30},
+    "serbia": {"attack": 1.60, "defense": 1.25},
+    "grecia": {"attack": 1.50, "defense": 1.05},
+    "guatemala": {"attack": 1.45, "defense": 1.25},
+    "costa rica": {"attack": 1.45, "defense": 1.20},
+    "honduras": {"attack": 1.45, "defense": 1.30},
+    "panamá": {"attack": 1.55, "defense": 1.15},
+    "panama": {"attack": 1.55, "defense": 1.15},
+    "canadá": {"attack": 1.70, "defense": 1.10},
+    "canada": {"attack": 1.70, "defense": 1.10},
+    "jamaica": {"attack": 1.45, "defense": 1.25},
+    "el salvador": {"attack": 1.30, "defense": 1.40},
+    "japón": {"attack": 1.95, "defense": 0.95},
+    "marruecos": {"attack": 1.80, "defense": 0.85},
+    "ecuador": {"attack": 1.65, "defense": 0.95},
+    "paraguay": {"attack": 1.40, "defense": 1.10},
+    "perú": {"attack": 1.30, "defense": 1.25},
+    "venezuela": {"attack": 1.40, "defense": 1.15},
 }
 
 KNOWN_NBA_TEAMS = {
@@ -1113,7 +1142,11 @@ LEAGUE_TEAMS_POOL = {
         "Venezuela", "Costa Rica", "Panamá", "Kazajistán", "República de Irlanda", "Israel", "Finlandia",
         "Serbia", "Albania", "Gales", "Kosovo", "Austria", "Eslovaquia", "Ucrania", "Turquía",
         "Eslovenia", "Lituania", "Suecia", "Bielorrusia", "Grecia", "Islandia", "República Checa",
-        "Escocia", "Hungría", "Polonia", "Noruega", "Rumania", "Bulgaria", "Georgia", "Irlanda del Norte"
+        "Escocia", "Hungría", "Polonia", "Noruega", "Rumania", "Bulgaria", "Georgia", "Irlanda del Norte",
+        "Guatemala", "Honduras", "El Salvador", "Jamaica", "Haití", "Trinidad y Tobago", "Curazao",
+        "Martinica", "Guadalupe", "Surinam", "Cuba", "Nicaragua", "Bermuda", "Barbados", "Guyana", "Aruba",
+        "Turkiye", "Czechia", "Cyprus", "Chipre", "Armenia", "Latvia", "Letonia", "Montenegro",
+        "North Macedonia", "Macedonia del Norte", "San Marino", "Luxemburgo", "Malta", "Moldavia"
     ],
     "turquia": [
         "Galatasaray SK", "Fenerbahçe SK", "Beşiktaş JK", "Trabzonspor", "Başakşehir FK",
@@ -1292,7 +1325,12 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "türkiye", "turkey", "turquía", "slovenia", "eslovenia", "lithuania", "lituania", "sweden", "suecia",
         "belarus", "bielorrusia", "greece", "grecia", "iceland", "islandia", "czechia", "czech republic",
         "república checa", "scotland", "escocia", "hungary", "hungría", "poland", "polonia", "norway", "noruega",
-        "romania", "rumania", "bulgaria", "georgia", "northern ireland", "irlanda del norte"
+        "romania", "rumania", "bulgaria", "georgia", "northern ireland", "irlanda del norte",
+        "guatemala", "honduras", "el salvador", "jamaica", "haití", "haiti", "trinidad and tobago", "trinidad y tobago",
+        "curaçao", "curacao", "curazao", "martinique", "martinica", "guadeloupe", "guadalupe", "suriname", "surinam",
+        "cuba", "nicaragua", "bermuda", "barbados", "guyana", "aruba", "st. kitts", "san cristóbal",
+        "cyprus", "chipre", "armenia", "latvia", "letonia", "montenegro", "north macedonia", "macedonia del norte",
+        "san marino", "luxembourg", "luxemburgo", "malta", "moldova", "moldavia"
     ]
     is_national_match = (
         any(k in l_low for k in ["selecciones", "fifa", "nations league", "eliminatorias", "copa américa", "eurocopa", "amistoso internacional", "friendly", "playoff-phase"])
@@ -1300,8 +1338,18 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         or (any(nt.lower() == h_low or nt.lower() == a_low for nt in LEAGUE_TEAMS_POOL["selecciones"]))
     )
     if is_national_match:
-        t_title = "UEFA Nations League / Eliminatorias" if ("uefa" in l_low or "nations" in l_low or "playoff" in l_low or "europe" in l_low) else "Selecciones FIFA"
-        return t_title, "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+        if "concacaf" in l_low:
+            return "Concacaf Nations League", "Concacaf", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+        elif "uefa" in l_low or ("nations" in l_low and "concacaf" not in l_low):
+            t_uefa = "UEFA Nations League B" if ("league b" in l_low or "nations_b" in l_low or "league_b" in l_low) else "UEFA Nations League"
+            return t_uefa, "Europa", "🇪🇺", LEAGUE_TEAMS_POOL["selecciones"]
+        elif "conmebol" in l_low or "sudameric" in l_low:
+            return "Eliminatorias CONMEBOL", "Sudamérica", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+        elif "amistoso" in l_low or "friendly" in l_low:
+            return "Amistoso Internacional", "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+        elif "eliminatorias" in l_low or "qualifier" in l_low:
+            return "Eliminatorias FIFA", "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
+        return "Selecciones FIFA", "Internacional", "🌎", LEAGUE_TEAMS_POOL["selecciones"]
 
     # 3. Torneos Continentales y Copas Nacionales
     if any(k in l_low for k in ["copa del rey", "copa-del-rey", "copa rey"]):

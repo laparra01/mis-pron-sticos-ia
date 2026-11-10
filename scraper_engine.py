@@ -284,6 +284,33 @@ SUPPORTED_LEAGUES = [
 
     # Torneos Internacionales UEFA
     {
+        "id": 9806,
+        "slug": "uefa_nations_league",
+        "name": "UEFA Nations League",
+        "country": "Europa",
+        "code": "eu",
+        "flag": "🇪🇺",
+        "max_upcoming": 16
+    },
+    {
+        "id": 9807,
+        "slug": "uefa_nations_league_b",
+        "name": "UEFA Nations League B",
+        "country": "Europa",
+        "code": "eu",
+        "flag": "🇪🇺",
+        "max_upcoming": 16
+    },
+    {
+        "id": 9821,
+        "slug": "concacaf_nations_league",
+        "name": "Concacaf Nations League",
+        "country": "Concacaf",
+        "code": "un",
+        "flag": "🌎",
+        "max_upcoming": 20
+    },
+    {
         "id": 42,
         "slug": "champions_league",
         "name": "UEFA Champions League",
