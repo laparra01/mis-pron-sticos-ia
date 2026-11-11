@@ -3,7 +3,7 @@
   "league_id": 9807,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-10T22:44:42.667866",
+  "last_updated": "2026-11-11T17:39:00.409711",
   "total_fixtures": 16,
   "team_histories": {
     "Austria": [
@@ -2465,7 +2465,25 @@
           "text": "Scotland 2 victorias • 1 empates • North Macedonia 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Michal Ocenas",
+        "country": "Slovakia",
+        "country_code": "SVK",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/svk.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2841,7 +2859,25 @@
           "text": "Slovenia 1 victorias • 1 empates • Switzerland 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jasper Vergoote",
+        "country": "Belgium",
+        "country_code": "BEL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bel.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

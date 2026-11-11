@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-10T22:44:37.317088",
+  "last_updated": "2026-11-11T17:38:56.346675",
   "total_fixtures": 16,
   "team_histories": {
     "Belgium": [
@@ -2488,7 +2488,7 @@
         "matches": 22,
         "yellow_cards_per_match": 4.0,
         "yellow_cards_total": 88,
-        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_avg_league": 4.49,
         "yellow_cards_tendency": "below",
         "red_cards_total": 3,
         "penalties_total": 6,
@@ -3276,7 +3276,7 @@
         "matches": 32,
         "yellow_cards_per_match": 3.41,
         "yellow_cards_total": 109,
-        "yellow_cards_avg_league": 3.44,
+        "yellow_cards_avg_league": 3.43,
         "yellow_cards_tendency": "average",
         "red_cards_total": 2,
         "penalties_total": 12,
@@ -3670,7 +3670,7 @@
         "matches": 33,
         "yellow_cards_per_match": 4.85,
         "yellow_cards_total": 160,
-        "yellow_cards_avg_league": 4.25,
+        "yellow_cards_avg_league": 4.24,
         "yellow_cards_tendency": "above",
         "red_cards_total": 7,
         "penalties_total": 17,
@@ -4041,7 +4041,25 @@
           "text": "Netherlands 2 victorias • 1 empates • Greece 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rohit Saggi",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4387,7 +4405,25 @@
           "text": "Serbia 1 victorias • 1 empates • Germany 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Javier Alberola",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
