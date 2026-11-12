@@ -282,7 +282,7 @@ SUPPORTED_LEAGUES = [
         "max_upcoming": 12
     },
 
-    # Torneos Internacionales UEFA
+    # Torneos Internacionales UEFA / FIFA / Selecciones
     {
         "id": 9806,
         "slug": "uefa_nations_league",
@@ -290,12 +290,30 @@ SUPPORTED_LEAGUES = [
         "country": "Europa",
         "code": "eu",
         "flag": "🇪🇺",
-        "max_upcoming": 16
+        "max_upcoming": 24
     },
     {
         "id": 9807,
         "slug": "uefa_nations_league_b",
         "name": "UEFA Nations League B",
+        "country": "Europa",
+        "code": "eu",
+        "flag": "🇪🇺",
+        "max_upcoming": 24
+    },
+    {
+        "id": 9808,
+        "slug": "uefa_nations_league_c",
+        "name": "UEFA Nations League C",
+        "country": "Europa",
+        "code": "eu",
+        "flag": "🇪🇺",
+        "max_upcoming": 24
+    },
+    {
+        "id": 9809,
+        "slug": "uefa_nations_league_d",
+        "name": "UEFA Nations League D",
         "country": "Europa",
         "code": "eu",
         "flag": "🇪🇺",
@@ -308,7 +326,25 @@ SUPPORTED_LEAGUES = [
         "country": "Concacaf",
         "code": "un",
         "flag": "🌎",
-        "max_upcoming": 20
+        "max_upcoming": 24
+    },
+    {
+        "id": 114,
+        "slug": "amistosos_internacionales",
+        "name": "Amistosos Internacionales (Selecciones)",
+        "country": "Internacional",
+        "code": "un",
+        "flag": "🌍",
+        "max_upcoming": 28
+    },
+    {
+        "id": 10608,
+        "slug": "afcon_qualifiers",
+        "name": "Eliminatorias Copa Africana (Selecciones)",
+        "country": "África",
+        "code": "un",
+        "flag": "🌍",
+        "max_upcoming": 28
     },
     {
         "id": 42,
@@ -846,6 +882,7 @@ def scrape_single_league(cfg, match_cache=None):
 
     finished = [m for m in all_matches if m.get("status", {}).get("finished")]
     unplayed = [m for m in all_matches if not m.get("status", {}).get("finished") and not m.get("status", {}).get("cancelled")]
+    upcoming_pool = unplayed[:max_up]
 
     teams = set()
     for m in all_matches:
@@ -854,10 +891,20 @@ def scrape_single_league(cfg, match_cache=None):
         if m.get("away", {}).get("name"):
             teams.add(m["away"]["name"])
 
+    # En torneos masivos (ej. Amistosos FIFA con >40 selecciones), calcular stats solo para los equipos de upcoming_pool
+    if len(teams) > 40:
+        teams_to_process = sorted({
+            t for m in upcoming_pool
+            for t in (m.get("home", {}).get("name"), m.get("away", {}).get("name"))
+            if t
+        })
+    else:
+        teams_to_process = sorted(teams)
+
     team_history = {}
     team_corner_stats = {}
 
-    for team in sorted(teams):
+    for team in teams_to_process:
         team_m = [m for m in finished if m.get("home", {}).get("name") == team or m.get("away", {}).get("name") == team]
         recent_5 = team_m[-5:]
         formatted_last_5 = []
@@ -991,7 +1038,6 @@ def scrape_single_league(cfg, match_cache=None):
             "fouls_avg": safe_avg(fouls_for_gen, 11.5)
         }
 
-    upcoming_pool = unplayed[:max_up]
     processed_fixtures = []
 
     dias_semana = ["Lun", "Mar", "Mié", "Jue", "Vie", "Sáb", "Dom"]

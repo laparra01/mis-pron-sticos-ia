@@ -786,11 +786,20 @@ def get_league_and_country_info(comp_name, sport="football", home_team="", away_
     if "concacaf" in comp_lower and "nations" in comp_lower:
         return "Concacaf Nations League", "Concacaf", "🌎"
     if "nations" in comp_lower or "uefa" in comp_lower:
-        t_uefa = "UEFA Nations League B" if ("league b" in comp_lower or "nations_b" in comp_lower or "league_b" in comp_lower) else "UEFA Nations League"
+        if "league d" in comp_lower or "nations_d" in comp_lower or "league_d" in comp_lower:
+            t_uefa = "UEFA Nations League D"
+        elif "league c" in comp_lower or "nations_c" in comp_lower or "league_c" in comp_lower:
+            t_uefa = "UEFA Nations League C"
+        elif "league b" in comp_lower or "nations_b" in comp_lower or "league_b" in comp_lower:
+            t_uefa = "UEFA Nations League B"
+        else:
+            t_uefa = "UEFA Nations League"
         return t_uefa, "Europa", "🇪🇺"
+    if "africa cup" in comp_lower or "afcon" in comp_lower or "copa africana" in comp_lower:
+        return "Eliminatorias Copa Africana (Selecciones)", "África", "🌍"
     if "conmebol" in comp_lower or "sudameric" in comp_lower:
         return "Eliminatorias CONMEBOL", "Sudamérica", "🌎"
-    if "selección" in comp_lower or "amistoso" in comp_lower or "fifa" in comp_lower or "friendly" in comp_lower:
+    if "selección" in comp_lower or "amistoso" in comp_lower or "fifa" in comp_lower or "friendly" in comp_lower or "friendlies" in comp_lower:
         return "Selecciones FIFA", "Internacional", "🌎"
 
     # España: ÚNICAMENTE si dice explícitamente LaLiga, España o EA Sports
@@ -836,6 +845,8 @@ LEAGUE_TOTAL_ROUNDS = {
     "turquia": 38,
     "uefa_nations_league": 6,
     "uefa_nations_league_b": 6,
+    "uefa_nations_league_c": 6,
+    "uefa_nations_league_d": 6,
     "champions_league": 8,
     "europa_league": 8,
     "conference_league": 6,
@@ -1680,6 +1691,53 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
     return match
 
 
+def _fetch_espn_scoreboard_events(sport_path: str, day_offsets=(0, 1, 2), include_default: bool = True, timeout: int = 8):
+    """
+    Consulta ESPN Scoreboard combinando el endpoint por defecto + fechas explícitas en hora de Guatemala (GMT-6),
+    evitando que ESPN devuelva solo la jornada de ayer o se salte los partidos de hoy antes del mediodía.
+    Retorna (events_dedup, fetch_ok).
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    gt_now = datetime.now(timezone(timedelta(hours=-6)))
+    urls = []
+    base = f"https://site.api.espn.com/apis/site/v2/sports/{sport_path}/scoreboard"
+    if include_default:
+        urls.append(base)
+    seen_dates = set()
+    for off in (day_offsets or ()):
+        d_str = (gt_now + timedelta(days=int(off))).strftime("%Y%m%d")
+        if d_str not in seen_dates:
+            seen_dates.add(d_str)
+            urls.append(f"{base}?dates={d_str}")
+
+    def _grab(u):
+        try:
+            r = requests.get(u, timeout=timeout)
+            if r.status_code == 200:
+                return True, (r.json().get("events", []) or [])
+        except Exception:
+            pass
+        return False, []
+
+    events = []
+    seen_ids = set()
+    fetch_ok = False
+    with ThreadPoolExecutor(max_workers=max(1, min(4, len(urls)))) as ex:
+        for ok, evs in ex.map(_grab, urls):
+            if ok:
+                fetch_ok = True
+            for ev in evs:
+                eid = str(ev.get("id") or "")
+                if eid and eid not in seen_ids:
+                    seen_ids.add(eid)
+                    events.append(ev)
+                elif not eid:
+                    events.append(ev)
+
+    return events, fetch_ok
+
+
 def fetch_espn_live_nba():
     """
     Obtiene partidos de la NBA en vivo transmitidos por ESPN con estadísticas reales de tiro/rebotes/asistencias,
@@ -1687,10 +1745,8 @@ def fetch_espn_live_nba():
     """
     try:
         standings = fetch_espn_nba_standings()
-        url = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
-        resp = requests.get(url, timeout=7)
-        if resp.status_code == 200:
-            events = resp.json().get("events", [])
+        events, fetch_ok = _fetch_espn_scoreboard_events("basketball/nba", day_offsets=(0,), include_default=True, timeout=7)
+        if fetch_ok or events:
             live_list = []
             for e in events:
                 status_obj = e.get("status", {}) or {}
@@ -2246,10 +2302,8 @@ def fetch_espn_live_nhl():
     """
     try:
         standings = fetch_espn_nhl_standings()
-        url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard"
-        resp = requests.get(url, timeout=7)
-        if resp.status_code == 200:
-            events = resp.json().get("events", [])
+        events, fetch_ok = _fetch_espn_scoreboard_events("hockey/nhl", day_offsets=(0,), include_default=True, timeout=7)
+        if fetch_ok or events:
             live_events = [e for e in events if ((e.get("status") or {}).get("type") or {}).get("state") == "in"]
             if not live_events:
                 return []
@@ -3206,16 +3260,7 @@ def fetch_espn_upcoming_nba(force: bool = False):
         events = []
         fetch_ok = False
         try:
-            r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard", timeout=8)
-            if r1.status_code == 200:
-                events.extend(r1.json().get("events", []))
-                fetch_ok = True
-
-            tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
-            r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={tomorrow_str}", timeout=8)
-            if r2.status_code == 200:
-                events.extend(r2.json().get("events", []))
-                fetch_ok = True
+            events, fetch_ok = _fetch_espn_scoreboard_events("basketball/nba", day_offsets=(0, 1, 2), include_default=True, timeout=8)
         except Exception as ex:
             print(f"[ESPN NBA] Error al consultar scoreboard: {ex}")
             if not events and _ESPN_UPCOMING_NBA_CACHE["data"]:
@@ -3345,16 +3390,7 @@ def fetch_espn_upcoming_nhl(force: bool = False):
         events = []
         fetch_ok = False
         try:
-            r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard", timeout=8)
-            if r1.status_code == 200:
-                events.extend(r1.json().get("events", []))
-                fetch_ok = True
-
-            tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
-            r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates={tomorrow_str}", timeout=8)
-            if r2.status_code == 200:
-                events.extend(r2.json().get("events", []))
-                fetch_ok = True
+            events, fetch_ok = _fetch_espn_scoreboard_events("hockey/nhl", day_offsets=(0, 1, 2), include_default=True, timeout=8)
         except Exception as ex:
             print(f"[ESPN NHL] Error al consultar scoreboard: {ex}")
             if not events and _ESPN_UPCOMING_NHL_CACHE["data"]:

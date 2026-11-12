@@ -3,7 +3,7 @@
   "league_id": 299,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-11-11T23:58:24.742059",
+  "last_updated": "2026-10-28T13:22:13.440525",
   "total_fixtures": 1,
   "team_histories": {
     "Academia Puerto Cabello": [
@@ -6745,10 +6745,10 @@
       "away_id": "10077",
       "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10272.png",
       "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10077.png",
-      "date": "Sáb 21 Nov, 16:30",
-      "date_iso": "2026-11-21",
-      "time": "16:30",
-      "timestamp": 1795300200,
+      "date": "Vie 20 Nov, 18:00",
+      "date_iso": "2026-11-20",
+      "time": "18:00",
+      "timestamp": 1795219200,
       "timezone": "America/Guatemala",
       "round": "Final",
       "h2h": {
@@ -7102,7 +7102,7 @@
           "fouls_avg_away": 11.0,
           "fouls_avg": 9.4
         },
-        "projected_corners": 10.2,
+        "projected_corners": 8.5,
         "projected_cards": 1.9,
         "summary": {
           "home_wins": 0,

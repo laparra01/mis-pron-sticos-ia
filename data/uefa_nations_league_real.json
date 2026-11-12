@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-11T23:57:49.473835",
+  "last_updated": "2026-11-12T09:20:25.464488",
   "total_fixtures": 16,
   "team_histories": {
     "Belgium": [
@@ -4046,18 +4046,18 @@
         "country": "Norway",
         "country_code": "NOR",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
+        "matches": 36,
+        "yellow_cards_per_match": 3.5,
+        "yellow_cards_total": 126,
+        "yellow_cards_avg_league": 3.37,
         "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "red_cards_total": 2,
+        "penalties_total": 9,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 23.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.5 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4406,22 +4406,22 @@
         }
       },
       "referee": {
-        "name": "Javier Alberola",
+        "name": "Javier Alberola Rojas",
         "country": "Spain",
         "country_code": "ESP",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "matches": 41,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 164,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 10,
+        "penalties_total": 19,
+        "fouls_per_match": 27.8,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (4.0 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -4754,7 +4754,25 @@
           "text": "Norway 0 victorias • 0 empates • Wales 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Oleksiy Derevinskyi",
+        "country": "Ukraine",
+        "country_code": "UKR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ukr.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5130,7 +5148,25 @@
           "text": "Portugal 4 victorias • 0 empates • Denmark 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rade Obrenović",
+        "country": "Slovenia",
+        "country_code": "SVN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/svn.png",
+        "matches": 5,
+        "yellow_cards_per_match": 4.4,
+        "yellow_cards_total": 22,
+        "yellow_cards_avg_league": 4.08,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.4 amarillas y 23.6 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

@@ -1,6 +1,6 @@
 import time
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from flask import Flask, render_template, jsonify, request, session, redirect, url_for
 import security_manager
 from data_provider import fetch_matches_data, fetch_live_matches_data, get_config, load_team_logos
@@ -211,7 +211,7 @@ def index():
             "low_risk": low_risk,
             "historical_accuracy": "78.4%"
         }
-        today_dt = datetime.now()
+        today_dt = datetime.now(timezone(timedelta(hours=-6)))
         tomorrow_dt = today_dt + timedelta(days=1)
         today_iso = today_dt.strftime("%Y-%m-%d")
         tomorrow_iso = tomorrow_dt.strftime("%Y-%m-%d")
@@ -411,7 +411,7 @@ def api_live():
 @app.route("/api/matches/future")
 def api_matches_future():
     try:
-        today_dt = datetime.now()
+        today_dt = datetime.now(timezone(timedelta(hours=-6)))
         d0 = today_dt.strftime("%Y-%m-%d")
         d1 = (today_dt + timedelta(days=1)).strftime("%Y-%m-%d")
         d2 = (today_dt + timedelta(days=2)).strftime("%Y-%m-%d")
