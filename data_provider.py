@@ -42,15 +42,34 @@ def load_team_logos():
             pass
     return _TEAM_LOGOS, _TEAM_LOGOS_NORM
 
+_NHL_ABBR_LOGOS = {
+    "anaheim ducks": "ana", "boston bruins": "bos", "buffalo sabres": "buf", "calgary flames": "cgy",
+    "carolina hurricanes": "car", "chicago blackhawks": "chi", "colorado avalanche": "col",
+    "columbus blue jackets": "cbj", "dallas stars": "dal", "detroit red wings": "det",
+    "edmonton oilers": "edm", "florida panthers": "fla", "los angeles kings": "la",
+    "minnesota wild": "min", "montreal canadiens": "mtl", "nashville predators": "nsh",
+    "new jersey devils": "nj", "new york islanders": "nyi", "new york rangers": "nyr",
+    "ottawa senators": "ott", "philadelphia flyers": "phi", "pittsburgh penguins": "pit",
+    "san jose sharks": "sj", "seattle kraken": "sea", "st. louis blues": "stl",
+    "tampa bay lightning": "tb", "toronto maple leafs": "tor", "utah mammoth": "utah",
+    "utah hockey club": "utah", "vancouver canucks": "van", "vegas golden knights": "vgk",
+    "washington capitals": "wsh", "winnipeg jets": "wpg",
+}
+
+
 def get_team_logo(team_name, sport="football", team_id=None):
     if team_id:
         return f"https://images.fotmob.com/image_resources/logo/teamlogo/{team_id}.png"
     if not team_name:
         return ""
+    norm = unicodedata.normalize("NFKD", str(team_name)).encode("ASCII", "ignore").decode("utf-8").lower().strip()
+    if sport == "nhl" or any(k in norm or norm in k for k in _NHL_ABBR_LOGOS):
+        for k, abbr in _NHL_ABBR_LOGOS.items():
+            if k in norm or norm in k:
+                return f"https://a.espncdn.com/i/teamlogos/nhl/500/{abbr}.png"
     logos, norm_logos = load_team_logos()
     if team_name in logos:
         return logos[team_name]
-    norm = unicodedata.normalize("NFKD", str(team_name)).encode("ASCII", "ignore").decode("utf-8").lower().strip()
     if norm in norm_logos:
         return norm_logos[norm]
     # Búsqueda parcial o insensible
@@ -109,8 +128,11 @@ from prediction_engine import (
     calculate_live_probabilities,
     calculate_nba_probabilities,
     calculate_nba_live_probabilities,
+    calculate_nhl_probabilities,
+    calculate_nhl_live_probabilities,
     get_football_team_ratings,
     get_nba_team_ratings,
+    get_nhl_team_ratings,
     generate_match_h2h,
     deterministic_hash,
     detect_league_and_country
@@ -119,7 +141,9 @@ from ai_analyzer import (
     generate_ai_analysis,
     generate_live_ai_analysis,
     generate_nba_ai_analysis,
-    generate_nba_live_ai_analysis
+    generate_nba_live_ai_analysis,
+    generate_nhl_ai_analysis,
+    generate_nhl_live_ai_analysis
 )
 
 # ==============================================================
@@ -854,6 +878,8 @@ def analyze_season_phase(league_slug: str, league_name: str, round_val: str, dat
             annual_leagues = ["brasil", "brasileir", "suecia", "allsvenskan", "noruega", "eliteserien", "japon", "j1", "j2", "j3", "mls", "bolivia", "peru", "guatemala"]
             if any(al in l_key for al in annual_leagues):
                 is_annual_closing_month = True
+        elif month == "04" and "nhl" in l_key:
+            is_annual_closing_month = True
 
     if cur_round and tot_rounds:
         pct = cur_round / float(tot_rounds)
@@ -1280,81 +1306,516 @@ def fetch_espn_live_soccer():
         print(f"[ESPN] Error al consultar fútbol en vivo: {ex}")
     return []
 
+_NBA_STANDINGS_LOCK = threading.Lock()
+_nba_standings_cache = {"data": {}, "timestamp": 0}
+_NBA_TEAM_SCHEDULE_LOCK = threading.Lock()
+_nba_team_schedule_cache = {}  # {team_id_season: {"events": [...], "timestamp": ts}}
+
+
+def fetch_espn_nba_standings(force: bool = False) -> dict:
+    """
+    Obtiene estadísticas oficiales de temporada de todos los equipos NBA desde ESPN Standings
+    (avgPointsFor, avgPointsAgainst, record overall/Home/Road, streak, diferencial). Caché de 1h.
+    """
+    global _nba_standings_cache
+    now = time.time()
+    if not force and _nba_standings_cache["data"] and (now - _nba_standings_cache["timestamp"] < 3600):
+        return _nba_standings_cache["data"]
+
+    with _NBA_STANDINGS_LOCK:
+        now = time.time()
+        if not force and _nba_standings_cache["data"] and (now - _nba_standings_cache["timestamp"] < 3600):
+            return _nba_standings_cache["data"]
+        try:
+            url = "https://site.api.espn.com/apis/v2/sports/basketball/nba/standings"
+            resp = requests.get(url, timeout=7)
+            if resp.status_code == 200:
+                sd = resp.json()
+                mapping = {}
+                for ch in sd.get("children", []):
+                    entries = ch.get("standings", {}).get("entries", [])
+                    for entry in entries:
+                        t_obj = entry.get("team", {}) or {}
+                        tid = str(t_obj.get("id", "") or "")
+                        dname = str(t_obj.get("displayName", "") or "")
+                        sname = str(t_obj.get("shortDisplayName", "") or "")
+                        abbr = str(t_obj.get("abbreviation", "") or "")
+                        logo = t_obj.get("logo") or ((t_obj.get("logos") or [{}])[0].get("href", ""))
+
+                        info = {
+                            "team_id": tid,
+                            "displayName": dname,
+                            "shortDisplayName": sname,
+                            "abbreviation": abbr,
+                            "logo": logo,
+                        }
+                        for st in entry.get("stats", []):
+                            name = st.get("name")
+                            if not name:
+                                continue
+                            val = st.get("value")
+                            disp = st.get("displayValue")
+                            if name in ("avgPointsFor", "avgPointsAgainst", "differential", "winPercent", "wins", "losses", "playoffSeed"):
+                                try:
+                                    info[name] = float(val if val is not None else disp)
+                                except Exception:
+                                    pass
+                            elif name in ("overall", "Home", "Road", "Last Ten Games", "streak"):
+                                info[name] = disp or (str(val) if val is not None else "")
+
+                        if tid:
+                            mapping[f"id:{tid}"] = info
+                        if dname:
+                            mapping[dname.lower()] = info
+                        if sname:
+                            mapping[sname.lower()] = info
+                        if abbr:
+                            mapping[f"abbr:{abbr.lower()}"] = info
+
+                if mapping:
+                    _nba_standings_cache["data"] = mapping
+                    _nba_standings_cache["timestamp"] = now
+                    return mapping
+        except Exception as ex:
+            print(f"[ESPN NBA STANDINGS] Error al consultar clasificación NBA: {ex}")
+        return _nba_standings_cache.get("data", {}) or {}
+
+
+def get_nba_standing_for_team(standings_map: dict, team_name: str, team_id=None):
+    if not standings_map:
+        return None
+    if team_id:
+        res = standings_map.get(f"id:{str(team_id)}")
+        if res:
+            return res
+    t_low = (team_name or "").lower().strip()
+    if t_low in standings_map:
+        return standings_map[t_low]
+    for k, v in standings_map.items():
+        if k.startswith("id:") or k.startswith("abbr:"):
+            continue
+        if k in t_low or t_low in k:
+            return v
+    # Último intento por apodo (última palabra)
+    words = [w for w in t_low.split() if len(w) > 3]
+    for w in words:
+        if w in standings_map:
+            return standings_map[w]
+    return None
+
+
+def _extract_espn_nba_stat(stats_list: list, candidate_names: list, default=0.0) -> float:
+    if not stats_list:
+        return float(default)
+    cand_lower = [c.lower() for c in candidate_names]
+    for c_name in cand_lower:
+        for st in stats_list:
+            nm = str(st.get("name", "")).lower()
+            if nm == c_name:
+                raw = st.get("displayValue") if st.get("displayValue") is not None else st.get("value")
+                try:
+                    return float(str(raw).replace("%", "").strip())
+                except Exception:
+                    pass
+    return float(default)
+
+
+def _extract_espn_record_summary(competitor: dict) -> str:
+    for r in (competitor.get("records") or []):
+        if str(r.get("name", "")).lower() in ("overall", "ytd") or str(r.get("type", "")).lower() in ("total", "ytd"):
+            if r.get("summary"):
+                return str(r["summary"])
+    return ""
+
+
+def fetch_espn_nba_team_schedule(team_id: str, season: int = None) -> list:
+    """
+    Obtiene partidos finalizados recientes reales desde el calendario oficial de ESPN para un equipo NBA.
+    """
+    if not team_id:
+        return []
+    cache_key = f"{team_id}_{season or 'cur'}"
+    now = time.time()
+    cached = _nba_team_schedule_cache.get(cache_key)
+    if cached and (now - cached.get("timestamp", 0) < 1800):
+        return cached.get("events", [])
+
+    url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{team_id}/schedule"
+    if season:
+        url += f"?season={season}"
+
+    parsed = []
+    try:
+        resp = requests.get(url, timeout=6)
+        if resp.status_code == 200:
+            data = resp.json()
+            for e in data.get("events", []):
+                comp = (e.get("competitions") or [{}])[0]
+                st_type = (comp.get("status") or {}).get("type") or {}
+                if not st_type.get("completed"):
+                    continue
+                comps = comp.get("competitors") or []
+                if len(comps) < 2:
+                    continue
+                h_c = next((c for c in comps if c.get("homeAway") == "home"), comps[0])
+                a_c = next((c for c in comps if c.get("homeAway") == "away"), comps[1])
+
+                def _parse_sc(c):
+                    sc = c.get("score")
+                    if isinstance(sc, dict):
+                        val = sc.get("value") if sc.get("value") is not None else sc.get("displayValue", 0)
+                        return int(round(float(val or 0)))
+                    try:
+                        return int(round(float(sc or 0)))
+                    except Exception:
+                        return 0
+
+                sc_h = _parse_sc(h_c)
+                sc_a = _parse_sc(a_c)
+                h_team_obj = h_c.get("team", {}) or {}
+                a_team_obj = a_c.get("team", {}) or {}
+                h_id = str(h_team_obj.get("id", h_c.get("id", "")) or "")
+                a_id = str(a_team_obj.get("id", a_c.get("id", "")) or "")
+                h_name = h_team_obj.get("displayName") or h_team_obj.get("shortDisplayName", "Local")
+                a_name = a_team_obj.get("displayName") or a_team_obj.get("shortDisplayName", "Visitante")
+
+                def _tlogo(t_obj):
+                    if t_obj.get("logo"):
+                        return t_obj["logo"]
+                    logos = t_obj.get("logos") or []
+                    if logos and isinstance(logos, list):
+                        return logos[0].get("href", "")
+                    return ""
+
+                raw_date = e.get("date", "")
+                date_ddmm = raw_date[:10]
+                try:
+                    dt_utc = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
+                    dt_gt = dt_utc.astimezone(timezone(timedelta(hours=-6)))
+                    date_ddmm = dt_gt.strftime("%d/%m")
+                except Exception:
+                    pass
+
+                parsed.append({
+                    "id": str(e.get("id", "")),
+                    "date": date_ddmm,
+                    "raw_date": raw_date,
+                    "home_id": h_id,
+                    "away_id": a_id,
+                    "home_team": h_name,
+                    "away_team": a_name,
+                    "home_score": sc_h,
+                    "away_score": sc_a,
+                    "home_logo": _tlogo(h_team_obj),
+                    "away_logo": _tlogo(a_team_obj),
+                    "winner": h_name if sc_h >= sc_a else a_name
+                })
+            # Más recientes primero
+            parsed.sort(key=lambda x: x.get("raw_date", ""), reverse=True)
+            with _NBA_TEAM_SCHEDULE_LOCK:
+                _nba_team_schedule_cache[cache_key] = {"events": parsed, "timestamp": now}
+    except Exception as ex:
+        print(f"[ESPN NBA SCHEDULE] Error consultando equipo {team_id}: {ex}")
+        if cached:
+            return cached.get("events", [])
+    return parsed
+
+
+def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_name: str) -> dict:
+    """
+    Construye el historial real de últimos 5 partidos y duelos directos (Cara a Cara) NBA desde ESPN.
+    """
+    fallback = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
+    if not home_id or not away_id:
+        return fallback
+
+    home_sched = fetch_espn_nba_team_schedule(str(home_id))
+    away_sched = fetch_espn_nba_team_schedule(str(away_id))
+
+    def _to_last5(sched, tid, tname):
+        out = []
+        tname_l = (tname or "").lower()
+        for ev in sched[:5]:
+            is_h = (ev["home_id"] == str(tid)) or (ev["home_team"].lower() == tname_l)
+            opp = ev["away_team"] if is_h else ev["home_team"]
+            my_sc = ev["home_score"] if is_h else ev["away_score"]
+            opp_sc = ev["away_score"] if is_h else ev["home_score"]
+            out.append({
+                "date": ev["date"],
+                "opponent": opp,
+                "venue": "Local" if is_h else "Visitante",
+                "match_home": ev["home_team"],
+                "match_away": ev["away_team"],
+                "home_score": ev["home_score"],
+                "away_score": ev["away_score"],
+                "score": f"{ev['home_score']} - {ev['away_score']}",
+                "result": "W" if my_sc >= opp_sc else "L",
+                "home_logo": ev.get("home_logo", ""),
+                "away_logo": ev.get("away_logo", ""),
+                "competition": "NBA"
+            })
+        return out
+
+    home_last_5 = _to_last5(home_sched, home_id, home_name)
+    away_last_5 = _to_last5(away_sched, away_id, away_name)
+
+    def _is_direct(ev, tid_a, tid_b):
+        ids = {ev.get("home_id"), ev.get("away_id")}
+        return str(tid_a) in ids and str(tid_b) in ids
+
+    direct_evs = [ev for ev in home_sched if _is_direct(ev, home_id, away_id)]
+    if len(direct_evs) < 3:
+        # Complementar con temporada regular anterior en ESPN para tener hasta 5 duelos directos reales
+        try:
+            cur_year = datetime.now().year
+            prev_season = cur_year if datetime.now().month >= 10 else cur_year - 1
+            prev_sched = fetch_espn_nba_team_schedule(str(home_id), season=prev_season)
+            seen_d = {ev["id"] for ev in direct_evs}
+            for ev in prev_sched:
+                if ev["id"] not in seen_d and _is_direct(ev, home_id, away_id):
+                    direct_evs.append(ev)
+                    seen_d.add(ev["id"])
+        except Exception:
+            pass
+
+    direct_list = []
+    for ev in direct_evs[:5]:
+        direct_list.append({
+            "date": ev["date"],
+            "competition": "NBA",
+            "tournament": "NBA",
+            "match_home": ev["home_team"],
+            "match_away": ev["away_team"],
+            "home_score": ev["home_score"],
+            "away_score": ev["away_score"],
+            "score": f"{ev['home_score']} - {ev['away_score']}",
+            "winner": ev["winner"],
+            "home_team": ev["home_team"],
+            "away_team": ev["away_team"],
+            "home_logo": ev.get("home_logo", ""),
+            "away_logo": ev.get("away_logo", "")
+        })
+
+    is_real_recent = bool(home_last_5 and away_last_5)
+    final_home_5 = home_last_5 if home_last_5 else fallback["home_last_5"]
+    final_away_5 = away_last_5 if away_last_5 else fallback["away_last_5"]
+    final_direct = direct_list if direct_list else fallback["head_to_head"]
+
+    w_h = sum(1 for m in final_direct if m["winner"] == home_name or (home_name.lower() in str(m.get("winner", "")).lower()))
+    w_a = sum(1 for m in final_direct if m["winner"] == away_name or (away_name.lower() in str(m.get("winner", "")).lower()))
+    avg_pts = round(sum(m["home_score"] + m["away_score"] for m in final_direct) / float(len(final_direct) or 1), 1)
+
+    return {
+        "home_last_5": final_home_5,
+        "away_last_5": final_away_5,
+        "head_to_head": final_direct,
+        "is_real": bool(is_real_recent or direct_list),
+        "is_real_recent": is_real_recent,
+        "summary": {
+            "home_wins": w_h,
+            "draws": 0,
+            "away_wins": w_a,
+            "avg_goals": avg_pts,
+            "text": f"{home_name} {w_h} victorias • {away_name} {w_a} victorias (últimos {len(final_direct)})"
+        }
+    }
+
+
+def enrich_nba_match_with_real_h2h(match: dict) -> dict:
+    """
+    Enriquece bajo demanda un partido NBA (al abrir su modal /api/match/<id>) con H2H real de ESPN
+    y recalibra ratings/predicción con sus últimos 5 partidos oficiales sin frenar la carga inicial.
+    """
+    if not match or match.get("sport") != "nba":
+        return match
+    if (match.get("h2h") or {}).get("is_real"):
+        return match
+
+    standings = fetch_espn_nba_standings()
+    home_name = match.get("home_team", "")
+    away_name = match.get("away_team", "")
+    home_id = match.get("home_id")
+    away_id = match.get("away_id")
+
+    h_stand = get_nba_standing_for_team(standings, home_name, home_id)
+    a_stand = get_nba_standing_for_team(standings, away_name, away_id)
+    if not home_id and h_stand:
+        home_id = h_stand.get("team_id")
+    if not away_id and a_stand:
+        away_id = a_stand.get("team_id")
+
+    h2h_data = fetch_espn_nba_team_h2h(home_id, away_id, home_name, away_name)
+    enrich_h2h_with_logos(
+        h2h_data,
+        home_team=home_name,
+        away_team=away_name,
+        home_logo=match.get("home_logo", ""),
+        away_logo=match.get("away_logo", "")
+    )
+    match["h2h"] = h2h_data
+
+    if h2h_data.get("is_real_recent") or h_stand or a_stand:
+        h_ratings = get_nba_team_ratings(
+            home_name,
+            recent_matches=h2h_data.get("home_last_5"),
+            venue_role="home",
+            standing_info=h_stand,
+            real_recent=bool(h2h_data.get("is_real_recent"))
+        )
+        a_ratings = get_nba_team_ratings(
+            away_name,
+            recent_matches=h2h_data.get("away_last_5"),
+            venue_role="away",
+            standing_info=a_stand,
+            real_recent=bool(h2h_data.get("is_real_recent"))
+        )
+        match["home_stats"] = h_ratings
+        match["away_stats"] = a_ratings
+        if not match.get("is_live"):
+            pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
+            match["prediction"] = pred
+            if not (match.get("ai_analysis") or {}).get("is_gemini"):
+                match["ai_analysis"] = generate_nba_ai_analysis(match, pred)
+
+    return match
+
+
 def fetch_espn_live_nba():
     """
-    Obtiene partidos de la NBA en vivo transmitidos por ESPN (incluye pretemporada y temporada regular, ej. Lakers).
+    Obtiene partidos de la NBA en vivo transmitidos por ESPN con estadísticas reales de tiro/rebotes/asistencias,
+    reloj exacto por cuarto/HT/OT y ratings oficiales de temporada.
     """
     try:
+        standings = fetch_espn_nba_standings()
         url = "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard"
-        resp = requests.get(url, timeout=3.5)
+        resp = requests.get(url, timeout=7)
         if resp.status_code == 200:
             events = resp.json().get("events", [])
             live_list = []
             for e in events:
-                state = e.get("status", {}).get("type", {}).get("state")
+                status_obj = e.get("status", {}) or {}
+                status_type = status_obj.get("type", {}) or {}
+                state = status_type.get("state")
                 if state == "in":
-                    comp = e.get("competitions", [{}])[0]
+                    comp = (e.get("competitions") or [{}])[0]
                     competitors = comp.get("competitors", [])
-                    home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0] if competitors else {})
-                    away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1] if len(competitors) > 1 else {})
+                    if len(competitors) < 2:
+                        continue
+                    home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+                    away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
 
-                    home_name = home.get("team", {}).get("displayName", "Local")
-                    away_name = away.get("team", {}).get("displayName", "Visitante")
-                    score_h = int(home.get("score", 0) or 0)
-                    score_a = int(away.get("score", 0) or 0)
-                    period = e.get("status", {}).get("period", 3)
-                    clock_str = e.get("status", {}).get("displayClock", "0.0")
-                    q_label = f"{period}Q"
+                    home_team_obj = home.get("team", {}) or {}
+                    away_team_obj = away.get("team", {}) or {}
+                    home_id = str(home_team_obj.get("id", home.get("id", "")) or "")
+                    away_id = str(away_team_obj.get("id", away.get("id", "")) or "")
+                    home_name = home_team_obj.get("displayName", "Local")
+                    away_name = away_team_obj.get("displayName", "Visitante")
+                    score_h = int(float(home.get("score", 0) or 0))
+                    score_a = int(float(away.get("score", 0) or 0))
 
-                    home_lines = [int(l.get("value", 0)) for l in home.get("linescores", [])]
-                    away_lines = [int(l.get("value", 0)) for l in away.get("linescores", [])]
+                    period = int(status_obj.get("period", 1) or 1)
+                    clock_secs = float(status_obj.get("clock", 0) or 0)
+                    display_clock = str(status_obj.get("displayClock", "0:00") or "0:00")
+                    st_name = str(status_type.get("name", "")).upper()
+                    st_detail = str(status_type.get("shortDetail", "")).upper()
+                    is_halftime = ("HALFTIME" in st_name) or ("HALFTIME" in st_detail) or ("HALF" in st_detail)
+
+                    if is_halftime:
+                        q_label = "HT (Descanso)"
+                        q_param = "HT (Descanso)"
+                        mins_rem = 24.0
+                    elif period <= 4:
+                        q_label = f"{period}Q {display_clock}"
+                        q_param = f"Q{period}"
+                        mins_rem = max(0.05, ((4 - period) * 12.0) + (clock_secs / 60.0))
+                    else:
+                        ot_n = period - 4
+                        ot_tag = "OT" if ot_n == 1 else f"OT{ot_n}"
+                        q_label = f"{ot_tag} {display_clock}"
+                        q_param = ot_tag
+                        mins_rem = max(0.05, clock_secs / 60.0)
+
+                    home_lines = [int(round(float(l.get("value", 0) or 0))) for l in (home.get("linescores") or [])]
+                    away_lines = [int(round(float(l.get("value", 0) or 0))) for l in (away.get("linescores") or [])]
                     q_scores = {}
                     for i in range(1, 5):
-                        h_q = home_lines[i-1] if i-1 < len(home_lines) else 0
-                        a_q = away_lines[i-1] if i-1 < len(away_lines) else 0
-                        q_scores[f"{i}Q"] = f"{h_q}-{a_q}"
+                        if i <= period and (i - 1 < len(home_lines) or i - 1 < len(away_lines)):
+                            h_q = home_lines[i - 1] if i - 1 < len(home_lines) else 0
+                            a_q = away_lines[i - 1] if i - 1 < len(away_lines) else 0
+                            q_scores[f"{i}Q"] = f"{h_q}-{a_q}"
+                        else:
+                            q_scores[f"{i}Q"] = "-"
+                    if period > 4 and len(home_lines) > 4 and len(away_lines) > 4:
+                        for ot_idx in range(4, min(len(home_lines), len(away_lines))):
+                            ot_lbl = "OT" if ot_idx == 4 else f"OT{ot_idx - 3}"
+                            q_scores[ot_lbl] = f"{home_lines[ot_idx]}-{away_lines[ot_idx]}"
 
+                    h_stand = get_nba_standing_for_team(standings, home_name, home_id)
+                    a_stand = get_nba_standing_for_team(standings, away_name, away_id)
                     h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
-                    h_ratings = get_nba_team_ratings(home_name, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-                    a_ratings = get_nba_team_ratings(away_name, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-                    h_hash = deterministic_hash(home_name)
-                    fg_h = round(44.0 + (score_h / 25.0) + ((h_hash % 5) * 0.8), 1)
-                    fg_a = round(43.0 + (score_a / 25.0) + (((h_hash // 5) % 5) * 0.8), 1)
+                    h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand)
+                    a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+
+                    home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("overall", "")
+                    away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("overall", "")
+
+                    h_st_list = home.get("statistics") or []
+                    a_st_list = away.get("statistics") or []
+                    fg_h = round(_extract_espn_nba_stat(h_st_list, ["fieldGoalPct"], 45.5), 1)
+                    fg_a = round(_extract_espn_nba_stat(a_st_list, ["fieldGoalPct"], 44.5), 1)
+                    three_h = round(_extract_espn_nba_stat(h_st_list, ["threePointPct", "threePointFieldGoalPct"], 34.5), 1)
+                    three_a = round(_extract_espn_nba_stat(a_st_list, ["threePointPct", "threePointFieldGoalPct"], 33.5), 1)
+                    reb_h = int(round(_extract_espn_nba_stat(h_st_list, ["rebounds", "avgRebounds"], 16 + period * 7)))
+                    reb_a = int(round(_extract_espn_nba_stat(a_st_list, ["rebounds", "avgRebounds"], 15 + period * 7)))
+                    ast_h = int(round(_extract_espn_nba_stat(h_st_list, ["assists", "avgAssists"], 9 + period * 5)))
+                    ast_a = int(round(_extract_espn_nba_stat(a_st_list, ["assists", "avgAssists"], 8 + period * 5)))
+                    tov_h = int(round(_extract_espn_nba_stat(h_st_list, ["turnovers"], 3 + period * 3)))
+                    tov_a = int(round(_extract_espn_nba_stat(a_st_list, ["turnovers"], 3 + period * 3)))
 
                     live_stats = {
                         "q_scores": q_scores,
-                        "field_goal_pct_home": min(56.0, fg_h),
-                        "field_goal_pct_away": min(56.0, fg_a),
-                        "three_point_pct_home": round(32.0 + ((h_hash % 8)), 1),
-                        "three_point_pct_away": round(31.0 + (((h_hash // 7) % 8)), 1),
-                        "rebounds_home": 34 + (period * 2),
-                        "rebounds_away": 32 + (period * 2),
-                        "assists_home": 20 + period,
-                        "assists_away": 18 + period,
-                        "turnovers_home": 8 + period,
-                        "turnovers_away": 10 + period,
+                        "is_halftime": is_halftime,
+                        "fg_pct_home": fg_h,
+                        "fg_pct_away": fg_a,
+                        "three_pct_home": three_h,
+                        "three_pct_away": three_a,
+                        "field_goal_pct_home": fg_h,
+                        "field_goal_pct_away": fg_a,
+                        "three_point_pct_home": three_h,
+                        "three_point_pct_away": three_a,
+                        "rebounds_home": reb_h,
+                        "rebounds_away": reb_a,
+                        "assists_home": ast_h,
+                        "assists_away": ast_a,
+                        "turnovers_home": tov_h,
+                        "turnovers_away": tov_a,
                         "current_run": f"{home_name if score_h >= score_a else away_name} +{abs(score_h - score_a)}"
                     }
-
-                    try:
-                        mins_rem = float(clock_str.split(":")[0]) if ":" in clock_str else 1.0
-                    except Exception:
-                        mins_rem = 2.0
 
                     pred = calculate_nba_live_probabilities(
                         current_h=score_h,
                         current_a=score_a,
-                        quarter=f"Q{period}",
+                        quarter=q_param,
                         mins_remaining=mins_rem,
                         home_stats=h_ratings,
                         away_stats=a_ratings,
                         live_stats=live_stats
                     )
-                    ai_resp = generate_nba_live_ai_analysis({"home_team": home_name, "away_team": away_name}, pred, live_stats)
+                    ai_resp = generate_nba_live_ai_analysis({
+                        "home_team": home_name,
+                        "away_team": away_name,
+                        "home_stats": h_ratings,
+                        "away_stats": a_ratings,
+                        "home_record": home_record,
+                        "away_record": away_record
+                    }, pred, live_stats)
 
-                    home_logo = home.get("team", {}).get("logo") or get_team_logo(home_name, "nba")
-                    away_logo = away.get("team", {}).get("logo") or get_team_logo(away_name, "nba")
+                    home_logo = home_team_obj.get("logo") or get_team_logo(home_name, "nba")
+                    away_logo = away_team_obj.get("logo") or get_team_logo(away_name, "nba")
                     enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
+                    season_obj = e.get("season", {}) or {}
+                    is_playoff = (season_obj.get("type") == 3) or ("playoff" in str(season_obj.get("slug", "")).lower())
 
                     live_list.append({
                         "id": f"espn_nba_{e.get('id')}",
@@ -1367,16 +1828,22 @@ def fetch_espn_live_nba():
                         "country_flag": "🇺🇸",
                         "home_team": home_name,
                         "away_team": away_name,
+                        "home_id": home_id,
+                        "away_id": away_id,
+                        "home_record": home_record,
+                        "away_record": away_record,
                         "home_logo": home_logo,
                         "away_logo": away_logo,
                         "quarter": q_label,
+                        "display_clock": q_label,
+                        "is_halftime": is_halftime,
                         "score_home": score_h,
                         "score_away": score_a,
                         "home_stats": h_ratings,
                         "away_stats": a_ratings,
                         "live_stats": live_stats,
                         "prediction": pred,
-                        "season_phase": analyze_season_phase("nba", "NBA", "", str(e.get("date", ""))[:10]),
+                        "season_phase": analyze_season_phase("nba", "NBA", "Playoffs" if is_playoff else "", str(e.get("date", ""))[:10]),
                         "h2h": h2h_data,
                         "ai_analysis": ai_resp,
                         "is_live": True,
@@ -1384,10 +1851,607 @@ def fetch_espn_live_nba():
                         "source_api": "ESPN Live"
                     })
             if live_list:
-                print(f"[ESPN REAL] Se cargaron {len(live_list)} partidos de la NBA en vivo (incluyendo Lakers).")
+                print(f"[ESPN REAL] Se cargaron {len(live_list)} partidos de la NBA en vivo con estadísticas reales.")
             return live_list
     except Exception as ex:
         print(f"[ESPN] Error al consultar NBA en vivo: {ex}")
+    return []
+
+
+_NHL_STANDINGS_LOCK = threading.Lock()
+_nhl_standings_cache = {"data": {}, "timestamp": 0}
+_NHL_TEAM_SCHEDULE_LOCK = threading.Lock()
+_nhl_team_schedule_cache = {}
+_NHL_BOX_CACHE = {}
+
+
+def fetch_espn_nhl_standings(force: bool = False) -> dict:
+    """
+    Obtiene estadísticas oficiales de temporada de los 32 equipos NHL desde ESPN Standings
+    (pointsFor, pointsAgainst, gamesPlayed, wins, losses, otLosses, points, overall, streak). Caché 1h.
+    """
+    global _nhl_standings_cache
+    now = time.time()
+    if not force and _nhl_standings_cache["data"] and (now - _nhl_standings_cache["timestamp"] < 3600):
+        return _nhl_standings_cache["data"]
+
+    with _NHL_STANDINGS_LOCK:
+        now = time.time()
+        if not force and _nhl_standings_cache["data"] and (now - _nhl_standings_cache["timestamp"] < 3600):
+            return _nhl_standings_cache["data"]
+        try:
+            url = "https://site.api.espn.com/apis/v2/sports/hockey/nhl/standings"
+            resp = requests.get(url, timeout=7)
+            if resp.status_code == 200:
+                sd = resp.json()
+                mapping = {}
+                for ch in sd.get("children", []):
+                    entries = ch.get("standings", {}).get("entries", [])
+                    for entry in entries:
+                        t_obj = entry.get("team", {}) or {}
+                        tid = str(t_obj.get("id", "") or "")
+                        dname = str(t_obj.get("displayName", "") or "")
+                        sname = str(t_obj.get("shortDisplayName", "") or "")
+                        abbr = str(t_obj.get("abbreviation", "") or "")
+                        logo = t_obj.get("logo") or ((t_obj.get("logos") or [{}])[0].get("href", ""))
+
+                        info = {
+                            "team_id": tid,
+                            "displayName": dname,
+                            "shortDisplayName": sname,
+                            "abbreviation": abbr,
+                            "logo": logo,
+                        }
+                        for st in entry.get("stats", []):
+                            name = st.get("name")
+                            if not name:
+                                continue
+                            val = st.get("value")
+                            disp = st.get("displayValue")
+                            if name in ("gamesPlayed", "pointsFor", "pointsAgainst", "differential", "wins", "losses", "otLosses", "points", "regWins"):
+                                try:
+                                    info[name] = float(val if val is not None else disp)
+                                except Exception:
+                                    pass
+                            elif name in ("overall", "Home", "Road", "Last Ten Games", "streak"):
+                                info[name] = disp or (str(val) if val is not None else "")
+
+                        if info.get("overall") and "," in info["overall"]:
+                            info["record_short"] = info["overall"].split(",")[0].strip()
+                        else:
+                            info["record_short"] = info.get("overall", "")
+
+                        if tid:
+                            mapping[f"id:{tid}"] = info
+                        if dname:
+                            mapping[dname.lower()] = info
+                        if sname:
+                            mapping[sname.lower()] = info
+                        if abbr:
+                            mapping[f"abbr:{abbr.lower()}"] = info
+
+                if mapping:
+                    _nhl_standings_cache["data"] = mapping
+                    _nhl_standings_cache["timestamp"] = now
+                    return mapping
+        except Exception as ex:
+            print(f"[ESPN NHL STANDINGS] Error al consultar clasificación NHL: {ex}")
+        return _nhl_standings_cache.get("data", {}) or {}
+
+
+def get_nhl_standing_for_team(standings_map: dict, team_name: str, team_id=None):
+    return get_nba_standing_for_team(standings_map, team_name, team_id)
+
+
+def fetch_espn_nhl_team_schedule(team_id: str, season: int = None) -> list:
+    """
+    Obtiene partidos finalizados recientes reales desde el calendario oficial de ESPN para un equipo NHL.
+    """
+    if not team_id:
+        return []
+    cache_key = f"{team_id}_{season or 'cur'}"
+    now = time.time()
+    cached = _nhl_team_schedule_cache.get(cache_key)
+    if cached and (now - cached.get("timestamp", 0) < 1800):
+        return cached.get("events", [])
+
+    url = f"https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/teams/{team_id}/schedule"
+    if season:
+        url += f"?season={season}"
+
+    parsed = []
+    try:
+        resp = requests.get(url, timeout=6)
+        if resp.status_code == 200:
+            data = resp.json()
+            for e in data.get("events", []):
+                comp = (e.get("competitions") or [{}])[0]
+                st_type = (comp.get("status") or {}).get("type") or {}
+                if not st_type.get("completed"):
+                    continue
+                comps = comp.get("competitors") or []
+                if len(comps) < 2:
+                    continue
+                h_c = next((c for c in comps if c.get("homeAway") == "home"), comps[0])
+                a_c = next((c for c in comps if c.get("homeAway") == "away"), comps[1])
+
+                def _parse_sc(c):
+                    sc = c.get("score")
+                    if isinstance(sc, dict):
+                        val = sc.get("value") if sc.get("value") is not None else sc.get("displayValue", 0)
+                        return int(round(float(val or 0)))
+                    try:
+                        return int(round(float(sc or 0)))
+                    except Exception:
+                        return 0
+
+                sc_h = _parse_sc(h_c)
+                sc_a = _parse_sc(a_c)
+                h_team_obj = h_c.get("team", {}) or {}
+                a_team_obj = a_c.get("team", {}) or {}
+                h_id = str(h_team_obj.get("id", h_c.get("id", "")) or "")
+                a_id = str(a_team_obj.get("id", a_c.get("id", "")) or "")
+                h_name = h_team_obj.get("displayName") or h_team_obj.get("shortDisplayName", "Local")
+                a_name = a_team_obj.get("displayName") or a_team_obj.get("shortDisplayName", "Visitante")
+
+                def _tlogo(t_obj, tname):
+                    if t_obj.get("logo"):
+                        return t_obj["logo"]
+                    logos = t_obj.get("logos") or []
+                    if logos and isinstance(logos, list):
+                        return logos[0].get("href", "")
+                    return get_team_logo(tname, "nhl")
+
+                raw_date = e.get("date", "")
+                date_ddmm = raw_date[:10]
+                try:
+                    dt_utc = datetime.fromisoformat(raw_date.replace("Z", "+00:00"))
+                    dt_gt = dt_utc.astimezone(timezone(timedelta(hours=-6)))
+                    date_ddmm = dt_gt.strftime("%d/%m")
+                except Exception:
+                    pass
+
+                sh_det = str(st_type.get("shortDetail", "") or "")
+                ot_tag = " (SO)" if "SO" in sh_det else (" (OT)" if "OT" in sh_det else "")
+
+                parsed.append({
+                    "id": str(e.get("id", "")),
+                    "date": date_ddmm,
+                    "raw_date": raw_date,
+                    "home_id": h_id,
+                    "away_id": a_id,
+                    "home_team": h_name,
+                    "away_team": a_name,
+                    "home_score": sc_h,
+                    "away_score": sc_a,
+                    "home_logo": _tlogo(h_team_obj, h_name),
+                    "away_logo": _tlogo(a_team_obj, a_name),
+                    "ot_tag": ot_tag,
+                    "winner": h_name if sc_h >= sc_a else a_name
+                })
+            parsed.sort(key=lambda x: x.get("raw_date", ""), reverse=True)
+            with _NHL_TEAM_SCHEDULE_LOCK:
+                _nhl_team_schedule_cache[cache_key] = {"events": parsed, "timestamp": now}
+    except Exception as ex:
+        print(f"[ESPN NHL SCHEDULE] Error consultando equipo {team_id}: {ex}")
+        if cached:
+            return cached.get("events", [])
+    return parsed
+
+
+def fetch_espn_nhl_team_h2h(home_id: str, away_id: str, home_name: str, away_name: str) -> dict:
+    """
+    Construye el historial real de últimos 5 partidos y duelos directos (Cara a Cara) NHL desde ESPN.
+    """
+    fallback = generate_match_h2h(home_name, away_name, "nhl", "NHL", country="Norteamérica")
+    if not home_id or not away_id:
+        return fallback
+
+    home_sched = fetch_espn_nhl_team_schedule(str(home_id))
+    away_sched = fetch_espn_nhl_team_schedule(str(away_id))
+
+    def _to_last5(sched, tid, tname):
+        out = []
+        tname_l = (tname or "").lower()
+        for ev in sched[:5]:
+            is_h = (ev["home_id"] == str(tid)) or (ev["home_team"].lower() == tname_l)
+            opp = ev["away_team"] if is_h else ev["home_team"]
+            my_sc = ev["home_score"] if is_h else ev["away_score"]
+            opp_sc = ev["away_score"] if is_h else ev["home_score"]
+            out.append({
+                "date": ev["date"],
+                "opponent": opp,
+                "venue": "Local" if is_h else "Visitante",
+                "match_home": ev["home_team"],
+                "match_away": ev["away_team"],
+                "home_score": ev["home_score"],
+                "away_score": ev["away_score"],
+                "score": f"{ev['home_score']} - {ev['away_score']}{ev.get('ot_tag', '')}",
+                "result": "W" if my_sc >= opp_sc else "L",
+                "home_logo": ev.get("home_logo", ""),
+                "away_logo": ev.get("away_logo", ""),
+                "competition": "NHL"
+            })
+        return out
+
+    home_last_5 = _to_last5(home_sched, home_id, home_name)
+    away_last_5 = _to_last5(away_sched, away_id, away_name)
+
+    def _is_direct(ev, tid_a, tid_b):
+        ids = {ev.get("home_id"), ev.get("away_id")}
+        return str(tid_a) in ids and str(tid_b) in ids
+
+    direct_evs = [ev for ev in home_sched if _is_direct(ev, home_id, away_id)]
+    if len(direct_evs) < 3:
+        try:
+            cur_year = datetime.now().year
+            prev_season = cur_year if datetime.now().month >= 10 else cur_year - 1
+            prev_sched = fetch_espn_nhl_team_schedule(str(home_id), season=prev_season)
+            seen_d = {ev["id"] for ev in direct_evs}
+            for ev in prev_sched:
+                if ev["id"] not in seen_d and _is_direct(ev, home_id, away_id):
+                    direct_evs.append(ev)
+                    seen_d.add(ev["id"])
+        except Exception:
+            pass
+
+    direct_list = []
+    for ev in direct_evs[:5]:
+        direct_list.append({
+            "date": ev["date"],
+            "competition": "NHL",
+            "tournament": "NHL",
+            "match_home": ev["home_team"],
+            "match_away": ev["away_team"],
+            "home_score": ev["home_score"],
+            "away_score": ev["away_score"],
+            "score": f"{ev['home_score']} - {ev['away_score']}{ev.get('ot_tag', '')}",
+            "winner": ev["winner"],
+            "home_team": ev["home_team"],
+            "away_team": ev["away_team"],
+            "home_logo": ev.get("home_logo", ""),
+            "away_logo": ev.get("away_logo", "")
+        })
+
+    is_real_recent = bool(home_last_5 and away_last_5)
+    final_home_5 = home_last_5 if home_last_5 else fallback["home_last_5"]
+    final_away_5 = away_last_5 if away_last_5 else fallback["away_last_5"]
+    final_direct = direct_list if direct_list else fallback["head_to_head"]
+
+    w_h = sum(1 for m in final_direct if m["winner"] == home_name or (home_name.lower() in str(m.get("winner", "")).lower()))
+    w_a = sum(1 for m in final_direct if m["winner"] == away_name or (away_name.lower() in str(m.get("winner", "")).lower()))
+    avg_goals = round(sum(m["home_score"] + m["away_score"] for m in final_direct) / float(len(final_direct) or 1), 1)
+
+    return {
+        "home_last_5": final_home_5,
+        "away_last_5": final_away_5,
+        "head_to_head": final_direct,
+        "is_real": bool(is_real_recent or direct_list),
+        "is_real_recent": is_real_recent,
+        "summary": {
+            "home_wins": w_h,
+            "draws": 0,
+            "away_wins": w_a,
+            "avg_goals": avg_goals,
+            "text": f"{home_name} {w_h} victorias • {away_name} {w_a} victorias (últimos {len(final_direct)})"
+        }
+    }
+
+
+def enrich_nhl_match_with_real_h2h(match: dict) -> dict:
+    """
+    Enriquece bajo demanda un partido NHL (al abrir su modal /api/match/<id>) con H2H real de ESPN
+    y recalibra ratings/predicción con sus últimos 5 partidos oficiales sin frenar la carga inicial.
+    """
+    if not match or match.get("sport") != "nhl":
+        return match
+    if (match.get("h2h") or {}).get("is_real"):
+        return match
+
+    standings = fetch_espn_nhl_standings()
+    home_name = match.get("home_team", "")
+    away_name = match.get("away_team", "")
+    home_id = match.get("home_id")
+    away_id = match.get("away_id")
+
+    h_stand = get_nhl_standing_for_team(standings, home_name, home_id)
+    a_stand = get_nhl_standing_for_team(standings, away_name, away_id)
+    if not home_id and h_stand:
+        home_id = h_stand.get("team_id")
+    if not away_id and a_stand:
+        away_id = a_stand.get("team_id")
+
+    h2h_data = fetch_espn_nhl_team_h2h(home_id, away_id, home_name, away_name)
+    enrich_h2h_with_logos(
+        h2h_data,
+        home_team=home_name,
+        away_team=away_name,
+        home_logo=match.get("home_logo", ""),
+        away_logo=match.get("away_logo", "")
+    )
+    match["h2h"] = h2h_data
+
+    if h2h_data.get("is_real_recent") or h_stand or a_stand:
+        h_ratings = get_nhl_team_ratings(
+            home_name,
+            recent_matches=h2h_data.get("home_last_5"),
+            venue_role="home",
+            standing_info=h_stand,
+            real_recent=bool(h2h_data.get("is_real_recent"))
+        )
+        a_ratings = get_nhl_team_ratings(
+            away_name,
+            recent_matches=h2h_data.get("away_last_5"),
+            venue_role="away",
+            standing_info=a_stand,
+            real_recent=bool(h2h_data.get("is_real_recent"))
+        )
+        match["home_stats"] = h_ratings
+        match["away_stats"] = a_ratings
+        if not match.get("is_live"):
+            pred = calculate_nhl_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
+            match["prediction"] = pred
+            if not (match.get("ai_analysis") or {}).get("is_gemini"):
+                match["ai_analysis"] = generate_nhl_ai_analysis(match, pred)
+
+    return match
+
+
+def fetch_espn_nhl_boxscore(event_id: str, home_id: str = "", away_id: str = "") -> dict:
+    """
+    Obtiene el boxscore oficial en vivo de un partido NHL (shotsTotal SOG, hits, powerPlayPct,
+    powerPlayGoals, powerPlayOpportunities, blockedShots, faceoffPercent, penaltyMinutes). Caché 25s.
+    """
+    if not event_id:
+        return {}
+    now = time.time()
+    cached = _NHL_BOX_CACHE.get(event_id)
+    if cached and (now - cached.get("timestamp", 0) < 25):
+        return cached.get("data", {})
+
+    out = {}
+    try:
+        url = f"https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event={event_id}"
+        resp = requests.get(url, timeout=4.5)
+        if resp.status_code == 200:
+            data = resp.json()
+            teams = (data.get("boxscore") or {}).get("teams") or []
+            for b in teams:
+                tid = str((b.get("team") or {}).get("id", "") or "")
+                side = "home" if (home_id and tid == str(home_id)) else ("away" if (away_id and tid == str(away_id)) else None)
+                if side is None:
+                    ha = b.get("homeAway")
+                    side = ha if ha in ("home", "away") else ("away" if not out.get("away") else "home")
+                st_map = {}
+                for st in (b.get("statistics") or []):
+                    nm = st.get("name")
+                    if nm:
+                        raw = st.get("displayValue") if st.get("displayValue") is not None else st.get("value")
+                        try:
+                            st_map[nm] = float(str(raw).replace("%", "").strip())
+                        except Exception:
+                            pass
+                out[side] = st_map
+            _NHL_BOX_CACHE[event_id] = {"data": out, "timestamp": now}
+    except Exception:
+        if cached:
+            return cached.get("data", {})
+    return out
+
+
+def fetch_espn_live_nhl():
+    """
+    Obtiene partidos NHL en vivo transmitidos por ESPN Scoreboard + Boxscore en tiempo real
+    (SOG, Atajadas SV%, Power Play%, Hits, Faceoffs, reloj por periodo 1P/2P/3P/OT/SO).
+    """
+    try:
+        standings = fetch_espn_nhl_standings()
+        url = "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard"
+        resp = requests.get(url, timeout=7)
+        if resp.status_code == 200:
+            events = resp.json().get("events", [])
+            live_events = [e for e in events if ((e.get("status") or {}).get("type") or {}).get("state") == "in"]
+            if not live_events:
+                return []
+
+            # Fetch boxscores en paralelo para velocidad optima
+            box_map = {}
+            try:
+                from concurrent.futures import ThreadPoolExecutor
+                def _grab_box(ev):
+                    eid = str(ev.get("id", ""))
+                    comp = (ev.get("competitions") or [{}])[0]
+                    comps = comp.get("competitors") or []
+                    hc = next((c for c in comps if c.get("homeAway") == "home"), comps[0] if comps else {})
+                    ac = next((c for c in comps if c.get("homeAway") == "away"), comps[1] if len(comps) > 1 else {})
+                    hid = str((hc.get("team") or {}).get("id", hc.get("id", "")) or "")
+                    aid = str((ac.get("team") or {}).get("id", ac.get("id", "")) or "")
+                    return eid, fetch_espn_nhl_boxscore(eid, hid, aid)
+                with ThreadPoolExecutor(max_workers=min(6, len(live_events))) as ex:
+                    for eid, bdata in ex.map(_grab_box, live_events):
+                        box_map[eid] = bdata
+            except Exception:
+                pass
+
+            live_list = []
+            for e in live_events:
+                eid = str(e.get("id", ""))
+                comp = (e.get("competitions") or [{}])[0]
+                competitors = comp.get("competitors", [])
+                if len(competitors) < 2:
+                    continue
+                home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+                away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+
+                home_team_obj = home.get("team", {}) or {}
+                away_team_obj = away.get("team", {}) or {}
+                home_id = str(home_team_obj.get("id", home.get("id", "")) or "")
+                away_id = str(away_team_obj.get("id", away.get("id", "")) or "")
+                home_name = home_team_obj.get("displayName", "Local")
+                away_name = away_team_obj.get("displayName", "Visitante")
+                score_h = int(float(home.get("score", 0) or 0))
+                score_a = int(float(away.get("score", 0) or 0))
+
+                status_obj = e.get("status", {}) or {}
+                status_type = status_obj.get("type", {}) or {}
+                period = int(status_obj.get("period", 1) or 1)
+                clock_secs = float(status_obj.get("clock", 0) or 0)
+                display_clock = str(status_obj.get("displayClock", "0:00") or "0:00")
+                st_name = str(status_type.get("name", "")).upper()
+                st_detail = str(status_type.get("shortDetail", "")).upper()
+                is_int = ("END" in st_name) or ("END OF" in st_detail)
+                is_so = ("SO" in st_detail and period >= 4) or ("SHOOTOUT" in st_detail) or (period >= 5)
+
+                if is_so:
+                    q_label = "SO (Penaltis)"
+                    q_param = "SO"
+                    mins_rem = 0.05
+                elif is_int and period <= 3:
+                    q_label = f"Fin {period}P"
+                    q_param = f"Fin {period}P"
+                    mins_rem = max(0.05, (3 - period) * 20.0) if period < 3 else 5.0
+                elif period <= 3:
+                    q_label = f"{period}P {display_clock}"
+                    q_param = f"{period}P"
+                    mins_rem = max(0.05, ((3 - period) * 20.0) + (clock_secs / 60.0))
+                else:
+                    q_label = f"OT {display_clock}"
+                    q_param = "OT"
+                    mins_rem = max(0.05, clock_secs / 60.0)
+
+                home_lines = [int(round(float(l.get("value", 0) or 0))) for l in (home.get("linescores") or [])]
+                away_lines = [int(round(float(l.get("value", 0) or 0))) for l in (away.get("linescores") or [])]
+                q_scores = {}
+                for i in range(1, 4):
+                    if i <= period and (i - 1 < len(home_lines) or i - 1 < len(away_lines)):
+                        hq = home_lines[i - 1] if i - 1 < len(home_lines) else 0
+                        aq = away_lines[i - 1] if i - 1 < len(away_lines) else 0
+                        q_scores[f"{i}P"] = f"{hq}-{aq}"
+                    else:
+                        q_scores[f"{i}P"] = "-"
+                if period >= 4 and len(home_lines) >= 4 and len(away_lines) >= 4:
+                    q_scores["OT"] = f"{home_lines[3]}-{away_lines[3]}"
+
+                h_stand = get_nhl_standing_for_team(standings, home_name, home_id)
+                a_stand = get_nhl_standing_for_team(standings, away_name, away_id)
+                h2h_data = generate_match_h2h(home_name, away_name, "nhl", "NHL", country="Norteamérica")
+                h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand)
+                a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+
+                home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("record_short", "")
+                away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("record_short", "")
+
+                # Combinar boxscore oficial + saves del scoreboard
+                bdata = box_map.get(eid) or fetch_espn_nhl_boxscore(eid, home_id, away_id)
+                bh = bdata.get("home") or {}
+                ba = bdata.get("away") or {}
+                h_st_list = home.get("statistics") or []
+                a_st_list = away.get("statistics") or []
+                sb_sav_h = int(round(_extract_espn_nba_stat(h_st_list, ["saves"], 0)))
+                sb_sav_a = int(round(_extract_espn_nba_stat(a_st_list, ["saves"], 0)))
+
+                sog_h = int(round(bh.get("shotsTotal", sb_sav_a + score_h)))
+                sog_a = int(round(ba.get("shotsTotal", sb_sav_h + score_a)))
+                saves_h = max(0, sog_a - score_a) if sog_a >= score_a else sb_sav_h
+                saves_a = max(0, sog_h - score_h) if sog_h >= score_h else sb_sav_a
+                sv_pct_h = round((saves_h / float(sog_a)) * 100.0, 1) if sog_a > 0 else round(_extract_espn_nba_stat(h_st_list, ["savePct"], 90.5), 1)
+                sv_pct_a = round((saves_a / float(sog_h)) * 100.0, 1) if sog_h > 0 else round(_extract_espn_nba_stat(a_st_list, ["savePct"], 90.5), 1)
+                if sv_pct_h <= 1.0 and sv_pct_h > 0:
+                    sv_pct_h = round(sv_pct_h * 100.0, 1)
+                if sv_pct_a <= 1.0 and sv_pct_a > 0:
+                    sv_pct_a = round(sv_pct_a * 100.0, 1)
+
+                pp_pct_h = round(float(bh.get("powerPlayPct", h_ratings.get("pp_pct", 20.0))), 1)
+                pp_pct_a = round(float(ba.get("powerPlayPct", a_ratings.get("pp_pct", 20.0))), 1)
+
+                live_stats = {
+                    "q_scores": q_scores,
+                    "is_halftime": is_int,
+                    "shots_home": sog_h,
+                    "shots_away": sog_a,
+                    "saves_home": saves_h,
+                    "saves_away": saves_a,
+                    "save_pct_home": sv_pct_h,
+                    "save_pct_away": sv_pct_a,
+                    "pp_goals_home": int(round(bh.get("powerPlayGoals", 0))),
+                    "pp_goals_away": int(round(ba.get("powerPlayGoals", 0))),
+                    "pp_opps_home": int(round(bh.get("powerPlayOpportunities", 0))),
+                    "pp_opps_away": int(round(ba.get("powerPlayOpportunities", 0))),
+                    "pp_pct_home": pp_pct_h,
+                    "pp_pct_away": pp_pct_a,
+                    "hits_home": int(round(bh.get("hits", 12))),
+                    "hits_away": int(round(ba.get("hits", 12))),
+                    "blocked_shots_home": int(round(bh.get("blockedShots", 6))),
+                    "blocked_shots_away": int(round(ba.get("blockedShots", 6))),
+                    "faceoff_pct_home": round(float(bh.get("faceoffPercent", 50.0)), 1),
+                    "faceoff_pct_away": round(float(ba.get("faceoffPercent", 50.0)), 1),
+                    "penalty_mins_home": int(round(bh.get("penaltyMinutes", 4))),
+                    "penalty_mins_away": int(round(ba.get("penaltyMinutes", 4))),
+                }
+
+                pred = calculate_nhl_live_probabilities(
+                    current_h=score_h,
+                    current_a=score_a,
+                    period_str=q_param,
+                    mins_remaining=mins_rem,
+                    home_stats=h_ratings,
+                    away_stats=a_ratings,
+                    live_stats=live_stats
+                )
+                ai_resp = generate_nhl_live_ai_analysis({
+                    "home_team": home_name,
+                    "away_team": away_name,
+                    "home_stats": h_ratings,
+                    "away_stats": a_ratings,
+                    "home_record": home_record,
+                    "away_record": away_record
+                }, pred, live_stats)
+
+                home_logo = home_team_obj.get("logo") or get_team_logo(home_name, "nhl")
+                away_logo = away_team_obj.get("logo") or get_team_logo(away_name, "nhl")
+                enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
+                season_obj = e.get("season", {}) or {}
+                is_playoff = (season_obj.get("type") == 3) or ("playoff" in str(season_obj.get("slug", "")).lower())
+
+                live_list.append({
+                    "id": f"espn_nhl_{eid}",
+                    "match_id": eid,
+                    "sport": "nhl",
+                    "league": "NHL",
+                    "country": "Norteamérica",
+                    "country_code": "",
+                    "league_flag": "🏒",
+                    "country_flag": "🏒",
+                    "home_team": home_name,
+                    "away_team": away_name,
+                    "home_id": home_id,
+                    "away_id": away_id,
+                    "home_record": home_record,
+                    "away_record": away_record,
+                    "home_logo": home_logo,
+                    "away_logo": away_logo,
+                    "quarter": q_label,
+                    "display_clock": q_label,
+                    "is_halftime": is_int,
+                    "score_home": score_h,
+                    "score_away": score_a,
+                    "home_stats": h_ratings,
+                    "away_stats": a_ratings,
+                    "live_stats": live_stats,
+                    "prediction": pred,
+                    "season_phase": analyze_season_phase("nhl", "NHL", "Playoffs" if is_playoff else "", str(e.get("date", ""))[:10]),
+                    "h2h": h2h_data,
+                    "ai_analysis": ai_resp,
+                    "is_live": True,
+                    "is_external": True,
+                    "source_api": "ESPN NHL Live"
+                })
+            if live_list:
+                print(f"[ESPN REAL] Se cargaron {len(live_list)} partidos NHL en vivo con boxscore real.")
+            return live_list
+    except Exception as ex:
+        print(f"[ESPN] Error al consultar NHL en vivo: {ex}")
     return []
 
 def try_fetch_external_live_football():
@@ -1693,6 +2757,7 @@ def try_fetch_external_nba():
     return None
 
 _live_cache = {"data": {}, "timestamp": 0, "updating": False, "updating_start": 0}
+_LIVE_FETCH_LOCK = threading.Lock()
 _LIVE_CACHE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "live_cache_persist.json")
 
 def _load_persisted_live_cache():
@@ -1701,7 +2766,7 @@ def _load_persisted_live_cache():
         try:
             with open(_LIVE_CACHE_FILE, "r", encoding="utf-8") as f:
                 saved = json.load(f)
-                if isinstance(saved, dict):
+                if isinstance(saved, dict) and saved.get("schema_v") == 3:
                     saved_ts = saved.get("timestamp", 0)
                     if (time.time() - saved_ts) < 300:
                         if "matches" in saved:
@@ -1709,6 +2774,7 @@ def _load_persisted_live_cache():
                             _live_cache["data"]["all"] = all_list
                             _live_cache["data"]["football"] = [m for m in all_list if m.get("sport") == "football"]
                             _live_cache["data"]["nba"] = [m for m in all_list if m.get("sport") == "nba"]
+                            _live_cache["data"]["nhl"] = [m for m in all_list if m.get("sport") == "nhl"]
                         elif "data" in saved:
                             for k, v in saved.get("data", {}).items():
                                 _live_cache["data"][k] = v
@@ -1716,15 +2782,25 @@ def _load_persisted_live_cache():
                     else:
                         _live_cache["data"] = {}
                         _live_cache["timestamp"] = 0
+                else:
+                    _live_cache["data"] = {}
+                    _live_cache["timestamp"] = 0
         except Exception:
             pass
 
 def _save_persisted_live_cache():
     try:
         os.makedirs(os.path.dirname(_LIVE_CACHE_FILE), exist_ok=True)
-        all_list = _live_cache.get("data", {}).get("all", [])
+        all_list = _live_cache.get("data", {}).get("all")
+        if all_list is None:
+            all_list = (
+                (_live_cache.get("data", {}).get("football", []) or [])
+                + (_live_cache.get("data", {}).get("nba", []) or [])
+                + (_live_cache.get("data", {}).get("nhl", []) or [])
+            )
         with open(_LIVE_CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump({
+                "schema_v": 3,
                 "matches": all_list,
                 "timestamp": _live_cache.get("timestamp", 0)
             }, f, ensure_ascii=False)
@@ -1736,45 +2812,51 @@ _load_persisted_live_cache()
 
 def _refresh_live_cache_worker(sport_filter="all"):
     """
-    Actualiza la cache de partidos en vivo con auto-desbloqueo y sincronizacion multi-deporte.
+    Actualiza la cache de partidos en vivo con lock seguro y sincronizacion multi-deporte.
     """
     global _live_cache
     now = time.time()
-    
-    # Auto-desbloqueo: si lleva mas de 12s en 'updating', considerar hilo muerto
+
+    # Auto-desbloqueo: si lleva mas de 15s en 'updating', considerar hilo muerto
     if _live_cache.get("updating"):
-        if (now - _live_cache.get("updating_start", 0)) < 12:
+        if (now - _live_cache.get("updating_start", 0)) < 15:
             return
 
-    _live_cache["updating"] = True
-    _live_cache["updating_start"] = now
-    try:
-        live_results = []
-        if sport_filter in ("all", "football"):
-            live_results.extend(fetch_espn_live_soccer() or [])
-        if sport_filter in ("all", "nba"):
-            live_results.extend(fetch_espn_live_nba() or [])
-        
+    with _LIVE_FETCH_LOCK:
         now = time.time()
-        _live_cache["data"][sport_filter] = live_results
-        
-        # Sincronizar sub-filtros si se consulto all
-        if sport_filter == "all":
-            _live_cache["data"]["football"] = [m for m in live_results if m.get("sport") == "football"]
-            _live_cache["data"]["nba"] = [m for m in live_results if m.get("sport") == "nba"]
-            
-        _live_cache["timestamp"] = now
-        _save_persisted_live_cache()
-    except Exception as ex:
-        print(f"[LIVE CACHE REFRESH ERROR]: {ex}")
-    finally:
-        _live_cache["updating"] = False
+        _live_cache["updating"] = True
+        _live_cache["updating_start"] = now
+        try:
+            live_results = []
+            if sport_filter in ("all", "football"):
+                live_results.extend(fetch_espn_live_soccer() or [])
+            if sport_filter in ("all", "nba"):
+                live_results.extend(fetch_espn_live_nba() or [])
+            if sport_filter in ("all", "nhl"):
+                live_results.extend(fetch_espn_live_nhl() or [])
+
+            now = time.time()
+            _live_cache["data"][sport_filter] = live_results
+
+            # Sincronizar sub-filtros si se consulto all
+            if sport_filter == "all":
+                _live_cache["data"]["football"] = [m for m in live_results if m.get("sport") == "football"]
+                _live_cache["data"]["nba"] = [m for m in live_results if m.get("sport") == "nba"]
+                _live_cache["data"]["nhl"] = [m for m in live_results if m.get("sport") == "nhl"]
+
+            _live_cache["timestamp"] = now
+            _save_persisted_live_cache()
+        except Exception as ex:
+            print(f"[LIVE CACHE REFRESH ERROR]: {ex}")
+        finally:
+            _live_cache["updating"] = False
 
 def fetch_live_matches_data(sport_filter="all", force_refresh=False):
     """
     Obtiene los partidos en vivo oficiales reales (ESPN Futbol & NBA).
-    - Si force_refresh=True o cache vencida (>75s): actualizacion inmediata sincrona.
-    - Si cache fresca (<75s): respuesta inmediata ultra-rapida.
+    - Si force_refresh=True: actualiza sincrónicamente para entrega inmediata.
+    - Si cache fresca (<35s): respuesta inmediata ultra-rapida.
+    - Si arranque en frio mientras otro hilo actualiza: espera brevemente para evitar listas vacias / 404.
     """
     global _live_cache
     now = time.time()
@@ -1783,29 +2865,43 @@ def fetch_live_matches_data(sport_filter="all", force_refresh=False):
 
     if is_live_api:
         # Auto-desbloqueo preventivo
-        if _live_cache.get("updating") and (now - _live_cache.get("updating_start", 0) > 12):
+        if _live_cache.get("updating") and (now - _live_cache.get("updating_start", 0) > 15):
             _live_cache["updating"] = False
+
+        if force_refresh:
+            # Si hay otro worker en curso, esperar brevemente antes o refrescar directamente
+            deadline = time.time() + 8.0
+            while _live_cache.get("updating") and time.time() < deadline:
+                time.sleep(0.12)
+            _refresh_live_cache_worker(sport_filter)
+            return _live_cache.get("data", {}).get(sport_filter, [])
 
         cache_age = now - _live_cache.get("timestamp", 0)
 
         # 1. Si ya tenemos datos en memoria (Stale-While-Revalidate):
         if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter] is not None:
-            # Si estan envejeciendo (>35s) o se solicito refresco, lanzar actualizacion asincrona en segundo plano:
-            if (force_refresh or cache_age >= 35) and not _live_cache.get("updating"):
+            if cache_age >= 35 and not _live_cache.get("updating"):
                 threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
-            # Retorno instantaneo sin bloquear nunca al usuario ni al servidor:
             return _live_cache["data"][sport_filter]
 
         # 2. Si memoria esta vacia, cargar cache persistida en disco
         _load_persisted_live_cache()
-        if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter]:
+        if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter] is not None:
             if not _live_cache.get("updating"):
                 threading.Thread(target=_refresh_live_cache_worker, args=(sport_filter,), daemon=True).start()
             return _live_cache["data"][sport_filter]
 
-        # 3. Solo en arranque en frio absoluto sin cache previa: sincronizar
+        # 3. Si otro hilo ya está actualizando en arranque en frío, esperar hasta que pueble
+        if _live_cache.get("updating"):
+            deadline = time.time() + 8.0
+            while _live_cache.get("updating") and time.time() < deadline:
+                if sport_filter in _live_cache.get("data", {}) and _live_cache["data"][sport_filter] is not None:
+                    return _live_cache["data"][sport_filter]
+                time.sleep(0.12)
+
+        # 4. Arranque en frio absoluto sin cache previa: sincronizar
         _refresh_live_cache_worker(sport_filter)
-        return _live_cache["data"].get(sport_filter, [])
+        return _live_cache.get("data", {}).get(sport_filter, [])
 
     # Catalogo simulado (SOLO cuando USE_LIVE_API = False):
     results = []
@@ -2070,6 +3166,7 @@ def load_scraped_matches(force_reload=False):
     return scraped_list
 
 _ESPN_UPCOMING_NBA_CACHE = {"data": None, "timestamp": 0}
+_ESPN_UPCOMING_NBA_LOCK = threading.Lock()
 
 def _parse_espn_nba_datetime(iso_str):
     try:
@@ -2086,124 +3183,290 @@ def _parse_espn_nba_datetime(iso_str):
         time_str = f"{dt_gt.hour:02d}:{dt_gt.minute:02d}"
         timestamp = int(dt_utc.timestamp())
         return date_formatted, date_iso, time_str, timestamp
-    except Exception as ex:
+    except Exception:
         now_dt = datetime.now()
         return "Hoy", now_dt.strftime("%Y-%m-%d"), "19:00", int(now_dt.timestamp())
 
-def fetch_espn_upcoming_nba():
+def fetch_espn_upcoming_nba(force: bool = False):
     """
     Obtiene los partidos programados oficiales de la NBA directamente desde ESPN Scoreboard.
-    Carga los juegos de hoy y mañana que se encuentren en estado 'pre' (programados).
-    Calcula probabilidades cuantitativas de baloncesto, desglose por cuartos, hándicap y over/under.
+    Usa ESPN Standings reales para calibrar Offensive/Defensive Ratings y records oficiales.
     """
     global _ESPN_UPCOMING_NBA_CACHE
     now = time.time()
-    if _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 900):
+    if not force and _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 900):
         return _ESPN_UPCOMING_NBA_CACHE["data"]
 
-    events = []
-    try:
-        # Scoreboard de hoy
-        r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard", timeout=5)
-        if r1.status_code == 200:
-            events.extend(r1.json().get("events", []))
-        
-        # Scoreboard de mañana para cobertura de próximos juegos
-        tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
-        r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={tomorrow_str}", timeout=5)
-        if r2.status_code == 200:
-            events.extend(r2.json().get("events", []))
-    except Exception as ex:
-        print(f"[ESPN NBA] Error al consultar scoreboard: {ex}")
-        if _ESPN_UPCOMING_NBA_CACHE["data"]:
+    with _ESPN_UPCOMING_NBA_LOCK:
+        now = time.time()
+        if not force and _ESPN_UPCOMING_NBA_CACHE["data"] and (now - _ESPN_UPCOMING_NBA_CACHE["timestamp"] < 900):
             return _ESPN_UPCOMING_NBA_CACHE["data"]
 
-    seen_ids = set()
-    upcoming_list = []
+        standings = fetch_espn_nba_standings()
+        events = []
+        fetch_ok = False
+        try:
+            r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard", timeout=8)
+            if r1.status_code == 200:
+                events.extend(r1.json().get("events", []))
+                fetch_ok = True
 
-    for e in events:
-        eid = e.get("id")
-        if not eid or eid in seen_ids:
-            continue
-        seen_ids.add(eid)
+            tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
+            r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates={tomorrow_str}", timeout=8)
+            if r2.status_code == 200:
+                events.extend(r2.json().get("events", []))
+                fetch_ok = True
+        except Exception as ex:
+            print(f"[ESPN NBA] Error al consultar scoreboard: {ex}")
+            if not events and _ESPN_UPCOMING_NBA_CACHE["data"]:
+                return _ESPN_UPCOMING_NBA_CACHE["data"]
 
-        state = e.get("status", {}).get("type", {}).get("state")
-        # Solo partidos programados (pre-match)
-        if state != "pre":
-            continue
+        if not fetch_ok and not events and _ESPN_UPCOMING_NBA_CACHE["data"]:
+            return _ESPN_UPCOMING_NBA_CACHE["data"]
 
-        comp = e.get("competitions", [{}])[0]
-        competitors = comp.get("competitors", [])
-        if len(competitors) < 2:
-            continue
+        seen_ids = set()
+        upcoming_list = []
 
-        home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
-        away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+        for e in events:
+            eid = e.get("id")
+            if not eid or eid in seen_ids:
+                continue
+            seen_ids.add(eid)
 
-        home_team_data = home.get("team", {})
-        away_team_data = away.get("team", {})
-        home_name = home_team_data.get("displayName", "Local")
-        away_name = away_team_data.get("displayName", "Visitante")
+            state = e.get("status", {}).get("type", {}).get("state")
+            if state != "pre":
+                continue
 
-        home_logo = home_team_data.get("logo") or get_team_logo(home_name, "nba")
-        away_logo = away_team_data.get("logo") or get_team_logo(away_name, "nba")
+            comp = e.get("competitions", [{}])[0]
+            competitors = comp.get("competitors", [])
+            if len(competitors) < 2:
+                continue
 
-        raw_date = e.get("date", "")
-        date_formatted, date_iso, time_str, timestamp = _parse_espn_nba_datetime(raw_date)
+            home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+            away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
 
-        h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
-        h_ratings = get_nba_team_ratings(home_name, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-        a_ratings = get_nba_team_ratings(away_name, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
-        pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
-        ai_resp = generate_nba_ai_analysis({"home_team": home_name, "away_team": away_name}, pred)
-        enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+            home_team_data = home.get("team", {})
+            away_team_data = away.get("team", {})
+            home_id = str(home_team_data.get("id", home.get("id", "")) or "")
+            away_id = str(away_team_data.get("id", away.get("id", "")) or "")
+            home_name = home_team_data.get("displayName", "Local")
+            away_name = away_team_data.get("displayName", "Visitante")
 
-        upcoming_list.append({
-            "id": f"espn_nba_{eid}",
-            "match_id": str(eid),
-            "sport": "nba",
-            "league": "NBA",
-            "country": "Estados Unidos",
-            "country_code": "us",
-            "league_flag": "🏀",
-            "country_flag": "🇺🇸",
-            "home_team": home_name,
-            "away_team": away_name,
-            "home_logo": home_logo,
-            "away_logo": away_logo,
-            "home_id": home_team_data.get("id"),
-            "away_id": away_team_data.get("id"),
-            "date": date_formatted,
-            "date_iso": date_iso,
-            "time": time_str,
-            "timestamp": timestamp,
-            "timezone": "America/Guatemala",
-            "home_stats": h_ratings,
-            "away_stats": a_ratings,
-            "prediction": pred,
-            "season_phase": analyze_season_phase("nba", "NBA", "", date_iso),
-            "h2h": h2h_data,
-            "ai_analysis": ai_resp,
-            "referee": None,
-            "is_live": False,
-            "is_external": True,
-            "source_api": "ESPN NBA (Oficial)"
-        })
+            home_logo = home_team_data.get("logo") or get_team_logo(home_name, "nba")
+            away_logo = away_team_data.get("logo") or get_team_logo(away_name, "nba")
 
-    # Ordenar cronológicamente
-    upcoming_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
-    _ESPN_UPCOMING_NBA_CACHE["data"] = upcoming_list
-    _ESPN_UPCOMING_NBA_CACHE["timestamp"] = now
-    if upcoming_list:
-        print(f"[ESPN NBA] Se sincronizaron {len(upcoming_list)} partidos oficiales programados de la NBA.")
-    return upcoming_list
+            raw_date = e.get("date", "")
+            date_formatted, date_iso, time_str, timestamp = _parse_espn_nba_datetime(raw_date)
+
+            h_stand = get_nba_standing_for_team(standings, home_name, home_id)
+            a_stand = get_nba_standing_for_team(standings, away_name, away_id)
+            home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("overall", "")
+            away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("overall", "")
+
+            h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
+            h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand)
+            a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+            pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
+            ai_resp = generate_nba_ai_analysis({
+                "home_team": home_name,
+                "away_team": away_name,
+                "home_stats": h_ratings,
+                "away_stats": a_ratings,
+                "home_record": home_record,
+                "away_record": away_record
+            }, pred)
+            enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
+            season_obj = e.get("season", {}) or {}
+            is_playoff = (season_obj.get("type") == 3) or ("playoff" in str(season_obj.get("slug", "")).lower())
+
+            upcoming_list.append({
+                "id": f"espn_nba_{eid}",
+                "match_id": str(eid),
+                "sport": "nba",
+                "league": "NBA",
+                "country": "Estados Unidos",
+                "country_code": "us",
+                "league_flag": "🏀",
+                "country_flag": "🇺🇸",
+                "home_team": home_name,
+                "away_team": away_name,
+                "home_logo": home_logo,
+                "away_logo": away_logo,
+                "home_id": home_id,
+                "away_id": away_id,
+                "home_record": home_record,
+                "away_record": away_record,
+                "date": date_formatted,
+                "date_iso": date_iso,
+                "time": time_str,
+                "timestamp": timestamp,
+                "timezone": "America/Guatemala",
+                "home_stats": h_ratings,
+                "away_stats": a_ratings,
+                "prediction": pred,
+                "season_phase": analyze_season_phase("nba", "NBA", "Playoffs" if is_playoff else "", date_iso),
+                "h2h": h2h_data,
+                "ai_analysis": ai_resp,
+                "referee": None,
+                "is_live": False,
+                "is_external": True,
+                "source_api": "ESPN NBA (Oficial)"
+            })
+
+        upcoming_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+        _ESPN_UPCOMING_NBA_CACHE["data"] = upcoming_list
+        _ESPN_UPCOMING_NBA_CACHE["timestamp"] = time.time()
+        if upcoming_list:
+            print(f"[ESPN NBA] Se sincronizaron {len(upcoming_list)} partidos oficiales programados de la NBA.")
+        return upcoming_list
+
+
+_ESPN_UPCOMING_NHL_CACHE = {"data": None, "timestamp": 0}
+_ESPN_UPCOMING_NHL_LOCK = threading.Lock()
+
+
+def fetch_espn_upcoming_nhl(force: bool = False):
+    """
+    Obtiene los partidos programados oficiales de la NHL directamente desde ESPN Scoreboard.
+    Usa ESPN NHL Standings reales para calibrar GF/GA, SOG, Power Play% y records W-L-OTL.
+    """
+    global _ESPN_UPCOMING_NHL_CACHE
+    now = time.time()
+    if not force and _ESPN_UPCOMING_NHL_CACHE["data"] and (now - _ESPN_UPCOMING_NHL_CACHE["timestamp"] < 900):
+        return _ESPN_UPCOMING_NHL_CACHE["data"]
+
+    with _ESPN_UPCOMING_NHL_LOCK:
+        now = time.time()
+        if not force and _ESPN_UPCOMING_NHL_CACHE["data"] and (now - _ESPN_UPCOMING_NHL_CACHE["timestamp"] < 900):
+            return _ESPN_UPCOMING_NHL_CACHE["data"]
+
+        standings = fetch_espn_nhl_standings()
+        events = []
+        fetch_ok = False
+        try:
+            r1 = requests.get("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard", timeout=8)
+            if r1.status_code == 200:
+                events.extend(r1.json().get("events", []))
+                fetch_ok = True
+
+            tomorrow_str = (datetime.now(timezone.utc) + timedelta(days=1)).strftime("%Y%m%d")
+            r2 = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates={tomorrow_str}", timeout=8)
+            if r2.status_code == 200:
+                events.extend(r2.json().get("events", []))
+                fetch_ok = True
+        except Exception as ex:
+            print(f"[ESPN NHL] Error al consultar scoreboard: {ex}")
+            if not events and _ESPN_UPCOMING_NHL_CACHE["data"]:
+                return _ESPN_UPCOMING_NHL_CACHE["data"]
+
+        if not fetch_ok and not events and _ESPN_UPCOMING_NHL_CACHE["data"]:
+            return _ESPN_UPCOMING_NHL_CACHE["data"]
+
+        seen_ids = set()
+        upcoming_list = []
+
+        for e in events:
+            eid = e.get("id")
+            if not eid or eid in seen_ids:
+                continue
+            seen_ids.add(eid)
+
+            state = e.get("status", {}).get("type", {}).get("state")
+            if state != "pre":
+                continue
+
+            comp = e.get("competitions", [{}])[0]
+            competitors = comp.get("competitors", [])
+            if len(competitors) < 2:
+                continue
+
+            home = next((c for c in competitors if c.get("homeAway") == "home"), competitors[0])
+            away = next((c for c in competitors if c.get("homeAway") == "away"), competitors[1])
+
+            home_team_data = home.get("team", {})
+            away_team_data = away.get("team", {})
+            home_id = str(home_team_data.get("id", home.get("id", "")) or "")
+            away_id = str(away_team_data.get("id", away.get("id", "")) or "")
+            home_name = home_team_data.get("displayName", "Local")
+            away_name = away_team_data.get("displayName", "Visitante")
+
+            home_logo = home_team_data.get("logo") or get_team_logo(home_name, "nhl")
+            away_logo = away_team_data.get("logo") or get_team_logo(away_name, "nhl")
+
+            raw_date = e.get("date", "")
+            date_formatted, date_iso, time_str, timestamp = _parse_espn_nba_datetime(raw_date)
+
+            h_stand = get_nhl_standing_for_team(standings, home_name, home_id)
+            a_stand = get_nhl_standing_for_team(standings, away_name, away_id)
+            home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("record_short", "")
+            away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("record_short", "")
+
+            h2h_data = generate_match_h2h(home_name, away_name, "nhl", "NHL", country="Norteamérica")
+            h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand)
+            a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+            pred = calculate_nhl_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
+            ai_resp = generate_nhl_ai_analysis({
+                "home_team": home_name,
+                "away_team": away_name,
+                "home_stats": h_ratings,
+                "away_stats": a_ratings,
+                "home_record": home_record,
+                "away_record": away_record
+            }, pred)
+            enrich_h2h_with_logos(h2h_data, home_team=home_name, away_team=away_name, home_logo=home_logo, away_logo=away_logo)
+
+            season_obj = e.get("season", {}) or {}
+            is_playoff = (season_obj.get("type") == 3) or ("playoff" in str(season_obj.get("slug", "")).lower())
+
+            upcoming_list.append({
+                "id": f"espn_nhl_{eid}",
+                "match_id": str(eid),
+                "sport": "nhl",
+                "league": "NHL",
+                "country": "Norteamérica",
+                "country_code": "",
+                "league_flag": "🏒",
+                "country_flag": "🏒",
+                "home_team": home_name,
+                "away_team": away_name,
+                "home_logo": home_logo,
+                "away_logo": away_logo,
+                "home_id": home_id,
+                "away_id": away_id,
+                "home_record": home_record,
+                "away_record": away_record,
+                "date": date_formatted,
+                "date_iso": date_iso,
+                "time": time_str,
+                "timestamp": timestamp,
+                "timezone": "America/Guatemala",
+                "home_stats": h_ratings,
+                "away_stats": a_ratings,
+                "prediction": pred,
+                "season_phase": analyze_season_phase("nhl", "NHL", "Playoffs" if is_playoff else "", date_iso),
+                "h2h": h2h_data,
+                "ai_analysis": ai_resp,
+                "referee": None,
+                "is_live": False,
+                "is_external": True,
+                "source_api": "ESPN NHL (Oficial)"
+            })
+
+        upcoming_list.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
+        _ESPN_UPCOMING_NHL_CACHE["data"] = upcoming_list
+        _ESPN_UPCOMING_NHL_CACHE["timestamp"] = time.time()
+        if upcoming_list:
+            print(f"[ESPN NHL] Se sincronizaron {len(upcoming_list)} partidos oficiales programados de la NHL.")
+        return upcoming_list
 
 
 def fetch_matches_data(sport_filter="all"):
     """
     Obtiene los partidos programados (pre-match).
     - Fútbol: Partidos analizados mediante extracción oficial de FotMob con estadísticas 100% reales.
-    - NBA: Partidos oficiales en vivo y programados vía ESPN Oficial Scoreboard.
+    - NBA: Partidos oficiales programados vía ESPN Oficial Scoreboard + Standings.
+    - NHL: Partidos oficiales programados vía ESPN NHL Scoreboard + Standings.
     """
     results = []
 
@@ -2215,6 +3478,10 @@ def fetch_matches_data(sport_filter="all"):
     if sport_filter in ("all", "nba"):
         results.extend(fetch_espn_upcoming_nba())
 
+    # 3. NHL oficial vía ESPN Scoreboard
+    if sport_filter in ("all", "nhl"):
+        results.extend(fetch_espn_upcoming_nhl())
+
     # Ordenar cronológicamente si hay partidos combinados
     if sport_filter == "all":
         results.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
@@ -2224,16 +3491,16 @@ def fetch_matches_data(sport_filter="all"):
 
 def get_match_by_id(match_id):
     """
-    Búsqueda ultra-rápida en memoria O(1) para detalles de partido.
-    Evita regenerar la lista completa de 470 partidos y reduce el tiempo de 11.4s a 0.0001s sin consumir RAM.
+    Búsqueda ultra-rápida en memoria O(1) para detalles de partido,
+    con fallback inteligente si un partido NBA/NHL cambió entre programado y en vivo.
     """
     if not match_id:
         return None
     str_id = str(match_id).strip()
 
     # 1. En caché de partidos en vivo
-    for sp in _live_cache.get("data", {}):
-        for m in _live_cache["data"][sp]:
+    for sp in list(_live_cache.get("data", {}).keys()):
+        for m in (_live_cache["data"].get(sp) or []):
             if m.get("id") == str_id or str(m.get("match_id")) == str_id:
                 return m
 
@@ -2243,14 +3510,39 @@ def get_match_by_id(match_id):
             if m.get("id") == str_id or str(m.get("match_id")) == str_id:
                 return m
 
-    # 3. En caché de NBA
+    # 3. En caché de NBA / NHL
     if _ESPN_UPCOMING_NBA_CACHE.get("data"):
         for m in _ESPN_UPCOMING_NBA_CACHE["data"]:
             if m.get("id") == str_id or str(m.get("match_id")) == str_id:
                 return m
 
-    # 4. Fallback si la caché estaba vacía
-    all_m = fetch_live_matches_data() + fetch_matches_data()
+    if _ESPN_UPCOMING_NHL_CACHE.get("data"):
+        for m in _ESPN_UPCOMING_NHL_CACHE["data"]:
+            if m.get("id") == str_id or str(m.get("match_id")) == str_id:
+                return m
+
+    # 4. Fallback si la caché estaba vacía o en transición live <-> pre
+    if str_id.startswith("espn_nba_"):
+        live_nba = fetch_live_matches_data("nba", force_refresh=True) or []
+        found = next((m for m in live_nba if m.get("id") == str_id or str(m.get("match_id")) == str_id), None)
+        if found:
+            return found
+        up_nba = fetch_espn_upcoming_nba(force=True) or []
+        found = next((m for m in up_nba if m.get("id") == str_id or str(m.get("match_id")) == str_id), None)
+        if found:
+            return found
+
+    if str_id.startswith("espn_nhl_"):
+        live_nhl = fetch_live_matches_data("nhl", force_refresh=True) or []
+        found = next((m for m in live_nhl if m.get("id") == str_id or str(m.get("match_id")) == str_id), None)
+        if found:
+            return found
+        up_nhl = fetch_espn_upcoming_nhl(force=True) or []
+        found = next((m for m in up_nhl if m.get("id") == str_id or str(m.get("match_id")) == str_id), None)
+        if found:
+            return found
+
+    all_m = (fetch_live_matches_data() or []) + (fetch_matches_data() or [])
     return next((m for m in all_m if m.get("id") == str_id or str(m.get("match_id")) == str_id), None)
 
 

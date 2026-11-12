@@ -59,25 +59,32 @@ def compress_and_secure_response(response):
 
 def slim_match_for_client(m):
     p = m.get("prediction", {})
-    picks = p.get("four_predictions") or p.get("seven_predictions") or p.get("eight_predictions") or []
+    picks = p.get("four_predictions") or p.get("seven_predictions") or p.get("eight_predictions") or p.get("six_predictions") or []
     ref = m.get("referee") or {}
+    is_nba = (m.get("sport") == "nba")
+    is_nhl = (m.get("sport") == "nhl")
 
-    p_exp_c = float(p.get("projected_corners", 9.5) or 9.5)
-    pct_c_85 = p.get("pct_corners_over_85") or p.get("pct_corners_over")
-    if pct_c_85 is None or pct_c_85 == 55.0:
-        import math
-        s = 0.0
-        for k in range(9, 35):
-            s += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
-        pct_c_85 = round(min(0.99, max(0.01, s)) * 100, 1)
+    if not is_nba and not is_nhl:
+        p_exp_c = float(p.get("projected_corners", 9.5) or 9.5)
+        pct_c_85 = p.get("pct_corners_over_85") or p.get("pct_corners_over")
+        if pct_c_85 is None or pct_c_85 == 55.0:
+            import math
+            s = 0.0
+            for k in range(9, 35):
+                s += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
+            pct_c_85 = round(min(0.99, max(0.01, s)) * 100, 1)
 
-    pct_c_95 = p.get("pct_corners_over_95")
-    if pct_c_95 is None:
-        import math
-        s95 = 0.0
-        for k in range(10, 35):
-            s95 += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
-        pct_c_95 = round(min(0.99, max(0.01, s95)) * 100, 1)
+        pct_c_95 = p.get("pct_corners_over_95")
+        if pct_c_95 is None:
+            import math
+            s95 = 0.0
+            for k in range(10, 35):
+                s95 += (math.exp(-p_exp_c) * (p_exp_c ** k)) / math.factorial(k)
+            pct_c_95 = round(min(0.99, max(0.01, s95)) * 100, 1)
+    else:
+        p_exp_c = None
+        pct_c_85 = None
+        pct_c_95 = None
 
     slim_pred = {
         "prob_home": p.get("prob_home"),
@@ -106,9 +113,23 @@ def slim_match_for_client(m):
         "total_points": p.get("total_points"),
         "over_under_line": p.get("over_under_line"),
         "spread_home": p.get("spread_home"),
+        "projected_pts_home": p.get("projected_pts_home"),
+        "projected_pts_away": p.get("projected_pts_away"),
+        "projected_goals_home": p.get("projected_goals_home"),
+        "projected_goals_away": p.get("projected_goals_away"),
+        "projected_sog_home": p.get("projected_sog_home"),
+        "projected_sog_away": p.get("projected_sog_away"),
+        "prob_home_reg": p.get("prob_home_reg"),
+        "prob_draw_reg": p.get("prob_draw_reg"),
+        "prob_away_reg": p.get("prob_away_reg"),
+        "prob_over_55": p.get("prob_over_55"),
+        "prob_over_65": p.get("prob_over_65"),
+        "puck_line_home": p.get("puck_line_home"),
+        "projected_final": p.get("projected_final"),
+        "projected_total": p.get("projected_total"),
         "quarters_breakdown": p.get("quarters_breakdown"),
         "top_scores": p.get("top_scores", [])[:1],
-        "four_predictions": picks[:4],
+        "four_predictions": picks[:8],
         "projections_matrix": p.get("projections_matrix"),
     }
     ref_clean = None
@@ -134,6 +155,8 @@ def slim_match_for_client(m):
         "away_team": m.get("away_team"),
         "home_logo": m.get("home_logo", ""),
         "away_logo": m.get("away_logo", ""),
+        "home_record": m.get("home_record", ""),
+        "away_record": m.get("away_record", ""),
         "date": m.get("date"),
         "date_iso": m.get("date_iso"),
         "time": m.get("time"),
@@ -147,6 +170,7 @@ def slim_match_for_client(m):
         "score_away": m.get("score_away", 0),
         "is_external": m.get("is_external", False),
         "source_api": m.get("source_api", ""),
+        "season_phase": m.get("season_phase"),
         "home_stats": m.get("home_stats"),
         "away_stats": m.get("away_stats"),
         "referee": ref_clean,
@@ -156,8 +180,8 @@ def slim_match_for_client(m):
         "live_stats": m.get("live_stats"),
         "corners_home": (m.get("live_stats") or {}).get("corners_home") if m.get("live_stats") else m.get("corners_home"),
         "corners_away": (m.get("live_stats") or {}).get("corners_away") if m.get("live_stats") else m.get("corners_away"),
-        "shots_home": (m.get("live_stats") or {}).get("shots_on_target_home") if m.get("live_stats") else m.get("shots_home"),
-        "shots_away": (m.get("live_stats") or {}).get("shots_on_target_away") if m.get("live_stats") else m.get("shots_away")
+        "shots_home": (m.get("live_stats") or {}).get("shots_on_target_home") or (m.get("live_stats") or {}).get("shots_home") if m.get("live_stats") else m.get("shots_home"),
+        "shots_away": (m.get("live_stats") or {}).get("shots_on_target_away") or (m.get("live_stats") or {}).get("shots_away") if m.get("live_stats") else m.get("shots_away")
     }
 
 
@@ -173,6 +197,7 @@ def index():
 
         football_total = sum(1 for m in all_matches if m.get("sport") == "football")
         nba_total = sum(1 for m in all_matches if m.get("sport") == "nba")
+        nhl_total = sum(1 for m in all_matches if m.get("sport") == "nhl")
         value_picks = sum(1 for m in all_matches if m.get("prediction", {}).get("is_value_bet", False))
         low_risk = sum(1 for m in all_matches if m.get("prediction", {}).get("risk_level") == "Bajo")
 
@@ -180,6 +205,7 @@ def index():
             "total_analyzed": len(all_matches),
             "football_count": football_total,
             "nba_count": nba_total,
+            "nhl_count": nhl_total,
             "live_count": len(live_matches),
             "value_picks": value_picks,
             "low_risk": low_risk,
@@ -202,6 +228,7 @@ def index():
             "Colombia": "🇨🇴", "Guatemala": "🇬🇹", "Noruega": "🇳🇴", "Dinamarca": "🇩🇰",
             "Bélgica": "🇧🇪", "Suiza": "🇨🇭", "Perú": "🇵🇪", "Bolivia": "🇧🇴",
             "Japón": "🇯🇵",
+            "Norteamérica": "🏒",
             "Europa": "🏆", "Chile": "🇨🇱", "Uruguay": "🇺🇾", "Armenia": "🇦🇲", "Austria": "🇦🇹",
             "Suecia": "🇸🇪", "Grecia": "🇬🇷", "Sudamérica": "🏆", "Internacional": "🌍"
         }
@@ -212,6 +239,7 @@ def index():
             "Colombia": "co", "Guatemala": "gt", "Noruega": "no", "Dinamarca": "dk",
             "Bélgica": "be", "Suiza": "ch", "Perú": "pe", "Bolivia": "bo",
             "Japón": "jp",
+            "Norteamérica": "",
             "Europa": "eu", "Chile": "cl", "Uruguay": "uy", "Armenia": "am", "Austria": "at",
             "Suecia": "se", "Grecia": "gr", "Sudamérica": ""
         }
@@ -449,22 +477,43 @@ def api_dream_parleys_regenerate():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-from ai_analyzer import generate_ai_analysis, generate_live_ai_analysis, generate_nba_ai_analysis, generate_nba_live_ai_analysis
+from ai_analyzer import generate_ai_analysis, generate_live_ai_analysis, generate_nba_ai_analysis, generate_nba_live_ai_analysis, generate_nhl_ai_analysis, generate_nhl_live_ai_analysis
 
 @app.route("/api/match/<match_id>")
 def api_match_detail(match_id):
-    from data_provider import get_match_by_id
+    from data_provider import get_match_by_id, enrich_nba_match_with_real_h2h, enrich_nhl_match_with_real_h2h
     match = get_match_by_id(match_id)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
+    if match.get("sport") == "nba" and not (match.get("h2h") or {}).get("is_real"):
+        try:
+            match = enrich_nba_match_with_real_h2h(match)
+        except Exception as e:
+            print(f"[NBA H2H ENRICH WARNING]: {e}")
+    elif match.get("sport") == "nhl" and not (match.get("h2h") or {}).get("is_real"):
+        try:
+            match = enrich_nhl_match_with_real_h2h(match)
+        except Exception as e:
+            print(f"[NHL H2H ENRICH WARNING]: {e}")
     return jsonify(match)
 
 @app.route("/api/match/<match_id>/gemini_analysis")
 def api_match_gemini(match_id):
-    from data_provider import get_match_by_id
+    from data_provider import get_match_by_id, enrich_nba_match_with_real_h2h, enrich_nhl_match_with_real_h2h
     match = get_match_by_id(match_id)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
+
+    if match.get("sport") == "nba" and not (match.get("h2h") or {}).get("is_real"):
+        try:
+            match = enrich_nba_match_with_real_h2h(match)
+        except Exception:
+            pass
+    elif match.get("sport") == "nhl" and not (match.get("h2h") or {}).get("is_real"):
+        try:
+            match = enrich_nhl_match_with_real_h2h(match)
+        except Exception:
+            pass
 
     if match.get("ai_analysis") and match["ai_analysis"].get("is_gemini"):
         return jsonify(match["ai_analysis"])
@@ -477,11 +526,15 @@ def api_match_gemini(match_id):
     if is_live:
         if sport == "nba":
             ai_data = generate_nba_live_ai_analysis(match, pred, live_stats, force_gemini=True)
+        elif sport == "nhl":
+            ai_data = generate_nhl_live_ai_analysis(match, pred, live_stats, force_gemini=True)
         else:
             ai_data = generate_live_ai_analysis(match, pred, live_stats, force_gemini=True)
     else:
         if sport == "nba":
             ai_data = generate_nba_ai_analysis(match, pred, force_gemini=True)
+        elif sport == "nhl":
+            ai_data = generate_nhl_ai_analysis(match, pred, force_gemini=True)
         else:
             ai_data = generate_ai_analysis(match, pred, force_gemini=True)
 

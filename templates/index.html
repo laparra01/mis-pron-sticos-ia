@@ -8,7 +8,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Picks 90 GT">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3CclipPath id='c'%3E%3Ccircle cx='50' cy='50' r='46'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23c)'%3E%3Crect width='50' height='50' fill='%23ffffff'/%3E%3Cpolygon points='28,14 40,22 36,36 21,36 17,22' fill='%230f172a'/%3E%3Crect y='50' width='50' height='50' fill='%23ea580c'/%3E%3Cpath d='M 4 64 C 20 64 34 74 42 96' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3Crect x='50' width='15.3' height='100' fill='%234997D0'/%3E%3Crect x='65.3' width='15.4' height='100' fill='%23ffffff'/%3E%3Crect x='80.7' width='20' height='100' fill='%234997D0'/%3E%3Cline x1='50' y1='4' x2='50' y2='96' stroke='%230f172a' stroke-width='3'/%3E%3Cline x1='4' y1='50' x2='50' y2='50' stroke='%230f172a' stroke-width='3'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='46' fill='none' stroke='%230f172a' stroke-width='3'/%3E%3C/svg%3E">
-    <title>Picks 90 GT - Fútbol & NBA en Tiempo Real</title>
+    <title>Picks 90 GT - Fútbol, NBA & NHL en Tiempo Real</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -182,7 +182,7 @@
 
             <!-- Leyenda oficial -->
             <p class="text-xs sm:text-sm text-gray-300 font-medium tracking-wide mb-6">
-                Fútbol & NBA en Tiempo Real
+                Fútbol, NBA & NHL en Tiempo Real
             </p>
 
             <!-- Barra animada de progreso -->
@@ -203,7 +203,7 @@
         <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-xl bg-gray-950 border border-gray-800 flex items-center justify-center shadow-lg shadow-cyan-500/10 shrink-0 group transition hover:border-emerald-500/50 hover:scale-105" title="Picks 90 GT - Fútbol, NBA & Guatemala">
+                    <div class="w-10 h-10 rounded-xl bg-gray-950 border border-gray-800 flex items-center justify-center shadow-lg shadow-cyan-500/10 shrink-0 group transition hover:border-emerald-500/50 hover:scale-105" title="Picks 90 GT - Fútbol, NBA, NHL & Guatemala">
                         <svg viewBox="0 0 100 100" class="w-8 h-8 drop-shadow-md select-none" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <clipPath id="logo-ball-clip">
@@ -297,7 +297,7 @@
                             </a>
                             {% endif %}
                         </div>
-                        <p class="text-[11px] text-gray-400">Clubes, Selecciones Nacionales & NBA</p>
+                        <p class="text-[11px] text-gray-400">Clubes, Selecciones, NBA & NHL</p>
                     </div>
                 </div>
                 <!-- Botón Refrescar en móvil (lado derecho del logo) -->
@@ -310,23 +310,27 @@
             <!-- Controles derecha: Categorías + Botón Refrescar Desktop -->
             <div class="flex items-center gap-2">
                 <!-- Sport Switcher Tabs -->
-                <div class="grid grid-cols-4 sm:flex items-center gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-xs flex-1 sm:flex-none">
-                    <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow">
+                <div class="grid grid-cols-5 sm:flex items-center gap-1 sm:gap-1.5 bg-gray-950 p-1.5 rounded-xl border border-gray-800 text-[10.5px] sm:text-xs flex-1 sm:flex-none">
+                    <button onclick="setCategoryFilter('all')" id="cat-tab-all" class="cat-btn py-1.5 px-1 sm:px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-0.5 sm:gap-1 shadow">
                         <span>🌟</span>
                         <span>Todos</span>
                     </button>
-                    <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <button onclick="setCategoryFilter('clubs')" id="cat-tab-clubs" class="cat-btn py-1.5 px-1 sm:px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-0.5 sm:gap-1">
                         <span>⚽</span>
                         <span>Clubes</span>
                     </button>
-                    <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <button onclick="setCategoryFilter('national')" id="cat-tab-national" class="cat-btn py-1.5 px-1 sm:px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-0.5 sm:gap-1">
                         <span>🌎</span>
                         <span class="hidden sm:inline">Selecciones</span>
                         <span class="sm:hidden">Selecc.</span>
                     </button>
-                    <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1">
+                    <button onclick="setCategoryFilter('nba')" id="cat-tab-nba" class="cat-btn py-1.5 px-1 sm:px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-0.5 sm:gap-1">
                         <span>🏀</span>
                         <span>NBA</span>
+                    </button>
+                    <button onclick="setCategoryFilter('nhl')" id="cat-tab-nhl" class="cat-btn py-1.5 px-1 sm:px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-0.5 sm:gap-1">
+                        <span>🏒</span>
+                        <span>NHL</span>
                     </button>
                 </div>
 
@@ -352,7 +356,7 @@
                     <i data-lucide="calendar-clock" class="w-4 h-4 text-emerald-400"></i>
                 </div>
                 <div class="text-2xl sm:text-3xl font-bold text-white" id="stat-today-pending-count">{{ today_pending_count }}</div>
-                <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol & 🏀 NBA por disputarse hoy</p>
+                <p class="text-[11px] text-gray-500 mt-1">⚽ Fútbol, 🏀 NBA & 🏒 NHL por disputarse hoy</p>
             </div>
 
             <div class="bg-gray-900/80 border border-gray-800 p-4 rounded-2xl shadow-sm">
@@ -364,7 +368,7 @@
                     <span id="stat-live-count">{{ stats.live_count }}</span>
                     <span class="w-2 h-2 rounded-full bg-rose-500 animate-live"></span>
                 </div>
-                <p class="text-[11px] text-gray-500 mt-1">Minuto a minuto & Cuartos Q2-Q4</p>
+                <p class="text-[11px] text-gray-500 mt-1">Minuto a minuto, Cuartos & Periodos NHL</p>
             </div>
         </section>
 
@@ -409,7 +413,7 @@
                 <div>
                     <h3 class="text-lg font-bold text-gray-200">No hay partidos oficiales en juego en este momento</h3>
                     <p class="text-xs text-gray-400 max-w-lg mx-auto mt-1 leading-relaxed">
-                        El botón funciona correctamente. En este instante las ligas oficiales (Premier, LaLiga, Serie A, NBA) no tienen encuentros en disputa activa. El reloj y estadísticas en tiempo real se activan automáticamente al comenzar cada encuentro oficial.
+                        El botón funciona correctamente. En este instante las ligas oficiales (Premier, LaLiga, Serie A, NBA, NHL) no tienen encuentros en disputa activa. El reloj y estadísticas en tiempo real se activan automáticamente al comenzar cada encuentro oficial.
                     </p>
                 </div>
                 <button onclick="switchTab('upcoming')" class="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-xl text-xs font-bold transition shadow-lg shadow-emerald-950 flex items-center gap-2">
@@ -457,6 +461,8 @@
                                 <span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>
                                 {% elif m.sport == 'nba' %}
                                 <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
+                                {% elif m.sport == 'nhl' %}
+                                <span class="bg-sky-950 text-sky-300 border border-sky-700 px-1.5 py-0.2 rounded text-[10px] font-bold">NHL</span>
                                 {% endif %}
                                 {% if m.season_phase and m.season_phase.is_closing_phase %}
                                 <span class="{{ m.season_phase.badge_bg or 'bg-amber-950/90 text-amber-300 border-amber-600/60' }} border px-1.5 py-0.2 rounded text-[10px] font-bold flex items-center gap-1 shadow-xs cursor-help" title="{{ m.season_phase.alert_message }}">
@@ -467,7 +473,7 @@
                             </div>
                             <span class="inline-flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-0.5 rounded-full {% if m.is_halftime %}bg-amber-950 text-amber-400 border border-amber-800{% else %}bg-rose-950 text-rose-400 border border-rose-800{% endif %} font-mono font-bold text-[10.5px] sm:text-xs shrink-0 whitespace-nowrap ml-auto">
                                 <span class="w-1.5 h-1.5 rounded-full {% if m.is_halftime %}bg-amber-400{% else %}bg-rose-500 animate-live{% endif %}"></span>
-                                {% if m.sport == 'nba' %}{{ m.quarter }}{% elif m.is_halftime %}DESCANSO (HT){% else %}{{ m.display_clock or m.minute ~ "'" }}{% endif %} EN VIVO
+                                {% if m.sport == 'nba' or m.sport == 'nhl' %}{{ m.quarter }}{% elif m.is_halftime %}DESCANSO (HT){% else %}{{ m.display_clock or m.minute ~ "'" }}{% endif %} EN VIVO
                             </span>
                         </div>
 
@@ -479,9 +485,9 @@
                                         {% if m.home_logo %}<img src="{{ m.home_logo }}" alt="{{ m.home_team }}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}
                                         <span class="truncate" title="{{ m.home_team }}">{{ m.home_team }}</span>
                                     </h4>
-                                    <span class="text-[10px] sm:text-[11px] text-gray-400 font-mono">Local</span>
+                                    <span class="text-[10px] sm:text-[11px] text-gray-400 font-mono">Local{% if (m.sport == 'nba' or m.sport == 'nhl') and m.home_record %} • {{ m.home_record }}{% endif %}</span>
                                     {% if m.home_stats %}
-                                    <span class="text-[9px] sm:text-[10px] text-emerald-400 font-mono block truncate">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
+                                    <span class="text-[9px] sm:text-[10px] text-emerald-400 font-mono block truncate">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% elif m.sport == 'nhl' %}🏒 {{ m.home_stats.gf_pg }}/{{ m.home_stats.ga_pg }} G/P{% if m.home_stats.pp_pct is defined and m.home_stats.pp_pct %} <span class="text-[8.5px] sm:text-[9px] text-sky-300 font-sans">(PP {{ m.home_stats.pp_pct }}%)</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% if m.home_stats.avg_pts_for is defined and m.home_stats.avg_pts_for %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_stats.avg_pts_for }} PPG)</span>{% endif %}{% endif %}</span>
                                     {% endif %}
                                 </div>
 
@@ -496,9 +502,9 @@
                                         <span class="truncate" title="{{ m.away_team }}">{{ m.away_team }}</span>
                                         {% if m.away_logo %}<img src="{{ m.away_logo }}" alt="{{ m.away_team }}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}
                                     </h4>
-                                    <span class="text-[10px] sm:text-[11px] text-gray-400 font-mono">Visitante</span>
+                                    <span class="text-[10px] sm:text-[11px] text-gray-400 font-mono">{% if (m.sport == 'nba' or m.sport == 'nhl') and m.away_record %}{{ m.away_record }} • {% endif %}Visitante</span>
                                     {% if m.away_stats %}
-                                    <span class="text-[9px] sm:text-[10px] text-rose-400 font-mono block truncate">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{{ m.away_stats.attack }}/{{ m.away_stats.defense }} ⚽{% else %}{{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }} 🏀{% endif %}</span>
+                                    <span class="text-[9px] sm:text-[10px] text-rose-400 font-mono block truncate">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{{ m.away_stats.attack }}/{{ m.away_stats.defense }} ⚽{% elif m.sport == 'nhl' %}{% if m.away_stats.pp_pct is defined and m.away_stats.pp_pct %}<span class="text-[8.5px] sm:text-[9px] text-sky-300 font-sans">(PP {{ m.away_stats.pp_pct }}%) </span>{% endif %}{{ m.away_stats.gf_pg }}/{{ m.away_stats.ga_pg }} G/P 🏒{% else %}{% if m.away_stats.avg_pts_for is defined and m.away_stats.avg_pts_for %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_stats.avg_pts_for }} PPG) </span>{% endif %}{{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }} 🏀{% endif %}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -631,6 +637,7 @@
 
                         <!-- TABLA ESPECIAL: GANADOR POR CUARTOS, MITADES Y JUEGO COMPLETO (NBA LIVE) -->
                         {% if m.prediction.quarters_breakdown %}
+                        {% set qb = m.prediction.quarters_breakdown %}
                         <div class="bg-gray-950/80 border border-orange-900/40 rounded-xl p-3 my-3">
                             <span class="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2">
                                 <i data-lucide="layers" class="w-3 h-3"></i> Ganador por Cuarto & Mitad (Análisis en Vivo)
@@ -638,40 +645,40 @@
                             <div class="grid grid-cols-4 gap-1.5 text-center text-[11px] font-mono">
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">1Q</span>
-                                    <span class="font-bold text-white">{{ m.prediction.quarters_breakdown.q1.winner }}</span>
-                                    <span class="text-[9px] text-gray-500 block">Fin</span>
+                                    <span class="font-bold text-white">{{ qb.q1.winner }}</span>
+                                    <span class="text-[9px] {% if qb.q1.status == 'En Vivo' %}text-rose-400{% elif qb.q1.status == 'Finalizado' %}text-emerald-400/80{% else %}text-gray-400{% endif %} block">{{ qb.q1.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">2Q</span>
-                                    <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.q2.winner }}</span>
-                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                    <span class="font-bold text-emerald-400">{{ qb.q2.winner }}</span>
+                                    <span class="text-[9px] {% if qb.q2.status == 'En Vivo' %}text-rose-400{% elif qb.q2.status == 'Finalizado' %}text-emerald-400/80{% else %}text-gray-400{% endif %} block">{{ qb.q2.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">1ª Mitad</span>
-                                    <span class="font-bold text-amber-400">{{ m.prediction.quarters_breakdown.first_half.winner }}</span>
-                                    <span class="text-[9px] text-gray-400 block">{{ m.prediction.quarters_breakdown.first_half.score }}</span>
+                                    <span class="font-bold text-amber-400">{{ qb.first_half.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.first_half.score }}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">3Q</span>
-                                    <span class="font-bold text-cyan-400">{{ m.prediction.quarters_breakdown.q3.winner }}</span>
-                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                    <span class="font-bold text-cyan-400">{{ qb.q3.winner }}</span>
+                                    <span class="text-[9px] {% if qb.q3.status == 'En Vivo' %}text-rose-400{% elif qb.q3.status == 'Finalizado' %}text-emerald-400/80{% elif qb.q3.status == 'Descanso' %}text-amber-400{% else %}text-gray-400{% endif %} block">{{ qb.q3.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
                                 </div>
                             </div>
                             <div class="grid grid-cols-3 gap-1.5 text-center text-[11px] font-mono mt-1.5">
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">4Q (Cierre)</span>
-                                    <span class="font-bold text-purple-400">{{ m.prediction.quarters_breakdown.q4.winner }}</span>
-                                    <span class="text-[9px] text-rose-400 block">En Vivo</span>
+                                    <span class="font-bold text-purple-400">{{ qb.q4.winner }}</span>
+                                    <span class="text-[9px] {% if qb.q4.status == 'En Vivo' %}text-rose-400{% elif qb.q4.status == 'Finalizado' %}text-emerald-400/80{% else %}text-gray-400{% endif %} block">{{ qb.q4.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">2ª Mitad (Q3+Q4)</span>
-                                    <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.second_half.winner }}</span>
-                                    <span class="text-[9px] text-gray-400 block">Proy. Vivo</span>
+                                    <span class="font-bold text-emerald-400">{{ qb.second_half.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.second_half.status }}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
                                     <span class="text-[9px] text-gray-400 block font-sans">Juego Completo</span>
-                                    <span class="font-bold text-amber-400">{{ m.prediction.quarters_breakdown.full_game.winner }}</span>
-                                    <span class="text-[9px] text-gray-400 block">{{ m.prediction.quarters_breakdown.full_game.prob }}%</span>
+                                    <span class="font-bold text-amber-400">{{ qb.full_game.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.full_game.prob }}%</span>
                                 </div>
                             </div>
                         </div>
@@ -680,6 +687,95 @@
                         <!-- Probabilidades Recalculadas en Vivo (NBA) -->
                         <div class="mt-3 space-y-1">
                             <span class="text-[10px] uppercase font-bold text-gray-400 tracking-wider">Probabilidad de Triunfo en Vivo</span>
+                            <div class="flex justify-between text-[11px] text-gray-400 font-mono">
+                                <span class="text-blue-400 font-semibold">{{ m.home_team }} ({{ m.prediction.prob_home }}%)</span>
+                                <span class="text-rose-400 font-semibold">{{ m.away_team }} ({{ m.prediction.prob_away }}%)</span>
+                            </div>
+                            <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden flex">
+                                <div class="bg-blue-500" style="width: {{ m.prediction.prob_home }}%"></div>
+                                <div class="bg-rose-500" style="width: {{ m.prediction.prob_away }}%"></div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- ESTADÍSTICAS EN TIEMPO REAL: NHL -->
+                        {% if m.sport == 'nhl' %}
+                        <div class="bg-gray-950/70 border border-sky-900/40 rounded-xl p-3.5 space-y-2.5 my-2">
+                            <div class="text-[10px] uppercase font-bold text-gray-400 tracking-wider flex items-center justify-between pb-1 border-b border-gray-800/60">
+                                <span>Marcador por Periodos & Tiros (SOG)</span>
+                                <span class="text-sky-400 font-mono text-xs">Proy. Final: {{ m.prediction.projected_final }}</span>
+                            </div>
+
+                            {% if m.live_stats and m.live_stats.q_scores %}
+                            <div class="flex items-center justify-around text-xs font-mono bg-gray-900/90 py-1.5 px-2 rounded-lg border border-gray-800">
+                                {% for q_name, q_score in m.live_stats.q_scores.items() %}
+                                <div class="text-center">
+                                    <span class="text-[10px] text-gray-400 block">{{ q_name }}</span>
+                                    <span class="font-bold text-gray-200">{{ q_score }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs pt-1">
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Tiros a Puerta (Shots on Goal)">
+                                    <span class="text-[10px] text-gray-400 block">🎯 Tiros (SOG)</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.shots_home }} - {{ m.live_stats.shots_away }}</span>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Porcentaje de Atajadas de Portero">
+                                    <span class="text-[10px] text-gray-400 block">🧤 Atajadas SV%</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.save_pct_home }}% vs {{ m.live_stats.save_pct_away }}%</span>
+                                </div>
+                                <div class="bg-gray-900/80 p-1.5 rounded-lg border border-gray-800/60" title="Efectividad en Superioridad Numérica (Power Play)">
+                                    <span class="text-[10px] text-gray-400 block">⚡ Power Play%</span>
+                                    <span class="font-mono font-bold text-white">{{ m.live_stats.pp_pct_home }}% vs {{ m.live_stats.pp_pct_away }}%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TABLA ESPECIAL: GANADOR POR PERIODOS Y REGULACIÓN (NHL LIVE) -->
+                        {% if m.prediction.quarters_breakdown %}
+                        {% set qb = m.prediction.quarters_breakdown %}
+                        <div class="bg-gray-950/80 border border-sky-900/40 rounded-xl p-3 my-3">
+                            <span class="text-[10px] uppercase font-bold text-sky-400 tracking-wider flex items-center gap-1 mb-2">
+                                <i data-lucide="layers" class="w-3 h-3"></i> Periodos (1P-3P) & Regulación 60' (NHL en Vivo)
+                            </span>
+                            <div class="grid grid-cols-2 sm:grid-cols-5 gap-1.5 text-center text-[11px] font-mono">
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">1P</span>
+                                    <span class="font-bold text-emerald-400">{{ qb.q1.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.q1.score }} • {{ qb.q1.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">2P</span>
+                                    <span class="font-bold text-cyan-400">{{ qb.q2.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.q2.score }} • {{ qb.q2.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">3P</span>
+                                    <span class="font-bold text-purple-400">{{ qb.q3.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.q3.score }} • {{ qb.q3.status|replace('Finalizado', 'Fin')|replace('Proyectado', 'Proy.') }}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">Regulación 60'</span>
+                                    <span class="font-bold text-amber-400">{{ qb.first_half.winner }}</span>
+                                    <span class="text-[9px] text-gray-400 block">{{ qb.first_half.score }}</span>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1 bg-gray-900 p-1.5 rounded border border-gray-800">
+                                    <span class="text-[9px] text-gray-400 block font-sans">Final (OT/SO)</span>
+                                    <span class="font-bold text-white">{{ qb.full_game.winner }}</span>
+                                    <span class="text-[9px] text-sky-400 block">{{ qb.full_game.prob }}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+
+                        <!-- Probabilidades Recalculadas en Vivo (NHL Moneyline) -->
+                        <div class="mt-3 space-y-1">
+                            <div class="flex items-center justify-between text-[10px] uppercase font-bold text-gray-400 tracking-wider gap-2">
+                                <span>Moneyline en Vivo (Incl. OT/SO)</span>
+                                <span class="font-mono text-sky-400">OT 60': {{ m.prediction.prob_draw_reg }}% • Total {{ m.prediction.projected_total }}g</span>
+                            </div>
                             <div class="flex justify-between text-[11px] text-gray-400 font-mono">
                                 <span class="text-blue-400 font-semibold">{{ m.home_team }} ({{ m.prediction.prob_home }}%)</span>
                                 <span class="text-rose-400 font-semibold">{{ m.away_team }} ({{ m.prediction.prob_away }}%)</span>
@@ -709,7 +805,7 @@
                             </span>
                         </div>
 
-                        <div class="grid {% if m.sport == 'football' or m.sport == 'nba' %}grid-cols-5{% else %}grid-cols-4{% endif %} gap-1 sm:gap-2">
+                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-5{% else %}grid-cols-4{% endif %} gap-1 sm:gap-2">
                             <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
                             </button>
@@ -719,12 +815,12 @@
                             <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Deportivo Google Gemini" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🧠</span>
                             </button>
-                            {% if m.sport == 'football' or m.sport == 'nba' %}
+                            {% if m.sport in ['football', 'nba', 'nhl'] %}
                             <button onclick="openAiModal('{{ m.id }}', 'matrix')" title="Matriz Cuantitativa Top 10" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🔢</span>
                             </button>
                             {% endif %}
-                            {% if m.sport == 'football' or m.sport == 'nba' %}
+                            {% if m.sport in ['football', 'nba', 'nhl'] %}
                             <button onclick="openAiModal('{{ m.id }}', 'momentum')" title="Gráfico de Momentum y Presión Ofensiva" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-teal-950/70 text-teal-400 border border-gray-700/80 hover:border-teal-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">📈</span>
                             </button>
@@ -920,6 +1016,8 @@
                                 <span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>
                                 {% elif m.sport == 'nba' %}
                                 <span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>
+                                {% elif m.sport == 'nhl' %}
+                                <span class="bg-sky-950 text-sky-300 border border-sky-700 px-1.5 py-0.2 rounded text-[10px] font-bold">NHL</span>
                                 {% endif %}
                                 {% if m.referee and m.referee.name %}
                                 <span class="bg-gray-950/90 text-gray-300 border border-gray-700/80 px-2 py-0.5 rounded text-[10px] font-mono font-medium flex items-center gap-1 shadow-xs" title="Árbitro Oficial: {{ m.referee.name }} ({{ m.referee.yellow_cards_per_match }} 🟨/p • {{ m.referee.rigor_level }})">
@@ -950,7 +1048,7 @@
                                         <span class="truncate" title="{{ m.home_team }}">{{ m.home_team }}</span>
                                     </span>
                                     {% if m.home_stats %}
-                                    <span class="text-[9px] sm:text-[10px] text-emerald-400 font-mono block truncate">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %} <span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.home_stats.corners }}</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% endif %}</span>
+                                    <span class="text-[9px] sm:text-[10px] text-emerald-400 font-mono block truncate">{% if m.sport == 'football' %}⚽ {{ m.home_stats.attack }}/{{ m.home_stats.defense }}{% if m.home_stats.corners is defined and m.home_stats.corners %} <span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.home_stats.corners }}</span>{% endif %}{% if m.home_stats.attack_gen is defined and m.home_stats.attack_gen %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_stats.attack_gen }}/{{ m.home_stats.defense_gen }})</span>{% endif %}{% elif m.sport == 'nhl' %}🏒 {{ m.home_stats.gf_pg }}/{{ m.home_stats.ga_pg }} G/P{% if m.home_record %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_record }})</span>{% endif %}{% else %}🏀 {{ m.home_stats.off_rating }}/{{ m.home_stats.def_rating }}{% if m.home_record %} <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.home_record }})</span>{% endif %}{% endif %}</span>
                                     {% endif %}
                                 </div>
                                 <span class="text-[11px] sm:text-xs font-mono font-bold text-gray-500 px-1.5 sm:px-3 shrink-0">vs</span>
@@ -960,7 +1058,7 @@
                                         {% if m.away_logo %}<img src="{{ m.away_logo }}" alt="{{ m.away_team }}" class="w-4 h-4 sm:w-5 sm:h-5 object-contain inline-block shrink-0 rounded-xs" onerror="this.style.display='none'">{% endif %}
                                     </span>
                                     {% if m.away_stats %}
-                                    <span class="text-[9px] sm:text-[10px] text-rose-400 font-mono block truncate">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.away_stats.corners }} </span>{% endif %}{{ m.away_stats.attack }}/{{ m.away_stats.defense }} ⚽{% else %}{{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }} 🏀{% endif %}</span>
+                                    <span class="text-[9px] sm:text-[10px] text-rose-400 font-mono block truncate">{% if m.sport == 'football' %}{% if m.away_stats.attack_gen is defined and m.away_stats.attack_gen %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_stats.attack_gen }}/{{ m.away_stats.defense_gen }}) </span>{% endif %}{% if m.away_stats.corners is defined and m.away_stats.corners %}<span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 {{ m.away_stats.corners }} </span>{% endif %}{{ m.away_stats.attack }}/{{ m.away_stats.defense }} ⚽{% elif m.sport == 'nhl' %}{% if m.away_record %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_record }}) </span>{% endif %}{{ m.away_stats.gf_pg }}/{{ m.away_stats.ga_pg }} G/P 🏒{% else %}{% if m.away_record %}<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">({{ m.away_record }}) </span>{% endif %}{{ m.away_stats.off_rating }}/{{ m.away_stats.def_rating }} 🏀{% endif %}</span>
                                     {% endif %}
                                 </div>
                             </div>
@@ -1020,6 +1118,63 @@
                                     <span class="text-[11px] sm:text-xs font-bold text-amber-400 font-mono">{{ m.prediction.top_scores[0].score }}</span>
                                 </div>
                             </div>
+                            {% elif m.sport == 'nhl' %}
+                            <!-- NHL Pre-Match Info -->
+                            <div class="space-y-1 mt-3">
+                                <div class="flex justify-between text-[11px] text-gray-400 font-mono gap-2">
+                                    <span class="text-blue-400 font-semibold truncate">{{ m.home_team }} ({{ m.prediction.prob_home }}% ML)</span>
+                                    <span class="text-rose-400 font-semibold truncate text-right">{{ m.away_team }} ({{ m.prediction.prob_away }}% ML)</span>
+                                </div>
+                                <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                                    <div class="bg-blue-500 prob-bar-fill" style="width: {{ m.prediction.prob_home }}%"></div>
+                                    <div class="bg-rose-500 prob-bar-fill" style="width: {{ m.prediction.prob_away }}%"></div>
+                                </div>
+                                <div class="flex justify-between text-[9.5px] text-gray-400 font-mono pt-0.5">
+                                    <span>60' Reg: 1 ({{ m.prediction.prob_home_reg }}%)</span>
+                                    <span class="text-sky-400">OT ({{ m.prediction.prob_draw_reg }}%)</span>
+                                    <span>2 ({{ m.prediction.prob_away_reg }}%)</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 mt-3 text-center">
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Goles Esp.</span>
+                                    <span class="text-xs font-bold text-sky-400 font-mono">{{ m.prediction.total_points }} g</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Over 5.5</span>
+                                    <span class="text-xs font-bold text-emerald-400 font-mono">{{ m.prediction.prob_over_55 }}%</span>
+                                </div>
+                                <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                                    <span class="text-[10px] text-gray-400 block">Puck Line</span>
+                                    <span class="text-xs font-bold text-cyan-400 font-mono">{% if m.prediction.puck_line_home > 0 %}+{% endif %}{{ m.prediction.puck_line_home }}</span>
+                                </div>
+                            </div>
+
+                            {% if m.prediction.quarters_breakdown %}
+                            <div class="bg-gray-950/70 border border-sky-900/40 rounded-xl p-2.5 mt-3">
+                                <span class="text-[10px] uppercase font-bold text-sky-400 tracking-wider block mb-1">
+                                    Periodos & Regulación 60' (NHL):
+                                </span>
+                                <div class="grid grid-cols-4 gap-1 text-center text-[10px] font-mono">
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">1P</span>
+                                        <span class="font-bold text-emerald-400 truncate block">{{ m.prediction.quarters_breakdown.q1.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">2P</span>
+                                        <span class="font-bold text-cyan-400 truncate block">{{ m.prediction.quarters_breakdown.q2.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded">
+                                        <span class="text-gray-400 block">3P</span>
+                                        <span class="font-bold text-purple-400 truncate block">{{ m.prediction.quarters_breakdown.q3.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded" title="Probabilidad de empate en 60' y prórroga 3v3">
+                                        <span class="text-gray-400 block">OT 60'</span>
+                                        <span class="text-sky-400 font-bold">{{ m.prediction.prob_draw_reg }}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
                             {% else %}
                             <!-- NBA Pre-Match Info -->
                             <div class="space-y-1 mt-3">
@@ -1059,16 +1214,16 @@
                                         <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.q1.predicted_winner }}</span>
                                     </div>
                                     <div class="bg-gray-900 p-1 rounded">
-                                        <span class="text-gray-400 block">2Q</span>
-                                        <span class="text-orange-400 font-bold">⚡ En Vivo</span>
-                                    </div>
-                                    <div class="bg-gray-900 p-1 rounded">
                                         <span class="text-gray-400 block">1ª Mitad</span>
                                         <span class="font-bold text-emerald-400">{{ m.prediction.quarters_breakdown.first_half.predicted_winner }}</span>
                                     </div>
                                     <div class="bg-gray-900 p-1 rounded">
-                                        <span class="text-gray-400 block">Q3 & Q4</span>
-                                        <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                        <span class="text-gray-400 block">2ª Mitad</span>
+                                        <span class="font-bold text-cyan-400">{{ m.prediction.quarters_breakdown.second_half.predicted_winner }}</span>
+                                    </div>
+                                    <div class="bg-gray-900 p-1 rounded" title="Los cuartos individuales Q2, Q3 y Q4 se recalculan en vivo">
+                                        <span class="text-gray-400 block">Q2 - Q4</span>
+                                        <span class="text-orange-400 font-bold">⏳ Al Jugar</span>
                                     </div>
                                 </div>
                             </div>
@@ -1092,7 +1247,7 @@
                             </span>
                         </div>
 
-                        <div class="grid {% if m.sport == 'football' or m.sport == 'nba' %}grid-cols-4{% else %}grid-cols-3{% endif %} gap-1 sm:gap-2">
+                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-4{% else %}grid-cols-3{% endif %} gap-1 sm:gap-2">
                             <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
                             </button>
@@ -1102,7 +1257,7 @@
                             <button onclick="openAiModal('{{ m.id }}', 'gemini')" title="Análisis Google Gemini AI" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🧠</span>
                             </button>
-                            {% if m.sport == 'football' or m.sport == 'nba' %}
+                            {% if m.sport in ['football', 'nba', 'nhl'] %}
                             <button onclick="openAiModal('{{ m.id }}', 'matrix')" title="Matriz Cuantitativa Top 10" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🔢</span>
                             </button>
@@ -1148,7 +1303,7 @@
                             <span>🎯 Parleys Soñadores del Día</span>
                         </h2>
                         <p class="text-xs sm:text-sm text-gray-400 max-w-2xl leading-relaxed">
-                            3 combinadas calculadas matemáticamente con modelos Poisson, xG, córners y tarjetas, optimizadas por Google Gemini para maximizar probabilidad estadística y valor esperado.
+                            3 combinadas calculadas matemáticamente con modelos Poisson, xG, córners, tarjetas, NBA y NHL, optimizadas por Google Gemini para maximizar probabilidad estadística y valor esperado.
                         </p>
                     </div>
 
@@ -1272,7 +1427,7 @@
                                             <span class="w-2 h-2 rounded-full {% if ticket.tier == 1 %}bg-emerald-400{% elif ticket.tier == 2 %}bg-cyan-400{% else %}bg-amber-400{% endif %} shrink-0"></span>
                                             {% set plegh = leg.pick | lower %}
                                             <span class="font-bold text-xs text-emerald-400 truncate">
-                                                {% if 'córner' in plegh or 'corner' in plegh %}🚩 {% elif 'tarjeta' in plegh %}🟨 {% elif 'gol' in plegh or 'anotan' in plegh or 'marcan' in plegh %}⚽ {% elif 'victoria' in plegh or 'gana' in plegh %}🏆 {% elif 'empate' in plegh or 'doble' in plegh %}🛡️ {% else %}🎯 {% endif %}{{ leg.pick }}
+                                                {% if leg.sport == 'nhl' or 'puck' in plegh or 'sog' in plegh or 'tiros a puerta' in plegh or '60' in plegh %}🏒 {% elif leg.sport == 'nba' or 'puntos' in plegh %}🏀 {% elif 'córner' in plegh or 'corner' in plegh %}🚩 {% elif 'tarjeta' in plegh %}🟨 {% elif 'gol' in plegh or 'anotan' in plegh or 'marcan' in plegh %}⚽ {% elif 'victoria' in plegh or 'gana' in plegh %}🏆 {% elif 'empate' in plegh or 'doble' in plegh %}🛡️ {% else %}🎯 {% endif %}{{ leg.pick }}
                                             </span>
                                         </div>
                                         <div class="flex items-center gap-1.5 shrink-0">
@@ -1572,10 +1727,10 @@
                         <p id="modal-summary" class="text-gray-200 font-medium leading-relaxed text-xs sm:text-[13px]"></p>
                     </div>
 
-                    <!-- Desglose de Cuartos en el Modal si es NBA -->
+                    <!-- Desglose de Cuartos / Periodos en el Modal (NBA & NHL) -->
                     <div id="modal-quarters-container" class="hidden bg-gray-950/80 p-3.5 rounded-xl border border-orange-900/40">
-                        <span class="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2">
-                            <i data-lucide="layers" class="w-3.5 h-3.5"></i> Desglose: Cuartos, Mitades y Juego Completo (NBA)
+                        <span id="modal-quarters-title" class="text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2">
+                            <i data-lucide="layers" class="w-3.5 h-3.5"></i> <span>Desglose: Cuartos, Mitades y Juego Completo (NBA)</span>
                         </span>
                         <div id="modal-quarters-grid" class="grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono">
                         </div>
@@ -1763,7 +1918,7 @@
                                         <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-live"></span> EN VIVO
                                     </span>
                                 </h4>
-                                <p class="text-gray-400 text-[10.5px] sm:text-[11px] mt-0.5">Volumen de ataque, peligro en tercio final y flujo del partido minuto a minuto.</p>
+                                <p id="momentum-header-desc" class="text-gray-400 text-[10.5px] sm:text-[11px] mt-0.5">Volumen de ataque, peligro en tercio final y flujo del partido minuto a minuto.</p>
                             </div>
                             <div id="momentum-status-pill" class="text-[11px] font-mono font-bold px-2.5 py-1 rounded-xl bg-gray-950/90 border border-gray-800 text-emerald-400 shrink-0 self-start sm:self-auto shadow-xs">
                                 <!-- Estado actual dinámico -->
@@ -1800,7 +1955,7 @@
                                 <span class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-xs bg-rose-500 inline-block shadow-xs"></span> <span id="momentum-legend-away" class="text-rose-300 font-semibold font-mono">Presión Visitante (Abajo)</span></span>
                             </div>
                             <div class="flex items-center gap-2.5 text-[10.5px] font-mono text-gray-400 shrink-0">
-                                <span>⚽ Gol</span>
+                                <span id="momentum-legend-goal">⚽ Gol</span>
                                 <span id="momentum-legend-corners" class="text-cyan-400 font-semibold">🚩 Córner</span>
                                 <span id="momentum-legend-cards" class="text-amber-400 font-semibold">🟨 Tarjeta</span>
                             </div>
@@ -1825,19 +1980,19 @@
                     <!-- Panel de 3 Tarjetas de Intensidad y Peligro -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
                         <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 shadow-xs">
-                            <div class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Ataques Peligrosos (Últimos 15')</div>
+                            <div id="momentum-card1-title" class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Ataques Peligrosos (Últimos 15')</div>
                             <div id="momentum-attacks-stat" class="text-sm font-bold text-white mt-1 font-mono">--</div>
-                            <div class="text-[10px] text-gray-500 mt-0.5">Llegadas y tiros al tercio final</div>
+                            <div id="momentum-card1-sub" class="text-[10px] text-gray-500 mt-0.5">Llegadas y tiros al tercio final</div>
                         </div>
                         <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 shadow-xs">
-                            <div class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Tendencia de Momentum Actual</div>
+                            <div id="momentum-card2-title" class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Tendencia de Momentum Actual</div>
                             <div id="momentum-trend-stat" class="text-sm font-bold text-emerald-400 mt-1 font-mono">--</div>
-                            <div class="text-[10px] text-gray-500 mt-0.5">Control de juego y ritmo activo</div>
+                            <div id="momentum-card2-sub" class="text-[10px] text-gray-500 mt-0.5">Control de juego y ritmo activo</div>
                         </div>
                         <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 shadow-xs">
-                            <div class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Índice de Amenaza de Gol</div>
+                            <div id="momentum-card3-title" class="text-[9.5px] text-gray-400 uppercase font-bold tracking-wider">Índice de Amenaza de Gol</div>
                             <div id="momentum-goal-threat" class="text-sm font-bold text-amber-400 mt-1 font-mono">--</div>
-                            <div class="text-[10px] text-gray-500 mt-0.5">Probabilidad viva de gol próximo</div>
+                            <div id="momentum-card3-sub" class="text-[10px] text-gray-500 mt-0.5">Probabilidad viva de gol próximo</div>
                         </div>
                     </div>
                 </div>
@@ -1910,6 +2065,13 @@
             return `<span class="${sizeClass} text-[9px] font-bold font-mono bg-gray-800 text-gray-300 rounded border border-gray-700 inline-flex items-center justify-center shrink-0" title="${cleanName}">${abbr || '🛡️'}</span>`;
         }
 
+        function findMatchById(matchId) {
+            if (!matchId) return null;
+            return (window.liveMatchesData || []).find(m => m.id === matchId || String(m.match_id) === String(matchId))
+                || (window.allMatchesData || []).find(m => m.id === matchId || String(m.match_id) === String(matchId))
+                || null;
+        }
+
         let currentCategory = 'all';
         let currentDateFilter = '{{ today_iso }}';
         let currentCountryFilter = 'all';
@@ -1922,6 +2084,11 @@
             const statusEl = document.getElementById('filter-status-text');
             if (!statusEl) return;
             let parts = [];
+            if (currentCategory === 'clubs') parts.push('⚽ Clubes');
+            else if (currentCategory === 'national') parts.push('🌎 Selecciones');
+            else if (currentCategory === 'nba') parts.push('🏀 NBA');
+            else if (currentCategory === 'nhl') parts.push('🏒 NHL');
+
             if (currentDateFilter !== 'all') {
                 if (currentDateFilter === '{{ today_iso }}') parts.push('Hoy ({{ today_str }})');
                 else if (currentDateFilter === '{{ tomorrow_iso }}') parts.push('Mañana ({{ tomorrow_str }})');
@@ -1968,6 +2135,8 @@
                 badgeMarkup = `<span class="bg-indigo-950 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded text-[10px] font-bold">Selecciones</span>`;
             } else if (m.sport === 'nba') {
                 badgeMarkup = `<span class="bg-orange-950 text-orange-400 border border-orange-800 px-1.5 py-0.2 rounded text-[10px] font-bold">NBA</span>`;
+            } else if (m.sport === 'nhl') {
+                badgeMarkup = `<span class="bg-sky-950 text-sky-300 border border-sky-700 px-1.5 py-0.2 rounded text-[10px] font-bold">NHL</span>`;
             }
 
             const pred = m.prediction || {};
@@ -2003,8 +2172,12 @@
                     const corn = hs.corners ? ` <span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 ${hs.corners}</span>` : '';
                     const gen = hs.attack_gen ? ` <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${hs.attack_gen}/${hs.defense_gen})</span>` : '';
                     homeStatsTxt = `⚽ ${hs.attack || 0}/${hs.defense || 0}${corn}${gen}`;
+                } else if (m.sport === 'nhl') {
+                    const recH = m.home_record ? ` <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${m.home_record})</span>` : '';
+                    homeStatsTxt = `🏒 ${m.home_stats.gf_pg || 3.0}/${m.home_stats.ga_pg || 3.0} G/P${recH}`;
                 } else {
-                    homeStatsTxt = `🏀 ${m.home_stats.off_rating || 0}/${m.home_stats.def_rating || 0}`;
+                    const recH = m.home_record ? ` <span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${m.home_record})</span>` : '';
+                    homeStatsTxt = `🏀 ${m.home_stats.off_rating || 0}/${m.home_stats.def_rating || 0}${recH}`;
                 }
             }
             if (m.away_stats) {
@@ -2013,8 +2186,12 @@
                     const gen = as.attack_gen ? `<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${as.attack_gen}/${as.defense_gen}) </span>` : '';
                     const corn = as.corners ? `<span class="text-[9px] sm:text-[9.5px] text-cyan-300 font-mono">🚩 ${as.corners} </span>` : '';
                     awayStatsTxt = `${gen}${corn}${as.attack || 0}/${as.defense || 0} ⚽`;
+                } else if (m.sport === 'nhl') {
+                    const recA = m.away_record ? `<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${m.away_record}) </span>` : '';
+                    awayStatsTxt = `${recA}${m.away_stats.gf_pg || 3.0}/${m.away_stats.ga_pg || 3.0} G/P 🏒`;
                 } else {
-                    awayStatsTxt = `${m.away_stats.off_rating || 0}/${m.away_stats.def_rating || 0} 🏀`;
+                    const recA = m.away_record ? `<span class="text-[8.5px] sm:text-[9px] text-gray-400 font-sans">(${m.away_record}) </span>` : '';
+                    awayStatsTxt = `${recA}${m.away_stats.off_rating || 0}/${m.away_stats.def_rating || 0} 🏀`;
                 }
             }
 
@@ -2083,6 +2260,77 @@
                         </div>
                     </div>
                 `;
+            } else if (m.sport === 'nhl') {
+                const pHome = pred.prob_home || 50;
+                const pAway = pred.prob_away || 50;
+                const pHReg = pred.prob_home_reg || 38;
+                const pDReg = pred.prob_draw_reg || 24;
+                const pAReg = pred.prob_away_reg || 38;
+                const totG = pred.total_points || 5.8;
+                const pO55 = pred.prob_over_55 || 55;
+                const plNum = pred.puck_line_home !== undefined && pred.puck_line_home !== null ? pred.puck_line_home : -1.5;
+                const plTxt = Number(plNum) > 0 ? `+${plNum}` : `${plNum}`;
+                let perBreak = '';
+                if (pred.quarters_breakdown) {
+                    const q = pred.quarters_breakdown;
+                    perBreak = `
+                        <div class="bg-gray-950/70 border border-sky-900/40 rounded-xl p-2.5 mt-3">
+                            <span class="text-[10px] uppercase font-bold text-sky-400 tracking-wider block mb-1">
+                                Periodos & Regulación 60' (NHL):
+                            </span>
+                            <div class="grid grid-cols-4 gap-1 text-center text-[10px] font-mono">
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">1P</span>
+                                    <span class="font-bold text-emerald-400 truncate block">${q.q1 ? (q.q1.predicted_winner || q.q1.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">2P</span>
+                                    <span class="font-bold text-cyan-400 truncate block">${q.q2 ? (q.q2.predicted_winner || q.q2.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded">
+                                    <span class="text-gray-400 block">3P</span>
+                                    <span class="font-bold text-purple-400 truncate block">${q.q3 ? (q.q3.predicted_winner || q.q3.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded" title="Probabilidad de empate en 60' y prórroga 3v3">
+                                    <span class="text-gray-400 block">OT 60'</span>
+                                    <span class="text-sky-400 font-bold">${pDReg}%</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+                midContentHtml = `
+                    <div class="space-y-1 mt-3">
+                        <div class="flex justify-between text-[11px] text-gray-400 font-mono gap-2">
+                            <span class="text-blue-400 font-semibold truncate">${m.home_team} (${pHome}% ML)</span>
+                            <span class="text-rose-400 font-semibold truncate text-right">${m.away_team} (${pAway}% ML)</span>
+                        </div>
+                        <div class="w-full h-2.5 bg-gray-800 rounded-full overflow-hidden flex">
+                            <div class="bg-blue-500 prob-bar-fill" style="width: ${pHome}%"></div>
+                            <div class="bg-rose-500 prob-bar-fill" style="width: ${pAway}%"></div>
+                        </div>
+                        <div class="flex justify-between text-[9.5px] text-gray-400 font-mono pt-0.5">
+                            <span>60' Reg: 1 (${pHReg}%)</span>
+                            <span class="text-sky-400">OT (${pDReg}%)</span>
+                            <span>2 (${pAReg}%)</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3 gap-2 mt-3 text-center">
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Goles Esp.</span>
+                            <span class="text-xs font-bold text-sky-400 font-mono">${totG} g</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Over 5.5</span>
+                            <span class="text-xs font-bold text-emerald-400 font-mono">${pO55}%</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 p-2 rounded-lg">
+                            <span class="text-[10px] text-gray-400 block">Puck Line</span>
+                            <span class="text-xs font-bold text-cyan-400 font-mono">${plTxt}</span>
+                        </div>
+                    </div>
+                    ${perBreak}
+                `;
             } else {
                 const pHome = pred.prob_home || 50;
                 const pAway = pred.prob_away || 50;
@@ -2103,16 +2351,16 @@
                                     <span class="font-bold text-emerald-400">${q.q1 ? (q.q1.predicted_winner || q.q1.winner) : '-'}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1 rounded">
-                                    <span class="text-gray-400 block">2Q</span>
-                                    <span class="text-orange-400 font-bold">⚡ En Vivo</span>
-                                </div>
-                                <div class="bg-gray-900 p-1 rounded">
                                     <span class="text-gray-400 block">1ª Mitad</span>
                                     <span class="font-bold text-emerald-400">${q.first_half ? (q.first_half.predicted_winner || q.first_half.winner) : '-'}</span>
                                 </div>
                                 <div class="bg-gray-900 p-1 rounded">
-                                    <span class="text-gray-400 block">Q3 & Q4</span>
-                                    <span class="text-orange-400 font-bold">⚡ En Vivo</span>
+                                    <span class="text-gray-400 block">2ª Mitad</span>
+                                    <span class="font-bold text-cyan-400">${q.second_half ? (q.second_half.predicted_winner || q.second_half.winner) : '-'}</span>
+                                </div>
+                                <div class="bg-gray-900 p-1 rounded" title="Los cuartos individuales Q2, Q3 y Q4 se recalculan en vivo">
+                                    <span class="text-gray-400 block">Q2 - Q4</span>
+                                    <span class="text-orange-400 font-bold">⏳ Al Jugar</span>
                                 </div>
                             </div>
                         </div>
@@ -2215,7 +2463,7 @@
                             </span>
                         </div>
 
-                        <div class="grid ${(m.sport === 'football' || m.sport === 'nba') ? 'grid-cols-4' : 'grid-cols-3'} gap-1 sm:gap-2">
+                        <div class="grid ${(m.sport === 'football' || m.sport === 'nba' || m.sport === 'nhl') ? 'grid-cols-4' : 'grid-cols-3'} gap-1 sm:gap-2">
                             <button onclick="openAiModal('${m.id}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
                             </button>
@@ -2225,7 +2473,7 @@
                             <button onclick="openAiModal('${m.id}', 'gemini')" title="Análisis Deportivo Google Gemini" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-purple-950/70 text-purple-400 border border-gray-700/80 hover:border-purple-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🧠</span>
                             </button>
-                            ${(m.sport === 'football' || m.sport === 'nba') ? `
+                            ${(m.sport === 'football' || m.sport === 'nba' || m.sport === 'nhl') ? `
                             <button onclick="openAiModal('${m.id}', 'matrix')" title="Matriz Cuantitativa Top 10" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-indigo-950/70 text-indigo-400 border border-gray-700/80 hover:border-indigo-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🔢</span>
                             </button>
@@ -2288,6 +2536,7 @@
                 else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
                 else if (currentCategory === 'national' && isNat) matchCat = true;
                 else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+                else if (currentCategory === 'nhl' && sport === 'nhl') matchCat = true;
 
                 let matchDate = (currentDateFilter === 'all') || (cardDate === currentDateFilter);
                 let matchCountry = (currentCountryFilter === 'all') || (cardCountry === currentCountryFilter);
@@ -2340,6 +2589,7 @@
                 else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
                 else if (currentCategory === 'national' && isNat) matchCat = true;
                 else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+                else if (currentCategory === 'nhl' && sport === 'nhl') matchCat = true;
 
                 let matchCountry = (currentCountryFilter === 'all') || (cardCountry === currentCountryFilter);
                 let matchLeague = (currentLeagueFilter === 'all') || (cardLeague === currentLeagueFilter);
@@ -2460,6 +2710,7 @@
                 else if (currentCategory === 'clubs' && sport === 'football' && !isNat) matchCat = true;
                 else if (currentCategory === 'national' && isNat) matchCat = true;
                 else if (currentCategory === 'nba' && sport === 'nba') matchCat = true;
+                else if (currentCategory === 'nhl' && sport === 'nhl') matchCat = true;
 
                 // Fecha
                 let matchDate = (currentDateFilter === 'all') || (cardDate === currentDateFilter);
@@ -2517,6 +2768,7 @@
                 'Perú': 'pe',
                 'Bolivia': 'bo',
                 'Japón': 'jp',
+                'Norteamérica': '',
                 'Chile': 'cl',
                 'Uruguay': 'uy',
                 'Arabia Saudita': 'sa',
@@ -2548,6 +2800,7 @@
                 'Perú': '🇵🇪',
                 'Bolivia': '🇧🇴',
                 'Japón': '🇯🇵',
+                'Norteamérica': '🏒',
                 'Europa': '🏆',
                 'Chile': '🇨🇱',
                 'Uruguay': '🇺🇾',
@@ -2641,22 +2894,21 @@
         function setCategoryFilter(category) {
             currentCategory = category;
             document.querySelectorAll('.cat-btn').forEach(b => {
-                b.className = "cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white";
+                b.className = "cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1";
             });
             const activeBtn = document.getElementById('cat-tab-' + category);
             if (activeBtn) {
-                activeBtn.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
+                activeBtn.className = "cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow";
             }
-            if (!futureMatchesLoaded && dateVal !== 'all') {
-                loadFutureMatchesIfNeeded(() => {
-                    updateDynamicFilters();
-                    applyAllFilters();
-                    updateFilterStatusText();
-                });
-            } else {
+            const refreshView = () => {
                 updateDynamicFilters();
                 applyAllFilters();
                 updateFilterStatusText();
+            };
+            if (!futureMatchesLoaded && (currentDateFilter === 'all' || category === 'nba' || category === 'nhl')) {
+                loadFutureMatchesIfNeeded(refreshView);
+            } else {
+                refreshView();
             }
         }
 
@@ -2777,10 +3029,10 @@
             }
 
             document.querySelectorAll('.cat-btn').forEach(b => {
-                b.className = "cat-btn px-2.5 py-1 rounded-lg font-bold text-gray-400 hover:text-white";
+                b.className = "cat-btn py-1.5 px-2 rounded-lg font-bold text-gray-400 hover:text-white text-center flex items-center justify-center gap-1";
             });
             const catAll = document.getElementById('cat-tab-all');
-            if (catAll) catAll.className = "cat-btn px-2.5 py-1 rounded-lg font-bold bg-emerald-600 text-white shadow";
+            if (catAll) catAll.className = "cat-btn py-1.5 px-2 rounded-lg font-bold bg-emerald-600 text-white text-center flex items-center justify-center gap-1 shadow";
 
             document.querySelectorAll('.date-filter-btn').forEach(b => {
                 const bDate = b.getAttribute('data-date-iso');
@@ -2856,7 +3108,7 @@
 
         function switchModalTab(tab) {
             if (tab === 'momentum') {
-                const curMatch = (window.allMatchesData || []).find(m => m.id === activeMatchId);
+                const curMatch = findMatchById(activeMatchId);
                 if (curMatch && !curMatch.is_live) {
                     tab = 'picks';
                 }
@@ -2882,7 +3134,7 @@
             if (btnGemini) btnGemini.className = (tab === 'gemini') ? activeClass : inactiveClass;
             if (btnMatrix) btnMatrix.className = (tab === 'matrix') ? activeClass : inactiveClass;
             if (btnMomentum) {
-                const curMatch = (window.allMatchesData || []).find(m => m.id === activeMatchId);
+                const curMatch = findMatchById(activeMatchId);
                 const isLive = Boolean(curMatch && curMatch.is_live);
                 if (isLive) {
                     btnMomentum.className = (tab === 'momentum') ? activeClass : inactiveClass;
@@ -2900,12 +3152,12 @@
             if (contentMomentum) contentMomentum.classList.toggle('hidden', tab !== 'momentum');
 
             if (tab === 'momentum' && activeMatchId) {
-                const match = (window.allMatchesData || []).find(m => m.id === activeMatchId);
+                const match = findMatchById(activeMatchId);
                 if (match) renderModalMomentum(match);
             }
 
             if (tab === 'gemini' && activeMatchId) {
-                const match = (window.liveMatchesData || []).find(m => m.id === activeMatchId) || (window.allMatchesData || []).find(m => m.id === activeMatchId);
+                const match = findMatchById(activeMatchId);
                 if (match && (!match.ai_analysis || !match.ai_analysis.is_gemini)) {
                     fetch(`/api/match/${activeMatchId}/gemini_analysis`)
                         .then(r => r.json())
@@ -2981,7 +3233,7 @@
             const container = document.getElementById('modal-referee-container');
             if (!container) return;
 
-            if (match.sport === 'nba') {
+            if (match.sport === 'nba' || match.sport === 'nhl') {
                 container.innerHTML = '';
                 container.classList.add('hidden');
                 return;
@@ -3094,7 +3346,7 @@
             fetch(`/api/match/${matchId}/referee`)
                 .then(r => r.json())
                 .then(data => {
-                    const match = allMatchesData.find(m => m.id === matchId || String(m.match_id) === String(matchId));
+                    const match = findMatchById(matchId);
                     if (match && data.referee) {
                         match.referee = data.referee;
                     }
@@ -3102,7 +3354,7 @@
                 })
                 .catch(err => {
                     console.error("Error consultando árbitro:", err);
-                    const match = allMatchesData.find(m => m.id === matchId || String(m.match_id) === String(matchId));
+                    const match = findMatchById(matchId);
                     if (match) renderRefereeCard(match);
                 });
         }
@@ -3248,12 +3500,36 @@
             const vp2 = valuePicks[1] ? valuePicks[1].probability : 68;
             const valueCombined = Math.min(84, Math.max(55, Math.round((vp1 * vp2 / 100) * 1.12)));
 
-            // Opción 3: Mini-Soñadora del Encuentro (3 selecciones correlacionadas)
-            const dreamCandidates = [
-                predictions.find(p => p.market.toLowerCase().includes('1x2') || p.market.toLowerCase().includes('ganador')) || predictions[0],
-                predictions.find(p => p.market.toLowerCase().includes('goles') || p.market.toLowerCase().includes('anotan')) || predictions[1],
-                predictions.find(p => p.market.toLowerCase().includes('córner') || p.market.toLowerCase().includes('tarjeta')) || predictions[2]
-            ].filter(Boolean);
+            // Opción 3: Mini-Soñadora del Encuentro (3 selecciones correlacionadas sin duplicados)
+            const rawCandidates = (match.sport === 'nba')
+                ? [
+                    predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('moneyline') || ml.includes('ganador (moneyline)'); }),
+                    predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('total') || ml.includes('puntos'); }),
+                    predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('hándicap') || ml.includes('handicap') || ml.includes('spread') || ml.includes('cuarto') || ml.includes('mitad'); })
+                  ]
+                : (match.sport === 'nhl'
+                    ? [
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('moneyline') || ml.includes('60\'') || ml.includes('ganador'); }),
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('total') || ml.includes('goles') || ml.includes('primer periodo') || ml.includes('equipo'); }),
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('puck') || ml.includes('tiros') || ml.includes('sog') || ml.includes('prórroga'); })
+                      ]
+                    : [
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('1x2') || ml.includes('ganador'); }),
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('goles') || ml.includes('anotan'); }),
+                        predictions.find(p => { const ml = (p.market || '').toLowerCase(); return ml.includes('córner') || ml.includes('corner') || ml.includes('tarjeta'); })
+                      ]);
+            const dreamCandidates = [];
+            rawCandidates.filter(Boolean).forEach(cand => {
+                if (!dreamCandidates.some(existing => existing.name === cand.name && existing.market === cand.market)) {
+                    dreamCandidates.push(cand);
+                }
+            });
+            for (const cand of predictions) {
+                if (dreamCandidates.length >= 3) break;
+                if (!dreamCandidates.some(existing => existing.name === cand.name && existing.market === cand.market)) {
+                    dreamCandidates.push(cand);
+                }
+            }
             const dreamCombined = Math.max(38, Math.min(58, Math.round(dreamCandidates.reduce((acc, p) => acc * (p.probability / 100), 1) * 100 * 1.3)));
 
             return `
@@ -3347,35 +3623,107 @@
             const yellowPicks = predictions.filter(p => p.probability >= 58 && p.probability < 75);
             const traps = [];
 
-            const p1x2 = predictions.find(p => p.market.toLowerCase().includes('1x2'));
-            if (p1x2 && p1x2.probability < 55) {
-                traps.push({
-                    title: "Evitar 1X2 Directo",
-                    desc: `Incertidumbre elevada en el ganador (${p1x2.probability}%). Se recomienda cobertura con Doble Oportunidad.`
+            if (match.sport === 'nba') {
+                const pMl = predictions.find(p => {
+                    const ml = (p.market || '').toLowerCase();
+                    return ml.includes('moneyline') || ml.includes('ganador');
                 });
-            }
+                if (pMl && pMl.probability < 58) {
+                    traps.push({
+                        title: "Evitar Moneyline Directo Sin Cobertura",
+                        desc: `Diferencial muy estrecho en la duela (${pMl.probability}%). En partidos parejos de NBA conviene respaldar con Hándicap (+Spread) o ajustar línea de puntos.`
+                    });
+                }
 
-            const pUnder25 = predictions.find(p => p.market.includes('2.5') && p.name.toLowerCase().includes('menos'));
-            if (pUnder25 && pUnder25.probability >= 45 && pUnder25.probability <= 56) {
-                traps.push({
-                    title: "Evitar Línea 2.5 Goles",
-                    desc: "Expectativa de goles en zona neutra (50/50). Alta dispersión y riesgo de varianza."
+                const pOu = predictions.find(p => {
+                    const ml = (p.market || '').toLowerCase();
+                    return ml.includes('total') || ml.includes('puntos');
                 });
-            }
+                if (pOu && pOu.probability >= 48 && pOu.probability <= 57) {
+                    const ouRef = (match.prediction && match.prediction.over_under_line) ? ` (${match.prediction.over_under_line} pts)` : '';
+                    traps.push({
+                        title: "Evitar Línea Ajustada de Total Puntos",
+                        desc: `El ritmo proyectado (Pace) cae en zona neutra frente a la línea O/U${ouRef}. Alta exposición a varianza por faltas tácticas al cierre o tiempo extra.`
+                    });
+                }
 
-            const pBtts = predictions.find(p => p.market.toLowerCase().includes('btts') || p.market.toLowerCase().includes('anotan'));
-            if (pBtts && pBtts.name.toUpperCase().includes('NO') && pBtts.probability >= 68) {
-                traps.push({
-                    title: "Evitar Ambos Equipos Anotan (SÍ)",
-                    desc: "Fuerte asimetría de peligro proyectada; es muy probable que uno de los equipos se quede a cero."
-                });
-            }
+                const pQuarter = predictions.find(p => (p.market || '').toLowerCase().includes('cuarto'));
+                if (pQuarter && pQuarter.probability < 60) {
+                    traps.push({
+                        title: "Precaución en Cuartos Individuales",
+                        desc: "Los parciales de 12 minutos presentan alta volatilidad por rachas rápidas de triples (3PT) y rotaciones tempranas de banquillo."
+                    });
+                }
 
-            if (traps.length === 0) {
-                traps.push({
-                    title: "Evitar Empate Directo",
-                    desc: "El modelo cuantifica baja probabilidad de tablas; alta inclinación ofensiva hacia un vencedor."
-                });
+                if (traps.length === 0) {
+                    traps.push({
+                        title: "Controlar Exposición en Hándicaps Altos",
+                        desc: "Aunque el modelo detecta ventaja clara, el 'garbage time' con suplentes en el último cuarto puede recortar márgenes amplios."
+                    });
+                }
+            } else if (match.sport === 'nhl') {
+                const pMl = predictions.find(p => (p.market || '').toLowerCase().includes('moneyline'));
+                if (pMl && pMl.probability < 56) {
+                    traps.push({
+                        title: "Evitar Moneyline Aislado de Bajo Margen",
+                        desc: `Partido muy parejo en el hielo (${pMl.probability}%). En NHL el empate en 60' ocurre ~23% de las veces y el Overtime 3v3 / Shootout introduce alto azar. Evalúa cobertura o Totales por Equipo.`
+                    });
+                }
+
+                const nhlPred = match.prediction || {};
+                const probDrawReg = Number(nhlPred.prob_draw_reg || 23.0);
+                if (probDrawReg >= 24.5) {
+                    traps.push({
+                        title: "Precaución con Victoria Directa en 60' (Reglamentario)",
+                        desc: `Alta probabilidad de empate tras tres periodos (${probDrawReg.toFixed(1)}%). Para favoritos ajustados es más sólido cubrir con Moneyline (Incl. OT/SO) o Doble Oportunidad 1X/X2 en 60'.`
+                    });
+                }
+
+                const probOver55 = Number(nhlPred.prob_over_55 || 55.0);
+                if (probOver55 >= 47 && probOver55 <= 55) {
+                    traps.push({
+                        title: "Zona Neutra en Total 5.5 Goles",
+                        desc: `La línea 5.5 Goles proyecta equilibrio cercano al 50/50 (${probOver55.toFixed(1)}%). Resultado altamente sensible al rendimiento de porteros (SV%) y oportunidades en Power Play.`
+                    });
+                }
+
+                if (traps.length < 2) {
+                    traps.push({
+                        title: "Cuidado con Puck Line (-1.5) y Efecto Empty Net",
+                        desc: "En los últimos 2 minutos del 3er Periodo, el equipo que pierde por 1 gol retira al portero; eso dispara goles a puerta vacía (Empty Net) o igualadas súbitas a 1 gol."
+                    });
+                }
+            } else {
+                const p1x2 = predictions.find(p => (p.market || '').toLowerCase().includes('1x2'));
+                if (p1x2 && p1x2.probability < 55) {
+                    traps.push({
+                        title: "Evitar 1X2 Directo",
+                        desc: `Incertidumbre elevada en el ganador (${p1x2.probability}%). Se recomienda cobertura con Doble Oportunidad.`
+                    });
+                }
+
+                const pUnder25 = predictions.find(p => (p.market || '').includes('2.5') && (p.name || '').toLowerCase().includes('menos'));
+                if (pUnder25 && pUnder25.probability >= 45 && pUnder25.probability <= 56) {
+                    traps.push({
+                        title: "Evitar Línea 2.5 Goles",
+                        desc: "Expectativa de goles en zona neutra (50/50). Alta dispersión y riesgo de varianza."
+                    });
+                }
+
+                const pBtts = predictions.find(p => (p.market || '').toLowerCase().includes('btts') || (p.market || '').toLowerCase().includes('anotan'));
+                if (pBtts && (pBtts.name || '').toUpperCase().includes('NO') && pBtts.probability >= 68) {
+                    traps.push({
+                        title: "Evitar Ambos Equipos Anotan (SÍ)",
+                        desc: "Fuerte asimetría de peligro proyectada; es muy probable que uno de los equipos se quede a cero."
+                    });
+                }
+
+                if (traps.length === 0) {
+                    traps.push({
+                        title: "Evitar Empate Directo",
+                        desc: "El modelo cuantifica baja probabilidad de tablas; alta inclinación ofensiva hacia un vencedor."
+                    });
+                }
             }
 
             return `
@@ -3465,6 +3813,65 @@
 
             const hs = match.home_stats || {};
             const as = match.away_stats || {};
+
+            if (match.sport === 'nhl') {
+                const nhlPred = match.prediction || {};
+                const expTotal = Number(nhlPred.total_points || nhlPred.projected_total || ((hs.gf_pg || 3.05) + (as.gf_pg || 2.95)) || 6.0);
+                const prob1P = Math.min(89, Math.max(66, Math.round((1 - Math.exp(-(expTotal * 0.295))) * 100)));
+                const prob2P = Math.min(92, Math.max(70, Math.round((1 - Math.exp(-(expTotal * 0.345))) * 100)));
+                const prob3P = Math.min(93, Math.max(72, Math.round((1 - Math.exp(-(expTotal * 0.360))) * 100)));
+
+                return `
+                    <div class="bg-gray-950/70 border border-sky-900/50 rounded-xl p-3.5 sm:p-4 space-y-3.5 shadow-sm">
+                        <div class="flex items-center justify-between pb-2 border-b border-gray-800">
+                            <span class="font-bold text-gray-100 text-xs sm:text-sm flex items-center gap-2">
+                                <span class="text-base">⏱️</span>
+                                <span>Radar de Ritmo por Periodos (Hielo 3×20')</span>
+                            </span>
+                            <span class="text-[10px] text-sky-300 font-mono">NHL Pre-Partido & En Vivo</span>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 font-mono">
+                            <!-- 1P -->
+                            <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 space-y-1.5 shadow-inner">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-sans text-gray-400 text-[11px]">🏒 1º Periodo (0'-20')</span>
+                                    <strong class="text-sky-400 text-sm font-bold">${prob1P}%</strong>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-sky-500 rounded-full" style="width: ${prob1P}%"></div>
+                                </div>
+                                <span class="text-[9.5px] text-gray-500 font-sans block">Al menos 1 gol (Over 0.5 en 1P)</span>
+                            </div>
+
+                            <!-- 2P -->
+                            <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 space-y-1.5 shadow-inner">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-sans text-gray-400 text-[11px]">⚡ 2º Periodo (Cambio Largo)</span>
+                                    <strong class="text-cyan-400 text-sm font-bold">${prob2P}%</strong>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-cyan-500 rounded-full" style="width: ${prob2P}%"></div>
+                                </div>
+                                <span class="text-[9.5px] text-gray-500 font-sans block">Bancas largas elevan Power Plays</span>
+                            </div>
+
+                            <!-- 3P -->
+                            <div class="bg-gray-900/90 border border-gray-800 rounded-xl p-3 space-y-1.5 shadow-inner">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="font-sans text-gray-400 text-[11px]">🥅 3º Periodo & Empty Net</span>
+                                    <strong class="text-amber-400 text-sm font-bold">${prob3P}%</strong>
+                                </div>
+                                <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                    <div class="h-full bg-amber-500 rounded-full" style="width: ${prob3P}%"></div>
+                                </div>
+                                <span class="text-[9.5px] text-gray-500 font-sans block">Mayor tasa de gol con puerta vacía</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
             const avgGoals = ((hs.attack || 1.3) + (as.attack || 1.2)) / 2;
 
             const prob1T = Math.min(88, Math.max(52, Math.round(58 + avgGoals * 7)));
@@ -3551,7 +3958,44 @@
                             const lowerMarket = marketTitle.toLowerCase();
                             let marketIcon = '🎯 ';
                             let marketColor = 'text-gray-400';
-                            if (lowerMarket.includes('tarjeta')) {
+                            if (match.sport === 'nba') {
+                                if (lowerMarket.includes('moneyline') || lowerMarket.includes('ganador (moneyline)')) {
+                                    marketIcon = '🏀 ';
+                                    marketColor = 'text-orange-400';
+                                } else if (lowerMarket.includes('puntos') || lowerMarket.includes('over') || lowerMarket.includes('total')) {
+                                    marketIcon = '🔥 ';
+                                    marketColor = 'text-amber-400';
+                                } else if (lowerMarket.includes('hándicap') || lowerMarket.includes('handicap') || lowerMarket.includes('spread')) {
+                                    marketIcon = '📊 ';
+                                    marketColor = 'text-cyan-400';
+                                } else if (lowerMarket.includes('margen')) {
+                                    marketIcon = '📈 ';
+                                    marketColor = 'text-emerald-400';
+                                } else if (lowerMarket.includes('cuarto') || lowerMarket.includes('mitad') || lowerMarket.includes('tendencia') || lowerMarket.includes('ganador')) {
+                                    marketIcon = '⏱️ ';
+                                    marketColor = 'text-purple-400';
+                                }
+                            } else if (match.sport === 'nhl') {
+                                if (lowerMarket.includes('moneyline') || lowerMarket.includes('ganador (moneyline)')) {
+                                    marketIcon = '🏒 ';
+                                    marketColor = 'text-sky-400';
+                                } else if (lowerMarket.includes('doble oportunidad') || lowerMarket.includes('60\'') || lowerMarket.includes('reglamentario') || lowerMarket.includes('prórroga')) {
+                                    marketIcon = '🛡️ ';
+                                    marketColor = 'text-indigo-400';
+                                } else if (lowerMarket.includes('tiros') || lowerMarket.includes('sog')) {
+                                    marketIcon = '🎯 ';
+                                    marketColor = 'text-cyan-400';
+                                } else if (lowerMarket.includes('puck') || lowerMarket.includes('hándicap') || lowerMarket.includes('handicap')) {
+                                    marketIcon = '⚖️ ';
+                                    marketColor = 'text-purple-400';
+                                } else if (lowerMarket.includes('primer periodo') || lowerMarket.includes('1p') || lowerMarket.includes('tendencia')) {
+                                    marketIcon = '⏱️ ';
+                                    marketColor = 'text-amber-400';
+                                } else if (lowerMarket.includes('goles') || lowerMarket.includes('total') || lowerMarket.includes('equipo') || lowerMarket.includes('anotan') || lowerMarket.includes('gol')) {
+                                    marketIcon = '🥅 ';
+                                    marketColor = 'text-emerald-400';
+                                }
+                            } else if (lowerMarket.includes('tarjeta')) {
                                 marketIcon = '🟨 ';
                                 marketColor = 'text-amber-400';
                             } else if (lowerMarket.includes('córner') || lowerMarket.includes('corner')) {
@@ -3642,7 +4086,10 @@
             const summaryBadge = document.getElementById('h2h-summary-badge');
             if (summaryBadge) {
                 const sum = h2h.summary || {};
-                summaryBadge.innerText = sum.text || (sum.home_wins !== undefined ? `${sum.home_wins}V • ${sum.draws}E • ${sum.away_wins}V` : 'Cara a cara');
+                const fallbackSum = (match.sport === 'nba' || match.sport === 'nhl')
+                    ? `${sum.home_wins}V • ${sum.away_wins}V`
+                    : `${sum.home_wins}V • ${sum.draws}E • ${sum.away_wins}V`;
+                summaryBadge.innerText = sum.text || (sum.home_wins !== undefined ? fallbackSum : 'Cara a cara');
             }
 
             // Actualizar Encabezados de Secciones con Escudos
@@ -3679,8 +4126,15 @@
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas y Faltas">🟨 ${hs.yellow_cards || 2.1} <span class="text-rose-400">🟥 ${hs.red_cards || 0.1}</span> <span class="text-gray-400 font-normal">⚠️ ${hs.fouls || 11.5}</span></span>
                         </div>
                     `;
+                } else if (match.sport === 'nhl') {
+                    const recH = hs.record || match.home_record;
+                    const recPillH = recH ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-300 font-bold" title="Récord oficial NHL">${recH}</span>` : '';
+                    homeStreakEl.innerHTML = `<div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-sky-400 font-bold" title="Goles a favor / en contra por partido">🏒 ${hs.gf_pg || 3.0}/${hs.ga_pg || 3.0} G/P</span><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Tiros a puerta promedio">🎯 ${hs.sog_pg || 30.0} SOG</span><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-emerald-400 font-bold" title="Efectividad Power Play y Portería">⚡ PP ${hs.pp_pct || 21.0}% • 🧤 SV ${hs.sv_pct || 90.5}%</span>${recPillH}</div>`;
                 } else {
-                    homeStreakEl.innerHTML = `<div class="flex items-center gap-2 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-emerald-400 font-bold">Loc: ${hs.off_rating || 0}/${hs.def_rating || 0}</span> <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-gray-400">Gen: ${hs.off_rating_gen || hs.off_rating || 0}/${hs.def_rating_gen || hs.def_rating || 0}</span></div>`;
+                    const recH = hs.record || match.home_record;
+                    const ppgH = hs.avg_pts_for ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Puntos a favor / en contra por partido">📊 ${hs.avg_pts_for}/${hs.avg_pts_against || 0} PPG</span>` : '';
+                    const recPillH = recH ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-300 font-bold" title="Récord oficial">${recH}</span>` : '';
+                    homeStreakEl.innerHTML = `<div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-emerald-400 font-bold" title="Rating Ofensivo / Defensivo">🏀 ${hs.off_rating || 0}/${hs.def_rating || 0}</span>${ppgH}<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-gray-300" title="Ritmo de posesiones">⚡ Pace ${hs.pace || 99.5}</span>${recPillH}</div>`;
                 }
             }
             if (awayStreakEl) {
@@ -3692,8 +4146,15 @@
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas y Faltas">🟨 ${as.yellow_cards || 2.4} <span class="text-rose-400">🟥 ${as.red_cards || 0.1}</span> <span class="text-gray-400 font-normal">⚠️ ${as.fouls || 12.0}</span></span>
                         </div>
                     `;
+                } else if (match.sport === 'nhl') {
+                    const recA = as.record || match.away_record;
+                    const recPillA = recA ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-300 font-bold" title="Récord oficial NHL">${recA}</span>` : '';
+                    awayStreakEl.innerHTML = `<div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-rose-400 font-bold" title="Goles a favor / en contra por partido">🏒 ${as.gf_pg || 3.0}/${as.ga_pg || 3.0} G/P</span><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Tiros a puerta promedio">🎯 ${as.sog_pg || 30.0} SOG</span><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-emerald-400 font-bold" title="Efectividad Power Play y Portería">⚡ PP ${as.pp_pct || 21.0}% • 🧤 SV ${as.sv_pct || 90.5}%</span>${recPillA}</div>`;
                 } else {
-                    awayStreakEl.innerHTML = `<div class="flex items-center gap-2 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-rose-400 font-bold">Vis: ${as.off_rating || 0}/${as.def_rating || 0}</span> <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-gray-400">Gen: ${as.off_rating_gen || as.off_rating || 0}/${as.def_rating_gen || as.def_rating || 0}</span></div>`;
+                    const recA = as.record || match.away_record;
+                    const ppgA = as.avg_pts_for ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Puntos a favor / en contra por partido">📊 ${as.avg_pts_for}/${as.avg_pts_against || 0} PPG</span>` : '';
+                    const recPillA = recA ? `<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-300 font-bold" title="Récord oficial">${recA}</span>` : '';
+                    awayStreakEl.innerHTML = `<div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono"><span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-rose-400 font-bold" title="Rating Ofensivo / Defensivo">🏀 ${as.off_rating || 0}/${as.def_rating || 0}</span>${ppgA}<span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-gray-300" title="Ritmo de posesiones">⚡ Pace ${as.pace || 99.5}</span>${recPillA}</div>`;
                 }
             }
 
@@ -3912,6 +4373,7 @@
 
             // Actualizar Cabecera de la Foto Capturable con Escudos Oficiales
             const isNbaEarly = match.sport === 'nba';
+            const isNhlEarly = match.sport === 'nhl';
             const capTeams = document.getElementById('matrix-capture-teams');
             const capLeague = document.getElementById('matrix-capture-league');
             const capClock = document.getElementById('matrix-capture-clock');
@@ -3941,12 +4403,13 @@
                 `;
             }
             if (capLeague) {
-                const sportEmoji = isNbaEarly ? '🏀 NBA' : '⚽ Fútbol';
+                const sportEmoji = isNbaEarly ? '🏀 NBA' : (isNhlEarly ? '🏒 NHL' : '⚽ Fútbol');
                 capLeague.innerHTML = `<span>${sportEmoji}</span> • <span class="text-gray-300">${match.league || 'Oficial'}</span>`;
             }
             if (capClock) {
+                const liveClockPart = match.quarter || match.display_clock || (match.minute ? match.minute + "'" : '');
                 const statusText = match.is_live 
-                    ? (match.is_halftime ? 'DESCANSO (HT)' : (match.quarter || match.display_clock || match.minute + "'") + ' EN VIVO')
+                    ? (match.is_halftime ? (isNhlEarly ? 'ENTRE PERIODOS' : 'DESCANSO (HT)') : (liveClockPart ? liveClockPart + ' EN VIVO' : 'EN VIVO'))
                     : (match.date || 'Hoy');
                 capClock.innerText = statusText;
             }
@@ -3955,8 +4418,9 @@
             const matrix = p.projections_matrix;
             const ai = match.ai_analysis || {};
             const isNba = match.sport === 'nba';
+            const isNhl = match.sport === 'nhl';
 
-            // Actualizar títulos de columnas y resumen según el deporte (Fútbol vs NBA)
+            // Actualizar títulos de columnas y resumen según el deporte (Fútbol vs NBA vs NHL)
             const labelFt = document.getElementById('matrix-label-ft');
             const labelHt = document.getElementById('matrix-label-ht');
             const labelShots = document.getElementById('matrix-label-shots');
@@ -3964,12 +4428,12 @@
             const labelCorners = document.getElementById('matrix-label-corners');
             const labelCards = document.getElementById('matrix-label-cards');
 
-            if (labelFt) labelFt.innerText = isNba ? "🏀 Marcador Final" : "⚽ Marcador FT";
-            if (labelHt) labelHt.innerText = isNba ? "⏱️ 1ª Mitad (1H)" : "⏱️ 1T Descanso";
-            if (labelShots) labelShots.innerText = isNba ? "🔄 Rebotes Totales" : "⚡ Remates Totales";
-            if (labelSot) labelSot.innerText = isNba ? "🎯 Triples (3PM)" : "🎯 Tiros al Arco";
-            if (labelCorners) labelCorners.innerText = isNba ? "🤝 Asistencias" : "🚩 Córners";
-            if (labelCards) labelCards.innerText = isNba ? "📊 Hándicap" : "🟨 Tarjetas";
+            if (labelFt) labelFt.innerText = isNba ? "🏀 Marcador Final" : (isNhl ? "🏒 Marcador Reg." : "⚽ Marcador FT");
+            if (labelHt) labelHt.innerText = isNba ? "⏱️ 1ª Mitad (1H)" : (isNhl ? "⏱️ 1º Periodo (1P)" : "⏱️ 1T Descanso");
+            if (labelShots) labelShots.innerText = isNba ? "🔄 Rebotes Totales" : (isNhl ? "🎯 Tiros (SOG)" : "⚡ Remates Totales");
+            if (labelSot) labelSot.innerText = isNba ? "🎯 Triples (3PM)" : (isNhl ? "🧤 Atajadas Portero" : "🎯 Tiros al Arco");
+            if (labelCorners) labelCorners.innerText = isNba ? "🤝 Asistencias" : (isNhl ? "💥 Hits Físicos" : "🚩 Córners");
+            if (labelCards) labelCards.innerText = isNba ? "📊 Hándicap" : (isNhl ? "⚖️ Margen Puck" : "🟨 Tarjetas");
 
             const thCol1 = document.getElementById('th-matrix-col1');
             const thCol2 = document.getElementById('th-matrix-col2');
@@ -3978,27 +4442,33 @@
             const thCol5 = document.getElementById('th-matrix-col5');
             const thCol6 = document.getElementById('th-matrix-col6');
 
-            if (thCol1) thCol1.innerHTML = isNba ? 'PTS-FT<span class="block text-[8px] text-gray-500 font-normal">Final</span>' : 'FTHG-FTAG<span class="block text-[8px] text-gray-500 font-normal">Final</span>';
-            if (thCol2) thCol2.innerHTML = isNba ? 'PTS-1H<span class="block text-[8px] text-gray-500 font-normal">1er T</span>' : 'HTHG-HTAG<span class="block text-[8px] text-gray-500 font-normal">1er T</span>';
-            if (thCol3) thCol3.innerHTML = isNba ? 'REB<span class="block text-[8px] text-gray-500 font-normal">Rebotes</span>' : 'HS-AS<span class="block text-[8px] text-gray-500 font-normal">Remates</span>';
-            if (thCol4) thCol4.innerHTML = isNba ? '3PM<span class="block text-[8px] text-gray-500 font-normal">Triples</span>' : 'HST-AST<span class="block text-[8px] text-gray-500 font-normal">Al Arco</span>';
-            if (thCol5) thCol5.innerHTML = isNba ? 'AST<span class="block text-[8px] text-gray-500 font-normal">Asistencias</span>' : 'HC-AC<span class="block text-[8px] text-gray-500 font-normal">Córners</span>';
-            if (thCol6) thCol6.innerHTML = isNba ? 'SPREAD<span class="block text-[8px] text-gray-500 font-normal">Margen</span>' : 'HY-AY<span class="block text-[8px] text-gray-500 font-normal">Tarjetas</span>';
+            if (thCol1) thCol1.innerHTML = isNba ? 'PTS-FT<span class="block text-[8px] text-gray-500 font-normal">Final</span>' : (isNhl ? 'GOL-FT<span class="block text-[8px] text-gray-500 font-normal">Reg. 60\'</span>' : 'FTHG-FTAG<span class="block text-[8px] text-gray-500 font-normal">Final</span>');
+            if (thCol2) thCol2.innerHTML = isNba ? 'PTS-1H<span class="block text-[8px] text-gray-500 font-normal">1er T</span>' : (isNhl ? 'GOL-1P<span class="block text-[8px] text-gray-500 font-normal">1er Per.</span>' : 'HTHG-HTAG<span class="block text-[8px] text-gray-500 font-normal">1er T</span>');
+            if (thCol3) thCol3.innerHTML = isNba ? 'REB<span class="block text-[8px] text-gray-500 font-normal">Rebotes</span>' : (isNhl ? 'SOG<span class="block text-[8px] text-gray-500 font-normal">Tiros</span>' : 'HS-AS<span class="block text-[8px] text-gray-500 font-normal">Remates</span>');
+            if (thCol4) thCol4.innerHTML = isNba ? '3PM<span class="block text-[8px] text-gray-500 font-normal">Triples</span>' : (isNhl ? 'ATAJ<span class="block text-[8px] text-gray-500 font-normal">Portería</span>' : 'HST-AST<span class="block text-[8px] text-gray-500 font-normal">Al Arco</span>');
+            if (thCol5) thCol5.innerHTML = isNba ? 'AST<span class="block text-[8px] text-gray-500 font-normal">Asistencias</span>' : (isNhl ? 'HIT<span class="block text-[8px] text-gray-500 font-normal">Impactos</span>' : 'HC-AC<span class="block text-[8px] text-gray-500 font-normal">Córners</span>');
+            if (thCol6) thCol6.innerHTML = isNba ? 'SPREAD<span class="block text-[8px] text-gray-500 font-normal">Margen</span>' : (isNhl ? 'PUCK<span class="block text-[8px] text-gray-500 font-normal">Margen</span>' : 'HY-AY<span class="block text-[8px] text-gray-500 font-normal">Tarjetas</span>');
 
             const matrixSub = document.getElementById('matrix-table-subtitle');
             if (matrixSub) {
                 matrixSub.innerText = isNba 
                     ? "Modelo Gaussiano multivariable por posesiones (Pace) y ratings ofensivos/defensivos (OffRtg/DefRtg)"
-                    : "Modelo de Poisson bivariado con covarianza dinámica por posesión y ratio ofensivo";
+                    : (isNhl
+                        ? "Modelo de Poisson bivariado NHL calibrado con Tiros a Puerta (SOG), Power Play% y Atajadas (SV%)"
+                        : "Modelo de Poisson bivariado con covarianza dinámica por posesión y ratio ofensivo");
             }
 
             // Actualizar análisis Gemini de la matriz
             const matrixAiText = document.getElementById('modal-matrix-gemini-text');
             if (matrixAiText) {
-                matrixAiText.innerText = ai.analisis_matriz_gemini || (isNba ? "Análisis multivariable de posesiones, rebotes y triples en proceso de interpretación..." : "Análisis multivariable algorítmico en proceso de interpretación...");
+                matrixAiText.innerText = ai.analisis_matriz_gemini || (isNba
+                    ? "Análisis multivariable de posesiones, rebotes y triples en proceso de interpretación..."
+                    : (isNhl
+                        ? "Análisis multivariable de Tiros a Puerta (SOG), Portería (SV%) y Power Play en proceso de interpretación..."
+                        : "Análisis multivariable algorítmico en proceso de interpretación..."));
             }
 
-            // Actualizar leyenda explicativa de columnas al pie según el deporte (Fútbol vs NBA)
+            // Actualizar leyenda explicativa de columnas al pie según el deporte (Fútbol vs NBA vs NHL)
             const matrixLegend = document.getElementById('matrix-legend-container');
             if (matrixLegend) {
                 if (isNba) {
@@ -4009,6 +4479,15 @@
                         <div><span class="text-gray-300 font-semibold font-mono">3PM:</span> Triples encestados proyectados</div>
                         <div><span class="text-gray-300 font-semibold font-mono">AST:</span> Asistencias de canasta</div>
                         <div><span class="text-gray-300 font-semibold font-mono">SPREAD:</span> Hándicap / Margen de victoria</div>
+                    `;
+                } else if (isNhl) {
+                    matrixLegend.innerHTML = `
+                        <div><span class="text-gray-300 font-semibold font-mono">GOL-FT:</span> Goles regulación 60' (Local-Visita)</div>
+                        <div><span class="text-gray-300 font-semibold font-mono">GOL-1P:</span> Marcador primer periodo (1P)</div>
+                        <div><span class="text-gray-300 font-semibold font-mono">SOG:</span> Tiros a puerta proyectados (Shots on Goal)</div>
+                        <div><span class="text-gray-300 font-semibold font-mono">ATAJ:</span> Atajadas de portería (Saves L-V)</div>
+                        <div><span class="text-gray-300 font-semibold font-mono">HIT:</span> Impactos físicos (Hits proyectados)</div>
+                        <div><span class="text-gray-300 font-semibold font-mono">PUCK:</span> Margen / Puck Line proyectado</div>
                     `;
                 } else {
                     matrixLegend.innerHTML = `
@@ -4085,10 +4564,12 @@
         // ==============================================================
         function generateMatchMomentumData(match) {
             const isNba = match.sport === 'nba';
-            const totalMinutes = isNba ? 48 : 90;
-            const currentMin = match.minute ? Math.min(match.minute, totalMinutes) : (match.is_live ? (isNba ? 24 : 58) : totalMinutes);
-            const scoreH = match.score_home || 0;
-            const scoreA = match.score_away || 0;
+            const isNhl = match.sport === 'nhl';
+            const hs = match.home_stats || {};
+            const as = match.away_stats || {};
+            const ls = match.live_stats || {};
+            const scoreH = Number(match.score_home || 0);
+            const scoreA = Number(match.score_away || 0);
 
             // Semilla determinista basada en el ID del partido
             let seed = 0;
@@ -4101,9 +4582,375 @@
                 return x - Math.floor(x);
             }
 
-            const hs = match.home_stats || {};
-            const as = match.away_stats || {};
-            const ls = match.live_stats || {};
+            let totalMinutes = isNba ? 48 : (isNhl ? 60 : 90);
+            let currentMin = totalMinutes;
+
+            if (isNba) {
+                const qText = String(match.quarter || match.display_clock || '');
+                const qScores = ls.q_scores || {};
+                const otMatch = qText.match(/OT\s*(\d*)/i);
+                let otNum = otMatch ? (otMatch[1] ? parseInt(otMatch[1], 10) : 1) : 0;
+                Object.keys(qScores).forEach(k => {
+                    const km = String(k).match(/^OT(\d*)$/i);
+                    if (km) {
+                        const n = km[1] ? parseInt(km[1], 10) : 1;
+                        if (n > otNum) otNum = n;
+                    }
+                });
+                if (otNum > 0) totalMinutes = 48 + otNum * 5;
+
+                const isHt = Boolean(match.is_halftime || ls.is_halftime || /HT|DESCANSO|HALF/i.test(qText));
+                const clkMatch = qText.match(/(\d{1,2}):(\d{2})/);
+                const remMins = clkMatch ? (parseInt(clkMatch[1], 10) + parseInt(clkMatch[2], 10) / 60) : 6.0;
+                const qMatch = qText.match(/(?:(\d)\s*Q|Q\s*(\d))/i);
+
+                if (!match.is_live) {
+                    currentMin = totalMinutes;
+                } else if (isHt) {
+                    currentMin = 24;
+                } else if (otMatch) {
+                    const activeOt = otMatch[1] ? parseInt(otMatch[1], 10) : 1;
+                    const elapsedOt = Math.max(0.5, Math.min(5, 5 - remMins));
+                    currentMin = Math.min(totalMinutes, Math.max(49, Math.round(48 + (activeOt - 1) * 5 + elapsedOt)));
+                } else if (qMatch) {
+                    const qNum = parseInt(qMatch[1] || qMatch[2], 10);
+                    const elapsedQ = Math.max(0.5, Math.min(12, 12 - remMins));
+                    currentMin = Math.max(1, Math.min(48, Math.round((qNum - 1) * 12 + elapsedQ)));
+                } else if (match.minute) {
+                    currentMin = Math.min(totalMinutes, Math.max(1, parseInt(match.minute, 10) || 24));
+                } else {
+                    currentMin = 24;
+                }
+            } else if (isNhl) {
+                const qText = String(match.quarter || match.display_clock || '');
+                const qScores = ls.q_scores || {};
+                const hasOt = /\b(OT|SO)\b/i.test(qText) || Object.keys(qScores).some(k => /^(OT|SO)$/i.test(String(k)));
+                if (hasOt) totalMinutes = 65;
+
+                const isIntermission = Boolean(match.is_halftime || ls.is_halftime || /Fin\s*\dP|INT|END/i.test(qText));
+                const clkMatch = qText.match(/(\d{1,2}):(\d{2})/);
+                const remMins = clkMatch ? (parseInt(clkMatch[1], 10) + parseInt(clkMatch[2], 10) / 60) : 10.0;
+                const pMatch = qText.match(/(\d)\s*P|P\s*(\d)/i);
+
+                if (!match.is_live) {
+                    currentMin = totalMinutes;
+                } else if (isIntermission) {
+                    if (/2\s*P/i.test(qText)) currentMin = 40;
+                    else if (/3\s*P/i.test(qText)) currentMin = 60;
+                    else currentMin = 20;
+                } else if (/SO/i.test(qText)) {
+                    currentMin = 65;
+                } else if (/OT/i.test(qText)) {
+                    const elapsedOt = Math.max(0.5, Math.min(5, 5 - remMins));
+                    currentMin = Math.min(65, Math.max(61, Math.round(60 + elapsedOt)));
+                } else if (pMatch) {
+                    const pNum = parseInt(pMatch[1] || pMatch[2], 10);
+                    const elapsedP = Math.max(0.5, Math.min(20, 20 - remMins));
+                    currentMin = Math.max(1, Math.min(60, Math.round((pNum - 1) * 20 + elapsedP)));
+                } else if (match.minute) {
+                    currentMin = Math.min(totalMinutes, Math.max(1, parseInt(match.minute, 10) || 30));
+                } else {
+                    currentMin = 30;
+                }
+            } else {
+                currentMin = match.minute ? Math.min(totalMinutes, Math.max(1, parseInt(match.minute, 10) || 1)) : (match.is_live ? 58 : totalMinutes);
+            }
+
+            if (isNba) {
+                const fgH = Number(ls.fg_pct_home ?? ls.field_goal_pct_home ?? 45.5);
+                const fgA = Number(ls.fg_pct_away ?? ls.field_goal_pct_away ?? 44.5);
+                const rebH = Number(ls.rebounds_home ?? 22);
+                const rebA = Number(ls.rebounds_away ?? 21);
+                const netH = Number(hs.off_rating || 113) - Number(hs.def_rating || 112);
+                const netA = Number(as.off_rating || 112) - Number(as.def_rating || 112);
+                const baseBias = Math.max(-45, Math.min(45,
+                    (fgH - fgA) * 1.8 +
+                    (rebH - rebA) * 1.4 +
+                    (netH - netA) * 1.6 +
+                    Math.max(-28, Math.min(28, (scoreH - scoreA) * 1.5))
+                ));
+
+                const qScores = ls.q_scores || {};
+                const quarterDiffs = {};
+                const nbaMilestones = {};
+
+                for (let q = 1; q <= 4; q++) {
+                    const rawQ = qScores[`${q}Q`];
+                    if (rawQ && rawQ !== '-') {
+                        const parts = String(rawQ).match(/(\d+)\s*-\s*(\d+)/);
+                        if (parts) {
+                            const hq = parseInt(parts[1], 10);
+                            const aq = parseInt(parts[2], 10);
+                            const diff = hq - aq;
+                            quarterDiffs[q] = diff;
+
+                            const qEndMin = q * 12;
+                            const targetM = qEndMin <= currentMin ? qEndMin : (currentMin > (q - 1) * 12 ? currentMin : null);
+                            if (targetM && (hq > 0 || aq > 0)) {
+                                const leader = hq > aq ? match.home_team : (aq > hq ? match.away_team : 'Empate');
+                                const tag = qEndMin <= currentMin ? `${q}Q cerrado` : `${q}Q en curso`;
+                                nbaMilestones[targetM] = {
+                                    isHome: hq >= aq,
+                                    event: hq >= aq ? 'nba_home' : 'nba_away',
+                                    eventIcon: '🏀',
+                                    eventDesc: `${tag}: ${hq}-${aq} (${leader})`
+                                };
+                            }
+                        }
+                    }
+                }
+
+                // Añadir rachas de posesiones cuando hay pocos cuartos cerrados (ej. 1Q temprano o pre-partido)
+                if (Object.keys(nbaMilestones).length < 2 && currentMin >= 6) {
+                    const rMin = Math.max(3, Math.min(currentMin - 1, Math.round(currentMin * 0.45)));
+                    if (!nbaMilestones[rMin]) {
+                        const homeLead = (quarterDiffs[1] !== undefined ? quarterDiffs[1] : (scoreH - scoreA)) >= 0;
+                        const runTeam = homeLead ? match.home_team : match.away_team;
+                        nbaMilestones[rMin] = {
+                            isHome: homeLead,
+                            event: homeLead ? 'nba_run_home' : 'nba_run_away',
+                            eventIcon: '🔥',
+                            eventDesc: `Racha ofensiva de ${runTeam} (${rMin}')`
+                        };
+                    }
+                }
+
+                const points = [];
+                let currentWave = 0;
+                let waveTarget = 0;
+                let sumH = 0;
+                let sumA = 0;
+
+                for (let m = 1; m <= totalMinutes; m++) {
+                    const qIdx = m <= 48 ? Math.ceil(m / 12) : 4 + Math.ceil((m - 48) / 5);
+                    const qDiff = quarterDiffs[qIdx];
+                    const localBias = (qDiff !== undefined)
+                        ? Math.max(-48, Math.min(48, qDiff * 3.5 + baseBias * 0.35))
+                        : baseBias;
+
+                    if (m % 4 === 1) {
+                        waveTarget = (pseudoRand(m * 7.3) - 0.5) * 78 + localBias;
+                    }
+                    currentWave += (waveTarget - currentWave) * 0.4;
+                    const noise = (pseudoRand(m * 19.7) - 0.5) * 18;
+                    let val = Math.max(-100, Math.min(100, currentWave + noise));
+
+                    let event = null;
+                    let eventIcon = null;
+                    let eventDesc = null;
+
+                    const ms = nbaMilestones[m];
+                    if (ms) {
+                        val = ms.isHome ? Math.min(100, Math.max(60, val + 45)) : Math.max(-100, Math.min(-60, val - 45));
+                        event = ms.event;
+                        eventIcon = ms.eventIcon;
+                        eventDesc = ms.eventDesc;
+                    }
+
+                    if (m <= currentMin) {
+                        if (val > 0) sumH += val;
+                        else sumA += Math.abs(val);
+                    }
+
+                    points.push({
+                        minute: m,
+                        value: Math.round(val),
+                        isProjected: m > currentMin,
+                        event: event,
+                        eventIcon: eventIcon,
+                        eventDesc: eventDesc
+                    });
+                }
+
+                const totalSum = (sumH + sumA) || 1;
+                const pctHome = Math.round((sumH / totalSum) * 100);
+                const pctAway = 100 - pctHome;
+
+                return {
+                    totalMinutes,
+                    currentMin,
+                    points,
+                    pctHome,
+                    pctAway,
+                    isNba: true,
+                    isNhl: false,
+                    goalMinutesH: [],
+                    goalMinutesA: [],
+                    countCornH: 0,
+                    countCornA: 0,
+                    countYcH: 0,
+                    countYcA: 0
+                };
+            }
+
+            if (isNhl) {
+                const sogH = Number(ls.shots_home ?? hs.sog_pg ?? 29);
+                const sogA = Number(ls.shots_away ?? as.sog_pg ?? 28);
+                const svH = Number(ls.save_pct_home ?? hs.sv_pct ?? 90.6);
+                const svA = Number(ls.save_pct_away ?? as.sv_pct ?? 90.2);
+                const ppGoalsH = Number(ls.pp_goals_home ?? 0);
+                const ppGoalsA = Number(ls.pp_goals_away ?? 0);
+                const hitsH = Number(ls.hits_home ?? 16);
+                const hitsA = Number(ls.hits_away ?? 15);
+                const netH = Number(hs.gf_pg || 3.05) - Number(hs.ga_pg || 2.95);
+                const netA = Number(as.gf_pg || 2.95) - Number(as.ga_pg || 2.95);
+
+                const baseBias = Math.max(-46, Math.min(46,
+                    (sogH - sogA) * 1.7 +
+                    (svH - svA) * 1.1 +
+                    (ppGoalsH - ppGoalsA) * 7.5 +
+                    (netH - netA) * 8.0 +
+                    Math.max(-28, Math.min(28, (scoreH - scoreA) * 9.0))
+                ));
+
+                const qScores = ls.q_scores || {};
+                const periodDiffs = {};
+                const nhlMilestones = {};
+                const periodGoalListH = [];
+                const periodGoalListA = [];
+
+                for (let pIdx = 1; pIdx <= 3; pIdx++) {
+                    const rawP = qScores[`${pIdx}P`];
+                    if (rawP && rawP !== '-') {
+                        const parts = String(rawP).match(/(\d+)\s*-\s*(\d+)/);
+                        if (parts) {
+                            const hp = parseInt(parts[1], 10);
+                            const ap = parseInt(parts[2], 10);
+                            periodDiffs[pIdx] = hp - ap;
+                            const pStart = (pIdx - 1) * 20 + 1;
+                            const pEnd = pIdx * 20;
+                            const upperMin = Math.min(currentMin, pEnd);
+                            for (let g = 0; g < hp; g++) {
+                                if (upperMin >= pStart) {
+                                    const gm = Math.max(pStart, Math.min(upperMin, Math.floor(pStart + pseudoRand(pIdx * 101 + g * 13 + 3) * (upperMin - pStart + 1))));
+                                    periodGoalListH.push(gm);
+                                }
+                            }
+                            for (let g = 0; g < ap; g++) {
+                                if (upperMin >= pStart) {
+                                    const gm = Math.max(pStart, Math.min(upperMin, Math.floor(pStart + pseudoRand(pIdx * 131 + g * 19 + 7) * (upperMin - pStart + 1))));
+                                    periodGoalListA.push(gm);
+                                }
+                            }
+                            if (pEnd <= currentMin && (hp > 0 || ap > 0)) {
+                                const leader = hp > ap ? match.home_team : (ap > hp ? match.away_team : 'Empate');
+                                nhlMilestones[pEnd] = {
+                                    isHome: hp >= ap,
+                                    event: hp >= ap ? 'nhl_p_home' : 'nhl_p_away',
+                                    eventIcon: '🏒',
+                                    eventDesc: `Fin ${pIdx}P: ${hp}-${ap} (${leader})`
+                                };
+                            }
+                        }
+                    }
+                }
+
+                // Fallback de goles distribuido si no viene detalle q_scores
+                if (periodGoalListH.length === 0 && scoreH > 0) {
+                    for (let g = 0; g < scoreH; g++) {
+                        const m = Math.max(2, Math.min(currentMin, Math.floor(3 + pseudoRand(g * 17 + 5) * Math.max(4, currentMin - 4))));
+                        periodGoalListH.push(m);
+                    }
+                }
+                if (periodGoalListA.length === 0 && scoreA > 0) {
+                    for (let g = 0; g < scoreA; g++) {
+                        const m = Math.max(2, Math.min(currentMin, Math.floor(4 + pseudoRand(g * 23 + 11) * Math.max(4, currentMin - 4))));
+                        periodGoalListA.push(m);
+                    }
+                }
+
+                periodGoalListH.forEach(m => {
+                    nhlMilestones[m] = {
+                        isHome: true,
+                        event: 'nhl_goal_home',
+                        eventIcon: '🚨',
+                        eventDesc: `¡GOL de ${match.home_team}! (${m}')`
+                    };
+                });
+                periodGoalListA.forEach(m => {
+                    if (!nhlMilestones[m]) {
+                        nhlMilestones[m] = {
+                            isHome: false,
+                            event: 'nhl_goal_away',
+                            eventIcon: '🚨',
+                            eventDesc: `¡GOL de ${match.away_team}! (${m}')`
+                        };
+                    }
+                });
+
+                const points = [];
+                let currentWave = 0;
+                let waveTarget = 0;
+                let sumH = 0;
+                let sumA = 0;
+
+                for (let m = 1; m <= totalMinutes; m++) {
+                    const pIdx = m <= 60 ? Math.ceil(m / 20) : 4;
+                    const pDiff = periodDiffs[pIdx];
+                    const localBias = (pDiff !== undefined)
+                        ? Math.max(-48, Math.min(48, pDiff * 14 + baseBias * 0.4))
+                        : baseBias;
+
+                    if (m % 4 === 1) {
+                        waveTarget = (pseudoRand(m * 9.1) - 0.5) * 76 + localBias;
+                    }
+                    currentWave += (waveTarget - currentWave) * 0.42;
+                    const noise = (pseudoRand(m * 17.3) - 0.5) * 18;
+                    let val = Math.max(-100, Math.min(100, currentWave + noise));
+
+                    let event = null;
+                    let eventIcon = null;
+                    let eventDesc = null;
+                    const ms = nhlMilestones[m];
+                    if (ms) {
+                        val = ms.isHome ? Math.min(100, Math.max(68, val + 55)) : Math.max(-100, Math.min(-68, val - 55));
+                        event = ms.event;
+                        eventIcon = ms.eventIcon;
+                        eventDesc = ms.eventDesc;
+                    }
+
+                    if (m <= currentMin) {
+                        if (val > 0) sumH += val;
+                        else sumA += Math.abs(val);
+                    }
+
+                    points.push({
+                        minute: m,
+                        value: Math.round(val),
+                        isProjected: m > currentMin,
+                        event: event,
+                        eventIcon: eventIcon,
+                        eventDesc: eventDesc
+                    });
+                }
+
+                const totalSum = (sumH + sumA) || 1;
+                const pctHome = Math.round((sumH / totalSum) * 100);
+                const pctAway = 100 - pctHome;
+
+                return {
+                    totalMinutes,
+                    currentMin,
+                    points,
+                    pctHome,
+                    pctAway,
+                    isNba: false,
+                    isNhl: true,
+                    nhlSogH: sogH,
+                    nhlSogA: sogA,
+                    nhlSvH: svH,
+                    nhlSvA: svA,
+                    nhlHitsH: hitsH,
+                    nhlHitsA: hitsA,
+                    goalMinutesH: periodGoalListH,
+                    goalMinutesA: periodGoalListA,
+                    countCornH: 0,
+                    countCornA: 0,
+                    countYcH: 0,
+                    countYcA: 0
+                };
+            }
+
             const possH = ls.possession_home || 52;
             const baseBias = (possH - 50) * 0.9 + ((hs.attack || 1.2) - (as.attack || 1.1)) * 8;
 
@@ -4288,6 +5135,7 @@
                 pctHome,
                 pctAway,
                 isNba,
+                isNhl,
                 goalMinutesH,
                 goalMinutesA,
                 countCornH,
@@ -4329,8 +5177,8 @@
                     logging: false
                 });
 
-                const currentMatch = (typeof allMatchesData !== 'undefined' && typeof activeMatchId !== 'undefined')
-                    ? allMatchesData.find(m => m.id === activeMatchId)
+                const currentMatch = (typeof findMatchById === 'function' && typeof activeMatchId !== 'undefined')
+                    ? findMatchById(activeMatchId)
                     : null;
 
                 const homeName = currentMatch ? currentMatch.home_team : 'Local';
@@ -4408,6 +5256,9 @@
 
             const data = generateMatchMomentumData(match);
             const isLive = match.is_live;
+            const ls = match.live_stats || {};
+            const hs = match.home_stats || {};
+            const as = match.away_stats || {};
 
             // Actualizar encabezados y logos
             const homeLogo = match.home_logo || getTeamLogoUrl(match.home_team, match);
@@ -4419,16 +5270,46 @@
             document.getElementById('momentum-legend-home').textContent = `Presión ${match.home_team} (Arriba)`;
             document.getElementById('momentum-legend-away').textContent = `Presión ${match.away_team} (Abajo)`;
 
-            // Indicadores dinámicos de córners y tarjetas en la leyenda
-            const legendCorners = document.getElementById('momentum-legend-corners');
-            if (legendCorners) {
-                const totC = data.countCornH + data.countCornA;
-                legendCorners.innerHTML = `🚩 Córners: <strong class="text-white">${totC}</strong> <span class="text-[9.5px] text-gray-400 font-mono">(${data.countCornH}-${data.countCornA})</span>`;
+            const headerDesc = document.getElementById('momentum-header-desc');
+            if (headerDesc) {
+                headerDesc.textContent = data.isNba
+                    ? "Ritmo de juego (Pace), parciales por cuarto y flujo de anotación en duela."
+                    : (data.isNhl
+                        ? "Presión sobre el hielo, Tiros a Puerta (SOG), Power Plays y flujo por periodo (3×20')."
+                        : "Volumen de ataque, peligro en tercio final y flujo del partido minuto a minuto.");
             }
+
+            // Indicadores dinámicos según el deporte (NBA vs NHL vs Fútbol)
+            const legendGoal = document.getElementById('momentum-legend-goal');
+            const legendCorners = document.getElementById('momentum-legend-corners');
             const legendCards = document.getElementById('momentum-legend-cards');
-            if (legendCards) {
-                const totY = data.countYcH + data.countYcA;
-                legendCards.innerHTML = `🟨 Tarjetas: <strong class="text-white">${totY}</strong> <span class="text-[9.5px] text-gray-400 font-mono">(${data.countYcH}-${data.countYcA})</span>`;
+            const fgH = (ls.fg_pct_home ?? ls.field_goal_pct_home ?? 45.5);
+            const fgA = (ls.fg_pct_away ?? ls.field_goal_pct_away ?? 44.5);
+            const threeH = (ls.three_pct_home ?? ls.three_point_pct_home ?? 34.5);
+            const threeA = (ls.three_pct_away ?? ls.three_point_pct_away ?? 33.5);
+            const rebH = (ls.rebounds_home ?? 22);
+            const rebA = (ls.rebounds_away ?? 21);
+            const astH = (ls.assists_home ?? 14);
+            const astA = (ls.assists_away ?? 13);
+
+            if (data.isNba) {
+                if (legendGoal) legendGoal.textContent = '🏀 Parcial/Racha';
+                if (legendCorners) legendCorners.innerHTML = `🎯 FG%: <strong class="text-white">${fgH}%</strong> - <strong class="text-white">${fgA}%</strong>`;
+                if (legendCards) legendCards.innerHTML = `🔄 Rebotes: <strong class="text-white">${rebH}</strong> - <strong class="text-white">${rebA}</strong>`;
+            } else if (data.isNhl) {
+                if (legendGoal) legendGoal.textContent = '🚨 Gol / Periodo';
+                if (legendCorners) legendCorners.innerHTML = `🎯 SOG: <strong class="text-white">${data.nhlSogH}</strong> - <strong class="text-white">${data.nhlSogA}</strong>`;
+                if (legendCards) legendCards.innerHTML = `🧤 SV%: <strong class="text-white">${data.nhlSvH}%</strong> - <strong class="text-white">${data.nhlSvA}%</strong>`;
+            } else {
+                if (legendGoal) legendGoal.textContent = '⚽ Gol';
+                if (legendCorners) {
+                    const totC = data.countCornH + data.countCornA;
+                    legendCorners.innerHTML = `🚩 Córners: <strong class="text-white">${totC}</strong> <span class="text-[9.5px] text-gray-400 font-mono">(${data.countCornH}-${data.countCornA})</span>`;
+                }
+                if (legendCards) {
+                    const totY = data.countYcH + data.countYcA;
+                    legendCards.innerHTML = `🟨 Tarjetas: <strong class="text-white">${totY}</strong> <span class="text-[9.5px] text-gray-400 font-mono">(${data.countYcH}-${data.countYcA})</span>`;
+                }
             }
 
             // Porcentajes de dominio global
@@ -4443,7 +5324,9 @@
             if (isLive) {
                 liveTag.classList.remove('hidden');
                 const dominantTeam = data.pctHome >= data.pctAway ? match.home_team : match.away_team;
-                const clockText = match.is_halftime ? 'HT' : (match.display_clock || match.minute + "'");
+                const clockText = match.is_halftime
+                    ? 'HT (Descanso)'
+                    : (match.quarter || match.display_clock || (match.minute ? match.minute + "'" : `${data.currentMin}'`));
                 statusPill.innerHTML = `<span>🔴 ${clockText} • Dominio de ${dominantTeam}</span>`;
             } else {
                 liveTag.classList.add('hidden');
@@ -4484,22 +5367,34 @@
                 }
             });
 
-            // Marcadores de tiempo (15', 30', 45' HT, 60', 75', 90')
+            // Marcadores de tiempo (Fútbol 15'..90' | NBA 12' 1Q, 24' HT, 36' 3Q, 48' 4Q | NHL 20' 1P, 40' 2P, 60' 3P/OT)
             let markersHtml = '';
-            const stepMarker = data.isNba ? 12 : 15;
+            const stepMarker = data.isNba ? 12 : (data.isNhl ? 20 : 15);
             for (let mark = stepMarker; mark < totalM; mark += stepMarker) {
                 const mx = mark * stepX;
-                const label = mark === 45 && !data.isNba ? "HT (45')" : `${mark}'`;
+                let label = `${mark}'`;
+                if (data.isNba) {
+                    if (mark === 12) label = "12' (1Q)";
+                    else if (mark === 24) label = "24' (HT)";
+                    else if (mark === 36) label = "36' (3Q)";
+                    else if (mark === 48) label = "48' (4Q)";
+                } else if (data.isNhl) {
+                    if (mark === 20) label = "20' (1P)";
+                    else if (mark === 40) label = "40' (2P)";
+                    else if (mark === 60) label = "60' (OT)";
+                } else if (mark === 45) {
+                    label = "HT (45')";
+                }
                 markersHtml += `
                     <line x1="${mx}" y1="12" x2="${mx}" y2="${svgH - 12}" stroke="#374151" stroke-width="1" stroke-dasharray="3,3" />
                     <text x="${mx}" y="${svgH - 3}" fill="#9ca3af" font-size="9.5" text-anchor="middle" font-family="monospace">${label}</text>
                 `;
             }
 
-            // Cursor del Minuto Actual en Vivo
+            // Cursor del Minuto Actual en Vivo (protegido contra recorte en los bordes)
             let liveCursorHtml = '';
             if (isLive && data.currentMin < totalM) {
-                const cx = data.currentMin * stepX;
+                const cx = Math.max(20, Math.min(svgW - 20, data.currentMin * stepX));
                 liveCursorHtml = `
                     <line x1="${cx}" y1="5" x2="${cx}" y2="${svgH - 10}" stroke="#ef4444" stroke-width="2" />
                     <rect x="${cx - 18}" y="2" width="36" height="15" rx="4" fill="#ef4444" />
@@ -4515,7 +5410,7 @@
                     ${markersHtml}
                     <!-- Barras de momentum -->
                     ${barsHtml}
-                    <!-- Íconos de eventos (Goles, córners) -->
+                    <!-- Íconos de eventos -->
                     ${iconsHtml}
                     <!-- Cursor en Vivo -->
                     ${liveCursorHtml}
@@ -4528,17 +5423,18 @@
             const tooltip = document.getElementById('momentum-tooltip');
             const bars = container.querySelectorAll('.momentum-bar');
             bars.forEach(bar => {
-                bar.addEventListener('mouseenter', (e) => {
+                bar.addEventListener('mouseenter', () => {
                     const min = bar.getAttribute('data-min');
                     const val = parseInt(bar.getAttribute('data-val'), 10);
                     const desc = bar.getAttribute('data-desc');
                     const teamName = val >= 0 ? match.home_team : match.away_team;
                     const sideColor = val >= 0 ? 'text-blue-400' : 'text-rose-400';
                     const eventText = desc ? `<div class="text-amber-300 font-bold mt-0.5">${desc}</div>` : '';
+                    const minSuffix = (data.isNba || data.isNhl) ? `/${data.totalMinutes}'` : '';
                     tooltip.innerHTML = `
                         <div class="flex items-center gap-1.5 font-bold">
-                            <span>Minuto ${min}'</span> • <span class="${sideColor}">${teamName}</span>
-                            <span class="text-gray-400">(${Math.abs(val)}% presión)</span>
+                            <span>Min ${min}'${minSuffix}</span> • <span class="${sideColor}">${teamName}</span>
+                            <span class="text-gray-400">(${Math.abs(val)}% ritmo)</span>
                         </div>
                         ${eventText}
                     `;
@@ -4561,9 +5457,14 @@
             if (eventsContainer) {
                 const keyEvents = data.points.filter(p => p.event);
                 if (keyEvents.length === 0) {
+                    const emptyText = data.isNba
+                        ? "Analizando parciales por cuarto y flujo de posesiones en duela."
+                        : (data.isNhl
+                            ? "Analizando volumen de tiros a puerta (SOG), cambios de línea y parciales en hielo."
+                            : "Sin incidencias críticas aún. Partido de trámite táctico en el medio campo.");
                     eventsContainer.innerHTML = `
                         <div class="col-span-full text-center text-gray-500 py-1">
-                            Sin incidencias críticas aún. Partido de trámite táctico en el medio campo.
+                            ${emptyText}
                         </div>
                     `;
                 } else {
@@ -4578,22 +5479,84 @@
             }
 
             // Métricas de los 3 bloques inferiores
-            const ls = match.live_stats || {};
-            const recentAttacksH = Math.round((data.pctHome / 100) * 18);
-            const recentAttacksA = Math.round((data.pctAway / 100) * 18);
-            document.getElementById('momentum-attacks-stat').innerHTML = `
-                <span class="text-blue-400">${match.home_team}: ${recentAttacksH}</span> • <span class="text-rose-400">${match.away_team}: ${recentAttacksA}</span>
-            `;
+            const card1Title = document.getElementById('momentum-card1-title');
+            const card1Sub = document.getElementById('momentum-card1-sub');
+            const card2Title = document.getElementById('momentum-card2-title');
+            const card2Sub = document.getElementById('momentum-card2-sub');
+            const card3Title = document.getElementById('momentum-card3-title');
+            const card3Sub = document.getElementById('momentum-card3-sub');
+            const attacksEl = document.getElementById('momentum-attacks-stat');
+            const trendEl = document.getElementById('momentum-trend-stat');
+            const threatEl = document.getElementById('momentum-goal-threat');
 
-            const trendText = data.pctHome > 55 ? `${match.home_team} (+${data.pctHome - 50}% presión)` : (data.pctAway > 55 ? `${match.away_team} (+${data.pctAway - 50}% presión)` : 'Disputa pareja en zona media');
-            document.getElementById('momentum-trend-stat').textContent = trendText;
+            const trendText = data.pctHome > 55
+                ? `${match.home_team} (+${data.pctHome - 50}% ${(data.isNba || data.isNhl) ? 'ritmo' : 'presión'})`
+                : (data.pctAway > 55
+                    ? `${match.away_team} (+${data.pctAway - 50}% ${(data.isNba || data.isNhl) ? 'ritmo' : 'presión'})`
+                    : (data.isNba ? 'Intercambio parejo posesión a posesión' : (data.isNhl ? 'Asedio alterno en zona ofensiva' : 'Disputa pareja en zona media')));
+            if (trendEl) trendEl.textContent = trendText;
 
             const pred = match.prediction || {};
-            const threatScore = Math.min(95, Math.max(35, Math.round((pred.prob_home_score || 70) * 0.6 + (Math.abs(data.pctHome - 50) * 1.2))));
-            const threatColor = threatScore > 75 ? 'text-amber-400' : 'text-emerald-400';
-            const threatLevel = threatScore > 75 ? 'Alta' : 'Moderada';
-            document.getElementById('momentum-goal-threat').className = `text-sm font-bold ${threatColor} mt-1 font-mono`;
-            document.getElementById('momentum-goal-threat').textContent = `${threatLevel} (${threatScore}%)`;
+
+            if (data.isNba) {
+                if (card1Title) card1Title.textContent = "Efectividad en Duela (FG% / 3P%)";
+                if (attacksEl) {
+                    attacksEl.innerHTML = `<span class="text-blue-400">${fgH}% (${threeH}% 3P)</span> • <span class="text-rose-400">${fgA}% (${threeA}% 3P)</span>`;
+                }
+                if (card1Sub) card1Sub.textContent = `Rebotes ${rebH}-${rebA} • Asistencias ${astH}-${astA}`;
+
+                if (card2Title) card2Title.textContent = "Tendencia de Ritmo Actual";
+                if (card2Sub) card2Sub.textContent = "Control de posesiones y rachas por cuarto";
+
+                if (card3Title) card3Title.textContent = "Proyección Marcador Final NBA";
+                const projFinal = pred.projected_final || `${Math.round(pred.projected_pts_home || hs.avg_pts_for || 112)}-${Math.round(pred.projected_pts_away || as.avg_pts_for || 110)}`;
+                const projTotal = pred.projected_total || pred.total_points || '--';
+                const paceVal = Math.round(((hs.pace || 99) + (as.pace || 99)) / 2);
+                if (threatEl) {
+                    threatEl.className = "text-sm font-bold text-amber-400 mt-1 font-mono";
+                    threatEl.textContent = `${projFinal} (${projTotal} pts)`;
+                }
+                if (card3Sub) card3Sub.textContent = `Pace ~${paceVal} pos. • Modelo Gaussiano en vivo`;
+            } else if (data.isNhl) {
+                if (card1Title) card1Title.textContent = "Tiros a Puerta (SOG) & Portería";
+                if (attacksEl) {
+                    attacksEl.innerHTML = `<span class="text-blue-400">${data.nhlSogH} SOG (${data.nhlSvH}% SV)</span> • <span class="text-rose-400">${data.nhlSogA} SOG (${data.nhlSvA}% SV)</span>`;
+                }
+                if (card1Sub) card1Sub.textContent = `Hits físicos ${data.nhlHitsH}-${data.nhlHitsA} • Regulación 60'`;
+
+                if (card2Title) card2Title.textContent = "Tendencia de Hielo Actual";
+                if (card2Sub) card2Sub.textContent = "Presión en zona ofensiva y Power Play";
+
+                if (card3Title) card3Title.textContent = "Proyección Marcador Final NHL";
+                const projFinal = pred.projected_final || `${(pred.projected_goals_home || hs.gf_pg || 3.1).toFixed(1)}-${(pred.projected_goals_away || as.gf_pg || 2.9).toFixed(1)}`;
+                const projTotal = pred.projected_total || pred.total_points || '6.0';
+                if (threatEl) {
+                    threatEl.className = "text-sm font-bold text-sky-400 mt-1 font-mono";
+                    threatEl.textContent = `${projFinal} (${projTotal} goles)`;
+                }
+                if (card3Sub) card3Sub.textContent = `Total Esperado ~${projTotal} goles • Modelo Poisson NHL`;
+            } else {
+                if (card1Title) card1Title.textContent = "Ataques Peligrosos (Últimos 15')";
+                const recentAttacksH = Math.round((data.pctHome / 100) * 18);
+                const recentAttacksA = Math.round((data.pctAway / 100) * 18);
+                if (attacksEl) {
+                    attacksEl.innerHTML = `<span class="text-blue-400">${match.home_team}: ${recentAttacksH}</span> • <span class="text-rose-400">${match.away_team}: ${recentAttacksA}</span>`;
+                }
+                if (card1Sub) card1Sub.textContent = "Llegadas y tiros al tercio final";
+
+                if (card2Title) card2Title.textContent = "Tendencia de Momentum Actual";
+                if (card2Sub) card2Sub.textContent = "Control de juego y ritmo activo";
+
+                if (card3Title) card3Title.textContent = "Índice de Amenaza de Gol";
+                const threatScore = Math.min(95, Math.max(35, Math.round((pred.prob_home_score || 70) * 0.6 + (Math.abs(data.pctHome - 50) * 1.2))));
+                const threatColor = threatScore > 75 ? 'text-amber-400' : 'text-emerald-400';
+                const threatLevel = threatScore > 75 ? 'Alta' : 'Moderada';
+                if (threatEl) {
+                    threatEl.className = `text-sm font-bold ${threatColor} mt-1 font-mono`;
+                    threatEl.textContent = `${threatLevel} (${threatScore}%)`;
+                }
+                if (card3Sub) card3Sub.textContent = "Probabilidad viva de gol próximo";
+            }
         }
 
         function updateGeminiUI(ai) {
@@ -4604,22 +5567,31 @@
             }
 
             const isNba = Boolean((match && match.sport === 'nba') || (ai && ai.sport === 'nba'));
+            const isNhl = Boolean((match && match.sport === 'nhl') || (ai && ai.sport === 'nhl'));
 
             const defaultSummary = isNba
                 ? "Análisis táctico NBA de posesiones, ratings ofensivos y proyección de puntos en progreso..."
-                : "Análisis táctico multivariable en progreso...";
+                : (isNhl
+                    ? "Análisis táctico NHL de Tiros a Puerta (SOG), Special Teams (PP%) y portería en progreso..."
+                    : "Análisis táctico multivariable en progreso...");
 
             const defaultJustification = isNba
                 ? "Justificación estadística cuantitativa basada en ratings ofensivos/defensivos (Off/Def Rating) y proyección de ritmo (Pace)."
-                : "Justificación estadística cuantitativa basada en expectativa de goles y solvencia defensiva.";
+                : (isNhl
+                    ? "Justificación estadística cuantitativa basada en modelo Poisson bivariado NHL (GF/GA, SOG, SV% y probabilidad de Overtime)."
+                    : "Justificación estadística cuantitativa basada en expectativa de goles y solvencia defensiva.");
 
             const defaultFactor = isNba
                 ? "Efectividad en tiros de campo (FG%), porcentaje de triples y dominio en los tableros."
-                : "Control posicional y velocidad de transición en mediocampo.";
+                : (isNhl
+                    ? "Eficiencia en Power Play vs Penalty Kill, volumen de Tiros a Puerta (SOG) y duelo bajo los tres tubos."
+                    : "Control posicional y velocidad de transición en mediocampo.");
 
             const defaultRisk = isNba
                 ? "Riesgo estándar de varianza por rachas de tiro perimetral, rotación de banquillo y faltas personales."
-                : "Riesgo estándar de varianza por jugadas a balón parado o faltas tempranas.";
+                : (isNhl
+                    ? "Riesgo de confirmación de portero abridor, penalidades de 2 minutos o efecto Empty Net en los últimos 2 minutos del 3P."
+                    : "Riesgo estándar de varianza por jugadas a balón parado o faltas tempranas.");
 
             document.getElementById('modal-summary').innerText = ai.resumen || defaultSummary;
             document.getElementById('modal-justification').innerText = ai.justificacion_estadistica || defaultJustification;
@@ -4689,6 +5661,58 @@
                             `;
                         }
                     }
+                } else if (isNhl) {
+                    // Configuración Visual para Hockey NHL
+                    csBox.className = "bg-gradient-to-r from-sky-950/45 via-gray-900/95 to-cyan-950/40 border border-sky-500/40 rounded-xl p-3.5 sm:p-4 space-y-2.5 shadow-md shadow-sky-950/20";
+                    if (csLabel) csLabel.innerText = "🏒 Tiros a Puerta (SOG), Portería y Power Play";
+                    if (csBadge) {
+                        csBadge.innerText = "FOCO NHL";
+                        csBadge.className = "text-[10px] bg-sky-500/20 text-sky-300 border border-sky-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                    }
+                    if (csIcon) {
+                        csIcon.setAttribute('data-lucide', 'activity');
+                        csIcon.className = "w-4 h-4 text-sky-400";
+                    }
+
+                    const hs = (match && match.home_stats) || {};
+                    const as = (match && match.away_stats) || {};
+                    const pred = (match && match.prediction) || {};
+                    const sogH = pred.projected_sog_home || hs.sog_pg || 30.0;
+                    const sogA = pred.projected_sog_away || as.sog_pg || 29.0;
+                    const totGoals = pred.projected_total || pred.total_points || 6.0;
+                    const ouLine = pred.over_under_line || 5.5;
+
+                    let nhlText = ai.analisis_ritmo_tiros;
+                    if (!nhlText && match) {
+                        nhlText = `Proyección de ${sogH} Tiros a Puerta (SOG) para ${match.home_team} y ${sogA} para ${match.away_team}. Total estimado ~${totGoals} goles (Línea O/U ${ouLine}), con Power Play ${hs.pp_pct || 21.5}% vs ${as.pp_pct || 21.5}% y portería SV% ${hs.sv_pct || 90.5}% vs ${as.sv_pct || 90.4}%.`;
+                    }
+                    csEl.innerText = nhlText || "Proyección NHL basada en modelo Poisson de Tiros a Puerta (SOG), Power Play y Save %.";
+                    csEl.className = "text-gray-200 leading-relaxed font-sans text-xs sm:text-[13px] bg-gray-950/70 p-3 rounded-lg border border-sky-900/30 shadow-inner";
+
+                    if (statsPill && match) {
+                        if (match.is_live) {
+                            const ls = match.live_stats || {};
+                            const scoreH = match.score_home !== undefined ? match.score_home : (ls.score_home || 0);
+                            const scoreA = match.score_away !== undefined ? match.score_away : (ls.score_away || 0);
+                            const lSogH = ls.shots_home ?? 0;
+                            const lSogA = ls.shots_away ?? 0;
+                            const lSvH = ls.save_pct_home ?? 90.5;
+                            const lSvA = ls.save_pct_away ?? 90.5;
+                            const pLabel = match.quarter || 'En Hielo';
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-sky-950/80 border border-sky-800/60 text-sky-300 font-bold">🏒 Marcador: ${scoreH} - ${scoreA} (${pLabel})</span>
+                                <span class="px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800/60 text-cyan-300 font-bold">🎯 SOG: ${lSogH} - ${lSogA}</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 font-bold">🧤 SV%: ${lSvH}% - ${lSvA}%</span>
+                            `;
+                        } else {
+                            statsPill.innerHTML = `
+                                <span class="px-2 py-0.5 rounded bg-sky-950/80 border border-sky-800/60 text-sky-300 font-bold">🎯 SOG Est: ${sogH} - ${sogA}</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-950/80 border border-amber-800/60 text-amber-300 font-bold">⚡ PP%: ${hs.pp_pct || 21.5}% vs ${as.pp_pct || 21.5}%</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-950/80 border border-emerald-800/60 text-emerald-300 font-bold">🧤 SV%: ${hs.sv_pct || 90.5}% vs ${as.sv_pct || 90.4}%</span>
+                                <span class="px-2 py-0.5 rounded bg-gray-900 border border-gray-800 text-gray-300 font-bold">Total Est: ~${totGoals}</span>
+                            `;
+                        }
+                    }
                 } else {
                     // Configuración Visual para FÚTBOL
                     csBox.className = "bg-gradient-to-r from-cyan-950/40 via-gray-900/95 to-blue-950/40 border border-cyan-500/40 rounded-xl p-3.5 sm:p-4 space-y-2.5 shadow-md shadow-cyan-950/20";
@@ -4745,7 +5769,7 @@
 
             const cardsBox = document.getElementById('modal-cards-friction-box');
             const cardsEl = document.getElementById('modal-cards-friction');
-            if (!isNba && ai.analisis_tarjetas_friccion && cardsBox && cardsEl) {
+            if (!isNba && !isNhl && ai.analisis_tarjetas_friccion && cardsBox && cardsEl) {
                 cardsBox.classList.remove('hidden');
                 cardsEl.innerText = ai.analisis_tarjetas_friccion;
             } else if (cardsBox) {
@@ -4778,14 +5802,18 @@
                 if (provTitle) provTitle.innerText = "✨ Verificado con Google Gemini AI";
                 if (provDesc) provDesc.innerText = isNba
                     ? `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Ratings avanzados, Pace y desglose de cuartos.`
-                    : `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Rigor táctico, xG y actualidad.`;
+                    : (isNhl
+                        ? `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. SOG, Special Teams (PP%), SV% y periodos NHL.`
+                        : `Generado directamente por ${ai.powered_by || 'Google Gemini 3.5'}. Rigor táctico, xG y actualidad.`);
             } else {
                 if (badge) badge.className = "px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-950 text-blue-300 border border-blue-700 flex items-center gap-1 font-mono";
                 if (badgeText) badgeText.innerText = "Motor Cuantitativo";
-                if (provTitle) provTitle.innerText = isNba ? "Análisis Predictivo NBA" : "Análisis Predictivo Cuantitativo";
+                if (provTitle) provTitle.innerText = isNba ? "Análisis Predictivo NBA" : (isNhl ? "Análisis Predictivo NHL" : "Análisis Predictivo Cuantitativo");
                 if (provDesc) provDesc.innerText = isNba
                     ? "Modelo cuantitativo de posesiones NBA y ratings ofensivos/defensivos."
-                    : "Modelo de Poisson y calificaciones tácticas de equipo.";
+                    : (isNhl
+                        ? "Modelo Poisson bivariado NHL calibrado con Tiros a Puerta (SOG), Power Play y Save %."
+                        : "Modelo de Poisson y calificaciones tácticas de equipo.");
             }
 
             if (window.lucide) safeCreateIcons();
@@ -4938,12 +5966,81 @@
                 });
         }
 
+        function renderModalQuarters(match) {
+            const qContainer = document.getElementById('modal-quarters-container');
+            const qGrid = document.getElementById('modal-quarters-grid');
+            const qTitle = document.getElementById('modal-quarters-title');
+            if (!qContainer || !qGrid) return;
+
+            const b = (match && match.prediction && match.prediction.quarters_breakdown) ? match.prediction.quarters_breakdown : null;
+            if (!b) {
+                qContainer.classList.add('hidden');
+                qGrid.innerHTML = '';
+                return;
+            }
+
+            const isNhl = Boolean(match && match.sport === 'nhl');
+
+            const cellHtml = (label, item, colorClass, isFullGame = false) => {
+                if (!item) return '';
+                const winner = item.winner || item.predicted_winner || '-';
+                const prob = item.prob || item.prob_winner || '';
+                const projScore = item.score || item.proj_score || '';
+                let subLine = '';
+                if (isFullGame) {
+                    subLine = prob ? `${prob}%` : (item.status || '');
+                } else if (projScore && projScore !== '-') {
+                    subLine = `${projScore}${item.status ? ' • ' + item.status : ''}`;
+                } else {
+                    subLine = item.status || (prob ? `${prob}%` : '');
+                }
+                const subColor = isFullGame ? (isNhl ? 'text-sky-400' : 'text-emerald-400') : 'text-gray-400';
+                return `
+                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
+                        <span class="text-[9px] text-gray-400 block font-sans">${label}</span>
+                        <span class="font-bold ${colorClass} block truncate" title="${winner}">${winner}</span>
+                        <span class="text-[9px] ${subColor} block font-mono truncate">${subLine}</span>
+                    </div>
+                `;
+            };
+
+            if (isNhl) {
+                qContainer.className = "bg-gray-950/80 p-3.5 rounded-xl border border-sky-900/40";
+                if (qTitle) {
+                    qTitle.className = "text-[10px] uppercase font-bold text-sky-400 tracking-wider flex items-center gap-1 mb-2";
+                    const spn = qTitle.querySelector('span');
+                    if (spn) spn.innerText = "Desglose: Periodos 1P-3P, Regulación 60' y Final (NHL)";
+                }
+                qGrid.className = "grid grid-cols-2 sm:grid-cols-5 gap-2 text-center font-mono";
+                qGrid.innerHTML = [
+                    cellHtml('1º Per. (1P)', b.q1, 'text-sky-400'),
+                    cellHtml('2º Per. (2P)', b.q2, 'text-cyan-400'),
+                    cellHtml('3º Per. (3P)', b.q3, 'text-emerald-400'),
+                    cellHtml("Regulación 60'", b.first_half, 'text-amber-400'),
+                    cellHtml('Final (OT/SO)', b.full_game, 'text-white', true)
+                ].join('');
+            } else {
+                qContainer.className = "bg-gray-950/80 p-3.5 rounded-xl border border-orange-900/40";
+                if (qTitle) {
+                    qTitle.className = "text-[10px] uppercase font-bold text-orange-400 tracking-wider flex items-center gap-1 mb-2";
+                    const spn = qTitle.querySelector('span');
+                    if (spn) spn.innerText = "Desglose: Cuartos, Mitades y Juego Completo (NBA)";
+                }
+                qGrid.className = "grid grid-cols-3 sm:grid-cols-6 gap-2 text-center font-mono";
+                qGrid.innerHTML = [
+                    cellHtml('1Q', b.q1, 'text-emerald-400'),
+                    cellHtml('2Q', b.q2, 'text-cyan-400'),
+                    cellHtml('1ª Mitad', b.first_half, 'text-amber-400'),
+                    cellHtml('3Q', b.q3, 'text-purple-400'),
+                    cellHtml('4Q', b.q4, 'text-rose-400'),
+                    cellHtml('Juego Completo', b.full_game, 'text-white', true)
+                ].join('');
+            }
+        }
+
         function openAiModal(matchId, initialTab = 'picks') {
             activeMatchId = matchId;
-            let match = (window.liveMatchesData || []).find(m => m.id === matchId);
-            if (!match) {
-                match = (window.allMatchesData || []).find(m => m.id === matchId);
-            }
+            let match = findMatchById(matchId);
             if (!match) return;
 
             // Enriquecer con atributos del DOM de la tarjeta en vivo si existen
@@ -4983,7 +6080,7 @@
             const flagMarkup = isBrazil 
                 ? `<img src="https://flagcdn.com/20x15/br.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="Brasil">`
                 : (match.country_code ? `<img src="https://flagcdn.com/20x15/${match.country_code}.png" class="inline-block w-4 h-3 object-cover rounded-xs border border-white/10 shadow-xs mr-1 align-middle" alt="${match.country}">` : `${match.league_flag} `);
-            const liveClock = match.is_halftime ? 'DESCANSO (HT)' : (match.quarter || (match.display_clock || match.minute + "'"));
+            const liveClock = match.is_halftime ? 'DESCANSO (HT)' : (match.quarter || match.display_clock || (match.minute ? match.minute + "'" : 'EN VIVO'));
             const sp = match.season_phase;
             const spPill = (sp && sp.is_closing_phase) ? ` <span class="${sp.badge_bg || 'bg-amber-950 text-amber-300 border-amber-700/60'} ml-1.5 border px-1.5 py-0.2 rounded text-[10px] font-bold inline-flex items-center gap-1"><span>🏁</span><span>${sp.stage_label}</span></span>` : '';
             const sub = match.is_live ? `${flagMarkup} ${match.league} • ${liveClock} EN VIVO (${match.score_home}-${match.score_away})${spPill}` : `${flagMarkup} ${match.league} • ${match.date}${spPill}`;
@@ -4997,6 +6094,7 @@
             renderModalH2H(match);
             renderModalMatrix(match);
             renderModalMomentum(match);
+            renderModalQuarters(match);
             updateGeminiUI(match.ai_analysis || {});
 
             const btnMatrix = document.getElementById('modal-tab-btn-matrix');
@@ -5057,6 +6155,8 @@
                                 renderModalPicks(match);
                                 renderModalH2H(match);
                                 renderModalMatrix(match);
+                                renderModalMomentum(match);
+                                renderModalQuarters(match);
                                 updateGeminiUI(match.ai_analysis || {});
                                 if (window.lucide) safeCreateIcons();
                             }
@@ -5070,50 +6170,9 @@
                 renderModalPicks(match);
                 renderModalH2H(match);
                 renderModalMatrix(match);
+                renderModalMomentum(match);
+                renderModalQuarters(match);
                 if (match.ai_analysis) updateGeminiUI(match.ai_analysis);
-            }
-
-            // Render Quarters and Halves si es NBA
-            const qContainer = document.getElementById('modal-quarters-container');
-            const qGrid = document.getElementById('modal-quarters-grid');
-            if (match.prediction && match.prediction.quarters_breakdown) {
-                const b = match.prediction.quarters_breakdown;
-                qContainer.classList.remove('hidden');
-                qGrid.innerHTML = `
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">1Q</span>
-                        <span class="font-bold text-emerald-400">${b.q1.winner || b.q1.predicted_winner}</span>
-                        <span class="text-[9px] text-gray-500 block">${b.q1.status}</span>
-                    </div>
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">2Q</span>
-                        <span class="font-bold text-cyan-400">${b.q2.winner || b.q2.predicted_winner}</span>
-                        <span class="text-[9px] text-gray-500 block">${b.q2.status}</span>
-                    </div>
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">1ª Mitad</span>
-                        <span class="font-bold text-amber-400">${b.first_half.winner || b.first_half.predicted_winner}</span>
-                        <span class="text-[9px] text-gray-500 block">${b.first_half.status}</span>
-                    </div>
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">3Q</span>
-                        <span class="font-bold text-purple-400">${b.q3.winner || b.q3.predicted_winner}</span>
-                        <span class="text-[9px] text-gray-500 block">${b.q3.status}</span>
-                    </div>
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">4Q</span>
-                        <span class="font-bold text-rose-400">${b.q4.winner || b.q4.predicted_winner}</span>
-                        <span class="text-[9px] text-gray-500 block">${b.q4.status}</span>
-                    </div>
-                    <div class="bg-gray-900 p-2 rounded border border-gray-800">
-                        <span class="text-[9px] text-gray-400 block font-sans">Juego Completo</span>
-                        <span class="font-bold text-white">${b.full_game.winner || b.full_game.predicted_winner}</span>
-                        <span class="text-[9px] text-emerald-400 block">${b.full_game.prob || b.full_game.prob_winner}%</span>
-                    </div>
-                `;
-            } else {
-                qContainer.classList.add('hidden');
-                qGrid.innerHTML = '';
             }
 
             switchModalTab(initialTab);
@@ -5153,7 +6212,9 @@
             text += `*SELECCIONES:*\n\n`;
 
             ticket.legs.forEach((leg, index) => {
-                const icon = leg.market_type === 'corners' ? '🚩' : (leg.market_type === 'cards' ? '🟨' : '⚽');
+                const lowerLp = (leg.pick || '').toLowerCase();
+                const isNhlLeg = leg.sport === 'nhl' || lowerLp.includes('puck') || lowerLp.includes('sog') || lowerLp.includes('tiros a puerta') || lowerLp.includes("60'");
+                const icon = isNhlLeg ? '🏒' : (leg.market_type === 'corners' ? '🚩' : (leg.market_type === 'cards' ? '🟨' : (leg.sport === 'nba' ? '🏀' : '⚽')));
                 text += `${index + 1}️⃣ ${icon} *${leg.home_team} vs ${leg.away_team}*\n`;
                 text += `   • *Competición:* ${leg.league} (${leg.date} ${leg.time} GT)\n`;
                 text += `   • *Selección:* ${leg.pick}\n`;
@@ -5338,7 +6399,9 @@
                                     ${(() => {
                                         const lowerPick = (leg.pick || '').toLowerCase();
                                         let pI = '🎯 ';
-                                        if (lowerPick.includes('córner') || lowerPick.includes('corner')) pI = '🚩 ';
+                                        if (leg.sport === 'nhl' || lowerPick.includes('puck') || lowerPick.includes('sog') || lowerPick.includes('tiros a puerta') || lowerPick.includes("60'")) pI = '🏒 ';
+                                        else if (leg.sport === 'nba') pI = '🏀 ';
+                                        else if (lowerPick.includes('córner') || lowerPick.includes('corner')) pI = '🚩 ';
                                         else if (lowerPick.includes('tarjeta')) pI = '🟨 ';
                                         else if (lowerPick.includes('gol') || lowerPick.includes('anotan') || lowerPick.includes('marcan')) pI = '⚽ ';
                                         else if (lowerPick.includes('victoria') || lowerPick.includes('gana')) pI = '🏆 ';

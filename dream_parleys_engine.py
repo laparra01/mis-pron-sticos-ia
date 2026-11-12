@@ -38,9 +38,10 @@ def select_ticket_1_tactical(matches):
             odds = p.get("fair_odds", 0)
             mkt = p.get("market", "")
             if 50.0 <= prob <= 75.0 and 1.55 <= odds <= 2.20:
-                priority = 3 if ("1X2" in mkt or "Doble" in mkt) else (2 if "Goles" in mkt else 1)
+                priority = 3 if ("1X2" in mkt or "Doble" in mkt or "Moneyline" in mkt or "60'" in mkt) else (2 if ("Goles" in mkt or "Puntos" in mkt or "Puck" in mkt) else 1)
                 candidates.append({
                     "match_id": m.get("id"),
+                    "sport": m.get("sport", "football"),
                     "home_team": m.get("home_team"),
                     "away_team": m.get("away_team"),
                     "home_logo": m.get("home_logo", ""),
@@ -179,6 +180,7 @@ def select_ticket_2_goals_corners_cards(matches):
         d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
         base_info = {
             "match_id": m.get("id"),
+            "sport": m.get("sport", "football"),
             "home_team": m.get("home_team"),
             "away_team": m.get("away_team"),
             "home_logo": m.get("home_logo", ""),
@@ -198,27 +200,27 @@ def select_ticket_2_goals_corners_cards(matches):
             odds = float(p.get("fair_odds", 1.80) or 1.80)
             prob = float(p.get("probability", 50.0) or 50.0)
 
-            if "Córners" in mkt and 1.25 <= odds <= 2.40 and prob >= 60.0:
+            if ("Córners" in mkt or "Tiros a Puerta" in mkt or "SOG" in mkt) and 1.25 <= odds <= 2.40 and prob >= 60.0:
                 item = dict(base_info)
                 item.update({
-                    "market": "Tiros de Esquina",
+                    "market": "Tiros de Esquina" if "Córners" in mkt else "Tiros a Puerta (SOG)",
                     "pick": p.get("name"),
                     "probability": prob,
                     "fair_odds": odds,
                     "explanation": p.get("explanation", "")
                 })
                 corners_candidates.append(item)
-            elif "Tarjetas" in mkt and 1.50 <= odds <= 2.50 and prob >= 35.0:
+            elif ("Tarjetas" in mkt or "Puck Line" in mkt) and 1.40 <= odds <= 2.50 and prob >= 35.0:
                 item = dict(base_info)
                 item.update({
-                    "market": "Fricción & Tarjetas",
+                    "market": "Fricción & Tarjetas" if "Tarjetas" in mkt else "Puck Line ±1.5",
                     "pick": p.get("name"),
                     "probability": prob,
                     "fair_odds": odds,
                     "explanation": p.get("explanation", "")
                 })
                 cards_candidates.append(item)
-            elif ("2.5" in mkt or "1.5" in mkt or "Ambos" in mkt) and 1.50 <= odds <= 2.50 and prob >= 35.0:
+            elif ("2.5" in mkt or "1.5" in mkt or "Ambos" in mkt or "Total de Goles" in mkt or "Total Primer Periodo" in mkt) and 1.45 <= odds <= 2.50 and prob >= 35.0:
                 item = dict(base_info)
                 item.update({
                     "market": "Mercado de Goles",
@@ -321,6 +323,7 @@ def select_ticket_3_rompebancas_ultra(matches):
         d_display = "Hoy" if m.get("date_iso") == today_iso else m.get("date", "Hoy")
         base_info = {
             "match_id": m.get("id"),
+            "sport": m.get("sport", "football"),
             "home_team": h_name,
             "away_team": a_name,
             "home_logo": m.get("home_logo", ""),
@@ -335,11 +338,12 @@ def select_ticket_3_rompebancas_ultra(matches):
             "timestamp": m.get("timestamp") or 0,
         }
 
-        p_draw = pred.get("prob_draw", 28.0)
+        m_sport = m.get("sport", "football")
+        p_draw = pred.get("prob_draw", 28.0) if m_sport == "football" else 0.0
         p_away = pred.get("prob_away", 30.0)
 
-        # 1. Candidato Empate si hay paridad táctica proyectada
-        if 32.0 <= p_draw <= 48.0:
+        # 1. Candidato Empate si hay paridad táctica proyectada (solo fútbol 90')
+        if m_sport == "football" and 32.0 <= p_draw <= 48.0:
             item = dict(base_info)
             odds = round(100.0 / p_draw, 2)
             item.update({

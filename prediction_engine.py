@@ -235,6 +235,42 @@ KNOWN_NBA_TEAMS = {
     "pistons": {"off_rating": 110.5, "def_rating": 118.0, "pace": 100.2},
 }
 
+KNOWN_NHL_TEAMS = {
+    "florida panthers": {"gf_pg": 3.25, "ga_pg": 2.65, "sog_pg": 31.8, "pp_pct": 24.0, "sv_pct": 91.2, "abbr": "fla"},
+    "edmonton oilers": {"gf_pg": 3.45, "ga_pg": 2.85, "sog_pg": 33.2, "pp_pct": 26.5, "sv_pct": 90.4, "abbr": "edm"},
+    "dallas stars": {"gf_pg": 3.30, "ga_pg": 2.58, "sog_pg": 30.8, "pp_pct": 23.8, "sv_pct": 91.4, "abbr": "dal"},
+    "carolina hurricanes": {"gf_pg": 3.35, "ga_pg": 2.62, "sog_pg": 33.5, "pp_pct": 24.5, "sv_pct": 90.9, "abbr": "car"},
+    "colorado avalanche": {"gf_pg": 3.52, "ga_pg": 3.00, "sog_pg": 32.8, "pp_pct": 25.0, "sv_pct": 90.1, "abbr": "col"},
+    "new york rangers": {"gf_pg": 3.18, "ga_pg": 2.75, "sog_pg": 30.5, "pp_pct": 24.8, "sv_pct": 91.3, "abbr": "nyr"},
+    "winnipeg jets": {"gf_pg": 3.38, "ga_pg": 2.48, "sog_pg": 29.8, "pp_pct": 25.5, "sv_pct": 92.0, "abbr": "wpg"},
+    "vegas golden knights": {"gf_pg": 3.28, "ga_pg": 2.78, "sog_pg": 31.0, "pp_pct": 23.2, "sv_pct": 90.8, "abbr": "vgk"},
+    "toronto maple leafs": {"gf_pg": 3.32, "ga_pg": 2.82, "sog_pg": 31.2, "pp_pct": 24.6, "sv_pct": 90.7, "abbr": "tor"},
+    "boston bruins": {"gf_pg": 2.98, "ga_pg": 2.75, "sog_pg": 29.2, "pp_pct": 20.5, "sv_pct": 91.0, "abbr": "bos"},
+    "vancouver canucks": {"gf_pg": 3.12, "ga_pg": 2.84, "sog_pg": 28.6, "pp_pct": 22.0, "sv_pct": 90.8, "abbr": "van"},
+    "washington capitals": {"gf_pg": 3.35, "ga_pg": 2.72, "sog_pg": 29.5, "pp_pct": 22.8, "sv_pct": 91.1, "abbr": "wsh"},
+    "new jersey devils": {"gf_pg": 3.22, "ga_pg": 2.76, "sog_pg": 31.0, "pp_pct": 24.2, "sv_pct": 90.8, "abbr": "nj"},
+    "tampa bay lightning": {"gf_pg": 3.36, "ga_pg": 2.85, "sog_pg": 30.2, "pp_pct": 25.8, "sv_pct": 90.8, "abbr": "tb"},
+    "minnesota wild": {"gf_pg": 3.12, "ga_pg": 2.68, "sog_pg": 29.6, "pp_pct": 21.8, "sv_pct": 91.3, "abbr": "min"},
+    "los angeles kings": {"gf_pg": 3.05, "ga_pg": 2.55, "sog_pg": 30.6, "pp_pct": 21.0, "sv_pct": 91.4, "abbr": "la"},
+    "ottawa senators": {"gf_pg": 3.08, "ga_pg": 2.92, "sog_pg": 30.4, "pp_pct": 23.0, "sv_pct": 90.2, "abbr": "ott"},
+    "montreal canadiens": {"gf_pg": 2.95, "ga_pg": 3.18, "sog_pg": 28.2, "pp_pct": 21.2, "sv_pct": 89.8, "abbr": "mtl"},
+    "st. louis blues": {"gf_pg": 2.92, "ga_pg": 2.96, "sog_pg": 28.4, "pp_pct": 20.4, "sv_pct": 90.4, "abbr": "stl"},
+    "calgary flames": {"gf_pg": 2.86, "ga_pg": 2.94, "sog_pg": 29.5, "pp_pct": 20.8, "sv_pct": 90.6, "abbr": "cgy"},
+    "utah mammoth": {"gf_pg": 3.02, "ga_pg": 2.98, "sog_pg": 29.6, "pp_pct": 21.5, "sv_pct": 90.2, "abbr": "utah"},
+    "utah hockey club": {"gf_pg": 3.02, "ga_pg": 2.98, "sog_pg": 29.6, "pp_pct": 21.5, "sv_pct": 90.2, "abbr": "utah"},
+    "columbus blue jackets": {"gf_pg": 3.14, "ga_pg": 3.22, "sog_pg": 29.8, "pp_pct": 21.0, "sv_pct": 89.6, "abbr": "cbj"},
+    "new york islanders": {"gf_pg": 2.82, "ga_pg": 2.92, "sog_pg": 29.0, "pp_pct": 18.8, "sv_pct": 90.7, "abbr": "nyi"},
+    "detroit red wings": {"gf_pg": 2.96, "ga_pg": 3.05, "sog_pg": 28.8, "pp_pct": 23.4, "sv_pct": 90.0, "abbr": "det"},
+    "pittsburgh penguins": {"gf_pg": 2.98, "ga_pg": 3.25, "sog_pg": 30.8, "pp_pct": 21.6, "sv_pct": 89.5, "abbr": "pit"},
+    "philadelphia flyers": {"gf_pg": 2.88, "ga_pg": 3.12, "sog_pg": 29.2, "pp_pct": 18.5, "sv_pct": 89.7, "abbr": "phi"},
+    "buffalo sabres": {"gf_pg": 3.06, "ga_pg": 3.18, "sog_pg": 29.4, "pp_pct": 20.2, "sv_pct": 89.8, "abbr": "buf"},
+    "seattle kraken": {"gf_pg": 2.86, "ga_pg": 2.98, "sog_pg": 28.8, "pp_pct": 19.8, "sv_pct": 90.3, "abbr": "sea"},
+    "nashville predators": {"gf_pg": 2.78, "ga_pg": 3.08, "sog_pg": 29.6, "pp_pct": 20.5, "sv_pct": 90.0, "abbr": "nsh"},
+    "anaheim ducks": {"gf_pg": 2.72, "ga_pg": 3.18, "sog_pg": 28.0, "pp_pct": 18.4, "sv_pct": 90.1, "abbr": "ana"},
+    "san jose sharks": {"gf_pg": 2.68, "ga_pg": 3.45, "sog_pg": 27.6, "pp_pct": 18.9, "sv_pct": 89.4, "abbr": "sj"},
+    "chicago blackhawks": {"gf_pg": 2.65, "ga_pg": 3.38, "sog_pg": 27.2, "pp_pct": 19.5, "sv_pct": 89.6, "abbr": "chi"},
+}
+
 def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
     """
     Calcula la fuerza ofensiva (ataque) y defensiva (defensa) empírica de un equipo
@@ -575,21 +611,75 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
         "venue_role": venue_role or "General"
     }
 
-def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None) -> dict:
-    if recent_matches and len(recent_matches) > 0:
+def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False) -> dict:
+    t_clean = (team_name or "").lower().strip()
+
+    # 1. Priorizar estadísticas oficiales de temporada de ESPN Standings si están disponibles
+    if standing_info and (standing_info.get("avgPointsFor") or standing_info.get("avgPointsAgainst")):
+        try:
+            pts_for = float(standing_info.get("avgPointsFor") or 114.0)
+            pts_against = float(standing_info.get("avgPointsAgainst") or 114.0)
+            pace = 99.5
+            for k, v in KNOWN_NBA_TEAMS.items():
+                if k in t_clean or t_clean in k:
+                    pace = v.get("pace", 99.5)
+                    break
+            # Ajustar pace ligeramente según ritmo anotador combinado de sus partidos
+            pace = round(max(95.5, min(104.5, (pace + (99.5 + (pts_for + pts_against - 228.0) * 0.18)) / 2.0)), 1)
+
+            base_off = round(max(102.0, min(127.0, pts_for / (pace / 100.0))), 1)
+            base_def = round(max(102.0, min(127.0, pts_against / (pace / 100.0))), 1)
+
+            # Si tenemos últimos 5 partidos reales de ESPN, ponderar 70% temporada + 30% racha reciente
+            if real_recent and recent_matches:
+                rec = calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+                base_off = round(base_off * 0.7 + rec.get("off_rating_gen", base_off) * 0.3, 1)
+                base_def = round(base_def * 0.7 + rec.get("def_rating_gen", base_def) * 0.3, 1)
+
+            if venue_role in ("home", "Local"):
+                v_off = round(base_off + 2.0, 1)
+                v_def = round(base_def - 1.4, 1)
+            elif venue_role in ("away", "Visitante"):
+                v_off = round(base_off - 1.8, 1)
+                v_def = round(base_def + 1.4, 1)
+            else:
+                v_off = base_off
+                v_def = base_def
+
+            res = {
+                "off_rating": v_off,
+                "def_rating": v_def,
+                "off_rating_gen": base_off,
+                "def_rating_gen": base_def,
+                "pace": pace,
+                "avg_pts_for": round(pts_for, 1),
+                "avg_pts_against": round(pts_against, 1),
+                "venue_role": venue_role or "General",
+                "is_real_standings": True
+            }
+            if standing_info.get("overall"):
+                res["record"] = standing_info["overall"]
+            if standing_info.get("streak"):
+                res["streak"] = standing_info["streak"]
+            return res
+        except Exception:
+            pass
+
+    # 2. Si hay historial reciente real (e.g. calendario oficial ESPN)
+    if real_recent and recent_matches and len(recent_matches) > 0:
         return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
 
-    t_clean = (team_name or "").lower().strip()
+    # 3. Buscar en catálogo calibrado KNOWN_NBA_TEAMS (coincidencia exacta o por nombre de franquicia)
     for k, v in KNOWN_NBA_TEAMS.items():
-        if k in t_clean or t_clean in k or any(word in t_clean for word in k.split()):
+        if k in t_clean or t_clean in k or any(word in t_clean.split() for word in k.split() if len(word) > 3):
             base_off = v["off_rating"]
             base_def = v["def_rating"]
             if venue_role in ("home", "Local"):
-                v_off = round(base_off + 2.5, 1)
-                v_def = round(base_def - 1.5, 1)
+                v_off = round(base_off + 2.2, 1)
+                v_def = round(base_def - 1.4, 1)
             elif venue_role in ("away", "Visitante"):
-                v_off = round(base_off - 2.5, 1)
-                v_def = round(base_def + 1.5, 1)
+                v_off = round(base_off - 2.0, 1)
+                v_def = round(base_def + 1.4, 1)
             else:
                 v_off = base_off
                 v_def = base_def
@@ -602,16 +692,19 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "venue_role": venue_role or "General"
             }
 
+    if recent_matches and len(recent_matches) > 0:
+        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+
     h = deterministic_hash(t_clean)
     base_off = round(112.0 + ((h % 80) / 10.0), 1)
     base_def = round(110.0 + (((h // 10) % 80) / 10.0), 1)
     pace = round(98.0 + (((h // 100) % 50) / 10.0), 1)
     if venue_role in ("home", "Local"):
-        v_off = round(base_off + 2.5, 1)
-        v_def = round(base_def - 1.5, 1)
+        v_off = round(base_off + 2.2, 1)
+        v_def = round(base_def - 1.4, 1)
     elif venue_role in ("away", "Visitante"):
-        v_off = round(base_off - 2.5, 1)
-        v_def = round(base_def + 1.5, 1)
+        v_off = round(base_off - 2.0, 1)
+        v_def = round(base_def + 1.4, 1)
     else:
         v_off = base_off
         v_def = base_def
@@ -621,6 +714,189 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "off_rating_gen": base_off,
         "def_rating_gen": base_def,
         "pace": pace,
+        "venue_role": venue_role or "General"
+    }
+
+
+def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
+    """
+    Calcula promedios ofensivos/defensivos reales de NHL (GF/GA por juego) a partir del historial reciente.
+    """
+    if not matches:
+        return {
+            "gf_pg": 3.05, "ga_pg": 3.05,
+            "gf_pg_gen": 3.05, "ga_pg_gen": 3.05,
+            "sog_pg": 29.8, "pp_pct": 21.5, "sv_pct": 90.4,
+            "venue_role": venue_role or "General"
+        }
+
+    t_clean = (team_name or "").lower().strip()
+    gen_gf, gen_ga, gen_cnt = 0.0, 0.0, 0
+    ven_gf, ven_ga, ven_cnt = 0.0, 0.0, 0
+    is_seek_home = (venue_role in ("home", "Local", "local")) if venue_role else None
+    is_seek_away = (venue_role in ("away", "Visitante", "visita", "visitante")) if venue_role else None
+
+    for m in matches:
+        m_home = (m.get("match_home") or "").lower().strip()
+        m_venue = m.get("venue", "")
+        is_home = False
+        if m_home and (t_clean in m_home or m_home in t_clean):
+            is_home = True
+        elif m_venue == "Local":
+            is_home = True
+
+        h_sc = int(m.get("home_score", 0) or 0)
+        a_sc = int(m.get("away_score", 0) or 0)
+        scored = h_sc if is_home else a_sc
+        conceded = a_sc if is_home else h_sc
+
+        gen_gf += scored
+        gen_ga += conceded
+        gen_cnt += 1
+        if is_seek_home is True and is_home:
+            ven_gf += scored
+            ven_ga += conceded
+            ven_cnt += 1
+        elif is_seek_away is True and not is_home:
+            ven_gf += scored
+            ven_ga += conceded
+            ven_cnt += 1
+
+    if gen_cnt == 0:
+        return {
+            "gf_pg": 3.05, "ga_pg": 3.05,
+            "gf_pg_gen": 3.05, "ga_pg_gen": 3.05,
+            "sog_pg": 29.8, "pp_pct": 21.5, "sv_pct": 90.4,
+            "venue_role": venue_role or "General"
+        }
+
+    gf_gen = round(max(1.9, min(4.3, gen_gf / gen_cnt)), 2)
+    ga_gen = round(max(1.9, min(4.3, gen_ga / gen_cnt)), 2)
+    if ven_cnt > 0:
+        gf_v = round(max(1.9, min(4.4, ven_gf / ven_cnt)), 2)
+        ga_v = round(max(1.9, min(4.4, ven_ga / ven_cnt)), 2)
+    else:
+        gf_v = round(gf_gen * (1.055 if is_seek_home else (0.945 if is_seek_away else 1.0)), 2)
+        ga_v = round(ga_gen * (0.955 if is_seek_home else (1.045 if is_seek_away else 1.0)), 2)
+
+    sog_est = round(max(25.5, min(35.0, 27.2 + gf_gen * 0.92)), 1)
+    pp_est = round(max(16.0, min(28.5, 16.5 + gf_gen * 1.7)), 1)
+    sv_est = round(max(88.2, min(92.8, 93.4 - ga_gen * 1.02)), 1)
+    return {
+        "gf_pg": gf_v,
+        "ga_pg": ga_v,
+        "gf_pg_gen": gf_gen,
+        "ga_pg_gen": ga_gen,
+        "sog_pg": sog_est,
+        "pp_pct": pp_est,
+        "sv_pct": sv_est,
+        "venue_role": venue_role or "General"
+    }
+
+
+def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False) -> dict:
+    """
+    Combina clasificación real de ESPN NHL Standings (70%) + racha reciente real (30%)
+    o catálogo calibrado KNOWN_NHL_TEAMS para devolver métricas cuantitativas de hockey.
+    """
+    t_clean = (team_name or "").lower().strip()
+    known_entry = None
+    for k, v in KNOWN_NHL_TEAMS.items():
+        if k in t_clean or t_clean in k:
+            known_entry = v
+            break
+
+    base_sog = (known_entry or {}).get("sog_pg", 29.8)
+    base_pp = (known_entry or {}).get("pp_pct", 21.5)
+    base_sv = (known_entry or {}).get("sv_pct", 90.4)
+
+    if standing_info and (standing_info.get("gamesPlayed") or standing_info.get("pointsFor")):
+        try:
+            gp = max(1.0, float(standing_info.get("gamesPlayed") or 1.0))
+            pf = float(standing_info.get("pointsFor") or (3.05 * gp))
+            pa = float(standing_info.get("pointsAgainst") or (3.05 * gp))
+            gf_gen = pf / gp
+            ga_gen = pa / gp
+
+            # Suavizado bayesiano ligero al inicio de temporada (< 12 partidos)
+            reg_w = min(1.0, gp / 14.0)
+            prior_gf = (known_entry or {}).get("gf_pg", 3.05)
+            prior_ga = (known_entry or {}).get("ga_pg", 3.05)
+            gf_gen = gf_gen * reg_w + prior_gf * (1.0 - reg_w)
+            ga_gen = ga_gen * reg_w + prior_ga * (1.0 - reg_w)
+
+            if real_recent and recent_matches:
+                rec = calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+                gf_gen = gf_gen * 0.70 + rec.get("gf_pg_gen", gf_gen) * 0.30
+                ga_gen = ga_gen * 0.70 + rec.get("ga_pg_gen", ga_gen) * 0.30
+
+            gf_gen = round(max(1.9, min(4.3, gf_gen)), 2)
+            ga_gen = round(max(1.9, min(4.3, ga_gen)), 2)
+
+            if venue_role in ("home", "Local"):
+                gf_v = round(gf_gen * 1.055, 2)
+                ga_v = round(ga_gen * 0.955, 2)
+            elif venue_role in ("away", "Visitante"):
+                gf_v = round(gf_gen * 0.945, 2)
+                ga_v = round(ga_gen * 1.045, 2)
+            else:
+                gf_v = gf_gen
+                ga_v = ga_gen
+
+            sog_pg = round(max(25.5, min(35.5, (base_sog + (27.4 + gf_gen * 0.9)) / 2.0)), 1)
+            pp_pct = round(max(16.0, min(30.0, (base_pp + (16.2 + gf_gen * 1.85)) / 2.0)), 1)
+            sv_pct = round(max(88.0, min(93.0, (base_sv + (93.5 - ga_gen * 1.05)) / 2.0)), 1)
+
+            res = {
+                "gf_pg": gf_v,
+                "ga_pg": ga_v,
+                "gf_pg_gen": gf_gen,
+                "ga_pg_gen": ga_gen,
+                "diff_pg": round(gf_gen - ga_gen, 2),
+                "sog_pg": sog_pg,
+                "pp_pct": pp_pct,
+                "sv_pct": sv_pct,
+                "venue_role": venue_role or "General",
+                "is_real_standings": True
+            }
+            if standing_info.get("overall"):
+                res["record"] = standing_info["overall"]
+            if standing_info.get("streak"):
+                res["streak"] = standing_info["streak"]
+            return res
+        except Exception:
+            pass
+
+    if real_recent and recent_matches and len(recent_matches) > 0:
+        return calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+
+    if known_entry:
+        gf_gen = known_entry["gf_pg"]
+        ga_gen = known_entry["ga_pg"]
+    else:
+        h = deterministic_hash(t_clean)
+        gf_gen = round(2.65 + ((h % 85) / 100.0), 2)
+        ga_gen = round(2.55 + (((h // 10) % 85) / 100.0), 2)
+
+    if venue_role in ("home", "Local"):
+        gf_v = round(gf_gen * 1.055, 2)
+        ga_v = round(ga_gen * 0.955, 2)
+    elif venue_role in ("away", "Visitante"):
+        gf_v = round(gf_gen * 0.945, 2)
+        ga_v = round(ga_gen * 1.045, 2)
+    else:
+        gf_v = gf_gen
+        ga_v = ga_gen
+
+    return {
+        "gf_pg": gf_v,
+        "ga_pg": ga_v,
+        "gf_pg_gen": gf_gen,
+        "ga_pg_gen": ga_gen,
+        "diff_pg": round(gf_gen - ga_gen, 2),
+        "sog_pg": base_sog,
+        "pp_pct": base_pp,
+        "sv_pct": base_sv,
         "venue_role": venue_role or "General"
     }
 
@@ -1242,6 +1518,15 @@ LEAGUE_TEAMS_POOL = {
         "Chicago Bulls", "Toronto Raptors", "Brooklyn Nets", "Houston Rockets", "Memphis Grizzlies",
         "Utah Jazz", "San Antonio Spurs", "Portland Trail Blazers", "Charlotte Hornets", "Detroit Pistons", "Washington Wizards"
     ],
+    "nhl": [
+        "Anaheim Ducks", "Boston Bruins", "Buffalo Sabres", "Calgary Flames", "Carolina Hurricanes",
+        "Chicago Blackhawks", "Colorado Avalanche", "Columbus Blue Jackets", "Dallas Stars", "Detroit Red Wings",
+        "Edmonton Oilers", "Florida Panthers", "Los Angeles Kings", "Minnesota Wild", "Montreal Canadiens",
+        "Nashville Predators", "New Jersey Devils", "New York Islanders", "New York Rangers", "Ottawa Senators",
+        "Philadelphia Flyers", "Pittsburgh Penguins", "San Jose Sharks", "Seattle Kraken", "St. Louis Blues",
+        "Tampa Bay Lightning", "Toronto Maple Leafs", "Utah Mammoth", "Vancouver Canucks", "Vegas Golden Knights",
+        "Washington Capitals", "Winnipeg Jets"
+    ],
     "el_salvador": [
         "Alianza FC", "CD FAS", "CD Águila", "AD Isidro Metapán", "CD Luis Ángel Firpo", "CD Municipal Limeño",
         "CD Platense", "CD Fuerte San Francisco", "11 Deportivo FC", "CD Dragón", "CD Cacahuatique", "Santa Tecla FC"
@@ -1312,6 +1597,21 @@ def detect_league_and_country(home_team: str, away_team: str, sport: str = "foot
         "blazers", "hornets", "pistons", "wizards", "76ers"
     ]):
         return "NBA", "Estados Unidos", "🏀", LEAGUE_TEAMS_POOL["nba"]
+
+    # 1B. NHL / Hockey sobre Hielo
+    nhl_keywords = [
+        "florida panthers", "edmonton oilers", "dallas stars", "carolina hurricanes", "colorado avalanche",
+        "new york rangers", "winnipeg jets", "vegas golden knights", "toronto maple leafs", "boston bruins",
+        "vancouver canucks", "washington capitals", "new jersey devils", "tampa bay lightning", "minnesota wild",
+        "los angeles kings", "ottawa senators", "montreal canadiens", "st. louis blues", "calgary flames",
+        "utah mammoth", "utah hockey club", "columbus blue jackets", "new york islanders", "detroit red wings",
+        "pittsburgh penguins", "philadelphia flyers", "buffalo sabres", "seattle kraken", "nashville predators",
+        "anaheim ducks", "san jose sharks", "chicago blackhawks",
+        "oilers", "avalanche", "maple leafs", "bruins", "canucks", "canadiens", "blackhawks",
+        "red wings", "blue jackets", "golden knights", "kraken", "predators", "penguins", "flyers", "sabres", "lightning"
+    ]
+    if sport == "nhl" or "nhl" in l_low or "hockey" in l_low or "nhl" in c_low or "hockey" in c_low or any(k in h_low or k in a_low for k in nhl_keywords):
+        return "NHL", "Norteamérica", "🏒", LEAGUE_TEAMS_POOL["nhl"]
 
     # 2. SELECCIONES NACIONALES (FIFA, UEFA Nations League, Eliminatorias, Amistosos)
     national_keywords = [
@@ -4359,11 +4659,132 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
                 "text": f"{home_team} {w_h} victorias • {w_d} empates • {away_team} {w_a} victorias"
             }
         }
+    elif sport == "nhl":
+        nhl_pool = LEAGUE_TEAMS_POOL["nhl"]
+
+        def _nhl_base_rtg(tname: str):
+            tl = (tname or "").lower()
+            for k, v in KNOWN_NHL_TEAMS.items():
+                if k in tl or tl in k:
+                    return float(v.get("gf_pg", 3.05)), float(v.get("ga_pg", 3.05))
+            return 3.05, 3.05
+
+        h_gf, h_ga = _nhl_base_rtg(home_team)
+        a_gf, a_ga = _nhl_base_rtg(away_team)
+
+        def _gen_nhl_last5(tname, t_hash, gf, ga, loc_mod, dates_arr):
+            lst = []
+            used = set([tname.lower()])
+            win_thresh = min(8, max(2, round(5 + (gf - ga) * 2.2)))
+            for i in range(5):
+                idx = (t_hash + i * (7 if loc_mod == 0 else 11)) % len(nhl_pool)
+                opp = nhl_pool[idx]
+                step = 1
+                while opp.lower() in used:
+                    opp = nhl_pool[(idx + step) % len(nhl_pool)]
+                    step += 1
+                used.add(opp.lower())
+
+                val = (t_hash + i * 13) % 10
+                res = "W" if val < win_thresh else "L"
+                is_loc = (i % 2 == loc_mod)
+                margin = 1 + (val % 3)
+                base_opp = max(1, min(4, round(ga - 0.3 + ((val + i) % 3) - 1)))
+                if res == "W":
+                    opp_sc = base_opp
+                    my_sc = opp_sc + margin
+                else:
+                    my_sc = max(1, min(4, round(gf - 0.5 + (val % 2))))
+                    opp_sc = my_sc + margin
+
+                m_h = tname if is_loc else opp
+                m_a = opp if is_loc else tname
+                sc_h = my_sc if is_loc else opp_sc
+                sc_a = opp_sc if is_loc else my_sc
+                lst.append({
+                    "date": dates_arr[i],
+                    "opponent": opp,
+                    "venue": "Local" if is_loc else "Visitante",
+                    "match_home": m_h,
+                    "match_away": m_a,
+                    "home_score": sc_h,
+                    "away_score": sc_a,
+                    "score": f"{sc_h} - {sc_a}",
+                    "result": res,
+                    "competition": "NHL"
+                })
+            return lst
+
+        home_last_5 = _gen_nhl_last5(home_team, h_hash, h_gf, h_ga, 0, recent_dates_home)
+        away_last_5 = _gen_nhl_last5(away_team, a_hash, a_gf, a_ga, 1, recent_dates_away)
+
+        head_to_head = []
+        h_net = h_gf - h_ga
+        a_net = a_gf - a_ga
+        dir_thresh = min(8, max(2, round(5 + (h_net - a_net) * 2.0)))
+        for i in range(5):
+            val = (combined_hash + i * 19) % 10
+            clash_h = home_team if (i % 2 == 0) else away_team
+            clash_a = away_team if (i % 2 == 0) else home_team
+            margin = 1 + ((val + i) % 3)
+            home_fav = (val < dir_thresh)
+            if (home_fav and clash_h == home_team) or (not home_fav and clash_h == away_team):
+                winner = clash_h
+                sc_a = 1 + ((val + i) % 3)
+                sc_h = sc_a + margin
+            else:
+                winner = clash_a
+                sc_h = 1 + ((val + i) % 3)
+                sc_a = sc_h + margin
+
+            head_to_head.append({
+                "date": h2h_dates[i],
+                "competition": "NHL",
+                "tournament": "NHL",
+                "match_home": clash_h,
+                "match_away": clash_a,
+                "home_score": sc_h,
+                "away_score": sc_a,
+                "score": f"{sc_h} - {sc_a}",
+                "winner": winner,
+                "home_team": clash_h,
+                "away_team": clash_a
+            })
+
+        w_h = sum(1 for m in head_to_head if m["winner"] == home_team)
+        w_a = sum(1 for m in head_to_head if m["winner"] == away_team)
+        avg_goals = round(sum(m["home_score"] + m["away_score"] for m in head_to_head) / 5.0, 1)
+
+        return {
+            "home_last_5": home_last_5,
+            "away_last_5": away_last_5,
+            "head_to_head": head_to_head,
+            "is_real": False,
+            "summary": {
+                "home_wins": w_h,
+                "draws": 0,
+                "away_wins": w_a,
+                "avg_goals": avg_goals,
+                "text": f"{home_team} {w_h} victorias • {away_team} {w_a} victorias en los últimos 5"
+            }
+        }
     else:
-        # NBA
+        # NBA Fallback cuantitativo calibrado con KNOWN_NBA_TEAMS (solo usado si ESPN H2H no está disponible)
         nba_pool = LEAGUE_TEAMS_POOL["nba"]
+
+        def _nba_base_rtg(tname: str):
+            tl = (tname or "").lower()
+            for k, v in KNOWN_NBA_TEAMS.items():
+                if k in tl or tl in k:
+                    return float(v.get("off_rating", 114.0)), float(v.get("def_rating", 114.0))
+            return 113.5, 114.0
+
+        h_off, h_def = _nba_base_rtg(home_team)
+        a_off, a_def = _nba_base_rtg(away_team)
+
         home_last_5 = []
         used_h = set([home_team.lower()])
+        h_win_thresh = min(8, max(2, round(5 + ((h_off - h_def) * 0.22))))
         for i in range(5):
             idx = (h_hash + i * 7) % len(nba_pool)
             opp = nba_pool[idx]
@@ -4374,10 +4795,16 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             used_h.add(opp.lower())
 
             val = (h_hash + i * 13) % 10
-            res = "W" if val < 6 else "L"
+            res = "W" if val < h_win_thresh else "L"
             is_loc = (i % 2 == 0)
-            my_pts = 112 + (val * 2) if res == "W" else 106 + ((10 - val) * 2)
-            opp_pts = 106 + ((10 - val) * 2) if res == "W" else 112 + (val * 2)
+            margin = 3 + ((val * 3 + i * 2) % 14)
+            base_opp = round(106 + ((h_def - 110.0) * 0.5) + ((val * 2) % 9))
+            if res == "W":
+                opp_pts = max(96, min(124, base_opp))
+                my_pts = opp_pts + margin
+            else:
+                my_pts = max(95, min(121, round(105 + ((h_off - 110.0) * 0.4) + ((val * 2) % 8))))
+                opp_pts = my_pts + margin
 
             m_home = home_team if is_loc else opp
             m_away = opp if is_loc else home_team
@@ -4399,6 +4826,7 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
 
         away_last_5 = []
         used_a = set([away_team.lower()])
+        a_win_thresh = min(8, max(2, round(5 + ((a_off - a_def) * 0.22))))
         for i in range(5):
             idx = (a_hash + i * 11) % len(nba_pool)
             opp = nba_pool[idx]
@@ -4409,10 +4837,15 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             used_a.add(opp.lower())
 
             val = (a_hash + i * 17) % 10
-            res = "W" if val < 5 else "L"
+            res = "W" if val < a_win_thresh else "L"
             is_loc = (i % 2 == 1)
-            my_pts = 110 + (val * 2) if res == "W" else 108 + ((10 - val) * 2)
-            opp_pts = 108 + ((10 - val) * 2) if res == "W" else 110 + (val * 2)
+            margin = 3 + ((val * 3 + i * 2) % 14)
+            if res == "W":
+                opp_pts = max(96, min(124, round(106 + ((a_def - 110.0) * 0.5) + ((val * 2) % 9))))
+                my_pts = opp_pts + margin
+            else:
+                my_pts = max(95, min(121, round(105 + ((a_off - 110.0) * 0.4) + ((val * 2) % 8))))
+                opp_pts = my_pts + margin
 
             m_home = away_team if is_loc else opp
             m_away = opp if is_loc else away_team
@@ -4433,21 +4866,23 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
             })
 
         head_to_head = []
+        h_net = h_off - h_def
+        a_net = a_off - a_def
+        dir_thresh = min(8, max(2, round(5 + ((h_net - a_net) * 0.25))))
         for i in range(5):
             val = (combined_hash + i * 19) % 10
             clash_h = home_team if (i % 2 == 0) else away_team
             clash_a = away_team if (i % 2 == 0) else home_team
-
-            if val < 5:
-                # clash_h gana
+            margin = 4 + ((val * 3 + i) % 13)
+            home_fav = (val < dir_thresh)
+            if (home_fav and clash_h == home_team) or (not home_fav and clash_h == away_team):
                 winner = clash_h
-                sc_h = 115 + (val * 2)
-                sc_a = 108 + (val % 4)
+                sc_a = 106 + ((val + i) % 9)
+                sc_h = sc_a + margin
             else:
-                # clash_a gana
                 winner = clash_a
-                sc_h = 107 + (val % 4)
-                sc_a = 116 + (val * 2)
+                sc_h = 105 + ((val + i) % 9)
+                sc_a = sc_h + margin
 
             head_to_head.append({
                 "date": h2h_dates[i],
@@ -4465,16 +4900,18 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
 
         w_h = sum(1 for m in head_to_head if m["winner"] == home_team)
         w_a = sum(1 for m in head_to_head if m["winner"] == away_team)
+        avg_pts = round(sum(m["home_score"] + m["away_score"] for m in head_to_head) / 5.0, 1)
 
         return {
             "home_last_5": home_last_5,
             "away_last_5": away_last_5,
             "head_to_head": head_to_head,
+            "is_real": False,
             "summary": {
                 "home_wins": w_h,
                 "draws": 0,
                 "away_wins": w_a,
-                "avg_goals": 224.5,
+                "avg_goals": avg_pts,
                 "text": f"{home_team} {w_h} victorias • {away_team} {w_a} victorias en los últimos 5"
             }
         }
@@ -5498,188 +5935,230 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
 def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: str, mins_remaining: float, home_stats: dict, away_stats: dict, live_stats: dict) -> dict:
     """
     Calcula probabilidades en vivo para un partido de la NBA, incluyendo
-    el análisis dinámico de ganador de cada cuarto (Q2, Q3, Q4), mitad y juego completo.
+    el análisis dinámico de ganador de cada cuarto (Q1-Q4/OT), mitad y juego completo.
     """
-    total_mins = 48.0
+    q_upper = str(quarter or "Q1").upper()
+    is_ht = bool((live_stats or {}).get("is_halftime") or "HT" in q_upper or "DESCANSO" in q_upper)
+    if is_ht:
+        period_num = 2
+    elif "OT" in q_upper:
+        ot_digits = re.findall(r'\d+', q_upper)
+        ot_num = int(ot_digits[0]) if ot_digits else 1
+        period_num = 4 + ot_num
+    else:
+        q_digits = re.findall(r'\d+', q_upper)
+        period_num = int(q_digits[0]) if q_digits else 3
+
+    total_mins = 48.0 + max(0, period_num - 4) * 5.0
+    mins_remaining = max(0.05, min(total_mins, float(mins_remaining if mins_remaining is not None else 12.0)))
     elapsed_mins = max(1.0, total_mins - mins_remaining)
-    remaining_fraction = mins_remaining / total_mins
+    remaining_fraction = min(1.0, max(0.01, mins_remaining / total_mins))
 
-    # Ritmo en vivo (Pace actual)
+    # Ritmo base pre-partido combinado con ratings reales de ambos equipos
+    pace = (float((home_stats or {}).get("pace", 99.5) or 99.5) + float((away_stats or {}).get("pace", 99.5) or 99.5)) / 2.0
+    off_h = float((home_stats or {}).get("off_rating", 114.5) or 114.5)
+    def_h = float((home_stats or {}).get("def_rating", 114.5) or 114.5)
+    off_a = float((away_stats or {}).get("off_rating", 114.5) or 114.5)
+    def_a = float((away_stats or {}).get("def_rating", 114.5) or 114.5)
+
+    base_full_h = (pace / 100.0) * (off_h * (def_a / 114.5)) + 1.5
+    base_full_a = (pace / 100.0) * (off_a * (def_h / 114.5)) - 1.5
+    base_rate_h = base_full_h / 48.0
+    base_rate_a = base_full_a / 48.0
+
     current_total_pts = current_h + current_a
-    live_pace_pts_per_min = current_total_pts / elapsed_mins
+    live_rate_h = (current_h / elapsed_mins) if elapsed_mins >= 4.0 else base_rate_h
+    live_rate_a = (current_a / elapsed_mins) if elapsed_mins >= 4.0 else base_rate_a
 
-    # Proyección para los minutos restantes
-    exp_rem_pts_h = (home_stats.get("off_rating", 115.0) / 48.0) * mins_remaining * 0.98
-    exp_rem_pts_a = (away_stats.get("off_rating", 114.0) / 48.0) * mins_remaining * 0.98
+    # Porcentajes reales de FG% en vivo (siempre en escala 0-100)
+    fg_h_pct = float((live_stats or {}).get("fg_pct_home") or (live_stats or {}).get("field_goal_pct_home") or 46.0)
+    fg_a_pct = float((live_stats or {}).get("fg_pct_away") or (live_stats or {}).get("field_goal_pct_away") or 46.0)
+    if 0 < fg_h_pct <= 1.0:
+        fg_h_pct = round(fg_h_pct * 100.0, 1)
+    if 0 < fg_a_pct <= 1.0:
+        fg_a_pct = round(fg_a_pct * 100.0, 1)
 
-    # Ajuste por porcentaje de tiro de campo (FG%) en vivo
-    fg_h = live_stats.get("fg_pct_home", 45) / 100.0
-    fg_a = live_stats.get("fg_pct_away", 45) / 100.0
-    exp_rem_pts_h *= (fg_h / 0.46)
-    exp_rem_pts_a *= (fg_a / 0.46)
+    sample_weight = min(1.0, elapsed_mins / 18.0)
+    eff_h = 1.0 + max(-0.08, min(0.08, ((fg_h_pct - 46.5) / 100.0) * 0.45)) * sample_weight
+    eff_a = 1.0 + max(-0.08, min(0.08, ((fg_a_pct - 46.5) / 100.0) * 0.45)) * sample_weight
+
+    w_live = min(0.45, (elapsed_mins / 48.0) * 0.55)
+    proj_rate_h = ((1.0 - w_live) * base_rate_h + w_live * live_rate_h) * eff_h
+    proj_rate_a = ((1.0 - w_live) * base_rate_a + w_live * live_rate_a) * eff_a
+
+    exp_rem_pts_h = max(0.0, proj_rate_h * mins_remaining)
+    exp_rem_pts_a = max(0.0, proj_rate_a * mins_remaining)
 
     final_proj_h = current_h + exp_rem_pts_h
     final_proj_a = current_a + exp_rem_pts_a
 
     diff_rem = final_proj_h - final_proj_a
-    sigma_rem = max(3.5, 11.2 * math.sqrt(remaining_fraction))
+    sigma_rem = max(2.2, 11.2 * math.sqrt(remaining_fraction))
 
     prob_h = normal_cdf(diff_rem / sigma_rem)
-    pct_h = round(prob_h * 100, 1)
-    pct_a = round((1.0 - prob_h) * 100, 1)
+    pct_h = round(max(0.5, min(99.5, prob_h * 100.0)), 1)
+    pct_a = round(100.0 - pct_h, 1)
     pct_away = pct_a
 
-    proj_total = round(final_proj_h + final_proj_a)
+    proj_total = int(round(final_proj_h + final_proj_a))
+    over_under_line = round((final_proj_h + final_proj_a) * 2.0) / 2.0
+    spread_home = round(-diff_rem * 2.0) / 2.0
 
-    if current_h > current_a and pct_h >= 75:
-        live_pick = "Victoria Local en Cierre"
+    if current_h > current_a and pct_h >= 72:
+        live_pick = f"Victoria Local ({round(final_proj_h)}-{round(final_proj_a)})"
         conf = pct_h
-        risk = "Bajo"
-    elif current_a > current_h and pct_a >= 75:
-        live_pick = "Victoria Visitante en Cierre"
+        risk = "Bajo" if pct_h >= 78 else "Medio"
+    elif current_a > current_h and pct_a >= 72:
+        live_pick = f"Victoria Visitante ({round(final_proj_a)}-{round(final_proj_h)})"
         conf = pct_a
-        risk = "Bajo"
+        risk = "Bajo" if pct_a >= 78 else "Medio"
+    elif abs(pct_h - 50.0) >= 12.0:
+        fav_lbl = "Local" if pct_h >= pct_a else "Visitante"
+        live_pick = f"Gana {fav_lbl} (Moneyline En Vivo)"
+        conf = max(pct_h, pct_a)
+        risk = "Medio"
     else:
-        live_pick = f"Over {proj_total - 6.5} Puntos Totales"
-        conf = 63.5
+        live_pick = f"Over {over_under_line - 4.5} Puntos Totales"
+        conf = 62.5
         risk = "Medio"
 
     # ANÁLISIS EN VIVO DE CUARTOS, MITADES Y JUEGO COMPLETO
-    q_scores = live_stats.get("q_scores", {})
-    
-    # Q1
-    q1_str = q_scores.get("Q1", "28-26")
-    q1_h, q1_a = [int(x) for x in q1_str.split("-")]
-    q1_winner = "Local" if q1_h > q1_a else ("Visitante" if q1_a > q1_h else "Empate")
+    q_scores = (live_stats or {}).get("q_scores", {}) or {}
 
-    # Q2
-    if "Q2" in q_scores:
-        q2_str = q_scores["Q2"]
-        q2_h, q2_a = [int(x) for x in q2_str.split("-")]
-        q2_winner = "Local" if q2_h > q2_a else ("Visitante" if q2_a > q2_h else "Empate")
-        q2_status = "Finalizado"
-        q2_prob = 100.0
-    else:
-        # En vivo si el partido está en Q2
-        q2_h_proj = round(28 * (fg_h / 0.46))
-        q2_a_proj = round(27 * (fg_a / 0.46))
-        q2_winner = "Local" if q2_h_proj >= q2_a_proj else "Visitante"
-        q2_str = f"{q2_h_proj}-{q2_a_proj}"
-        q2_status = "En Juego (En Vivo)"
-        q2_prob = 58.5
+    def _get_q_score(idx: int):
+        raw = q_scores.get(f"{idx}Q") or q_scores.get(f"Q{idx}")
+        if raw and "-" in str(raw):
+            try:
+                parts = [int(x.strip()) for x in str(raw).split("-")]
+                if len(parts) == 2:
+                    return parts[0], parts[1]
+            except Exception:
+                pass
+        return None
 
-    # 1ª Mitad (Q1 + Q2)
-    h1_h = q1_h + (int(q_scores["Q2"].split("-")[0]) if "Q2" in q_scores else 28)
-    h1_a = q1_a + (int(q_scores["Q2"].split("-")[1]) if "Q2" in q_scores else 27)
+    def _eval_quarter(idx: int):
+        parsed = _get_q_score(idx)
+        q_proj_h = max(18, round(proj_rate_h * 12.0))
+        q_proj_a = max(18, round(proj_rate_a * 12.0))
+        if idx < period_num or (idx == 2 and is_ht):
+            qh, qa = parsed if parsed else (q_proj_h, q_proj_a)
+            w = "Local" if qh > qa else ("Visitante" if qa > qh else "Empate")
+            return w, f"{qh}-{qa}", "Finalizado", 100.0, qh, qa
+        elif idx == period_num and not is_ht:
+            qh, qa = parsed if parsed else (0, 0)
+            q_rem_min = max(0.0, mins_remaining - (4 - idx) * 12.0) if idx <= 4 else mins_remaining
+            est_h = round(qh + proj_rate_h * min(12.0, q_rem_min))
+            est_a = round(qa + proj_rate_a * min(12.0, q_rem_min))
+            w = "Local" if est_h >= est_a else "Visitante"
+            return w, f"{qh}-{qa}", "En Vivo", 62.0, est_h, est_a
+        else:
+            w = "Local" if q_proj_h >= q_proj_a else "Visitante"
+            st = "Descanso" if is_ht and idx == 3 else "Proyectado"
+            return w, f"{q_proj_h}-{q_proj_a}", st, 55.5, q_proj_h, q_proj_a
+
+    q1_winner, q1_str, q1_status, q1_prob, q1_eh, q1_ea = _eval_quarter(1)
+    q2_winner, q2_str, q2_status, q2_prob, q2_eh, q2_ea = _eval_quarter(2)
+    q3_winner, q3_str, q3_status, q3_prob, q3_eh, q3_ea = _eval_quarter(3)
+    q4_winner, q4_str, q4_status, q4_prob, q4_eh, q4_ea = _eval_quarter(4)
+
+    h1_h = q1_eh + q2_eh
+    h1_a = q1_ea + q2_ea
     h1_winner = "Local" if h1_h > h1_a else ("Visitante" if h1_a > h1_h else "Empate")
+    h1_done = (period_num >= 3 or is_ht)
+    h1_status = "Finalizado" if h1_done else "En Vivo"
+    h1_prob = 100.0 if h1_done else 68.0
 
-    # Q3 (Análisis en vivo)
-    if "Q3" in q_scores:
-        q3_str = q_scores["Q3"]
-        q3_h, q3_a = [int(x) for x in q3_str.split("-")]
-        q3_winner = "Local" if q3_h > q3_a else ("Visitante" if q3_a > q3_h else "Empate")
-        q3_status = "Finalizado" if "4Q" in quarter else "En Juego (En Vivo)"
-        q3_prob = 64.0 if "4Q" not in quarter else 100.0
-    else:
-        q3_h_proj = round(29 * (fg_h / 0.46))
-        q3_a_proj = round(28 * (fg_a / 0.46))
-        q3_winner = "Local" if q3_h_proj >= q3_a_proj else "Visitante"
-        q3_str = f"{q3_h_proj}-{q3_a_proj}"
-        q3_status = "Proyectado En Vivo (Ajustes de Medio Tiempo)"
-        q3_prob = 56.0
-
-    # Q4 (Análisis en vivo)
-    if "Q4" in q_scores:
-        q4_str = q_scores["Q4"]
-        q4_h, q4_a = [int(x) for x in q4_str.split("-")]
-        q4_winner = "Local" if q4_h > q4_a else ("Visitante" if q4_a > q4_h else "Empate")
-        q4_status = "En Juego (Cierre En Vivo)"
-        q4_prob = 72.0
-    else:
-        q4_h_proj = round(26 * (fg_h / 0.46))
-        q4_a_proj = round(25 * (fg_a / 0.46))
-        q4_winner = "Local" if q4_h_proj >= q4_a_proj else "Visitante"
-        q4_str = f"{q4_h_proj}-{q4_a_proj}"
-        q4_status = "Proyectado En Vivo (Ajustado por Cansancio)"
-        q4_prob = 59.0
-
-    # 2ª Mitad (Q3 + Q4)
-    h2_winner = "Local" if (q3_winner == "Local" or pct_h >= 60) else "Visitante"
+    h2_h = q3_eh + q4_eh
+    h2_a = q3_ea + q4_ea
+    h2_winner = "Local" if h2_h >= h2_a else "Visitante"
+    h2_status = "En Vivo" if period_num >= 3 else "Proy. Vivo"
+    h2_prob = round(max(pct_h, pct_a) if period_num >= 3 else max(54.0, min(72.0, 50.0 + abs(h2_h - h2_a) * 2.2)), 1)
 
     quarters_breakdown = {
-        "q1": {"name": "1º Cuarto (Q1)", "winner": q1_winner, "score": q1_str, "status": "Finalizado", "prob": 100.0},
+        "q1": {"name": "1º Cuarto (Q1)", "winner": q1_winner, "score": q1_str, "status": q1_status, "prob": q1_prob},
         "q2": {"name": "2º Cuarto (Q2)", "winner": q2_winner, "score": q2_str, "status": q2_status, "prob": q2_prob},
-        "first_half": {"name": "1ª Mitad (Q1+Q2)", "winner": h1_winner, "score": f"{h1_h}-{h1_a}", "status": "Definido / En Vivo", "prob": 88.0},
+        "first_half": {"name": "1ª Mitad (Q1+Q2)", "winner": h1_winner, "score": f"{h1_h}-{h1_a}", "status": h1_status, "prob": h1_prob},
         "q3": {"name": "3º Cuarto (Q3)", "winner": q3_winner, "score": q3_str, "status": q3_status, "prob": q3_prob},
         "q4": {"name": "4º Cuarto (Q4)", "winner": q4_winner, "score": q4_str, "status": q4_status, "prob": q4_prob},
-        "second_half": {"name": "2ª Mitad (Q3+Q4)", "winner": h2_winner, "score": "En Proyección", "status": "En Vivo", "prob": max(pct_h, pct_a)},
+        "second_half": {"name": "2ª Mitad (Q3+Q4)", "winner": h2_winner, "score": f"{h2_h}-{h2_a}", "status": h2_status, "prob": h2_prob},
         "full_game": {"name": "Juego Completo", "winner": "Local" if pct_h >= 50 else "Visitante", "score": f"{round(final_proj_h)}-{round(final_proj_a)}", "status": "En Vivo", "prob": max(pct_h, pct_a)}
     }
+
+    q_display = "Medio Tiempo (HT)" if is_ht else quarter
+    ml_prob = max(pct_h, pct_a)
+    spread_fav = "Local" if pct_h >= pct_a else "Visitante"
+    spread_line = round(max(1.5, abs(final_proj_h - final_proj_a)) - 1.5, 1)
+    if spread_line < 1.5:
+        spread_tag = "+2.5"
+    else:
+        spread_tag = f"-{spread_line:.1f}"
+
+    ou_prob = round(min(68.0, max(52.0, 56.0 + (abs(eff_h - 1.0) + abs(eff_a - 1.0)) * 50.0)), 1)
 
     four_predictions = [
         {
             "id": 1,
             "market": "Moneyline En Vivo",
             "name": "Victoria Local" if pct_h >= pct_a else "Victoria Visitante",
-            "probability": max(pct_h, pct_a),
-            "fair_odds": round(100.0 / max(pct_h, pct_a, 1.0), 2),
-            "risk_level": "Bajo" if max(pct_h, pct_a) >= 65 else "Medio",
-            "risk_color": "emerald" if max(pct_h, pct_a) >= 65 else "amber",
-            "explanation": f"En {quarter} con {current_h}-{current_a}, el modelo proyecta un marcador final de {round(final_proj_h)}-{round(final_proj_a)}."
+            "probability": ml_prob,
+            "fair_odds": round(100.0 / max(ml_prob, 1.0), 2),
+            "risk_level": "Bajo" if ml_prob >= 70 else "Medio",
+            "risk_color": "emerald" if ml_prob >= 70 else "amber",
+            "explanation": f"En {q_display} con marcador {current_h}-{current_a}, el modelo proyecta un cierre de {round(final_proj_h)}-{round(final_proj_a)}."
         },
         {
             "id": 2,
             "market": "Total Puntos Proyectado",
-            "name": f"Línea {proj_total} Puntos (O/U)",
-            "probability": 58.5,
-            "fair_odds": 1.71,
+            "name": f"Over {over_under_line - 3.5} Puntos Totales",
+            "probability": ou_prob,
+            "fair_odds": round(100.0 / ou_prob, 2),
             "risk_level": "Medio",
             "risk_color": "amber",
-            "explanation": f"Ritmo de anotación en vivo recalculado con FG% de campo ({fg_h}% vs {fg_a}%)."
+            "explanation": f"Ritmo anotador en vivo recalculado ({proj_total} pts proyectados) con efectividad FG% de {fg_h_pct}% vs {fg_a_pct}%."
         },
         {
             "id": 3,
             "market": "Ganador 2ª Mitad (Q3+Q4)",
             "name": f"Ganador: {h2_winner}",
-            "probability": max(pct_h, pct_a),
-            "fair_odds": round(100.0 / max(pct_h, pct_a, 1.0), 2),
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "explanation": "Ajustes de rotación táctica y profundidad de banca para el segundo tiempo."
+            "probability": h2_prob,
+            "fair_odds": round(100.0 / max(h2_prob, 1.0), 2),
+            "risk_level": "Bajo" if h2_prob >= 68 else "Medio",
+            "risk_color": "emerald" if h2_prob >= 68 else "amber",
+            "explanation": f"Proyección {h2_h}-{h2_a} en la segunda mitad según profundidad de rotación y balance ofensivo/defensivo."
         },
         {
             "id": 4,
-            "market": "Ganador del Cuarto Actual",
-            "name": f"Ganador {quarter}: Local" if pct_h >= 50 else f"Ganador {quarter}: Visitante",
-            "probability": 57.0,
-            "fair_odds": 1.75,
+            "market": f"Tendencia del {'3º Cuarto' if is_ht else q_display}",
+            "name": f"Ganador: {q3_winner if is_ht else (q1_winner if period_num == 1 else (q2_winner if period_num == 2 else (q3_winner if period_num == 3 else q4_winner)))}",
+            "probability": q3_prob if is_ht else 59.0,
+            "fair_odds": 1.69,
             "risk_level": "Medio",
             "risk_color": "amber",
-            "explanation": "Rendimiento inmediato de los quintetos sobre la pista en este tramo de juego."
+            "explanation": "Rendimiento inmediato de los quintetos sobre la duela en el tramo en disputa."
         },
         {
             "id": 5,
             "market": "Hándicap / Spread en Vivo",
-            "name": f"{'Local' if pct_h >= pct_a else 'Visitante'} {'-3.5' if abs(final_proj_h - final_proj_a) > 5 else '+2.5'}",
-            "probability": 60.0,
-            "fair_odds": 1.67,
+            "name": f"{spread_fav} {spread_tag}",
+            "probability": round(max(53.0, min(72.0, ml_prob - 6.0)), 1),
+            "fair_odds": round(100.0 / max(53.0, min(72.0, ml_prob - 6.0)), 2),
             "risk_level": "Medio",
             "risk_color": "amber",
-            "explanation": "Línea ajustada con la proyección de diferencial y ritmo de posesiones del cierre."
+            "explanation": f"Línea ajustada al diferencial proyectado de {round(abs(final_proj_h - final_proj_a), 1)} pts hacia el cierre."
         },
         {
             "id": 6,
             "market": "Margen de Victoria Proyectado",
-            "name": f"{'Local' if pct_h >= pct_a else 'Visitante'} por {max(1, round(abs(final_proj_h - final_proj_a)))}+ Pts",
-            "probability": 55.0,
-            "fair_odds": 1.82,
+            "name": f"{spread_fav} por {max(2, round(abs(final_proj_h - final_proj_a) * 0.7))}+ Pts",
+            "probability": round(max(50.0, min(68.0, ml_prob - 10.0)), 1),
+            "fair_odds": round(100.0 / max(50.0, min(68.0, ml_prob - 10.0)), 2),
             "risk_level": "Medio",
             "risk_color": "amber",
-            "explanation": "Diferencia esperada según eficiencia neta ofensiva y defensiva sobre la duela."
+            "explanation": "Diferencia esperada según eficiencia neta y control del rebote."
         }
     ]
 
-    live_pace = (current_total_pts / elapsed_mins) * 48.0 / 2.2 if elapsed_mins > 0 else 99.0
+    live_pace = round(((proj_rate_h + proj_rate_a) * 48.0) / 2.25, 1)
     projections_matrix = calculate_nba_projections_matrix(
         home_stats=home_stats,
         away_stats=away_stats,
@@ -5689,11 +6168,16 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
     )
 
     return {
-        "quarter": quarter,
-        "mins_remaining": mins_remaining,
+        "quarter": q_display if is_ht else quarter,
+        "mins_remaining": round(mins_remaining, 1),
         "current_score": f"{current_h} - {current_a}",
+        "projected_pts_home": round(final_proj_h, 1),
+        "projected_pts_away": round(final_proj_a, 1),
         "projected_final": f"{round(final_proj_h)} - {round(final_proj_a)}",
         "projected_total": proj_total,
+        "total_points": proj_total,
+        "over_under_line": over_under_line,
+        "spread_home": spread_home,
         "prob_home": pct_h,
         "prob_away": pct_away,
         "recommended_pick": live_pick,
@@ -5704,6 +6188,888 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
         "projections_matrix": projections_matrix
+    }
+
+
+def calculate_nhl_projections_matrix(home_stats: dict, away_stats: dict, lam_h: float, mu_a: float, live_stats: dict = None) -> dict:
+    """
+    Calcula la matriz multivariable Top-10 cuantitativa para NHL (Poisson Bivariado):
+    1. GOL-FT: Marcador final tiempo reglamentario/juego (e.g. 3-2, 4-2, 2-2)
+    2. GOL-1P: Goles 1er Periodo (~29% del volumen anotador)
+    3. SOG: Tiros a Puerta totales por equipo (25-36)
+    4. ATAJ: Atajadas de Portero (SOG Rival - Goles)
+    5. HIT: Impactos Físicos / Fricción en hielo (18-28)
+    6. PUCK: Margen / Hándicap resultante (H -1, H -2, OT/SO, A -1, etc.)
+    """
+    ls = live_stats or {}
+    cov = round(max(0.05, min(0.14, 0.07 + abs(lam_h - mu_a) * 0.015)), 4)
+    lh_p = max(0.05, lam_h - cov)
+    la_p = max(0.05, mu_a - cov)
+
+    # 1. Marcador 60' Reglamentario (GOL-FT)
+    probs_ft = {}
+    for x in range(8):
+        for y in range(8):
+            p = 0.0
+            for k in range(min(x, y) + 1):
+                p += poisson_prob(cov, k) * poisson_prob(lh_p, x - k) * poisson_prob(la_p, y - k)
+            probs_ft[f"{x}-{y}"] = p
+    top_ft_raw = sorted(probs_ft.items(), key=lambda i: i[1], reverse=True)[:10]
+    ft_sum = sum(v for _, v in top_ft_raw) or 1.0
+    top_ft = [[k, round((v / ft_sum) * 100.0, 1)] for k, v in top_ft_raw]
+
+    # 2. Marcador 1º Periodo (GOL-1P ~29.5% de goles)
+    l1_h = max(0.25, lam_h * 0.295)
+    l1_a = max(0.25, mu_a * 0.295)
+    probs_1p = {}
+    for x in range(5):
+        for y in range(5):
+            probs_1p[f"{x}-{y}"] = poisson_prob(l1_h, x) * poisson_prob(l1_a, y)
+    top_1p_raw = sorted(probs_1p.items(), key=lambda i: i[1], reverse=True)[:10]
+    p1_sum = sum(v for _, v in top_1p_raw) or 1.0
+    top_1p = [[k, round((v / p1_sum) * 100.0, 1)] for k, v in top_1p_raw]
+
+    # 3. Tiros a Puerta (SOG) proyectados finales
+    sog_h_base = float((home_stats or {}).get("sog_pg", 30.0) or 30.0)
+    sog_a_base = float((away_stats or {}).get("sog_pg", 29.2) or 29.2)
+    cur_sog_h = ls.get("shots_home")
+    cur_sog_a = ls.get("shots_away")
+    if cur_sog_h is not None and cur_sog_a is not None and ls.get("elapsed_mins", 0) >= 8:
+        elapsed_f = max(0.15, min(1.0, float(ls.get("elapsed_mins", 20.0)) / 60.0))
+        proj_sog_h = int(round(float(cur_sog_h) + max(0.0, (1.0 - elapsed_f) * sog_h_base)))
+        proj_sog_a = int(round(float(cur_sog_a) + max(0.0, (1.0 - elapsed_f) * sog_a_base)))
+    else:
+        proj_sog_h = int(round(sog_h_base + (lam_h - 3.0) * 1.4))
+        proj_sog_a = int(round(sog_a_base + (mu_a - 3.0) * 1.4))
+    proj_sog_h = max(18, min(46, proj_sog_h))
+    proj_sog_a = max(18, min(46, proj_sog_a))
+
+    sog_offsets = [
+        (0, 0, 17.5), (1, -1, 14.2), (-1, 1, 12.6), (2, 0, 10.8), (0, 2, 9.6),
+        (-2, 0, 8.4), (2, 2, 7.6), (3, -1, 6.8), (-1, -2, 6.4), (1, 3, 6.1)
+    ]
+    top_sog = [[f"{proj_sog_h + dh}-{proj_sog_a + da}", pct] for dh, da, pct in sog_offsets]
+
+    # 4. Atajadas de Portero (ATAJ = SOG recibidos - Goles recibidos)
+    sav_h = max(15, int(round(proj_sog_a - mu_a)))
+    sav_a = max(15, int(round(proj_sog_h - lam_h)))
+    sav_offsets = [
+        (0, 0, 18.2), (1, 0, 14.8), (0, 1, 13.0), (-1, 1, 11.2), (2, -1, 9.5),
+        (-1, -1, 8.6), (2, 1, 7.4), (-2, 0, 6.5), (0, -2, 5.8), (3, 1, 5.0)
+    ]
+    top_saves = [[f"{sav_h + dh}-{sav_a + da}", pct] for dh, da, pct in sav_offsets]
+
+    # 5. Impactos Físicos / Hits (HIT)
+    hit_h = max(14, int(round(22 + (3.1 - min(3.8, lam_h)) * 2.2)))
+    hit_a = max(14, int(round(23 + (3.1 - min(3.8, mu_a)) * 2.2)))
+    hit_offsets = [
+        (0, 0, 19.0), (1, 1, 15.2), (-1, 1, 12.8), (2, -1, 10.4), (-1, -1, 9.2),
+        (2, 1, 8.1), (0, 2, 7.3), (-2, 0, 6.6), (3, -2, 5.9), (1, -3, 5.5)
+    ]
+    top_hits = [[f"{hit_h + dh}-{hit_a + da}", pct] for dh, da, pct in hit_offsets]
+
+    # 6. Margen / Puck Line (H -1, OT/SO, A -1, etc.) basados directamente en probs_ft
+    margin_probs = {}
+    for score_k, p in probs_ft.items():
+        x_g, y_g = [int(z) for z in score_k.split("-")]
+        d = x_g - y_g
+        if d == 0:
+            lbl = "OT/SO"
+        elif d > 0:
+            lbl = f"H -{d}"
+        else:
+            lbl = f"A -{abs(d)}"
+        margin_probs[lbl] = margin_probs.get(lbl, 0.0) + p
+    top_puck_raw = sorted(margin_probs.items(), key=lambda i: i[1], reverse=True)[:10]
+    pk_sum = sum(v for _, v in top_puck_raw) or 1.0
+    top_puck = [[k, round((v / pk_sum) * 100.0, 1)] for k, v in top_puck_raw]
+
+    rows = []
+    for i in range(10):
+        rows.append({
+            "rank": i + 1,
+            "ft": top_ft[i],
+            "ht": top_1p[i],
+            "shots": top_sog[i],
+            "sot": top_saves[i],
+            "corners": top_hits[i],
+            "cards": top_puck[i] if i < len(top_puck) else ["-", 0.0]
+        })
+
+    return {
+        "ft": top_ft,
+        "ht": top_1p,
+        "shots": top_sog,
+        "sot": top_saves,
+        "corners": top_hits,
+        "cards": top_puck,
+        "rows": rows,
+        "summary": {
+            "top_ft": f"{top_ft[0][0]} ({top_ft[0][1]}%)",
+            "top_ht": f"{top_1p[0][0]} ({top_1p[0][1]}%)",
+            "top_shots": f"{top_sog[0][0]} ({top_sog[0][1]}%)",
+            "top_sot": f"{top_saves[0][0]} ({top_saves[0][1]}%)",
+            "top_corners": f"{top_hits[0][0]} ({top_hits[0][1]}%)",
+            "top_cards": f"{top_puck[0][0]} ({top_puck[0][1]}%)" if top_puck else "-",
+            "sport": "nhl"
+        }
+    }
+
+
+def generate_seven_picks_nhl(
+    home_team: str,
+    away_team: str,
+    pct_h: float,
+    pct_a: float,
+    pct_h_reg: float,
+    pct_d_reg: float,
+    pct_a_reg: float,
+    pct_over_55: float,
+    pct_over_65: float,
+    lam_h: float,
+    mu_a: float,
+    prob_h_plus_15: float,
+    prob_a_plus_15: float,
+    prob_h_minus_15: float,
+    prob_a_minus_15: float,
+    prob_1p_over_15: float,
+    prob_1p_over_05: float,
+    prob_btts_2plus: float,
+    proj_sog_tot: float
+) -> list:
+    picks = []
+    tot_proj = round(lam_h + mu_a, 2)
+
+    # 1. Moneyline (Incl. OT / Shootout)
+    fav = home_team if pct_h >= pct_a else away_team
+    fav_prob = round(max(pct_h, pct_a), 1)
+    r1 = "Bajo" if fav_prob >= 62.0 else ("Medio" if fav_prob >= 53.0 else "Alto")
+    picks.append({
+        "id": 1,
+        "market": "Moneyline (Incl. OT/SO)",
+        "name": f"Victoria {fav} (ML)",
+        "probability": fav_prob,
+        "fair_odds": round(100.0 / max(fav_prob, 1.0), 2),
+        "risk_level": r1,
+        "risk_color": "emerald" if r1 == "Bajo" else ("amber" if r1 == "Medio" else "rose"),
+        "explanation": f"{fav} lidera el modelo Poisson ({lam_h:.2f} vs {mu_a:.2f} goles esperados) incluyendo prórroga y penaltis (Shootout)."
+    })
+
+    # 2. Tiempo Reglamentario 60' (1X2 / Doble Oportunidad)
+    if pct_h_reg >= 52.0:
+        p2_name = f"Victoria {home_team} en 60' (Regulación)"
+        p2_prob = round(pct_h_reg, 1)
+        p2_exp = f"Superioridad clara en 60 minutos reglamentarios evitándose el riesgo de prórroga."
+    elif pct_a_reg >= 52.0:
+        p2_name = f"Victoria {away_team} en 60' (Regulación)"
+        p2_prob = round(pct_a_reg, 1)
+        p2_exp = f"{away_team} domina la generación de goles esperados para resolver en 60' sin OT."
+    elif pct_h >= pct_a:
+        p2_name = f"Doble Oportunidad 1X: {home_team} o Empate (60')"
+        p2_prob = round(min(92.0, pct_h_reg + pct_d_reg), 1)
+        p2_exp = f"Cubre la victoria local en 60' y el empate hacia OT ({pct_d_reg:.1f}% prob. de prórroga)."
+    else:
+        p2_name = f"Doble Oportunidad X2: {away_team} o Empate (60')"
+        p2_prob = round(min(92.0, pct_a_reg + pct_d_reg), 1)
+        p2_exp = f"Protege al visitante en los 60' reglamentarios incluyendo el {pct_d_reg:.1f}% de llegar empatados a prórroga."
+    r2 = "Bajo" if p2_prob >= 68.0 else ("Medio" if p2_prob >= 52.0 else "Alto")
+    picks.append({
+        "id": 2,
+        "market": "Tiempo Reglamentario 60' (1X2 / DO)",
+        "name": p2_name,
+        "probability": p2_prob,
+        "fair_odds": round(100.0 / max(p2_prob, 1.0), 2),
+        "risk_level": r2,
+        "risk_color": "emerald" if r2 == "Bajo" else ("amber" if r2 == "Medio" else "rose"),
+        "explanation": p2_exp
+    })
+
+    # 3. Total de Goles (Over/Under 5.5 / 6.5)
+    pct_under_55 = round(100.0 - pct_over_55, 1)
+    pct_under_65 = round(100.0 - pct_over_65, 1)
+    if pct_over_55 >= 54.0:
+        p3_name = "Más de 5.5 Goles Totales (Over)"
+        p3_prob = round(pct_over_55, 1)
+        p3_exp = f"Expectativa combinada de {tot_proj:.2f} goles; ambos conjuntos superan la cadencia promedio de NHL y su Power Play genera peligro constante."
+    elif pct_under_65 >= 62.0 and tot_proj < 5.75:
+        if pct_under_55 >= 53.5:
+            p3_name = "Menos de 5.5 Goles Totales (Under)"
+            p3_prob = pct_under_55
+            p3_exp = f"Duelo de porterías sólidas y juego estructurado 5v5 (proyección total {tot_proj:.2f} goles)."
+        else:
+            p3_name = "Menos de 6.5 Goles Totales (Under)"
+            p3_prob = pct_under_65
+            p3_exp = f"Línea alternativa conservadora con alta cobertura estadística bajo proyección total de {tot_proj:.2f} goles."
+    else:
+        p3_name = "Más de 5.5 Goles Totales (Over)" if pct_over_55 >= pct_under_55 else "Menos de 5.5 Goles Totales (Under)"
+        p3_prob = round(max(pct_over_55, pct_under_55), 1)
+        p3_exp = f"Proyección matemática total de {tot_proj:.2f} goles combinados considerando efectividad de Power Play y porteros."
+    r3 = "Bajo" if p3_prob >= 64.0 else ("Medio" if p3_prob >= 53.0 else "Alto")
+    picks.append({
+        "id": 3,
+        "market": "Total de Goles (Over/Under NHL)",
+        "name": p3_name,
+        "probability": p3_prob,
+        "fair_odds": round(100.0 / max(p3_prob, 1.0), 2),
+        "risk_level": r3,
+        "risk_color": "emerald" if r3 == "Bajo" else ("amber" if r3 == "Medio" else "rose"),
+        "explanation": p3_exp
+    })
+
+    # 4. Puck Line (±1.5 Hándicap NHL)
+    if pct_h >= pct_a:
+        if (lam_h - mu_a) >= 0.85 and prob_h_minus_15 >= 46.0:
+            p4_name = f"{home_team} -1.5 Goles (Puck Line)"
+            p4_prob = round(prob_h_minus_15, 1)
+            p4_exp = f"Amplia diferencia ofensiva (+{lam_h - mu_a:.2f} xG) con potencial gol a puerta vacía (Empty Net) al cierre del 3er periodo."
+        else:
+            p4_name = f"{away_team} +1.5 Goles (Puck Line)"
+            p4_prob = round(prob_a_plus_15, 1)
+            p4_exp = f"El hockey NHL presenta alta frecuencia de partidos decididos por 1 gol o en prórroga; {away_team} cubre el +1.5 con alta seguridad."
+    else:
+        if (mu_a - lam_h) >= 0.85 and prob_a_minus_15 >= 46.0:
+            p4_name = f"{away_team} -1.5 Goles (Puck Line)"
+            p4_prob = round(prob_a_minus_15, 1)
+            p4_exp = f"Dominio claro visitante con alta probabilidad de cubrir -1.5 goles incluyendo remate a portería vacía."
+        else:
+            p4_name = f"{home_team} +1.5 Goles (Puck Line)"
+            p4_prob = round(prob_h_plus_15, 1)
+            p4_exp = f"Protección estadística en casa: {home_team} gana o pierde como máximo por 1 gol en regulación."
+    r4 = "Bajo" if p4_prob >= 67.0 else ("Medio" if p4_prob >= 50.0 else "Alto")
+    picks.append({
+        "id": 4,
+        "market": "Hándicap de Hielo (Puck Line ±1.5)",
+        "name": p4_name,
+        "probability": p4_prob,
+        "fair_odds": round(100.0 / max(p4_prob, 1.0), 2),
+        "risk_level": r4,
+        "risk_color": "emerald" if r4 == "Bajo" else ("amber" if r4 == "Medio" else "rose"),
+        "explanation": p4_exp
+    })
+
+    # 5. Primer Periodo (1P Total Goles)
+    if prob_1p_over_15 >= 54.0:
+        p5_name = "1º Periodo: Más de 1.5 Goles (1P Over)"
+        p5_prob = round(prob_1p_over_15, 1)
+        p5_exp = f"Equipos con arranque agresivo ({round(tot_proj * 0.295, 2)} goles esperados solo en los primeros 20 minutos)."
+    else:
+        p5_name = "1º Periodo: Más de 0.5 Goles (1P Over)"
+        p5_prob = round(prob_1p_over_05, 1)
+        p5_exp = f"Alta consistencia estadística de ver al menos un gol en los 20 minutos iniciales de partido."
+    r5 = "Bajo" if p5_prob >= 70.0 else ("Medio" if p5_prob >= 53.0 else "Alto")
+    picks.append({
+        "id": 5,
+        "market": "Total Primer Periodo (1P - 20 min)",
+        "name": p5_name,
+        "probability": p5_prob,
+        "fair_odds": round(100.0 / max(p5_prob, 1.0), 2),
+        "risk_level": r5,
+        "risk_color": "emerald" if r5 == "Bajo" else ("amber" if r5 == "Medio" else "rose"),
+        "explanation": p5_exp
+    })
+
+    # 6. Ambos Anotan 2+ Goles / Team Total
+    if prob_btts_2plus >= 58.0:
+        p6_name = "Ambos Equipos Anotan 2+ Goles (Sí)"
+        p6_prob = round(prob_btts_2plus, 1)
+        p6_exp = f"Ambos ataques superan el umbral de 2.75 GF/G; gran correlación en intercambios rápidos."
+    else:
+        strong_team = home_team if lam_h >= mu_a else away_team
+        lam_s = max(lam_h, mu_a)
+        prob_over_25_team = round((1.0 - (poisson_prob(lam_s, 0) + poisson_prob(lam_s, 1) + poisson_prob(lam_s, 2))) * 100.0, 1)
+        p6_name = f"Total Equipo: {strong_team} Más de 2.5 Goles"
+        p6_prob = prob_over_25_team
+        p6_exp = f"{strong_team} proyecta {lam_s:.2f} goles ante la unidad defensiva y Save% rival."
+    r6 = "Bajo" if p6_prob >= 66.0 else ("Medio" if p6_prob >= 53.0 else "Alto")
+    picks.append({
+        "id": 6,
+        "market": "Total de Equipo / Ambos 2+ Goles",
+        "name": p6_name,
+        "probability": p6_prob,
+        "fair_odds": round(100.0 / max(p6_prob, 1.0), 2),
+        "risk_level": r6,
+        "risk_color": "emerald" if r6 == "Bajo" else ("amber" if r6 == "Medio" else "rose"),
+        "explanation": p6_exp
+    })
+
+    # 7. Tiros a Puerta Totales (Shots on Goal - SOG)
+    sog_line = round(proj_sog_tot - 2.0) + 0.5 if proj_sog_tot >= 59.0 else round(proj_sog_tot + 1.5) + 0.5
+    if proj_sog_tot >= 58.5:
+        p7_name = f"Más de {round(proj_sog_tot - 2.5) + 0.5:.1f} Tiros a Puerta (SOG)"
+        p7_prob = round(min(72.0, 56.0 + (proj_sog_tot - 58.5) * 2.1), 1)
+        p7_exp = f"Alto volumen de disparo proyectado ({proj_sog_tot:.1f} SOG combinados) por juego vertical y Power Plays."
+    else:
+        p7_name = f"Menos de {round(proj_sog_tot + 2.5) + 0.5:.1f} Tiros a Puerta (SOG)"
+        p7_prob = round(min(70.0, 56.0 + (58.5 - proj_sog_tot) * 2.0), 1)
+        p7_exp = f"Ritmo defensivo controlado ({proj_sog_tot:.1f} SOG totales estimados) con bloqueo de carriles centrales."
+    r7 = "Bajo" if p7_prob >= 66.0 else "Medio"
+    picks.append({
+        "id": 7,
+        "market": "Tiros a Puerta Totales (SOG)",
+        "name": p7_name,
+        "probability": p7_prob,
+        "fair_odds": round(100.0 / max(p7_prob, 1.0), 2),
+        "risk_level": r7,
+        "risk_color": "emerald" if r7 == "Bajo" else "amber",
+        "explanation": p7_exp
+    })
+
+    return picks
+
+
+def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: str = "Local", away_team: str = "Visitante") -> dict:
+    """
+    Modelo Poisson Bivariado + Prórroga/Shootout para partidos Pre-Match de NHL.
+    """
+    league_avg_gf = 3.05
+
+    gf_h = float((home_stats or {}).get("gf_pg", 3.05) or 3.05)
+    ga_h = float((home_stats or {}).get("ga_pg", 3.05) or 3.05)
+    gf_a = float((away_stats or {}).get("gf_pg", 3.05) or 3.05)
+    ga_a = float((away_stats or {}).get("ga_pg", 3.05) or 3.05)
+
+    pp_h = float((home_stats or {}).get("pp_pct", 21.5) or 21.5)
+    pp_a = float((away_stats or {}).get("pp_pct", 21.5) or 21.5)
+    sv_h = float((home_stats or {}).get("sv_pct", 90.4) or 90.4)
+    sv_a = float((away_stats or {}).get("sv_pct", 90.4) or 90.4)
+
+    # Esperados en 60' Reglamentarios (+ ligero ajuste por PP% y SV% del portero rival)
+    lam_h = max(1.65, min(4.85, (gf_h * (ga_a / league_avg_gf)) + (pp_h - 21.5) * 0.015 - (sv_a - 90.4) * 0.08))
+    mu_a = max(1.55, min(4.75, (gf_a * (ga_h / league_avg_gf)) + (pp_a - 21.5) * 0.015 - (sv_h - 90.4) * 0.08))
+
+    cov = 0.08
+    lh_p = max(0.05, lam_h - cov)
+    la_p = max(0.05, mu_a - cov)
+
+    p_h_reg = 0.0
+    p_d_reg = 0.0
+    p_a_reg = 0.0
+    p_over_55 = 0.0
+    p_over_65 = 0.0
+    p_h_m15 = 0.0
+    p_a_m15 = 0.0
+    p_h_g2 = 0.0
+    p_a_g2 = 0.0
+    max_g = 11
+
+    # Distribución conjunta 60'
+    for x in range(max_g):
+        px = poisson_prob(lam_h, x)
+        if x >= 2:
+            p_h_g2 += px
+    for y in range(max_g):
+        py = poisson_prob(mu_a, y)
+        if y >= 2:
+            p_a_g2 += py
+
+    for x in range(max_g):
+        for y in range(max_g):
+            p = 0.0
+            for k in range(min(x, y) + 1):
+                p += poisson_prob(cov, k) * poisson_prob(lh_p, x - k) * poisson_prob(la_p, y - k)
+            if x > y:
+                p_h_reg += p
+                if (x - y) >= 2:
+                    p_h_m15 += p
+            elif x == y:
+                p_d_reg += p
+            else:
+                p_a_reg += p
+                if (y - x) >= 2:
+                    p_a_m15 += p
+            tot = x + y
+            # En NHL, todo empate a los 60' garantiza +1 gol ganador en OT/SO
+            final_tot = tot + 1 if x == y else tot
+            if final_tot >= 6:
+                p_over_55 += p
+            if final_tot >= 7:
+                p_over_65 += p
+
+    # Empty Net boost: alrededor de ~14% de los partidos con margen exacto de 1 gol en regulación terminan cubriendo -1.5 por Empty Net
+    en_h_1 = sum(poisson_prob(lam_h, y + 1) * poisson_prob(mu_a, y) for y in range(max_g - 1)) * 0.22
+    en_a_1 = sum(poisson_prob(lam_h, x) * poisson_prob(mu_a, x + 1) for x in range(max_g - 1)) * 0.22
+    p_h_m15_eff = min(0.75, p_h_m15 + en_h_1)
+    p_a_m15_eff = min(0.75, p_a_m15 + en_a_1)
+
+    ot_home_share = max(0.44, min(0.56, 0.515 + (lam_h - mu_a) * 0.035))
+    p_h_ml = p_h_reg + p_d_reg * ot_home_share
+    p_a_ml = 1.0 - p_h_ml
+
+    pct_h = round(p_h_ml * 100.0, 1)
+    pct_a = round(p_a_ml * 100.0, 1)
+    pct_h_reg = round(p_h_reg * 100.0, 1)
+    pct_d_reg = round(p_d_reg * 100.0, 1)
+    pct_a_reg = round(100.0 - pct_h_reg - pct_d_reg, 1)
+
+    pct_over_55 = round(min(92.0, p_over_55 * 100.0), 1)
+    pct_over_65 = round(min(88.0, p_over_65 * 100.0), 1)
+    prob_h_plus_15 = round((1.0 - p_a_m15_eff) * 100.0, 1)
+    prob_a_plus_15 = round((1.0 - p_h_m15_eff) * 100.0, 1)
+    prob_h_minus_15 = round(p_h_m15_eff * 100.0, 1)
+    prob_a_minus_15 = round(p_a_m15_eff * 100.0, 1)
+
+    # 1er Periodo (~29.5% del partido)
+    l1_tot = (lam_h + mu_a) * 0.295
+    prob_1p_over_05 = round((1.0 - math.exp(-l1_tot)) * 100.0, 1)
+    prob_1p_over_15 = round((1.0 - (poisson_prob(l1_tot, 0) + poisson_prob(l1_tot, 1))) * 100.0, 1)
+    prob_btts_2plus = round(p_h_g2 * p_a_g2 * 100.0, 1)
+
+    proj_sog_h = round(max(24.5, min(36.0, float((home_stats or {}).get("sog_pg", 30.0) or 30.0) + (lam_h - 3.0) * 1.1)), 1)
+    proj_sog_a = round(max(24.0, min(35.5, float((away_stats or {}).get("sog_pg", 29.2) or 29.2) + (mu_a - 3.0) * 1.1)), 1)
+    proj_sog_tot = round(proj_sog_h + proj_sog_a, 1)
+
+    total_goals_proj = round(lam_h + mu_a + p_d_reg, 2)  # Incluye expectativa de +1 gol en OT
+    ou_line = 6.5 if total_goals_proj >= 6.4 else 5.5
+    puck_line_home = -1.5 if pct_h >= 54.0 else 1.5
+
+    if pct_h >= 62.0:
+        rec_pick = f"Victoria {home_team} (Moneyline)"
+        conf = pct_h
+        risk = "Bajo" if conf >= 66.0 else "Medio"
+    elif pct_a >= 62.0:
+        rec_pick = f"Victoria {away_team} (Moneyline)"
+        conf = pct_a
+        risk = "Bajo" if conf >= 66.0 else "Medio"
+    elif pct_over_55 >= 61.0:
+        rec_pick = "Más de 5.5 Goles Totales (Over)"
+        conf = pct_over_55
+        risk = "Medio"
+    elif prob_h_plus_15 >= 72.0 and pct_h >= 46.0:
+        rec_pick = f"{home_team} +1.5 Puck Line"
+        conf = prob_h_plus_15
+        risk = "Bajo"
+    elif prob_a_plus_15 >= 72.0 and pct_a >= 46.0:
+        rec_pick = f"{away_team} +1.5 Puck Line"
+        conf = prob_a_plus_15
+        risk = "Bajo"
+    else:
+        fav_n = home_team if pct_h >= pct_a else away_team
+        do_prob = round(min(90.0, (pct_h_reg + pct_d_reg) if pct_h >= pct_a else (pct_a_reg + pct_d_reg)), 1)
+        rec_pick = f"Doble Oportunidad {'1X' if pct_h >= pct_a else 'X2'} ({fav_n} 60')"
+        conf = do_prob
+        risk = "Bajo" if conf >= 72.0 else "Medio"
+
+    # Desglose de Periodos (1P, 2P, 3P, Regulación 60', Final Incl. OT/SO)
+    l1_h, l1_a = lam_h * 0.295, mu_a * 0.295
+    l2_h, l2_a = lam_h * 0.345, mu_a * 0.345
+    l3_h, l3_a = lam_h * 0.360, mu_a * 0.360
+
+    def _p_win_pct(lh, la):
+        pw = sum(poisson_prob(lh, x) * poisson_prob(la, y) for x in range(6) for y in range(6) if x > y)
+        pl = sum(poisson_prob(lh, x) * poisson_prob(la, y) for x in range(6) for y in range(6) if y > x)
+        pd = max(0.0, 1.0 - pw - pl)
+        if pw >= pl and pw >= pd:
+            return "Local", round(pw * 100.0, 1)
+        if pl > pw and pl >= pd:
+            return "Visitante", round(pl * 100.0, 1)
+        return "Empate / Reñido", round(max(pw, pl, pd) * 100.0, 1)
+
+    p1_w, p1_prob = _p_win_pct(l1_h, l1_a)
+    p2_w, p2_prob = _p_win_pct(l2_h, l2_a)
+    p3_w, p3_prob = _p_win_pct(l3_h, l3_a)
+
+    quarters_breakdown = {
+        "q1": {
+            "name": "1º Periodo (1P)",
+            "predicted_winner": p1_w,
+            "prob_winner": p1_prob,
+            "proj_score": f"{l1_h:.1f} - {l1_a:.1f}",
+            "status": "Proyectado Pre-Match"
+        },
+        "q2": {
+            "name": "2º Periodo (2P)",
+            "predicted_winner": p2_w,
+            "prob_winner": p2_prob,
+            "proj_score": f"{l2_h:.1f} - {l2_a:.1f}",
+            "status": "Cambio Largo / PP"
+        },
+        "q3": {
+            "name": "3º Periodo (3P)",
+            "predicted_winner": p3_w,
+            "prob_winner": p3_prob,
+            "proj_score": f"{l3_h:.1f} - {l3_a:.1f}",
+            "status": "Incluye Empty Net"
+        },
+        "first_half": {
+            "name": "Regulación 60'",
+            "predicted_winner": "Empate OT" if pct_d_reg >= 27.0 and abs(pct_h_reg - pct_a_reg) <= 5.0 else ("Local" if pct_h_reg >= pct_a_reg else "Visitante"),
+            "prob_winner": max(pct_h_reg, pct_a_reg, pct_d_reg),
+            "proj_score": f"{lam_h:.1f} - {mu_a:.1f}",
+            "status": f"Empate OT: {pct_d_reg}%"
+        },
+        "full_game": {
+            "name": "Final (Incl. OT/SO)",
+            "predicted_winner": "Local" if pct_h >= pct_a else "Visitante",
+            "prob_winner": max(pct_h, pct_a),
+            "proj_score": f"{round(lam_h + (p_d_reg * ot_home_share))} - {round(mu_a + (p_d_reg * (1 - ot_home_share)))}",
+            "status": "Sin Empate (ML)"
+        }
+    }
+
+    picks = generate_seven_picks_nhl(
+        home_team=home_team,
+        away_team=away_team,
+        pct_h=pct_h,
+        pct_a=pct_a,
+        pct_h_reg=pct_h_reg,
+        pct_d_reg=pct_d_reg,
+        pct_a_reg=pct_a_reg,
+        pct_over_55=pct_over_55,
+        pct_over_65=pct_over_65,
+        lam_h=lam_h,
+        mu_a=mu_a,
+        prob_h_plus_15=prob_h_plus_15,
+        prob_a_plus_15=prob_a_plus_15,
+        prob_h_minus_15=prob_h_minus_15,
+        prob_a_minus_15=prob_a_minus_15,
+        prob_1p_over_15=prob_1p_over_15,
+        prob_1p_over_05=prob_1p_over_05,
+        prob_btts_2plus=prob_btts_2plus,
+        proj_sog_tot=proj_sog_tot
+    )
+
+    matrix = calculate_nhl_projections_matrix(home_stats, away_stats, lam_h, mu_a)
+
+    return {
+        "projected_goals_home": round(lam_h, 2),
+        "projected_goals_away": round(mu_a, 2),
+        "projected_pts_home": round(lam_h, 2),
+        "projected_pts_away": round(mu_a, 2),
+        "projected_sog_home": proj_sog_h,
+        "projected_sog_away": proj_sog_a,
+        "total_points": total_goals_proj,
+        "projected_total": total_goals_proj,
+        "over_under_line": ou_line,
+        "puck_line_home": puck_line_home,
+        "spread_home": puck_line_home,
+        "prob_home": pct_h,
+        "prob_away": pct_a,
+        "prob_home_reg": pct_h_reg,
+        "prob_draw_reg": pct_d_reg,
+        "prob_away_reg": pct_a_reg,
+        "prob_over_55": pct_over_55,
+        "prob_over_65": pct_over_65,
+        "prob_btts": prob_btts_2plus,
+        "recommended_pick": rec_pick,
+        "confidence": conf,
+        "risk_level": risk,
+        "is_value_bet": conf >= 62.0,
+        "quarters_breakdown": quarters_breakdown,
+        "four_predictions": picks,
+        "six_predictions": picks,
+        "seven_predictions": picks,
+        "projections_matrix": matrix
+    }
+
+
+def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str: str, mins_remaining: float, home_stats: dict, away_stats: dict, live_stats: dict) -> dict:
+    """
+    Calcula probabilidades cuantitativas en vivo para NHL (1P, 2P, 3P, Fin Periodo, OT Súbito, Shootout),
+    ajustando λ y μ restantes con Tiros a Puerta (SOG), Atajadas SV% de los porteros, Power Play y Empty Net.
+    """
+    ls = live_stats or {}
+    p_up = str(period_str or "1P").upper()
+    is_int = bool(ls.get("is_halftime") or "FIN" in p_up or "END" in p_up or "INT" in p_up)
+    is_so = "SO" in p_up or "SHOOTOUT" in p_up or "PENAL" in p_up
+    is_ot = ("OT" in p_up) and not is_so
+
+    p_digits = re.findall(r'\d+', p_up)
+    if is_ot:
+        period_num = 4
+    elif is_so:
+        period_num = 5
+    elif p_digits:
+        period_num = max(1, min(3, int(p_digits[0])))
+    else:
+        period_num = 2
+
+    mins_rem = max(0.05, min(60.0, float(mins_remaining if mins_remaining is not None else 20.0)))
+    elapsed_mins = max(1.0, 60.0 - mins_rem) if period_num <= 3 else 60.0
+
+    gf_h = float((home_stats or {}).get("gf_pg", 3.05) or 3.05)
+    ga_h = float((home_stats or {}).get("ga_pg", 3.05) or 3.05)
+    gf_a = float((away_stats or {}).get("gf_pg", 3.05) or 3.05)
+    ga_a = float((away_stats or {}).get("ga_pg", 3.05) or 3.05)
+
+    base_lam_h = max(1.65, min(4.7, gf_h * (ga_a / 3.05)))
+    base_mu_a = max(1.55, min(4.6, gf_a * (ga_h / 3.05)))
+
+    sog_h = float(ls.get("shots_home", 0) or 0)
+    sog_a = float(ls.get("shots_away", 0) or 0)
+    sv_h = float(ls.get("save_pct_home", 90.5) or 90.5)
+    sv_a = float(ls.get("save_pct_away", 90.5) or 90.5)
+    pp_h = float(ls.get("pp_pct_home", 20.0) or 20.0)
+    pp_a = float(ls.get("pp_pct_away", 20.0) or 20.0)
+
+    # Presión de SOG en vivo respecto a tasa normal (~0.50 tiros/min)
+    exp_sog_elapsed = max(3.0, elapsed_mins * 0.49)
+    sog_factor_h = max(0.78, min(1.30, (sog_h / exp_sog_elapsed) if (sog_h > 0 and elapsed_mins >= 6) else 1.0))
+    sog_factor_a = max(0.78, min(1.30, (sog_a / exp_sog_elapsed) if (sog_a > 0 and elapsed_mins >= 6) else 1.0))
+
+    # Ajuste por portero caliente (>93% SV%) o frío (<86% SV%)
+    sv_mod_for_h = max(0.85, min(1.18, 1.0 + (90.5 - sv_a) * 0.015))
+    sv_mod_for_a = max(0.85, min(1.18, 1.0 + (90.5 - sv_h) * 0.015))
+
+    sample_w = min(0.55, elapsed_mins / 60.0)
+    eff_lam_full = base_lam_h * ((1.0 - sample_w) + sample_w * sog_factor_h * sv_mod_for_h)
+    eff_mu_full = base_mu_a * ((1.0 - sample_w) + sample_w * sog_factor_a * sv_mod_for_a)
+
+    if is_ot or is_so:
+        rem_lam, rem_mu = 0.0, 0.0
+    else:
+        rem_frac = max(0.01, mins_rem / 60.0)
+        rem_lam = max(0.04, eff_lam_full * rem_frac)
+        rem_mu = max(0.04, eff_mu_full * rem_frac)
+        # Factor Empty Net en los últimos 3.5 min del 3P si diferencia es 1 o 2 goles
+        if period_num == 3 and mins_rem <= 3.5 and abs(current_h - current_a) in (1, 2):
+            if current_h < current_a:
+                rem_lam += 0.14
+                rem_mu += 0.24
+            else:
+                rem_mu += 0.14
+                rem_lam += 0.24
+
+    if is_ot or is_so:
+        if current_h > current_a:
+            p_h_ml, p_a_ml = 1.0, 0.0
+        elif current_a > current_h:
+            p_h_ml, p_a_ml = 0.0, 1.0
+        else:
+            sog_edge = ((sog_h - sog_a) / max(10.0, sog_h + sog_a)) * 0.14
+            strength_edge = (eff_lam_full - eff_mu_full) * 0.03
+            p_h_ml = max(0.38, min(0.62, 0.515 + sog_edge + strength_edge))
+            p_a_ml = 1.0 - p_h_ml
+        p_h_reg, p_d_reg, p_a_reg = 0.0, 1.0, 0.0
+        cur_tot = current_h + current_a
+        p_over_55 = 1.0 if (cur_tot + 1) >= 6 else 0.0
+        p_over_65 = 1.0 if (cur_tot + 1) >= 7 else 0.0
+        proj_h = float(current_h + (1.0 if p_h_ml >= p_a_ml else 0.0))
+        proj_a = float(current_a + (1.0 if p_a_ml > p_h_ml else 0.0))
+    else:
+        p_h_reg = 0.0
+        p_d_reg = 0.0
+        p_a_reg = 0.0
+        p_over_55 = 0.0
+        p_over_65 = 0.0
+        for dx in range(8):
+            px = poisson_prob(rem_lam, dx)
+            for dy in range(8):
+                p = px * poisson_prob(rem_mu, dy)
+                fx, fy = current_h + dx, current_a + dy
+                if fx > fy:
+                    p_h_reg += p
+                elif fx == fy:
+                    p_d_reg += p
+                else:
+                    p_a_reg += p
+                ft = fx + fy + (1 if fx == fy else 0)
+                if ft >= 6:
+                    p_over_55 += p
+                if ft >= 7:
+                    p_over_65 += p
+        ot_h_edge = max(0.42, min(0.58, 0.515 + (eff_lam_full - eff_mu_full) * 0.03))
+        p_h_ml = p_h_reg + p_d_reg * ot_h_edge
+        p_a_ml = 1.0 - p_h_ml
+        proj_h = current_h + rem_lam + p_d_reg * ot_h_edge
+        proj_a = current_a + rem_mu + p_d_reg * (1.0 - ot_h_edge)
+
+    pct_h = round(max(0.5, min(99.5, p_h_ml * 100.0)), 1)
+    pct_a = round(100.0 - pct_h, 1)
+    pct_h_reg = round(p_h_reg * 100.0, 1)
+    pct_d_reg = round(p_d_reg * 100.0, 1)
+    pct_a_reg = round(max(0.0, 100.0 - pct_h_reg - pct_d_reg), 1)
+    pct_o55 = round(min(99.5, max(0.5, p_over_55 * 100.0)), 1)
+    pct_o65 = round(min(99.5, max(0.5, p_over_65 * 100.0)), 1)
+
+    proj_total = round(proj_h + proj_a, 1)
+    cur_tot_int = current_h + current_a
+    live_line = max(cur_tot_int + 1.5, round(proj_total * 2.0) / 2.0)
+    if live_line == int(live_line):
+        live_line += 0.5
+
+    puck_line_home = -1.5 if pct_h >= 54.0 else 1.5
+
+    # Probabilidad línea dinámica O/U en vivo
+    rem_needed = max(0.5, live_line - cur_tot_int)
+    k_need = int(math.ceil(rem_needed))
+    rem_tot_lam = rem_lam + rem_mu
+    p_over_dyn = 1.0 - sum(poisson_prob(rem_tot_lam, k) for k in range(k_need)) if not (is_ot or is_so) else 0.0
+    pct_over_dyn = round(min(94.0, max(6.0, p_over_dyn * 100.0)), 1)
+
+    # Desglose por periodos con marcadores reales de linescores
+    p_scores = ls.get("q_scores", {}) or {}
+
+    def _eval_period(idx: int):
+        raw = p_scores.get(f"{idx}P")
+        parsed = None
+        if raw and "-" in str(raw):
+            try:
+                pts = [int(x.strip()) for x in str(raw).split("-")]
+                if len(pts) == 2:
+                    parsed = (pts[0], pts[1])
+            except Exception:
+                pass
+        p_lam = round(eff_lam_full * (0.295 if idx == 1 else (0.345 if idx == 2 else 0.360)), 1)
+        p_mu = round(eff_mu_full * (0.295 if idx == 1 else (0.345 if idx == 2 else 0.360)), 1)
+        if idx < period_num or (is_int and idx == period_num):
+            ph, pa = parsed if parsed else (round(p_lam), round(p_mu))
+            w = "Local" if ph > pa else ("Visitante" if pa > ph else "Empate")
+            return w, f"{ph}-{pa}", "Finalizado", 100.0
+        elif idx == period_num and not is_int:
+            ph, pa = parsed if parsed else (0, 0)
+            est_h = round(ph + rem_lam * 0.5)
+            est_a = round(pa + rem_mu * 0.5)
+            w = "Local" if ph > pa else ("Visitante" if pa > ph else ("Local" if est_h >= est_a else "Visitante"))
+            return w, f"{ph}-{pa}", "En Vivo", 60.0
+        else:
+            w = "Local" if p_lam >= p_mu else "Visitante"
+            return w, f"{p_lam:.1f}-{p_mu:.1f}", "Proyectado", 56.0
+
+    p1_w, p1_s, p1_st, p1_pr = _eval_period(1)
+    p2_w, p2_s, p2_st, p2_pr = _eval_period(2)
+    p3_w, p3_s, p3_st, p3_pr = _eval_period(3)
+
+    quarters_breakdown = {
+        "q1": {"name": "1º Periodo (1P)", "winner": p1_w, "score": p1_s, "status": p1_st, "prob": p1_pr},
+        "q2": {"name": "2º Periodo (2P)", "winner": p2_w, "score": p2_s, "status": p2_st, "prob": p2_pr},
+        "q3": {"name": "3º Periodo (3P)", "winner": p3_w, "score": p3_s, "status": p3_st, "prob": p3_pr},
+        "first_half": {
+            "name": "Regulación 60'",
+            "winner": "Empate OT" if (is_ot or is_so or (pct_d_reg >= 35.0 and current_h == current_a)) else ("Local" if pct_h_reg >= pct_a_reg else "Visitante"),
+            "score": f"{current_h}-{current_a}" if (is_ot or is_so) else f"{round(current_h + rem_lam)}-{round(current_a + rem_mu)}",
+            "status": "OT Alcanzado" if (is_ot or is_so) else "En Vivo",
+            "prob": 100.0 if (is_ot or is_so) else max(pct_h_reg, pct_a_reg, pct_d_reg)
+        },
+        "full_game": {
+            "name": "Final (Incl. OT/SO)",
+            "winner": "Local" if pct_h >= pct_a else "Visitante",
+            "score": f"{round(proj_h)}-{round(proj_a)}",
+            "status": "En Vivo",
+            "prob": max(pct_h, pct_a)
+        }
+    }
+
+    if pct_h >= 68.0:
+        live_pick = f"Victoria Local ({round(proj_h)}-{round(proj_a)})"
+        conf = pct_h
+        risk = "Bajo" if pct_h >= 75.0 else "Medio"
+    elif pct_a >= 68.0:
+        live_pick = f"Victoria Visitante ({round(proj_a)}-{round(proj_h)})"
+        conf = pct_a
+        risk = "Bajo" if pct_a >= 75.0 else "Medio"
+    elif pct_over_dyn >= 58.0 and not (is_ot or is_so):
+        live_pick = f"Más de {live_line:.1f} Goles (Live)"
+        conf = pct_over_dyn
+        risk = "Medio"
+    else:
+        fav_n = "Local" if pct_h >= pct_a else "Visitante"
+        live_pick = f"Gana {fav_n} (Moneyline OT/SO)"
+        conf = max(pct_h, pct_a)
+        risk = "Medio"
+
+    fav_lbl = "Local" if pct_h >= pct_a else "Visitante"
+    ml_prob = max(pct_h, pct_a)
+    nxt_tot = max(0.01, rem_lam + rem_mu)
+    p_next_h = round((rem_lam / nxt_tot) * (1.0 - math.exp(-nxt_tot)) * 100.0, 1) if not (is_ot or is_so) else round(pct_h, 1)
+    p_next_a = round((rem_mu / nxt_tot) * (1.0 - math.exp(-nxt_tot)) * 100.0, 1) if not (is_ot or is_so) else round(pct_a, 1)
+
+    four_predictions = [
+        {
+            "id": 1,
+            "market": "Moneyline En Vivo (Incl. OT/SO)",
+            "name": f"Victoria {fav_lbl}",
+            "probability": ml_prob,
+            "fair_odds": round(100.0 / max(ml_prob, 1.0), 2),
+            "risk_level": "Bajo" if ml_prob >= 68.0 else "Medio",
+            "risk_color": "emerald" if ml_prob >= 68.0 else "amber",
+            "explanation": f"Con marcador {current_h}-{current_a} ({period_str}) y tiros {int(sog_h)}-{int(sog_a)} SOG, el modelo proyecta cierre {round(proj_h)}-{round(proj_a)}."
+        },
+        {
+            "id": 2,
+            "market": "Total de Goles en Vivo (O/U)",
+            "name": f"{'Más' if pct_over_dyn >= 50.0 else 'Menos'} de {live_line:.1f} Goles Totales",
+            "probability": pct_over_dyn if pct_over_dyn >= 50.0 else round(100.0 - pct_over_dyn, 1),
+            "fair_odds": round(100.0 / max(50.0, pct_over_dyn if pct_over_dyn >= 50.0 else 100.0 - pct_over_dyn), 2),
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "explanation": f"Ritmo combinado de SOG ({int(sog_h + sog_a)} tiros) y efectividad SV% ({sv_h:.1f}% vs {sv_a:.1f}%) proyecta ~{proj_total:.1f} goles."
+        },
+        {
+            "id": 3,
+            "market": "Doble Oportunidad 60' / Prórroga",
+            "name": f"{fav_lbl} o Empate (60' Reg.)" if not (is_ot or is_so) else "Gol Súbito en OT/SO",
+            "probability": round(min(94.0, (pct_h_reg + pct_d_reg) if pct_h >= pct_a else (pct_a_reg + pct_d_reg)), 1) if not (is_ot or is_so) else ml_prob,
+            "fair_odds": round(100.0 / max(55.0, (pct_h_reg + pct_d_reg) if pct_h >= pct_a else (pct_a_reg + pct_d_reg)), 2) if not (is_ot or is_so) else round(100.0 / max(ml_prob, 1.0), 2),
+            "risk_level": "Bajo" if not (is_ot or is_so) else "Alto",
+            "risk_color": "emerald" if not (is_ot or is_so) else "rose",
+            "explanation": f"Cubre el {pct_d_reg:.1f}% de probabilidad de llegar empatados a prórroga 3v3 al cierre del 3º periodo."
+        },
+        {
+            "id": 4,
+            "market": "Próximo Gol en Juego",
+            "name": f"Próximo Gol: {'Local' if p_next_h >= p_next_a else 'Visitante'}",
+            "probability": max(p_next_h, p_next_a),
+            "fair_odds": round(100.0 / max(max(p_next_h, p_next_a), 1.0), 2),
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "explanation": f"Mayor generación de peligro inmediato en pista (SOG {int(sog_h)}-{int(sog_a)}, PP% {pp_h:.1f}% vs {pp_a:.1f}%)."
+        },
+        {
+            "id": 5,
+            "market": "Puck Line En Vivo (±1.5)",
+            "name": f"{'Local' if current_h <= current_a else 'Visitante'} +1.5" if abs(current_h - current_a) <= 1 else f"{fav_lbl} -1.5",
+            "probability": round(max(55.0, min(84.0, ml_prob + (10.0 if abs(current_h - current_a) <= 1 else -12.0))), 1),
+            "fair_odds": 1.48 if abs(current_h - current_a) <= 1 else 1.85,
+            "risk_level": "Bajo" if abs(current_h - current_a) <= 1 else "Medio",
+            "risk_color": "emerald" if abs(current_h - current_a) <= 1 else "amber",
+            "explanation": "Evaluación de cobertura de diferencial considerando situación de Empty Net al cierre del 3P."
+        },
+        {
+            "id": 6,
+            "market": f"Tendencia del {period_str}",
+            "name": f"Dominio {period_str}: {p1_w if period_num == 1 else (p2_w if period_num == 2 else p3_w)}",
+            "probability": 60.0,
+            "fair_odds": 1.67,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "explanation": "Balance instantáneo de llegadas y calidad de tiros sobre la portería rival."
+        }
+    ]
+
+    ls_for_matrix = dict(ls)
+    ls_for_matrix["elapsed_mins"] = elapsed_mins
+    matrix = calculate_nhl_projections_matrix(home_stats, away_stats, proj_h, proj_a, live_stats=ls_for_matrix)
+
+    return {
+        "quarter": "Fin 1P" if (is_int and period_num == 1) else ("Fin 2P" if (is_int and period_num == 2) else period_str),
+        "mins_remaining": round(mins_rem, 1),
+        "current_score": f"{current_h} - {current_a}",
+        "projected_goals_home": round(proj_h, 2),
+        "projected_goals_away": round(proj_a, 2),
+        "projected_pts_home": round(proj_h, 2),
+        "projected_pts_away": round(proj_a, 2),
+        "projected_final": f"{round(proj_h)} - {round(proj_a)}",
+        "projected_total": proj_total,
+        "total_points": proj_total,
+        "over_under_line": live_line,
+        "puck_line_home": puck_line_home,
+        "spread_home": puck_line_home,
+        "prob_home": pct_h,
+        "prob_away": pct_a,
+        "prob_home_reg": pct_h_reg,
+        "prob_draw_reg": pct_d_reg,
+        "prob_away_reg": pct_a_reg,
+        "prob_over_55": pct_o55,
+        "prob_over_65": pct_o65,
+        "recommended_pick": live_pick,
+        "confidence": conf,
+        "risk_level": risk,
+        "is_value_bet": conf >= 65.0,
+        "quarters_breakdown": quarters_breakdown,
+        "four_predictions": four_predictions,
+        "six_predictions": four_predictions,
+        "seven_predictions": four_predictions,
+        "projections_matrix": matrix
     }
 
 

@@ -362,70 +362,106 @@ Devuelve ÚNICAMENTE este formato JSON sin texto antes ni después:
 
 def generate_nba_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool = False) -> dict:
     """
-    Análisis Pre-Match para NBA con Google Gemini AI.
+    Análisis Pre-Match para NBA con Google Gemini AI y fallback cuantitativo real.
     """
     home = match_data.get('home_team', 'Local')
     away = match_data.get('away_team', 'Visitante')
     pts_h = prediction.get('projected_pts_home', 115)
     pts_a = prediction.get('projected_pts_away', 112)
     total = prediction.get('total_points', 227)
+    ou_line = prediction.get('over_under_line', 226.5)
+    spread_h = prediction.get('spread_home', 0.0)
     q_info = prediction.get("quarters_breakdown", {})
     q1_win = q_info.get("q1", {}).get("predicted_winner", "Local")
+
+    hs = match_data.get("home_stats") or {}
+    as_st = match_data.get("away_stats") or {}
+    h_rec = match_data.get("home_record") or hs.get("record") or ""
+    a_rec = match_data.get("away_record") or as_st.get("record") or ""
+    pace_val = round((float(hs.get("pace", 99.5) or 99.5) + float(as_st.get("pace", 99.5) or 99.5)) / 2.0, 1)
+
+    h_ppg = hs.get("avg_pts_for")
+    h_oppg = hs.get("avg_pts_against")
+    a_ppg = as_st.get("avg_pts_for")
+    a_oppg = as_st.get("avg_pts_against")
+    rec_ctx = ""
+    if h_rec or a_rec:
+        rec_ctx = f"Récord de temporada: {home} ({h_rec or 'N/D'}) vs {away} ({a_rec or 'N/D'}). "
+    if h_ppg and a_ppg:
+        rec_ctx += f"Promedios reales: {home} {h_ppg} pts a favor / {h_oppg} en contra vs {away} {a_ppg} pts a favor / {a_oppg} en contra."
+
+    matrix_summary = (match_data.get("prediction") or prediction or {}).get("projections_matrix", {}).get("summary", {})
+    top_ft = matrix_summary.get("top_ft") or f"{round(pts_h)}-{round(pts_a)}"
+    top_ht = matrix_summary.get("top_ht") or f"{round(pts_h * 0.505)}-{round(pts_a * 0.505)}"
+    top_reb = matrix_summary.get("top_shots") or "43-41"
+    top_3pm = matrix_summary.get("top_sot") or "13-12"
+
+    analisis_matriz_default = (
+        f"La matriz gaussiana multivariable proyecta el marcador más probable {top_ft} (1ª Mitad: {top_ht}) bajo un ritmo estimado de {pace_val} posesiones. "
+        f"En volumen por rubros se esperan alrededor de {top_reb} en rebotes y {top_3pm} en triples encestados, validando un entorno total de ~{total} puntos (línea O/U {ou_line})."
+    )
 
     if force_gemini:
         prompt = f"""
 Actúa como analista de baloncesto NBA experto (estilo 'Mis Pronósticos AI').
 Partido NBA: {home} vs {away}
-Proyección de puntos: {home} {pts_h} - {pts_a} {away} (Total: {total} pts).
-Línea Over/Under: {prediction.get('over_under_line', 226.5)} pts.
+{rec_ctx}
+Proyección de puntos: {home} {pts_h} - {pts_a} {away} (Total: {total} pts, Spread Local: {spread_h}).
+Línea Over/Under: {ou_line} pts. Ritmo (Pace): ~{pace_val} pos/48m.
+Ratings: {home} Off/Def {hs.get('off_rating', 114.5)}/{hs.get('def_rating', 114.0)} | {away} Off/Def {as_st.get('off_rating', 114.0)}/{as_st.get('def_rating', 114.5)}.
 Pick Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence', 60)}%).
 
 Devuelve ÚNICAMENTE este formato JSON:
 {{
-  "resumen": "Resumen ejecutivo del matchup NBA en 1 frase",
-  "justificacion_estadistica": "Explicación de ratings ofensivos/defensivos, pace y tiros de campo",
-  "factor_clave": "Duelo clave (triples, pintura o rebotes)",
-  "advertencia_riesgo": "Riesgo de rotación o faltas de estrellas",
+  "resumen": "Resumen ejecutivo del matchup NBA en 1 frase citando estado actual",
+  "justificacion_estadistica": "Explicación de ratings ofensivos/defensivos, récord, pace y proyección",
+  "factor_clave": "Duelo clave (triples, pintura, ritmo o rebotes)",
+  "advertencia_riesgo": "Riesgo de rotación, back-to-back o faltas de estrellas",
   "analisis_ritmo_tiros": "Análisis específico del ritmo de posesiones (pace), tiros de campo (FG%) y puntos proyectados",
+  "analisis_matriz_gemini": "Interpretación cuantitativa de la matriz Top 10 (PTS-FT {top_ft}, PTS-1H {top_ht}, REB {top_reb}, 3PM {top_3pm})",
   "marcador_sugerido": "{round(pts_h)} - {round(pts_a)}"
 }}
 """
         ai_result = call_gemini_api(prompt)
         if ai_result:
+            if not ai_result.get("analisis_matriz_gemini"):
+                ai_result["analisis_matriz_gemini"] = analisis_matriz_default
             return ai_result
 
     resumen = (
-        f"Proyección NBA: {home} {pts_h} - {pts_a} {away} ({total} pts totales). "
+        f"Proyección NBA: {home}{' (' + h_rec + ')' if h_rec else ''} {round(pts_h)} - {round(pts_a)} {away}{' (' + a_rec + ')' if a_rec else ''} ({total} pts totales). "
         f"Ganador 1Q: {q1_win} | Pick Principal: {prediction.get('recommended_pick')}."
     )
     justificacion = (
-        f"El algoritmo evaluó el Offensive Rating de {home} frente a la defensa de {away}, "
+        f"{rec_ctx + ' ' if rec_ctx else ''}"
+        f"El algoritmo evaluó el Offensive Rating de {home} ({hs.get('off_rating', 114.5)}) frente a la defensa de {away} ({as_st.get('def_rating', 114.5)}), "
         f"arrojando {prediction.get('prob_home', 55)}% para el local y {prediction.get('prob_away', 45)}% para el visitante. "
-        f"Línea Over/Under: {prediction.get('over_under_line', 226.5)} puntos. "
-        f"El Q1 y la 1ª Mitad se proyectan con titulares; los cuartos Q2, Q3 y Q4 se actualizarán en vivo con el flujo."
+        f"Línea Over/Under: {ou_line} pts | Hándicap local: {spread_h}. El 1Q y la 1ª Mitad se proyectan con quintetos iniciales."
     )
-    factor = f"Ritmo de posesiones (Pace), eficacia en triples y quinteto titular en el 1Q."
-    advertencia = f"Gestión de minutos de estrellas y porcentaje de tiros libres en el cierre."
+    factor = f"Ritmo combinado de ~{pace_val} posesiones, eficacia en triples y balance ofensivo en transición."
+    advertencia = f"Gestión de minutos de titulares, rotación del banquillo y porcentaje de tiros libres en el cierre."
     analisis_ritmo = (
-        f"El modelo proyecta un total combinado de {total} puntos con línea Over/Under de {prediction.get('over_under_line', 226.5)} pts. "
-        f"Ritmo de juego estimado en posesiones de alta intensidad ({round(pts_h)} pts local vs {round(pts_a)} pts visita). "
-        f"Factores clave: efectividad en tiros de campo (FG%), transición rápida y tiro perimetral."
+        f"El modelo proyecta un total combinado de {total} puntos con línea Over/Under de {ou_line} pts. "
+        f"Ritmo de juego estimado en ~{pace_val} posesiones por 48 minutos ({round(pts_h)} pts local vs {round(pts_a)} pts visita). "
+        f"Factores clave: efectividad en tiros de campo (FG%), transición rápida y rebote defensivo."
     )
 
     return {
+        "sport": "nba",
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "analisis_ritmo_tiros": analisis_ritmo,
+        "analisis_matriz_gemini": analisis_matriz_default,
         "marcador_sugerido": f"{round(pts_h)} - {round(pts_a)}",
-        "powered_by": "Motor Analítico Poisson Cuantitativo",
+        "powered_by": "Motor Analítico Gaussiano NBA",
         "is_gemini": False
     }
 
 def generate_nba_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dict, force_gemini: bool = False) -> dict:
     """
-    Análisis En Vivo para NBA con Cuartos y Mitades con Google Gemini AI.
+    Análisis En Vivo para NBA con Cuartos, Mitades y Matriz con Google Gemini AI.
     """
     home = match_data.get('home_team', 'Local')
     away = match_data.get('away_team', 'Visitante')
@@ -434,27 +470,52 @@ def generate_nba_live_ai_analysis(match_data: dict, live_pred: dict, live_stats:
     pick = live_pred.get('recommended_pick', 'Victoria Local')
     fg_h = live_stats.get('fg_pct_home', 45)
     fg_a = live_stats.get('fg_pct_away', 45)
+    three_h = live_stats.get('three_pct_home', 35)
+    three_a = live_stats.get('three_pct_away', 34)
+    reb_h = live_stats.get('rebounds_home', 0)
+    reb_a = live_stats.get('rebounds_away', 0)
+    proj_total = live_pred.get('projected_total', 225)
+    proj_final = live_pred.get('projected_final', score)
+
+    hs = match_data.get("home_stats") or {}
+    as_st = match_data.get("away_stats") or {}
+    h_rec = match_data.get("home_record") or hs.get("record") or ""
+    a_rec = match_data.get("away_record") or as_st.get("record") or ""
+
+    matrix_summary = (live_pred or {}).get("projections_matrix", {}).get("summary", {})
+    top_ft = matrix_summary.get("top_ft") or proj_final
+    top_reb = matrix_summary.get("top_shots") or f"{reb_h}-{reb_a}"
+    top_3pm = matrix_summary.get("top_sot") or "12-11"
+
+    analisis_matriz_default = (
+        f"Recálculo en vivo desde el {q} ({score}): escenario central proyectado {top_ft} ({proj_total} pts totales). "
+        f"Ritmo actual de tiro FG% ({fg_h}% vs {fg_a}%) y 3PT% ({three_h}% vs {three_a}%), con proyección de {top_reb} en rebotes y {top_3pm} en triples."
+    )
 
     if force_gemini:
         prompt = f"""
 Actúa como analista NBA en vivo durante el partido.
-Juego en vivo: {home} vs {away} ({q}, Marcador {score}).
-Proyección final: {live_pred.get('projected_final')} ({live_pred.get('projected_total')} pts).
-Tiros de campo FG: {home} {fg_h}% vs {away} {fg_a}%.
+Juego en vivo: {home}{' (' + h_rec + ')' if h_rec else ''} vs {away}{' (' + a_rec + ')' if a_rec else ''} ({q}, Marcador {score}).
+Proyección final: {proj_final} ({proj_total} pts).
+Tiros de campo FG%: {home} {fg_h}% vs {away} {fg_a}%.
+Triples 3PT%: {home} {three_h}% vs {away} {three_a}% | Rebotes: {reb_h}-{reb_a}.
 Pick en vivo: {pick} ({live_pred.get('confidence', 60)}%).
 
 Devuelve ÚNICAMENTE este formato JSON:
 {{
   "resumen": "Lectura en 1 frase del momento actual en {q}",
-  "justificacion_estadistica": "Explicación del ritmo de tiro y ganador de cuartos restantes",
-  "factor_clave": "Control de rebotes y eficacia en triples",
-  "advertencia_riesgo": "Rachas rápidas que alteren el clutch",
-  "analisis_ritmo_tiros": "Lectura en tiempo real del ritmo de posesiones (pace), tiros de campo (FG%) y puntos proyectados",
-  "marcador_sugerido": "{live_pred.get('projected_final', score)}"
+  "justificacion_estadistica": "Explicación del ritmo de tiro ({fg_h}% vs {fg_a}%), rebotes y ganador de cuartos restantes",
+  "factor_clave": "Control de rebotes ({reb_h}-{reb_a}), transición y eficacia en triples",
+  "advertencia_riesgo": "Rachas rápidas o cambios de quinteto que alteren el clutch",
+  "analisis_ritmo_tiros": "Lectura en tiempo real del ritmo de posesiones (pace), tiros de campo (FG%), triples y puntos proyectados",
+  "analisis_matriz_gemini": "Interpretación cuantitativa en vivo de la matriz (PTS-FT proyectado {top_ft}, Total {proj_total} pts)",
+  "marcador_sugerido": "{proj_final}"
 }}
 """
         ai_result = call_gemini_api(prompt)
         if ai_result:
+            if not ai_result.get("analisis_matriz_gemini"):
+                ai_result["analisis_matriz_gemini"] = analisis_matriz_default
             return ai_result
 
     q_break = live_pred.get("quarters_breakdown", {})
@@ -463,28 +524,216 @@ Devuelve ÚNICAMENTE este formato JSON:
     h2_win = q_break.get("second_half", {}).get("winner", "Local")
 
     resumen = (
-        f"{q} ({score}): Proyección final {live_pred.get('projected_final')} ({live_pred.get('projected_total')} pts). "
-        f"Tendencia Q3: {q3_win} | Tendencia Q4: {q4_win} | Ganador 2ª Mitad: {h2_win}."
+        f"{q} ({score}): Proyección final {proj_final} ({proj_total} pts). "
+        f"Tendencia 3Q: {q3_win} | Tendencia 4Q: {q4_win} | Ganador 2ª Mitad: {h2_win}."
     )
     justificacion = (
-        f"Con el marcador en {score} en el {q}, el modelo recalculó la expectativa de cada cuarto restante. "
-        f"{home} tira al {fg_h}% de campo vs {fg_a}% de {away}. "
-        f"Probabilidad de triunfo final: Local {live_pred.get('prob_home', 50)}% - Visitante {live_pred.get('prob_away', 50)}%."
+        f"Con el marcador en {score} ({q}), el modelo recalculó la expectativa de los minutos restantes. "
+        f"{home} tira al {fg_h}% FG ({three_h}% 3PT) vs {fg_a}% FG ({three_a}% 3PT) de {away}, con ventaja reboteadora {reb_h}-{reb_a}. "
+        f"Probabilidad de triunfo en vivo: {home} {live_pred.get('prob_home', 50)}% - {away} {live_pred.get('prob_away', 50)}%."
     )
-    factor = f"Efectividad en la pintura, control del rebote y rotación de banca."
-    advertencia = f"Rachas rápidas de triples que cambian ventajas en segundos."
+    factor = f"Eficiencia en el tiro exterior ({three_h}% vs {three_a}% 3PT), control del rebote ({reb_h}-{reb_a}) y rotación de banca."
+    advertencia = f"Rachas rápidas de triples o acumulación de faltas personales que cambien el ritmo en el cierre."
     analisis_ritmo = (
-        f"En vivo durante el {q}: {home} registra {fg_h}% en tiros de campo (FG%) frente al {fg_a}% de {away}. "
-        f"Proyección total ajustada en {live_pred.get('projected_total', 225)} puntos con marcador actual de {score}."
+        f"En vivo ({q}): {home} registra {fg_h}% en tiros de campo y {three_h}% en triples frente a {fg_a}% FG / {three_a}% 3PT de {away}. "
+        f"Proyección total ajustada en {proj_total} puntos desde el marcador actual {score}."
     )
 
     return {
+        "sport": "nba",
         "resumen": resumen,
         "justificacion_estadistica": justificacion,
         "factor_clave": factor,
         "advertencia_riesgo": advertencia,
         "analisis_ritmo_tiros": analisis_ritmo,
-        "marcador_sugerido": live_pred.get('projected_final', score),
-        "powered_by": "Motor Analítico Poisson Cuantitativo",
+        "analisis_matriz_gemini": analisis_matriz_default,
+        "marcador_sugerido": proj_final,
+        "powered_by": "Motor Analítico Gaussiano NBA",
+        "is_gemini": False
+    }
+
+
+def generate_nhl_ai_analysis(match_data: dict, prediction: dict, force_gemini: bool = False) -> dict:
+    """
+    Análisis Pre-Match cuantitativo y con Google Gemini AI para NHL Hockey sobre Hielo.
+    """
+    home = match_data.get("home_team", "Local")
+    away = match_data.get("away_team", "Visitante")
+    lam_h = float(prediction.get("projected_goals_home", 3.1) or 3.1)
+    mu_a = float(prediction.get("projected_goals_away", 2.9) or 2.9)
+    total = float(prediction.get("total_points", round(lam_h + mu_a, 2)) or 6.0)
+    ou_line = prediction.get("over_under_line", 5.5)
+    prob_ot = prediction.get("prob_draw_reg", 23.0)
+    p1_win = (prediction.get("quarters_breakdown") or {}).get("q1", {}).get("predicted_winner", "Local")
+
+    hs = match_data.get("home_stats") or {}
+    as_st = match_data.get("away_stats") or {}
+    h_rec = match_data.get("home_record") or hs.get("record") or ""
+    a_rec = match_data.get("away_record") or as_st.get("record") or ""
+    sog_h = prediction.get("projected_sog_home", hs.get("sog_pg", 30.0))
+    sog_a = prediction.get("projected_sog_away", as_st.get("sog_pg", 29.2))
+    pp_h = hs.get("pp_pct", 21.5)
+    pp_a = as_st.get("pp_pct", 21.5)
+    sv_h = hs.get("sv_pct", 90.5)
+    sv_a = as_st.get("sv_pct", 90.4)
+
+    rec_ctx = ""
+    if h_rec or a_rec:
+        rec_ctx = f"Récord NHL: {home} ({h_rec or 'N/D'}) vs {away} ({a_rec or 'N/D'}). "
+    rec_ctx += f"Promedios reales GF/GA: {home} {hs.get('gf_pg_gen', 3.05)}/{hs.get('ga_pg_gen', 3.05)} vs {away} {as_st.get('gf_pg_gen', 3.05)}/{as_st.get('ga_pg_gen', 3.05)}."
+
+    matrix_summary = (match_data.get("prediction") or prediction or {}).get("projections_matrix", {}).get("summary", {})
+    top_ft = matrix_summary.get("top_ft") or f"{round(lam_h)}-{round(mu_a)}"
+    top_1p = matrix_summary.get("top_ht") or "1-0"
+    top_sog = matrix_summary.get("top_shots") or f"{round(float(sog_h))}-{round(float(sog_a))}"
+    top_sav = matrix_summary.get("top_sot") or "27-26"
+
+    analisis_matriz_default = (
+        f"La matriz Poisson bivariada proyecta el marcador reglamentario más probable {top_ft} (1P: {top_1p}) "
+        f"con volumen estimado de {top_sog} en Tiros a Puerta (SOG) y {top_sav} en Atajadas de portero, "
+        f"sosteniendo ~{total:.2f} goles esperados (Línea O/U {ou_line}, prob. prórroga 60': {prob_ot}%)."
+    )
+
+    if force_gemini:
+        prompt = f"""
+Actúa como analista experto de Hockey sobre Hielo NHL (modelo Poisson + Special Teams + Goalie SV%).
+Partido NHL: {home} vs {away}
+{rec_ctx}
+Proyección esperada (xG): {home} {lam_h:.2f} - {mu_a:.2f} {away} (Total incl. OT: {total:.2f} goles).
+Moneyline Incl. OT/SO: {home} {prediction.get('prob_home')}% vs {away} {prediction.get('prob_away')}% (Empate 60' -> OT: {prob_ot}%).
+Special Teams PP%: {home} {pp_h}% vs {away} {pp_a}% | Porteros SV%: {home} {sv_h}% vs {away} {sv_a}%.
+SOG proyectados: {sog_h} vs {sog_a}.
+Pick Principal: {prediction.get('recommended_pick')} ({prediction.get('confidence', 60)}%).
+
+Devuelve ÚNICAMENTE este formato JSON:
+{{
+  "resumen": "Lectura táctica NHL en 1 frase",
+  "justificacion_estadistica": "Análisis cuantitativo de GF/GA, porteros SV%, Power Play % y probabilidad de OT",
+  "factor_clave": "Factor decisivo (Power Play vs Penalty Kill, volumen SOG o duelo bajo los 3 tubos)",
+  "advertencia_riesgo": "Riesgo clave (cambio de portero titular/backup, back-to-back o Empty Net en el 3P)",
+  "analisis_ritmo_tiros": "Análisis de Tiros a Puerta (SOG), eficiencia de porteros (SV%) y Power Play %",
+  "analisis_matriz_gemini": "Interpretación de la matriz Poisson (GOL-FT {top_ft}, GOL-1P {top_1p}, SOG {top_sog}, Atajadas {top_sav})",
+  "marcador_sugerido": "{round(lam_h)} - {round(mu_a)}"
+}}
+"""
+        ai_result = call_gemini_api(prompt)
+        if ai_result:
+            ai_result["sport"] = "nhl"
+            if not ai_result.get("analisis_matriz_gemini"):
+                ai_result["analisis_matriz_gemini"] = analisis_matriz_default
+            return ai_result
+
+    resumen = (
+        f"Proyección NHL: {home}{' (' + h_rec + ')' if h_rec else ''} {lam_h:.2f} - {mu_a:.2f} {away}{' (' + a_rec + ')' if a_rec else ''} "
+        f"(Over 5.5: {prediction.get('prob_over_55', 55)}% | Pick: {prediction.get('recommended_pick')})."
+    )
+    justificacion = (
+        f"{rec_ctx} "
+        f"El modelo Poisson bivariado estima {prediction.get('prob_home', 50)}% Moneyline para {home} vs {prediction.get('prob_away', 50)}% para {away}, "
+        f"con {prob_ot}% de probabilidad de llegar empatados en 60' hacia OT 3v3. Proyección 1º Periodo: {p1_win}."
+    )
+    factor = f"Poder en Special Teams (Power Play {pp_h}% vs {pp_a}%), volumen SOG ({sog_h} vs {sog_a}) y solidez en portería (SV% {sv_h}% vs {sv_a}%)."
+    advertencia = "Confirmar portero abridor antes del puck drop (un portero suplente altera el Over/Under y el Puck Line ±1.5 por Empty Net)."
+    analisis_ritmo = (
+        f"Proyección de {sog_h} Tiros a Puerta (SOG) para {home} frente a {sog_a} de {away}. "
+        f"Eficiencia de unidades especiales: PP {pp_h}% (Local) vs {pp_a}% (Visita) y SV% proyectado {sv_h}% vs {sv_a}%."
+    )
+
+    return {
+        "sport": "nhl",
+        "resumen": resumen,
+        "justificacion_estadistica": justificacion,
+        "factor_clave": factor,
+        "advertencia_riesgo": advertencia,
+        "analisis_ritmo_tiros": analisis_ritmo,
+        "analisis_matriz_gemini": analisis_matriz_default,
+        "marcador_sugerido": f"{round(lam_h)} - {round(mu_a)}",
+        "powered_by": "Motor Poisson Bivariado NHL",
+        "is_gemini": False
+    }
+
+
+def generate_nhl_live_ai_analysis(match_data: dict, live_pred: dict, live_stats: dict, force_gemini: bool = False) -> dict:
+    """
+    Análisis En Vivo para NHL con Periodos 1P/2P/3P/OT, Tiros a Puerta (SOG), Atajadas SV% y Power Play.
+    """
+    home = match_data.get("home_team", "Local")
+    away = match_data.get("away_team", "Visitante")
+    per = live_pred.get("quarter", "2P")
+    score = live_pred.get("current_score", "1 - 1")
+    pick = live_pred.get("recommended_pick", "Victoria Local")
+    sog_h = int(live_stats.get("shots_home", 0) or 0)
+    sog_a = int(live_stats.get("shots_away", 0) or 0)
+    sv_h = live_stats.get("save_pct_home", 90.5)
+    sv_a = live_stats.get("save_pct_away", 90.5)
+    pp_h = live_stats.get("pp_pct_home", 20.0)
+    pp_a = live_stats.get("pp_pct_away", 20.0)
+    hits_h = int(live_stats.get("hits_home", 0) or 0)
+    hits_a = int(live_stats.get("hits_away", 0) or 0)
+    proj_tot = live_pred.get("projected_total", 5.8)
+    proj_fin = live_pred.get("projected_final", score)
+
+    matrix_summary = (live_pred or {}).get("projections_matrix", {}).get("summary", {})
+    top_ft = matrix_summary.get("top_ft") or proj_fin
+    top_sog = matrix_summary.get("top_shots") or f"{sog_h}-{sog_a}"
+
+    analisis_matriz_default = (
+        f"Recálculo en vivo desde {per} ({score}): proyección final {top_ft} (~{proj_tot} goles). "
+        f"Ritmo de Tiros a Puerta SOG ({sog_h}-{sog_a}), porterías SV% ({sv_h}% vs {sv_a}%) y Power Play ({pp_h}% vs {pp_a}%)."
+    )
+
+    if force_gemini:
+        prompt = f"""
+Actúa como analista experto de Hockey NHL en vivo sobre el hielo.
+Partido: {home} vs {away} | Momento: {per} | Marcador: {score} | Proyección Final: {proj_fin} (Total: {proj_tot} goles).
+Tiros a Puerta (SOG): {home} {sog_h} vs {away} {sog_a} | Atajadas SV%: {sv_h}% vs {sv_a}% | Power Play: {pp_h}% vs {pp_a}% | Hits: {hits_h}-{hits_a}.
+Pick en vivo: {pick} ({live_pred.get('confidence', 60)}%).
+
+Devuelve ÚNICAMENTE este formato JSON:
+{{
+  "resumen": "Lectura instantánea del partido en {per}",
+  "justificacion_estadistica": "Explicación de SOG ({sog_h}-{sog_a}), rendimiento de porteros SV% ({sv_h}% vs {sv_a}%) y Power Play",
+  "factor_clave": "Control territorial en pista y momento anímico de Power Play / Penalty Kill",
+  "advertencia_riesgo": "Riesgo de penalidades menores en contra o retirada de portero (Empty Net) al cierre",
+  "analisis_ritmo_tiros": "Lectura en tiempo real de SOG ({sog_h}-{sog_a}), SV% ({sv_h}% vs {sv_a}%) y proyección total",
+  "analisis_matriz_gemini": "Interpretación en vivo de la matriz Poisson NHL (Marcador más probable {top_ft}, Total {proj_tot})",
+  "marcador_sugerido": "{proj_fin}"
+}}
+"""
+        ai_result = call_gemini_api(prompt)
+        if ai_result:
+            ai_result["sport"] = "nhl"
+            if not ai_result.get("analisis_matriz_gemini"):
+                ai_result["analisis_matriz_gemini"] = analisis_matriz_default
+            return ai_result
+
+    q_b = live_pred.get("quarters_breakdown", {})
+    p3_win = q_b.get("q3", {}).get("winner", "Local")
+    resumen = (
+        f"{per} ({score}): Proyección final {proj_fin} ({proj_tot} goles totales). "
+        f"SOG en vivo {sog_h}-{sog_a} | Tendencia cierre 3P: {p3_win}."
+    )
+    justificacion = (
+        f"En {per} con marcador {score}, {home} suma {sog_h} tiros a puerta (portería rival al {sv_a}% SV) "
+        f"frente a {sog_a} tiros de {away} (portería local al {sv_h}% SV). "
+        f"Probabilidad Moneyline en vivo (Incl. OT/SO): {live_pred.get('prob_home', 50)}% vs {live_pred.get('prob_away', 50)}%."
+    )
+    factor = f"Presión SOG ({sog_h}-{sog_a}), eficacia en Power Play ({pp_h}% vs {pp_a}%) y fricción física ({hits_h}-{hits_a} hits)."
+    advertencia = "Penalidades de 2 minutos en zona defensiva y posible escenario de portería vacía (Empty Net) en los últimos 2 minutos del 3P."
+    analisis_ritmo = (
+        f"Ritmo actual ({per}): {sog_h} vs {sog_a} Tiros a Puerta (SOG) • Porteros: {sv_h}% vs {sv_a}% SV% • "
+        f"Power Play: {pp_h}% vs {pp_a}%."
+    )
+
+    return {
+        "sport": "nhl",
+        "resumen": resumen,
+        "justificacion_estadistica": justificacion,
+        "factor_clave": factor,
+        "advertencia_riesgo": advertencia,
+        "analisis_ritmo_tiros": analisis_ritmo,
+        "analisis_matriz_gemini": analisis_matriz_default,
+        "marcador_sugerido": proj_fin,
+        "powered_by": "Motor Poisson Bivariado NHL",
         "is_gemini": False
     }
