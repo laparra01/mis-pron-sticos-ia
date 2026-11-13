@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-12T23:06:06.901549",
+  "last_updated": "2026-11-13T17:28:30.538782",
   "total_fixtures": 12,
   "team_histories": {
     "Belgium": [
@@ -4251,7 +4251,25 @@
           "text": "Belgium 1 victorias • 1 empates • Italy 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Espen Eskås",
+        "country": "Norway",
+        "country_code": "NOR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nor.png",
+        "matches": 24,
+        "yellow_cards_per_match": 3.25,
+        "yellow_cards_total": 78,
+        "yellow_cards_avg_league": 3.37,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 23.0,
+        "fouls_avg_league": 23.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.25 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4681,7 +4699,25 @@
           "text": "Croatia 2 victorias • 3 empates • Czechia 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luís Godinho",
+        "country": "Portugal",
+        "country_code": "POR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/por.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.92,
+        "yellow_cards_total": 177,
+        "yellow_cards_avg_league": 4.95,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 11,
+        "fouls_per_match": 28.2,
+        "fouls_avg_league": 27.5,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.92 amarillas y 28.17 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5081,7 +5117,25 @@
           "text": "France 1 victorias • 1 empates • Turkiye 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Chris Kavanagh",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 55,
+        "yellow_cards_per_match": 4.09,
+        "yellow_cards_total": 225,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 12,
+        "fouls_per_match": 22.4,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.09 amarillas y 22.45 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5511,7 +5565,25 @@
           "text": "Spain 3 victorias • 1 empates • England 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Clément Turpin",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.03,
+        "yellow_cards_total": 106,
+        "yellow_cards_avg_league": 3.71,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 23.4,
+        "fouls_avg_league": 24.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.03 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

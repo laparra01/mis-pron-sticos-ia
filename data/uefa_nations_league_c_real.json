@@ -3,7 +3,7 @@
   "league_id": 9808,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-12T23:06:13.120190",
+  "last_updated": "2026-11-13T17:28:36.571782",
   "total_fixtures": 12,
   "team_histories": {
     "Albania": [
@@ -4146,7 +4146,25 @@
           "text": "Cyprus 0 victorias • 1 empates • Montenegro 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sander van der Eijk",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 41,
+        "yellow_cards_per_match": 3.66,
+        "yellow_cards_total": 150,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 6,
+        "fouls_per_match": 21.4,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.66 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4576,7 +4594,25 @@
           "text": "Latvia 1 victorias • 0 empates • Armenia 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Vasilis Fotias",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 162,
+        "yellow_cards_avg_league": 5.19,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 13,
+        "fouls_per_match": 27.2,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.91 amarillas y 27.2 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5006,7 +5042,25 @@
           "text": "Belarus 0 victorias • 1 empates • Albania 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Igor Pajač",
+        "country": "Croatia",
+        "country_code": "CRO",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/cro.png",
+        "matches": 26,
+        "yellow_cards_per_match": 4.08,
+        "yellow_cards_total": 106,
+        "yellow_cards_avg_league": 4.24,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 6,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 25.7,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.08 amarillas y 23.96 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5436,7 +5490,25 @@
           "text": "Finland 5 victorias • 0 empates • San Marino 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Georgi Kabakov",
+        "country": "Bulgaria",
+        "country_code": "BUL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bul.png",
+        "matches": 7,
+        "yellow_cards_per_match": 4.14,
+        "yellow_cards_total": 29,
+        "yellow_cards_avg_league": 4.08,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 3,
+        "fouls_per_match": 19.7,
+        "fouls_avg_league": 23.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.14 amarillas y 19.71 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

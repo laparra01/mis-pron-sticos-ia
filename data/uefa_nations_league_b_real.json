@@ -3,7 +3,7 @@
   "league_id": 9807,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-12T23:06:10.456584",
+  "last_updated": "2026-11-13T17:28:34.246635",
   "total_fixtures": 16,
   "team_histories": {
     "Austria": [
@@ -4327,11 +4327,11 @@
         "yellow_cards_tendency": "above",
         "red_cards_total": 10,
         "penalties_total": 10,
-        "fouls_per_match": 23.0,
+        "fouls_per_match": 22.8,
         "fouls_avg_league": 24.2,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 3.97 amarillas y 22.97 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.97 amarillas y 22.79 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
