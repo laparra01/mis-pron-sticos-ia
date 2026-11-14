@@ -3,7 +3,7 @@
   "league_id": 132,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-11-14T16:20:03.479074",
+  "last_updated": "2026-11-14T21:54:34.391859",
   "total_fixtures": 15,
   "team_histories": {
     "AFC Fylde": [
@@ -3886,6 +3886,21 @@
         ],
         "head_to_head": [
           {
+            "date": "14/11/2026",
+            "competition": "League One",
+            "tournament": "League One",
+            "match_home": "Stockport County",
+            "match_away": "Reading",
+            "home_id": "10007",
+            "away_id": "9798",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10007.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9798.png",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Stockport County"
+          },
+          {
             "date": "04/01/2026",
             "competition": "League One",
             "tournament": "League One",
@@ -3995,9 +4010,9 @@
         "summary": {
           "home_wins": 1,
           "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 3.0,
-          "text": "Reading 1 victorias • 1 empates • Stockport County 2 victorias"
+          "away_wins": 3,
+          "avg_goals": 3.2,
+          "text": "Reading 1 victorias • 1 empates • Stockport County 3 victorias"
         }
       },
       "referee": null,
