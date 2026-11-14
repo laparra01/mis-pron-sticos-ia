@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-11-13T23:07:55.913657",
+  "last_updated": "2026-11-14T16:18:09.049226",
   "total_fixtures": 9,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -3299,7 +3299,25 @@
           "text": "Comerciantes Unidos 1 victorias • 2 empates • Sport Boys 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jesús Ángel Cartagena",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 28,
+        "yellow_cards_per_match": 6.0,
+        "yellow_cards_total": 168,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 17,
+        "penalties_total": 14,
+        "fouls_per_match": 24.5,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.0 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3699,7 +3717,25 @@
           "text": "ADC Juan Pablo II 0 victorias • 0 empates • Deportivo Garcilaso 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Junior Rivera",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 8,
+        "yellow_cards_per_match": 4.5,
+        "yellow_cards_total": 36,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 1,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.5 amarillas y 23.63 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4129,7 +4165,25 @@
           "text": "CD UT Cajamarca 2 victorias • 2 empates • Los Chankas 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rudy Méndez",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 7,
+        "yellow_cards_per_match": 4.43,
+        "yellow_cards_total": 31,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 1,
+        "fouls_per_match": 22.9,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.43 amarillas y 22.86 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4499,7 +4553,25 @@
           "text": "Club Deportivo Moquegua 0 victorias • 0 empates • Atlético Grau 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jordi Espinoza",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 44,
+        "yellow_cards_per_match": 5.43,
+        "yellow_cards_total": 239,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 10,
+        "penalties_total": 17,
+        "fouls_per_match": 24.4,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.43 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4929,7 +5001,25 @@
           "text": "Cusco FC 3 victorias • 0 empates • Asociación Deportiva Tarma 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mike Israel Palomino",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 42,
+        "yellow_cards_per_match": 4.62,
+        "yellow_cards_total": 194,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 12,
+        "penalties_total": 15,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.62 amarillas y 23.48 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5359,7 +5449,25 @@
           "text": "Alianza Atlético 1 victorias • 1 empates • FBC Melgar 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Edwin Ordóñez",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 43,
+        "yellow_cards_per_match": 3.88,
+        "yellow_cards_total": 167,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 14,
+        "penalties_total": 21,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.88 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

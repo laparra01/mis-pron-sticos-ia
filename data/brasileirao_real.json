@@ -3,7 +3,7 @@
   "league_id": 268,
   "country": "Brasil",
   "country_code": "br",
-  "last_updated": "2026-11-13T23:07:46.072550",
+  "last_updated": "2026-11-14T16:18:05.592059",
   "total_fixtures": 15,
   "team_histories": {
     "Athletico Paranaense": [
@@ -6698,19 +6698,19 @@
         "country": "Brazil",
         "country_code": "BRA",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bra.png",
-        "matches": 56,
-        "yellow_cards_per_match": 4.96,
-        "yellow_cards_total": 278,
+        "matches": 55,
+        "yellow_cards_per_match": 5.02,
+        "yellow_cards_total": 276,
         "yellow_cards_avg_league": 4.79,
         "yellow_cards_tendency": "average",
         "red_cards_total": 9,
-        "penalties_total": 10,
-        "fouls_per_match": 23.9,
+        "penalties_total": 9,
+        "fouls_per_match": 24.0,
         "fouls_avg_league": 27.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.96 amarillas y 23.95 faltas por encuentro.",
-        "over_cards_favorable": false
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.02 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"
     },

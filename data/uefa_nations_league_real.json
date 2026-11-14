@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-13T23:10:26.520393",
+  "last_updated": "2026-11-14T16:19:05.093372",
   "total_fixtures": 10,
   "team_histories": {
     "Belgium": [
@@ -5378,7 +5378,25 @@
           "text": "Germany 2 victorias • 3 empates • Netherlands 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Glenn Nyberg",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5778,7 +5796,25 @@
           "text": "Greece 2 victorias • 0 empates • Serbia 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Michael Oliver",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
