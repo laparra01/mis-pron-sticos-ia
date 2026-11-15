@@ -3,7 +3,7 @@
   "league_id": 10608,
   "country": "África",
   "country_code": "un",
-  "last_updated": "2026-11-14T21:54:03.192193",
+  "last_updated": "2026-11-15T16:46:44.739472",
   "total_fixtures": 28,
   "team_histories": {
     "Algeria": [
@@ -6647,7 +6647,25 @@
           "text": "Somalia 0 victorias • 0 empates • Ghana 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mweshitsama Negongo Naftal",
+        "country": "Namibia",
+        "country_code": "NAM",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/nam.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -13030,7 +13048,25 @@
           "text": "Niger 0 victorias • 0 empates • Morocco 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mitiku Tewodros",
+        "country": "Ethiopia",
+        "country_code": "ETH",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eth.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

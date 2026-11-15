@@ -3,7 +3,7 @@
   "league_id": 9807,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-14T21:53:49.909766",
+  "last_updated": "2026-11-15T16:46:21.593245",
   "total_fixtures": 8,
   "team_histories": {
     "Austria": [
@@ -2982,22 +2982,22 @@
         }
       },
       "referee": {
-        "name": "Serdar Gozubuyuk",
+        "name": "Serdar Gözübüyük",
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "matches": 57,
+        "yellow_cards_per_match": 3.47,
+        "yellow_cards_total": 198,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 21.5,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.47 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3389,18 +3389,18 @@
         "country": "Netherlands",
         "country_code": "NED",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "matches": 51,
+        "yellow_cards_per_match": 2.9,
+        "yellow_cards_total": 148,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 20,
+        "fouls_per_match": 20.9,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.9 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -3832,7 +3832,25 @@
           "text": "Bosnia and Herzegovina 4 victorias • 0 empates • Romania 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José María Sánchez Martínez",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.73,
+        "yellow_cards_total": 156,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.73 amarillas y 26.73 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4247,7 +4265,25 @@
           "text": "Hungary 1 victorias • 2 empates • Northern Ireland 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Marco Guida",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 23,
+        "yellow_cards_per_match": 3.61,
+        "yellow_cards_total": 83,
+        "yellow_cards_avg_league": 3.68,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 7,
+        "fouls_per_match": 23.5,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.61 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4617,7 +4653,25 @@
           "text": "Ireland 0 victorias • 0 empates • Kosovo 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Edgars Maļcevs",
+        "country": "Latvia",
+        "country_code": "LVA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/lva.png",
+        "matches": 37,
+        "yellow_cards_per_match": 5.35,
+        "yellow_cards_total": 198,
+        "yellow_cards_avg_league": 4.42,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 13,
+        "fouls_per_match": 29.9,
+        "fouls_avg_league": 27.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.35 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5047,7 +5101,25 @@
           "text": "Israel 2 victorias • 0 empates • Austria 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Davide Massa",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.39,
+        "yellow_cards_total": 158,
+        "yellow_cards_avg_league": 3.68,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 6,
+        "fouls_per_match": 26.2,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.39 amarillas y 26.19 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5477,7 +5549,25 @@
           "text": "Poland 2 victorias • 0 empates • Sweden 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Felix Zwayer",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 34,
+        "yellow_cards_per_match": 4.35,
+        "yellow_cards_total": 148,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 10,
+        "fouls_per_match": 20.5,
+        "fouls_avg_league": 21.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.35 amarillas y 20.47 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5892,7 +5982,25 @@
           "text": "Ukraine 2 victorias • 2 empates • Georgia 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Martin Matoša",
+        "country": "Slovenia",
+        "country_code": "SVN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/svn.png",
+        "matches": 5,
+        "yellow_cards_per_match": 6.2,
+        "yellow_cards_total": 31,
+        "yellow_cards_avg_league": 4.51,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 32.2,
+        "fouls_avg_league": 25.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.2 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

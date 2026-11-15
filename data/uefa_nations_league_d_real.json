@@ -3,7 +3,7 @@
   "league_id": 9809,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-14T21:53:52.347938",
+  "last_updated": "2026-11-15T16:46:23.989872",
   "total_fixtures": 2,
   "team_histories": {
     "Andorra": [
@@ -1013,7 +1013,25 @@
           "text": "Lithuania 3 victorias • 1 empates • Liechtenstein 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Allard Lindhout",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 44,
+        "yellow_cards_per_match": 2.64,
+        "yellow_cards_total": 116,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 4,
+        "fouls_per_match": 19.2,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.64 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -1320,7 +1338,25 @@
           "text": "Gibraltar 1 victorias • 1 empates • Malta 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Balazs Berke",
+        "country": "Hungary",
+        "country_code": "HUN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/hun.png",
+        "matches": 5,
+        "yellow_cards_per_match": 3.2,
+        "yellow_cards_total": 16,
+        "yellow_cards_avg_league": 4.22,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 20.5,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.2 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-14T21:53:46.885097",
+  "last_updated": "2026-11-15T16:46:21.056755",
   "total_fixtures": 8,
   "team_histories": {
     "Belgium": [
@@ -4748,18 +4748,18 @@
         "country": "Sweden",
         "country_code": "SWE",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
+        "matches": 26,
+        "yellow_cards_per_match": 3.88,
+        "yellow_cards_total": 101,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 27.0,
+        "fouls_avg_league": 24.9,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.88 amarillas y 27.0 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5166,18 +5166,18 @@
         "country": "England",
         "country_code": "ENG",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
-        "matches": 0,
-        "yellow_cards_per_match": 4.2,
-        "yellow_cards_total": 0,
-        "yellow_cards_avg_league": 4.5,
-        "yellow_cards_tendency": "average",
-        "red_cards_total": 0,
-        "penalties_total": 0,
-        "fouls_per_match": 25.0,
-        "fouls_avg_league": 25.0,
-        "rigor_level": "Estándar / Moderado",
-        "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "matches": 53,
+        "yellow_cards_per_match": 3.42,
+        "yellow_cards_total": 181,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 7,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.42 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
         "over_cards_favorable": false
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -5609,7 +5609,25 @@
           "text": "Denmark 3 victorias • 1 empates • Norway 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Halil Umut Meler",
+        "country": "Türkiye",
+        "country_code": "TUR",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/tur.png",
+        "matches": 37,
+        "yellow_cards_per_match": 4.24,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.63,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 14,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 26.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.24 amarillas y 25.83 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5994,7 +6012,25 @@
           "text": "Wales 0 victorias • 0 empates • Portugal 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sven Jablonski",
+        "country": "Germany",
+        "country_code": "GER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ger.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.06,
+        "yellow_cards_total": 101,
+        "yellow_cards_avg_league": 3.77,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 20.6,
+        "fouls_avg_league": 21.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.06 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
