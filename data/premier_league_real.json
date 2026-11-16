@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-11-15T22:23:03.150858",
+  "last_updated": "2026-11-16T19:58:21.905685",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -3617,7 +3617,25 @@
           "text": "Manchester City 5 victorias • 0 empates • Fulham 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Thomas Bramall",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 37,
+        "yellow_cards_per_match": 3.65,
+        "yellow_cards_total": 135,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.65 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4047,7 +4065,25 @@
           "text": "AFC Bournemouth 2 victorias • 3 empates • Nottingham Forest 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Adam Herczeg",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 36,
+        "yellow_cards_per_match": 3.89,
+        "yellow_cards_total": 140,
+        "yellow_cards_avg_league": 3.78,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 6,
+        "fouls_per_match": 22.5,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.89 amarillas y 22.53 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4477,7 +4513,25 @@
           "text": "Aston Villa 3 victorias • 1 empates • Sunderland 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Andy Madley",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 42,
+        "yellow_cards_per_match": 3.52,
+        "yellow_cards_total": 148,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 9,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.52 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4907,7 +4961,25 @@
           "text": "Chelsea 3 victorias • 1 empates • Leeds United 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Michael Oliver",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 53,
+        "yellow_cards_per_match": 3.42,
+        "yellow_cards_total": 181,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 7,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.42 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5337,7 +5409,25 @@
           "text": "Coventry City 2 victorias • 1 empates • Crystal Palace 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Darren England",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 45,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 189,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 6,
+        "fouls_per_match": 22.2,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 22.18 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5722,7 +5812,25 @@
           "text": "Tottenham Hotspur 1 victorias • 0 empates • Ipswich Town 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Robert Jones",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.82,
+        "yellow_cards_total": 149,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 9,
+        "fouls_per_match": 23.2,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.82 amarillas y 23.18 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6152,7 +6260,25 @@
           "text": "Newcastle United 2 victorias • 0 empates • Arsenal 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Chris Kavanagh",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 55,
+        "yellow_cards_per_match": 4.09,
+        "yellow_cards_total": 225,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 12,
+        "fouls_per_match": 22.4,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.09 amarillas y 22.45 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6582,7 +6708,25 @@
           "text": "Hull City 2 victorias • 2 empates • Brighton & Hove Albion 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Peter Bankes",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 45,
+        "yellow_cards_per_match": 4.09,
+        "yellow_cards_total": 184,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 12,
+        "fouls_per_match": 22.2,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.09 amarillas y 22.16 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7012,7 +7156,25 @@
           "text": "Liverpool 1 victorias • 2 empates • Manchester United 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Samuel Barrott",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 47,
+        "yellow_cards_per_match": 3.79,
+        "yellow_cards_total": 178,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 14,
+        "fouls_per_match": 19.8,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.79 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7442,7 +7604,25 @@
           "text": "Brentford 1 victorias • 3 empates • Everton 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Craig Pawson",
+        "country": "England",
+        "country_code": "ENG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/eng.png",
+        "matches": 42,
+        "yellow_cards_per_match": 3.55,
+        "yellow_cards_total": 149,
+        "yellow_cards_avg_league": 3.87,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 4,
+        "penalties_total": 11,
+        "fouls_per_match": 22.3,
+        "fouls_avg_league": 21.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.55 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
