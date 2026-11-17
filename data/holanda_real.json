@@ -3,7 +3,7 @@
   "league_id": 57,
   "country": "Países Bajos",
   "country_code": "nl",
-  "last_updated": "2026-11-16T19:58:51.783299",
+  "last_updated": "2026-11-17T18:54:53.998529",
   "total_fixtures": 12,
   "team_histories": {
     "ADO Den Haag": [
@@ -3299,7 +3299,25 @@
           "text": "NEC Nijmegen 2 victorias • 1 empates • PSV Eindhoven 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jeroen Manschot",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 46,
+        "yellow_cards_per_match": 3.78,
+        "yellow_cards_total": 174,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 12,
+        "fouls_per_match": 20.1,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.78 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "FC Utrecht 2 victorias • 2 empates • Cambuur 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Allard Lindhout",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 44,
+        "yellow_cards_per_match": 2.64,
+        "yellow_cards_total": 116,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 4,
+        "fouls_per_match": 19.2,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.64 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4159,7 +4195,25 @@
           "text": "Feyenoord 5 victorias • 0 empates • Excelsior 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Robin Hensgens",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 27,
+        "yellow_cards_per_match": 3.15,
+        "yellow_cards_total": 85,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 3,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.15 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4589,7 +4643,25 @@
           "text": "FC Groningen 3 victorias • 0 empates • SC Heerenveen 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alex Bos",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.09,
+        "yellow_cards_total": 108,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 13,
+        "fouls_per_match": 21.7,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.09 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5019,7 +5091,25 @@
           "text": "Telstar 0 victorias • 0 empates • PEC Zwolle 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joey Kooij",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 38,
+        "yellow_cards_per_match": 3.16,
+        "yellow_cards_total": 120,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 13,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.16 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5449,7 +5539,25 @@
           "text": "FC Twente 3 victorias • 2 empates • Willem II 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Serdar Gözübüyük",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 57,
+        "yellow_cards_per_match": 3.47,
+        "yellow_cards_total": 198,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 21.5,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.47 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5879,7 +5987,25 @@
           "text": "Ajax 5 victorias • 0 empates • ADO Den Haag 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Erwin Blank",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 26,
+        "yellow_cards_per_match": 2.96,
+        "yellow_cards_total": 77,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 5,
+        "fouls_per_match": 22.5,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.96 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6309,7 +6435,25 @@
           "text": "Sparta Rotterdam 1 victorias • 1 empates • AZ Alkmaar 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ingmar Oostrom",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 23,
+        "yellow_cards_per_match": 3.04,
+        "yellow_cards_total": 70,
+        "yellow_cards_avg_league": 3.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 21.4,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.04 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6739,7 +6883,25 @@
           "text": "Go Ahead Eagles 1 victorias • 3 empates • Fortuna Sittard 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Martijn Vos",
+        "country": "Netherlands",
+        "country_code": "NED",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ned.png",
+        "matches": 33,
+        "yellow_cards_per_match": 3.42,
+        "yellow_cards_total": 113,
+        "yellow_cards_avg_league": 3.36,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 8,
+        "fouls_per_match": 26.6,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.42 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

@@ -3,7 +3,7 @@
   "league_id": 38,
   "country": "Austria",
   "country_code": "at",
-  "last_updated": "2026-11-16T19:58:58.085058",
+  "last_updated": "2026-11-17T18:54:59.642595",
   "total_fixtures": 12,
   "team_histories": {
     "Altach": [
@@ -2345,7 +2345,25 @@
           "text": "LASK 1 victorias • 4 empates • Hartberg 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Daniel Pfister",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 14,
+        "yellow_cards_per_match": 5.79,
+        "yellow_cards_total": 81,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 22.9,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.79 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2775,7 +2793,25 @@
           "text": "WSG Tirol 3 victorias • 1 empates • Austria Lustenau 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Emil Ristoskov",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 8,
+        "yellow_cards_per_match": 4.63,
+        "yellow_cards_total": 37,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 2,
+        "fouls_per_match": 22.0,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.63 amarillas y 22.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3205,7 +3241,25 @@
           "text": "Grazer AK 1 victorias • 2 empates • Rapid Wien 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Julian Weinberger",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 31,
+        "yellow_cards_per_match": 3.58,
+        "yellow_cards_total": 111,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 7,
+        "fouls_per_match": 22.3,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.58 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3635,7 +3689,25 @@
           "text": "Altach 1 victorias • 1 empates • Sturm Graz 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Arnes Talic",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 27,
+        "yellow_cards_per_match": 4.63,
+        "yellow_cards_total": 125,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 12,
+        "fouls_per_match": 21.0,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.63 amarillas y 21.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4065,7 +4137,25 @@
           "text": "Wolfsberger AC 1 victorias • 1 empates • Ried 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sebastian Gishamer",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 28,
+        "yellow_cards_per_match": 4.18,
+        "yellow_cards_total": 117,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 23.9,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.18 amarillas y 23.89 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4495,7 +4585,25 @@
           "text": "Austria Wien 1 victorias • 0 empates • Salzburg 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Isa Simsek",
+        "country": "Austria",
+        "country_code": "AUT",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/aut.png",
+        "matches": 20,
+        "yellow_cards_per_match": 4.65,
+        "yellow_cards_total": 93,
+        "yellow_cards_avg_league": 4.13,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 5,
+        "fouls_per_match": 21.3,
+        "fouls_avg_league": 22.2,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.65 amarillas y 21.26 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
