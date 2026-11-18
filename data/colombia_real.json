@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-11-17T18:54:12.888922",
+  "last_updated": "2026-11-18T18:34:33.499370",
   "total_fixtures": 8,
   "team_histories": {
     "Alianza FC": [
@@ -4778,6 +4778,21 @@
         ],
         "head_to_head": [
           {
+            "date": "17/11/2026",
+            "competition": "Cup",
+            "tournament": "Cup",
+            "match_home": "Atlético Nacional",
+            "match_away": "Once Caldas",
+            "home_id": "6368",
+            "away_id": "6024",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6368.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6024.png",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "winner": "Empate"
+          },
+          {
             "date": "14/11/2026",
             "competition": "Primera A",
             "tournament": "Primera A",
@@ -4836,21 +4851,6 @@
             "away_score": 0,
             "score": "2 - 0",
             "winner": "Atlético Nacional"
-          },
-          {
-            "date": "10/10/2025",
-            "competition": "Cup",
-            "tournament": "Cup",
-            "match_home": "Once Caldas",
-            "match_away": "Atlético Nacional",
-            "home_id": "6024",
-            "away_id": "6368",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6024.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6368.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "winner": "Atlético Nacional"
           }
         ],
         "home_corner_stats": {
@@ -4901,10 +4901,10 @@
         "projected_cards": 7.7,
         "summary": {
           "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 1.6,
-          "text": "Once Caldas 1 victorias • 2 empates • Atlético Nacional 2 victorias"
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.2,
+          "text": "Once Caldas 1 victorias • 3 empates • Atlético Nacional 1 victorias"
         }
       },
       "referee": null,

@@ -3,7 +3,7 @@
   "league_id": 55,
   "country": "Italia",
   "country_code": "it",
-  "last_updated": "2026-11-17T18:54:30.235772",
+  "last_updated": "2026-11-18T18:34:53.747894",
   "total_fixtures": 12,
   "team_histories": {
     "Atalanta": [
@@ -3617,7 +3617,25 @@
           "text": "Como 2 victorias • 2 empates • Cagliari 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Andrea Calzavara",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4047,7 +4065,25 @@
           "text": "Lazio 3 victorias • 1 empates • Lecce 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Matteo Marcenaro",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4477,7 +4513,25 @@
           "text": "Parma 1 victorias • 0 empates • Roma 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Simone Sozza",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4907,7 +4961,25 @@
           "text": "Napoli 3 victorias • 1 empates • Torino 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Antonio Rapuano",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5322,7 +5394,25 @@
           "text": "Juventus 2 victorias • 2 empates • Venezia 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alberto Arena",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5752,7 +5842,25 @@
           "text": "Bologna 2 victorias • 3 empates • Udinese 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Livio Marinelli",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6182,7 +6290,25 @@
           "text": "Sassuolo 0 victorias • 1 empates • Genoa 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Maria Sole Ferrieri Caputi",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6612,7 +6738,25 @@
           "text": "Milan 3 victorias • 2 empates • Frosinone 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luca Pairetto",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7042,7 +7186,25 @@
           "text": "Atalanta 0 victorias • 1 empates • Inter 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fabio Maresca",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7472,7 +7634,25 @@
           "text": "Monza 2 victorias • 1 empates • Fiorentina 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Daniele Doveri",
+        "country": "Italy",
+        "country_code": "ITA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ita.png",
+        "matches": 0,
+        "yellow_cards_per_match": 4.2,
+        "yellow_cards_total": 0,
+        "yellow_cards_avg_league": 4.5,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 25.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.2 amarillas y 25.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
