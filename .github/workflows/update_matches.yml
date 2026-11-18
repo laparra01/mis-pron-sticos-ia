@@ -2,11 +2,11 @@ name: Actualización Automática de Partidos FotMob
 
 on:
   schedule:
-    # Corre dos veces al día:
-    # 10:00 UTC = 04:00 AM hora de Guatemala (GMT-6)
-    # 18:00 UTC = 12:00 PM (Mediodía) hora de Guatemala (GMT-6)
-    - cron: '0 10,18 * * *'
-  workflow_dispatch:
+    # Corre dos veces al día en horario diurno (evitando la madrugada para no despertar el servidor):
+    # 13:00 UTC = 07:00 AM hora de Guatemala (GMT-6, previo a la jornada matutina)
+    # 19:00 UTC = 01:00 PM hora de Guatemala (GMT-6, previo a la jornada vespertina/nocturna)
+    - cron: '0 13,19 * * *'
+  workflow_dispatch: # Permite ejecutarlo manualmente con 1 clic desde GitHub
 
 permissions:
   contents: write
@@ -40,3 +40,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Actualización automática de partidos y horarios GT [skip ci]" && git push)
+

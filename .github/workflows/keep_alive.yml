@@ -1,8 +1,11 @@
-name: Keep Render Alive 24/7
+name: Keep Render Alive (Horario Deportivo)
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    # Corre cada 10 min únicamente en horario deportivo activo:
+    # 14:00 UTC a 04:59 UTC = 08:00 AM a 11:00 PM hora de Guatemala (GMT-6)
+    # De 23:00 a 08:00 GT (madrugada) NO corre para que el servidor duerma y ahorre horas gratis
+    - cron: '*/10 14-23,0-4 * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,4 +14,5 @@ jobs:
     steps:
       - name: Ping Render Endpoint
         run: |
-          curl -s -f -m 30 "https://mis-pronosticos.onrender.com/api/ping" || echo "Ping enviado."
+          curl -s -f -m 30 "https://mis-pronosticos.onrender.com/api/ping" || echo "Ping realizado con aviso."
+
