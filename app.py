@@ -741,15 +741,21 @@ threading.Thread(target=prewarm_cache_task, daemon=True).start()
 
 def self_keep_alive_task():
     import time, requests
+    from datetime import datetime, timezone, timedelta
     if not (os.environ.get('RENDER') or os.environ.get('RENDER_EXTERNAL_URL')):
         return
     time.sleep(60)
     while True:
         try:
-            render_url = os.environ.get('RENDER_EXTERNAL_URL') or 'https://mis-pronosticos.onrender.com'
-            if render_url:
-                ping_url = f"{render_url.rstrip('/')}/api/ping"
-                requests.get(ping_url, headers={'User-Agent': 'RenderKeepAlive/1.0'}, timeout=15)
+            # Horario de Guatemala (GMT-6)
+            gt_now = datetime.now(timezone(timedelta(hours=-6)))
+            # Solo enviar ping si estamos en horario deportivo activo (08:00 a 23:00 GT)
+            # De madrugada (23:00 a 08:00 GT) no se envía ping para que Render se duerma y no consuma horas gratis
+            if 8 <= gt_now.hour < 23:
+                render_url = os.environ.get('RENDER_EXTERNAL_URL') or 'https://mis-pronosticos.onrender.com'
+                if render_url:
+                    ping_url = f"{render_url.rstrip('/')}/api/ping"
+                    requests.get(ping_url, headers={'User-Agent': 'RenderKeepAlive/1.0'}, timeout=15)
         except Exception:
             pass
         time.sleep(480)
