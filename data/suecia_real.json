@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-11-19T00:52:42.663016",
+  "last_updated": "2026-11-19T21:06:49.039411",
   "total_fixtures": 12,
   "team_histories": {
     "AIK": [
@@ -2981,7 +2981,25 @@
           "text": "AIK 3 victorias • 1 empates • Degerfors 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mohammed Al Hakim",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 44,
+        "yellow_cards_per_match": 2.8,
+        "yellow_cards_total": 123,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 3,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.8 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3411,7 +3429,25 @@
           "text": "Mjällby 3 victorias • 1 empates • Malmö FF 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Joakim Sars",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 19,
+        "yellow_cards_per_match": 3.95,
+        "yellow_cards_total": 75,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 0,
+        "penalties_total": 8,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.95 amarillas y 25.11 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3841,7 +3877,25 @@
           "text": "GAIS 3 victorias • 0 empates • Västerås SK 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Richard Sundell",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 38,
+        "yellow_cards_per_match": 3.45,
+        "yellow_cards_total": 131,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 5,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.45 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4271,7 +4325,25 @@
           "text": "Häcken 2 victorias • 1 empates • Elfsborg 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Adi Aganovic",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 38,
+        "yellow_cards_per_match": 3.66,
+        "yellow_cards_total": 139,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 0,
+        "penalties_total": 6,
+        "fouls_per_match": 22.0,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.66 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4701,7 +4773,25 @@
           "text": "Sirius 1 victorias • 0 empates • Djurgården 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Granit Maqedonci",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 41,
+        "yellow_cards_per_match": 3.22,
+        "yellow_cards_total": 132,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 5,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.22 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5131,7 +5221,25 @@
           "text": "Brommapojkarna 3 victorias • 1 empates • Halmstads BK 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fredrik Klitte",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 40,
+        "yellow_cards_per_match": 4.03,
+        "yellow_cards_total": 161,
+        "yellow_cards_avg_league": 3.58,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 27.3,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.03 amarillas y 27.28 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

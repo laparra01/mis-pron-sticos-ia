@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-11-19T00:51:46.892057",
+  "last_updated": "2026-11-19T21:06:09.928516",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -5253,7 +5253,25 @@
           "text": "Orlando City 1 victorias • 2 empates • FC Cincinnati 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Rubiel Vazquez",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 50,
+        "yellow_cards_per_match": 3.8,
+        "yellow_cards_total": 190,
+        "yellow_cards_avg_league": 4.15,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 18,
+        "fouls_per_match": 23.2,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.8 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5683,7 +5701,25 @@
           "text": "Seattle Sounders FC 2 victorias • 1 empates • Real Salt Lake 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jon Freemon",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 47,
+        "yellow_cards_per_match": 4.51,
+        "yellow_cards_total": 212,
+        "yellow_cards_avg_league": 4.15,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 13,
+        "fouls_per_match": 24.3,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.51 amarillas y 24.32 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

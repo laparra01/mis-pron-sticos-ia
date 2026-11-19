@@ -3,7 +3,7 @@
   "league_id": 299,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-11-19T00:53:07.239847",
+  "last_updated": "2026-11-19T21:07:06.745109",
   "total_fixtures": 1,
   "team_histories": {
     "Atlético-MG": [
@@ -710,7 +710,25 @@
           "text": "Atlético-MG 0 victorias • 2 empates • Boca Juniors 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Andrés Matonte",
+        "country": "Uruguay",
+        "country_code": "URU",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/uru.png",
+        "matches": 14,
+        "yellow_cards_per_match": 5.71,
+        "yellow_cards_total": 80,
+        "yellow_cards_avg_league": 4.74,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 1,
+        "fouls_per_match": 19.8,
+        "fouls_avg_league": 22.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.71 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

@@ -3,7 +3,7 @@
   "league_id": 10608,
   "country": "África",
   "country_code": "un",
-  "last_updated": "2026-11-19T00:52:54.200021",
+  "last_updated": "2026-11-19T21:07:00.294176",
   "total_fixtures": 28,
   "team_histories": {
     "Algeria": [
@@ -12525,15 +12525,49 @@
         ],
         "head_to_head": [
           {
-            "date": "2026-09-25",
-            "competition": "Eliminatorias Copa Africana (Selecciones)",
-            "tournament": "Eliminatorias Copa Africana (Selecciones)",
+            "date": "25/09/2026",
+            "competition": "Africa Cup of Nations Qualification Grp. J",
+            "tournament": "Africa Cup of Nations Qualification Grp. J",
             "match_home": "Mozambique",
             "match_away": "Senegal",
+            "home_id": "5965",
+            "away_id": "6395",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5965.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6395.png",
             "home_score": 1,
             "away_score": 1,
             "score": "1 - 1",
             "winner": "Empate"
+          },
+          {
+            "date": "28/03/2023",
+            "competition": "Africa Cup of Nations Qualification Grp. J",
+            "tournament": "Africa Cup of Nations Qualification Grp. J",
+            "match_home": "Mozambique",
+            "match_away": "Senegal",
+            "home_id": "5965",
+            "away_id": "6395",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5965.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6395.png",
+            "home_score": 0,
+            "away_score": 1,
+            "score": "0 - 1",
+            "winner": "Senegal"
+          },
+          {
+            "date": "24/03/2023",
+            "competition": "Africa Cup of Nations Qualification Grp. J",
+            "tournament": "Africa Cup of Nations Qualification Grp. J",
+            "match_home": "Senegal",
+            "match_away": "Mozambique",
+            "home_id": "6395",
+            "away_id": "5965",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6395.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5965.png",
+            "home_score": 5,
+            "away_score": 1,
+            "score": "5 - 1",
+            "winner": "Senegal"
           }
         ],
         "home_corner_stats": {
@@ -12583,11 +12617,11 @@
         "projected_corners": 9.8,
         "projected_cards": 3.5,
         "summary": {
-          "home_wins": 0,
+          "home_wins": 2,
           "draws": 1,
           "away_wins": 0,
-          "avg_goals": 2.0,
-          "text": "Senegal 0 victorias • 1 empates • Mozambique 0 victorias"
+          "avg_goals": 3.0,
+          "text": "Senegal 2 victorias • 1 empates • Mozambique 0 victorias"
         }
       },
       "referee": {

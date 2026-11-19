@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-11-19T00:52:06.618681",
+  "last_updated": "2026-11-19T21:06:25.027549",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -3617,7 +3617,25 @@
           "text": "Athletic Club 2 victorias • 1 empates • Espanyol 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mateo Busquets Ferrer",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 37,
+        "yellow_cards_per_match": 5.41,
+        "yellow_cards_total": 200,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 8,
+        "penalties_total": 10,
+        "fouls_per_match": 24.4,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.41 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
