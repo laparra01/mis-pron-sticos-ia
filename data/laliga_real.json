@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-11-19T21:06:25.027549",
+  "last_updated": "2026-11-20T20:52:00.266080",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -4065,7 +4065,25 @@
           "text": "Deportivo Alavés 3 victorias • 1 empates • Deportivo A Coruña 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Víctor García Verdura",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 38,
+        "yellow_cards_per_match": 3.95,
+        "yellow_cards_total": 150,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 10,
+        "fouls_per_match": 25.0,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.95 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4495,7 +4513,25 @@
           "text": "Rayo Vallecano 1 victorias • 4 empates • Valencia 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José Luis Munuera Montero",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 39,
+        "yellow_cards_per_match": 4.23,
+        "yellow_cards_total": 165,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 7,
+        "penalties_total": 13,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.23 amarillas y 25.76 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4925,7 +4961,25 @@
           "text": "Sevilla 1 victorias • 2 empates • Real Betis 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José María Sánchez Martínez",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.73,
+        "yellow_cards_total": 156,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 12,
+        "fouls_per_match": 26.7,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.73 amarillas y 26.73 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5355,7 +5409,25 @@
           "text": "Real Madrid 4 victorias • 0 empates • Celta Vigo 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Adrián Cordero Vega",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.36,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.45,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 24.2,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.36 amarillas y 24.17 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

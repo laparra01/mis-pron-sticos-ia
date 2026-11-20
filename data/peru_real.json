@@ -3,7 +3,7 @@
   "league_id": 131,
   "country": "Perú",
   "country_code": "pe",
-  "last_updated": "2026-11-19T21:06:16.692175",
+  "last_updated": "2026-11-20T20:51:50.279472",
   "total_fixtures": 3,
   "team_histories": {
     "ADC Juan Pablo II": [
@@ -3239,7 +3239,25 @@
           "text": "Alianza Lima 0 victorias • 1 empates • FC Cajamarca 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Daniel Ureta Pereda",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 44,
+        "yellow_cards_per_match": 5.11,
+        "yellow_cards_total": 225,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 16,
+        "penalties_total": 26,
+        "fouls_per_match": 22.8,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.11 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3669,7 +3687,25 @@
           "text": "Sport Huancayo 0 victorias • 2 empates • Universitario de Deportes 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Kevin Paolo Ortega",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 42,
+        "yellow_cards_per_match": 4.5,
+        "yellow_cards_total": 189,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 15,
+        "penalties_total": 13,
+        "fouls_per_match": 21.7,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.5 amarillas y 21.69 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4099,7 +4135,25 @@
           "text": "Sporting Cristal 2 victorias • 2 empates • Cienciano 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Sebastián Lozano Bedoya",
+        "country": "Peru",
+        "country_code": "PER",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/per.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.3,
+        "yellow_cards_total": 142,
+        "yellow_cards_avg_league": 4.66,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 10,
+        "penalties_total": 21,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 23.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.3 amarillas y 23.82 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

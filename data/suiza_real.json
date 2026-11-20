@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-11-19T21:06:41.465823",
+  "last_updated": "2026-11-20T20:52:19.394084",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2345,7 +2345,25 @@
           "text": "Lugano 2 victorias • 2 empates • Grasshopper 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Logan Berchier",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 26,
+        "yellow_cards_per_match": 5.46,
+        "yellow_cards_total": 142,
+        "yellow_cards_avg_league": 4.83,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 1,
+        "penalties_total": 10,
+        "fouls_per_match": 30.7,
+        "fouls_avg_league": 26.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.46 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2775,7 +2793,25 @@
           "text": "Young Boys 3 victorias • 0 empates • Thun 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Johannes von Mandach",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 32,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 25.1,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.91 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3205,7 +3241,25 @@
           "text": "Sion 0 victorias • 3 empates • Servette 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lukas Fähndrich",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.37,
+        "yellow_cards_total": 118,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 25.5,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.37 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3635,7 +3689,25 @@
           "text": "FC Zürich 2 victorias • 0 empates • St. Gallen 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alessandro Dudic",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.73,
+        "yellow_cards_total": 142,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 8,
+        "penalties_total": 18,
+        "fouls_per_match": 25.5,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.73 amarillas y 25.47 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4065,7 +4137,25 @@
           "text": "Basel 3 victorias • 0 empates • Luzern 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fedayi San",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 32,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 157,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 22,
+        "fouls_per_match": 26.9,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.91 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4495,7 +4585,25 @@
           "text": "Lausanne 1 victorias • 2 empates • FC Vaduz 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Nico Gianforte",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 28,
+        "yellow_cards_per_match": 4.68,
+        "yellow_cards_total": 131,
+        "yellow_cards_avg_league": 4.49,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 7,
+        "penalties_total": 11,
+        "fouls_per_match": 25.4,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.68 amarillas y 25.39 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
