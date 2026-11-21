@@ -3,7 +3,7 @@
   "league_id": 144,
   "country": "Bolivia",
   "country_code": "bo",
-  "last_updated": "2026-11-20T20:51:52.622795",
+  "last_updated": "2026-11-21T19:53:12.487772",
   "total_fixtures": 15,
   "team_histories": {
     "ABB": [
@@ -2981,7 +2981,25 @@
           "text": "Real Tomayapo 1 victorias • 0 empates • Nacional Potosí 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Guildo Quenta",
+        "country": "Bolivia",
+        "country_code": "BOL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bol.png",
+        "matches": 23,
+        "yellow_cards_per_match": 6.65,
+        "yellow_cards_total": 153,
+        "yellow_cards_avg_league": 5.7,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 9,
+        "penalties_total": 6,
+        "fouls_per_match": 25.2,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.65 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

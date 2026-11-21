@@ -3,7 +3,7 @@
   "league_id": 130,
   "country": "Estados Unidos",
   "country_code": "us",
-  "last_updated": "2026-11-20T20:51:43.446092",
+  "last_updated": "2026-11-21T19:53:01.055766",
   "total_fixtures": 15,
   "team_histories": {
     "Atlanta United": [
@@ -6423,8 +6423,8 @@
         "head_to_head": [
           {
             "date": "07/11/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "FC Cincinnati",
             "match_away": "Nashville SC",
             "home_id": "722265",
@@ -6438,8 +6438,8 @@
           },
           {
             "date": "30/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -6453,8 +6453,8 @@
           },
           {
             "date": "13/09/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "FC Cincinnati",
             "match_away": "Nashville SC",
             "home_id": "722265",
@@ -6468,8 +6468,8 @@
           },
           {
             "date": "30/03/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -6483,8 +6483,8 @@
           },
           {
             "date": "22/09/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -6551,7 +6551,25 @@
           "text": "Nashville SC 2 victorias • 1 empates • FC Cincinnati 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fotis Bazakos",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 33,
+        "yellow_cards_per_match": 4.33,
+        "yellow_cards_total": 143,
+        "yellow_cards_avg_league": 4.15,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 24.5,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.33 amarillas y 24.48 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6853,8 +6871,8 @@
         "head_to_head": [
           {
             "date": "26/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -6868,8 +6886,8 @@
           },
           {
             "date": "02/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Chicago Fire FC",
             "match_away": "Charlotte FC",
             "home_id": "6397",
@@ -6883,8 +6901,8 @@
           },
           {
             "date": "29/06/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Chicago Fire FC",
             "match_away": "Charlotte FC",
             "home_id": "6397",
@@ -6898,8 +6916,8 @@
           },
           {
             "date": "17/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -6913,8 +6931,8 @@
           },
           {
             "date": "02/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -7301,8 +7319,8 @@
         "head_to_head": [
           {
             "date": "20/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -7316,8 +7334,8 @@
           },
           {
             "date": "22/02/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Vancouver Whitecaps",
             "match_away": "Real Salt Lake",
             "home_id": "307691",
@@ -7331,8 +7349,8 @@
           },
           {
             "date": "25/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -7346,8 +7364,8 @@
           },
           {
             "date": "04/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Vancouver Whitecaps",
             "match_away": "Real Salt Lake",
             "home_id": "307691",
@@ -7361,8 +7379,8 @@
           },
           {
             "date": "20/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -7429,7 +7447,25 @@
           "text": "Vancouver Whitecaps 4 victorias • 0 empates • Real Salt Lake 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Chris Penso",
+        "country": "United States",
+        "country_code": "USA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/usa.png",
+        "matches": 38,
+        "yellow_cards_per_match": 4.68,
+        "yellow_cards_total": 178,
+        "yellow_cards_avg_league": 4.15,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 11,
+        "fouls_per_match": 22.7,
+        "fouls_avg_league": 24.1,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.68 amarillas y 22.66 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -7731,8 +7767,8 @@
         "head_to_head": [
           {
             "date": "14/05/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "St. Louis City",
             "match_away": "Los Angeles FC",
             "home_id": "1427963",
@@ -7746,8 +7782,8 @@
           },
           {
             "date": "15/03/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
@@ -7761,8 +7797,8 @@
           },
           {
             "date": "28/09/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "St. Louis City",
             "match_away": "Los Angeles FC",
             "home_id": "1427963",
@@ -7776,8 +7812,8 @@
           },
           {
             "date": "27/04/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
@@ -7791,8 +7827,8 @@
           },
           {
             "date": "03/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
@@ -8161,8 +8197,8 @@
         "head_to_head": [
           {
             "date": "13/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -8176,8 +8212,8 @@
           },
           {
             "date": "30/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Houston Dynamo FC",
             "match_away": "San Jose Earthquakes",
             "home_id": "8259",
@@ -8191,8 +8227,8 @@
           },
           {
             "date": "24/08/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Houston Dynamo FC",
             "match_away": "San Jose Earthquakes",
             "home_id": "8259",
@@ -8206,8 +8242,8 @@
           },
           {
             "date": "25/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -8221,8 +8257,8 @@
           },
           {
             "date": "18/07/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -8591,8 +8627,8 @@
         "head_to_head": [
           {
             "date": "27/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Columbus Crew",
             "match_away": "Inter Miami CF",
             "home_id": "6001",
@@ -8606,8 +8642,8 @@
           },
           {
             "date": "02/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Inter Miami CF",
             "match_away": "Columbus Crew",
             "home_id": "960720",
@@ -8621,8 +8657,8 @@
           },
           {
             "date": "31/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Inter Miami CF",
             "match_away": "Columbus Crew",
             "home_id": "960720",
@@ -8636,8 +8672,8 @@
           },
           {
             "date": "19/04/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Columbus Crew",
             "match_away": "Inter Miami CF",
             "home_id": "6001",
@@ -8651,8 +8687,8 @@
           },
           {
             "date": "02/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Columbus Crew",
             "match_away": "Inter Miami CF",
             "home_id": "6001",
@@ -9021,8 +9057,8 @@
         "head_to_head": [
           {
             "date": "20/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -9036,8 +9072,8 @@
           },
           {
             "date": "22/02/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Vancouver Whitecaps",
             "match_away": "Real Salt Lake",
             "home_id": "307691",
@@ -9051,8 +9087,8 @@
           },
           {
             "date": "25/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -9066,8 +9102,8 @@
           },
           {
             "date": "04/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Vancouver Whitecaps",
             "match_away": "Real Salt Lake",
             "home_id": "307691",
@@ -9081,8 +9117,8 @@
           },
           {
             "date": "20/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Real Salt Lake",
             "match_away": "Vancouver Whitecaps",
             "home_id": "6606",
@@ -9451,8 +9487,8 @@
         "head_to_head": [
           {
             "date": "26/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -9466,8 +9502,8 @@
           },
           {
             "date": "02/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Chicago Fire FC",
             "match_away": "Charlotte FC",
             "home_id": "6397",
@@ -9481,8 +9517,8 @@
           },
           {
             "date": "29/06/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Chicago Fire FC",
             "match_away": "Charlotte FC",
             "home_id": "6397",
@@ -9496,8 +9532,8 @@
           },
           {
             "date": "17/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -9511,8 +9547,8 @@
           },
           {
             "date": "02/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Charlotte FC",
             "match_away": "Chicago Fire FC",
             "home_id": "1323940",
@@ -9881,8 +9917,8 @@
         "head_to_head": [
           {
             "date": "13/09/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -9896,8 +9932,8 @@
           },
           {
             "date": "30/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Houston Dynamo FC",
             "match_away": "San Jose Earthquakes",
             "home_id": "8259",
@@ -9911,8 +9947,8 @@
           },
           {
             "date": "24/08/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Houston Dynamo FC",
             "match_away": "San Jose Earthquakes",
             "home_id": "8259",
@@ -9926,8 +9962,8 @@
           },
           {
             "date": "25/05/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -9941,8 +9977,8 @@
           },
           {
             "date": "18/07/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "San Jose Earthquakes",
             "match_away": "Houston Dynamo FC",
             "home_id": "6603",
@@ -10311,8 +10347,8 @@
         "head_to_head": [
           {
             "date": "24/10/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Philadelphia Union",
             "match_away": "New England Revolution",
             "home_id": "191716",
@@ -10326,8 +10362,8 @@
           },
           {
             "date": "09/05/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "New England Revolution",
             "match_away": "Philadelphia Union",
             "home_id": "6580",
@@ -10341,8 +10377,8 @@
           },
           {
             "date": "20/09/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Philadelphia Union",
             "match_away": "New England Revolution",
             "home_id": "191716",
@@ -10356,8 +10392,8 @@
           },
           {
             "date": "09/03/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "New England Revolution",
             "match_away": "Philadelphia Union",
             "home_id": "6580",
@@ -10371,8 +10407,8 @@
           },
           {
             "date": "17/07/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Philadelphia Union",
             "match_away": "New England Revolution",
             "home_id": "191716",
@@ -10741,8 +10777,8 @@
         "head_to_head": [
           {
             "date": "07/11/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "FC Cincinnati",
             "match_away": "Nashville SC",
             "home_id": "722265",
@@ -10756,8 +10792,8 @@
           },
           {
             "date": "30/08/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -10771,8 +10807,8 @@
           },
           {
             "date": "13/09/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "FC Cincinnati",
             "match_away": "Nashville SC",
             "home_id": "722265",
@@ -10786,8 +10822,8 @@
           },
           {
             "date": "30/03/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -10801,8 +10837,8 @@
           },
           {
             "date": "22/09/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Eastern Conference",
+            "tournament": "Major League Soccer Sprint Season Eastern Conference",
             "match_home": "Nashville SC",
             "match_away": "FC Cincinnati",
             "home_id": "915807",
@@ -11171,8 +11207,8 @@
         "head_to_head": [
           {
             "date": "14/05/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "St. Louis City",
             "match_away": "Los Angeles FC",
             "home_id": "1427963",
@@ -11186,8 +11222,8 @@
           },
           {
             "date": "15/03/2026",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
@@ -11201,8 +11237,8 @@
           },
           {
             "date": "28/09/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "St. Louis City",
             "match_away": "Los Angeles FC",
             "home_id": "1427963",
@@ -11216,8 +11252,8 @@
           },
           {
             "date": "27/04/2025",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
@@ -11231,8 +11267,8 @@
           },
           {
             "date": "03/10/2024",
-            "competition": "Major League Soccer Playoff",
-            "tournament": "Major League Soccer Playoff",
+            "competition": "Major League Soccer Sprint Season Western Conference",
+            "tournament": "Major League Soccer Sprint Season Western Conference",
             "match_home": "Los Angeles FC",
             "match_away": "St. Louis City",
             "home_id": "867280",
