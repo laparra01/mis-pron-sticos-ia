@@ -805,9 +805,12 @@
                             </span>
                         </div>
 
-                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-5{% else %}grid-cols-4{% endif %} gap-1 sm:gap-2">
+                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-6{% else %}grid-cols-5{% endif %} gap-1 sm:gap-2">
                             <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'quick')" title="Mercados Rápidos (1T / 1Q / 1P)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-amber-950/70 text-amber-400 border border-gray-700/80 hover:border-amber-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
+                                <span class="text-sm sm:text-base">⚡</span>
                             </button>
                             <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Estadísticas" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">📊</span>
@@ -1247,9 +1250,12 @@
                             </span>
                         </div>
 
-                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-4{% else %}grid-cols-3{% endif %} gap-1 sm:gap-2">
+                        <div class="grid {% if m.sport in ['football', 'nba', 'nhl'] %}grid-cols-5{% else %}grid-cols-4{% endif %} gap-1 sm:gap-2">
                             <button onclick="openAiModal('{{ m.id }}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
+                            </button>
+                            <button onclick="openAiModal('{{ m.id }}', 'quick')" title="Mercados Rápidos (1T / 1Q / 1P)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-amber-950/70 text-amber-400 border border-gray-700/80 hover:border-amber-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
+                                <span class="text-sm sm:text-base">⚡</span>
                             </button>
                             <button onclick="openAiModal('{{ m.id }}', 'h2h')" title="Historial H2H y Estadísticas" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">📊</span>
@@ -1522,6 +1528,9 @@
                 <button onclick="switchModalTab('picks')" id="modal-tab-btn-picks" class="pb-2.5 px-3 sm:px-4 border-b-2 border-emerald-500 text-emerald-400 flex items-center justify-center transition cursor-pointer hover:scale-110" title="🎯 Picks (Pronósticos y Probabilidades)">
                     <span class="text-base sm:text-lg">🎯</span>
                 </button>
+                <button onclick="switchModalTab('quick')" id="modal-tab-btn-quick" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="⚡ Mercados Rápidos (1T / 1Q / 1P)">
+                    <span class="text-base sm:text-lg">⚡</span>
+                </button>
                 <button onclick="switchModalTab('h2h')" id="modal-tab-btn-h2h" class="pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110" title="📊 Historial H2H y Estadísticas">
                     <span class="text-base sm:text-lg">📊</span>
                 </button>
@@ -1575,6 +1584,11 @@
                     <div id="modal-picks-grid">
                         <!-- Generado dinámicamente -->
                     </div>
+                </div>
+
+                <!-- SECCIÓN TAB: MERCADOS RÁPIDOS (1T / 1Q / 1P) -->
+                <div id="modal-content-quick" class="hidden space-y-4">
+                    <!-- Generado dinámicamente por renderModalQuickMarkets(match) -->
                 </div>
 
                 <!-- SECCIÓN TAB 2: HISTORIAL H2H -->
@@ -2485,9 +2499,12 @@
                             </span>
                         </div>
 
-                        <div class="grid ${(m.sport === 'football' || m.sport === 'nba' || m.sport === 'nhl') ? 'grid-cols-4' : 'grid-cols-3'} gap-1 sm:gap-2">
+                        <div class="grid ${(m.sport === 'football' || m.sport === 'nba' || m.sport === 'nhl') ? 'grid-cols-5' : 'grid-cols-4'} gap-1 sm:gap-2">
                             <button onclick="openAiModal('${m.id}', 'picks')" title="Picks (Pronósticos)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-emerald-950/70 text-emerald-400 border border-gray-700/80 hover:border-emerald-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">🎯</span>
+                            </button>
+                            <button onclick="openAiModal('${m.id}', 'quick')" title="Mercados Rápidos (1T / 1Q / 1P)" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-amber-950/70 text-amber-400 border border-gray-700/80 hover:border-amber-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
+                                <span class="text-sm sm:text-base">⚡</span>
                             </button>
                             <button onclick="openAiModal('${m.id}', 'h2h')" title="Historial H2H y Estadísticas" class="py-2 px-1 sm:px-2 bg-gray-800/90 hover:bg-cyan-950/70 text-cyan-400 border border-gray-700/80 hover:border-cyan-500/60 rounded-xl flex items-center justify-center transition shadow group cursor-pointer active:scale-95">
                                 <span class="text-sm sm:text-base">📊</span>
@@ -3136,12 +3153,14 @@
             }
             currentModalTab = tab;
             const btnPicks = document.getElementById('modal-tab-btn-picks');
+            const btnQuick = document.getElementById('modal-tab-btn-quick');
             const btnH2h = document.getElementById('modal-tab-btn-h2h');
             const btnGemini = document.getElementById('modal-tab-btn-gemini');
             const btnMatrix = document.getElementById('modal-tab-btn-matrix');
             const btnMomentum = document.getElementById('modal-tab-btn-momentum');
 
             const contentPicks = document.getElementById('modal-content-picks');
+            const contentQuick = document.getElementById('modal-content-quick');
             const contentH2h = document.getElementById('modal-content-h2h');
             const contentGemini = document.getElementById('modal-content-gemini');
             const contentMatrix = document.getElementById('modal-content-matrix');
@@ -3151,6 +3170,7 @@
             const inactiveClass = "pb-2.5 px-3 sm:px-4 border-b-2 border-transparent text-gray-400 hover:text-gray-200 flex items-center justify-center transition cursor-pointer hover:scale-110";
 
             if (btnPicks) btnPicks.className = (tab === 'picks') ? activeClass : inactiveClass;
+            if (btnQuick) btnQuick.className = (tab === 'quick') ? activeClass : inactiveClass;
             if (btnH2h) btnH2h.className = (tab === 'h2h') ? activeClass : inactiveClass;
             if (btnGemini) btnGemini.className = (tab === 'gemini') ? activeClass : inactiveClass;
             if (btnMatrix) btnMatrix.className = (tab === 'matrix') ? activeClass : inactiveClass;
@@ -3167,10 +3187,16 @@
             }
 
             if (contentPicks) contentPicks.classList.toggle('hidden', tab !== 'picks');
+            if (contentQuick) contentQuick.classList.toggle('hidden', tab !== 'quick');
             if (contentH2h) contentH2h.classList.toggle('hidden', tab !== 'h2h');
             if (contentGemini) contentGemini.classList.toggle('hidden', tab !== 'gemini');
             if (contentMatrix) contentMatrix.classList.toggle('hidden', tab !== 'matrix');
             if (contentMomentum) contentMomentum.classList.toggle('hidden', tab !== 'momentum');
+
+            if (tab === 'quick' && activeMatchId) {
+                const match = findMatchById(activeMatchId);
+                if (match) renderModalQuickMarkets(match);
+            }
 
             if (tab === 'momentum' && activeMatchId) {
                 const match = findMatchById(activeMatchId);
@@ -4039,6 +4065,12 @@
                                 </span>
                             ` : '';
 
+                            const fastBadge = (p.is_fast_market || p.badge) ? `
+                                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 font-mono">
+                                    ⚡ ${p.badge || 'Mercado Rápido'}
+                                </span>
+                            ` : '';
+
                             return `
                                 <div class="p-3 sm:p-3.5 rounded-xl bg-gray-900/90 border border-gray-800/90 hover:border-gray-700/80 transition space-y-2">
                                     <div class="flex items-center justify-between pb-1.5 border-b border-gray-800/60 flex-wrap gap-1.5">
@@ -4046,6 +4078,7 @@
                                             ${marketIcon}<span>${marketTitle}</span>
                                         </span>
                                         <div class="flex items-center gap-1.5">
+                                            ${fastBadge}
                                             ${frictionBadge}
                                             <span class="px-2 py-0.5 rounded text-[10px] font-bold ${riskClass}">
                                                 Riesgo ${riskLevel}
@@ -5271,6 +5304,238 @@
             }
         }
 
+        function renderModalQuickMarkets(match) {
+            const container = document.getElementById('modal-content-quick');
+            if (!container) return;
+
+            const qm = (match && match.prediction && match.prediction.quick_markets) ? match.prediction.quick_markets : null;
+            if (!qm) {
+                container.innerHTML = `
+                    <div class="bg-gray-900/60 border border-gray-800 rounded-2xl p-6 text-center space-y-2">
+                        <span class="text-3xl">⚡</span>
+                        <h4 class="font-bold text-gray-200 text-sm">Mercados Rápidos no disponibles</h4>
+                        <p class="text-gray-400 text-xs">Las proyecciones cuantitativas de períodos cortos se generan automáticamente para partidos de Fútbol, NBA y NHL.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            const sport = qm.sport || match.sport || 'football';
+            const star = qm.star_pick || {};
+            const markets = qm.markets || [];
+            const tb = qm.team_breakdown || {};
+            const ir = qm.interval_results || {};
+            const vol = qm.volume || {};
+
+            let sportSubtitle = "Horizontes de corto plazo: 1º Tiempo (45'), Goles Tempranos y Marcador al Descanso.";
+            let periodTitle = "1º Tiempo (45')";
+            if (sport === 'nba') {
+                sportSubtitle = "Resolución ágil: 1º Cuarto (12') y 1ª Mitad (24'), Puntos Totales y Hándicaps Iniciales.";
+                periodTitle = "1º Cuarto (12') y 1ª Mitad";
+            } else if (sport === 'nhl') {
+                sportSubtitle = "Acción veloz en el hielo: 1º Periodo (20'), Goles 1P, Tiros a Puerta (SOG) y Doble Oportunidad.";
+                periodTitle = "1º Periodo (20')";
+            }
+
+            const starRisk = star.risk_level || 'Medio';
+            let starRiskClass = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+            if (starRisk === "Medio") starRiskClass = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+            if (starRisk === "Alto") starRiskClass = "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+
+            const spotlightHtml = star.name ? `
+                <div class="relative overflow-hidden rounded-2xl bg-gradient-to-br from-amber-950/40 via-gray-900 to-gray-950 border border-amber-500/40 p-4 sm:p-5 shadow-lg space-y-3">
+                    <div class="flex items-center justify-between flex-wrap gap-2">
+                        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-extrabold bg-amber-500/20 text-amber-300 border border-amber-500/40">
+                            <span class="animate-pulse">⚡</span> PICK ESTRELLA DE RESOLUCIÓN RÁPIDA
+                        </span>
+                        <span class="inline-flex items-center gap-1 text-[11px] text-gray-300 font-mono bg-black/40 px-2 py-0.5 rounded border border-white/5">
+                            <span>⏱️</span> <span>${star.settlement || qm.settlement_time || 'Resolución ágil'}</span>
+                        </span>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-1">
+                        <div class="space-y-1">
+                            <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider">${star.market || 'Mercado Rápido Principal'}</span>
+                            <h3 class="text-base sm:text-lg font-black text-white leading-tight">${star.name}</h3>
+                        </div>
+                        <div class="flex items-center gap-3 shrink-0">
+                            <div class="text-right">
+                                <span class="block text-[10px] text-gray-400 uppercase font-bold">Probabilidad</span>
+                                <span class="text-xl sm:text-2xl font-black font-mono text-emerald-400">${star.probability}%</span>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold ${starRiskClass}">
+                                Riesgo ${starRisk}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-2 bg-gray-800 rounded-full overflow-hidden">
+                        <div class="h-full bg-gradient-to-r from-amber-400 via-emerald-400 to-teal-400 rounded-full transition-all duration-700" style="width: ${star.probability}%"></div>
+                    </div>
+
+                    <p class="text-gray-300 text-xs leading-relaxed pt-0.5">
+                        ${star.explanation || ''}
+                    </p>
+                </div>
+            ` : '';
+
+            const homeTeam = tb.home_team || match.home_team || 'Local';
+            const awayTeam = tb.away_team || match.away_team || 'Visitante';
+            const homeProb = tb.home_prob || 50;
+            const awayProb = tb.away_prob || 50;
+            const homeExp = tb.home_expected !== undefined ? tb.home_expected : '--';
+            const awayExp = tb.away_expected !== undefined ? tb.away_expected : '--';
+            const metricLabel = tb.metric_label || 'Expectativa en período';
+
+            const teamBreakdownHtml = `
+                <div class="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 space-y-3">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                        <span class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+                            <span>⚔️</span> Comparativa Temprana por Equipo (${periodTitle})
+                        </span>
+                        <span class="text-[10px] text-gray-400 font-mono">${metricLabel}</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-3 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-gray-200 truncate" title="${homeTeam}">${homeTeam}</span>
+                                <span class="font-mono font-extrabold text-emerald-400 text-sm">${homeProb}%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-emerald-500 rounded-full" style="width: ${homeProb}%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
+                                <span>Proyección:</span>
+                                <span class="font-mono font-bold text-white">${homeExp}</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-gray-950/70 border border-gray-800/80 rounded-xl p-3 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-gray-200 truncate" title="${awayTeam}">${awayTeam}</span>
+                                <span class="font-mono font-extrabold text-cyan-400 text-sm">${awayProb}%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                <div class="h-full bg-cyan-500 rounded-full" style="width: ${awayProb}%"></div>
+                            </div>
+                            <div class="flex items-center justify-between text-[11px] text-gray-400 pt-1">
+                                <span>Proyección:</span>
+                                <span class="font-mono font-bold text-white">${awayExp}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            const intervalHtml = (ir.home_prob !== undefined) ? `
+                <div class="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 space-y-3">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                        <span class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+                            <span>⏱️</span> ${ir.period_label || 'Resultado al Descanso'}
+                        </span>
+                        <span class="text-[10px] text-gray-400 font-mono">1X2 y Doble Oportunidad</span>
+                    </div>
+
+                    <div class="grid ${(ir.draw_prob !== undefined && ir.draw_prob > 0) ? 'grid-cols-3' : 'grid-cols-2'} gap-2 text-center text-xs">
+                        <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-2.5">
+                            <span class="block text-[10px] text-gray-400 uppercase font-bold truncate">1 (${homeTeam})</span>
+                            <span class="text-sm sm:text-base font-black font-mono text-emerald-400">${ir.home_prob}%</span>
+                        </div>
+                        ${(ir.draw_prob !== undefined && ir.draw_prob > 0) ? `
+                        <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-2.5">
+                            <span class="block text-[10px] text-gray-400 uppercase font-bold">X (Empate)</span>
+                            <span class="text-sm sm:text-base font-black font-mono text-amber-400">${ir.draw_prob}%</span>
+                        </div>
+                        ` : ''}
+                        <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-2.5">
+                            <span class="block text-[10px] text-gray-400 uppercase font-bold truncate">2 (${awayTeam})</span>
+                            <span class="text-sm sm:text-base font-black font-mono text-cyan-400">${ir.away_prob}%</span>
+                        </div>
+                    </div>
+
+                    ${(ir.double_chance_home !== undefined) ? `
+                    <div class="grid grid-cols-2 gap-2 text-xs pt-1">
+                        <div class="bg-gray-950/60 border border-gray-800/80 rounded-xl p-2.5 flex items-center justify-between">
+                            <span class="text-gray-300 text-[11px] font-bold">Doble Oportunidad 1X:</span>
+                            <span class="font-mono font-extrabold text-emerald-400">${ir.double_chance_home}%</span>
+                        </div>
+                        <div class="bg-gray-950/60 border border-gray-800/80 rounded-xl p-2.5 flex items-center justify-between">
+                            <span class="text-gray-300 text-[11px] font-bold">Doble Oportunidad X2:</span>
+                            <span class="font-mono font-extrabold text-cyan-400">${ir.double_chance_away}%</span>
+                        </div>
+                    </div>
+                    ` : ''}
+                </div>
+            ` : '';
+
+            const marketsListHtml = (markets.length > 0) ? `
+                <div class="bg-gray-900/80 border border-gray-800 rounded-2xl p-4 space-y-3">
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-2">
+                        <span class="font-bold text-white text-xs sm:text-sm flex items-center gap-2">
+                            <span>⚡</span> Todos los Mercados de Corto Plazo (${markets.length})
+                        </span>
+                        <span class="text-[10px] text-amber-400 font-mono font-bold">⏱️ Resolución Temprana</span>
+                    </div>
+
+                    <div class="space-y-2.5">
+                        ${markets.map(mkt => {
+                            const rLevel = mkt.risk_level || 'Medio';
+                            let rClass = "bg-emerald-500/20 text-emerald-400 border border-emerald-500/30";
+                            if (rLevel === "Medio") rClass = "bg-amber-500/20 text-amber-400 border border-amber-500/30";
+                            if (rLevel === "Alto") rClass = "bg-rose-500/20 text-rose-400 border border-rose-500/30";
+
+                            return `
+                                <div class="p-3 sm:p-3.5 rounded-xl bg-gray-950/80 border border-gray-800/80 hover:border-amber-500/40 transition space-y-2">
+                                    <div class="flex items-center justify-between pb-1 border-b border-gray-800/50 flex-wrap gap-1">
+                                        <span class="text-[10px] uppercase font-bold text-amber-400 tracking-wider flex items-center gap-1.5">
+                                            <span>⚡</span> <span>${mkt.category || 'Mercado Rápido'}</span>
+                                        </span>
+                                        <span class="px-2 py-0.5 rounded text-[10px] font-bold ${rClass}">
+                                            Riesgo ${rLevel}
+                                        </span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between gap-2 pt-0.5">
+                                        <span class="text-xs sm:text-sm font-bold text-white truncate">${mkt.name}</span>
+                                        <span class="text-xs sm:text-sm font-mono font-extrabold text-emerald-400 shrink-0 bg-gray-900 px-2.5 py-0.5 rounded-lg border border-gray-800">${mkt.probability}%</span>
+                                    </div>
+
+                                    <div class="w-full h-1.5 bg-gray-800 rounded-full overflow-hidden">
+                                        <div class="h-full bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full" style="width: ${mkt.probability}%"></div>
+                                    </div>
+
+                                    ${mkt.desc ? `<p class="text-[11px] text-gray-400 leading-snug">${mkt.desc}</p>` : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            ` : '';
+
+            container.innerHTML = `
+                <div class="space-y-4">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-1 gap-2">
+                        <div>
+                            <h4 class="font-bold text-sm text-white flex items-center gap-2">
+                                <span class="text-amber-400">⚡</span>
+                                Mercados Rápidos y Resolución Inmediata
+                            </h4>
+                            <p class="text-gray-400 text-[11px]">${sportSubtitle}</p>
+                        </div>
+                        <span class="self-start sm:self-auto px-2.5 py-1 bg-amber-950/80 text-amber-300 border border-amber-800/60 rounded-xl text-[11px] font-bold flex items-center gap-1.5 shadow-xs">
+                            <span>⏱️</span> ${qm.settlement_time || 'Resolución ágil'}
+                        </span>
+                    </div>
+
+                    ${spotlightHtml}
+                    ${teamBreakdownHtml}
+                    ${intervalHtml}
+                    ${marketsListHtml}
+                </div>
+            `;
+        }
+
         function renderModalMomentum(match) {
             const container = document.getElementById('momentum-chart-container');
             if (!container) return;
@@ -6112,6 +6377,7 @@
             renderRefereeCard(match);
             renderTeamGoalsBanner(match);
             renderModalPicks(match);
+            renderModalQuickMarkets(match);
             renderModalH2H(match);
             renderModalMatrix(match);
             renderModalMomentum(match);
