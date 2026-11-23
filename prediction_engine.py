@@ -1224,6 +1224,38 @@ def generate_four_picks_football(
         "explanation": p8_exp
     })
 
+    # 9. Mercado Rápido Destacado: 1º Tiempo (45')
+    lam_tot_1t = round((lam_h + mu_a) * 0.44, 2)
+    p_over_05_1t = round((1.0 - math.exp(-lam_tot_1t)) * 100.0, 1)
+    if p_over_05_1t >= 68.0:
+        p9_name = "1º Tiempo: Más de 0.5 Goles (+0.5 1T)"
+        p9_prob = p_over_05_1t
+        p9_risk = "Bajo" if p_over_05_1t >= 75 else "Medio"
+        p9_exp = f"Alta probabilidad ({p_over_05_1t}%) de ver al menos un gol antes del descanso ({lam_tot_1t} xG proyectados en 45')."
+    elif pct_h >= pct_a:
+        p9_name = f"1º Tiempo: 1X ({home_team} o Empate 1T)"
+        p9_prob = round(min(94.0, (pct_h * 0.85) + (pct_d * 1.15)), 1)
+        p9_risk = "Bajo"
+        p9_exp = f"Seguridad táctica de {home_team} para sostener ventaja o paridad en los primeros 45 minutos."
+    else:
+        p9_name = f"1º Tiempo: X2 (Empate o {away_team} 1T)"
+        p9_prob = round(min(94.0, (pct_a * 0.85) + (pct_d * 1.15)), 1)
+        p9_risk = "Bajo"
+        p9_exp = f"Respaldo al visitante para liderar o empatar al cierre del primer tiempo."
+
+    picks.append({
+        "id": 9,
+        "market": "Mercado Rápido (1º Tiempo - 45')",
+        "name": p9_name,
+        "probability": p9_prob,
+        "fair_odds": round(100.0 / max(p9_prob, 1.0), 2),
+        "risk_level": p9_risk,
+        "risk_color": "emerald" if p9_risk == "Bajo" else "amber",
+        "explanation": p9_exp,
+        "is_fast_market": True,
+        "badge": "⚡ Mercado Rápido"
+    })
+
     return picks
 
 def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a: float, proj_total: float, line: float, spread_h: float) -> list:
@@ -1312,7 +1344,24 @@ def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a:
         "fair_odds": 1.61,
         "risk_level": "Bajo",
         "risk_color": "emerald",
-        "explanation": f"Mayor fortaleza del quinteto abridor de {fav} para tomar ventaja en los primeros 24 minutos reglamentarios."
+        "explanation": f"Mayor fortaleza del quinteto abridor de {fav} para tomar ventaja en los primeros 24 minutos reglamentarios.",
+        "is_fast_market": True,
+        "badge": "⚡ Mercado Rápido"
+    })
+
+    # 5. Mercado Rápido: Ganador 1º Cuarto (Q1 - 12')
+    p5_prob = round(max(54.0, min(68.0, 50.0 + (pct_h - pct_a) * 0.38 if pct_h >= pct_a else 50.0 + (pct_a - pct_h) * 0.38)), 1)
+    picks.append({
+        "id": 5,
+        "market": "Mercado Rápido (1º Cuarto - 12')",
+        "name": f"1º Cuarto: Ganador {fav} (Q1)",
+        "probability": p5_prob,
+        "fair_odds": round(100.0 / max(p5_prob, 1.0), 2),
+        "risk_level": "Bajo" if p5_prob >= 62 else "Medio",
+        "risk_color": "emerald" if p5_prob >= 62 else "amber",
+        "explanation": f"Arranque agresivo en los 12 minutos iniciales para {fav} imponiendo el ritmo ofensivo temprano.",
+        "is_fast_market": True,
+        "badge": "⚡ Mercado Rápido"
     })
 
     return picks
@@ -5064,6 +5113,489 @@ def calculate_projections_matrix(home_stats: dict, away_stats: dict, lambda_home
         }
     }
 
+def calculate_football_quick_markets(home_team: str, away_team: str, lam_h: float, mu_a: float, home_stats: dict = None, away_stats: dict = None, exp_corners: float = 9.0, referee: dict = None) -> dict:
+    hs = home_stats or {}
+    as_ = away_stats or {}
+    c_h = float(hs.get("corners", 5.0) or 5.0)
+    c_a = float(as_.get("corners", 4.2) or 4.2)
+    p3rd_h = hs.get("p3rd")
+    if p3rd_h is None:
+        p3rd_h = 2.2 + (lam_h * 1.5) + (c_h * 0.2)
+    ratio_1t = max(0.40, min(0.48, 0.40 + (float(p3rd_h) / 20.0) * 0.02))
+    lam_h_1t = round(lam_h * ratio_1t, 2)
+    lam_a_1t = round(mu_a * ratio_1t, 2)
+    lam_tot_1t = round(lam_h_1t + lam_a_1t, 2)
+
+    # Goles 1T
+    prob_over_05_1t = round((1.0 - math.exp(-lam_tot_1t)) * 100.0, 1)
+    p0 = math.exp(-lam_tot_1t)
+    p1 = lam_tot_1t * math.exp(-lam_tot_1t)
+    prob_over_15_1t = round(max(0.0, (1.0 - (p0 + p1))) * 100.0, 1)
+    prob_under_15_1t = round(100.0 - prob_over_15_1t, 1)
+    prob_home_score_1t = round((1.0 - math.exp(-lam_h_1t)) * 100.0, 1)
+    prob_away_score_1t = round((1.0 - math.exp(-lam_a_1t)) * 100.0, 1)
+    prob_btts_1t = round((prob_home_score_1t / 100.0) * (prob_away_score_1t / 100.0) * 100.0, 1)
+
+    # 1X2 al Descanso (1T)
+    p_w_h = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) for h in range(6) for a in range(6) if h > a)
+    p_draw = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) for h in range(6) for a in range(6) if h == a)
+    p_w_a = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) for h in range(6) for a in range(6) if a > h)
+    tot_p = (p_w_h + p_draw + p_w_a) or 1.0
+    prob_1t_home = round((p_w_h / tot_p) * 100.0, 1)
+    prob_1t_draw = round((p_draw / tot_p) * 100.0, 1)
+    prob_1t_away = round((p_w_a / tot_p) * 100.0, 1)
+    prob_1t_1x = round(min(96.0, prob_1t_home + prob_1t_draw), 1)
+    prob_1t_x2 = round(min(96.0, prob_1t_away + prob_1t_draw), 1)
+
+    # Córners y Tiros al Arco 1T
+    exp_c_1t = round(float(exp_corners or 9.0) * 0.44, 1)
+    prob_c_over_35_1t = round(sum(poisson_prob(exp_c_1t, k) for k in range(4, 20)) * 100.0, 1)
+    prob_c_over_45_1t = round(sum(poisson_prob(exp_c_1t, k) for k in range(5, 20)) * 100.0, 1)
+    sot_h_1t = round(max(1.0, min(4.5, (1.8 + lam_h * 1.45 + c_h * 0.12) * 0.45)), 1)
+    sot_a_1t = round(max(0.8, min(4.0, (1.5 + mu_a * 1.35 + c_a * 0.10) * 0.45)), 1)
+
+    fav_team = home_team if lam_h >= mu_a else away_team
+
+    # Pick Estrella
+    if prob_over_05_1t >= 68.0:
+        star_risk = "Bajo" if prob_over_05_1t >= 75.0 else "Medio"
+        star_pick = {
+            "market": "Total Goles 1º Tiempo",
+            "name": "1º Tiempo: Más de 0.5 Goles (+0.5 1T)",
+            "probability": prob_over_05_1t,
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
+            "settlement": "Al descanso (~45 minutos)",
+            "explanation": f"Alta probabilidad ({prob_over_05_1t}%) de ver al menos un gol antes del descanso. Ambos equipos proyectan {lam_tot_1t} xG en los primeros 45 minutos."
+        }
+    elif prob_1t_1x >= 72.0 and lam_h >= mu_a:
+        star_pick = {
+            "market": "Doble Oportunidad 1º Tiempo",
+            "name": f"1º Tiempo: 1X ({home_team} o Empate al descanso)",
+            "probability": prob_1t_1x,
+            "risk_level": "Bajo",
+            "risk_color": "emerald",
+            "settlement": "Al descanso (~45 minutos)",
+            "explanation": f"Solvencia táctica del local en los 45' iniciales ({lam_h_1t} xG vs {lam_a_1t} xG rival) con {prob_1t_1x}% de asegurar ventaja o empate al medio tiempo."
+        }
+    elif prob_1t_x2 >= 72.0 and mu_a > lam_h:
+        star_pick = {
+            "market": "Doble Oportunidad 1º Tiempo",
+            "name": f"1º Tiempo: X2 (Empate o {away_team} al descanso)",
+            "probability": prob_1t_x2,
+            "risk_level": "Bajo",
+            "risk_color": "emerald",
+            "settlement": "Al descanso (~45 minutos)",
+            "explanation": f"Superioridad visitante en el primer tramo ({lam_a_1t} xG vs {lam_h_1t} xG) con {prob_1t_x2}% de probabilidad de liderar o empatar en el descanso."
+        }
+    elif prob_under_15_1t >= 66.0:
+        star_risk = "Bajo" if prob_under_15_1t >= 74.0 else "Medio"
+        star_pick = {
+            "market": "Total Goles 1º Tiempo",
+            "name": "1º Tiempo: Menos de 1.5 Goles (-1.5 1T)",
+            "probability": prob_under_15_1t,
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
+            "settlement": "Al descanso (~45 minutos)",
+            "explanation": f"Ritmo táctico pausado y balance defensivo ({lam_tot_1t} xG en 45'). {prob_under_15_1t}% de probabilidad de registrar máximo 1 anotación al descanso."
+        }
+    else:
+        fav_prob_sc = prob_home_score_1t if lam_h >= mu_a else prob_away_score_1t
+        star_pick = {
+            "market": "Goles 1T por Equipo",
+            "name": f"1º Tiempo: {fav_team} Anota Gol (+0.5 1T)",
+            "probability": fav_prob_sc,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "settlement": "Al descanso (~45 minutos)",
+            "explanation": f"Generación ofensiva temprana de {fav_team} con {fav_prob_sc}% de marcar en la primera mitad."
+        }
+
+    markets = [
+        {
+            "category": "Goles 1º Tiempo",
+            "name": "Más de 0.5 Goles (1T Over)",
+            "probability": prob_over_05_1t,
+            "risk_level": "Bajo" if prob_over_05_1t >= 74 else "Medio",
+            "risk_color": "emerald" if prob_over_05_1t >= 74 else "amber",
+            "desc": f"Se proyectan {lam_tot_1t} goles esperados combinados en los primeros 45'."
+        },
+        {
+            "category": "Goles 1º Tiempo",
+            "name": "Menos de 1.5 Goles (1T Under)",
+            "probability": prob_under_15_1t,
+            "risk_level": "Bajo" if prob_under_15_1t >= 72 else "Medio",
+            "risk_color": "emerald" if prob_under_15_1t >= 72 else "amber",
+            "desc": "Cobertura conservadora: como máximo 1 gol antes del entretiempo."
+        },
+        {
+            "category": "Doble Oportunidad 1T",
+            "name": f"1X al Descanso ({home_team} o Empate)",
+            "probability": prob_1t_1x,
+            "risk_level": "Bajo" if prob_1t_1x >= 72 else "Medio",
+            "risk_color": "emerald" if prob_1t_1x >= 72 else "amber",
+            "desc": f"{prob_1t_1x}% de probabilidad de que {home_team} no vaya perdiendo al descanso."
+        },
+        {
+            "category": "Doble Oportunidad 1T",
+            "name": f"X2 al Descanso (Empate o {away_team})",
+            "probability": prob_1t_x2,
+            "risk_level": "Bajo" if prob_1t_x2 >= 72 else "Medio",
+            "risk_color": "emerald" if prob_1t_x2 >= 72 else "amber",
+            "desc": f"{prob_1t_x2}% de probabilidad de que {away_team} no vaya perdiendo al descanso."
+        },
+        {
+            "category": "Ambos Anotan 1T",
+            "name": "Ambos Equipos Anotan en 1º Tiempo (BTTS 1T)",
+            "probability": prob_btts_1t,
+            "risk_level": "Alto" if prob_btts_1t < 35 else "Medio",
+            "risk_color": "rose" if prob_btts_1t < 35 else "amber",
+            "desc": f"Goles simultáneos antes del 45' ({prob_home_score_1t}% vs {prob_away_score_1t}%)."
+        },
+        {
+            "category": "Córners 1T",
+            "name": "Más de 3.5 Córners en 1º Tiempo",
+            "probability": prob_c_over_35_1t,
+            "risk_level": "Bajo" if prob_c_over_35_1t >= 65 else "Medio",
+            "risk_color": "emerald" if prob_c_over_35_1t >= 65 else "amber",
+            "desc": f"Se proyectan {exp_c_1t} saques de esquina combinados en el primer tiempo."
+        }
+    ]
+
+    return {
+        "sport": "football",
+        "period_name": "1º Tiempo (45')",
+        "settlement_time": "Al descanso (~45 minutos)",
+        "star_pick": star_pick,
+        "markets": markets,
+        "team_breakdown": {
+            "home_team": home_team,
+            "away_team": away_team,
+            "home_prob": prob_home_score_1t,
+            "away_prob": prob_away_score_1t,
+            "home_expected": lam_h_1t,
+            "away_expected": lam_a_1t,
+            "metric_label": "xG en 1º Tiempo"
+        },
+        "interval_results": {
+            "period_label": "Resultado al Descanso (1T)",
+            "home_prob": prob_1t_home,
+            "draw_prob": prob_1t_draw,
+            "away_prob": prob_1t_away,
+            "double_chance_home": prob_1t_1x,
+            "double_chance_away": prob_1t_x2
+        },
+        "volume": {
+            "title": "Actividad Temprana (1T)",
+            "corners_proj": exp_c_1t,
+            "shots_target_home": sot_h_1t,
+            "shots_target_away": sot_a_1t
+        }
+    }
+
+def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pct_a: float, pts_home: float, pts_away: float, total_projected_pts: float, over_under_line: float, spread: float, quarters_breakdown: dict = None) -> dict:
+    pts_h_q1 = round(pts_home / 4.0, 1)
+    pts_a_q1 = round(pts_away / 4.0, 1)
+    tot_pts_q1 = round(pts_h_q1 + pts_a_q1, 1)
+    q1_ou_line = round((total_projected_pts / 4.0) - 0.5) + 0.5
+    q1_spread = round(spread / 4.0, 1)
+
+    prob_h_q1 = round(max(32.0, min(68.0, 50.0 + (pts_home - pts_away) * 1.5)), 1)
+    prob_a_q1 = round(100.0 - prob_h_q1, 1)
+
+    pts_h_1h = round(pts_home / 2.0, 1)
+    pts_a_1h = round(pts_away / 2.0, 1)
+    tot_pts_1h = round(pts_h_1h + pts_a_1h, 1)
+    h1_ou_line = round((total_projected_pts / 2.0) - 0.5) + 0.5
+    h1_spread = round(spread / 2.0, 1)
+
+    prob_h_1h = round(max(28.0, min(72.0, 50.0 + (pts_home - pts_away) * 2.1)), 1)
+    prob_a_1h = round(100.0 - prob_h_1h, 1)
+
+    diff_q1 = tot_pts_q1 - q1_ou_line
+    prob_q1_over = round(max(42.0, min(65.0, 50.0 + diff_q1 * 2.8)), 1)
+    prob_q1_under = round(100.0 - prob_q1_over, 1)
+
+    diff_1h = tot_pts_1h - h1_ou_line
+    prob_1h_over = round(max(44.0, min(66.0, 50.0 + diff_1h * 2.2)), 1)
+    prob_1h_under = round(100.0 - prob_1h_over, 1)
+
+    fav_team = home_team if pts_home >= pts_away else away_team
+    fav_prob_q1 = max(prob_h_q1, prob_a_q1)
+    fav_prob_1h = max(prob_h_1h, prob_a_1h)
+
+    # Pick Estrella NBA Fast Market
+    if fav_prob_q1 >= 58.0:
+        star_risk = "Bajo" if fav_prob_q1 >= 64.0 else "Medio"
+        star_pick = {
+            "market": "Ganador 1º Cuarto (Q1 ML)",
+            "name": f"1º Cuarto: Ganador {fav_team} (Q1)",
+            "probability": fav_prob_q1,
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
+            "settlement": "En 12 minutos (Fin del Q1)",
+            "explanation": f"{fav_team} proyecta un arranque dominante ({pts_h_q1 if fav_team == home_team else pts_a_q1} pts proyectados en Q1) con {fav_prob_q1}% de ganar los primeros 12 minutos."
+        }
+    elif fav_prob_1h >= 60.0:
+        star_risk = "Bajo" if fav_prob_1h >= 66.0 else "Medio"
+        star_pick = {
+            "market": "Ganador 1ª Mitad (1H ML)",
+            "name": f"1ª Mitad: Ganador {fav_team} (1H)",
+            "probability": fav_prob_1h,
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
+            "settlement": "En 24 minutos (Medio Tiempo)",
+            "explanation": f"Superioridad ofensiva neta de {fav_team} en los dos primeros cuartos para liderar al descanso con {fav_prob_1h}% de probabilidad."
+        }
+    elif prob_q1_over >= 56.0:
+        star_pick = {
+            "market": "Total Puntos 1º Cuarto",
+            "name": f"1º Cuarto: Más de {q1_ou_line:.1f} Puntos (Q1 Over)",
+            "probability": prob_q1_over,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "settlement": "En 12 minutos (Fin del Q1)",
+            "explanation": f"Arranque de alto ritmo de posesiones. Se proyectan {tot_pts_q1} puntos combinados solo en el 1º cuarto."
+        }
+    else:
+        star_pick = {
+            "market": "Total Puntos 1º Cuarto",
+            "name": f"1º Cuarto: Menos de {q1_ou_line:.1f} Puntos (Q1 Under)",
+            "probability": prob_q1_under,
+            "risk_level": "Bajo" if prob_q1_under >= 62 else "Medio",
+            "risk_color": "emerald" if prob_q1_under >= 62 else "amber",
+            "settlement": "En 12 minutos (Fin del Q1)",
+            "explanation": f"Defensas estructuradas y ritmo cauteloso en los primeros 12 minutos ({tot_pts_q1} pts proyectados)."
+        }
+
+    markets = [
+        {
+            "category": "Ganador Q1 (12')",
+            "name": f"1º Cuarto: Ganador {fav_team}",
+            "probability": fav_prob_q1,
+            "risk_level": "Bajo" if fav_prob_q1 >= 64 else "Medio",
+            "risk_color": "emerald" if fav_prob_q1 >= 64 else "amber",
+            "desc": f"Proyección de marcador Q1: {pts_h_q1:.0f} - {pts_a_q1:.0f} puntos."
+        },
+        {
+            "category": "Total Puntos Q1",
+            "name": f"1º Cuarto: Más de {q1_ou_line:.1f} Puntos",
+            "probability": prob_q1_over,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "desc": f"Línea de {q1_ou_line:.1f} pts calculada sobre ritmo estimado de anotación temprana."
+        },
+        {
+            "category": "Total Puntos Q1",
+            "name": f"1º Cuarto: Menos de {q1_ou_line:.1f} Puntos",
+            "probability": prob_q1_under,
+            "risk_level": "Bajo" if prob_q1_under >= 62 else "Medio",
+            "risk_color": "emerald" if prob_q1_under >= 62 else "amber",
+            "desc": "Cobertura bajo control de pérdidas y posesiones largas en el inicio."
+        },
+        {
+            "category": "Ganador 1ª Mitad (24')",
+            "name": f"1ª Mitad: Ganador {fav_team} (1H)",
+            "probability": fav_prob_1h,
+            "risk_level": "Bajo" if fav_prob_1h >= 66 else "Medio",
+            "risk_color": "emerald" if fav_prob_1h >= 66 else "amber",
+            "desc": f"Proyección al medio tiempo: {pts_h_1h:.0f} - {pts_a_1h:.0f} puntos combinados."
+        },
+        {
+            "category": "Total Puntos 1H",
+            "name": f"1ª Mitad: Más de {h1_ou_line:.1f} Puntos",
+            "probability": prob_1h_over,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "desc": f"Se proyectan {tot_pts_1h:.1f} puntos en los primeros 24 minutos de juego."
+        }
+    ]
+
+    return {
+        "sport": "nba",
+        "period_name": "1º Cuarto (12') y 1ª Mitad (24')",
+        "settlement_time": "En 12 - 24 minutos",
+        "star_pick": star_pick,
+        "markets": markets,
+        "team_breakdown": {
+            "home_team": home_team,
+            "away_team": away_team,
+            "home_prob": prob_h_q1,
+            "away_prob": prob_a_q1,
+            "home_expected": pts_h_q1,
+            "away_expected": pts_a_q1,
+            "metric_label": "Puntos Proyectados en Q1 (12')"
+        },
+        "interval_results": {
+            "period_label": "Probabilidades en 1º Cuarto (Q1)",
+            "home_prob": prob_h_q1,
+            "draw_prob": 0.0,
+            "away_prob": prob_a_q1,
+            "double_chance_home": prob_h_1h,
+            "double_chance_away": prob_a_1h
+        },
+        "volume": {
+            "title": "Producción Ofensiva Temprana",
+            "q1_total_pts": tot_pts_q1,
+            "h1_total_pts": tot_pts_1h,
+            "q1_spread": q1_spread
+        }
+    }
+
+def calculate_nhl_quick_markets(home_team: str, away_team: str, pct_h: float, pct_a: float, lam_h: float, mu_a: float, prob_1p_over_05: float, prob_1p_over_15: float, proj_sog_tot: float, proj_sog_h: float, proj_sog_a: float, quarters_breakdown: dict = None) -> dict:
+    lam_1p_h = round(lam_h * 0.295, 2)
+    lam_1p_a = round(mu_a * 0.295, 2)
+    tot_1p_exp = round(lam_1p_h + lam_1p_a, 2)
+
+    p_over_05 = round((1.0 - math.exp(-tot_1p_exp)) * 100.0, 1)
+    p_over_15 = round(prob_1p_over_15, 1)
+    p_under_15 = round(100.0 - p_over_15, 1)
+
+    p_h_goal_1p = round((1.0 - math.exp(-lam_1p_h)) * 100.0, 1)
+    p_a_goal_1p = round((1.0 - math.exp(-lam_1p_a)) * 100.0, 1)
+    p_btts_1p = round((p_h_goal_1p / 100.0) * (p_a_goal_1p / 100.0) * 100.0, 1)
+
+    p_w_h = sum(poisson_prob(lam_1p_h, h) * poisson_prob(lam_1p_a, a) for h in range(6) for a in range(6) if h > a)
+    p_draw = sum(poisson_prob(lam_1p_h, h) * poisson_prob(lam_1p_a, a) for h in range(6) for a in range(6) if h == a)
+    p_w_a = sum(poisson_prob(lam_1p_h, h) * poisson_prob(lam_1p_a, a) for h in range(6) for a in range(6) if a > h)
+    tot_p = (p_w_h + p_draw + p_w_a) or 1.0
+    prob_1p_home = round((p_w_h / tot_p) * 100.0, 1)
+    prob_1p_draw = round((p_draw / tot_p) * 100.0, 1)
+    prob_1p_away = round((p_w_a / tot_p) * 100.0, 1)
+    prob_1p_1x = round(min(96.0, prob_1p_home + prob_1p_draw), 1)
+    prob_1p_x2 = round(min(96.0, prob_1p_away + prob_1p_draw), 1)
+
+    sog_1p_tot = round(proj_sog_tot * 0.31, 1)
+    sog_1p_h = round(proj_sog_h * 0.31, 1)
+    sog_1p_a = round(proj_sog_a * 0.31, 1)
+
+    fav_team = home_team if lam_h >= mu_a else away_team
+
+    # Pick Estrella NHL Fast Market
+    if p_over_05 >= 70.0:
+        star_risk = "Bajo" if p_over_05 >= 76.0 else "Medio"
+        star_pick = {
+            "market": "Total Goles 1º Periodo (20')",
+            "name": "1º Periodo: Más de 0.5 Goles (+0.5 1P)",
+            "probability": p_over_05,
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
+            "settlement": "En 20 minutos (Fin del 1P)",
+            "explanation": f"Alta consistencia estadística de ver al menos un gol en los primeros 20 minutos de juego ({tot_1p_exp} goles esperados en el 1P)."
+        }
+    elif p_over_15 >= 54.0:
+        star_pick = {
+            "market": "Total Goles 1º Periodo (20')",
+            "name": "1º Periodo: Más de 1.5 Goles (+1.5 1P)",
+            "probability": p_over_15,
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "settlement": "En 20 minutos (Fin del 1P)",
+            "explanation": f"Equipos con arranque agresivo ({tot_1p_exp} goles proyectados en 20') y defensas que conceden rebotes tempranos."
+        }
+    elif prob_1p_1x >= 70.0 and lam_h >= mu_a:
+        star_pick = {
+            "market": "Doble Oportunidad 1P",
+            "name": f"1º Periodo: 1X ({home_team} o Empate 1P)",
+            "probability": prob_1p_1x,
+            "risk_level": "Bajo",
+            "risk_color": "emerald",
+            "settlement": "En 20 minutos (Fin del 1P)",
+            "explanation": f"Seguridad local en el tramo inicial de 20 minutos con {prob_1p_1x}% de probabilidad de ventaja o paridad al sonar la chicharra del 1P."
+        }
+    else:
+        star_pick = {
+            "market": "Doble Oportunidad 1P",
+            "name": f"1º Periodo: X2 (Empate o {away_team} 1P)",
+            "probability": prob_1p_x2,
+            "risk_level": "Bajo" if prob_1p_x2 >= 70 else "Medio",
+            "risk_color": "emerald" if prob_1p_x2 >= 70 else "amber",
+            "settlement": "En 20 minutos (Fin del 1P)",
+            "explanation": f"El visitante sostiene solvencia táctica en pista con {prob_1p_x2}% de probabilidad en los 20' iniciales."
+        }
+
+    markets = [
+        {
+            "category": "Goles 1º Periodo",
+            "name": "Más de 0.5 Goles en 1P (+0.5 1P)",
+            "probability": p_over_05,
+            "risk_level": "Bajo" if p_over_05 >= 75 else "Medio",
+            "risk_color": "emerald" if p_over_05 >= 75 else "amber",
+            "desc": f"Se proyectan {tot_1p_exp} goles en los 20 minutos iniciales de pista."
+        },
+        {
+            "category": "Goles 1º Periodo",
+            "name": "Más de 1.5 Goles en 1P (+1.5 1P)",
+            "probability": p_over_15,
+            "risk_level": "Bajo" if p_over_15 >= 60 else "Medio",
+            "risk_color": "emerald" if p_over_15 >= 60 else "amber",
+            "desc": "Desglose ofensivo para dos o más anotaciones tempranas."
+        },
+        {
+            "category": "Doble Oportunidad 1P",
+            "name": f"1X en 1P ({home_team} o Empate)",
+            "probability": prob_1p_1x,
+            "risk_level": "Bajo" if prob_1p_1x >= 70 else "Medio",
+            "risk_color": "emerald" if prob_1p_1x >= 70 else "amber",
+            "desc": f"Cobertura táctica en el primer tercio del encuentro ({prob_1p_draw}% prob. de empate al 1P)."
+        },
+        {
+            "category": "Doble Oportunidad 1P",
+            "name": f"X2 en 1P (Empate o {away_team})",
+            "probability": prob_1p_x2,
+            "risk_level": "Bajo" if prob_1p_x2 >= 70 else "Medio",
+            "risk_color": "emerald" if prob_1p_x2 >= 70 else "amber",
+            "desc": f"Respaldo para {away_team} en los 20' iniciales sin riesgo de derrota inmediata."
+        },
+        {
+            "category": "Ambos Anotan 1P",
+            "name": "Ambos Equipos Anotan en 1º Periodo (BTTS 1P)",
+            "probability": p_btts_1p,
+            "risk_level": "Alto" if p_btts_1p < 30 else "Medio",
+            "risk_color": "rose" if p_btts_1p < 30 else "amber",
+            "desc": f"Intercambio goleador en 20 minutos ({p_h_goal_1p}% vs {p_a_goal_1p}%)."
+        },
+        {
+            "category": "Tiros a Puerta 1P",
+            "name": "Más de 17.5 Tiros a Puerta en 1P (SOG)",
+            "probability": round(min(80.0, max(45.0, 50.0 + (sog_1p_tot - 17.5) * 4.0)), 1),
+            "risk_level": "Medio",
+            "risk_color": "amber",
+            "desc": f"Se proyectan {sog_1p_tot} disparos a portería combinados en el 1P."
+        }
+    ]
+
+    return {
+        "sport": "nhl",
+        "period_name": "1º Periodo (20')",
+        "settlement_time": "En 20 minutos",
+        "star_pick": star_pick,
+        "markets": markets,
+        "team_breakdown": {
+            "home_team": home_team,
+            "away_team": away_team,
+            "home_prob": p_h_goal_1p,
+            "away_prob": p_a_goal_1p,
+            "home_expected": lam_1p_h,
+            "away_expected": lam_1p_a,
+            "metric_label": "Goles Esperados en 1P (20')"
+        },
+        "interval_results": {
+            "period_label": "Resultado al Fin del 1P (20')",
+            "home_prob": prob_1p_home,
+            "draw_prob": prob_1p_draw,
+            "away_prob": prob_1p_away,
+            "double_chance_home": prob_1p_1x,
+            "double_chance_away": prob_1p_x2
+        },
+        "volume": {
+            "title": "Volumen de Disparos Tempranos (1P)",
+            "sog_total_1p": sog_1p_tot,
+            "sog_home_1p": sog_1p_h,
+            "sog_away_1p": sog_1p_a
+        }
+    }
+
 def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg_home_goals=1.55, league_avg_away_goals=1.20, home_team="Local", away_team="Visitante", referee=None) -> dict:
     """
     Calcula probabilidades cuantitativas basadas en la distribución de Poisson
@@ -5260,6 +5792,17 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         referee=referee
     )
 
+    quick_markets = calculate_football_quick_markets(
+        home_team=home_team,
+        away_team=away_team,
+        lam_h=round(lambda_home, 2),
+        mu_a=round(mu_away, 2),
+        home_stats=home_stats,
+        away_stats=away_stats,
+        exp_corners=exp_c,
+        referee=referee
+    )
+
     return {
         "lambda_home": round(lambda_home, 2),
         "mu_away": round(mu_away, 2),
@@ -5291,7 +5834,8 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "four_predictions": four_predictions,
         "seven_predictions": four_predictions,
         "eight_predictions": four_predictions,
-        "projections_matrix": projections_matrix
+        "projections_matrix": projections_matrix,
+        "quick_markets": quick_markets
     }
 
 def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict, is_halftime: bool = False) -> dict:
@@ -5644,6 +6188,15 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         mu_away=round(float(away_stats.get("attack", 1.2) or 1.2), 2)
     )
 
+    quick_markets = calculate_football_quick_markets(
+        home_team="Local",
+        away_team="Visitante",
+        lam_h=round(float(home_stats.get("attack", 1.5) or 1.5), 2),
+        mu_a=round(float(away_stats.get("attack", 1.2) or 1.2), 2),
+        home_stats=home_stats,
+        away_stats=away_stats
+    )
+
     return {
         "minute": minute,
         "current_score": f"{current_h}-{current_a}",
@@ -5666,7 +6219,8 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "six_predictions": four_predictions,
         "seven_predictions": four_predictions,
         "eight_predictions": four_predictions,
-        "projections_matrix": projections_matrix
+        "projections_matrix": projections_matrix,
+        "quick_markets": quick_markets
     }
 
 def normal_cdf(x: float) -> float:
@@ -5915,6 +6469,19 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         projected_pace=projected_pace
     )
 
+    quick_markets = calculate_nba_quick_markets(
+        home_team=home_team,
+        away_team=away_team,
+        pct_h=pct_home,
+        pct_a=pct_away,
+        pts_home=pts_home,
+        pts_away=pts_away,
+        total_projected_pts=total_projected_pts,
+        over_under_line=over_under_line,
+        spread=spread,
+        quarters_breakdown=quarters_breakdown
+    )
+
     return {
         "projected_pts_home": round(pts_home, 1),
         "projected_pts_away": round(pts_away, 1),
@@ -5929,7 +6496,8 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         "is_value_bet": conf >= 65,
         "quarters_breakdown": quarters_breakdown,
         "four_predictions": four_predictions,
-        "projections_matrix": projections_matrix
+        "projections_matrix": projections_matrix,
+        "quick_markets": quick_markets
     }
 
 def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: str, mins_remaining: float, home_stats: dict, away_stats: dict, live_stats: dict) -> dict:
@@ -6167,6 +6735,19 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         projected_pace=live_pace
     )
 
+    quick_markets = calculate_nba_quick_markets(
+        home_team="Local",
+        away_team="Visitante",
+        pct_h=pct_h,
+        pct_a=pct_away,
+        pts_home=final_proj_h,
+        pts_away=final_proj_a,
+        total_projected_pts=proj_total,
+        over_under_line=over_under_line,
+        spread=spread_home,
+        quarters_breakdown=quarters_breakdown
+    )
+
     return {
         "quarter": q_display if is_ht else quarter,
         "mins_remaining": round(mins_remaining, 1),
@@ -6187,7 +6768,8 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         "quarters_breakdown": quarters_breakdown,
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
-        "projections_matrix": projections_matrix
+        "projections_matrix": projections_matrix,
+        "quick_markets": quick_markets
     }
 
 
@@ -6465,7 +7047,9 @@ def generate_seven_picks_nhl(
         "fair_odds": round(100.0 / max(p5_prob, 1.0), 2),
         "risk_level": r5,
         "risk_color": "emerald" if r5 == "Bajo" else ("amber" if r5 == "Medio" else "rose"),
-        "explanation": p5_exp
+        "explanation": p5_exp,
+        "is_fast_market": True,
+        "badge": "⚡ Mercado Rápido"
     })
 
     # 6. Ambos Anotan 2+ Goles / Team Total
@@ -6730,6 +7314,21 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
 
     matrix = calculate_nhl_projections_matrix(home_stats, away_stats, lam_h, mu_a)
 
+    quick_markets = calculate_nhl_quick_markets(
+        home_team=home_team,
+        away_team=away_team,
+        pct_h=pct_h,
+        pct_a=pct_a,
+        lam_h=lam_h,
+        mu_a=mu_a,
+        prob_1p_over_05=prob_1p_over_05,
+        prob_1p_over_15=prob_1p_over_15,
+        proj_sog_tot=proj_sog_tot,
+        proj_sog_h=proj_sog_h,
+        proj_sog_a=proj_sog_a,
+        quarters_breakdown=quarters_breakdown
+    )
+
     return {
         "projected_goals_home": round(lam_h, 2),
         "projected_goals_away": round(mu_a, 2),
@@ -6758,7 +7357,8 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
         "four_predictions": picks,
         "six_predictions": picks,
         "seven_predictions": picks,
-        "projections_matrix": matrix
+        "projections_matrix": matrix,
+        "quick_markets": quick_markets
     }
 
 
@@ -7040,6 +7640,23 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
     ls_for_matrix["elapsed_mins"] = elapsed_mins
     matrix = calculate_nhl_projections_matrix(home_stats, away_stats, proj_h, proj_a, live_stats=ls_for_matrix)
 
+    p_1p_o05 = round((1.0 - math.exp(-max(0.1, (proj_h + proj_a) * 0.295))) * 100.0, 1)
+    p_1p_o15 = round(max(10.0, min(85.0, p_1p_o05 - 28.0)), 1)
+    quick_markets = calculate_nhl_quick_markets(
+        home_team="Local",
+        away_team="Visitante",
+        pct_h=pct_h,
+        pct_a=pct_a,
+        lam_h=proj_h,
+        mu_a=proj_a,
+        prob_1p_over_05=p_1p_o05,
+        prob_1p_over_15=p_1p_o15,
+        proj_sog_tot=sog_h + sog_a,
+        proj_sog_h=sog_h,
+        proj_sog_a=sog_a,
+        quarters_breakdown=quarters_breakdown
+    )
+
     return {
         "quarter": "Fin 1P" if (is_int and period_num == 1) else ("Fin 2P" if (is_int and period_num == 2) else period_str),
         "mins_remaining": round(mins_rem, 1),
@@ -7069,7 +7686,8 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
         "seven_predictions": four_predictions,
-        "projections_matrix": matrix
+        "projections_matrix": matrix,
+        "quick_markets": quick_markets
     }
 
 

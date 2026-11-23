@@ -129,8 +129,9 @@ def slim_match_for_client(m):
         "projected_total": p.get("projected_total"),
         "quarters_breakdown": p.get("quarters_breakdown"),
         "top_scores": p.get("top_scores", [])[:1],
-        "four_predictions": picks[:8],
+        "four_predictions": picks[:9],
         "projections_matrix": p.get("projections_matrix"),
+        "quick_markets": p.get("quick_markets"),
     }
     ref_clean = None
     if ref.get("name"):
