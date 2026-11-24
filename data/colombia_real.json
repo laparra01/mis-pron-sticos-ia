@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-11-24T00:30:30.084230",
+  "last_updated": "2026-11-24T22:51:12.038176",
   "total_fixtures": 12,
   "team_histories": {
     "Alianza FC": [
@@ -3617,7 +3617,25 @@
           "text": "Millonarios 1 victorias • 2 empates • Bucaramanga 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ferney Ossa",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 6,
+        "yellow_cards_per_match": 4.5,
+        "yellow_cards_total": 27,
+        "yellow_cards_avg_league": 5.73,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 3,
+        "fouls_per_match": 26.5,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.5 amarillas y 26.5 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4047,7 +4065,25 @@
           "text": "América de Cali 2 victorias • 2 empates • Deportivo Cali 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Wilmar Alexander Roldán Pérez",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 58,
+        "yellow_cards_per_match": 4.91,
+        "yellow_cards_total": 285,
+        "yellow_cards_avg_league": 5.73,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 22,
+        "penalties_total": 24,
+        "fouls_per_match": 18.8,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.91 amarillas y 18.79 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4477,7 +4513,25 @@
           "text": "Santa Fe 1 victorias • 2 empates • Once Caldas 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Diego Alejandro Ruíz Casas",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 20,
+        "yellow_cards_per_match": 5.3,
+        "yellow_cards_total": 106,
+        "yellow_cards_avg_league": 5.73,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 6,
+        "penalties_total": 9,
+        "fouls_per_match": 20.1,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.3 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4907,7 +4961,25 @@
           "text": "Atlético Nacional 4 victorias • 1 empates • Independiente Medellín 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Andrés Betancur",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 48,
+        "yellow_cards_per_match": 5.19,
+        "yellow_cards_total": 249,
+        "yellow_cards_avg_league": 5.73,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 11,
+        "penalties_total": 19,
+        "fouls_per_match": 21.2,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.19 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

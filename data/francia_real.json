@@ -3,7 +3,7 @@
   "league_id": 53,
   "country": "Francia",
   "country_code": "fr",
-  "last_updated": "2026-11-24T00:30:56.784816",
+  "last_updated": "2026-11-24T22:51:37.358719",
   "total_fixtures": 12,
   "team_histories": {
     "Angers": [
@@ -3299,7 +3299,25 @@
           "text": "Brest 2 victorias • 1 empates • Paris FC 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Ruddy Buquet",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 23,
+        "yellow_cards_per_match": 3.09,
+        "yellow_cards_total": 71,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 2,
+        "penalties_total": 5,
+        "fouls_per_match": 23.2,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.09 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3729,7 +3747,25 @@
           "text": "Angers 0 victorias • 0 empates • Lens 5 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Romain Lissorgue",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 23,
+        "yellow_cards_per_match": 4.17,
+        "yellow_cards_total": 96,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 4,
+        "penalties_total": 12,
+        "fouls_per_match": 27.0,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.17 amarillas y 27.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4159,7 +4195,25 @@
           "text": "Le Havre 3 victorias • 0 empates • Strasbourg 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Geoffrey Kubler",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.07,
+        "yellow_cards_total": 122,
+        "yellow_cards_avg_league": 3.99,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 11,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 27.8,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.07 amarillas y 25.73 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4529,7 +4583,25 @@
           "text": "Le Mans 0 victorias • 0 empates • Lille 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mathieu Vernice",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 31,
+        "yellow_cards_per_match": 4.32,
+        "yellow_cards_total": 134,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 12,
+        "fouls_per_match": 25.9,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.32 amarillas y 25.87 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4959,7 +5031,25 @@
           "text": "Nice 4 victorias • 0 empates • Troyes 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Aurélien Petit",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 5,
+        "yellow_cards_per_match": 2.4,
+        "yellow_cards_total": 12,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 0,
+        "fouls_per_match": 28.0,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.4 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5389,7 +5479,25 @@
           "text": "Paris Saint-Germain 1 victorias • 3 empates • Lorient 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bastien Dechepy",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 29,
+        "yellow_cards_per_match": 4.55,
+        "yellow_cards_total": 132,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 5,
+        "penalties_total": 19,
+        "fouls_per_match": 25.7,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.55 amarillas y 25.69 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5819,7 +5927,25 @@
           "text": "Auxerre 2 victorias • 0 empates • Marseille 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "François Letexier",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 35,
+        "yellow_cards_per_match": 3.89,
+        "yellow_cards_total": 136,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 10,
+        "penalties_total": 10,
+        "fouls_per_match": 22.9,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.89 amarillas y 22.86 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6249,7 +6375,25 @@
           "text": "Toulouse 3 victorias • 1 empates • Rennes 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Guillaume Paradis",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 22,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 88,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 4,
+        "fouls_per_match": 26.1,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.0 amarillas y 26.05 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6679,7 +6823,25 @@
           "text": "Lyon 2 victorias • 0 empates • Monaco 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jérôme Brisard",
+        "country": "France",
+        "country_code": "FRA",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/fra.png",
+        "matches": 36,
+        "yellow_cards_per_match": 3.92,
+        "yellow_cards_total": 141,
+        "yellow_cards_avg_league": 3.69,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 11,
+        "penalties_total": 11,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 24.3,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.92 amarillas y 23.72 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
