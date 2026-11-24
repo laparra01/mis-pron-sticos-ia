@@ -1647,6 +1647,64 @@
                         </div>
                     </div>
 
+                    <!-- Tarjeta de Promedio de Faltas y Disciplina por Equipo (Fútbol) -->
+                    <div id="h2h-fouls-card" class="hidden bg-gradient-to-r from-amber-950/30 via-gray-900/90 to-amber-950/30 border border-amber-500/40 rounded-2xl p-3 sm:p-4 space-y-2.5 shadow-md shadow-amber-950/20">
+                        <div class="flex items-center justify-between pb-2 border-b border-gray-800/80">
+                            <span class="text-xs font-bold text-amber-300 flex items-center gap-1.5 uppercase tracking-wide">
+                                <span class="text-base">⚠️</span>
+                                <span>Promedio de Faltas por Equipo (Disciplina H2H)</span>
+                            </span>
+                            <span id="h2h-fouls-intensity-badge" class="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider">
+                                INTENSIDAD NORMAL
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 font-mono text-xs">
+                            <!-- Local Faltas -->
+                            <div class="bg-gray-950/80 border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center justify-between shadow-inner">
+                                <div class="min-w-0 flex-1 pr-2">
+                                    <div class="flex items-center gap-1.5 mb-1">
+                                        <span class="w-2 h-2 rounded-full bg-blue-400 shrink-0"></span>
+                                        <span id="h2h-fouls-home-name" class="font-bold text-gray-200 text-xs truncate">Local</span>
+                                        <span class="text-[9.5px] text-gray-500 font-sans">(Local)</span>
+                                    </div>
+                                    <div class="flex items-baseline gap-1.5">
+                                        <span id="h2h-fouls-home-val" class="text-lg sm:text-xl font-extrabold text-amber-400">11.5</span>
+                                        <span class="text-[10px] text-gray-400 font-sans">faltas / partido</span>
+                                    </div>
+                                    <span id="h2h-fouls-home-gen" class="text-[9.5px] text-gray-400 font-sans block mt-0.5">Gen: 11.5 faltas</span>
+                                </div>
+                                <div class="text-right pl-2 border-l border-gray-800/80 shrink-0 space-y-1">
+                                    <span class="text-[9.5px] text-gray-400 block font-sans">Tarjetas Prom.</span>
+                                    <span id="h2h-cards-home-val" class="text-xs font-bold text-amber-400 block">🟨 2.1 <span class="text-rose-400">🟥 0.1</span></span>
+                                </div>
+                            </div>
+
+                            <!-- Visitante Faltas -->
+                            <div class="bg-gray-950/80 border border-gray-800/90 rounded-xl p-2.5 sm:p-3 flex items-center justify-between shadow-inner">
+                                <div class="min-w-0 flex-1 pr-2">
+                                    <div class="flex items-center gap-1.5 mb-1">
+                                        <span class="w-2 h-2 rounded-full bg-rose-400 shrink-0"></span>
+                                        <span id="h2h-fouls-away-name" class="font-bold text-gray-200 text-xs truncate">Visitante</span>
+                                        <span class="text-[9.5px] text-gray-500 font-sans">(Visitante)</span>
+                                    </div>
+                                    <div class="flex items-baseline gap-1.5">
+                                        <span id="h2h-fouls-away-val" class="text-lg sm:text-xl font-extrabold text-amber-400">12.0</span>
+                                        <span class="text-[10px] text-gray-400 font-sans">faltas / partido</span>
+                                    </div>
+                                    <span id="h2h-fouls-away-gen" class="text-[9.5px] text-gray-400 font-sans block mt-0.5">Gen: 12.0 faltas</span>
+                                </div>
+                                <div class="text-right pl-2 border-l border-gray-800/80 shrink-0 space-y-1">
+                                    <span class="text-[9.5px] text-gray-400 block font-sans">Tarjetas Prom.</span>
+                                    <span id="h2h-cards-away-val" class="text-xs font-bold text-amber-400 block">🟨 2.4 <span class="text-rose-400">🟥 0.1</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="h2h-fouls-summary-text" class="text-[11px] text-gray-300 bg-gray-950/60 border border-gray-800/80 rounded-lg px-2.5 py-1.5 font-sans flex items-center justify-between flex-wrap gap-1">
+                            <span>Estimación conjunta: <strong id="h2h-fouls-total-val" class="text-amber-400 font-mono">23.5</strong> faltas totales en el encuentro.</span>
+                            <span class="text-gray-400 text-[10px]">Basado en promedio ponderado de juego</span>
+                        </div>
+                    </div>
+
                     <div class="space-y-4" id="modal-h2h-grid">
                         <!-- Sección 1: Últimos 5 Local -->
                         <div class="bg-gray-950/70 border border-gray-800 rounded-xl p-3 sm:p-4 shadow-sm">
@@ -4181,6 +4239,57 @@
 
             const hs = match.home_stats || {};
             const as = match.away_stats || {};
+
+            // Módulo Destacado de Faltas y Disciplina por Equipo (Fútbol)
+            const foulsCard = document.getElementById('h2h-fouls-card');
+            if (foulsCard) {
+                if (match.sport === 'football') {
+                    foulsCard.classList.remove('hidden');
+                    const hf = Number(hs.fouls || 11.5).toFixed(1);
+                    const hfGen = Number(hs.fouls_gen || hs.fouls || 11.5).toFixed(1);
+                    const af = Number(as.fouls || 12.0).toFixed(1);
+                    const afGen = Number(as.fouls_gen || as.fouls || 12.0).toFixed(1);
+                    const totF = (parseFloat(hf) + parseFloat(af)).toFixed(1);
+
+                    const hName = document.getElementById('h2h-fouls-home-name');
+                    if (hName) hName.innerText = match.home_team;
+                    const hVal = document.getElementById('h2h-fouls-home-val');
+                    if (hVal) hVal.innerText = hf;
+                    const hGen = document.getElementById('h2h-fouls-home-gen');
+                    if (hGen) hGen.innerText = `Gen: ${hfGen} faltas/partido`;
+                    const hCards = document.getElementById('h2h-cards-home-val');
+                    if (hCards) hCards.innerHTML = `🟨 ${hs.yellow_cards || 2.1} <span class="text-rose-400">🟥 ${hs.red_cards || 0.1}</span>`;
+
+                    const aName = document.getElementById('h2h-fouls-away-name');
+                    if (aName) aName.innerText = match.away_team;
+                    const aVal = document.getElementById('h2h-fouls-away-val');
+                    if (aVal) aVal.innerText = af;
+                    const aGen = document.getElementById('h2h-fouls-away-gen');
+                    if (aGen) aGen.innerText = `Gen: ${afGen} faltas/partido`;
+                    const aCards = document.getElementById('h2h-cards-away-val');
+                    if (aCards) aCards.innerHTML = `🟨 ${as.yellow_cards || 2.4} <span class="text-rose-400">🟥 ${as.red_cards || 0.1}</span>`;
+
+                    const totEl = document.getElementById('h2h-fouls-total-val');
+                    if (totEl) totEl.innerText = totF;
+
+                    const intBadge = document.getElementById('h2h-fouls-intensity-badge');
+                    if (intBadge) {
+                        if (parseFloat(totF) >= 26.0) {
+                            intBadge.innerText = "ALTA INTENSIDAD (DUELO DISPUTADO)";
+                            intBadge.className = "text-[10px] bg-rose-500/20 text-rose-300 border border-rose-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                        } else if (parseFloat(totF) <= 20.0) {
+                            intBadge.innerText = "JUEGO FLUIDO (BAJA INTENSIDAD)";
+                            intBadge.className = "text-[10px] bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                        } else {
+                            intBadge.innerText = "INTENSIDAD REGULAR";
+                            intBadge.className = "text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-2 py-0.5 rounded-full font-mono font-bold tracking-wider";
+                        }
+                    }
+                } else {
+                    foulsCard.classList.add('hidden');
+                }
+            }
+
             const homeStreakEl = document.getElementById('h2h-home-streak');
             const awayStreakEl = document.getElementById('h2h-away-streak');
             if (homeStreakEl) {
@@ -4189,7 +4298,8 @@
                         <div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono">
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-emerald-400 font-bold" title="Promedio Goles">⚽ ${hs.attack || 0}/${hs.defense || 0} <span class="text-gray-500 font-normal">Gen ${hs.attack_gen || hs.attack || 0}/${hs.defense_gen || hs.defense || 0}</span></span>
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Promedio Córners">🚩 ${hs.corners || 0} <span class="text-gray-500 font-normal">Gen ${hs.corners_gen || hs.corners || 0}</span></span>
-                            <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas y Faltas">🟨 ${hs.yellow_cards || 2.1} <span class="text-rose-400">🟥 ${hs.red_cards || 0.1}</span> <span class="text-gray-400 font-normal">⚠️ ${hs.fouls || 11.5}</span></span>
+                            <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas Promedio">🟨 ${hs.yellow_cards || 2.1} <span class="text-rose-400">🟥 ${hs.red_cards || 0.1}</span></span>
+                            <span class="px-2 py-0.5 rounded bg-amber-950/70 border border-amber-800/80 text-amber-300 font-bold flex items-center gap-1 shadow-xs" title="Promedio de faltas cometidas por partido (Local / General)">⚠️ <span>${hs.fouls || 11.5} Faltas/P</span> <span class="text-gray-400 font-normal">(${hs.fouls_gen || hs.fouls || 11.5} Gen)</span></span>
                         </div>
                     `;
                 } else if (match.sport === 'nhl') {
@@ -4209,7 +4319,8 @@
                         <div class="flex flex-wrap items-center sm:justify-end gap-1.5 text-[10px] sm:text-[11px] font-mono">
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-rose-400 font-bold" title="Promedio Goles">⚽ ${as.attack || 0}/${as.defense || 0} <span class="text-gray-500 font-normal">Gen ${as.attack_gen || as.attack || 0}/${as.defense_gen || as.defense || 0}</span></span>
                             <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-cyan-400 font-bold" title="Promedio Córners">🚩 ${as.corners || 0} <span class="text-gray-500 font-normal">Gen ${as.corners_gen || as.corners || 0}</span></span>
-                            <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas y Faltas">🟨 ${as.yellow_cards || 2.4} <span class="text-rose-400">🟥 ${as.red_cards || 0.1}</span> <span class="text-gray-400 font-normal">⚠️ ${as.fouls || 12.0}</span></span>
+                            <span class="px-2 py-0.5 rounded bg-gray-950/80 border border-gray-800 text-amber-400 font-bold" title="Tarjetas Promedio">🟨 ${as.yellow_cards || 2.4} <span class="text-rose-400">🟥 ${as.red_cards || 0.1}</span></span>
+                            <span class="px-2 py-0.5 rounded bg-amber-950/70 border border-amber-800/80 text-amber-300 font-bold flex items-center gap-1 shadow-xs" title="Promedio de faltas cometidas por partido (Visitante / General)">⚠️ <span>${as.fouls || 12.0} Faltas/P</span> <span class="text-gray-400 font-normal">(${as.fouls_gen || as.fouls || 12.0} Gen)</span></span>
                         </div>
                     `;
                 } else if (match.sport === 'nhl') {
@@ -4260,10 +4371,13 @@
                         const sot = m.shots_on_target !== undefined ? m.shots_on_target : '-';
                         const yCards = m.yellow_cards !== undefined ? m.yellow_cards : 2;
                         const rCards = m.red_cards !== undefined ? m.red_cards : 0;
+                        const fls = m.fouls !== undefined ? m.fouls : (m.fouls_for !== undefined ? m.fouls_for : null);
+                        const foulsSpan = fls !== null ? `<span class="text-amber-300 flex items-center gap-1 font-semibold">⚠️ ${fls} faltas</span>` : '';
                         extraStatsHtml = `
                             <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-gray-400 font-mono pt-1.5 border-t border-gray-800/80 mt-1 flex-wrap gap-2">
                                 <span class="text-cyan-400 flex items-center gap-1 font-semibold">🚩 ${m.corners_for} córners <span class="text-gray-500 font-normal">(${totCorn} tot)</span></span>
                                 <span class="text-amber-400 flex items-center gap-1 font-semibold">🟨 ${yCards} <span class="text-rose-400">🟥 ${rCards}</span></span>
+                                ${foulsSpan}
                                 <span class="text-emerald-400 flex items-center gap-1 font-semibold">🎯 ${sot} a puerta</span>
                             </div>
                         `;
