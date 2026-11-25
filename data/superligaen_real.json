@@ -3,7 +3,7 @@
   "league_id": 46,
   "country": "Dinamarca",
   "country_code": "dk",
-  "last_updated": "2026-11-24T22:51:50.089353",
+  "last_updated": "2026-11-25T22:04:55.211865",
   "total_fixtures": 12,
   "team_histories": {
     "AC Horsens": [
@@ -2345,7 +2345,25 @@
           "text": "Sønderjyske 2 victorias • 1 empates • Brøndby IF 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Frederik Svendsen",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 19,
+        "yellow_cards_per_match": 3.47,
+        "yellow_cards_total": 66,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 4,
+        "fouls_per_match": 20.3,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.47 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2775,7 +2793,25 @@
           "text": "Lyngby 1 victorias • 3 empates • Viborg 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Mads Kristoffersen",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 26,
+        "yellow_cards_per_match": 3.35,
+        "yellow_cards_total": 87,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 6,
+        "fouls_per_match": 20.3,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.35 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3205,7 +3241,25 @@
           "text": "Randers FC 3 victorias • 1 empates • AC Horsens 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jakob Kehlet",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 26,
+        "yellow_cards_per_match": 2.96,
+        "yellow_cards_total": 77,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 7,
+        "fouls_per_match": 22.0,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.96 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3635,7 +3689,25 @@
           "text": "FC København 0 victorias • 2 empates • FC Midtjylland 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Lasse Graagaard",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 29,
+        "yellow_cards_per_match": 2.59,
+        "yellow_cards_total": 75,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 1,
+        "penalties_total": 5,
+        "fouls_per_match": 22.8,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (2.59 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4065,7 +4137,25 @@
           "text": "Silkeborg 0 victorias • 3 empates • AGF 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Jakob Sundberg",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 31,
+        "yellow_cards_per_match": 3.77,
+        "yellow_cards_total": 117,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 4,
+        "fouls_per_match": 24.1,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.77 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4495,7 +4585,25 @@
           "text": "OB 2 victorias • 2 empates • Nordsjælland 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Aydin Uslu",
+        "country": "Denmark",
+        "country_code": "DEN",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/den.png",
+        "matches": 26,
+        "yellow_cards_per_match": 3.58,
+        "yellow_cards_total": 93,
+        "yellow_cards_avg_league": 3.43,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 10,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 22.7,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.58 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {

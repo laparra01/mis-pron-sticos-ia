@@ -3,7 +3,7 @@
   "league_id": 112,
   "country": "Argentina",
   "country_code": "ar",
-  "last_updated": "2026-11-24T22:51:18.966410",
+  "last_updated": "2026-11-25T22:04:30.552187",
   "total_fixtures": 4,
   "team_histories": {
     "Aldosivi": [
@@ -5625,7 +5625,25 @@
           "text": "Instituto 0 victorias • 1 empates • River Plate 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Nazareno Arasa",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 61,
+        "yellow_cards_per_match": 5.18,
+        "yellow_cards_total": 316,
+        "yellow_cards_avg_league": 5.19,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 11,
+        "penalties_total": 15,
+        "fouls_per_match": 24.6,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.18 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6055,7 +6073,25 @@
           "text": "Rosario Central 2 victorias • 0 empates • Barracas Central 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Pablo Dóvalo",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 52,
+        "yellow_cards_per_match": 4.21,
+        "yellow_cards_total": 219,
+        "yellow_cards_avg_league": 5.19,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 12,
+        "penalties_total": 12,
+        "fouls_per_match": 24.5,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.21 amarillas y 24.54 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6485,7 +6521,25 @@
           "text": "Vélez Sarsfield 3 victorias • 1 empates • Independiente 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Facundo Tello",
+        "country": "Argentina",
+        "country_code": "ARG",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/arg.png",
+        "matches": 45,
+        "yellow_cards_per_match": 5.58,
+        "yellow_cards_total": 251,
+        "yellow_cards_avg_league": 5.19,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 6,
+        "fouls_per_match": 27.5,
+        "fouls_avg_league": 24.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.58 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

@@ -3,7 +3,7 @@
   "league_id": 45,
   "country": "Sudamérica",
   "country_code": "",
-  "last_updated": "2026-11-24T22:52:32.206419",
+  "last_updated": "2026-11-25T22:05:31.345015",
   "total_fixtures": 1,
   "team_histories": {
     "Estudiantes": [
@@ -750,9 +750,9 @@
         "country": "Venezuela",
         "country_code": "VEN",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/ven.png",
-        "matches": 49,
-        "yellow_cards_per_match": 5.37,
-        "yellow_cards_total": 263,
+        "matches": 48,
+        "yellow_cards_per_match": 5.29,
+        "yellow_cards_total": 254,
         "yellow_cards_avg_league": 5.87,
         "yellow_cards_tendency": "below",
         "red_cards_total": 8,
@@ -761,7 +761,7 @@
         "fouls_avg_league": 28.7,
         "rigor_level": "Riguroso / Tarjetero",
         "rigor_color": "rose",
-        "verdict": "Colegiado tarjetero (5.37 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "verdict": "Colegiado tarjetero (5.29 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
         "over_cards_favorable": true
       },
       "source_api": "FotMob (Scraping Oficial)"

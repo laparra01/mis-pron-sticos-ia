@@ -3,7 +3,7 @@
   "league_id": 10608,
   "country": "África",
   "country_code": "un",
-  "last_updated": "2026-11-24T22:52:22.451856",
+  "last_updated": "2026-11-25T22:05:20.442457",
   "total_fixtures": 28,
   "team_histories": {
     "Algeria": [
@@ -9275,63 +9275,14 @@
         ],
         "head_to_head": [
           {
-            "date": "24/09/2026",
-            "competition": "Africa Cup of Nations Qualification Grp. E",
-            "tournament": "Africa Cup of Nations Qualification Grp. E",
+            "date": "2026-09-24",
+            "competition": "Eliminatorias Copa Africana (Selecciones)",
+            "tournament": "Eliminatorias Copa Africana (Selecciones)",
             "match_home": "DR Congo",
             "match_away": "Equatorial Guinea",
-            "home_id": "6321",
-            "away_id": "8323",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6321.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8323.png",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
-            "winner": "DR Congo"
-          },
-          {
-            "date": "07/02/2015",
-            "competition": "Africa Cup of Nations bronze match",
-            "tournament": "Africa Cup of Nations bronze match",
-            "match_home": "DR Congo",
-            "match_away": "Equatorial Guinea",
-            "home_id": "6321",
-            "away_id": "8323",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6321.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8323.png",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "14/10/2012",
-            "competition": "Africa Cup of Nations Qualification Grp. E",
-            "tournament": "Africa Cup of Nations Qualification Grp. E",
-            "match_home": "Equatorial Guinea",
-            "match_away": "DR Congo",
-            "home_id": "8323",
-            "away_id": "6321",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8323.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6321.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "Equatorial Guinea"
-          },
-          {
-            "date": "09/09/2012",
-            "competition": "Africa Cup of Nations Qualification Grp. E",
-            "tournament": "Africa Cup of Nations Qualification Grp. E",
-            "match_home": "DR Congo",
-            "match_away": "Equatorial Guinea",
-            "home_id": "6321",
-            "away_id": "8323",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6321.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8323.png",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
             "winner": "DR Congo"
           }
         ],
@@ -9382,11 +9333,11 @@
         "projected_corners": 6.0,
         "projected_cards": 2.6,
         "summary": {
-          "home_wins": 1,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.2,
-          "text": "Equatorial Guinea 1 victorias • 1 empates • DR Congo 2 victorias"
+          "home_wins": 0,
+          "draws": 0,
+          "away_wins": 1,
+          "avg_goals": 2.0,
+          "text": "Equatorial Guinea 0 victorias • 0 empates • DR Congo 1 victorias"
         }
       },
       "referee": null,

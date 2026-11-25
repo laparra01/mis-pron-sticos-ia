@@ -3,7 +3,7 @@
   "league_id": 135,
   "country": "Grecia",
   "country_code": "gr",
-  "last_updated": "2026-11-24T22:52:10.931210",
+  "last_updated": "2026-11-25T22:05:10.682049",
   "total_fixtures": 12,
   "team_histories": {
     "AEK Athens": [
@@ -2663,7 +2663,25 @@
           "text": "Iraklis 1 victorias • 2 empates • Panetolikos 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Konstantinos Katikos",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 16,
+        "yellow_cards_per_match": 5.88,
+        "yellow_cards_total": 94,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 11,
+        "fouls_per_match": 29.2,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.88 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3093,7 +3111,25 @@
           "text": "NFC Volos 4 victorias • 0 empates • Asteras Tripolis 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Spyros Zampalas",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 21,
+        "yellow_cards_per_match": 5.43,
+        "yellow_cards_total": 114,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 6,
+        "penalties_total": 7,
+        "fouls_per_match": 32.1,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.43 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3523,7 +3559,25 @@
           "text": "Kifisia FC 2 victorias • 3 empates • Kalamata 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Meletios Gioumatzidis",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 10,
+        "yellow_cards_per_match": 4.7,
+        "yellow_cards_total": 47,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 3,
+        "penalties_total": 3,
+        "fouls_per_match": 31.0,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.7 amarillas y 31.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3953,7 +4007,25 @@
           "text": "Atromitos 0 victorias • 2 empates • Panathinaikos 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Konstantinos Tsetsilas",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 8,
+        "yellow_cards_per_match": 6.38,
+        "yellow_cards_total": 51,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 0,
+        "fouls_per_match": 27.6,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.38 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4383,7 +4455,25 @@
           "text": "OFI Crete 3 victorias • 1 empates • Levadiakos 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Christos Vergetis",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 28,
+        "yellow_cards_per_match": 5.11,
+        "yellow_cards_total": 143,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 8,
+        "fouls_per_match": 32.0,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.11 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4813,7 +4903,25 @@
           "text": "Aris Thessaloniki 1 victorias • 2 empates • Olympiacos 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alexandros Tsakalidis",
+        "country": "Greece",
+        "country_code": "GRE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/gre.png",
+        "matches": 34,
+        "yellow_cards_per_match": 5.21,
+        "yellow_cards_total": 177,
+        "yellow_cards_avg_league": 5.17,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 1,
+        "penalties_total": 13,
+        "fouls_per_match": 28.5,
+        "fouls_avg_league": 29.0,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.21 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5243,7 +5351,25 @@
           "text": "AEK Athens 1 victorias • 2 empates • PAOK Thessaloniki 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Irfan Peljto",
+        "country": "Bosnia-Herzegovina",
+        "country_code": "BIH",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bih.png",
+        "matches": 11,
+        "yellow_cards_per_match": 3.91,
+        "yellow_cards_total": 43,
+        "yellow_cards_avg_league": 3.8,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 3,
+        "penalties_total": 7,
+        "fouls_per_match": 21.0,
+        "fouls_avg_league": 22.4,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 3.91 amarillas y 21.0 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
