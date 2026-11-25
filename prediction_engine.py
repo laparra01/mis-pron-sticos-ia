@@ -36,28 +36,49 @@ def dixon_coles_tau(x: int, y: int, lambda_h: float, mu_a: float, rho: float = -
         return max(0.001, 1.0 - rho)
     return 1.0
 
-def parse_match_date(date_str: str) -> datetime.date:
+def normal_cdf(x: float) -> float:
+    """Distribución acumulada normal estándar Φ(x)."""
+    return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
+
+def parse_match_date(date_str: str, ref_date: datetime.date = None) -> datetime.date:
     """
-    Parsea fechas en múltiples formatos comunes (DD/MM/YYYY, YYYY-MM-DD, DD Mon YYYY, DD Mon).
+    Parsea fechas en múltiples formatos comunes:
+    ISO (YYYY-MM-DD...), DD/MM/YYYY, DD/MM (ESPN NBA/NHL), y 'DD Mon [YYYY]'.
     """
     if not date_str or not isinstance(date_str, str):
         return None
     d = date_str.strip()
-    # 1. DD/MM/YYYY
-    m1 = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})", d)
-    if m1:
-        try:
-            return datetime.date(int(m1.group(3)), int(m1.group(2)), int(m1.group(1)))
-        except Exception:
-            pass
-    # 2. YYYY-MM-DD
+    ref = ref_date or datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-6))).date()
+
+    # 1. YYYY-MM-DD (incluye ISO timestamps como 2026-11-25T01:00Z)
     m2 = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})", d)
     if m2:
         try:
             return datetime.date(int(m2.group(1)), int(m2.group(2)), int(m2.group(3)))
         except Exception:
             pass
-    # 3. DD Mon [YYYY]
+    # 2. DD/MM/YYYY
+    m1 = re.match(r"^(\d{1,2})/(\d{1,2})/(\d{4})", d)
+    if m1:
+        try:
+            return datetime.date(int(m1.group(3)), int(m1.group(2)), int(m1.group(1)))
+        except Exception:
+            pass
+    # 3. DD/MM (usado por ESPN NBA/NHL schedules)
+    m_dm = re.match(r"^(\d{1,2})/(\d{1,2})(?:\b|$)", d)
+    if m_dm:
+        try:
+            day = int(m_dm.group(1))
+            month = int(m_dm.group(2))
+            year = ref.year
+            if month > ref.month + 2:
+                year -= 1
+            elif month + 2 < ref.month and ref.month == 12:
+                year += 1
+            return datetime.date(year, month, day)
+        except Exception:
+            pass
+    # 4. DD Mon [YYYY]
     months = {
         "ene": 1, "jan": 1, "feb": 2, "mar": 3, "abr": 4, "apr": 4,
         "may": 5, "jun": 6, "jul": 7, "ago": 8, "aug": 8, "sep": 9,
@@ -67,19 +88,47 @@ def parse_match_date(date_str: str) -> datetime.date:
     if m3:
         day = int(m3.group(1))
         mon_str = m3.group(2).lower()[:3]
-        year = int(m3.group(3)) if m3.group(3) else 2026
-        month = months.get(mon_str, 9)
-        try:
-            return datetime.date(year, month, day)
-        except Exception:
-            pass
+        year = int(m3.group(3)) if m3.group(3) else ref.year
+        month = months.get(mon_str)
+        if month:
+            try:
+                return datetime.date(year, month, day)
+            except Exception:
+                pass
     return None
 
-def detect_rest_and_fatigue(matches: list, default_rest: float = 6.0) -> dict:
+def _extract_match_date(m: dict, ref_date: datetime.date = None) -> datetime.date:
+    if not isinstance(m, dict):
+        return None
+    for key in ("date_iso", "raw_date", "date", "match_date"):
+        val = m.get(key)
+        if val:
+            dt = parse_match_date(str(val), ref_date=ref_date)
+            if dt:
+                return dt
+    return None
+
+def sort_matches_newest_first(matches: list, ref_date: datetime.date = None) -> list:
     """
-    Detecta días de descanso, congestión de partidos y situaciones de Back-to-Back (B2B).
+    Devuelve una copia de `matches` ordenada del partido MÁS RECIENTE al MÁS ANTIGUO
+    para que el decaimiento temporal exponencial w_i = exp(-0.16 * i) nunca quede invertido.
     """
-    if not matches or len(matches) < 1:
+    if not matches or len(matches) <= 1:
+        return list(matches or [])
+    parsed = [(_extract_match_date(m, ref_date=ref_date), i, m) for i, m in enumerate(matches)]
+    valid_count = sum(1 for dt, _, _ in parsed if dt is not None)
+    if valid_count >= max(2, len(matches) // 2):
+        # Partidos con fecha válida primero, más recientes primero
+        parsed.sort(key=lambda item: (item[0] is not None, item[0] or datetime.date.min, -item[1]), reverse=True)
+        return [item[2] for item in parsed]
+    return list(matches)
+
+def detect_rest_and_fatigue(matches: list, default_rest: float = 6.0, target_date=None) -> dict:
+    """
+    Detecta días de descanso reales respecto al próximo partido (`target_date`),
+    congestión de partidos (fútbol <= 3 días) y situaciones de Back-to-Back (NBA/NHL <= 1 día).
+    """
+    if not matches:
         return {
             "rest_days": default_rest,
             "is_b2b": False,
@@ -87,23 +136,31 @@ def detect_rest_and_fatigue(matches: list, default_rest: float = 6.0) -> dict:
             "fatigue_penalty": 0.0
         }
 
-    # Intentar calcular diferencia entre los dos partidos más recientes
-    if len(matches) >= 2:
-        d0 = parse_match_date(matches[0].get("date") or matches[0].get("match_date") or "")
-        d1 = parse_match_date(matches[1].get("date") or matches[1].get("match_date") or "")
-        if d0 and d1:
-            diff_days = abs((d0 - d1).days)
-            if 0 <= diff_days <= 20:
-                is_b2b = diff_days <= 1
-                is_congested = diff_days <= 3
-                return {
-                    "rest_days": float(diff_days),
-                    "is_b2b": is_b2b,
-                    "is_congested": is_congested,
-                    "fatigue_penalty": 0.08 if is_b2b else (0.04 if is_congested else 0.0)
-                }
+    ref_dt = parse_match_date(str(target_date)) if target_date else None
+    if ref_dt is None:
+        ref_dt = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-6))).date()
 
-    # Fallback por índice y heurística
+    sorted_m = sort_matches_newest_first(matches, ref_date=ref_dt)
+    # Buscar el último partido jugado estrictamente antes del partido objetivo
+    last_dt = None
+    for m in sorted_m:
+        dt = _extract_match_date(m, ref_date=ref_dt)
+        if dt and dt < ref_dt:
+            last_dt = dt
+            break
+
+    if last_dt is not None:
+        diff_days = (ref_dt - last_dt).days
+        if 1 <= diff_days <= 21:
+            is_b2b = diff_days <= 1
+            is_congested = diff_days <= 3
+            return {
+                "rest_days": float(diff_days),
+                "is_b2b": is_b2b,
+                "is_congested": is_congested,
+                "fatigue_penalty": 0.08 if is_b2b else (0.04 if is_congested else 0.0)
+            }
+
     return {
         "rest_days": default_rest,
         "is_b2b": False,
@@ -394,13 +451,14 @@ KNOWN_NHL_TEAMS = {
     "chicago blackhawks": {"gf_pg": 2.65, "ga_pg": 3.38, "sog_pg": 27.2, "pp_pct": 19.5, "sv_pct": 89.6, "abbr": "chi"},
 }
 
-def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
+def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None, target_date=None) -> dict:
     """
     Calcula la fuerza ofensiva (ataque) y defensiva (defensa) empírica de un equipo
     a partir de sus últimos partidos jugados, aplicando:
-    1. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)) dando mayor peso a partidos recientes.
-    2. Ajuste por Fuerza del Rival (SOS - Strength of Schedule) normalizando goles según la defensa/ataque del rival.
-    3. Detección de fatiga, días de descanso y congestión de calendario.
+    1. Ordenamiento cronológico estricto (más reciente primero) antes de ponderar.
+    2. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)) dando mayor peso a partidos recientes.
+    3. Ajuste por Fuerza del Rival (SOS - Strength of Schedule) normalizando goles según la defensa/ataque del rival.
+    4. Detección de fatiga, días de descanso y congestión de calendario respecto a `target_date`.
     """
     if not matches:
         return {
@@ -418,6 +476,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0
         }
 
+    ref_dt = parse_match_date(str(target_date)) if target_date else None
+    matches_sorted = sort_matches_newest_first(matches, ref_date=ref_dt)
     t_clean = (team_name or "").lower().strip()
     
     # Sumas ponderadas exponenciales
@@ -459,8 +519,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         deff = round(0.85 + (((h_o // 100) % 85) / 100.0), 2)
         return att, deff
 
-    for i, m in enumerate(matches):
-        # Ponderación temporal exponencial (vida media ~4.3 partidos)
+    for i, m in enumerate(matches_sorted):
+        # Ponderación temporal exponencial (i=0 siempre es el partido más reciente)
         w_i = math.exp(-0.16 * i)
 
         is_home = False
@@ -538,7 +598,7 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             venue_fouls += f_count * w_v
             venue_count += 1
 
-    rest_info = detect_rest_and_fatigue(matches, default_rest=6.0)
+    rest_info = detect_rest_and_fatigue(matches_sorted, default_rest=6.0, target_date=target_date)
 
     if gen_count == 0 or gen_weight_sum <= 0:
         return {
@@ -580,6 +640,10 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         avg_venue_conceded = round(venue_raw_conceded / float(venue_count), 2)
         exp_venue_scored = venue_scored_weighted / venue_weight_sum
         exp_venue_conceded = venue_conceded_weighted / venue_weight_sum
+        # Suavizado bayesiano cuando hay muy pocos partidos en esa condición (venue_count == 1)
+        if venue_count == 1:
+            exp_venue_scored = exp_venue_scored * 0.55 + exp_gen_scored * 0.45
+            exp_venue_conceded = exp_venue_conceded * 0.55 + exp_gen_conceded * 0.45
         avg_venue_c_for = round(venue_corners_for / venue_weight_sum, 1)
         avg_venue_c_against = round(venue_corners_against / venue_weight_sum, 1)
         avg_venue_y = round(venue_yellow / venue_weight_sum, 1)
@@ -589,6 +653,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         defense_venue = max(0.35, min(3.50, round(exp_venue_conceded, 2)))
         sample_venue = venue_count
     else:
+        v_att_m = 1.07 if is_seeking_home else (0.93 if is_seeking_away else 1.0)
+        v_def_m = 0.94 if is_seeking_home else (1.06 if is_seeking_away else 1.0)
         avg_venue_scored = avg_gen_scored
         avg_venue_conceded = avg_gen_conceded
         avg_venue_c_for = avg_gen_c_for
@@ -596,8 +662,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         avg_venue_y = avg_gen_y
         avg_venue_r = avg_gen_r
         avg_venue_f = avg_gen_f
-        attack_venue = attack_gen
-        defense_venue = defense_gen
+        attack_venue = max(0.40, min(3.80, round(attack_gen * v_att_m, 2)))
+        defense_venue = max(0.35, min(3.50, round(defense_gen * v_def_m, 2)))
         sample_venue = gen_count
 
     return {
@@ -632,36 +698,47 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         "fatigue_penalty": rest_info["fatigue_penalty"]
     }
 
-def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
+def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None, target_date=None) -> dict:
     """
-    Calcula el perfil cuantitativo ofensivo/defensivo NBA a partir de partidos recientes con:
-    1. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)).
-    2. Ajuste por Fuerza del Rival (SOS NBA) comparando contra la media de la liga (114.5).
-    3. Detección de partidos Back-to-Back (B2B) y días de descanso.
-    4. Estimación de los Cuatro Factores de Dean Oliver (eFG%, TOV%, ORB%, FTR).
+    Calcula el perfil cuantitativo ofensivo/defensivo NBA (por 100 posesiones) a partir de partidos recientes con:
+    1. Ordenamiento cronológico estricto (más reciente primero).
+    2. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)).
+    3. Ajuste por Fuerza del Rival (SOS NBA) comparando contra la media de la liga (114.5).
+    4. Normalización a rating por 100 posesiones (evita duplicar factor Pace).
+    5. Detección de partidos Back-to-Back (B2B) y días de descanso.
     """
+    t_clean = (team_name or "").lower().strip()
+    pace = 99.5
+    matched_known_pace = False
+    for k, v in KNOWN_NBA_TEAMS.items():
+        if k in t_clean or t_clean in k:
+            pace = float(v.get("pace", 99.5))
+            matched_known_pace = True
+            break
+    if not matched_known_pace:
+        pace = round(98.5 + (deterministic_hash(team_name) % 4), 1)
+
     if not matches:
         return {
             "off_rating": 115.0, "def_rating": 113.0,
             "off_rating_gen": 115.0, "def_rating_gen": 113.0,
-            "pace": 100.0, "venue_role": venue_role or "General",
+            "pace": pace, "venue_role": venue_role or "General",
             "rest_days": 2.0, "is_b2b": False, "is_congested": False,
-            "efg_pct": 54.5, "tov_pct": 13.2, "orb_pct": 26.5, "ftr": 0.225
+            "efg_pct": 54.5, "tov_pct": 13.2, "orb_pct": 26.5, "ftr": 0.225,
+            "has_real_four_factors": False
         }
 
-    t_clean = (team_name or "").lower().strip()
+    ref_dt = parse_match_date(str(target_date)) if target_date else None
+    matches_sorted = sort_matches_newest_first(matches, ref_date=ref_dt)
+
     gen_weight_sum = 0.0
     gen_scored_weighted = 0.0
     gen_conceded_weighted = 0.0
-    gen_raw_scored = 0.0
-    gen_raw_conceded = 0.0
     gen_count = 0
 
     venue_weight_sum = 0.0
     venue_scored_weighted = 0.0
     venue_conceded_weighted = 0.0
-    venue_raw_scored = 0.0
-    venue_raw_conceded = 0.0
     venue_count = 0
 
     is_seeking_home = (venue_role in ("home", "Local", "local")) if venue_role else None
@@ -674,7 +751,7 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
                 return float(v.get("off_rating", 114.5)), float(v.get("def_rating", 114.0))
         return 114.5, 114.0
 
-    for i, m in enumerate(matches):
+    for i, m in enumerate(matches_sorted):
         w_i = math.exp(-0.16 * i)
 
         is_home = False
@@ -707,8 +784,6 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
         gen_weight_sum += w_i
         gen_scored_weighted += adj_scored * w_i
         gen_conceded_weighted += adj_conceded * w_i
-        gen_raw_scored += scored
-        gen_raw_conceded += conceded
         gen_count += 1
 
         matches_venue_filter = False
@@ -722,34 +797,41 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
             venue_weight_sum += w_v
             venue_scored_weighted += adj_scored * w_v
             venue_conceded_weighted += adj_conceded * w_v
-            venue_raw_scored += scored
-            venue_raw_conceded += conceded
             venue_count += 1
 
-    rest_info = detect_rest_and_fatigue(matches, default_rest=2.0)
+    rest_info = detect_rest_and_fatigue(matches_sorted, default_rest=2.0, target_date=target_date)
 
     if gen_count == 0 or gen_weight_sum <= 0:
         return {
             "off_rating": 115.0, "def_rating": 113.0,
             "off_rating_gen": 115.0, "def_rating_gen": 113.0,
-            "pace": 100.0, "venue_role": venue_role or "General",
+            "pace": pace, "venue_role": venue_role or "General",
             "rest_days": rest_info["rest_days"], "is_b2b": rest_info["is_b2b"], "is_congested": rest_info["is_congested"],
-            "efg_pct": 54.5, "tov_pct": 13.2, "orb_pct": 26.5, "ftr": 0.225
+            "efg_pct": 54.5, "tov_pct": 13.2, "orb_pct": 26.5, "ftr": 0.225,
+            "has_real_four_factors": False
         }
 
-    off_gen = max(98.0, min(135.0, round(gen_scored_weighted / gen_weight_sum, 1)))
-    def_gen = max(98.0, min(135.0, round(gen_conceded_weighted / gen_weight_sum, 1)))
+    # Normalizar PPG a puntos por cada 100 posesiones para consistencia dimensional con Standings
+    pace_factor = max(0.90, pace / 100.0)
+    ppg_gen_off = gen_scored_weighted / gen_weight_sum
+    ppg_gen_def = gen_conceded_weighted / gen_weight_sum
+    off_gen = max(98.0, min(132.0, round(ppg_gen_off / pace_factor, 1)))
+    def_gen = max(98.0, min(132.0, round(ppg_gen_def / pace_factor, 1)))
 
     if venue_count > 0 and venue_weight_sum > 0:
-        off_venue = max(98.0, min(135.0, round(venue_scored_weighted / venue_weight_sum, 1)))
-        def_venue = max(98.0, min(135.0, round(venue_conceded_weighted / venue_weight_sum, 1)))
+        ppg_v_off = venue_scored_weighted / venue_weight_sum
+        ppg_v_def = venue_conceded_weighted / venue_weight_sum
+        if venue_count == 1:
+            ppg_v_off = ppg_v_off * 0.50 + ppg_gen_off * 0.50
+            ppg_v_def = ppg_v_def * 0.50 + ppg_gen_def * 0.50
+        off_venue = max(98.0, min(132.0, round(ppg_v_off / pace_factor, 1)))
+        def_venue = max(98.0, min(132.0, round(ppg_v_def / pace_factor, 1)))
     else:
-        off_venue = off_gen
-        def_venue = def_gen
+        v_off_d = 0.8 if is_seeking_home else (-0.8 if is_seeking_away else 0.0)
+        v_def_d = -0.5 if is_seeking_home else (0.5 if is_seeking_away else 0.0)
+        off_venue = round(off_gen + v_off_d, 1)
+        def_venue = round(def_gen + v_def_d, 1)
 
-    pace = round(99.0 + (deterministic_hash(team_name) % 4), 1)
-
-    # Cuatro Factores de Dean Oliver estimados según rating y ritmo
     efg_pct = round(max(48.0, min(61.0, 54.0 + (off_venue - 114.5) * 0.32)), 1)
     tov_pct = round(max(10.2, min(16.5, 13.5 - (off_venue - 114.5) * 0.08)), 1)
     orb_pct = round(max(21.5, min(33.0, 26.8 + (pace - 99.0) * 0.20)), 1)
@@ -768,21 +850,26 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
         "efg_pct": efg_pct,
         "tov_pct": tov_pct,
         "orb_pct": orb_pct,
-        "ftr": ftr
+        "ftr": ftr,
+        "has_real_four_factors": False
     }
 
-def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None, venue_role: str = None) -> dict:
-    if recent_matches and len(recent_matches) > 0:
-        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None, venue_role: str = None, target_date=None) -> dict:
+    # Evitar que historial sintético (hash) sobrescriba equipos conocidos de KNOWN_FOOTBALL_TEAMS
+    t_clean = (team_name or "").lower().strip()
+    is_synthetic_recent = bool(recent_matches and all(m.get("is_synthetic") for m in recent_matches))
+    has_known_tier = any((k in t_clean or t_clean in k) for k in KNOWN_FOOTBALL_TEAMS.keys())
+
+    if recent_matches and len(recent_matches) > 0 and not (is_synthetic_recent and has_known_tier):
+        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
 
     try:
         verified = find_verified_matches_for_team(team_name)
         if verified and len(verified) > 0:
-            return calculate_team_ratings_from_recent_matches(team_name, verified, venue_role=venue_role)
+            return calculate_team_ratings_from_recent_matches(team_name, verified, venue_role=venue_role, target_date=target_date)
     except Exception:
         pass
 
-    t_clean = (team_name or "").lower().strip()
     for k, v in KNOWN_FOOTBALL_TEAMS.items():
         if k in t_clean or t_clean in k:
             base_att = v["attack"]
@@ -813,6 +900,9 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
                 "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0
             }
 
+    if recent_matches and len(recent_matches) > 0:
+        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+
     h = deterministic_hash(t_clean)
     att = round(1.15 + ((h % 95) / 100.0), 2)
     deff = round(0.85 + (((h // 100) % 85) / 100.0), 2)
@@ -842,7 +932,7 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
         "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0
     }
 
-def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False) -> dict:
+def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None) -> dict:
     t_clean = (team_name or "").lower().strip()
 
     # 1. Priorizar estadísticas oficiales de temporada de ESPN Standings si están disponibles
@@ -861,18 +951,25 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
             base_off = round(max(102.0, min(127.0, pts_for / (pace / 100.0))), 1)
             base_def = round(max(102.0, min(127.0, pts_against / (pace / 100.0))), 1)
 
-            # Si tenemos últimos 5 partidos reales de ESPN, ponderar 70% temporada + 30% racha reciente
+            rest_info = {"rest_days": 2.0, "is_b2b": False, "is_congested": False}
+            # Si tenemos últimos 5 partidos reales de ESPN, ponderar 70% temporada + 30% racha reciente y detectar B2B
             if real_recent and recent_matches:
-                rec = calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+                rec = calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
                 base_off = round(base_off * 0.7 + rec.get("off_rating_gen", base_off) * 0.3, 1)
                 base_def = round(base_def * 0.7 + rec.get("def_rating_gen", base_def) * 0.3, 1)
+                rest_info = {
+                    "rest_days": rec.get("rest_days", 2.0),
+                    "is_b2b": rec.get("is_b2b", False),
+                    "is_congested": rec.get("is_congested", False)
+                }
 
+            # Ajuste calibrado de localía NBA (~2.6 pts netos totales entre local y visita, sin duplicar)
             if venue_role in ("home", "Local"):
-                v_off = round(base_off + 2.0, 1)
-                v_def = round(base_def - 1.4, 1)
+                v_off = round(base_off + 0.8, 1)
+                v_def = round(base_def - 0.5, 1)
             elif venue_role in ("away", "Visitante"):
-                v_off = round(base_off - 1.8, 1)
-                v_def = round(base_def + 1.4, 1)
+                v_off = round(base_off - 0.8, 1)
+                v_def = round(base_def + 0.5, 1)
             else:
                 v_off = base_off
                 v_def = base_def
@@ -886,7 +983,15 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "avg_pts_for": round(pts_for, 1),
                 "avg_pts_against": round(pts_against, 1),
                 "venue_role": venue_role or "General",
-                "is_real_standings": True
+                "is_real_standings": True,
+                "rest_days": rest_info["rest_days"],
+                "is_b2b": rest_info["is_b2b"],
+                "is_congested": rest_info["is_congested"],
+                "efg_pct": round(max(48.0, min(61.0, 54.0 + (v_off - 114.5) * 0.32)), 1),
+                "tov_pct": round(max(10.2, min(16.5, 13.5 - (v_off - 114.5) * 0.08)), 1),
+                "orb_pct": round(max(21.5, min(33.0, 26.8 + (pace - 99.0) * 0.20)), 1),
+                "ftr": round(max(0.180, min(0.280, 0.225 + (v_off - 114.5) * 0.002)), 3),
+                "has_real_four_factors": False
             }
             if standing_info.get("overall"):
                 res["record"] = standing_info["overall"]
@@ -898,19 +1003,19 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
 
     # 2. Si hay historial reciente real (e.g. calendario oficial ESPN)
     if real_recent and recent_matches and len(recent_matches) > 0:
-        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
 
-    # 3. Buscar en catálogo calibrado KNOWN_NBA_TEAMS (coincidencia exacta o por nombre de franquicia)
+    # 3. Buscar en catálogo calibrado KNOWN_NBA_TEAMS
     for k, v in KNOWN_NBA_TEAMS.items():
         if k in t_clean or t_clean in k or any(word in t_clean.split() for word in k.split() if len(word) > 3):
             base_off = v["off_rating"]
             base_def = v["def_rating"]
             if venue_role in ("home", "Local"):
-                v_off = round(base_off + 2.2, 1)
-                v_def = round(base_def - 1.4, 1)
+                v_off = round(base_off + 0.8, 1)
+                v_def = round(base_def - 0.5, 1)
             elif venue_role in ("away", "Visitante"):
-                v_off = round(base_off - 2.0, 1)
-                v_def = round(base_def + 1.4, 1)
+                v_off = round(base_off - 0.8, 1)
+                v_def = round(base_def + 0.5, 1)
             else:
                 v_off = base_off
                 v_def = base_def
@@ -925,22 +1030,23 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "efg_pct": round(54.0 + (v_off - 114.5) * 0.32, 1),
                 "tov_pct": round(13.5 - (v_off - 114.5) * 0.08, 1),
                 "orb_pct": round(26.8 + (v.get("pace", 100.0) - 99.0) * 0.20, 1),
-                "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3)
+                "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3),
+                "has_real_four_factors": False
             }
 
     if recent_matches and len(recent_matches) > 0:
-        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
 
     h = deterministic_hash(t_clean)
     base_off = round(112.0 + ((h % 80) / 10.0), 1)
     base_def = round(110.0 + (((h // 10) % 80) / 10.0), 1)
     pace = round(98.0 + (((h // 100) % 50) / 10.0), 1)
     if venue_role in ("home", "Local"):
-        v_off = round(base_off + 2.2, 1)
-        v_def = round(base_def - 1.4, 1)
+        v_off = round(base_off + 0.8, 1)
+        v_def = round(base_def - 0.5, 1)
     elif venue_role in ("away", "Visitante"):
-        v_off = round(base_off - 2.0, 1)
-        v_def = round(base_def + 1.4, 1)
+        v_off = round(base_off - 0.8, 1)
+        v_def = round(base_def + 0.5, 1)
     else:
         v_off = base_off
         v_def = base_def
@@ -955,17 +1061,19 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "efg_pct": round(54.0 + (v_off - 114.5) * 0.32, 1),
         "tov_pct": round(13.5 - (v_off - 114.5) * 0.08, 1),
         "orb_pct": round(26.8 + (pace - 99.0) * 0.20, 1),
-        "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3)
+        "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3),
+        "has_real_four_factors": False
     }
 
 
-def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None) -> dict:
+def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None, target_date=None) -> dict:
     """
     Calcula promedios ofensivos/defensivos cuantitativos de NHL (GF/GA por juego) a partir del historial reciente con:
-    1. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)).
-    2. Ajuste por Fuerza del Rival (SOS NHL) normalizando contra la media de la liga (3.05).
-    3. Detección de partidos Back-to-Back (B2B) y rotación de portero suplente.
-    4. Situaciones Especiales: Power Play % (PP%) y Penalty Kill % (PK%).
+    1. Ordenamiento cronológico estricto (más reciente primero).
+    2. Decaimiento Temporal Exponencial (w_i = exp(-0.16 * i)).
+    3. Ajuste por Fuerza del Rival (SOS NHL) normalizando contra la media de la liga (3.05).
+    4. Detección de partidos Back-to-Back (B2B) y rotación de portero suplente.
+    5. Situaciones Especiales: Power Play % (PP%) y Penalty Kill % (PK%).
     """
     if not matches:
         return {
@@ -976,19 +1084,17 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
             "rest_days": 2.0, "is_b2b": False, "is_congested": False
         }
 
+    ref_dt = parse_match_date(str(target_date)) if target_date else None
+    matches_sorted = sort_matches_newest_first(matches, ref_date=ref_dt)
     t_clean = (team_name or "").lower().strip()
     gen_weight_sum = 0.0
     gen_gf_weighted = 0.0
     gen_ga_weighted = 0.0
-    gen_raw_gf = 0.0
-    gen_raw_ga = 0.0
     gen_cnt = 0
 
     ven_weight_sum = 0.0
     ven_gf_weighted = 0.0
     ven_ga_weighted = 0.0
-    ven_raw_gf = 0.0
-    ven_raw_ga = 0.0
     ven_cnt = 0
 
     is_seek_home = (venue_role in ("home", "Local", "local")) if venue_role else None
@@ -1001,7 +1107,7 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
                 return float(v.get("gf_pg", 3.05)), float(v.get("ga_pg", 3.05))
         return 3.05, 3.05
 
-    for i, m in enumerate(matches):
+    for i, m in enumerate(matches_sorted):
         w_i = math.exp(-0.16 * i)
 
         m_home = (m.get("match_home") or "").lower().strip()
@@ -1028,8 +1134,6 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
         gen_weight_sum += w_i
         gen_gf_weighted += adj_scored * w_i
         gen_ga_weighted += adj_conceded * w_i
-        gen_raw_gf += scored
-        gen_raw_ga += conceded
         gen_cnt += 1
 
         matches_venue_filter = False
@@ -1043,11 +1147,9 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
             ven_weight_sum += w_v
             ven_gf_weighted += adj_scored * w_v
             ven_ga_weighted += adj_conceded * w_v
-            ven_raw_gf += scored
-            ven_raw_ga += conceded
             ven_cnt += 1
 
-    rest_info = detect_rest_and_fatigue(matches, default_rest=2.0)
+    rest_info = detect_rest_and_fatigue(matches_sorted, default_rest=2.0, target_date=target_date)
 
     if gen_cnt == 0 or gen_weight_sum <= 0:
         return {
@@ -1089,7 +1191,7 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
     }
 
 
-def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False) -> dict:
+def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None) -> dict:
     """
     Combina clasificación real de ESPN NHL Standings (70%) + racha reciente real (30%)
     o catálogo calibrado KNOWN_NHL_TEAMS para devolver métricas cuantitativas de hockey.
@@ -1120,10 +1222,18 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
             gf_gen = gf_gen * reg_w + prior_gf * (1.0 - reg_w)
             ga_gen = ga_gen * reg_w + prior_ga * (1.0 - reg_w)
 
+            rest_info = {"rest_days": 2.0, "is_b2b": False, "is_congested": False}
+            pk_pct = round(max(73.0, min(86.5, 84.5 - ga_gen * 2.1)), 1)
             if real_recent and recent_matches:
-                rec = calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+                rec = calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
                 gf_gen = gf_gen * 0.70 + rec.get("gf_pg_gen", gf_gen) * 0.30
                 ga_gen = ga_gen * 0.70 + rec.get("ga_pg_gen", ga_gen) * 0.30
+                pk_pct = round(pk_pct * 0.65 + rec.get("pk_pct", pk_pct) * 0.35, 1)
+                rest_info = {
+                    "rest_days": rec.get("rest_days", 2.0),
+                    "is_b2b": rec.get("is_b2b", False),
+                    "is_congested": rec.get("is_congested", False)
+                }
 
             gf_gen = round(max(1.9, min(4.3, gf_gen)), 2)
             ga_gen = round(max(1.9, min(4.3, ga_gen)), 2)
@@ -1150,11 +1260,13 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "diff_pg": round(gf_gen - ga_gen, 2),
                 "sog_pg": sog_pg,
                 "pp_pct": pp_pct,
-                "pk_pct": 78.5,
+                "pk_pct": pk_pct,
                 "sv_pct": sv_pct,
                 "venue_role": venue_role or "General",
                 "is_real_standings": True,
-                "rest_days": 2.0, "is_b2b": False, "is_congested": False
+                "rest_days": rest_info["rest_days"],
+                "is_b2b": rest_info["is_b2b"],
+                "is_congested": rest_info["is_congested"]
             }
             if standing_info.get("overall"):
                 res["record"] = standing_info["overall"]
@@ -1165,7 +1277,7 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
             pass
 
     if real_recent and recent_matches and len(recent_matches) > 0:
-        return calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role)
+        return calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
 
     if known_entry:
         gf_gen = known_entry["gf_pg"]
@@ -1185,6 +1297,7 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
         gf_v = gf_gen
         ga_v = ga_gen
 
+    pk_base = round(max(73.0, min(86.5, 84.5 - ga_gen * 2.1)), 1)
     return {
         "gf_pg": gf_v,
         "ga_pg": ga_v,
@@ -1193,7 +1306,7 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "diff_pg": round(gf_gen - ga_gen, 2),
         "sog_pg": base_sog,
         "pp_pct": base_pp,
-        "pk_pct": 78.5,
+        "pk_pct": pk_base,
         "sv_pct": base_sv,
         "venue_role": venue_role or "General",
         "rest_days": 2.0, "is_b2b": False, "is_congested": False
@@ -1523,24 +1636,34 @@ def generate_four_picks_football(
         "explanation": p8_exp
     })
 
-    # 9. Mercado Rápido Destacado: 1º Tiempo (45')
-    lam_tot_1t = round((lam_h + mu_a) * 0.44, 2)
+    # 9. Mercado Rápido Destacado: 1º Tiempo (45') - Alineado con Dixon-Coles 1T de Mercados Rápidos
+    ratio_1t = 0.44
+    lam_h_1t = round(lam_h * ratio_1t, 2)
+    lam_a_1t = round(mu_a * ratio_1t, 2)
+    lam_tot_1t = round(lam_h_1t + lam_a_1t, 2)
     p_over_05_1t = round((1.0 - math.exp(-lam_tot_1t)) * 100.0, 1)
+    p_w_h_1t = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) * dixon_coles_tau(h, a, lam_h_1t, lam_a_1t, rho=-0.09) for h in range(6) for a in range(6) if h > a)
+    p_d_1t = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) * dixon_coles_tau(h, a, lam_h_1t, lam_a_1t, rho=-0.09) for h in range(6) for a in range(6) if h == a)
+    p_w_a_1t = sum(poisson_prob(lam_h_1t, h) * poisson_prob(lam_a_1t, a) * dixon_coles_tau(h, a, lam_h_1t, lam_a_1t, rho=-0.09) for h in range(6) for a in range(6) if a > h)
+    tot_1t_p = (p_w_h_1t + p_d_1t + p_w_a_1t) or 1.0
+    p_1t_1x = round(min(96.0, ((p_w_h_1t + p_d_1t) / tot_1t_p) * 100.0), 1)
+    p_1t_x2 = round(min(96.0, ((p_w_a_1t + p_d_1t) / tot_1t_p) * 100.0), 1)
+
     if p_over_05_1t >= 68.0:
         p9_name = "1º Tiempo: Más de 0.5 Goles (+0.5 1T)"
         p9_prob = p_over_05_1t
         p9_risk = "Bajo" if p_over_05_1t >= 75 else "Medio"
         p9_exp = f"Alta probabilidad ({p_over_05_1t}%) de ver al menos un gol antes del descanso ({lam_tot_1t} xG proyectados en 45')."
-    elif pct_h >= pct_a:
+    elif lam_h >= mu_a:
         p9_name = f"1º Tiempo: 1X ({home_team} o Empate 1T)"
-        p9_prob = round(min(94.0, (pct_h * 0.85) + (pct_d * 1.15)), 1)
-        p9_risk = "Bajo"
-        p9_exp = f"Seguridad táctica de {home_team} para sostener ventaja o paridad en los primeros 45 minutos."
+        p9_prob = p_1t_1x
+        p9_risk = "Bajo" if p9_prob >= 72 else "Medio"
+        p9_exp = f"Seguridad táctica de {home_team} para sostener ventaja o paridad en los primeros 45 minutos ({p9_prob}%)."
     else:
         p9_name = f"1º Tiempo: X2 (Empate o {away_team} 1T)"
-        p9_prob = round(min(94.0, (pct_a * 0.85) + (pct_d * 1.15)), 1)
-        p9_risk = "Bajo"
-        p9_exp = f"Respaldo al visitante para liderar o empatar al cierre del primer tiempo."
+        p9_prob = p_1t_x2
+        p9_risk = "Bajo" if p9_prob >= 72 else "Medio"
+        p9_exp = f"Respaldo al visitante para liderar o empatar al cierre del primer tiempo ({p9_prob}%)."
 
     picks.append({
         "id": 9,
@@ -1557,20 +1680,24 @@ def generate_four_picks_football(
 
     return picks
 
-def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a: float, proj_total: float, line: float, spread_h: float) -> list:
+def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a: float, proj_total: float, line: float, spread_h: float, q1_prob_win: float = None, half_prob_win: float = None) -> list:
     picks = []
+    # Diferencial real esperado (diff = pts_h - pts_a = -spread_h)
+    diff = -float(spread_h)
+    sigma_diff = 11.2
+    sigma_tot = 14.8
 
     # 1. Moneyline
     if pct_h >= pct_a:
         p1_name = f"Victoria {home_team} (Moneyline)"
         p1_prob = pct_h
         p1_risk = "Bajo" if pct_h >= 68 else ("Medio" if pct_h >= 55 else "Alto")
-        p1_exp = f"El algoritmo proyecta un Net Rating superior para {home_team} (+{abs(round(spread_h, 1))}), favorecido por la localía y efectividad en tiros de campo."
+        p1_exp = f"El algoritmo proyecta un Net Rating superior para {home_team} (+{abs(round(spread_h, 1))}), favorecido por eficiencia ofensiva y control de ritmo."
     else:
         p1_name = f"Victoria {away_team} (Moneyline)"
         p1_prob = pct_a
         p1_risk = "Bajo" if pct_a >= 65 else ("Medio" if pct_a >= 52 else "Alto")
-        p1_exp = f"{away_team} presenta ventaja en True Shooting % y mayor profundidad de banquillo frente a la defensa local."
+        p1_exp = f"{away_team} presenta ventaja en eficiencia por 100 posesiones frente a la defensa local."
     
     odds1 = round(100.0 / max(p1_prob, 1.0), 2)
     picks.append({
@@ -1584,18 +1711,23 @@ def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a:
         "explanation": p1_exp
     })
 
-    # 2. Total de Puntos (Over / Under)
-    if proj_total >= line:
-        p2_name = f"Más de {line - 1.5} Puntos (Over)"
-        p2_prob = 59.5
-        p2_risk = "Medio"
-        p2_exp = f"Ritmo de posesiones (Pace) acelerado proyectado con alta cadencia de triples y puntos rápidos en transición."
+    # 2. Total de Puntos (Over / Under con distribución normal σ = 14.8 pts)
+    if proj_total >= 224.0:
+        alt_line = round((proj_total - 4.0) * 2.0) / 2.0
+        if alt_line == int(alt_line):
+            alt_line -= 0.5
+        p2_name = f"Más de {alt_line:.1f} Puntos (Over)"
+        p2_prob = round(max(51.0, min(85.0, normal_cdf((proj_total - alt_line) / sigma_tot) * 100.0)), 1)
+        p2_exp = f"Ritmo de posesiones (Pace) proyectado de {proj_total:.1f} pts; probabilidad matemática real de superar {alt_line:.1f} pts ({p2_prob}%)."
     else:
-        p2_name = f"Menos de {line + 1.5} Puntos (Under)"
-        p2_prob = 58.0
-        p2_risk = "Medio"
-        p2_exp = f"Ritmo de juego estructurado a media cancha; se proyecta un control férreo del rebote defensivo que limitará segundas oportunidades."
-    
+        alt_line = round((proj_total + 4.0) * 2.0) / 2.0
+        if alt_line == int(alt_line):
+            alt_line += 0.5
+        p2_name = f"Menos de {alt_line:.1f} Puntos (Under)"
+        p2_prob = round(max(51.0, min(85.0, normal_cdf((alt_line - proj_total) / sigma_tot) * 100.0)), 1)
+        p2_exp = f"Ritmo controlado ({proj_total:.1f} pts proyectados); probabilidad real bajo {alt_line:.1f} puntos ({p2_prob}%)."
+
+    p2_risk = "Bajo" if p2_prob >= 66 else "Medio"
     odds2 = round(100.0 / max(p2_prob, 1.0), 2)
     picks.append({
         "id": 2,
@@ -1604,22 +1736,34 @@ def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a:
         "probability": p2_prob,
         "fair_odds": odds2,
         "risk_level": p2_risk,
-        "risk_color": "emerald" if p2_risk == "Bajo" else ("amber" if p2_risk == "Medio" else "rose"),
+        "risk_color": "emerald" if p2_risk == "Bajo" else "amber",
         "explanation": p2_exp
     })
 
-    # 3. Hándicap con Puntos (Spread)
-    if spread_h <= 0:
-        p3_name = f"{home_team} {spread_h}"
-        p3_prob = 54.5
-        p3_risk = "Medio"
-        p3_exp = f"Margen estimado de triunfo de {abs(round(spread_h))} a {abs(round(spread_h)) + 4} puntos cubriendo la línea de hándicap propuesta."
+    # 3. Hándicap con Puntos (Spread con colchón realista y distribución normal σ = 11.2 pts)
+    if diff >= 3.0:
+        # Favorito con margen amplio: línea alternativa -2.5/-3.5 o +2.5 más conservadora
+        alt_sp = round(max(1.5, diff - 3.5) * 2.0) / 2.0
+        if alt_sp == int(alt_sp):
+            alt_sp -= 0.5
+        p3_name = f"{home_team} -{alt_sp:.1f}"
+        p3_prob = round(max(51.0, min(88.0, normal_cdf((diff - alt_sp) / sigma_diff) * 100.0)), 1)
+        p3_exp = f"Margen proyectado de +{diff:.1f} pts para {home_team}; cobertura estadística sobre -{alt_sp:.1f} pts ({p3_prob}%)."
+    elif diff <= -3.0:
+        alt_sp = round(max(1.5, abs(diff) - 3.5) * 2.0) / 2.0
+        if alt_sp == int(alt_sp):
+            alt_sp -= 0.5
+        p3_name = f"{away_team} -{alt_sp:.1f}"
+        p3_prob = round(max(51.0, min(88.0, normal_cdf((abs(diff) - alt_sp) / sigma_diff) * 100.0)), 1)
+        p3_exp = f"{away_team} proyecta ventaja neta de +{abs(diff):.1f} pts; respaldo en línea -{alt_sp:.1f} ({p3_prob}%)."
     else:
-        p3_name = f"{away_team} -{spread_h}"
-        p3_prob = 53.5
-        p3_risk = "Medio"
-        p3_exp = f"{away_team} llega en mejor racha ofensiva y se proyecta como dominador del diferencial de puntos."
+        # Partido parejo: proteger al ligeramente inferior o local con +3.5 pts
+        c_team = home_team if diff >= 0 else away_team
+        p3_name = f"{c_team} +3.5"
+        p3_prob = round(max(55.0, min(82.0, normal_cdf((abs(diff) + 3.5) / sigma_diff) * 100.0)), 1)
+        p3_exp = f"Encuentro muy cerrado (diferencial {diff:+.1f} pts). Colchón positivo de +3.5 pts para {c_team} ({p3_prob}%)."
 
+    p3_risk = "Bajo" if p3_prob >= 66 else "Medio"
     odds3 = round(100.0 / max(p3_prob, 1.0), 2)
     picks.append({
         "id": 3,
@@ -1628,37 +1772,41 @@ def generate_four_picks_nba(home_team: str, away_team: str, pct_h: float, pct_a:
         "probability": p3_prob,
         "fair_odds": odds3,
         "risk_level": p3_risk,
-        "risk_color": "emerald" if p3_risk == "Bajo" else ("amber" if p3_risk == "Medio" else "rose"),
+        "risk_color": "emerald" if p3_risk == "Bajo" else "amber",
         "explanation": p3_exp
     })
 
-    # 4. Mitades y Cuartos (Ganador 1ª Mitad)
-    fav = home_team if pct_h >= pct_a else away_team
-    p4_prob = 62.0
+    # 4. Mitades y Cuartos (Ganador 1ª Mitad con normal_cdf σ = 8.1 pts)
+    fav = home_team if diff >= 0 else away_team
+    diff_half = abs(diff) * 0.506
+    p4_prob = half_prob_win if half_prob_win is not None else round(max(50.0, min(88.0, normal_cdf(diff_half / 8.1) * 100.0)), 1)
+    p4_risk = "Bajo" if p4_prob >= 64 else "Medio"
     picks.append({
         "id": 4,
         "market": "Ganador 1ª Mitad (Q1 + Q2)",
         "name": f"{fav} Ganador 1ª Mitad",
         "probability": p4_prob,
-        "fair_odds": 1.61,
-        "risk_level": "Bajo",
-        "risk_color": "emerald",
-        "explanation": f"Mayor fortaleza del quinteto abridor de {fav} para tomar ventaja en los primeros 24 minutos reglamentarios.",
+        "fair_odds": round(100.0 / max(p4_prob, 1.0), 2),
+        "risk_level": p4_risk,
+        "risk_color": "emerald" if p4_risk == "Bajo" else "amber",
+        "explanation": f"Ventaja neta proyectada de +{diff_half:.1f} pts en la 1ª mitad para {fav} ({p4_prob}%).",
         "is_fast_market": True,
         "badge": "⚡ Mercado Rápido"
     })
 
-    # 5. Mercado Rápido: Ganador 1º Cuarto (Q1 - 12')
-    p5_prob = round(max(54.0, min(68.0, 50.0 + (pct_h - pct_a) * 0.38 if pct_h >= pct_a else 50.0 + (pct_a - pct_h) * 0.38)), 1)
+    # 5. Mercado Rápido: Ganador 1º Cuarto (Q1 - 12' con normal_cdf σ = 5.8 pts, consistente con quarters_breakdown)
+    diff_q1 = abs(diff) * 0.254
+    p5_prob = q1_prob_win if q1_prob_win is not None else round(max(50.0, min(84.0, normal_cdf(diff_q1 / 5.8) * 100.0)), 1)
+    p5_risk = "Bajo" if p5_prob >= 62 else "Medio"
     picks.append({
         "id": 5,
         "market": "Mercado Rápido (1º Cuarto - 12')",
         "name": f"1º Cuarto: Ganador {fav} (Q1)",
         "probability": p5_prob,
         "fair_odds": round(100.0 / max(p5_prob, 1.0), 2),
-        "risk_level": "Bajo" if p5_prob >= 62 else "Medio",
-        "risk_color": "emerald" if p5_prob >= 62 else "amber",
-        "explanation": f"Arranque agresivo en los 12 minutos iniciales para {fav} imponiendo el ritmo ofensivo temprano.",
+        "risk_level": p5_risk,
+        "risk_color": "emerald" if p5_risk == "Bajo" else "amber",
+        "explanation": f"Arranque proyectado de +{diff_q1:.1f} pts en los 12 minutos iniciales para {fav} ({p5_prob}%).",
         "is_fast_market": True,
         "badge": "⚡ Mercado Rápido"
     })
@@ -4899,7 +5047,8 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
                     "away_score": sc_away,
                     "score": f"{sc_home} - {sc_away}",
                     "result": res,
-                    "competition": comp_name
+                    "competition": comp_name,
+                    "is_synthetic": True
                 })
 
         # 2. Últimos 5 del Visitante
@@ -4947,7 +5096,8 @@ def generate_match_h2h(home_team: str, away_team: str, sport: str = "football", 
                     "away_score": sc_away,
                     "score": f"{sc_home} - {sc_away}",
                     "result": res,
-                    "competition": comp_name
+                    "competition": comp_name,
+                    "is_synthetic": True
                 })
 
         # 3. Cara a Cara Directo entre ellos (5 partidos)
@@ -5294,18 +5444,16 @@ def calculate_projections_matrix(home_stats: dict, away_stats: dict, lambda_home
     l_h_pure = max(0.01, lambda_home - cov_dynamic)
     l_a_pure = max(0.01, mu_away - cov_dynamic)
 
-    # 1. Marcador Final Exacto (FTHG-FTAG) - Bivariado Poisson con covarianza
+    # 1. Marcador Final Exacto (FTHG-FTAG) - Alineado con Dixon & Coles (rho = -0.11)
     probs_ft = {}
     for x in range(8):
+        px = poisson_prob(lambda_home, x)
         for y in range(8):
-            s = 0.0
-            for k in range(min(x, y) + 1):
-                s += poisson_prob(cov_dynamic, k) * poisson_prob(l_h_pure, x - k) * poisson_prob(l_a_pure, y - k)
-            probs_ft[f"{x}-{y}"] = s
+            probs_ft[f"{x}-{y}"] = px * poisson_prob(mu_away, y) * dixon_coles_tau(x, y, lambda_home, mu_away, rho=-0.11)
     tot_ft = sum(probs_ft.values()) or 1.0
     top_ft = [[k, round((v / tot_ft) * 100, 1)] for k, v in sorted(probs_ft.items(), key=lambda i: i[1], reverse=True)[:10]]
 
-    # 2. Marcador Primer Tiempo (HTHG-HTAG) con ratio dinámico según intensidad en 3/4
+    # 2. Marcador Primer Tiempo (HTHG-HTAG) con ratio dinámico y Dixon-Coles 1T
     c_h = float(home_stats.get("corners", 5.0) or 5.0)
     c_a = float(away_stats.get("corners", 4.2) or 4.2)
 
@@ -5320,8 +5468,9 @@ def calculate_projections_matrix(home_stats: dict, away_stats: dict, lambda_home
     lam_a_ht = mu_away * ratio_1t
     probs_ht = {}
     for h in range(6):
+        ph_1t = poisson_prob(lam_h_ht, h)
         for a in range(6):
-            probs_ht[f"{h}-{a}"] = poisson_prob(lam_h_ht, h) * poisson_prob(lam_a_ht, a)
+            probs_ht[f"{h}-{a}"] = ph_1t * poisson_prob(lam_a_ht, a) * dixon_coles_tau(h, a, lam_h_ht, lam_a_ht, rho=-0.09)
     tot_ht = sum(probs_ht.values()) or 1.0
     top_ht = [[k, round((v / tot_ht) * 100, 1)] for k, v in sorted(probs_ht.items(), key=lambda i: i[1], reverse=True)[:10]]
 
@@ -5592,40 +5741,105 @@ def calculate_football_quick_markets(home_team: str, away_team: str, lam_h: floa
         }
     }
 
-def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pct_a: float, pts_home: float, pts_away: float, total_projected_pts: float, over_under_line: float, spread: float, quarters_breakdown: dict = None) -> dict:
-    pts_h_q1 = round(pts_home / 4.0, 1)
-    pts_a_q1 = round(pts_away / 4.0, 1)
-    tot_pts_q1 = round(pts_h_q1 + pts_a_q1, 1)
-    q1_ou_line = round((total_projected_pts / 4.0) - 0.5) + 0.5
-    q1_spread = round(spread / 4.0, 1)
+def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pct_a: float, pts_home: float, pts_away: float, total_projected_pts: float, over_under_line: float, spread: float, quarters_breakdown: dict = None, home_stats: dict = None, away_stats: dict = None) -> dict:
+    hs = home_stats or {}
+    as_ = away_stats or {}
+    # En la NBA, los quintetos titulares juegan casi todo el 1º cuarto (~25.4% de los puntos del partido).
+    # Equipos en Back-to-Back suelen arrancar ligeramente más fríos en Q1.
+    q1_share_h = 0.254 - (0.008 if hs.get("is_b2b") else 0.0)
+    q1_share_a = 0.254 - (0.008 if as_.get("is_b2b") else 0.0)
+    h1_share = 0.506
 
-    prob_h_q1 = round(max(32.0, min(68.0, 50.0 + (pts_home - pts_away) * 1.5)), 1)
+    raw_h_q1 = pts_home * q1_share_h
+    raw_a_q1 = pts_away * q1_share_a
+    # Si contamos con datos reales de Q1 de los últimos juegos (mínimo 3), mezclamos tendencia empírica (28%) con modelo estructural (72%)
+    if (
+        hs.get("q1_avg_for") is not None
+        and as_.get("q1_avg_against") is not None
+        and int(hs.get("q1_sample", 0) or 0) >= 3
+        and int(as_.get("q1_sample", 0) or 0) >= 3
+    ):
+        emp_h_q1 = (float(hs["q1_avg_for"]) + float(as_["q1_avg_against"])) / 2.0
+        raw_h_q1 = raw_h_q1 * 0.72 + emp_h_q1 * 0.28
+    if (
+        as_.get("q1_avg_for") is not None
+        and hs.get("q1_avg_against") is not None
+        and int(as_.get("q1_sample", 0) or 0) >= 3
+        and int(hs.get("q1_sample", 0) or 0) >= 3
+    ):
+        emp_a_q1 = (float(as_["q1_avg_for"]) + float(hs["q1_avg_against"])) / 2.0
+        raw_a_q1 = raw_a_q1 * 0.72 + emp_a_q1 * 0.28
+
+    pts_h_q1 = round(raw_h_q1, 1)
+    pts_a_q1 = round(raw_a_q1, 1)
+    tot_pts_q1 = round(raw_h_q1 + raw_a_q1, 1)
+    q1_spread = round(-(raw_h_q1 - raw_a_q1) * 2.0) / 2.0
+
+    # Desviaciones estándar reales de NBA Q1 y 1ª Mitad
+    sigma_q1_diff = 5.8
+    sigma_q1_tot = 7.6
+    sigma_1h_diff = 8.1
+    sigma_1h_tot = 10.6
+
+    prob_h_q1 = round(max(12.0, min(88.0, normal_cdf((raw_h_q1 - raw_a_q1) / sigma_q1_diff) * 100.0)), 1)
     prob_a_q1 = round(100.0 - prob_h_q1, 1)
 
-    pts_h_1h = round(pts_home / 2.0, 1)
-    pts_a_1h = round(pts_away / 2.0, 1)
-    tot_pts_1h = round(pts_h_1h + pts_a_1h, 1)
-    h1_ou_line = round((total_projected_pts / 2.0) - 0.5) + 0.5
-    h1_spread = round(spread / 2.0, 1)
+    raw_h_1h = pts_home * h1_share
+    raw_a_1h = pts_away * h1_share
+    pts_h_1h = round(raw_h_1h, 1)
+    pts_a_1h = round(raw_a_1h, 1)
+    tot_pts_1h = round(raw_h_1h + raw_a_1h, 1)
 
-    prob_h_1h = round(max(28.0, min(72.0, 50.0 + (pts_home - pts_away) * 2.1)), 1)
+    prob_h_1h = round(max(10.0, min(90.0, normal_cdf((raw_h_1h - raw_a_1h) / sigma_1h_diff) * 100.0)), 1)
     prob_a_1h = round(100.0 - prob_h_1h, 1)
 
-    diff_q1 = tot_pts_q1 - q1_ou_line
-    prob_q1_over = round(max(42.0, min(65.0, 50.0 + diff_q1 * 2.8)), 1)
-    prob_q1_under = round(100.0 - prob_q1_over, 1)
+    # Líneas múltiples de Total de Puntos Q1 usando distribución normal N(tot_pts_q1, 7.6^2)
+    q1_center = round(tot_pts_q1 * 2.0) / 2.0
+    if q1_center == int(q1_center):
+        q1_center -= 0.5
 
-    diff_1h = tot_pts_1h - h1_ou_line
-    prob_1h_over = round(max(44.0, min(66.0, 50.0 + diff_1h * 2.2)), 1)
-    prob_1h_under = round(100.0 - prob_1h_over, 1)
+    # Líneas con ventaja estadística real (evitan monedas al aire de ~50%)
+    q1_over_line = round((tot_pts_q1 - 2.8) * 2.0) / 2.0
+    if q1_over_line == int(q1_over_line):
+        q1_over_line -= 0.5
+    q1_under_line = round((tot_pts_q1 + 2.8) * 2.0) / 2.0
+    if q1_under_line == int(q1_under_line):
+        q1_under_line += 0.5
 
-    fav_team = home_team if pts_home >= pts_away else away_team
+    prob_q1_over = round(max(5.0, min(95.0, normal_cdf((tot_pts_q1 - q1_over_line) / sigma_q1_tot) * 100.0)), 1)
+    prob_q1_under = round(max(5.0, min(95.0, normal_cdf((q1_under_line - tot_pts_q1) / sigma_q1_tot) * 100.0)), 1)
+
+    # Tabla completa de 5 líneas estándar cercanas al partido (para referencia exacta en Q1)
+    q1_lines = []
+    for off in (-4.0, -2.0, 0.0, 2.0, 4.0):
+        ln = round((q1_center + off) * 2.0) / 2.0
+        if ln == int(ln):
+            ln -= 0.5
+        p_o = round(max(5.0, min(95.0, normal_cdf((tot_pts_q1 - ln) / sigma_q1_tot) * 100.0)), 1)
+        p_u = round(100.0 - p_o, 1)
+        q1_lines.append({"line": ln, "over_prob": p_o, "under_prob": p_u})
+
+    # 1ª Mitad Total de Puntos (con margen de valor de -3.5/+3.5 respecto a proyección)
+    h1_over_line = round((tot_pts_1h - 3.5) * 2.0) / 2.0
+    if h1_over_line == int(h1_over_line):
+        h1_over_line -= 0.5
+    h1_under_line = round((tot_pts_1h + 3.5) * 2.0) / 2.0
+    if h1_under_line == int(h1_under_line):
+        h1_under_line += 0.5
+    prob_1h_over = round(max(5.0, min(95.0, normal_cdf((tot_pts_1h - h1_over_line) / sigma_1h_tot) * 100.0)), 1)
+    prob_1h_under = round(max(5.0, min(95.0, normal_cdf((h1_under_line - tot_pts_1h) / sigma_1h_tot) * 100.0)), 1)
+
+    fav_team = home_team if pts_h_q1 >= pts_a_q1 else away_team
     fav_prob_q1 = max(prob_h_q1, prob_a_q1)
     fav_prob_1h = max(prob_h_1h, prob_a_1h)
 
-    # Pick Estrella NBA Fast Market
-    if fav_prob_q1 >= 58.0:
-        star_risk = "Bajo" if fav_prob_q1 >= 64.0 else "Medio"
+    # Seleccionar la mejor jugada de Total Q1 según el ritmo del partido
+    pace_avg = (float(hs.get("pace", 99.5) or 99.5) + float(as_.get("pace", 99.5) or 99.5)) / 2.0
+    prefer_q1_over = tot_pts_q1 >= 56.5 or pace_avg >= 100.2
+
+    # Pick Estrella NBA Fast Market (elige la señal con mayor probabilidad real)
+    if fav_prob_q1 >= 62.0:
+        star_risk = "Bajo" if fav_prob_q1 >= 66.0 else "Medio"
         star_pick = {
             "market": "Ganador 1º Cuarto (Q1 ML)",
             "name": f"1º Cuarto: Ganador {fav_team} (Q1)",
@@ -5633,10 +5847,10 @@ def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pc
             "risk_level": star_risk,
             "risk_color": "emerald" if star_risk == "Bajo" else "amber",
             "settlement": "En 12 minutos (Fin del Q1)",
-            "explanation": f"{fav_team} proyecta un arranque dominante ({pts_h_q1 if fav_team == home_team else pts_a_q1} pts proyectados en Q1) con {fav_prob_q1}% de ganar los primeros 12 minutos."
+            "explanation": f"{fav_team} proyecta un arranque superior ({pts_h_q1 if fav_team == home_team else pts_a_q1} pts en Q1) con {fav_prob_q1}% de probabilidad gaussiana (σ=5.8)."
         }
-    elif fav_prob_1h >= 60.0:
-        star_risk = "Bajo" if fav_prob_1h >= 66.0 else "Medio"
+    elif fav_prob_1h >= 64.0:
+        star_risk = "Bajo" if fav_prob_1h >= 68.0 else "Medio"
         star_pick = {
             "market": "Ganador 1ª Mitad (1H ML)",
             "name": f"1ª Mitad: Ganador {fav_team} (1H)",
@@ -5644,27 +5858,29 @@ def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pc
             "risk_level": star_risk,
             "risk_color": "emerald" if star_risk == "Bajo" else "amber",
             "settlement": "En 24 minutos (Medio Tiempo)",
-            "explanation": f"Superioridad ofensiva neta de {fav_team} en los dos primeros cuartos para liderar al descanso con {fav_prob_1h}% de probabilidad."
+            "explanation": f"Superioridad neta de {fav_team} en los dos primeros cuartos para liderar al descanso ({tot_pts_1h:.1f} pts totales, {fav_prob_1h}%)."
         }
-    elif prob_q1_over >= 56.0:
+    elif prefer_q1_over:
+        star_risk = "Bajo" if prob_q1_over >= 66.0 else "Medio"
         star_pick = {
             "market": "Total Puntos 1º Cuarto",
-            "name": f"1º Cuarto: Más de {q1_ou_line:.1f} Puntos (Q1 Over)",
+            "name": f"1º Cuarto: Más de {q1_over_line:.1f} Puntos (Q1 Over)",
             "probability": prob_q1_over,
-            "risk_level": "Medio",
-            "risk_color": "amber",
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
             "settlement": "En 12 minutos (Fin del Q1)",
-            "explanation": f"Arranque de alto ritmo de posesiones. Se proyectan {tot_pts_q1} puntos combinados solo en el 1º cuarto."
+            "explanation": f"Se proyectan {tot_pts_q1:.1f} puntos en el 1º cuarto (σ=7.6 pts). La probabilidad de superar {q1_over_line:.1f} puntos es de {prob_q1_over}%."
         }
     else:
+        star_risk = "Bajo" if prob_q1_under >= 66.0 else "Medio"
         star_pick = {
             "market": "Total Puntos 1º Cuarto",
-            "name": f"1º Cuarto: Menos de {q1_ou_line:.1f} Puntos (Q1 Under)",
+            "name": f"1º Cuarto: Menos de {q1_under_line:.1f} Puntos (Q1 Under)",
             "probability": prob_q1_under,
-            "risk_level": "Bajo" if prob_q1_under >= 62 else "Medio",
-            "risk_color": "emerald" if prob_q1_under >= 62 else "amber",
+            "risk_level": star_risk,
+            "risk_color": "emerald" if star_risk == "Bajo" else "amber",
             "settlement": "En 12 minutos (Fin del Q1)",
-            "explanation": f"Defensas estructuradas y ritmo cauteloso en los primeros 12 minutos ({tot_pts_q1} pts proyectados)."
+            "explanation": f"Ritmo moderado con {tot_pts_q1:.1f} puntos proyectados en Q1 (σ=7.6 pts). La probabilidad bajo {q1_under_line:.1f} puntos es de {prob_q1_under}%."
         }
 
     markets = [
@@ -5674,23 +5890,23 @@ def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pc
             "probability": fav_prob_q1,
             "risk_level": "Bajo" if fav_prob_q1 >= 64 else "Medio",
             "risk_color": "emerald" if fav_prob_q1 >= 64 else "amber",
-            "desc": f"Proyección de marcador Q1: {pts_h_q1:.0f} - {pts_a_q1:.0f} puntos."
+            "desc": f"Proyección de marcador Q1: {pts_h_q1:.1f} - {pts_a_q1:.1f} puntos (σ=5.8)."
         },
         {
-            "category": "Total Puntos Q1",
-            "name": f"1º Cuarto: Más de {q1_ou_line:.1f} Puntos",
+            "category": "Total Puntos Q1 (Valor Over)",
+            "name": f"1º Cuarto: Más de {q1_over_line:.1f} Puntos",
             "probability": prob_q1_over,
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "desc": f"Línea de {q1_ou_line:.1f} pts calculada sobre ritmo estimado de anotación temprana."
+            "risk_level": "Bajo" if prob_q1_over >= 66 else "Medio",
+            "risk_color": "emerald" if prob_q1_over >= 66 else "amber",
+            "desc": f"Media proyectada Q1: {tot_pts_q1:.1f} pts (σ=7.6). Distribución normal real sobre línea {q1_over_line:.1f}."
         },
         {
-            "category": "Total Puntos Q1",
-            "name": f"1º Cuarto: Menos de {q1_ou_line:.1f} Puntos",
+            "category": "Total Puntos Q1 (Valor Under)",
+            "name": f"1º Cuarto: Menos de {q1_under_line:.1f} Puntos",
             "probability": prob_q1_under,
-            "risk_level": "Bajo" if prob_q1_under >= 62 else "Medio",
-            "risk_color": "emerald" if prob_q1_under >= 62 else "amber",
-            "desc": "Cobertura bajo control de pérdidas y posesiones largas en el inicio."
+            "risk_level": "Bajo" if prob_q1_under >= 66 else "Medio",
+            "risk_color": "emerald" if prob_q1_under >= 66 else "amber",
+            "desc": f"Cobertura defensiva Q1 bajo {q1_under_line:.1f} pts respecto a proyección de {tot_pts_q1:.1f} pts."
         },
         {
             "category": "Ganador 1ª Mitad (24')",
@@ -5698,15 +5914,15 @@ def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pc
             "probability": fav_prob_1h,
             "risk_level": "Bajo" if fav_prob_1h >= 66 else "Medio",
             "risk_color": "emerald" if fav_prob_1h >= 66 else "amber",
-            "desc": f"Proyección al medio tiempo: {pts_h_1h:.0f} - {pts_a_1h:.0f} puntos combinados."
+            "desc": f"Proyección al medio tiempo: {pts_h_1h:.1f} - {pts_a_1h:.1f} puntos combinados (σ=8.1)."
         },
         {
-            "category": "Total Puntos 1H",
-            "name": f"1ª Mitad: Más de {h1_ou_line:.1f} Puntos",
-            "probability": prob_1h_over,
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "desc": f"Se proyectan {tot_pts_1h:.1f} puntos en los primeros 24 minutos de juego."
+            "category": "Total Puntos 1H (24')",
+            "name": f"1ª Mitad: {'Más de ' + f'{h1_over_line:.1f}' if tot_pts_1h >= 112 else 'Menos de ' + f'{h1_under_line:.1f}'} Puntos",
+            "probability": prob_1h_over if tot_pts_1h >= 112 else prob_1h_under,
+            "risk_level": "Bajo" if (prob_1h_over if tot_pts_1h >= 112 else prob_1h_under) >= 66 else "Medio",
+            "risk_color": "emerald" if (prob_1h_over if tot_pts_1h >= 112 else prob_1h_under) >= 66 else "amber",
+            "desc": f"Se proyectan {tot_pts_1h:.1f} puntos en los primeros 24 minutos (σ=10.6)."
         }
     ]
 
@@ -5737,7 +5953,8 @@ def calculate_nba_quick_markets(home_team: str, away_team: str, pct_h: float, pc
             "title": "Producción Ofensiva Temprana",
             "q1_total_pts": tot_pts_q1,
             "h1_total_pts": tot_pts_1h,
-            "q1_spread": q1_spread
+            "q1_spread": q1_spread,
+            "q1_lines": q1_lines
         }
     }
 
@@ -5857,10 +6074,10 @@ def calculate_nhl_quick_markets(home_team: str, away_team: str, pct_h: float, pc
         {
             "category": "Tiros a Puerta 1P",
             "name": "Más de 17.5 Tiros a Puerta en 1P (SOG)",
-            "probability": round(min(80.0, max(45.0, 50.0 + (sog_1p_tot - 17.5) * 4.0)), 1),
-            "risk_level": "Medio",
-            "risk_color": "amber",
-            "desc": f"Se proyectan {sog_1p_tot} disparos a portería combinados en el 1P."
+            "probability": round(min(86.0, max(18.0, normal_cdf((sog_1p_tot - 17.5) / 4.2) * 100.0)), 1),
+            "risk_level": "Bajo" if sog_1p_tot >= 19.5 else "Medio",
+            "risk_color": "emerald" if sog_1p_tot >= 19.5 else "amber",
+            "desc": f"Se proyectan {sog_1p_tot} disparos a portería combinados en el 1P (σ=4.2)."
         }
     ]
 
@@ -6178,17 +6395,23 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         remaining_mins = max(1, 90 - minute)
         fraction_remaining = remaining_mins / 90.0
 
-    # Ajuste de momentum por estadísticas en vivo
+    # Ajuste de momentum por estadísticas en vivo normalizadas por minutos jugados
     poss_h = live_stats.get("possession_home", 50) / 100.0
-    shots_h = live_stats.get("shots_on_target_home", 3)
-    shots_a = live_stats.get("shots_on_target_away", 3)
+    shots_h = float(live_stats.get("shots_on_target_home", 3) or 0)
+    shots_a = float(live_stats.get("shots_on_target_away", 3) or 0)
+    elapsed_mins_f = max(12.0, float(minute or 45))
+    # Tasa proyectada por 90 minutos vs media base (~4.2 SOT por equipo)
+    sot_rate_h = max(0.75, min(1.30, (shots_h / elapsed_mins_f) * 90.0 / 4.2)) if minute >= 15 else 1.0
+    sot_rate_a = max(0.75, min(1.30, (shots_a / elapsed_mins_f) * 90.0 / 4.2)) if minute >= 15 else 1.0
 
-    momentum_factor_h = (poss_h * 1.3) + (0.1 * shots_h)
-    momentum_factor_a = ((1.0 - poss_h) * 1.3) + (0.1 * shots_a)
+    momentum_factor_h = max(0.72, min(1.35, ((poss_h * 1.1) + 0.45) * 0.50 + sot_rate_h * 0.50))
+    momentum_factor_a = max(0.72, min(1.35, (((1.0 - poss_h) * 1.1) + 0.45) * 0.50 + sot_rate_a * 0.50))
 
-    # Goles esperados para el tiempo restante
-    lambda_rem = max(0.05, home_stats.get("attack", 1.5) * fraction_remaining * (momentum_factor_h / 1.0))
-    mu_rem = max(0.05, away_stats.get("attack", 1.2) * fraction_remaining * (momentum_factor_a / 1.0))
+    # Goles esperados para el tiempo restante (usando tasa ataque/defensa enfrentada)
+    base_lam_h = max(0.35, (float(home_stats.get("attack", 1.5) or 1.5) / 1.45) * float(away_stats.get("defense", 1.2) or 1.2))
+    base_mu_a = max(0.30, (float(away_stats.get("attack", 1.2) or 1.2) / 1.35) * float(home_stats.get("defense", 1.1) or 1.1))
+    lambda_rem = max(0.05, base_lam_h * fraction_remaining * momentum_factor_h)
+    mu_rem = max(0.05, base_mu_a * fraction_remaining * momentum_factor_a)
 
     prob_home_win = 0.0
     prob_draw = 0.0
@@ -6286,19 +6509,21 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         p2_exp = f"Cobertura táctica en juego protegiendo al visitante y el reparto de puntos ({p2_prob}% acumulado)."
     p2_odds = round(100.0 / max(p2_prob, 1.0), 2)
 
-    # 3. Línea Total de Goles Restante
+    # 3. Línea Total de Goles Restante (Poisson exacto: P(goles restantes <= 1) = P(0) + P(1))
     line_total = current_h + current_a + 1.5
-    under_line_prob = round(min(95.0, max(52.0, prob_no_more_goals + (0.35 * max(prob_next_goal_home, prob_next_goal_away)))), 1)
-    if minute >= 60 or prob_no_more_goals > 45:
+    lam_tot_rem = max(0.05, lambda_rem + mu_rem)
+    p_under_15_rem = (poisson_prob(lam_tot_rem, 0) + poisson_prob(lam_tot_rem, 1)) * 100.0
+    under_line_prob = round(min(97.0, max(5.0, p_under_15_rem)), 1)
+    if under_line_prob >= 52.0:
         p3_name = f"Menos de {line_total} Goles Totales"
         p3_prob = under_line_prob
-        p3_risk = "Bajo" if p3_prob >= 65 else "Medio"
-        p3_exp = f"El desgaste físico y el control defensivo en los {remaining_mins}' restantes favorecen una línea inferior a {line_total} goles."
+        p3_risk = "Bajo" if p3_prob >= 66 else "Medio"
+        p3_exp = f"El desgaste físico y el control defensivo en los {remaining_mins}' restantes proyectan ≤1 gol adicional ({lam_tot_rem:.2f} xG restantes, {p3_prob}%)."
     else:
         p3_name = f"Más de {current_h + current_a + 0.5} Goles Totales"
         p3_prob = round(100.0 - prob_no_more_goals, 1)
-        p3_risk = "Medio"
-        p3_exp = f"Con {remaining_mins}' por jugar y ritmo ofensivo activo, se proyecta al menos 1 anotación adicional en el encuentro."
+        p3_risk = "Bajo" if p3_prob >= 68 else "Medio"
+        p3_exp = f"Con {remaining_mins}' por jugar y ritmo ofensivo activo ({lam_tot_rem:.2f} xG restantes), se proyecta al menos 1 anotación adicional ({p3_prob}%)."
     p3_odds = round(100.0 / max(p3_prob, 1.0), 2)
     p3_color = "emerald" if p3_risk == "Bajo" else "amber"
 
@@ -6510,15 +6735,15 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
     projections_matrix = calculate_projections_matrix(
         home_stats=home_stats,
         away_stats=away_stats,
-        lambda_home=round(float(home_stats.get("attack", 1.5) or 1.5), 2),
-        mu_away=round(float(away_stats.get("attack", 1.2) or 1.2), 2)
+        lambda_home=round(base_lam_h, 2),
+        mu_away=round(base_mu_a, 2)
     )
 
     quick_markets = calculate_football_quick_markets(
         home_team="Local",
         away_team="Visitante",
-        lam_h=round(float(home_stats.get("attack", 1.5) or 1.5), 2),
-        mu_a=round(float(away_stats.get("attack", 1.2) or 1.2), 2),
+        lam_h=round(base_lam_h, 2),
+        mu_a=round(base_mu_a, 2),
         home_stats=home_stats,
         away_stats=away_stats
     )
@@ -6706,12 +6931,17 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
     d_tov = -(tov_h - tov_a) * 0.25 # Menos pérdidas favorece al equipo
     d_orb = (orb_h - orb_a) * 0.20
     d_ftr = (ftr_h - ftr_a) * 100.0 * 0.15
-    delta_oliver = max(-3.5, min(3.5, round(d_efg + d_tov + d_orb + d_ftr, 2)))
+    raw_oliver = round(d_efg + d_tov + d_orb + d_ftr, 2)
+    # Si Four Factors se derivaron de off_rating (no de boxscores independientes), atenuar para no duplicar peso
+    has_indep_ff = bool(home_stats.get("has_real_four_factors") and away_stats.get("has_real_four_factors"))
+    oliver_scale = 1.0 if has_indep_ff else 0.25
+    delta_oliver = max(-1.8 if not has_indep_ff else -3.5, min(1.8 if not has_indep_ff else 3.5, round(raw_oliver * oliver_scale, 2)))
 
-    # Ventaja de localía tradicional en NBA (+3.2 pts equivalentes)
-    home_court_advantage = 3.2
+    # Evitar doble conteo de localía: get_nba_team_ratings ya aplica ±0.8 off / ∓0.5 def (~2.6 pts totales) cuando venue_role != General
+    has_venue_splits = (home_stats.get("venue_role") in ("home", "Local")) and (away_stats.get("venue_role") in ("away", "Visitante"))
+    home_court_advantage = 0.0 if has_venue_splits else 2.6
 
-    # Proyección de puntos esperados por equipo (Pace * Eficiencia + Localía + Ajuste Dean Oliver)
+    # Proyección de puntos esperados por equipo (Pace * Eficiencia + Localía neta sin duplicar + Ajuste residual Dean Oliver)
     pts_home = (projected_pace / 100.0) * (off_h * (def_a / league_avg_rtg)) + (home_court_advantage / 2.0) + (delta_oliver / 2.0)
     pts_away = (projected_pace / 100.0) * (off_a * (def_h / league_avg_rtg)) - (home_court_advantage / 2.0) - (delta_oliver / 2.0)
 
@@ -6731,7 +6961,7 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
     # Hándicap sugerido
     spread = round(-diff * 2) / 2.0
 
-    # Pick recomendado
+    # Pick recomendado con probabilidad gaussiana real (sin valores fijos)
     if pct_home >= 65:
         pick = f"Gana Local ({round(pts_home)} - {round(pts_away)})"
         conf = pct_home
@@ -6741,19 +6971,25 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         conf = pct_away
         risk = "Bajo" if conf >= 72 else "Medio"
     else:
-        pick = f"Over {over_under_line - 4.5} Puntos Totales"
-        conf = 62.0
+        alt_ou = round((over_under_line - 4.5) * 2.0) / 2.0
+        pick = f"Over {alt_ou:.1f} Puntos Totales"
+        conf = round(normal_cdf((total_projected_pts - alt_ou) / 14.8) * 100.0, 1)
         risk = "Medio"
 
-    # Desglose de Cuartos y Mitades (Pre-Match)
-    # Q1 y 1ª Mitad se proyectan con el quinteto titular inicial; Q2, Q3 y Q4 se marcan para análisis en vivo.
+    # Desglose de Cuartos y Mitades (Pre-Match) unificado con Mercados Rápidos Q1 (0.254 share, 1H 0.506 share)
     sigma_q = 5.8
     sigma_half = 8.1
-    diff_q1 = (pts_home - pts_away) / 4.0
+    q1_sh_h = 0.254 - (0.008 if home_stats.get("is_b2b") else 0.0)
+    q1_sh_a = 0.254 - (0.008 if away_stats.get("is_b2b") else 0.0)
+    pts_h_q1 = pts_home * q1_sh_h
+    pts_a_q1 = pts_away * q1_sh_a
+    diff_q1 = pts_h_q1 - pts_a_q1
     prob_h_q1 = round(normal_cdf(diff_q1 / sigma_q) * 100, 1)
     prob_a_q1 = round(100.0 - prob_h_q1, 1)
 
-    diff_half = (pts_home - pts_away) / 2.0
+    pts_h_half = pts_home * 0.506
+    pts_a_half = pts_away * 0.506
+    diff_half = pts_h_half - pts_a_half
     prob_h_half = round(normal_cdf(diff_half / sigma_half) * 100, 1)
     prob_a_half = round(100.0 - prob_h_half, 1)
 
@@ -6762,7 +6998,7 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
             "name": "1º Cuarto (Q1)",
             "predicted_winner": "Local" if prob_h_q1 >= 50 else "Visitante",
             "prob_winner": max(prob_h_q1, prob_a_q1),
-            "proj_score": f"{round(pts_home/4)} - {round(pts_away/4)}",
+            "proj_score": f"{round(pts_h_q1)} - {round(pts_a_q1)}",
             "status": "Proyectado Pre-Match"
         },
         "q2": {
@@ -6776,7 +7012,7 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
             "name": "1ª Mitad (Q1 + Q2)",
             "predicted_winner": "Local" if prob_h_half >= 50 else "Visitante",
             "prob_winner": max(prob_h_half, prob_a_half),
-            "proj_score": f"{round(pts_home/2)} - {round(pts_away/2)}",
+            "proj_score": f"{round(pts_h_half)} - {round(pts_a_half)}",
             "status": "Proyectado Pre-Match"
         },
         "q3": {
@@ -6797,7 +7033,7 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
             "name": "2ª Mitad (Q3 + Q4)",
             "predicted_winner": "Local" if prob_h_half >= 50 else "Visitante",
             "prob_winner": max(prob_h_half, prob_a_half),
-            "proj_score": f"{round(pts_home/2)} - {round(pts_away/2)}",
+            "proj_score": f"{round(pts_home - pts_h_half)} - {round(pts_away - pts_a_half)}",
             "status": "Proyectado Pre-Match"
         },
         "full_game": {
@@ -6816,7 +7052,9 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         pct_a=pct_away,
         proj_total=total_projected_pts,
         line=over_under_line,
-        spread_h=spread
+        spread_h=spread,
+        q1_prob_win=max(prob_h_q1, prob_a_q1),
+        half_prob_win=max(prob_h_half, prob_a_half)
     )
 
     projections_matrix = calculate_nba_projections_matrix(
@@ -6837,7 +7075,9 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         total_projected_pts=total_projected_pts,
         over_under_line=over_under_line,
         spread=spread,
-        quarters_breakdown=quarters_breakdown
+        quarters_breakdown=quarters_breakdown,
+        home_stats=home_stats,
+        away_stats=away_stats
     )
 
     return {
@@ -6893,8 +7133,10 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
     off_a = float((away_stats or {}).get("off_rating", 114.5) or 114.5)
     def_a = float((away_stats or {}).get("def_rating", 114.5) or 114.5)
 
-    base_full_h = (pace / 100.0) * (off_h * (def_a / 114.5)) + 1.5
-    base_full_a = (pace / 100.0) * (off_a * (def_h / 114.5)) - 1.5
+    has_vs = ((home_stats or {}).get("venue_role") in ("home", "Local")) and ((away_stats or {}).get("venue_role") in ("away", "Visitante"))
+    hca_half = 0.0 if has_vs else 1.3
+    base_full_h = (pace / 100.0) * (off_h * (def_a / 114.5)) + hca_half
+    base_full_a = (pace / 100.0) * (off_a * (def_h / 114.5)) - hca_half
     base_rate_h = base_full_h / 48.0
     base_rate_a = base_full_a / 48.0
 
@@ -7025,7 +7267,9 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
     else:
         spread_tag = f"-{spread_line:.1f}"
 
-    ou_prob = round(min(68.0, max(52.0, 56.0 + (abs(eff_h - 1.0) + abs(eff_a - 1.0)) * 50.0)), 1)
+    sigma_tot_rem = max(3.0, 14.8 * math.sqrt(remaining_fraction))
+    ou_line_alt = round((over_under_line - 3.5) * 2.0) / 2.0
+    ou_prob = round(max(15.0, min(92.0, normal_cdf(((final_proj_h + final_proj_a) - ou_line_alt) / sigma_tot_rem) * 100.0)), 1)
 
     four_predictions = [
         {
@@ -7109,7 +7353,9 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         total_projected_pts=proj_total,
         over_under_line=over_under_line,
         spread=spread_home,
-        quarters_breakdown=quarters_breakdown
+        quarters_breakdown=quarters_breakdown,
+        home_stats=home_stats,
+        away_stats=away_stats
     )
 
     return {
@@ -7440,16 +7686,18 @@ def generate_seven_picks_nhl(
         "explanation": p6_exp
     })
 
-    # 7. Tiros a Puerta Totales (Shots on Goal - SOG)
-    sog_line = round(proj_sog_tot - 2.0) + 0.5 if proj_sog_tot >= 59.0 else round(proj_sog_tot + 1.5) + 0.5
+    # 7. Tiros a Puerta Totales (Shots on Goal - SOG) usando distribución normal (σ = 7.5 SOG)
+    sigma_sog = 7.5
     if proj_sog_tot >= 58.5:
-        p7_name = f"Más de {round(proj_sog_tot - 2.5) + 0.5:.1f} Tiros a Puerta (SOG)"
-        p7_prob = round(min(72.0, 56.0 + (proj_sog_tot - 58.5) * 2.1), 1)
-        p7_exp = f"Alto volumen de disparo proyectado ({proj_sog_tot:.1f} SOG combinados) por juego vertical y Power Plays."
+        sog_line = round(proj_sog_tot - 2.5) + 0.5
+        p7_name = f"Más de {sog_line:.1f} Tiros a Puerta (SOG)"
+        p7_prob = round(max(50.0, min(85.0, normal_cdf((proj_sog_tot - sog_line) / sigma_sog) * 100.0)), 1)
+        p7_exp = f"Alto volumen de disparo proyectado ({proj_sog_tot:.1f} SOG combinados) por juego vertical y Power Plays ({p7_prob}%)."
     else:
-        p7_name = f"Menos de {round(proj_sog_tot + 2.5) + 0.5:.1f} Tiros a Puerta (SOG)"
-        p7_prob = round(min(70.0, 56.0 + (58.5 - proj_sog_tot) * 2.0), 1)
-        p7_exp = f"Ritmo defensivo controlado ({proj_sog_tot:.1f} SOG totales estimados) con bloqueo de carriles centrales."
+        sog_line = round(proj_sog_tot + 2.5) + 0.5
+        p7_name = f"Menos de {sog_line:.1f} Tiros a Puerta (SOG)"
+        p7_prob = round(max(50.0, min(85.0, normal_cdf((sog_line - proj_sog_tot) / sigma_sog) * 100.0)), 1)
+        p7_exp = f"Ritmo defensivo controlado ({proj_sog_tot:.1f} SOG totales estimados) con bloqueo de carriles centrales ({p7_prob}%)."
     r7 = "Bajo" if p7_prob >= 66.0 else "Medio"
     picks.append({
         "id": 7,
@@ -7512,34 +7760,32 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
     p_over_65 = 0.0
     p_h_m15 = 0.0
     p_a_m15 = 0.0
-    p_h_g2 = 0.0
-    p_a_g2 = 0.0
+    p_btts_2plus_biv = 0.0
+    p_h_plus1_exact = 0.0
+    p_a_plus1_exact = 0.0
     max_g = 11
 
-    # Distribución conjunta 60'
-    for x in range(max_g):
-        px = poisson_prob(lam_h, x)
-        if x >= 2:
-            p_h_g2 += px
-    for y in range(max_g):
-        py = poisson_prob(mu_a, y)
-        if y >= 2:
-            p_a_g2 += py
-
+    # Distribución conjunta bivariada 60' (todas las métricas salen de la misma matriz)
     for x in range(max_g):
         for y in range(max_g):
             p = 0.0
             for k in range(min(x, y) + 1):
                 p += poisson_prob(cov, k) * poisson_prob(lh_p, x - k) * poisson_prob(la_p, y - k)
+            if x >= 2 and y >= 2:
+                p_btts_2plus_biv += p
             if x > y:
                 p_h_reg += p
-                if (x - y) >= 2:
+                if (x - y) == 1:
+                    p_h_plus1_exact += p
+                elif (x - y) >= 2:
                     p_h_m15 += p
             elif x == y:
                 p_d_reg += p
             else:
                 p_a_reg += p
-                if (y - x) >= 2:
+                if (y - x) == 1:
+                    p_a_plus1_exact += p
+                elif (y - x) >= 2:
                     p_a_m15 += p
             tot = x + y
             # En NHL, todo empate a los 60' garantiza +1 gol ganador en OT/SO
@@ -7549,9 +7795,9 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
             if final_tot >= 7:
                 p_over_65 += p
 
-    # Empty Net boost: alrededor de ~14% de los partidos con margen exacto de 1 gol en regulación terminan cubriendo -1.5 por Empty Net
-    en_h_1 = sum(poisson_prob(lam_h, y + 1) * poisson_prob(mu_a, y) for y in range(max_g - 1)) * 0.22
-    en_a_1 = sum(poisson_prob(lam_h, x) * poisson_prob(mu_a, x + 1) for x in range(max_g - 1)) * 0.22
+    # Empty Net boost: ~19% de los partidos con ventaja de 1 gol en regulación terminan cubriendo -1.5 por Empty Net
+    en_h_1 = p_h_plus1_exact * 0.19
+    en_a_1 = p_a_plus1_exact * 0.19
     p_h_m15_eff = min(0.75, p_h_m15 + en_h_1)
     p_a_m15_eff = min(0.75, p_a_m15 + en_a_1)
 
@@ -7576,7 +7822,7 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
     l1_tot = (lam_h + mu_a) * 0.295
     prob_1p_over_05 = round((1.0 - math.exp(-l1_tot)) * 100.0, 1)
     prob_1p_over_15 = round((1.0 - (poisson_prob(l1_tot, 0) + poisson_prob(l1_tot, 1))) * 100.0, 1)
-    prob_btts_2plus = round(p_h_g2 * p_a_g2 * 100.0, 1)
+    prob_btts_2plus = round(p_btts_2plus_biv * 100.0, 1)
 
     proj_sog_h = round(max(24.5, min(36.0, float((home_stats or {}).get("sog_pg", 30.0) or 30.0) + (lam_h - 3.0) * 1.1)), 1)
     proj_sog_a = round(max(24.0, min(35.5, float((away_stats or {}).get("sog_pg", 29.2) or 29.2) + (mu_a - 3.0) * 1.1)), 1)
@@ -7897,13 +8143,17 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
             return w, f"{ph}-{pa}", "Finalizado", 100.0
         elif idx == period_num and not is_int:
             ph, pa = parsed if parsed else (0, 0)
-            est_h = round(ph + rem_lam * 0.5)
-            est_a = round(pa + rem_mu * 0.5)
-            w = "Local" if ph > pa else ("Visitante" if pa > ph else ("Local" if est_h >= est_a else "Visitante"))
-            return w, f"{ph}-{pa}", "En Vivo", 60.0
+            p_rem_min = max(0.0, min(20.0, mins_rem - (3 - idx) * 20.0))
+            frac_in_p = p_rem_min / max(1.0, mins_rem)
+            est_h = round(ph + rem_lam * frac_in_p)
+            est_a = round(pa + rem_mu * frac_in_p)
+            pr_p = round(max(50.0, min(88.0, 50.0 + abs(est_h - est_a) * 12.0)), 1)
+            w = "Local" if est_h > est_a else ("Visitante" if est_a > est_h else ("Local" if p_lam >= p_mu else "Visitante"))
+            return w, f"{ph}-{pa}", "En Vivo", pr_p
         else:
+            pr_p = round(max(50.0, min(72.0, 50.0 + abs(p_lam - p_mu) * 14.0)), 1)
             w = "Local" if p_lam >= p_mu else "Visitante"
-            return w, f"{p_lam:.1f}-{p_mu:.1f}", "Proyectado", 56.0
+            return w, f"{p_lam:.1f}-{p_mu:.1f}", "Proyectado", pr_p
 
     p1_w, p1_s, p1_st, p1_pr = _eval_period(1)
     p2_w, p2_s, p2_st, p2_pr = _eval_period(2)
@@ -8008,10 +8258,10 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
             "id": 6,
             "market": f"Tendencia del {period_str}",
             "name": f"Dominio {period_str}: {p1_w if period_num == 1 else (p2_w if period_num == 2 else p3_w)}",
-            "probability": 60.0,
-            "fair_odds": 1.67,
-            "risk_level": "Medio",
-            "risk_color": "amber",
+            "probability": p1_pr if period_num == 1 else (p2_pr if period_num == 2 else p3_pr),
+            "fair_odds": round(100.0 / max(1.0, p1_pr if period_num == 1 else (p2_pr if period_num == 2 else p3_pr)), 2),
+            "risk_level": "Bajo" if (p1_pr if period_num == 1 else (p2_pr if period_num == 2 else p3_pr)) >= 68 else "Medio",
+            "risk_color": "emerald" if (p1_pr if period_num == 1 else (p2_pr if period_num == 2 else p3_pr)) >= 68 else "amber",
             "explanation": "Balance instantáneo de llegadas y calidad de tiros sobre la portería rival."
         }
     ]
@@ -8020,8 +8270,9 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
     ls_for_matrix["elapsed_mins"] = elapsed_mins
     matrix = calculate_nhl_projections_matrix(home_stats, away_stats, proj_h, proj_a, live_stats=ls_for_matrix)
 
-    p_1p_o05 = round((1.0 - math.exp(-max(0.1, (proj_h + proj_a) * 0.295))) * 100.0, 1)
-    p_1p_o15 = round(max(10.0, min(85.0, p_1p_o05 - 28.0)), 1)
+    lam_1p_tot_live = max(0.1, (proj_h + proj_a) * 0.295)
+    p_1p_o05 = round((1.0 - math.exp(-lam_1p_tot_live)) * 100.0, 1)
+    p_1p_o15 = round(max(5.0, min(90.0, (1.0 - (poisson_prob(lam_1p_tot_live, 0) + poisson_prob(lam_1p_tot_live, 1))) * 100.0)), 1)
     quick_markets = calculate_nhl_quick_markets(
         home_team="Local",
         away_team="Visitante",

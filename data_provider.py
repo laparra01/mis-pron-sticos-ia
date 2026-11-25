@@ -1321,6 +1321,92 @@ _NBA_STANDINGS_LOCK = threading.Lock()
 _nba_standings_cache = {"data": {}, "timestamp": 0}
 _NBA_TEAM_SCHEDULE_LOCK = threading.Lock()
 _nba_team_schedule_cache = {}  # {team_id_season: {"events": [...], "timestamp": ts}}
+_NBA_EVENT_Q1_LOCK = threading.Lock()
+_nba_event_q1_cache = {}  # {event_id: {"home_q1": int, "away_q1": int, "total_q1": int}}
+
+
+def _fetch_espn_nba_q1_scores(event_ids: list) -> dict:
+    """
+    Obtiene de ESPN Summary los puntos reales del 1º cuarto (Q1) para una lista de event_ids NBA,
+    con caché en memoria (partidos finalizados no cambian) y consultas concurrentes.
+    """
+    unique_ids = []
+    seen = set()
+    for eid in (event_ids or []):
+        s_id = str(eid or "").strip()
+        if s_id and s_id not in seen:
+            seen.add(s_id)
+            unique_ids.append(s_id)
+
+    if not unique_ids:
+        return {}
+
+    results = {}
+    missing = []
+    with _NBA_EVENT_Q1_LOCK:
+        for s_id in unique_ids:
+            if s_id in _nba_event_q1_cache:
+                results[s_id] = _nba_event_q1_cache[s_id]
+            else:
+                missing.append(s_id)
+
+    if not missing:
+        return results
+
+    def _fetch_one(s_id: str):
+        url = f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event={s_id}"
+        try:
+            resp = requests.get(url, timeout=6)
+            if resp.status_code != 200:
+                return s_id, None
+            data = resp.json()
+            comp = ((data.get("header") or {}).get("competitions") or [{}])[0]
+            comps = comp.get("competitors") or []
+            if len(comps) < 2:
+                return s_id, None
+            h_c = next((c for c in comps if c.get("homeAway") == "home"), comps[0])
+            a_c = next((c for c in comps if c.get("homeAway") == "away"), comps[1])
+
+            def _extract_q1(c):
+                ls = c.get("linescores") or []
+                if not ls:
+                    return None
+                first = ls[0]
+                if isinstance(first, dict):
+                    val = first.get("value") if first.get("value") is not None else first.get("displayValue")
+                else:
+                    val = first
+                if val is None or val == "":
+                    return None
+                try:
+                    return int(round(float(val)))
+                except Exception:
+                    return None
+
+            q1_h = _extract_q1(h_c)
+            q1_a = _extract_q1(a_c)
+            if q1_h is None or q1_a is None:
+                return s_id, None
+            return s_id, {
+                "home_q1": q1_h,
+                "away_q1": q1_a,
+                "total_q1": q1_h + q1_a,
+            }
+        except Exception:
+            return s_id, None
+
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=min(8, len(missing))) as executor:
+            for s_id, parsed in executor.map(_fetch_one, missing):
+                if parsed is not None:
+                    results[s_id] = parsed
+                    with _NBA_EVENT_Q1_LOCK:
+                        _nba_event_q1_cache[s_id] = parsed
+    except Exception as ex:
+        print(f"[ESPN NBA Q1] Error obteniendo Q1 en paralelo: {ex}")
+
+    return results
 
 
 def fetch_espn_nba_standings(force: bool = False) -> dict:
@@ -1534,7 +1620,8 @@ def fetch_espn_nba_team_schedule(team_id: str, season: int = None) -> list:
 
 def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_name: str) -> dict:
     """
-    Construye el historial real de últimos 5 partidos y duelos directos (Cara a Cara) NBA desde ESPN.
+    Construye el historial real de últimos 5 partidos y duelos directos (Cara a Cara) NBA desde ESPN,
+    incluyendo los puntos reales anotados y permitidos en el 1º cuarto (Q1) de cada encuentro.
     """
     fallback = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
     if not home_id or not away_id:
@@ -1542,33 +1629,6 @@ def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_nam
 
     home_sched = fetch_espn_nba_team_schedule(str(home_id))
     away_sched = fetch_espn_nba_team_schedule(str(away_id))
-
-    def _to_last5(sched, tid, tname):
-        out = []
-        tname_l = (tname or "").lower()
-        for ev in sched[:5]:
-            is_h = (ev["home_id"] == str(tid)) or (ev["home_team"].lower() == tname_l)
-            opp = ev["away_team"] if is_h else ev["home_team"]
-            my_sc = ev["home_score"] if is_h else ev["away_score"]
-            opp_sc = ev["away_score"] if is_h else ev["home_score"]
-            out.append({
-                "date": ev["date"],
-                "opponent": opp,
-                "venue": "Local" if is_h else "Visitante",
-                "match_home": ev["home_team"],
-                "match_away": ev["away_team"],
-                "home_score": ev["home_score"],
-                "away_score": ev["away_score"],
-                "score": f"{ev['home_score']} - {ev['away_score']}",
-                "result": "W" if my_sc >= opp_sc else "L",
-                "home_logo": ev.get("home_logo", ""),
-                "away_logo": ev.get("away_logo", ""),
-                "competition": "NBA"
-            })
-        return out
-
-    home_last_5 = _to_last5(home_sched, home_id, home_name)
-    away_last_5 = _to_last5(away_sched, away_id, away_name)
 
     def _is_direct(ev, tid_a, tid_b):
         ids = {ev.get("home_id"), ev.get("away_id")}
@@ -1589,9 +1649,54 @@ def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_nam
         except Exception:
             pass
 
+    q1_target_ids = (
+        [ev.get("id") for ev in home_sched[:5]]
+        + [ev.get("id") for ev in away_sched[:5]]
+        + [ev.get("id") for ev in direct_evs[:5]]
+    )
+    q1_map = _fetch_espn_nba_q1_scores(q1_target_ids)
+
+    def _to_last5(sched, tid, tname):
+        out = []
+        tname_l = (tname or "").lower()
+        for ev in sched[:5]:
+            is_h = (ev["home_id"] == str(tid)) or (ev["home_team"].lower() == tname_l)
+            opp = ev["away_team"] if is_h else ev["home_team"]
+            my_sc = ev["home_score"] if is_h else ev["away_score"]
+            opp_sc = ev["away_score"] if is_h else ev["home_score"]
+            item = {
+                "date": ev["date"],
+                "opponent": opp,
+                "venue": "Local" if is_h else "Visitante",
+                "match_home": ev["home_team"],
+                "match_away": ev["away_team"],
+                "home_score": ev["home_score"],
+                "away_score": ev["away_score"],
+                "score": f"{ev['home_score']} - {ev['away_score']}",
+                "result": "W" if my_sc >= opp_sc else "L",
+                "home_logo": ev.get("home_logo", ""),
+                "away_logo": ev.get("away_logo", ""),
+                "competition": "NBA"
+            }
+            q1 = q1_map.get(str(ev.get("id", "")))
+            if q1:
+                q1_h = q1["home_q1"]
+                q1_a = q1["away_q1"]
+                item["q1_home"] = q1_h
+                item["q1_away"] = q1_a
+                item["q1_team"] = q1_h if is_h else q1_a
+                item["q1_opp"] = q1_a if is_h else q1_h
+                item["q1_total"] = q1_h + q1_a
+                item["q1_score"] = f"{q1_h} - {q1_a}"
+            out.append(item)
+        return out
+
+    home_last_5 = _to_last5(home_sched, home_id, home_name)
+    away_last_5 = _to_last5(away_sched, away_id, away_name)
+
     direct_list = []
     for ev in direct_evs[:5]:
-        direct_list.append({
+        d_item = {
             "date": ev["date"],
             "competition": "NBA",
             "tournament": "NBA",
@@ -1605,12 +1710,39 @@ def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_nam
             "away_team": ev["away_team"],
             "home_logo": ev.get("home_logo", ""),
             "away_logo": ev.get("away_logo", "")
-        })
+        }
+        q1 = q1_map.get(str(ev.get("id", "")))
+        if q1:
+            d_item["q1_home"] = q1["home_q1"]
+            d_item["q1_away"] = q1["away_q1"]
+            d_item["q1_total"] = q1["total_q1"]
+            d_item["q1_score"] = f"{q1['home_q1']} - {q1['away_q1']}"
+        direct_list.append(d_item)
 
     is_real_recent = bool(home_last_5 and away_last_5)
     final_home_5 = home_last_5 if home_last_5 else fallback["home_last_5"]
     final_away_5 = away_last_5 if away_last_5 else fallback["away_last_5"]
     final_direct = direct_list if direct_list else fallback["head_to_head"]
+
+    h_q1_items = [m for m in home_last_5 if m.get("q1_team") is not None]
+    a_q1_items = [m for m in away_last_5 if m.get("q1_team") is not None]
+    q1_summary = {}
+    if h_q1_items:
+        q1_summary["home_q1_for"] = round(sum(m["q1_team"] for m in h_q1_items) / len(h_q1_items), 1)
+        q1_summary["home_q1_against"] = round(sum(m["q1_opp"] for m in h_q1_items) / len(h_q1_items), 1)
+        q1_summary["home_q1_total"] = round(sum(m["q1_total"] for m in h_q1_items) / len(h_q1_items), 1)
+        q1_summary["home_q1_sample"] = len(h_q1_items)
+    if a_q1_items:
+        q1_summary["away_q1_for"] = round(sum(m["q1_team"] for m in a_q1_items) / len(a_q1_items), 1)
+        q1_summary["away_q1_against"] = round(sum(m["q1_opp"] for m in a_q1_items) / len(a_q1_items), 1)
+        q1_summary["away_q1_total"] = round(sum(m["q1_total"] for m in a_q1_items) / len(a_q1_items), 1)
+        q1_summary["away_q1_sample"] = len(a_q1_items)
+    if q1_summary.get("home_q1_for") is not None and q1_summary.get("away_q1_for") is not None:
+        q1_summary["combined_q1_avg"] = round(q1_summary["home_q1_for"] + q1_summary["away_q1_for"], 1)
+        q1_summary["matchup_q1_est"] = round(
+            ((q1_summary["home_q1_for"] + q1_summary["away_q1_against"]) + (q1_summary["away_q1_for"] + q1_summary["home_q1_against"])) / 2.0,
+            1
+        )
 
     w_h = sum(1 for m in final_direct if m["winner"] == home_name or (home_name.lower() in str(m.get("winner", "")).lower()))
     w_a = sum(1 for m in final_direct if m["winner"] == away_name or (away_name.lower() in str(m.get("winner", "")).lower()))
@@ -1622,6 +1754,8 @@ def fetch_espn_nba_team_h2h(home_id: str, away_id: str, home_name: str, away_nam
         "head_to_head": final_direct,
         "is_real": bool(is_real_recent or direct_list),
         "is_real_recent": is_real_recent,
+        "has_q1_stats": bool(h_q1_items or a_q1_items),
+        "q1_summary": q1_summary,
         "summary": {
             "home_wins": w_h,
             "draws": 0,
@@ -1639,7 +1773,7 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
     """
     if not match or match.get("sport") != "nba":
         return match
-    if (match.get("h2h") or {}).get("is_real"):
+    if (match.get("h2h") or {}).get("is_real") and (match.get("h2h") or {}).get("has_q1_stats"):
         return match
 
     standings = fetch_espn_nba_standings()
@@ -1671,15 +1805,28 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
             recent_matches=h2h_data.get("home_last_5"),
             venue_role="home",
             standing_info=h_stand,
-            real_recent=bool(h2h_data.get("is_real_recent"))
+            real_recent=bool(h2h_data.get("is_real_recent")),
+            target_date=match.get("date_iso")
         )
         a_ratings = get_nba_team_ratings(
             away_name,
             recent_matches=h2h_data.get("away_last_5"),
             venue_role="away",
             standing_info=a_stand,
-            real_recent=bool(h2h_data.get("is_real_recent"))
+            real_recent=bool(h2h_data.get("is_real_recent")),
+            target_date=match.get("date_iso")
         )
+        q1_sum = h2h_data.get("q1_summary") or {}
+        if q1_sum.get("home_q1_for") is not None:
+            h_ratings["q1_avg_for"] = q1_sum["home_q1_for"]
+            h_ratings["q1_avg_against"] = q1_sum["home_q1_against"]
+            h_ratings["q1_avg_total"] = q1_sum["home_q1_total"]
+            h_ratings["q1_sample"] = q1_sum.get("home_q1_sample", 0)
+        if q1_sum.get("away_q1_for") is not None:
+            a_ratings["q1_avg_for"] = q1_sum["away_q1_for"]
+            a_ratings["q1_avg_against"] = q1_sum["away_q1_against"]
+            a_ratings["q1_avg_total"] = q1_sum["away_q1_total"]
+            a_ratings["q1_sample"] = q1_sum.get("away_q1_sample", 0)
         match["home_stats"] = h_ratings
         match["away_stats"] = a_ratings
         if not match.get("is_live"):
@@ -2233,14 +2380,16 @@ def enrich_nhl_match_with_real_h2h(match: dict) -> dict:
             recent_matches=h2h_data.get("home_last_5"),
             venue_role="home",
             standing_info=h_stand,
-            real_recent=bool(h2h_data.get("is_real_recent"))
+            real_recent=bool(h2h_data.get("is_real_recent")),
+            target_date=match.get("date_iso")
         )
         a_ratings = get_nhl_team_ratings(
             away_name,
             recent_matches=h2h_data.get("away_last_5"),
             venue_role="away",
             standing_info=a_stand,
-            real_recent=bool(h2h_data.get("is_real_recent"))
+            real_recent=bool(h2h_data.get("is_real_recent")),
+            target_date=match.get("date_iso")
         )
         match["home_stats"] = h_ratings
         match["away_stats"] = a_ratings
@@ -2623,8 +2772,8 @@ def try_fetch_external_football(date_from=None, date_to=None):
 
                 league_clean, country_name, flag = get_league_and_country_info(comp, "football", home_name, away_name)
                 h2h_data = generate_match_h2h(home_name, away_name, "football", league_clean, country=country_name)
-                home_stats = get_football_team_ratings(home_name, league_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-                away_stats = get_football_team_ratings(away_name, league_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
+                home_stats = get_football_team_ratings(home_name, league_clean, recent_matches=h2h_data.get("home_last_5"), venue_role="home", target_date=date_iso)
+                away_stats = get_football_team_ratings(away_name, league_clean, recent_matches=h2h_data.get("away_last_5"), venue_role="away", target_date=date_iso)
                 pred = calculate_match_probabilities(home_stats, away_stats, home_team=home_name, away_team=away_name)
                 analysis = generate_ai_analysis({"home_team": home_name, "away_team": away_name, "league": league_clean}, pred)
 
@@ -2701,8 +2850,8 @@ def try_fetch_external_football(date_from=None, date_to=None):
                                     p_date = f"{d_iso} {t_str}"
 
                                 e_h2h = generate_match_h2h(h_name, a_name, "football", l_clean, country=c_name)
-                                h_stats = get_football_team_ratings(h_name, l_clean, recent_matches=e_h2h.get("home_last_5"), venue_role="home")
-                                a_stats = get_football_team_ratings(a_name, l_clean, recent_matches=e_h2h.get("away_last_5"), venue_role="away")
+                                h_stats = get_football_team_ratings(h_name, l_clean, recent_matches=e_h2h.get("home_last_5"), venue_role="home", target_date=d_iso)
+                                a_stats = get_football_team_ratings(a_name, l_clean, recent_matches=e_h2h.get("away_last_5"), venue_role="away", target_date=d_iso)
                                 e_pred = calculate_match_probabilities(h_stats, a_stats, home_team=h_name, away_team=a_name)
                                 e_analysis = generate_ai_analysis({"home_team": h_name, "away_team": a_name, "league": l_clean}, e_pred)
 
@@ -3167,8 +3316,8 @@ def load_scraped_matches(force_reload=False):
                         }
 
                     ref_info = item.get("referee")
-                    home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home")
-                    away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away")
+                    home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home", target_date=item.get("date_iso"))
+                    away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away", target_date=item.get("date_iso"))
                     pred = calculate_match_probabilities(home_stats, away_stats, home_team=h_name, away_team=a_name, referee=ref_info)
                     analysis = generate_ai_analysis(item, pred)
 

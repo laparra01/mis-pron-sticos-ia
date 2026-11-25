@@ -486,7 +486,7 @@ def api_match_detail(match_id):
     match = get_match_by_id(match_id)
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
-    if match.get("sport") == "nba" and not (match.get("h2h") or {}).get("is_real"):
+    if match.get("sport") == "nba" and not ((match.get("h2h") or {}).get("is_real") and (match.get("h2h") or {}).get("has_q1_stats")):
         try:
             match = enrich_nba_match_with_real_h2h(match)
         except Exception as e:
@@ -505,7 +505,7 @@ def api_match_gemini(match_id):
     if not match:
         return jsonify({"error": "Partido no encontrado"}), 404
 
-    if match.get("sport") == "nba" and not (match.get("h2h") or {}).get("is_real"):
+    if match.get("sport") == "nba" and not ((match.get("h2h") or {}).get("is_real") and (match.get("h2h") or {}).get("has_q1_stats")):
         try:
             match = enrich_nba_match_with_real_h2h(match)
         except Exception:
