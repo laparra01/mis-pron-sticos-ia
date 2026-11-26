@@ -1301,6 +1301,7 @@ def fetch_espn_live_soccer():
                         "score_away": score_a,
                         "home_stats": h_ratings,
                         "away_stats": a_ratings,
+                        "data_quality": h_ratings.get("data_quality", "real_stats"),
                         "live_stats": live_stats,
                         "prediction": pred,
                         "season_phase": analyze_season_phase(raw_league, league_title, "", str(e.get("date", ""))[:10]),
@@ -1407,6 +1408,255 @@ def _fetch_espn_nba_q1_scores(event_ids: list) -> dict:
         print(f"[ESPN NBA Q1] Error obteniendo Q1 en paralelo: {ex}")
 
     return results
+
+
+_NBA_INJURIES_LOCK = threading.Lock()
+_nba_injuries_cache = {"data": {}, "timestamp": 0}
+_NBA_FF_LOCK = threading.Lock()
+_nba_ff_cache = {}  # {team_id: {"data": {...}, "timestamp": ts}}
+_NHL_INJURIES_LOCK = threading.Lock()
+_nhl_injuries_cache = {"data": {}, "timestamp": 0}
+
+
+def _norm_team_key(name: str) -> str:
+    return "".join(ch for ch in (name or "").lower() if ch.isalnum() or ch == " ").strip()
+
+
+def fetch_espn_nba_injuries(force: bool = False) -> dict:
+    """
+    Obtiene el reporte oficial de lesiones/bajas de toda la NBA desde ESPN en una sola petición (caché 15 min).
+    """
+    now = time.time()
+    if not force and _nba_injuries_cache["data"] and (now - _nba_injuries_cache["timestamp"] < 900):
+        return _nba_injuries_cache["data"]
+
+    with _NBA_INJURIES_LOCK:
+        now = time.time()
+        if not force and _nba_injuries_cache["data"] and (now - _nba_injuries_cache["timestamp"] < 900):
+            return _nba_injuries_cache["data"]
+        try:
+            r = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries", timeout=7)
+            if r.status_code == 200:
+                mapping = {}
+                for team_blk in r.json().get("injuries", []):
+                    t_name = team_blk.get("displayName") or ""
+                    t_id = str(team_blk.get("id") or "")
+                    players = []
+                    for item in team_blk.get("injuries", []):
+                        ath = item.get("athlete") or {}
+                        pname = ath.get("displayName") or ath.get("shortName") or ""
+                        pos = ((ath.get("position") or {}).get("abbreviation") or "").strip()
+                        status = str(item.get("status") or "").strip()
+                        detail = str(((item.get("details") or {}).get("type") or item.get("shortComment") or "")).strip()
+                        if pname and status:
+                            players.append({
+                                "player": pname,
+                                "position": pos,
+                                "status": status,
+                                "detail": detail[:90]
+                            })
+                    if t_name:
+                        mapping[_norm_team_key(t_name)] = players
+                    if t_id:
+                        mapping[f"id_{t_id}"] = players
+                _nba_injuries_cache["data"] = mapping
+                _nba_injuries_cache["timestamp"] = now
+        except Exception as ex:
+            print(f"[ESPN NBA INJURIES] Error: {ex}")
+        return _nba_injuries_cache.get("data", {}) or {}
+
+
+def get_nba_team_injuries(team_name: str, team_id=None, inj_map: dict = None) -> dict:
+    """
+    Retorna resumen estructurado de lesionados y penalización calibrada Off/Def para un equipo NBA.
+    """
+    data = inj_map if inj_map is not None else fetch_espn_nba_injuries()
+    players = []
+    if team_id and f"id_{team_id}" in data:
+        players = data[f"id_{team_id}"]
+    else:
+        nk = _norm_team_key(team_name)
+        if nk in data:
+            players = data[nk]
+        else:
+            for k, v in data.items():
+                if not k.startswith("id_") and (nk in k or k in nk):
+                    players = v
+                    break
+
+    out_list = []
+    q_list = []
+    for p in players:
+        st_l = (p.get("status") or "").lower()
+        if "out" in st_l or "susp" in st_l or "doubtful" in st_l:
+            out_list.append(p)
+        elif "day" in st_l or "question" in st_l or "prob" in st_l:
+            q_list.append(p)
+
+    # Impacto calibrado con rendimientos decrecientes y tope seguro
+    eff_out = len(out_list) + 0.35 * len(q_list)
+    if eff_out <= 0:
+        off_pen, def_pen = 0.0, 0.0
+    else:
+        first_two = min(2.0, eff_out)
+        extra = max(0.0, eff_out - 2.0)
+        off_pen = round(min(3.5, first_two * 0.90 + extra * 0.40), 2)
+        def_pen = round(min(2.4, first_two * 0.60 + extra * 0.25), 2)
+
+    return {
+        "out_count": len(out_list),
+        "q_count": len(q_list),
+        "off_penalty": off_pen,
+        "def_penalty": def_pen,
+        "players": (out_list + q_list)[:6]
+    }
+
+
+def fetch_espn_nba_team_four_factors(team_id: str) -> dict:
+    """
+    Calcula los Cuatro Factores reales de temporada (eFG%, TOV%, ORB%, FTR) y Pace estimado
+    desde ESPN Team Statistics (caché 2h por equipo).
+    """
+    tid = str(team_id or "").strip()
+    if not tid:
+        return {}
+    now = time.time()
+    cached = _nba_ff_cache.get(tid)
+    if cached and (now - cached.get("timestamp", 0) < 7200):
+        return cached.get("data", {})
+
+    try:
+        r = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{tid}/statistics", timeout=6)
+        if r.status_code != 200:
+            return {}
+        cats = (((r.json().get("results") or {}).get("stats") or {}).get("categories") or [])
+        smap = {}
+        for c in cats:
+            for s in (c.get("stats") or []):
+                if s.get("name") and s.get("value") is not None:
+                    try:
+                        smap[s["name"]] = float(s["value"])
+                    except Exception:
+                        pass
+
+        fgm = smap.get("avgFieldGoalsMade")
+        fga = smap.get("avgFieldGoalsAttempted")
+        tpm = smap.get("avgThreePointFieldGoalsMade") or 0.0
+        fta = smap.get("avgFreeThrowsAttempted") or 0.0
+        orb = smap.get("avgOffensiveRebounds") or 0.0
+        tov = smap.get("avgTurnovers") or 0.0
+        drb = smap.get("avgDefensiveRebounds") or 32.5
+        gp = smap.get("gamesPlayed") or 0.0
+
+        if not (fgm and fga and fga > 20 and gp >= 3):
+            return {}
+
+        efg_pct = round(((fgm + 0.5 * tpm) / fga) * 100.0, 1)
+        denom_tov = fga + 0.44 * fta + tov
+        tov_pct = round((tov / denom_tov) * 100.0, 1) if denom_tov > 0 else 13.5
+        orb_pct = round((orb / (orb + max(28.0, drb * 0.98))) * 100.0, 1)
+        ftr = round(fta / fga, 3)
+        pace_est = round(max(94.5, min(105.5, fga - orb + tov + 0.44 * fta)), 1)
+
+        ff = {
+            "efg_pct": efg_pct,
+            "tov_pct": tov_pct,
+            "orb_pct": orb_pct,
+            "ftr": ftr,
+            "pace_est": pace_est,
+        }
+        with _NBA_FF_LOCK:
+            _nba_ff_cache[tid] = {"data": ff, "timestamp": now}
+        return ff
+    except Exception:
+        return {}
+
+
+def fetch_espn_nhl_injuries(force: bool = False) -> dict:
+    """
+    Obtiene el reporte oficial de lesiones de toda la NHL desde ESPN en una sola petición (caché 15 min).
+    """
+    now = time.time()
+    if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+        return _nhl_injuries_cache["data"]
+
+    with _NHL_INJURIES_LOCK:
+        now = time.time()
+        if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+            return _nhl_injuries_cache["data"]
+        try:
+            r = requests.get("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries", timeout=7)
+            if r.status_code == 200:
+                mapping = {}
+                for team_blk in r.json().get("injuries", []):
+                    t_name = team_blk.get("displayName") or ""
+                    t_id = str(team_blk.get("id") or "")
+                    players = []
+                    for item in team_blk.get("injuries", []):
+                        ath = item.get("athlete") or {}
+                        pname = ath.get("displayName") or ath.get("shortName") or ""
+                        pos = ((ath.get("position") or {}).get("abbreviation") or "").strip()
+                        status = str(item.get("status") or "").strip()
+                        detail = str(((item.get("details") or {}).get("type") or item.get("shortComment") or "")).strip()
+                        if pname and status:
+                            players.append({
+                                "player": pname,
+                                "position": pos,
+                                "status": status,
+                                "detail": detail[:90]
+                            })
+                    if t_name:
+                        mapping[_norm_team_key(t_name)] = players
+                    if t_id:
+                        mapping[f"id_{t_id}"] = players
+                _nhl_injuries_cache["data"] = mapping
+                _nhl_injuries_cache["timestamp"] = now
+        except Exception as ex:
+            print(f"[ESPN NHL INJURIES] Error: {ex}")
+        return _nhl_injuries_cache.get("data", {}) or {}
+
+
+def get_nhl_team_injuries(team_name: str, team_id=None, inj_map: dict = None) -> dict:
+    data = inj_map if inj_map is not None else fetch_espn_nhl_injuries()
+    players = []
+    if team_id and f"id_{team_id}" in data:
+        players = data[f"id_{team_id}"]
+    else:
+        nk = _norm_team_key(team_name)
+        if nk in data:
+            players = data[nk]
+        else:
+            for k, v in data.items():
+                if not k.startswith("id_") and (nk in k or k in nk):
+                    players = v
+                    break
+
+    out_list = []
+    q_list = []
+    goalie_out = False
+    for p in players:
+        st_l = (p.get("status") or "").lower()
+        pos_u = (p.get("position") or "").upper()
+        if "out" in st_l or "ir" in st_l or "injured reserve" in st_l or "susp" in st_l:
+            out_list.append(p)
+            if pos_u == "G":
+                goalie_out = True
+        elif "day" in st_l or "question" in st_l:
+            q_list.append(p)
+
+    skater_eff = max(0.0, len(out_list) - (1 if goalie_out else 0)) + 0.35 * len(q_list)
+    gf_pen = round(min(0.24, skater_eff * 0.04), 2)
+    ga_pen = round(min(0.22, skater_eff * 0.03 + (0.12 if goalie_out else 0.0)), 2)
+    sv_pen = 0.8 if goalie_out else 0.0
+    return {
+        "out_count": len(out_list),
+        "q_count": len(q_list),
+        "goalie_out": goalie_out,
+        "gf_penalty": gf_pen,
+        "ga_penalty": ga_pen,
+        "sv_penalty": sv_pen,
+        "players": (out_list + q_list)[:6]
+    }
 
 
 def fetch_espn_nba_standings(force: bool = False) -> dict:
@@ -1800,13 +2050,29 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
     match["h2h"] = h2h_data
 
     if h2h_data.get("is_real_recent") or h_stand or a_stand:
+        inj_map = fetch_espn_nba_injuries()
+        h_inj = get_nba_team_injuries(home_name, home_id, inj_map=inj_map)
+        a_inj = get_nba_team_injuries(away_name, away_id, inj_map=inj_map)
+        h_ff, a_ff = {}, {}
+        try:
+            from concurrent.futures import ThreadPoolExecutor
+            with ThreadPoolExecutor(max_workers=2) as ff_ex:
+                f_h = ff_ex.submit(fetch_espn_nba_team_four_factors, home_id)
+                f_a = ff_ex.submit(fetch_espn_nba_team_four_factors, away_id)
+                h_ff = f_h.result() or {}
+                a_ff = f_a.result() or {}
+        except Exception:
+            pass
+
         h_ratings = get_nba_team_ratings(
             home_name,
             recent_matches=h2h_data.get("home_last_5"),
             venue_role="home",
             standing_info=h_stand,
             real_recent=bool(h2h_data.get("is_real_recent")),
-            target_date=match.get("date_iso")
+            target_date=match.get("date_iso"),
+            injuries_info=h_inj,
+            four_factors=h_ff
         )
         a_ratings = get_nba_team_ratings(
             away_name,
@@ -1814,7 +2080,9 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
             venue_role="away",
             standing_info=a_stand,
             real_recent=bool(h2h_data.get("is_real_recent")),
-            target_date=match.get("date_iso")
+            target_date=match.get("date_iso"),
+            injuries_info=a_inj,
+            four_factors=a_ff
         )
         q1_sum = h2h_data.get("q1_summary") or {}
         if q1_sum.get("home_q1_for") is not None:
@@ -1829,11 +2097,22 @@ def enrich_nba_match_with_real_h2h(match: dict) -> dict:
             a_ratings["q1_sample"] = q1_sum.get("away_q1_sample", 0)
         match["home_stats"] = h_ratings
         match["away_stats"] = a_ratings
+        match["injuries"] = {
+            "home": h_inj,
+            "away": a_inj,
+            "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+        }
         if not match.get("is_live"):
             pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
             match["prediction"] = pred
+            match["data_quality"] = pred.get("data_quality", "real_stats")
             if not (match.get("ai_analysis") or {}).get("is_gemini"):
                 match["ai_analysis"] = generate_nba_ai_analysis(match, pred)
+            try:
+                from calibration_tracker import record_prematch_snapshots
+                record_prematch_snapshots([match], allow_update_pending=True)
+            except Exception:
+                pass
 
     return match
 
@@ -1955,9 +2234,12 @@ def fetch_espn_live_nba():
 
                     h_stand = get_nba_standing_for_team(standings, home_name, home_id)
                     a_stand = get_nba_standing_for_team(standings, away_name, away_id)
+                    nba_inj_map = fetch_espn_nba_injuries()
+                    h_inj = get_nba_team_injuries(home_name, home_id, inj_map=nba_inj_map)
+                    a_inj = get_nba_team_injuries(away_name, away_id, inj_map=nba_inj_map)
                     h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
-                    h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand)
-                    a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+                    h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand, injuries_info=h_inj)
+                    a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand, injuries_info=a_inj)
 
                     home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("overall", "")
                     away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("overall", "")
@@ -2044,6 +2326,12 @@ def fetch_espn_live_nba():
                         "score_away": score_a,
                         "home_stats": h_ratings,
                         "away_stats": a_ratings,
+                        "injuries": {
+                            "home": h_inj,
+                            "away": a_inj,
+                            "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+                        },
+                        "data_quality": h_ratings.get("data_quality", "real_stats"),
                         "live_stats": live_stats,
                         "prediction": pred,
                         "season_phase": analyze_season_phase("nba", "NBA", "Playoffs" if is_playoff else "", str(e.get("date", ""))[:10]),
@@ -2375,13 +2663,17 @@ def enrich_nhl_match_with_real_h2h(match: dict) -> dict:
     match["h2h"] = h2h_data
 
     if h2h_data.get("is_real_recent") or h_stand or a_stand:
+        nhl_inj_map = fetch_espn_nhl_injuries()
+        h_inj = get_nhl_team_injuries(home_name, home_id, inj_map=nhl_inj_map)
+        a_inj = get_nhl_team_injuries(away_name, away_id, inj_map=nhl_inj_map)
         h_ratings = get_nhl_team_ratings(
             home_name,
             recent_matches=h2h_data.get("home_last_5"),
             venue_role="home",
             standing_info=h_stand,
             real_recent=bool(h2h_data.get("is_real_recent")),
-            target_date=match.get("date_iso")
+            target_date=match.get("date_iso"),
+            injuries_info=h_inj
         )
         a_ratings = get_nhl_team_ratings(
             away_name,
@@ -2389,13 +2681,20 @@ def enrich_nhl_match_with_real_h2h(match: dict) -> dict:
             venue_role="away",
             standing_info=a_stand,
             real_recent=bool(h2h_data.get("is_real_recent")),
-            target_date=match.get("date_iso")
+            target_date=match.get("date_iso"),
+            injuries_info=a_inj
         )
         match["home_stats"] = h_ratings
         match["away_stats"] = a_ratings
+        match["injuries"] = {
+            "home": h_inj,
+            "away": a_inj,
+            "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+        }
         if not match.get("is_live"):
             pred = calculate_nhl_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
             match["prediction"] = pred
+            match["data_quality"] = pred.get("data_quality", "real_stats")
             if not (match.get("ai_analysis") or {}).get("is_gemini"):
                 match["ai_analysis"] = generate_nhl_ai_analysis(match, pred)
 
@@ -2537,9 +2836,12 @@ def fetch_espn_live_nhl():
 
                 h_stand = get_nhl_standing_for_team(standings, home_name, home_id)
                 a_stand = get_nhl_standing_for_team(standings, away_name, away_id)
+                nhl_inj_map = fetch_espn_nhl_injuries()
+                h_inj = get_nhl_team_injuries(home_name, home_id, inj_map=nhl_inj_map)
+                a_inj = get_nhl_team_injuries(away_name, away_id, inj_map=nhl_inj_map)
                 h2h_data = generate_match_h2h(home_name, away_name, "nhl", "NHL", country="Norteamérica")
-                h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand)
-                a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+                h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand, injuries_info=h_inj)
+                a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand, injuries_info=a_inj)
 
                 home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("record_short", "")
                 away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("record_short", "")
@@ -2641,6 +2943,12 @@ def fetch_espn_live_nhl():
                     "score_away": score_a,
                     "home_stats": h_ratings,
                     "away_stats": a_ratings,
+                    "injuries": {
+                        "home": h_inj,
+                        "away": a_inj,
+                        "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+                    },
+                    "data_quality": h_ratings.get("data_quality", "real_stats"),
                     "live_stats": live_stats,
                     "prediction": pred,
                     "season_phase": analyze_season_phase("nhl", "NHL", "Playoffs" if is_playoff else "", str(e.get("date", ""))[:10]),
@@ -3196,6 +3504,154 @@ def fetch_live_matches_data(sport_filter="all", force_refresh=False):
 
     return results
 
+
+
+def fetch_espn_nba_team_four_factors(team_id: str) -> dict:
+    """
+    Calcula los Cuatro Factores reales de temporada (eFG%, TOV%, ORB%, FTR) y Pace estimado
+    desde ESPN Team Statistics (caché 2h por equipo).
+    """
+    tid = str(team_id or "").strip()
+    if not tid:
+        return {}
+    now = time.time()
+    cached = _nba_ff_cache.get(tid)
+    if cached and (now - cached.get("timestamp", 0) < 7200):
+        return cached.get("data", {})
+
+    try:
+        r = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{tid}/statistics", timeout=6)
+        if r.status_code != 200:
+            return {}
+        cats = (((r.json().get("results") or {}).get("stats") or {}).get("categories") or [])
+        smap = {}
+        for c in cats:
+            for s in (c.get("stats") or []):
+                if s.get("name") and s.get("value") is not None:
+                    try:
+                        smap[s["name"]] = float(s["value"])
+                    except Exception:
+                        pass
+
+        fgm = smap.get("avgFieldGoalsMade")
+        fga = smap.get("avgFieldGoalsAttempted")
+        tpm = smap.get("avgThreePointFieldGoalsMade") or 0.0
+        fta = smap.get("avgFreeThrowsAttempted") or 0.0
+        orb = smap.get("avgOffensiveRebounds") or 0.0
+        tov = smap.get("avgTurnovers") or 0.0
+        drb = smap.get("avgDefensiveRebounds") or 32.5
+        gp = smap.get("gamesPlayed") or 0.0
+
+        if not (fgm and fga and fga > 20 and gp >= 3):
+            return {}
+
+        efg_pct = round(((fgm + 0.5 * tpm) / fga) * 100.0, 1)
+        denom_tov = fga + 0.44 * fta + tov
+        tov_pct = round((tov / denom_tov) * 100.0, 1) if denom_tov > 0 else 13.5
+        orb_pct = round((orb / (orb + max(28.0, drb * 0.98))) * 100.0, 1)
+        ftr = round(fta / fga, 3)
+        pace_est = round(max(94.5, min(105.5, fga - orb + tov + 0.44 * fta)), 1)
+
+        ff = {
+            "efg_pct": efg_pct,
+            "tov_pct": tov_pct,
+            "orb_pct": orb_pct,
+            "ftr": ftr,
+            "pace_est": pace_est,
+        }
+        with _NBA_FF_LOCK:
+            _nba_ff_cache[tid] = {"data": ff, "timestamp": now}
+        return ff
+    except Exception:
+        return {}
+
+
+def fetch_espn_nhl_injuries(force: bool = False) -> dict:
+    """
+    Obtiene el reporte oficial de lesiones de toda la NHL desde ESPN en una sola petición (caché 15 min).
+    """
+    now = time.time()
+    if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+        return _nhl_injuries_cache["data"]
+
+    with _NHL_INJURIES_LOCK:
+        now = time.time()
+        if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+            return _nhl_injuries_cache["data"]
+        try:
+            r = requests.get("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries", timeout=7)
+            if r.status_code == 200:
+                mapping = {}
+                for team_blk in r.json().get("injuries", []):
+                    t_name = team_blk.get("displayName") or ""
+                    t_id = str(team_blk.get("id") or "")
+                    players = []
+                    for item in team_blk.get("injuries", []):
+                        ath = item.get("athlete") or {}
+                        pname = ath.get("displayName") or ath.get("shortName") or ""
+                        pos = ((ath.get("position") or {}).get("abbreviation") or "").strip()
+                        status = str(item.get("status") or "").strip()
+                        detail = str(((item.get("details") or {}).get("type") or item.get("shortComment") or "")).strip()
+                        if pname and status:
+                            players.append({
+                                "player": pname,
+                                "position": pos,
+                                "status": status,
+                                "detail": detail[:90]
+                            })
+                    if t_name:
+                        mapping[_norm_team_key(t_name)] = players
+                    if t_id:
+                        mapping[f"id_{t_id}"] = players
+                _nhl_injuries_cache["data"] = mapping
+                _nhl_injuries_cache["timestamp"] = now
+        except Exception as ex:
+            print(f"[ESPN NHL INJURIES] Error: {ex}")
+        return _nhl_injuries_cache.get("data", {}) or {}
+
+
+def get_nhl_team_injuries(team_name: str, team_id=None, inj_map: dict = None) -> dict:
+    data = inj_map if inj_map is not None else fetch_espn_nhl_injuries()
+    players = []
+    if team_id and f"id_{team_id}" in data:
+        players = data[f"id_{team_id}"]
+    else:
+        nk = _norm_team_key(team_name)
+        if nk in data:
+            players = data[nk]
+        else:
+            for k, v in data.items():
+                if not k.startswith("id_") and (nk in k or k in nk):
+                    players = v
+                    break
+
+    out_list = []
+    q_list = []
+    goalie_out = False
+    for p in players:
+        st_l = (p.get("status") or "").lower()
+        pos_u = (p.get("position") or "").upper()
+        if "out" in st_l or "ir" in st_l or "injured reserve" in st_l or "susp" in st_l:
+            out_list.append(p)
+            if pos_u == "G":
+                goalie_out = True
+        elif "day" in st_l or "question" in st_l:
+            q_list.append(p)
+
+    skater_eff = max(0.0, len(out_list) - (1 if goalie_out else 0)) + 0.35 * len(q_list)
+    gf_pen = round(min(0.24, skater_eff * 0.04), 2)
+    ga_pen = round(min(0.22, skater_eff * 0.03 + (0.12 if goalie_out else 0.0)), 2)
+    sv_pen = 0.8 if goalie_out else 0.0
+    return {
+        "out_count": len(out_list),
+        "q_count": len(q_list),
+        "goalie_out": goalie_out,
+        "gf_penalty": gf_pen,
+        "ga_penalty": ga_pen,
+        "sv_penalty": sv_pen,
+        "players": (out_list + q_list)[:6]
+    }
+
 _last_auto_scrape_check = 0
 
 def check_and_auto_update_scraped_matches(max_age_hours=6):
@@ -3316,8 +3772,8 @@ def load_scraped_matches(force_reload=False):
                         }
 
                     ref_info = item.get("referee")
-                    home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home", target_date=item.get("date_iso"))
-                    away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away", target_date=item.get("date_iso"))
+                    home_stats = get_football_team_ratings(h_name, league, recent_matches=h2h_data.get("home_last_5"), venue_role="home", target_date=item.get("date_iso"), season_stats=item.get("home_season_stats"))
+                    away_stats = get_football_team_ratings(a_name, league, recent_matches=h2h_data.get("away_last_5"), venue_role="away", target_date=item.get("date_iso"), season_stats=item.get("away_season_stats"))
                     pred = calculate_match_probabilities(home_stats, away_stats, home_team=h_name, away_team=a_name, referee=ref_info)
                     analysis = generate_ai_analysis(item, pred)
 
@@ -3352,6 +3808,7 @@ def load_scraped_matches(force_reload=False):
                         "home_stats": home_stats,
                         "away_stats": away_stats,
                         "prediction": pred,
+                        "data_quality": pred.get("data_quality", "real_stats"),
                         "h2h": h2h_data,
                         "ai_analysis": analysis,
                         "referee": ref_info,
@@ -3454,12 +3911,15 @@ def fetch_espn_upcoming_nba(force: bool = False):
 
             h_stand = get_nba_standing_for_team(standings, home_name, home_id)
             a_stand = get_nba_standing_for_team(standings, away_name, away_id)
+            nba_inj_map = fetch_espn_nba_injuries()
+            h_inj = get_nba_team_injuries(home_name, home_id, inj_map=nba_inj_map)
+            a_inj = get_nba_team_injuries(away_name, away_id, inj_map=nba_inj_map)
             home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("overall", "")
             away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("overall", "")
 
             h2h_data = generate_match_h2h(home_name, away_name, "nba", "NBA", country="Estados Unidos")
-            h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand)
-            a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+            h_ratings = get_nba_team_ratings(home_name, venue_role="home", standing_info=h_stand, injuries_info=h_inj)
+            a_ratings = get_nba_team_ratings(away_name, venue_role="away", standing_info=a_stand, injuries_info=a_inj)
             pred = calculate_nba_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
             ai_resp = generate_nba_ai_analysis({
                 "home_team": home_name,
@@ -3498,6 +3958,12 @@ def fetch_espn_upcoming_nba(force: bool = False):
                 "timezone": "America/Guatemala",
                 "home_stats": h_ratings,
                 "away_stats": a_ratings,
+                "injuries": {
+                    "home": h_inj,
+                    "away": a_inj,
+                    "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+                },
+                "data_quality": pred.get("data_quality", "real_stats"),
                 "prediction": pred,
                 "season_phase": analyze_season_phase("nba", "NBA", "Playoffs" if is_playoff else "", date_iso),
                 "h2h": h2h_data,
@@ -3584,12 +4050,15 @@ def fetch_espn_upcoming_nhl(force: bool = False):
 
             h_stand = get_nhl_standing_for_team(standings, home_name, home_id)
             a_stand = get_nhl_standing_for_team(standings, away_name, away_id)
+            nhl_inj_map = fetch_espn_nhl_injuries()
+            h_inj = get_nhl_team_injuries(home_name, home_id, inj_map=nhl_inj_map)
+            a_inj = get_nhl_team_injuries(away_name, away_id, inj_map=nhl_inj_map)
             home_record = _extract_espn_record_summary(home) or (h_stand or {}).get("record_short", "")
             away_record = _extract_espn_record_summary(away) or (a_stand or {}).get("record_short", "")
 
             h2h_data = generate_match_h2h(home_name, away_name, "nhl", "NHL", country="Norteamérica")
-            h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand)
-            a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand)
+            h_ratings = get_nhl_team_ratings(home_name, venue_role="home", standing_info=h_stand, injuries_info=h_inj)
+            a_ratings = get_nhl_team_ratings(away_name, venue_role="away", standing_info=a_stand, injuries_info=a_inj)
             pred = calculate_nhl_probabilities(h_ratings, a_ratings, home_team=home_name, away_team=away_name)
             ai_resp = generate_nhl_ai_analysis({
                 "home_team": home_name,
@@ -3628,6 +4097,12 @@ def fetch_espn_upcoming_nhl(force: bool = False):
                 "timezone": "America/Guatemala",
                 "home_stats": h_ratings,
                 "away_stats": a_ratings,
+                "injuries": {
+                    "home": h_inj,
+                    "away": a_inj,
+                    "total_out": int(h_inj.get("out_count", 0)) + int(a_inj.get("out_count", 0))
+                },
+                "data_quality": pred.get("data_quality", "real_stats"),
                 "prediction": pred,
                 "season_phase": analyze_season_phase("nhl", "NHL", "Playoffs" if is_playoff else "", date_iso),
                 "h2h": h2h_data,
@@ -3671,7 +4146,162 @@ def fetch_matches_data(sport_filter="all"):
     if sport_filter == "all":
         results.sort(key=lambda m: (m.get("timestamp") or 0, m.get("date_iso") or "", m.get("time") or ""))
 
+    if results:
+        try:
+            from calibration_tracker import record_prematch_snapshots
+            record_prematch_snapshots(results)
+        except Exception:
+            pass
+
     return results
+
+
+
+def fetch_espn_nba_team_four_factors(team_id: str) -> dict:
+    """
+    Calcula los Cuatro Factores reales de temporada (eFG%, TOV%, ORB%, FTR) y Pace estimado
+    desde ESPN Team Statistics (caché 2h por equipo).
+    """
+    tid = str(team_id or "").strip()
+    if not tid:
+        return {}
+    now = time.time()
+    cached = _nba_ff_cache.get(tid)
+    if cached and (now - cached.get("timestamp", 0) < 7200):
+        return cached.get("data", {})
+
+    try:
+        r = requests.get(f"https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/{tid}/statistics", timeout=6)
+        if r.status_code != 200:
+            return {}
+        cats = (((r.json().get("results") or {}).get("stats") or {}).get("categories") or [])
+        smap = {}
+        for c in cats:
+            for s in (c.get("stats") or []):
+                if s.get("name") and s.get("value") is not None:
+                    try:
+                        smap[s["name"]] = float(s["value"])
+                    except Exception:
+                        pass
+
+        fgm = smap.get("avgFieldGoalsMade")
+        fga = smap.get("avgFieldGoalsAttempted")
+        tpm = smap.get("avgThreePointFieldGoalsMade") or 0.0
+        fta = smap.get("avgFreeThrowsAttempted") or 0.0
+        orb = smap.get("avgOffensiveRebounds") or 0.0
+        tov = smap.get("avgTurnovers") or 0.0
+        drb = smap.get("avgDefensiveRebounds") or 32.5
+        gp = smap.get("gamesPlayed") or 0.0
+
+        if not (fgm and fga and fga > 20 and gp >= 3):
+            return {}
+
+        efg_pct = round(((fgm + 0.5 * tpm) / fga) * 100.0, 1)
+        denom_tov = fga + 0.44 * fta + tov
+        tov_pct = round((tov / denom_tov) * 100.0, 1) if denom_tov > 0 else 13.5
+        orb_pct = round((orb / (orb + max(28.0, drb * 0.98))) * 100.0, 1)
+        ftr = round(fta / fga, 3)
+        pace_est = round(max(94.5, min(105.5, fga - orb + tov + 0.44 * fta)), 1)
+
+        ff = {
+            "efg_pct": efg_pct,
+            "tov_pct": tov_pct,
+            "orb_pct": orb_pct,
+            "ftr": ftr,
+            "pace_est": pace_est,
+        }
+        with _NBA_FF_LOCK:
+            _nba_ff_cache[tid] = {"data": ff, "timestamp": now}
+        return ff
+    except Exception:
+        return {}
+
+
+def fetch_espn_nhl_injuries(force: bool = False) -> dict:
+    """
+    Obtiene el reporte oficial de lesiones de toda la NHL desde ESPN en una sola petición (caché 15 min).
+    """
+    now = time.time()
+    if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+        return _nhl_injuries_cache["data"]
+
+    with _NHL_INJURIES_LOCK:
+        now = time.time()
+        if not force and _nhl_injuries_cache["data"] and (now - _nhl_injuries_cache["timestamp"] < 900):
+            return _nhl_injuries_cache["data"]
+        try:
+            r = requests.get("https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/injuries", timeout=7)
+            if r.status_code == 200:
+                mapping = {}
+                for team_blk in r.json().get("injuries", []):
+                    t_name = team_blk.get("displayName") or ""
+                    t_id = str(team_blk.get("id") or "")
+                    players = []
+                    for item in team_blk.get("injuries", []):
+                        ath = item.get("athlete") or {}
+                        pname = ath.get("displayName") or ath.get("shortName") or ""
+                        pos = ((ath.get("position") or {}).get("abbreviation") or "").strip()
+                        status = str(item.get("status") or "").strip()
+                        detail = str(((item.get("details") or {}).get("type") or item.get("shortComment") or "")).strip()
+                        if pname and status:
+                            players.append({
+                                "player": pname,
+                                "position": pos,
+                                "status": status,
+                                "detail": detail[:90]
+                            })
+                    if t_name:
+                        mapping[_norm_team_key(t_name)] = players
+                    if t_id:
+                        mapping[f"id_{t_id}"] = players
+                _nhl_injuries_cache["data"] = mapping
+                _nhl_injuries_cache["timestamp"] = now
+        except Exception as ex:
+            print(f"[ESPN NHL INJURIES] Error: {ex}")
+        return _nhl_injuries_cache.get("data", {}) or {}
+
+
+def get_nhl_team_injuries(team_name: str, team_id=None, inj_map: dict = None) -> dict:
+    data = inj_map if inj_map is not None else fetch_espn_nhl_injuries()
+    players = []
+    if team_id and f"id_{team_id}" in data:
+        players = data[f"id_{team_id}"]
+    else:
+        nk = _norm_team_key(team_name)
+        if nk in data:
+            players = data[nk]
+        else:
+            for k, v in data.items():
+                if not k.startswith("id_") and (nk in k or k in nk):
+                    players = v
+                    break
+
+    out_list = []
+    q_list = []
+    goalie_out = False
+    for p in players:
+        st_l = (p.get("status") or "").lower()
+        pos_u = (p.get("position") or "").upper()
+        if "out" in st_l or "ir" in st_l or "injured reserve" in st_l or "susp" in st_l:
+            out_list.append(p)
+            if pos_u == "G":
+                goalie_out = True
+        elif "day" in st_l or "question" in st_l:
+            q_list.append(p)
+
+    skater_eff = max(0.0, len(out_list) - (1 if goalie_out else 0)) + 0.35 * len(q_list)
+    gf_pen = round(min(0.24, skater_eff * 0.04), 2)
+    ga_pen = round(min(0.22, skater_eff * 0.03 + (0.12 if goalie_out else 0.0)), 2)
+    sv_pen = 0.8 if goalie_out else 0.0
+    return {
+        "out_count": len(out_list),
+        "q_count": len(q_list),
+        "goalie_out": goalie_out,
+        "gf_penalty": gf_pen,
+        "ga_penalty": ga_pen,
+        "sv_penalty": sv_pen,
+        "players": (out_list + q_list)[:6]
+    }
 
 
 def get_match_by_id(match_id):

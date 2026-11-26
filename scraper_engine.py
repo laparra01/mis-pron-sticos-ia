@@ -581,6 +581,15 @@ def get_match_stats(match_id, cache, fetch_network=True):
                 red_cards = stats_map.get("red cards")
 
             fouls = stats_map.get("fouls committed", stats_map.get("fouls"))
+            xg_pair = stats_map.get("expected goals (xg)")
+
+            def _parse_xg(v):
+                if v is None:
+                    return None
+                try:
+                    return round(float(str(v).split()[0]), 2)
+                except Exception:
+                    return None
 
             corners = corners or [dyn_c_h, dyn_c_a]
             shots_target = shots_target or [dyn_sot_h, dyn_sot_a]
@@ -606,6 +615,12 @@ def get_match_stats(match_id, cache, fetch_network=True):
                 "fouls_home": parse_num(fouls[0], dyn_f_h),
                 "fouls_away": parse_num(fouls[1], dyn_f_a)
             }
+            if isinstance(xg_pair, list) and len(xg_pair) == 2:
+                xgh = _parse_xg(xg_pair[0])
+                xga = _parse_xg(xg_pair[1])
+                if xgh is not None and xga is not None:
+                    res["xg_home"] = xgh
+                    res["xg_away"] = xga
             cache[str_id] = res
             time.sleep(0.04)
             return res
@@ -884,6 +899,61 @@ def scrape_single_league(cfg, match_cache=None):
     unplayed = [m for m in all_matches if not m.get("status", {}).get("finished") and not m.get("status", {}).get("cancelled")]
     upcoming_pool = unplayed[:max_up]
 
+    # Extraer tabla oficial de temporada (Local, Visitante y Expected Goals xG/xGA si están en FotMob)
+    team_season_stats = {}
+    try:
+        tbl_list = league_data.get("table") or []
+        if isinstance(tbl_list, list) and tbl_list:
+            t_root = ((tbl_list[0] or {}).get("data") or {}).get("table") or {}
+
+            def _parse_scores_str(s_str):
+                parts = [p.strip() for p in str(s_str or "").split("-")]
+                if len(parts) == 2 and parts[0].isdigit() and parts[1].isdigit():
+                    return int(parts[0]), int(parts[1])
+                return None, None
+
+            for row in (t_root.get("all") or []):
+                nm = row.get("name") or row.get("shortName")
+                pl = int(row.get("played") or 0)
+                if nm and pl > 0:
+                    gf, ga = _parse_scores_str(row.get("scoresStr"))
+                    st_e = team_season_stats.setdefault(nm, {})
+                    st_e["season_played"] = pl
+                    st_e["season_pts"] = int(row.get("pts") or 0)
+                    if gf is not None and ga is not None:
+                        st_e["season_gf_pg"] = round(gf / float(pl), 2)
+                        st_e["season_ga_pg"] = round(ga / float(pl), 2)
+
+            for row in (t_root.get("home") or []):
+                nm = row.get("name") or row.get("shortName")
+                pl = int(row.get("played") or 0)
+                if nm and pl > 0:
+                    gf, ga = _parse_scores_str(row.get("scoresStr"))
+                    if gf is not None and ga is not None:
+                        st_e = team_season_stats.setdefault(nm, {})
+                        st_e["season_home_gf_pg"] = round(gf / float(pl), 2)
+                        st_e["season_home_ga_pg"] = round(ga / float(pl), 2)
+
+            for row in (t_root.get("away") or []):
+                nm = row.get("name") or row.get("shortName")
+                pl = int(row.get("played") or 0)
+                if nm and pl > 0:
+                    gf, ga = _parse_scores_str(row.get("scoresStr"))
+                    if gf is not None and ga is not None:
+                        st_e = team_season_stats.setdefault(nm, {})
+                        st_e["season_away_gf_pg"] = round(gf / float(pl), 2)
+                        st_e["season_away_ga_pg"] = round(ga / float(pl), 2)
+
+            for row in (t_root.get("xg") or []):
+                nm = row.get("name") or row.get("teamName") or row.get("shortName")
+                pl = int(row.get("played") or 0)
+                if nm and pl > 0 and row.get("xg") is not None and row.get("xgConceded") is not None:
+                    st_e = team_season_stats.setdefault(nm, {})
+                    st_e["season_xg_pg"] = round(float(row["xg"]) / float(pl), 2)
+                    st_e["season_xga_pg"] = round(float(row["xgConceded"]) / float(pl), 2)
+    except Exception as ex_tbl:
+        print(f" -> Aviso tabla/xG en {l_name}: {ex_tbl}")
+
     teams = set()
     for m in all_matches:
         if m.get("home", {}).get("name"):
@@ -960,6 +1030,8 @@ def scrape_single_league(cfg, match_cache=None):
             yellow_my = st.get("yellow_cards_home", 2) if is_loc else st.get("yellow_cards_away", 2)
             red_my = st.get("red_cards_home", 0) if is_loc else st.get("red_cards_away", 0)
             fouls_my = st.get("fouls_home", 11) if is_loc else st.get("fouls_away", 12)
+            xg_my = st.get("xg_home") if is_loc else st.get("xg_away")
+            xg_opp = st.get("xg_away") if is_loc else st.get("xg_home")
 
             c_for_gen.append(corners_my)
             c_against_gen.append(corners_opp)
@@ -1007,7 +1079,9 @@ def scrape_single_league(cfg, match_cache=None):
                 "yellow_cards": yellow_my,
                 "red_cards": red_my,
                 "total_cards": yellow_my + red_my,
-                "fouls": fouls_my
+                "fouls": fouls_my,
+                "xg_for": xg_my,
+                "xg_against": xg_opp
             })
 
         team_history[team] = formatted_last_5
@@ -1155,6 +1229,8 @@ def scrape_single_league(cfg, match_cache=None):
                 "summary": h2h_summary
             },
             "referee": _REFEREE_CACHE.get(str(m_id)),
+            "home_season_stats": team_season_stats.get(h_name),
+            "away_season_stats": team_season_stats.get(a_name),
             "source_api": "FotMob (Scraping Oficial)"
         })
 
@@ -1169,6 +1245,7 @@ def scrape_single_league(cfg, match_cache=None):
         "total_fixtures": len(processed_fixtures),
         "team_histories": team_history,
         "team_corner_stats": team_corner_stats,
+        "team_season_stats": team_season_stats,
         "upcoming_matches": processed_fixtures
     }
 

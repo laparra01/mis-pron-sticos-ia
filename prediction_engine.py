@@ -492,6 +492,7 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
     gen_red = 0.0
     gen_fouls = 0.0
     gen_count = 0
+    _xg_hits = 0
 
     venue_weight_sum = 0.0
     venue_scored_weighted = 0.0
@@ -543,12 +544,27 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
             conceded = h_sc
             opp_name = m.get("opponent") or m.get("match_home") or ""
 
+        # Si existe xG real de FotMob/ESPN en el partido reciente, suavizar varianza (60% xG + 40% goles reales)
+        xg_f = m.get("xg_for")
+        xg_a = m.get("xg_against")
+        if xg_f is not None and xg_a is not None:
+            try:
+                eff_scored = (float(xg_f) * 0.60) + (float(scored) * 0.40)
+                eff_conceded = (float(xg_a) * 0.60) + (float(conceded) * 0.40)
+                _xg_hits += 1
+            except Exception:
+                eff_scored = scored
+                eff_conceded = conceded
+        else:
+            eff_scored = scored
+            eff_conceded = conceded
+
         # Ajuste SOS según el rival enfrentado
         opp_att, opp_def = _get_opp_strength(opp_name)
         sos_def_mult = max(0.80, min(1.25, 1.25 / max(0.5, opp_def)))
         sos_att_mult = max(0.80, min(1.25, max(0.5, opp_att) / 1.35))
-        adj_scored = scored * sos_def_mult
-        adj_conceded = conceded * sos_att_mult
+        adj_scored = eff_scored * sos_def_mult
+        adj_conceded = eff_conceded * sos_att_mult
 
         # Corners
         if "corners_for" in m and m.get("corners_for") is not None:
@@ -695,7 +711,8 @@ def calculate_team_ratings_from_recent_matches(team_name: str, matches: list, ve
         "rest_days": rest_info["rest_days"],
         "is_congested": rest_info["is_congested"],
         "is_b2b": rest_info["is_b2b"],
-        "fatigue_penalty": rest_info["fatigue_penalty"]
+        "fatigue_penalty": rest_info["fatigue_penalty"],
+        "data_quality": "real_xg" if _xg_hits > 0 else "real_stats"
     }
 
 def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None, target_date=None) -> dict:
@@ -854,14 +871,53 @@ def calculate_nba_team_ratings_from_recent_matches(team_name: str, matches: list
         "has_real_four_factors": False
     }
 
-def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None, venue_role: str = None, target_date=None) -> dict:
+def get_football_team_ratings(team_name: str, league_name: str = "", recent_matches: list = None, venue_role: str = None, target_date=None, season_stats: dict = None) -> dict:
     # Evitar que historial sintético (hash) sobrescriba equipos conocidos de KNOWN_FOOTBALL_TEAMS
     t_clean = (team_name or "").lower().strip()
     is_synthetic_recent = bool(recent_matches and all(m.get("is_synthetic") for m in recent_matches))
     has_known_tier = any((k in t_clean or t_clean in k) for k in KNOWN_FOOTBALL_TEAMS.keys())
+    s_info = season_stats if isinstance(season_stats, dict) and int(season_stats.get("season_played", 0) or 0) >= 4 else None
 
     if recent_matches and len(recent_matches) > 0 and not (is_synthetic_recent and has_known_tier):
-        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res = calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        if is_synthetic_recent:
+            res["data_quality"] = "synthetic_hash"
+        elif s_info:
+            # Anclar 55% promedio de temporada completa (priorizando xG/xGA si existe) + 45% forma reciente
+            is_h = venue_role in ("home", "Local", "local")
+            is_a = venue_role in ("away", "Visitante", "visitante", "visita")
+            split_gf = s_info.get("season_home_gf_pg") if is_h else (s_info.get("season_away_gf_pg") if is_a else s_info.get("season_gf_pg"))
+            split_ga = s_info.get("season_home_ga_pg") if is_h else (s_info.get("season_away_ga_pg") if is_a else s_info.get("season_ga_pg"))
+            gen_gf = s_info.get("season_gf_pg") or split_gf
+            gen_ga = s_info.get("season_ga_pg") or split_ga
+
+            xg_pg = s_info.get("season_xg_pg")
+            xga_pg = s_info.get("season_xga_pg")
+            if xg_pg is not None and xga_pg is not None:
+                sea_att = float(xg_pg) * 0.65 + float(split_gf or gen_gf or res["attack"]) * 0.35
+                sea_def = float(xga_pg) * 0.65 + float(split_ga or gen_ga or res["defense"]) * 0.35
+                sea_att_gen = float(xg_pg) * 0.65 + float(gen_gf or res["attack_gen"]) * 0.35
+                sea_def_gen = float(xga_pg) * 0.65 + float(gen_ga or res["defense_gen"]) * 0.35
+                res["data_quality"] = "real_xg"
+                res["season_xg_pg"] = round(float(xg_pg), 2)
+                res["season_xga_pg"] = round(float(xga_pg), 2)
+            elif split_gf is not None and split_ga is not None:
+                sea_att = float(split_gf)
+                sea_def = float(split_ga)
+                sea_att_gen = float(gen_gf or split_gf)
+                sea_def_gen = float(gen_ga or split_ga)
+            else:
+                sea_att = res["attack"]
+                sea_def = res["defense"]
+                sea_att_gen = res["attack_gen"]
+                sea_def_gen = res["defense_gen"]
+
+            res["attack"] = max(0.40, min(3.80, round(sea_att * 0.55 + res["attack"] * 0.45, 2)))
+            res["defense"] = max(0.35, min(3.50, round(sea_def * 0.55 + res["defense"] * 0.45, 2)))
+            res["attack_gen"] = max(0.40, min(3.80, round(sea_att_gen * 0.55 + res["attack_gen"] * 0.45, 2)))
+            res["defense_gen"] = max(0.35, min(3.50, round(sea_def_gen * 0.55 + res["defense_gen"] * 0.45, 2)))
+            res["season_played"] = int(s_info.get("season_played", 0) or 0)
+        return res
 
     try:
         verified = find_verified_matches_for_team(team_name)
@@ -897,11 +953,15 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
                 "corners_total": round(c_for + c_against, 1),
                 "corners_total_gen": 9.6,
                 "venue_role": venue_role or "General",
-                "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0
+                "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0,
+                "data_quality": "known_catalog"
             }
 
     if recent_matches and len(recent_matches) > 0:
-        return calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res = calculate_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        if is_synthetic_recent:
+            res["data_quality"] = "synthetic_hash"
+        return res
 
     h = deterministic_hash(t_clean)
     att = round(1.15 + ((h % 95) / 100.0), 2)
@@ -929,10 +989,36 @@ def get_football_team_ratings(team_name: str, league_name: str = "", recent_matc
         "corners_total": round(c_for + c_against, 1),
         "corners_total_gen": round(c_for + c_against, 1),
         "venue_role": venue_role or "General",
-        "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0
+        "rest_days": 6.0, "is_congested": False, "is_b2b": False, "fatigue_penalty": 0.0,
+        "data_quality": "synthetic_hash"
     }
 
-def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None) -> dict:
+def _apply_nba_context_overrides(res: dict, injuries_info: dict = None, four_factors: dict = None) -> dict:
+    """Aplica Cuatro Factores reales de ESPN y penalización calibrada por bajas confirmadas en NBA."""
+    if four_factors and isinstance(four_factors, dict):
+        if four_factors.get("efg_pct") is not None:
+            res["efg_pct"] = round(float(four_factors["efg_pct"]), 1)
+        if four_factors.get("tov_pct") is not None:
+            res["tov_pct"] = round(float(four_factors["tov_pct"]), 1)
+        if four_factors.get("orb_pct") is not None:
+            res["orb_pct"] = round(float(four_factors["orb_pct"]), 1)
+        if four_factors.get("ftr") is not None:
+            res["ftr"] = round(float(four_factors["ftr"]), 3)
+        if four_factors.get("pace_est"):
+            res["pace"] = round((float(res.get("pace", 99.5)) + float(four_factors["pace_est"])) / 2.0, 1)
+        res["has_real_four_factors"] = True
+
+    if injuries_info and isinstance(injuries_info, dict):
+        off_pen = float(injuries_info.get("off_penalty", 0.0) or 0.0)
+        def_pen = float(injuries_info.get("def_penalty", 0.0) or 0.0)
+        if off_pen > 0 or def_pen > 0:
+            res["off_rating"] = round(max(98.0, float(res.get("off_rating", 114.0)) - off_pen), 1)
+            res["def_rating"] = round(min(130.0, float(res.get("def_rating", 114.0)) + def_pen), 1)
+        res["injuries"] = injuries_info
+    return res
+
+
+def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None, injuries_info: dict = None, four_factors: dict = None) -> dict:
     t_clean = (team_name or "").lower().strip()
 
     # 1. Priorizar estadísticas oficiales de temporada de ESPN Standings si están disponibles
@@ -991,19 +1077,22 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "tov_pct": round(max(10.2, min(16.5, 13.5 - (v_off - 114.5) * 0.08)), 1),
                 "orb_pct": round(max(21.5, min(33.0, 26.8 + (pace - 99.0) * 0.20)), 1),
                 "ftr": round(max(0.180, min(0.280, 0.225 + (v_off - 114.5) * 0.002)), 3),
-                "has_real_four_factors": False
+                "has_real_four_factors": False,
+                "data_quality": "real_stats"
             }
             if standing_info.get("overall"):
                 res["record"] = standing_info["overall"]
             if standing_info.get("streak"):
                 res["streak"] = standing_info["streak"]
-            return res
+            return _apply_nba_context_overrides(res, injuries_info=injuries_info, four_factors=four_factors)
         except Exception:
             pass
 
     # 2. Si hay historial reciente real (e.g. calendario oficial ESPN)
     if real_recent and recent_matches and len(recent_matches) > 0:
-        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res = calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res["data_quality"] = "real_stats"
+        return _apply_nba_context_overrides(res, injuries_info=injuries_info, four_factors=four_factors)
 
     # 3. Buscar en catálogo calibrado KNOWN_NBA_TEAMS
     for k, v in KNOWN_NBA_TEAMS.items():
@@ -1019,7 +1108,7 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
             else:
                 v_off = base_off
                 v_def = base_def
-            return {
+            res = {
                 "off_rating": v_off,
                 "def_rating": v_def,
                 "off_rating_gen": base_off,
@@ -1031,11 +1120,15 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "tov_pct": round(13.5 - (v_off - 114.5) * 0.08, 1),
                 "orb_pct": round(26.8 + (v.get("pace", 100.0) - 99.0) * 0.20, 1),
                 "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3),
-                "has_real_four_factors": False
+                "has_real_four_factors": False,
+                "data_quality": "known_catalog"
             }
+            return _apply_nba_context_overrides(res, injuries_info=injuries_info, four_factors=four_factors)
 
     if recent_matches and len(recent_matches) > 0:
-        return calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res = calculate_nba_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res["data_quality"] = "synthetic_hash"
+        return _apply_nba_context_overrides(res, injuries_info=injuries_info, four_factors=four_factors)
 
     h = deterministic_hash(t_clean)
     base_off = round(112.0 + ((h % 80) / 10.0), 1)
@@ -1050,7 +1143,7 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
     else:
         v_off = base_off
         v_def = base_def
-    return {
+    res = {
         "off_rating": v_off,
         "def_rating": v_def,
         "off_rating_gen": base_off,
@@ -1062,8 +1155,10 @@ def get_nba_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "tov_pct": round(13.5 - (v_off - 114.5) * 0.08, 1),
         "orb_pct": round(26.8 + (pace - 99.0) * 0.20, 1),
         "ftr": round(0.225 + (v_off - 114.5) * 0.002, 3),
-        "has_real_four_factors": False
+        "has_real_four_factors": False,
+        "data_quality": "synthetic_hash"
     }
+    return _apply_nba_context_overrides(res, injuries_info=injuries_info, four_factors=four_factors)
 
 
 def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list, venue_role: str = None, target_date=None) -> dict:
@@ -1191,7 +1286,22 @@ def calculate_nhl_team_ratings_from_recent_matches(team_name: str, matches: list
     }
 
 
-def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None) -> dict:
+def _apply_nhl_injuries_override(res: dict, injuries_info: dict = None) -> dict:
+    if injuries_info and isinstance(injuries_info, dict):
+        gf_pen = float(injuries_info.get("gf_penalty", 0.0) or 0.0)
+        ga_pen = float(injuries_info.get("ga_penalty", 0.0) or 0.0)
+        sv_pen = float(injuries_info.get("sv_penalty", 0.0) or 0.0)
+        if gf_pen > 0:
+            res["gf_pg"] = round(max(1.75, float(res.get("gf_pg", 3.0)) - gf_pen), 2)
+        if ga_pen > 0:
+            res["ga_pg"] = round(min(4.60, float(res.get("ga_pg", 3.0)) + ga_pen), 2)
+        if sv_pen > 0:
+            res["sv_pct"] = round(max(86.5, float(res.get("sv_pct", 90.4)) - sv_pen), 1)
+        res["injuries"] = injuries_info
+    return res
+
+
+def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role: str = None, standing_info: dict = None, real_recent: bool = False, target_date=None, injuries_info: dict = None) -> dict:
     """
     Combina clasificación real de ESPN NHL Standings (70%) + racha reciente real (30%)
     o catálogo calibrado KNOWN_NHL_TEAMS para devolver métricas cuantitativas de hockey.
@@ -1266,26 +1376,31 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
                 "is_real_standings": True,
                 "rest_days": rest_info["rest_days"],
                 "is_b2b": rest_info["is_b2b"],
-                "is_congested": rest_info["is_congested"]
+                "is_congested": rest_info["is_congested"],
+                "data_quality": "real_stats"
             }
             if standing_info.get("overall"):
                 res["record"] = standing_info["overall"]
             if standing_info.get("streak"):
                 res["streak"] = standing_info["streak"]
-            return res
+            return _apply_nhl_injuries_override(res, injuries_info=injuries_info)
         except Exception:
             pass
 
     if real_recent and recent_matches and len(recent_matches) > 0:
-        return calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res = calculate_nhl_team_ratings_from_recent_matches(team_name, recent_matches, venue_role=venue_role, target_date=target_date)
+        res["data_quality"] = "real_stats"
+        return _apply_nhl_injuries_override(res, injuries_info=injuries_info)
 
     if known_entry:
         gf_gen = known_entry["gf_pg"]
         ga_gen = known_entry["ga_pg"]
+        dq = "known_catalog"
     else:
         h = deterministic_hash(t_clean)
         gf_gen = round(2.65 + ((h % 85) / 100.0), 2)
         ga_gen = round(2.55 + (((h // 10) % 85) / 100.0), 2)
+        dq = "synthetic_hash"
 
     if venue_role in ("home", "Local"):
         gf_v = round(gf_gen * 1.055, 2)
@@ -1298,7 +1413,7 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
         ga_v = ga_gen
 
     pk_base = round(max(73.0, min(86.5, 84.5 - ga_gen * 2.1)), 1)
-    return {
+    res = {
         "gf_pg": gf_v,
         "ga_pg": ga_v,
         "gf_pg_gen": gf_gen,
@@ -1309,8 +1424,10 @@ def get_nhl_team_ratings(team_name: str, recent_matches: list = None, venue_role
         "pk_pct": pk_base,
         "sv_pct": base_sv,
         "venue_role": venue_role or "General",
-        "rest_days": 2.0, "is_b2b": False, "is_congested": False
+        "rest_days": 2.0, "is_b2b": False, "is_congested": False,
+        "data_quality": dq
     }
+    return _apply_nhl_injuries_override(res, injuries_info=injuries_info)
 
 def generate_four_picks_football(
     home_team: str,
@@ -6378,7 +6495,12 @@ def calculate_match_probabilities(home_stats: dict, away_stats: dict, league_avg
         "seven_predictions": four_predictions,
         "eight_predictions": four_predictions,
         "projections_matrix": projections_matrix,
-        "quick_markets": quick_markets
+        "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+                  else ("real_xg" if ((home_stats or {}).get("data_quality") == "real_xg" and (away_stats or {}).get("data_quality") == "real_xg") else "real_stats"))
+        )
     }
 
 def calculate_live_probabilities(current_h: int, current_a: int, minute: int, home_stats: dict, away_stats: dict, live_stats: dict, is_halftime: bool = False) -> dict:
@@ -6771,7 +6893,12 @@ def calculate_live_probabilities(current_h: int, current_a: int, minute: int, ho
         "seven_predictions": four_predictions,
         "eight_predictions": four_predictions,
         "projections_matrix": projections_matrix,
-        "quick_markets": quick_markets
+        "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+                  else ("real_xg" if ((home_stats or {}).get("data_quality") == "real_xg" and (away_stats or {}).get("data_quality") == "real_xg") else "real_stats"))
+        )
     }
 
 def normal_cdf(x: float) -> float:
@@ -7096,11 +7223,17 @@ def calculate_nba_probabilities(home_stats: dict, away_stats: dict, home_team="L
         "four_predictions": four_predictions,
         "projections_matrix": projections_matrix,
         "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+                  else ("real_xg" if ((home_stats or {}).get("data_quality") == "real_xg" and (away_stats or {}).get("data_quality") == "real_xg") else "real_stats"))
+        ),
         "four_factors": {
             "home": {"efg_pct": efg_h, "tov_pct": tov_h, "orb_pct": orb_h, "ftr": ftr_h},
             "away": {"efg_pct": efg_a, "tov_pct": tov_a, "orb_pct": orb_a, "ftr": ftr_a},
             "net_edge": delta_oliver,
-            "favored_team": home_team if delta_oliver >= 0 else away_team
+            "favored_team": home_team if delta_oliver >= 0 else away_team,
+            "has_real_four_factors": has_indep_ff
         }
     }
 
@@ -7379,7 +7512,12 @@ def calculate_nba_live_probabilities(current_h: int, current_a: int, quarter: st
         "four_predictions": four_predictions,
         "six_predictions": four_predictions,
         "projections_matrix": projections_matrix,
-        "quick_markets": quick_markets
+        "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+                  else ("real_xg" if ((home_stats or {}).get("data_quality") == "real_xg" and (away_stats or {}).get("data_quality") == "real_xg") else "real_stats"))
+        )
     }
 
 
@@ -7984,7 +8122,11 @@ def calculate_nhl_probabilities(home_stats: dict, away_stats: dict, home_team: s
         "six_predictions": picks,
         "seven_predictions": picks,
         "projections_matrix": matrix,
-        "quick_markets": quick_markets
+        "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality")) else "real_stats")
+        )
     }
 
 
@@ -8318,7 +8460,11 @@ def calculate_nhl_live_probabilities(current_h: int, current_a: int, period_str:
         "six_predictions": four_predictions,
         "seven_predictions": four_predictions,
         "projections_matrix": matrix,
-        "quick_markets": quick_markets
+        "quick_markets": quick_markets,
+        "data_quality": (
+            "synthetic_hash" if "synthetic_hash" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality"))
+            else ("known_catalog" if "known_catalog" in ((home_stats or {}).get("data_quality"), (away_stats or {}).get("data_quality")) else "real_stats")
+        )
     }
 
 

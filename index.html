@@ -300,11 +300,17 @@
                         <p class="text-[11px] text-gray-400">Clubes, Selecciones, NBA & NHL</p>
                     </div>
                 </div>
-                <!-- Botón Refrescar en móvil (lado derecho del logo) -->
-                <button onclick="refreshApp()" class="sm:hidden btn-refresh-trigger flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs cursor-pointer" title="Actualizar datos">
-                    <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
-                    <span>Actualizar</span>
-                </button>
+                <!-- Botón Calibración y Refrescar en móvil (lado derecho del logo) -->
+                <div class="sm:hidden flex items-center gap-1.5">
+                    <button onclick="openCalibrationModal(false)" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl font-bold bg-gray-950 border border-cyan-800/60 hover:border-cyan-500/70 text-cyan-300 hover:text-white transition shadow text-xs cursor-pointer" title="Ver Calibración y Brier Score real">
+                        <span>📊</span>
+                        <span>Brier</span>
+                    </button>
+                    <button onclick="refreshApp()" class="btn-refresh-trigger flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs cursor-pointer" title="Actualizar datos">
+                        <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
+                        <span>Actualizar</span>
+                    </button>
+                </div>
             </div>
 
             <!-- Controles derecha: Categorías + Botón Refrescar Desktop -->
@@ -343,7 +349,11 @@
                     </button>
                 </div>
 
-                <!-- Botón Refrescar en Desktop -->
+                <!-- Botón Calibración y Refrescar en Desktop -->
+                <button onclick="openCalibrationModal(false)" class="hidden sm:flex items-center gap-1.5 px-3 py-2 rounded-xl font-bold bg-gray-950 border border-cyan-800/70 hover:border-cyan-400/80 hover:bg-cyan-950/40 text-cyan-300 hover:text-white transition shadow text-xs shrink-0 cursor-pointer" title="Ver precisión histórica, Brier Score y acierto por deporte">
+                    <span>📊</span>
+                    <span>Calibración</span>
+                </button>
                 <button onclick="refreshApp()" class="hidden sm:flex btn-refresh-trigger items-center gap-1.5 px-3 py-2 rounded-xl font-bold bg-gray-950 border border-gray-800 hover:border-emerald-500/60 hover:bg-emerald-950/40 text-gray-300 hover:text-white transition shadow text-xs shrink-0 cursor-pointer" title="Actualizar partidos y estadísticas en tiempo real">
                     <i data-lucide="refresh-cw" class="icon-refresh-trigger w-3.5 h-3.5 text-emerald-400"></i>
                     <span>Actualizar</span>
@@ -1559,6 +1569,8 @@
 
                 <!-- Alerta Contextual Global: Cierre de Temporada / Playoffs / Recta Final -->
                 <div id="modal-season-phase-banner"></div>
+                <!-- Alerta de Bajas / Lesionados y Calidad de Datos -->
+                <div id="modal-injuries-banner" class="hidden"></div>
 
                 <!-- SECCIÓN TAB 1: PRONÓSTICOS DETALLADOS -->
                 <div id="modal-content-picks" class="space-y-4">
@@ -2150,6 +2162,32 @@
         </div>
     </div>
 
+    <!-- Modal de Calibración Histórica & Brier Score -->
+    <div id="calibration-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-2.5 sm:p-4">
+        <div class="bg-gray-900 border border-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in duration-150">
+            <div class="p-4 border-b border-gray-800 bg-gray-950 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 min-w-0">
+                    <div class="w-9 h-9 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center text-lg shrink-0">📊</div>
+                    <div class="min-w-0">
+                        <h3 class="font-bold text-white text-sm sm:text-base truncate">Calibración Real del Modelo (Brier Score)</h3>
+                        <p class="text-[11px] text-gray-400 truncate">Verificación automática de picks pre-partido contra resultados oficiales finales</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button onclick="openCalibrationModal(true)" id="btn-settle-calibration" class="px-2.5 py-1.5 rounded-xl bg-cyan-950/70 hover:bg-cyan-900/70 border border-cyan-700/60 text-cyan-300 text-[11px] font-bold transition cursor-pointer">
+                        🔄 Liquidar Finalizados
+                    </button>
+                    <button onclick="closeCalibrationModal()" class="text-gray-400 hover:text-white p-1.5 rounded-xl hover:bg-gray-800 transition cursor-pointer">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="calibration-modal-body" class="p-4 sm:p-5 overflow-y-auto space-y-4 text-xs text-gray-300 flex-1">
+                <div class="py-10 text-center text-gray-400 font-mono">Cargando métricas de calibración...</div>
+            </div>
+        </div>
+    </div>
+
     <!-- Client-side Logic -->
     <script>
         function safeCreateIcons() {
@@ -2322,6 +2360,22 @@
                     <span>🏁</span>
                     <span>${sp.stage_label || 'Recta Final'}</span>
                 </span>` : '';
+
+            const injObj = m.injuries || {};
+            const totalInjOut = Number(injObj.total_out || 0);
+            const injuriesBadge = totalInjOut > 0 ? `
+                <span class="bg-rose-950/80 text-rose-300 border border-rose-700/60 px-2 py-0.5 rounded text-[10px] font-mono font-bold flex items-center gap-1 shadow-xs cursor-help" title="Bajas oficiales ESPN — Local: ${(injObj.home && injObj.home.out_count) || 0} Out • Visita: ${(injObj.away && injObj.away.out_count) || 0} Out">
+                    <span>🏥</span>
+                    <span>${totalInjOut} Baja${totalInjOut > 1 ? 's' : ''}</span>
+                </span>` : '';
+
+            const dq = m.data_quality || pred.data_quality || '';
+            let qualityBadge = '';
+            if (dq === 'real_xg') {
+                qualityBadge = `<span class="bg-emerald-950/80 text-emerald-300 border border-emerald-700/50 px-1.5 py-0.5 rounded text-[9.5px] font-mono font-bold" title="Modelo calibrado con Expected Goals (xG) y tabla oficial de temporada">📊 xG</span>`;
+            } else if (dq === 'synthetic_hash') {
+                qualityBadge = `<span class="bg-amber-950/80 text-amber-300 border border-amber-700/50 px-1.5 py-0.5 rounded text-[9.5px] font-mono font-bold" title="Sin historial oficial suficiente; ratings estimados de respaldo">⚠️ Estimado</span>`;
+            }
 
             const homeLogoUrl = m.home_logo || getTeamLogoUrl(m.home_team, m);
             const awayLogoUrl = m.away_logo || getTeamLogoUrl(m.away_team, m);
@@ -2581,6 +2635,8 @@
                                 ${valueBadge}
                                 ${badgeMarkup}
                                 ${refBadge}
+                                ${injuriesBadge}
+                                ${qualityBadge}
                                 ${seasonPhaseBadge}
                             </div>
                             <span class="bg-gray-800/90 border border-gray-700/70 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg text-[10px] sm:text-[11px] font-mono text-gray-200 shrink-0 flex items-center gap-1 shadow-xs ml-auto whitespace-nowrap" title="Hora local de Guatemala (GMT-6)">
@@ -3400,6 +3456,82 @@
                             <span>En instancias de cierre o campeonatos resueltos, los equipos sin objetivos activos reducen drásticamente su volumen ofensivo y rotan alineaciones. Ten precaución con líneas de córners elevadas o favoritismos excesivos.</span>
                         </div>
                     </div>
+                </div>
+            `;
+        }
+
+        function renderInjuriesAndQualityBanner(match) {
+            const container = document.getElementById('modal-injuries-banner');
+            if (!container) return;
+            const pred = match.prediction || {};
+            const hs = match.home_stats || {};
+            const as_ = match.away_stats || {};
+            const inj = match.injuries || { home: hs.injuries || {}, away: as_.injuries || {} };
+            const hInj = inj.home || hs.injuries || {};
+            const aInj = inj.away || as_.injuries || {};
+            const hPlayers = hInj.players || [];
+            const aPlayers = aInj.players || [];
+            const dq = match.data_quality || pred.data_quality || hs.data_quality || 'real_stats';
+            const ffReal = Boolean((pred.four_factors && pred.four_factors.has_real_four_factors) || (hs.has_real_four_factors && as_.has_real_four_factors));
+
+            let qualityLine = '';
+            if (dq === 'synthetic_hash') {
+                qualityLine = `<span class="text-amber-300 font-bold">⚠️ Respaldo estimado:</span> <span class="text-amber-200/90">Uno o ambos equipos no contaban con historial oficial suficiente al generar el partido; toma el pick con cautela.</span>`;
+            } else if (dq === 'real_xg') {
+                qualityLine = `<span class="text-emerald-300 font-bold">📊 Calibración xG Activa:</span> <span class="text-gray-300">Ponderación de Expected Goals (xG/xGA) y splits de temporada combinados con racha reciente.</span>`;
+            } else if (match.sport === 'nba') {
+                qualityLine = `<span class="text-cyan-300 font-bold">📊 Datos Oficiales ESPN NBA:</span> <span class="text-gray-300">Standings reales + Últ. 5 + Q1 real${ffReal ? ' + Four Factors reales de temporada' : ''}.</span>`;
+            } else if (match.sport === 'nhl') {
+                qualityLine = `<span class="text-sky-300 font-bold">📊 Datos Oficiales ESPN NHL:</span> <span class="text-gray-300">Standings, Special Teams (PP/PK) y ajuste por bajas/portería.</span>`;
+            }
+
+            const hasInjuries = (hPlayers.length > 0 || aPlayers.length > 0);
+            if (!hasInjuries && !qualityLine) {
+                container.innerHTML = '';
+                container.classList.add('hidden');
+                return;
+            }
+            container.classList.remove('hidden');
+
+            const _fmtPlayers = (list) => {
+                if (!list || !list.length) return `<span class="text-gray-500 text-[10.5px]">Sin bajas reportadas</span>`;
+                return list.slice(0, 4).map(p => {
+                    const isOut = /out|ir|susp|doubt/i.test(p.status || '');
+                    const stCls = isOut ? 'bg-rose-950/90 text-rose-300 border-rose-700/60' : 'bg-amber-950/90 text-amber-300 border-amber-700/60';
+                    const pos = p.position ? `<span class="text-gray-500">(${p.position})</span> ` : '';
+                    return `<div class="flex items-center justify-between gap-1.5 text-[10.5px] py-0.5"><span class="text-gray-200 truncate">${pos}${p.player}</span><span class="px-1.5 py-0.2 rounded border text-[9px] font-mono font-bold shrink-0 ${stCls}">${p.status}</span></div>`;
+                }).join('');
+            };
+
+            const injHtml = hasInjuries ? `
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-2 pt-2 border-t border-gray-800/80">
+                    <div class="bg-gray-950/70 border border-gray-800/80 rounded-lg p-2">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-[10.5px] font-bold text-blue-300 truncate">${match.home_team}</span>
+                            <span class="text-[9.5px] font-mono text-gray-400">${hInj.out_count || 0} Out • ${hInj.q_count || 0} Dudas</span>
+                        </div>
+                        ${_fmtPlayers(hPlayers)}
+                    </div>
+                    <div class="bg-gray-950/70 border border-gray-800/80 rounded-lg p-2">
+                        <div class="flex items-center justify-between mb-1">
+                            <span class="text-[10.5px] font-bold text-rose-300 truncate">${match.away_team}</span>
+                            <span class="text-[9.5px] font-mono text-gray-400">${aInj.out_count || 0} Out • ${aInj.q_count || 0} Dudas</span>
+                        </div>
+                        ${_fmtPlayers(aPlayers)}
+                    </div>
+                </div>` : '';
+
+            const boxCls = dq === 'synthetic_hash'
+                ? 'border-amber-600/50 bg-amber-950/25'
+                : (hasInjuries ? 'border-rose-700/40 bg-gray-950/70' : 'border-cyan-800/40 bg-gray-950/60');
+
+            container.innerHTML = `
+                <div class="p-2.5 sm:p-3 rounded-xl border ${boxCls} shadow-sm text-[11px]">
+                    <div class="flex items-center justify-between flex-wrap gap-1.5">
+                        <div>${qualityLine || '<span class="text-gray-300 font-semibold">🏥 Reporte Oficial de Bajas</span>'}</div>
+                        ${hasInjuries ? `<span class="text-[10px] font-mono font-bold text-rose-300 bg-rose-950/80 border border-rose-700/60 px-2 py-0.5 rounded-full">🏥 ${(hInj.out_count || 0) + (aInj.out_count || 0)} Bajas Confirmadas</span>` : ''}
+                    </div>
+                    ${injHtml}
                 </div>
             `;
         }
@@ -6921,8 +7053,9 @@
             const sub = match.is_live ? `${flagMarkup} ${match.league} • ${liveClock} EN VIVO (${match.score_home}-${match.score_away})${spPill}` : `${flagMarkup} ${match.league} • ${match.date}${spPill}`;
             document.getElementById('modal-league').innerHTML = sub;
 
-            // Renderizar alerta de contexto competitivo, perfil arbitral, goles por equipo y secciones del modal
+            // Renderizar alerta de contexto competitivo, bajas/calidad, perfil arbitral, goles por equipo y secciones del modal
             renderSeasonPhaseAlert(match);
+            renderInjuriesAndQualityBanner(match);
             renderRefereeCard(match);
             renderTeamGoalsBanner(match);
             renderModalPicks(match);
@@ -6989,6 +7122,7 @@
                             Object.assign(match, fullData);
                             if (activeMatchId === matchId) {
                                 renderSeasonPhaseAlert(match);
+                                renderInjuriesAndQualityBanner(match);
                                 renderRefereeCard(match);
                                 renderTeamGoalsBanner(match);
                                 renderModalPicks(match);
@@ -7005,6 +7139,7 @@
                     .catch(e => console.error("Error auto-cargando H2H:", e));
             } else {
                 renderSeasonPhaseAlert(match);
+                renderInjuriesAndQualityBanner(match);
                 renderRefereeCard(match);
                 renderTeamGoalsBanner(match);
                 renderModalPicks(match);
@@ -7465,6 +7600,134 @@
             // Respaldo de seguridad garantizado (máximo 2.2s)
             setTimeout(dismissSplash, 2200);
         })();
+
+        // ==============================================================
+        // MODAL DE CALIBRACIÓN REAL & BRIER SCORE
+        // ==============================================================
+        function closeCalibrationModal() {
+            const modal = document.getElementById('calibration-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function openCalibrationModal(forceSettle = false) {
+            const modal = document.getElementById('calibration-modal');
+            const body = document.getElementById('calibration-modal-body');
+            if (!modal || !body) return;
+            modal.classList.remove('hidden');
+            body.innerHTML = `<div class="py-10 text-center text-gray-400 font-mono">Analizando picks registrados y verificando resultados oficiales...</div>`;
+            if (window.lucide) safeCreateIcons();
+
+            const url = forceSettle ? '/api/calibration?settle=1' : '/api/calibration';
+            fetch(url)
+                .then(r => r.json())
+                .then(data => {
+                    if (!data || !data.success) {
+                        body.innerHTML = `<div class="py-8 text-center text-rose-400">No se pudo cargar el reporte de calibración.</div>`;
+                        return;
+                    }
+                    const ov = data.overall || {};
+                    const brierTxt = (ov.brier_score !== null && ov.brier_score !== undefined) ? ov.brier_score.toFixed(4) : '--';
+                    const logLossTxt = (ov.log_loss !== null && ov.log_loss !== undefined) ? ov.log_loss.toFixed(4) : '--';
+                    const hitTxt = (ov.hit_rate !== null && ov.hit_rate !== undefined) ? `${ov.hit_rate}%` : '--';
+                    const avgProbTxt = (ov.avg_prob !== null && ov.avg_prob !== undefined) ? `${ov.avg_prob}%` : '--';
+                    const gapVal = ov.calibration_gap;
+                    const gapTxt = (gapVal !== null && gapVal !== undefined) ? `${gapVal >= 0 ? '+' : ''}${gapVal}%` : '--';
+
+                    const spNames = { football: '⚽ Fútbol', nba: '🏀 NBA', nhl: '🏒 NHL' };
+                    const bySportHtml = ['football', 'nba', 'nhl'].map(sp => {
+                        const s = (data.by_sport || {})[sp] || {};
+                        return `
+                            <div class="bg-gray-950/80 border border-gray-800 rounded-xl p-3">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="font-bold text-gray-200">${spNames[sp]}</span>
+                                    <span class="text-[10px] font-mono text-gray-400">${s.sample_size || 0} eval.</span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 text-[11px] font-mono">
+                                    <div><span class="text-gray-500 block text-[9.5px]">Brier</span><strong class="text-cyan-300">${s.brier_score !== null && s.brier_score !== undefined ? s.brier_score.toFixed(4) : '--'}</strong></div>
+                                    <div><span class="text-gray-500 block text-[9.5px]">Acierto / Esp.</span><strong class="text-emerald-400">${s.hit_rate !== null && s.hit_rate !== undefined ? s.hit_rate + '%' : '--'}</strong> <span class="text-gray-500 text-[9.5px]">(${s.avg_prob !== null && s.avg_prob !== undefined ? s.avg_prob + '%' : '--'})</span></div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    const bucketsHtml = (data.by_bucket || []).map(b => `
+                        <tr class="border-t border-gray-800/80 font-mono text-[11px]">
+                            <td class="py-2 px-2.5 text-gray-200 font-bold">${b.label}</td>
+                            <td class="py-2 px-2.5 text-center text-gray-300">${b.sample_size || 0}</td>
+                            <td class="py-2 px-2.5 text-center text-cyan-300">${b.avg_prob !== null && b.avg_prob !== undefined ? b.avg_prob + '%' : '--'}</td>
+                            <td class="py-2 px-2.5 text-center text-emerald-400 font-bold">${b.hit_rate !== null && b.hit_rate !== undefined ? b.hit_rate + '%' : '--'}</td>
+                            <td class="py-2 px-2.5 text-center ${(b.calibration_gap || 0) >= -3 ? 'text-emerald-300' : 'text-amber-300'}">${b.calibration_gap !== null && b.calibration_gap !== undefined ? (b.calibration_gap >= 0 ? '+' : '') + b.calibration_gap + '%' : '--'}</td>
+                            <td class="py-2 px-2.5 text-right text-gray-300">${b.brier_score !== null && b.brier_score !== undefined ? b.brier_score.toFixed(4) : '--'}</td>
+                        </tr>
+                    `).join('');
+
+                    const recentHtml = (data.recent_settled && data.recent_settled.length > 0)
+                        ? data.recent_settled.map(r => `
+                            <div class="flex items-center justify-between gap-2 p-2.5 rounded-xl bg-gray-950/80 border border-gray-800/90 text-[11px]">
+                                <div class="min-w-0 flex-1">
+                                    <div class="font-bold text-gray-200 truncate">${r.hit ? '✅' : '❌'} ${r.match}</div>
+                                    <div class="text-[10px] text-gray-400 truncate">${r.league || r.sport} • ${r.recommended_pick}</div>
+                                </div>
+                                <div class="text-right font-mono shrink-0">
+                                    <div class="font-bold ${r.hit ? 'text-emerald-400' : 'text-rose-400'}">${r.final_score || '-'}</div>
+                                    <div class="text-[10px] text-cyan-300">${r.prob}% prob.</div>
+                                </div>
+                            </div>
+                        `).join('')
+                        : `<div class="text-center py-6 text-gray-400 bg-gray-950/60 border border-gray-800 rounded-xl">Aún hay <strong class="text-cyan-300">${data.pending_count || 0}</strong> picks pre-partido guardados esperando que terminen sus juegos para liquidarse automáticamente.</div>`;
+
+                    body.innerHTML = `
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono">
+                            <div class="bg-gray-950/90 border border-cyan-800/50 rounded-xl p-3">
+                                <span class="text-[10px] text-gray-400 font-sans block">Brier Score Global</span>
+                                <span class="text-lg font-extrabold text-cyan-300">${brierTxt}</span>
+                                <span class="text-[10px] text-gray-400 font-sans block mt-0.5">${ov.calibration_status || 'Sin muestra'} (menor=mejor)</span>
+                            </div>
+                            <div class="bg-gray-950/90 border border-emerald-800/50 rounded-xl p-3">
+                                <span class="text-[10px] text-gray-400 font-sans block">Acierto Real vs Esp.</span>
+                                <span class="text-lg font-extrabold text-emerald-400">${hitTxt}</span>
+                                <span class="text-[10px] text-gray-400 font-sans block mt-0.5">Esp: ${avgProbTxt} (${gapTxt})</span>
+                            </div>
+                            <div class="bg-gray-950/90 border border-gray-800 rounded-xl p-3">
+                                <span class="text-[10px] text-gray-400 font-sans block">Log Loss</span>
+                                <span class="text-lg font-extrabold text-purple-300">${logLossTxt}</span>
+                                <span class="text-[10px] text-gray-400 font-sans block mt-0.5">Penalización de error</span>
+                            </div>
+                            <div class="bg-gray-950/90 border border-gray-800 rounded-xl p-3">
+                                <span class="text-[10px] text-gray-400 font-sans block">Picks Monitoreados</span>
+                                <span class="text-lg font-extrabold text-amber-300">${data.settled_count || 0} <span class="text-xs text-gray-500 font-normal">/ ${data.total_tracked || 0}</span></span>
+                                <span class="text-[10px] text-gray-400 font-sans block mt-0.5">${data.pending_count || 0} pendientes por jugar</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">${bySportHtml}</div>
+                        <div class="bg-gray-950/80 border border-gray-800 rounded-xl overflow-hidden">
+                            <div class="px-3 py-2 border-b border-gray-800 font-bold text-gray-200 text-xs">Calibración por Rango de Probabilidad</div>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left">
+                                    <thead class="bg-gray-900/80 text-[10px] text-gray-400 uppercase font-mono">
+                                        <tr>
+                                            <th class="py-2 px-2.5">Rango</th>
+                                            <th class="py-2 px-2.5 text-center">Muestra</th>
+                                            <th class="py-2 px-2.5 text-center">Prob. Media</th>
+                                            <th class="py-2 px-2.5 text-center">Acierto Real</th>
+                                            <th class="py-2 px-2.5 text-center">Desviación</th>
+                                            <th class="py-2 px-2.5 text-right">Brier</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>${bucketsHtml}</tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <div class="font-bold text-gray-200 text-xs">Últimos Picks Verificados con Marcador Oficial</div>
+                            <div class="space-y-1.5">${recentHtml}</div>
+                        </div>
+                    `;
+                })
+                .catch(() => {
+                    body.innerHTML = `<div class="py-8 text-center text-rose-400">Error de conexión consultando calibración.</div>`;
+                });
+        }
     </script>
 </body>
 </html>
