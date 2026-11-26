@@ -3,7 +3,7 @@
   "league_id": 118,
   "country": "Armenia",
   "country_code": "am",
-  "last_updated": "2026-11-25T22:05:04.617942",
+  "last_updated": "2026-11-26T22:03:31.619864",
   "total_fixtures": 12,
   "team_histories": {
     "Alashkert FC": [
@@ -32,7 +32,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972990",
@@ -59,7 +61,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972993",
@@ -86,7 +90,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972999",
@@ -113,7 +119,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973005",
@@ -140,7 +148,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Ararat": [
@@ -169,7 +179,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972992",
@@ -196,7 +208,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972993",
@@ -223,7 +237,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973002",
@@ -250,7 +266,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973006",
@@ -277,7 +295,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Ararat Armenia": [
@@ -306,7 +326,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972983",
@@ -333,7 +355,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972987",
@@ -360,7 +384,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972994",
@@ -387,7 +413,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972944",
@@ -414,7 +442,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "BKMA": [
@@ -443,7 +473,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972991",
@@ -470,7 +502,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972997",
@@ -497,7 +531,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972999",
@@ -524,7 +560,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973006",
@@ -551,7 +589,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "FC Noah": [
@@ -580,7 +620,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972987",
@@ -607,7 +649,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972998",
@@ -634,7 +678,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973001",
@@ -661,7 +707,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973005",
@@ -688,7 +736,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Gandzasar": [
@@ -717,7 +767,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972988",
@@ -744,7 +796,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972994",
@@ -771,7 +825,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973000",
@@ -798,7 +854,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973009",
@@ -825,7 +883,9 @@
         "yellow_cards": 4,
         "red_cards": 1,
         "total_cards": 5,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Pyunik": [
@@ -854,7 +914,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972988",
@@ -881,7 +943,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972995",
@@ -908,7 +972,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973004",
@@ -935,7 +1001,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973008",
@@ -962,7 +1030,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Sardarapat": [
@@ -991,7 +1061,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972989",
@@ -1018,7 +1090,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972996",
@@ -1045,7 +1119,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973002",
@@ -1072,7 +1148,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973008",
@@ -1099,7 +1177,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Shirak": [
@@ -1128,7 +1208,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972990",
@@ -1155,7 +1237,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972997",
@@ -1182,7 +1266,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973001",
@@ -1209,7 +1295,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973009",
@@ -1236,7 +1324,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Syunik": [
@@ -1265,7 +1355,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972991",
@@ -1292,7 +1384,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972998",
@@ -1319,7 +1413,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973000",
@@ -1346,7 +1442,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973010",
@@ -1373,7 +1471,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Urartu FC": [
@@ -1402,7 +1502,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972986",
@@ -1429,7 +1531,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972989",
@@ -1456,7 +1560,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972995",
@@ -1483,7 +1589,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973010",
@@ -1510,7 +1618,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Van": [
@@ -1539,7 +1649,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972992",
@@ -1566,7 +1678,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972996",
@@ -1593,7 +1707,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5973004",
@@ -1620,7 +1736,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5972944",
@@ -1647,7 +1765,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ]
   },
@@ -1917,6 +2037,128 @@
       "fouls_avg": 13.4
     }
   },
+  "team_season_stats": {
+    "FC Noah": {
+      "season_played": 14,
+      "season_pts": 37,
+      "season_gf_pg": 2.36,
+      "season_ga_pg": 0.71,
+      "season_home_gf_pg": 2.14,
+      "season_home_ga_pg": 0.43,
+      "season_away_gf_pg": 2.57,
+      "season_away_ga_pg": 1.0
+    },
+    "Pyunik": {
+      "season_played": 14,
+      "season_pts": 32,
+      "season_gf_pg": 2.36,
+      "season_ga_pg": 0.79,
+      "season_home_gf_pg": 2.57,
+      "season_home_ga_pg": 0.43,
+      "season_away_gf_pg": 2.14,
+      "season_away_ga_pg": 1.14
+    },
+    "Ararat Armenia": {
+      "season_played": 13,
+      "season_pts": 32,
+      "season_gf_pg": 2.0,
+      "season_ga_pg": 0.85,
+      "season_home_gf_pg": 2.0,
+      "season_home_ga_pg": 0.57,
+      "season_away_gf_pg": 2.0,
+      "season_away_ga_pg": 1.17
+    },
+    "Alashkert FC": {
+      "season_played": 14,
+      "season_pts": 25,
+      "season_gf_pg": 2.0,
+      "season_ga_pg": 0.93,
+      "season_home_gf_pg": 3.0,
+      "season_home_ga_pg": 0.71,
+      "season_away_gf_pg": 1.0,
+      "season_away_ga_pg": 1.14
+    },
+    "Sardarapat": {
+      "season_played": 14,
+      "season_pts": 21,
+      "season_gf_pg": 1.57,
+      "season_ga_pg": 1.57,
+      "season_home_gf_pg": 1.43,
+      "season_home_ga_pg": 1.86,
+      "season_away_gf_pg": 1.71,
+      "season_away_ga_pg": 1.29
+    },
+    "Urartu FC": {
+      "season_played": 13,
+      "season_pts": 19,
+      "season_gf_pg": 1.62,
+      "season_ga_pg": 1.23,
+      "season_home_gf_pg": 2.17,
+      "season_home_ga_pg": 1.67,
+      "season_away_gf_pg": 1.14,
+      "season_away_ga_pg": 0.86
+    },
+    "Shirak": {
+      "season_played": 14,
+      "season_pts": 17,
+      "season_gf_pg": 1.21,
+      "season_ga_pg": 1.14,
+      "season_home_gf_pg": 1.57,
+      "season_home_ga_pg": 1.43,
+      "season_away_gf_pg": 0.86,
+      "season_away_ga_pg": 0.86
+    },
+    "Ararat": {
+      "season_played": 14,
+      "season_pts": 12,
+      "season_gf_pg": 0.79,
+      "season_ga_pg": 1.57,
+      "season_home_gf_pg": 0.57,
+      "season_home_ga_pg": 1.29,
+      "season_away_gf_pg": 1.0,
+      "season_away_ga_pg": 1.86
+    },
+    "BKMA": {
+      "season_played": 14,
+      "season_pts": 12,
+      "season_gf_pg": 1.07,
+      "season_ga_pg": 1.71,
+      "season_home_gf_pg": 1.14,
+      "season_home_ga_pg": 1.0,
+      "season_away_gf_pg": 1.0,
+      "season_away_ga_pg": 2.43
+    },
+    "Syunik": {
+      "season_played": 14,
+      "season_pts": 11,
+      "season_gf_pg": 1.0,
+      "season_ga_pg": 2.07,
+      "season_home_gf_pg": 1.67,
+      "season_home_ga_pg": 1.17,
+      "season_away_gf_pg": 0.5,
+      "season_away_ga_pg": 2.75
+    },
+    "Van": {
+      "season_played": 14,
+      "season_pts": 11,
+      "season_gf_pg": 0.93,
+      "season_ga_pg": 2.43,
+      "season_home_gf_pg": 1.12,
+      "season_home_ga_pg": 2.0,
+      "season_away_gf_pg": 0.67,
+      "season_away_ga_pg": 3.0
+    },
+    "Gandzasar": {
+      "season_played": 14,
+      "season_pts": 3,
+      "season_gf_pg": 0.71,
+      "season_ga_pg": 2.5,
+      "season_home_gf_pg": 1.0,
+      "season_home_ga_pg": 2.29,
+      "season_away_gf_pg": 0.43,
+      "season_away_ga_pg": 2.71
+    }
+  },
   "upcoming_matches": [
     {
       "id": "fotmob_armenia_5972950",
@@ -1966,7 +2208,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972991",
@@ -1993,7 +2237,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972998",
@@ -2020,7 +2266,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973000",
@@ -2047,7 +2295,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973010",
@@ -2074,7 +2324,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2103,7 +2355,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972992",
@@ -2130,7 +2384,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972996",
@@ -2157,7 +2413,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973004",
@@ -2184,7 +2442,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972944",
@@ -2211,7 +2471,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -2286,6 +2548,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 11,
+        "season_gf_pg": 1.0,
+        "season_ga_pg": 2.07,
+        "season_home_gf_pg": 1.67,
+        "season_home_ga_pg": 1.17,
+        "season_away_gf_pg": 0.5,
+        "season_away_ga_pg": 2.75
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 11,
+        "season_gf_pg": 0.93,
+        "season_ga_pg": 2.43,
+        "season_home_gf_pg": 1.12,
+        "season_home_ga_pg": 2.0,
+        "season_away_gf_pg": 0.67,
+        "season_away_ga_pg": 3.0
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2336,7 +2618,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972986",
@@ -2363,7 +2647,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972989",
@@ -2390,7 +2676,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972995",
@@ -2417,7 +2705,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973010",
@@ -2444,7 +2734,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2473,7 +2765,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972990",
@@ -2500,7 +2794,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972997",
@@ -2527,7 +2823,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973001",
@@ -2554,7 +2852,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973009",
@@ -2581,7 +2881,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -2716,6 +3018,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 13,
+        "season_pts": 19,
+        "season_gf_pg": 1.62,
+        "season_ga_pg": 1.23,
+        "season_home_gf_pg": 2.17,
+        "season_home_ga_pg": 1.67,
+        "season_away_gf_pg": 1.14,
+        "season_away_ga_pg": 0.86
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 17,
+        "season_gf_pg": 1.21,
+        "season_ga_pg": 1.14,
+        "season_home_gf_pg": 1.57,
+        "season_home_ga_pg": 1.43,
+        "season_away_gf_pg": 0.86,
+        "season_away_ga_pg": 0.86
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2766,7 +3088,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972987",
@@ -2793,7 +3117,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972998",
@@ -2820,7 +3146,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973001",
@@ -2847,7 +3175,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973005",
@@ -2874,7 +3204,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2903,7 +3235,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972991",
@@ -2930,7 +3264,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972997",
@@ -2957,7 +3293,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972999",
@@ -2984,7 +3322,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973006",
@@ -3011,7 +3351,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3146,6 +3488,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 37,
+        "season_gf_pg": 2.36,
+        "season_ga_pg": 0.71,
+        "season_home_gf_pg": 2.14,
+        "season_home_ga_pg": 0.43,
+        "season_away_gf_pg": 2.57,
+        "season_away_ga_pg": 1.0
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 12,
+        "season_gf_pg": 1.07,
+        "season_ga_pg": 1.71,
+        "season_home_gf_pg": 1.14,
+        "season_home_ga_pg": 1.0,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 2.43
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3196,7 +3558,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972988",
@@ -3223,7 +3587,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972995",
@@ -3250,7 +3616,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973004",
@@ -3277,7 +3645,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973008",
@@ -3304,7 +3674,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -3333,7 +3705,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972992",
@@ -3360,7 +3734,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972993",
@@ -3387,7 +3763,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973002",
@@ -3414,7 +3792,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973006",
@@ -3441,7 +3821,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3576,6 +3958,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 32,
+        "season_gf_pg": 2.36,
+        "season_ga_pg": 0.79,
+        "season_home_gf_pg": 2.57,
+        "season_home_ga_pg": 0.43,
+        "season_away_gf_pg": 2.14,
+        "season_away_ga_pg": 1.14
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 12,
+        "season_gf_pg": 0.79,
+        "season_ga_pg": 1.57,
+        "season_home_gf_pg": 0.57,
+        "season_home_ga_pg": 1.29,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 1.86
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3626,7 +4028,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972989",
@@ -3653,7 +4057,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972996",
@@ -3680,7 +4086,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973002",
@@ -3707,7 +4115,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973008",
@@ -3734,7 +4144,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -3763,7 +4175,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972983",
@@ -3790,7 +4204,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972987",
@@ -3817,7 +4233,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972994",
@@ -3844,7 +4262,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972944",
@@ -3871,7 +4291,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3946,6 +4368,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 21,
+        "season_gf_pg": 1.57,
+        "season_ga_pg": 1.57,
+        "season_home_gf_pg": 1.43,
+        "season_home_ga_pg": 1.86,
+        "season_away_gf_pg": 1.71,
+        "season_away_ga_pg": 1.29
+      },
+      "away_season_stats": {
+        "season_played": 13,
+        "season_pts": 32,
+        "season_gf_pg": 2.0,
+        "season_ga_pg": 0.85,
+        "season_home_gf_pg": 2.0,
+        "season_home_ga_pg": 0.57,
+        "season_away_gf_pg": 2.0,
+        "season_away_ga_pg": 1.17
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3996,7 +4438,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972988",
@@ -4023,7 +4467,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972994",
@@ -4050,7 +4496,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973000",
@@ -4077,7 +4525,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973009",
@@ -4104,7 +4554,9 @@
             "yellow_cards": 4,
             "red_cards": 1,
             "total_cards": 5,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4133,7 +4585,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972990",
@@ -4160,7 +4614,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972993",
@@ -4187,7 +4643,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972999",
@@ -4214,7 +4672,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973005",
@@ -4241,7 +4701,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4376,6 +4838,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 3,
+        "season_gf_pg": 0.71,
+        "season_ga_pg": 2.5,
+        "season_home_gf_pg": 1.0,
+        "season_home_ga_pg": 2.29,
+        "season_away_gf_pg": 0.43,
+        "season_away_ga_pg": 2.71
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 25,
+        "season_gf_pg": 2.0,
+        "season_ga_pg": 0.93,
+        "season_home_gf_pg": 3.0,
+        "season_home_ga_pg": 0.71,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 1.14
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4426,7 +4908,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972991",
@@ -4453,7 +4937,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972998",
@@ -4480,7 +4966,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973000",
@@ -4507,7 +4995,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973010",
@@ -4534,7 +5024,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4563,7 +5055,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972989",
@@ -4590,7 +5084,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972996",
@@ -4617,7 +5113,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973002",
@@ -4644,7 +5142,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973008",
@@ -4671,7 +5171,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4746,6 +5248,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 11,
+        "season_gf_pg": 1.0,
+        "season_ga_pg": 2.07,
+        "season_home_gf_pg": 1.67,
+        "season_home_ga_pg": 1.17,
+        "season_away_gf_pg": 0.5,
+        "season_away_ga_pg": 2.75
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 21,
+        "season_gf_pg": 1.57,
+        "season_ga_pg": 1.57,
+        "season_home_gf_pg": 1.43,
+        "season_home_ga_pg": 1.86,
+        "season_away_gf_pg": 1.71,
+        "season_away_ga_pg": 1.29
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4796,7 +5318,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972991",
@@ -4823,7 +5347,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972997",
@@ -4850,7 +5376,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972999",
@@ -4877,7 +5405,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973006",
@@ -4904,7 +5434,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4933,7 +5465,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972988",
@@ -4960,7 +5494,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972994",
@@ -4987,7 +5523,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973000",
@@ -5014,7 +5552,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973009",
@@ -5041,7 +5581,9 @@
             "yellow_cards": 4,
             "red_cards": 1,
             "total_cards": 5,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -5176,6 +5718,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 12,
+        "season_gf_pg": 1.07,
+        "season_ga_pg": 1.71,
+        "season_home_gf_pg": 1.14,
+        "season_home_ga_pg": 1.0,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 2.43
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 3,
+        "season_gf_pg": 0.71,
+        "season_ga_pg": 2.5,
+        "season_home_gf_pg": 1.0,
+        "season_home_ga_pg": 2.29,
+        "season_away_gf_pg": 0.43,
+        "season_away_ga_pg": 2.71
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5226,7 +5788,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972990",
@@ -5253,7 +5817,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972993",
@@ -5280,7 +5846,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972999",
@@ -5307,7 +5875,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973005",
@@ -5334,7 +5904,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5363,7 +5935,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972986",
@@ -5390,7 +5964,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972989",
@@ -5417,7 +5993,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972995",
@@ -5444,7 +6022,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973010",
@@ -5471,7 +6051,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -5606,6 +6188,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 25,
+        "season_gf_pg": 2.0,
+        "season_ga_pg": 0.93,
+        "season_home_gf_pg": 3.0,
+        "season_home_ga_pg": 0.71,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 1.14
+      },
+      "away_season_stats": {
+        "season_played": 13,
+        "season_pts": 19,
+        "season_gf_pg": 1.62,
+        "season_ga_pg": 1.23,
+        "season_home_gf_pg": 2.17,
+        "season_home_ga_pg": 1.67,
+        "season_away_gf_pg": 1.14,
+        "season_away_ga_pg": 0.86
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5656,7 +6258,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972983",
@@ -5683,7 +6287,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972987",
@@ -5710,7 +6316,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972994",
@@ -5737,7 +6345,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972944",
@@ -5764,7 +6374,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5793,7 +6405,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972988",
@@ -5820,7 +6434,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972995",
@@ -5847,7 +6463,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973004",
@@ -5874,7 +6492,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973008",
@@ -5901,7 +6521,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -6036,6 +6658,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 13,
+        "season_pts": 32,
+        "season_gf_pg": 2.0,
+        "season_ga_pg": 0.85,
+        "season_home_gf_pg": 2.0,
+        "season_home_ga_pg": 0.57,
+        "season_away_gf_pg": 2.0,
+        "season_away_ga_pg": 1.17
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 32,
+        "season_gf_pg": 2.36,
+        "season_ga_pg": 0.79,
+        "season_home_gf_pg": 2.57,
+        "season_home_ga_pg": 0.43,
+        "season_away_gf_pg": 2.14,
+        "season_away_ga_pg": 1.14
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6086,7 +6728,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972990",
@@ -6113,7 +6757,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972997",
@@ -6140,7 +6786,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973001",
@@ -6167,7 +6815,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973009",
@@ -6194,7 +6844,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -6223,7 +6875,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972992",
@@ -6250,7 +6904,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972996",
@@ -6277,7 +6933,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973004",
@@ -6304,7 +6962,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972944",
@@ -6331,7 +6991,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -6466,6 +7128,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 17,
+        "season_gf_pg": 1.21,
+        "season_ga_pg": 1.14,
+        "season_home_gf_pg": 1.57,
+        "season_home_ga_pg": 1.43,
+        "season_away_gf_pg": 0.86,
+        "season_away_ga_pg": 0.86
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 11,
+        "season_gf_pg": 0.93,
+        "season_ga_pg": 2.43,
+        "season_home_gf_pg": 1.12,
+        "season_home_ga_pg": 2.0,
+        "season_away_gf_pg": 0.67,
+        "season_away_ga_pg": 3.0
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6516,7 +7198,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972992",
@@ -6543,7 +7227,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972993",
@@ -6570,7 +7256,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973002",
@@ -6597,7 +7285,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973006",
@@ -6624,7 +7314,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -6653,7 +7345,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972987",
@@ -6680,7 +7374,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5972998",
@@ -6707,7 +7403,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973001",
@@ -6734,7 +7432,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5973005",
@@ -6761,7 +7461,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -6896,6 +7598,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 14,
+        "season_pts": 12,
+        "season_gf_pg": 0.79,
+        "season_ga_pg": 1.57,
+        "season_home_gf_pg": 0.57,
+        "season_home_ga_pg": 1.29,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 1.86
+      },
+      "away_season_stats": {
+        "season_played": 14,
+        "season_pts": 37,
+        "season_gf_pg": 2.36,
+        "season_ga_pg": 0.71,
+        "season_home_gf_pg": 2.14,
+        "season_home_ga_pg": 0.43,
+        "season_away_gf_pg": 2.57,
+        "season_away_ga_pg": 1.0
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

@@ -3,8 +3,8 @@
   "league_id": 336,
   "country": "Guatemala",
   "country_code": "gt",
-  "last_updated": "2026-11-25T22:04:12.887202",
-  "total_fixtures": 7,
+  "last_updated": "2026-11-26T22:02:09.350908",
+  "total_fixtures": 6,
   "team_histories": {
     "Antigua Guatemala": [
       {
@@ -32,7 +32,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861310",
@@ -59,7 +61,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861316",
@@ -86,7 +90,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861326",
@@ -113,7 +119,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861332",
@@ -140,37 +148,12 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Aurora FC": [
-      {
-        "match_id": "5861302",
-        "date": "25/10/2026",
-        "date_iso": "2026-10-25",
-        "opponent": "CD Suchitepéquez",
-        "venue": "Visitante",
-        "match_home": "CD Suchitepéquez",
-        "match_away": "Aurora FC",
-        "home_id": "49756",
-        "away_id": "188294",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49756.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-        "home_score": 2,
-        "away_score": 2,
-        "score": "2 - 2",
-        "result": "D",
-        "competition": "Liga Nacional de Guatemala",
-        "corners_for": 5,
-        "corners_against": 4,
-        "total_corners": 9,
-        "shots_on_target": 2,
-        "total_shots": 11,
-        "yellow_cards": 0,
-        "red_cards": 1,
-        "total_cards": 1,
-        "fouls": 13
-      },
       {
         "match_id": "5861307",
         "date": "29/10/2026",
@@ -196,7 +179,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861310",
@@ -223,7 +208,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861322",
@@ -250,7 +237,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861331",
@@ -277,7 +266,38 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "5861321",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "CSD Municipal",
+        "venue": "Visitante",
+        "match_home": "CSD Municipal",
+        "match_away": "Aurora FC",
+        "home_id": "9933",
+        "away_id": "188294",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
+        "home_score": 3,
+        "away_score": 2,
+        "score": "3 - 2",
+        "result": "L",
+        "competition": "Liga Nacional de Guatemala",
+        "corners_for": 4,
+        "corners_against": 4,
+        "total_corners": 8,
+        "shots_on_target": 2,
+        "total_shots": 12,
+        "yellow_cards": 3,
+        "red_cards": 0,
+        "total_cards": 3,
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "CD Suchitepéquez": [
@@ -306,7 +326,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861314",
@@ -333,7 +355,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861319",
@@ -360,7 +384,9 @@
         "yellow_cards": 0,
         "red_cards": 2,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861326",
@@ -387,7 +413,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861333",
@@ -414,37 +442,12 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "CSD Municipal": [
-      {
-        "match_id": "5861303",
-        "date": "24/10/2026",
-        "date_iso": "2026-10-24",
-        "opponent": "Club Xelajú",
-        "venue": "Visitante",
-        "match_home": "Club Xelajú",
-        "match_away": "CSD Municipal",
-        "home_id": "49758",
-        "away_id": "9933",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49758.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-        "home_score": 1,
-        "away_score": 0,
-        "score": "1 - 0",
-        "result": "L",
-        "competition": "Liga Nacional de Guatemala",
-        "corners_for": 3,
-        "corners_against": 7,
-        "total_corners": 10,
-        "shots_on_target": 3,
-        "total_shots": 9,
-        "yellow_cards": 0,
-        "red_cards": 1,
-        "total_cards": 1,
-        "fouls": 10
-      },
       {
         "match_id": "5861309",
         "date": "29/10/2026",
@@ -470,7 +473,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861312",
@@ -497,7 +502,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861325",
@@ -524,7 +531,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861332",
@@ -551,7 +560,38 @@
         "yellow_cards": 0,
         "red_cards": 2,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "5861321",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "Aurora FC",
+        "venue": "Local",
+        "match_home": "CSD Municipal",
+        "match_away": "Aurora FC",
+        "home_id": "9933",
+        "away_id": "188294",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
+        "home_score": 3,
+        "away_score": 2,
+        "score": "3 - 2",
+        "result": "W",
+        "competition": "Liga Nacional de Guatemala",
+        "corners_for": 4,
+        "corners_against": 4,
+        "total_corners": 8,
+        "shots_on_target": 4,
+        "total_shots": 11,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Club Xelajú": [
@@ -580,7 +620,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861315",
@@ -607,7 +649,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861317",
@@ -634,7 +678,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861327",
@@ -661,7 +707,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861333",
@@ -688,7 +736,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Coban Imperial": [
@@ -717,7 +767,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861313",
@@ -744,7 +796,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861317",
@@ -771,7 +825,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861323",
@@ -798,7 +854,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861328",
@@ -825,7 +883,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Comunicaciones FC": [
@@ -854,7 +914,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861311",
@@ -881,7 +943,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861320",
@@ -908,7 +972,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861323",
@@ -935,7 +1001,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861330",
@@ -962,7 +1030,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Deportivo Malacateco": [
@@ -991,7 +1061,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861314",
@@ -1018,7 +1090,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861316",
@@ -1045,7 +1119,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861325",
@@ -1072,7 +1148,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861329",
@@ -1099,7 +1177,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Deportivo Marquense": [
@@ -1128,7 +1208,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861315",
@@ -1155,7 +1237,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861320",
@@ -1182,7 +1266,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861324",
@@ -1209,7 +1295,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861331",
@@ -1236,7 +1324,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Deportivo Mixco": [
@@ -1265,7 +1355,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861311",
@@ -1292,7 +1384,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861318",
@@ -1319,7 +1413,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861322",
@@ -1346,7 +1442,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861329",
@@ -1373,7 +1471,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Guastatoya": [
@@ -1402,7 +1502,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861313",
@@ -1429,7 +1531,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861319",
@@ -1456,7 +1560,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861327",
@@ -1483,7 +1589,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861330",
@@ -1510,7 +1618,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "San Pedro": [
@@ -1539,7 +1649,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861312",
@@ -1566,7 +1678,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861318",
@@ -1593,7 +1707,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861324",
@@ -1620,7 +1736,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5861328",
@@ -1647,7 +1765,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ]
   },
@@ -1676,25 +1796,25 @@
     },
     "Aurora FC": {
       "corners_avg_home": 5.5,
-      "corners_avg_away": 3.67,
-      "corners_avg_gen": 4.4,
+      "corners_avg_away": 3.33,
+      "corners_avg_gen": 4.2,
       "corners_conceded_home": 3.0,
       "corners_conceded_away": 5.33,
       "corners_conceded_gen": 4.4,
       "shots_on_target_gen": 3.0,
-      "total_shots_gen": 11.4,
+      "total_shots_gen": 11.6,
       "yellow_cards_avg_home": 3.0,
-      "yellow_cards_avg_away": 1.67,
-      "yellow_cards_avg": 2.2,
+      "yellow_cards_avg_away": 2.67,
+      "yellow_cards_avg": 2.8,
       "red_cards_avg_home": 0.0,
-      "red_cards_avg_away": 0.33,
-      "red_cards_avg": 0.2,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.0,
       "total_cards_avg_home": 3.0,
-      "total_cards_avg_away": 2.0,
-      "total_cards_avg": 2.4,
+      "total_cards_avg_away": 2.67,
+      "total_cards_avg": 2.8,
       "fouls_avg_home": 14.0,
-      "fouls_avg_away": 11.33,
-      "fouls_avg": 12.4
+      "fouls_avg_away": 10.67,
+      "fouls_avg": 12.0
     },
     "CD Suchitepéquez": {
       "corners_avg_home": 4.5,
@@ -1719,26 +1839,26 @@
       "fouls_avg": 11.0
     },
     "CSD Municipal": {
-      "corners_avg_home": 6.5,
-      "corners_avg_away": 3.67,
-      "corners_avg_gen": 4.8,
-      "corners_conceded_home": 5.0,
-      "corners_conceded_away": 5.33,
-      "corners_conceded_gen": 5.2,
-      "shots_on_target_gen": 3.2,
-      "total_shots_gen": 11.6,
-      "yellow_cards_avg_home": 1.5,
-      "yellow_cards_avg_away": 2.67,
-      "yellow_cards_avg": 2.2,
-      "red_cards_avg_home": 1.0,
-      "red_cards_avg_away": 0.33,
-      "red_cards_avg": 0.6,
-      "total_cards_avg_home": 2.5,
-      "total_cards_avg_away": 3.0,
-      "total_cards_avg": 2.8,
+      "corners_avg_home": 5.67,
+      "corners_avg_away": 4.0,
+      "corners_avg_gen": 5.0,
+      "corners_conceded_home": 4.67,
+      "corners_conceded_away": 4.5,
+      "corners_conceded_gen": 4.6,
+      "shots_on_target_gen": 3.4,
+      "total_shots_gen": 12.0,
+      "yellow_cards_avg_home": 1.67,
+      "yellow_cards_avg_away": 4.0,
+      "yellow_cards_avg": 2.6,
+      "red_cards_avg_home": 0.67,
+      "red_cards_avg_away": 0.0,
+      "red_cards_avg": 0.4,
+      "total_cards_avg_home": 2.33,
+      "total_cards_avg_away": 4.0,
+      "total_cards_avg": 3.0,
       "fouls_avg_home": 13.0,
-      "fouls_avg_away": 11.67,
-      "fouls_avg": 12.2
+      "fouls_avg_away": 12.5,
+      "fouls_avg": 12.8
     },
     "Club Xelajú": {
       "corners_avg_home": 4.67,
@@ -1917,437 +2037,129 @@
       "fouls_avg": 12.0
     }
   },
-  "upcoming_matches": [
-    {
-      "id": "fotmob_guatemala_5861321",
-      "match_id": "5861321",
-      "sport": "football",
-      "league": "Liga Nacional de Guatemala",
-      "country": "Guatemala",
-      "country_code": "gt",
-      "league_flag": "🇬🇹",
-      "country_flag": "🇬🇹",
-      "home_team": "CSD Municipal",
-      "away_team": "Aurora FC",
-      "home_id": "9933",
-      "away_id": "188294",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-      "date": "Mié 25 Nov, 20:00",
-      "date_iso": "2026-11-25",
-      "time": "20:00",
-      "timestamp": 1795658400,
-      "timezone": "America/Guatemala",
-      "round": "19",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5861303",
-            "date": "24/10/2026",
-            "date_iso": "2026-10-24",
-            "opponent": "Club Xelajú",
-            "venue": "Visitante",
-            "match_home": "Club Xelajú",
-            "match_away": "CSD Municipal",
-            "home_id": "49758",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49758.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 3,
-            "total_shots": 9,
-            "yellow_cards": 0,
-            "red_cards": 1,
-            "total_cards": 1,
-            "fouls": 10
-          },
-          {
-            "match_id": "5861309",
-            "date": "29/10/2026",
-            "date_iso": "2026-10-29",
-            "opponent": "Comunicaciones FC",
-            "venue": "Local",
-            "match_home": "CSD Municipal",
-            "match_away": "Comunicaciones FC",
-            "home_id": "9933",
-            "away_id": "49761",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49761.png",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 5,
-            "total_shots": 13,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 16
-          },
-          {
-            "match_id": "5861312",
-            "date": "01/11/2026",
-            "date_iso": "2026-11-01",
-            "opponent": "San Pedro",
-            "venue": "Visitante",
-            "match_home": "San Pedro",
-            "match_away": "CSD Municipal",
-            "home_id": "188292",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188292.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 3,
-            "total_shots": 13,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 12
-          },
-          {
-            "match_id": "5861325",
-            "date": "15/11/2026",
-            "date_iso": "2026-11-15",
-            "opponent": "Deportivo Malacateco",
-            "venue": "Visitante",
-            "match_home": "Deportivo Malacateco",
-            "match_away": "CSD Municipal",
-            "home_id": "89674",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/89674.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "W",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 3,
-            "corners_against": 5,
-            "total_corners": 8,
-            "shots_on_target": 2,
-            "total_shots": 12,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 13
-          },
-          {
-            "match_id": "5861332",
-            "date": "22/11/2026",
-            "date_iso": "2026-11-22",
-            "opponent": "Antigua Guatemala",
-            "venue": "Local",
-            "match_home": "CSD Municipal",
-            "match_away": "Antigua Guatemala",
-            "home_id": "9933",
-            "away_id": "188298",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188298.png",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "result": "D",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 7,
-            "corners_against": 4,
-            "total_corners": 11,
-            "shots_on_target": 3,
-            "total_shots": 11,
-            "yellow_cards": 0,
-            "red_cards": 2,
-            "total_cards": 2,
-            "fouls": 10
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5861302",
-            "date": "25/10/2026",
-            "date_iso": "2026-10-25",
-            "opponent": "CD Suchitepéquez",
-            "venue": "Visitante",
-            "match_home": "CD Suchitepéquez",
-            "match_away": "Aurora FC",
-            "home_id": "49756",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49756.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 2,
-            "total_shots": 11,
-            "yellow_cards": 0,
-            "red_cards": 1,
-            "total_cards": 1,
-            "fouls": 13
-          },
-          {
-            "match_id": "5861307",
-            "date": "29/10/2026",
-            "date_iso": "2026-10-29",
-            "opponent": "Deportivo Malacateco",
-            "venue": "Visitante",
-            "match_home": "Deportivo Malacateco",
-            "match_away": "Aurora FC",
-            "home_id": "89674",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/89674.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 2,
-            "total_shots": 12,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 10
-          },
-          {
-            "match_id": "5861310",
-            "date": "01/11/2026",
-            "date_iso": "2026-11-01",
-            "opponent": "Antigua Guatemala",
-            "venue": "Local",
-            "match_home": "Aurora FC",
-            "match_away": "Antigua Guatemala",
-            "home_id": "188294",
-            "away_id": "188298",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188298.png",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 4,
-            "corners_against": 3,
-            "total_corners": 7,
-            "shots_on_target": 3,
-            "total_shots": 15,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 13
-          },
-          {
-            "match_id": "5861322",
-            "date": "12/11/2026",
-            "date_iso": "2026-11-12",
-            "opponent": "Deportivo Mixco",
-            "venue": "Local",
-            "match_home": "Aurora FC",
-            "match_away": "Deportivo Mixco",
-            "home_id": "188294",
-            "away_id": "188299",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188299.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 7,
-            "corners_against": 3,
-            "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 11,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 15
-          },
-          {
-            "match_id": "5861331",
-            "date": "23/11/2026",
-            "date_iso": "2026-11-23",
-            "opponent": "Deportivo Marquense",
-            "venue": "Visitante",
-            "match_home": "Deportivo Marquense",
-            "match_away": "Aurora FC",
-            "home_id": "9934",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9934.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 3,
-            "corners_against": 5,
-            "total_corners": 8,
-            "shots_on_target": 3,
-            "total_shots": 8,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 11
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "10/09/2026",
-            "competition": "Liga Nacional Apertura",
-            "tournament": "Liga Nacional Apertura",
-            "match_home": "Aurora FC",
-            "match_away": "CSD Municipal",
-            "home_id": "188294",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "winner": "CSD Municipal"
-          },
-          {
-            "date": "15/03/2026",
-            "competition": "Liga Nacional Apertura",
-            "tournament": "Liga Nacional Apertura",
-            "match_home": "CSD Municipal",
-            "match_away": "Aurora FC",
-            "home_id": "9933",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "CSD Municipal"
-          },
-          {
-            "date": "25/01/2026",
-            "competition": "Liga Nacional Apertura",
-            "tournament": "Liga Nacional Apertura",
-            "match_home": "Aurora FC",
-            "match_away": "CSD Municipal",
-            "home_id": "188294",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "05/10/2025",
-            "competition": "Liga Nacional Apertura",
-            "tournament": "Liga Nacional Apertura",
-            "match_home": "Aurora FC",
-            "match_away": "CSD Municipal",
-            "home_id": "188294",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "Aurora FC"
-          },
-          {
-            "date": "26/07/2025",
-            "competition": "Liga Nacional Apertura",
-            "tournament": "Liga Nacional Apertura",
-            "match_home": "CSD Municipal",
-            "match_away": "Aurora FC",
-            "home_id": "9933",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "CSD Municipal"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 6.5,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 5.0,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 5.2,
-          "shots_on_target_gen": 3.2,
-          "total_shots_gen": 11.6,
-          "yellow_cards_avg_home": 1.5,
-          "yellow_cards_avg_away": 2.67,
-          "yellow_cards_avg": 2.2,
-          "red_cards_avg_home": 1.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.6,
-          "total_cards_avg_home": 2.5,
-          "total_cards_avg_away": 3.0,
-          "total_cards_avg": 2.8,
-          "fouls_avg_home": 13.0,
-          "fouls_avg_away": 11.67,
-          "fouls_avg": 12.2
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 5.5,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 4.4,
-          "corners_conceded_home": 3.0,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 4.4,
-          "shots_on_target_gen": 3.0,
-          "total_shots_gen": 11.4,
-          "yellow_cards_avg_home": 3.0,
-          "yellow_cards_avg_away": 1.67,
-          "yellow_cards_avg": 2.2,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 3.0,
-          "total_cards_avg_away": 2.0,
-          "total_cards_avg": 2.4,
-          "fouls_avg_home": 14.0,
-          "fouls_avg_away": 11.33,
-          "fouls_avg": 12.4
-        },
-        "projected_corners": 9.9,
-        "projected_cards": 4.8,
-        "summary": {
-          "home_wins": 3,
-          "draws": 1,
-          "away_wins": 1,
-          "avg_goals": 3.2,
-          "text": "CSD Municipal 3 victorias • 1 empates • Aurora FC 1 victorias"
-        }
-      },
-      "referee": null,
-      "source_api": "FotMob (Scraping Oficial)"
+  "team_season_stats": {
+    "Antigua Guatemala": {
+      "season_played": 21,
+      "season_pts": 40,
+      "season_gf_pg": 1.62,
+      "season_ga_pg": 1.05,
+      "season_home_gf_pg": 2.1,
+      "season_home_ga_pg": 0.6,
+      "season_away_gf_pg": 1.18,
+      "season_away_ga_pg": 1.45
     },
+    "Club Xelajú": {
+      "season_played": 21,
+      "season_pts": 37,
+      "season_gf_pg": 1.81,
+      "season_ga_pg": 1.0,
+      "season_home_gf_pg": 2.45,
+      "season_home_ga_pg": 0.64,
+      "season_away_gf_pg": 1.1,
+      "season_away_ga_pg": 1.4
+    },
+    "CSD Municipal": {
+      "season_played": 21,
+      "season_pts": 37,
+      "season_gf_pg": 1.29,
+      "season_ga_pg": 0.71,
+      "season_home_gf_pg": 1.73,
+      "season_home_ga_pg": 0.64,
+      "season_away_gf_pg": 0.8,
+      "season_away_ga_pg": 0.8
+    },
+    "Deportivo Mixco": {
+      "season_played": 21,
+      "season_pts": 37,
+      "season_gf_pg": 1.67,
+      "season_ga_pg": 1.29,
+      "season_home_gf_pg": 2.09,
+      "season_home_ga_pg": 0.64,
+      "season_away_gf_pg": 1.2,
+      "season_away_ga_pg": 2.0
+    },
+    "Guastatoya": {
+      "season_played": 21,
+      "season_pts": 34,
+      "season_gf_pg": 1.48,
+      "season_ga_pg": 1.29,
+      "season_home_gf_pg": 2.09,
+      "season_home_ga_pg": 1.09,
+      "season_away_gf_pg": 0.8,
+      "season_away_ga_pg": 1.5
+    },
+    "San Pedro": {
+      "season_played": 21,
+      "season_pts": 29,
+      "season_gf_pg": 1.14,
+      "season_ga_pg": 1.14,
+      "season_home_gf_pg": 2.0,
+      "season_home_ga_pg": 0.8,
+      "season_away_gf_pg": 0.36,
+      "season_away_ga_pg": 1.45
+    },
+    "Coban Imperial": {
+      "season_played": 21,
+      "season_pts": 28,
+      "season_gf_pg": 1.33,
+      "season_ga_pg": 1.43,
+      "season_home_gf_pg": 1.73,
+      "season_home_ga_pg": 1.18,
+      "season_away_gf_pg": 0.9,
+      "season_away_ga_pg": 1.7
+    },
+    "Deportivo Marquense": {
+      "season_played": 21,
+      "season_pts": 28,
+      "season_gf_pg": 0.95,
+      "season_ga_pg": 1.33,
+      "season_home_gf_pg": 1.0,
+      "season_home_ga_pg": 1.18,
+      "season_away_gf_pg": 0.9,
+      "season_away_ga_pg": 1.5
+    },
+    "Comunicaciones FC": {
+      "season_played": 21,
+      "season_pts": 26,
+      "season_gf_pg": 1.29,
+      "season_ga_pg": 1.52,
+      "season_home_gf_pg": 1.6,
+      "season_home_ga_pg": 1.0,
+      "season_away_gf_pg": 1.0,
+      "season_away_ga_pg": 2.0
+    },
+    "Aurora FC": {
+      "season_played": 21,
+      "season_pts": 25,
+      "season_gf_pg": 1.48,
+      "season_ga_pg": 1.62,
+      "season_home_gf_pg": 1.4,
+      "season_home_ga_pg": 1.1,
+      "season_away_gf_pg": 1.55,
+      "season_away_ga_pg": 2.09
+    },
+    "Deportivo Malacateco": {
+      "season_played": 21,
+      "season_pts": 19,
+      "season_gf_pg": 0.86,
+      "season_ga_pg": 1.48,
+      "season_home_gf_pg": 1.1,
+      "season_home_ga_pg": 0.8,
+      "season_away_gf_pg": 0.64,
+      "season_away_ga_pg": 2.09
+    },
+    "CD Suchitepéquez": {
+      "season_played": 21,
+      "season_pts": 13,
+      "season_gf_pg": 1.05,
+      "season_ga_pg": 2.1,
+      "season_home_gf_pg": 1.5,
+      "season_home_ga_pg": 1.4,
+      "season_away_gf_pg": 0.64,
+      "season_away_ga_pg": 2.73
+    }
+  },
+  "upcoming_matches": [
     {
       "id": "fotmob_guatemala_5861334",
       "match_id": "5861334",
@@ -2396,7 +2208,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861310",
@@ -2423,7 +2237,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861316",
@@ -2450,7 +2266,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861326",
@@ -2477,7 +2295,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861332",
@@ -2504,7 +2324,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2533,7 +2355,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861311",
@@ -2560,7 +2384,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861318",
@@ -2587,7 +2413,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861322",
@@ -2614,7 +2442,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861329",
@@ -2641,7 +2471,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -2776,6 +2608,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 40,
+        "season_gf_pg": 1.62,
+        "season_ga_pg": 1.05,
+        "season_home_gf_pg": 2.1,
+        "season_home_ga_pg": 0.6,
+        "season_away_gf_pg": 1.18,
+        "season_away_ga_pg": 1.45
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 37,
+        "season_gf_pg": 1.67,
+        "season_ga_pg": 1.29,
+        "season_home_gf_pg": 2.09,
+        "season_home_ga_pg": 0.64,
+        "season_away_gf_pg": 1.2,
+        "season_away_ga_pg": 2.0
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -2802,33 +2654,6 @@
       "h2h": {
         "home_last_5": [
           {
-            "match_id": "5861302",
-            "date": "25/10/2026",
-            "date_iso": "2026-10-25",
-            "opponent": "CD Suchitepéquez",
-            "venue": "Visitante",
-            "match_home": "CD Suchitepéquez",
-            "match_away": "Aurora FC",
-            "home_id": "49756",
-            "away_id": "188294",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49756.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 2,
-            "total_shots": 11,
-            "yellow_cards": 0,
-            "red_cards": 1,
-            "total_cards": 1,
-            "fouls": 13
-          },
-          {
             "match_id": "5861307",
             "date": "29/10/2026",
             "date_iso": "2026-10-29",
@@ -2853,7 +2678,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861310",
@@ -2880,7 +2707,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861322",
@@ -2907,7 +2736,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861331",
@@ -2934,7 +2765,38 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5861321",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "CSD Municipal",
+            "venue": "Visitante",
+            "match_home": "CSD Municipal",
+            "match_away": "Aurora FC",
+            "home_id": "9933",
+            "away_id": "188294",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "L",
+            "competition": "Liga Nacional de Guatemala",
+            "corners_for": 4,
+            "corners_against": 4,
+            "total_corners": 8,
+            "shots_on_target": 2,
+            "total_shots": 12,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2963,7 +2825,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861313",
@@ -2990,7 +2854,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861317",
@@ -3017,7 +2883,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861323",
@@ -3044,7 +2912,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861328",
@@ -3071,7 +2941,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3153,25 +3025,25 @@
         ],
         "home_corner_stats": {
           "corners_avg_home": 5.5,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 4.4,
+          "corners_avg_away": 3.33,
+          "corners_avg_gen": 4.2,
           "corners_conceded_home": 3.0,
           "corners_conceded_away": 5.33,
           "corners_conceded_gen": 4.4,
           "shots_on_target_gen": 3.0,
-          "total_shots_gen": 11.4,
+          "total_shots_gen": 11.6,
           "yellow_cards_avg_home": 3.0,
-          "yellow_cards_avg_away": 1.67,
-          "yellow_cards_avg": 2.2,
+          "yellow_cards_avg_away": 2.67,
+          "yellow_cards_avg": 2.8,
           "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.2,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
           "total_cards_avg_home": 3.0,
-          "total_cards_avg_away": 2.0,
-          "total_cards_avg": 2.4,
+          "total_cards_avg_away": 2.67,
+          "total_cards_avg": 2.8,
           "fouls_avg_home": 14.0,
-          "fouls_avg_away": 11.33,
-          "fouls_avg": 12.4
+          "fouls_avg_away": 10.67,
+          "fouls_avg": 12.0
         },
         "away_corner_stats": {
           "corners_avg_home": 5.33,
@@ -3196,7 +3068,7 @@
           "fouls_avg": 11.2
         },
         "projected_corners": 9.7,
-        "projected_cards": 4.0,
+        "projected_cards": 4.2,
         "summary": {
           "home_wins": 1,
           "draws": 2,
@@ -3206,6 +3078,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 25,
+        "season_gf_pg": 1.48,
+        "season_ga_pg": 1.62,
+        "season_home_gf_pg": 1.4,
+        "season_home_ga_pg": 1.1,
+        "season_away_gf_pg": 1.55,
+        "season_away_ga_pg": 2.09
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 28,
+        "season_gf_pg": 1.33,
+        "season_ga_pg": 1.43,
+        "season_home_gf_pg": 1.73,
+        "season_home_ga_pg": 1.18,
+        "season_away_gf_pg": 0.9,
+        "season_away_ga_pg": 1.7
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3256,7 +3148,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861314",
@@ -3283,7 +3177,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861319",
@@ -3310,7 +3206,9 @@
             "yellow_cards": 0,
             "red_cards": 2,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861326",
@@ -3337,7 +3235,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861333",
@@ -3364,37 +3264,12 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
-          {
-            "match_id": "5861303",
-            "date": "24/10/2026",
-            "date_iso": "2026-10-24",
-            "opponent": "Club Xelajú",
-            "venue": "Visitante",
-            "match_home": "Club Xelajú",
-            "match_away": "CSD Municipal",
-            "home_id": "49758",
-            "away_id": "9933",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/49758.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga Nacional de Guatemala",
-            "corners_for": 3,
-            "corners_against": 7,
-            "total_corners": 10,
-            "shots_on_target": 3,
-            "total_shots": 9,
-            "yellow_cards": 0,
-            "red_cards": 1,
-            "total_cards": 1,
-            "fouls": 10
-          },
           {
             "match_id": "5861309",
             "date": "29/10/2026",
@@ -3420,7 +3295,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861312",
@@ -3447,7 +3324,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861325",
@@ -3474,7 +3353,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861332",
@@ -3501,7 +3382,38 @@
             "yellow_cards": 0,
             "red_cards": 2,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5861321",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "Aurora FC",
+            "venue": "Local",
+            "match_home": "CSD Municipal",
+            "match_away": "Aurora FC",
+            "home_id": "9933",
+            "away_id": "188294",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/9933.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/188294.png",
+            "home_score": 3,
+            "away_score": 2,
+            "score": "3 - 2",
+            "result": "W",
+            "competition": "Liga Nacional de Guatemala",
+            "corners_for": 4,
+            "corners_against": 4,
+            "total_corners": 8,
+            "shots_on_target": 4,
+            "total_shots": 11,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3604,29 +3516,29 @@
           "fouls_avg": 11.0
         },
         "away_corner_stats": {
-          "corners_avg_home": 6.5,
-          "corners_avg_away": 3.67,
-          "corners_avg_gen": 4.8,
-          "corners_conceded_home": 5.0,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 5.2,
-          "shots_on_target_gen": 3.2,
-          "total_shots_gen": 11.6,
-          "yellow_cards_avg_home": 1.5,
-          "yellow_cards_avg_away": 2.67,
-          "yellow_cards_avg": 2.2,
-          "red_cards_avg_home": 1.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.6,
-          "total_cards_avg_home": 2.5,
-          "total_cards_avg_away": 3.0,
-          "total_cards_avg": 2.8,
+          "corners_avg_home": 5.67,
+          "corners_avg_away": 4.0,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 4.67,
+          "corners_conceded_away": 4.5,
+          "corners_conceded_gen": 4.6,
+          "shots_on_target_gen": 3.4,
+          "total_shots_gen": 12.0,
+          "yellow_cards_avg_home": 1.67,
+          "yellow_cards_avg_away": 4.0,
+          "yellow_cards_avg": 2.6,
+          "red_cards_avg_home": 0.67,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.4,
+          "total_cards_avg_home": 2.33,
+          "total_cards_avg_away": 4.0,
+          "total_cards_avg": 3.0,
           "fouls_avg_home": 13.0,
-          "fouls_avg_away": 11.67,
-          "fouls_avg": 12.2
+          "fouls_avg_away": 12.5,
+          "fouls_avg": 12.8
         },
-        "projected_corners": 9.7,
-        "projected_cards": 4.7,
+        "projected_corners": 9.4,
+        "projected_cards": 5.3,
         "summary": {
           "home_wins": 0,
           "draws": 2,
@@ -3636,6 +3548,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 13,
+        "season_gf_pg": 1.05,
+        "season_ga_pg": 2.1,
+        "season_home_gf_pg": 1.5,
+        "season_home_ga_pg": 1.4,
+        "season_away_gf_pg": 0.64,
+        "season_away_ga_pg": 2.73
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 37,
+        "season_gf_pg": 1.29,
+        "season_ga_pg": 0.71,
+        "season_home_gf_pg": 1.73,
+        "season_home_ga_pg": 0.64,
+        "season_away_gf_pg": 0.8,
+        "season_away_ga_pg": 0.8
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -3686,7 +3618,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861311",
@@ -3713,7 +3647,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861320",
@@ -3740,7 +3676,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861323",
@@ -3767,7 +3705,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861330",
@@ -3794,7 +3734,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -3823,7 +3765,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861315",
@@ -3850,7 +3794,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861317",
@@ -3877,7 +3823,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861327",
@@ -3904,7 +3852,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861333",
@@ -3931,7 +3881,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4066,6 +4018,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 26,
+        "season_gf_pg": 1.29,
+        "season_ga_pg": 1.52,
+        "season_home_gf_pg": 1.6,
+        "season_home_ga_pg": 1.0,
+        "season_away_gf_pg": 1.0,
+        "season_away_ga_pg": 2.0
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 37,
+        "season_gf_pg": 1.81,
+        "season_ga_pg": 1.0,
+        "season_home_gf_pg": 2.45,
+        "season_home_ga_pg": 0.64,
+        "season_away_gf_pg": 1.1,
+        "season_away_ga_pg": 1.4
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4116,7 +4088,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861314",
@@ -4143,7 +4117,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861316",
@@ -4170,7 +4146,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861325",
@@ -4197,7 +4175,9 @@
             "yellow_cards": 3,
             "red_cards": 1,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861329",
@@ -4224,7 +4204,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4253,7 +4235,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861315",
@@ -4280,7 +4264,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861320",
@@ -4307,7 +4293,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861324",
@@ -4334,7 +4322,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861331",
@@ -4361,7 +4351,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4496,6 +4488,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 19,
+        "season_gf_pg": 0.86,
+        "season_ga_pg": 1.48,
+        "season_home_gf_pg": 1.1,
+        "season_home_ga_pg": 0.8,
+        "season_away_gf_pg": 0.64,
+        "season_away_ga_pg": 2.09
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 28,
+        "season_gf_pg": 0.95,
+        "season_ga_pg": 1.33,
+        "season_home_gf_pg": 1.0,
+        "season_home_ga_pg": 1.18,
+        "season_away_gf_pg": 0.9,
+        "season_away_ga_pg": 1.5
+      },
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4546,7 +4558,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861312",
@@ -4573,7 +4587,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861318",
@@ -4600,7 +4616,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861324",
@@ -4627,7 +4645,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861328",
@@ -4654,7 +4674,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4683,7 +4705,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861313",
@@ -4710,7 +4734,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861319",
@@ -4737,7 +4763,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861327",
@@ -4764,7 +4792,9 @@
             "yellow_cards": 0,
             "red_cards": 1,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5861330",
@@ -4791,7 +4821,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4866,6 +4898,26 @@
         }
       },
       "referee": null,
+      "home_season_stats": {
+        "season_played": 21,
+        "season_pts": 29,
+        "season_gf_pg": 1.14,
+        "season_ga_pg": 1.14,
+        "season_home_gf_pg": 2.0,
+        "season_home_ga_pg": 0.8,
+        "season_away_gf_pg": 0.36,
+        "season_away_ga_pg": 1.45
+      },
+      "away_season_stats": {
+        "season_played": 21,
+        "season_pts": 34,
+        "season_gf_pg": 1.48,
+        "season_ga_pg": 1.29,
+        "season_home_gf_pg": 2.09,
+        "season_home_ga_pg": 1.09,
+        "season_away_gf_pg": 0.8,
+        "season_away_ga_pg": 1.5
+      },
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

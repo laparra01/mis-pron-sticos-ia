@@ -3,7 +3,7 @@
   "league_id": 9806,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-25T22:05:12.871112",
+  "last_updated": "2026-11-26T22:03:47.439407",
   "total_fixtures": 11,
   "team_histories": {
     "Belgium": [
@@ -32,7 +32,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181792",
@@ -59,7 +61,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181794",
@@ -86,7 +90,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181796",
@@ -113,7 +119,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181798",
@@ -140,7 +148,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Belgium/Germany": [],
@@ -170,7 +180,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181853",
@@ -197,7 +209,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181855",
@@ -224,7 +238,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181858",
@@ -251,7 +267,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181859",
@@ -278,7 +296,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Czechia": [
@@ -307,7 +327,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181854",
@@ -334,7 +356,9 @@
         "yellow_cards": 6,
         "red_cards": 1,
         "total_cards": 7,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181856",
@@ -361,7 +385,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181857",
@@ -388,7 +414,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181859",
@@ -415,7 +443,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Denmark": [
@@ -444,7 +474,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181865",
@@ -471,7 +503,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181868",
@@ -498,7 +532,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181870",
@@ -525,7 +561,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 4
+        "fouls": 4,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181871",
@@ -552,7 +590,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "England": [
@@ -581,7 +621,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181853",
@@ -608,7 +650,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181856",
@@ -635,7 +679,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181858",
@@ -662,7 +708,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181860",
@@ -689,7 +737,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "France": [
@@ -718,7 +768,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181793",
@@ -745,7 +797,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181794",
@@ -772,7 +826,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 4
+        "fouls": 4,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181797",
@@ -799,7 +855,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 18
+        "fouls": 18,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181799",
@@ -826,7 +884,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Germany": [
@@ -855,7 +915,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181829",
@@ -882,7 +944,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181831",
@@ -909,7 +973,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181834",
@@ -936,7 +1002,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181835",
@@ -963,7 +1031,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Greece": [
@@ -992,7 +1062,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181830",
@@ -1019,7 +1091,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181831",
@@ -1046,7 +1120,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181833",
@@ -1073,7 +1149,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181836",
@@ -1100,7 +1178,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Italy": [
@@ -1129,7 +1209,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 21
+        "fouls": 21,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181793",
@@ -1156,7 +1238,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181795",
@@ -1183,7 +1267,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181797",
@@ -1210,7 +1296,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181798",
@@ -1237,7 +1325,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Loser SF 1": [],
@@ -1268,7 +1358,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181830",
@@ -1295,7 +1387,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181832",
@@ -1322,7 +1416,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181833",
@@ -1349,7 +1445,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 5
+        "fouls": 5,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181835",
@@ -1376,7 +1474,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Netherlands/Portugal": [],
@@ -1406,7 +1506,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181866",
@@ -1433,7 +1535,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181867",
@@ -1460,7 +1564,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181869",
@@ -1487,7 +1593,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181871",
@@ -1514,7 +1622,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Norway/England": [],
@@ -1544,7 +1654,9 @@
         "yellow_cards": 7,
         "red_cards": 0,
         "total_cards": 7,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181865",
@@ -1571,7 +1683,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181867",
@@ -1598,7 +1712,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181870",
@@ -1625,7 +1741,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 19
+        "fouls": 19,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181872",
@@ -1652,7 +1770,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Serbia": [
@@ -1681,7 +1801,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181829",
@@ -1708,7 +1830,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181832",
@@ -1735,7 +1859,9 @@
         "yellow_cards": 5,
         "red_cards": 0,
         "total_cards": 5,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181834",
@@ -1762,7 +1888,9 @@
         "yellow_cards": 3,
         "red_cards": 2,
         "total_cards": 5,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181836",
@@ -1789,7 +1917,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Spain": [
@@ -1818,7 +1948,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181854",
@@ -1845,7 +1977,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181855",
@@ -1872,7 +2006,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181857",
@@ -1899,7 +2035,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181860",
@@ -1926,7 +2064,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Spain/France": [],
@@ -1956,7 +2096,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181792",
@@ -1983,7 +2125,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181795",
@@ -2010,7 +2154,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181796",
@@ -2037,7 +2183,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181799",
@@ -2064,7 +2212,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Wales": [
@@ -2093,7 +2243,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181866",
@@ -2120,7 +2272,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181868",
@@ -2147,7 +2301,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181869",
@@ -2174,7 +2330,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "5181872",
@@ -2201,7 +2359,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 5
+        "fouls": 5,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Winner SF 1": [],
@@ -2737,6 +2897,7 @@
       "fouls_avg": 11.5
     }
   },
+  "team_season_stats": {},
   "upcoming_matches": [
     {
       "id": "fotmob_uefa_nations_league_6694094",
@@ -2786,7 +2947,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181792",
@@ -2813,7 +2976,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181794",
@@ -2840,7 +3005,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181796",
@@ -2867,7 +3034,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181798",
@@ -2894,7 +3063,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -2923,7 +3094,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181829",
@@ -2950,7 +3123,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181831",
@@ -2977,7 +3152,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181834",
@@ -3004,7 +3181,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181835",
@@ -3031,7 +3210,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -3156,846 +3337,8 @@
         }
       },
       "referee": null,
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_uefa_nations_league_6694093",
-      "match_id": "6694093",
-      "sport": "football",
-      "league": "UEFA Nations League",
-      "country": "Europa",
-      "country_code": "eu",
-      "league_flag": "🇪🇺",
-      "country_flag": "🇪🇺",
-      "home_team": "Netherlands",
-      "away_team": "Portugal",
-      "home_id": "6708",
-      "away_id": "8361",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-      "date": "Jue 25 Mar, 13:45",
-      "date_iso": "2027-03-25",
-      "time": "13:45",
-      "timestamp": 1806003900,
-      "timezone": "America/Guatemala",
-      "round": "1/4",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5181827",
-            "date": "27/09/2026",
-            "date_iso": "2026-09-27",
-            "opponent": "Serbia",
-            "venue": "Visitante",
-            "match_home": "Serbia",
-            "match_away": "Netherlands",
-            "home_id": "8205",
-            "away_id": "6708",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8205.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 4,
-            "corners_against": 3,
-            "total_corners": 7,
-            "shots_on_target": 8,
-            "total_shots": 25,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 10
-          },
-          {
-            "match_id": "5181830",
-            "date": "01/10/2026",
-            "date_iso": "2026-10-01",
-            "opponent": "Greece",
-            "venue": "Visitante",
-            "match_home": "Greece",
-            "match_away": "Netherlands",
-            "home_id": "6383",
-            "away_id": "6708",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6383.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "UEFA Nations League",
-            "corners_for": 8,
-            "corners_against": 6,
-            "total_corners": 14,
-            "shots_on_target": 5,
-            "total_shots": 19,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 7
-          },
-          {
-            "match_id": "5181832",
-            "date": "04/10/2026",
-            "date_iso": "2026-10-04",
-            "opponent": "Serbia",
-            "venue": "Local",
-            "match_home": "Netherlands",
-            "match_away": "Serbia",
-            "home_id": "6708",
-            "away_id": "8205",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8205.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 7,
-            "total_shots": 22,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 14
-          },
-          {
-            "match_id": "5181833",
-            "date": "13/11/2026",
-            "date_iso": "2026-11-13",
-            "opponent": "Greece",
-            "venue": "Local",
-            "match_home": "Netherlands",
-            "match_away": "Greece",
-            "home_id": "6708",
-            "away_id": "6383",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6383.png",
-            "home_score": 7,
-            "away_score": 0,
-            "score": "7 - 0",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 5,
-            "corners_against": 4,
-            "total_corners": 9,
-            "shots_on_target": 13,
-            "total_shots": 17,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 5
-          },
-          {
-            "match_id": "5181835",
-            "date": "16/11/2026",
-            "date_iso": "2026-11-16",
-            "opponent": "Germany",
-            "venue": "Visitante",
-            "match_home": "Germany",
-            "match_away": "Netherlands",
-            "home_id": "8570",
-            "away_id": "6708",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8570.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-            "home_score": 5,
-            "away_score": 0,
-            "score": "5 - 0",
-            "result": "L",
-            "competition": "UEFA Nations League",
-            "corners_for": 2,
-            "corners_against": 3,
-            "total_corners": 5,
-            "shots_on_target": 1,
-            "total_shots": 9,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 15
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5181864",
-            "date": "27/09/2026",
-            "date_iso": "2026-09-27",
-            "opponent": "Norway",
-            "venue": "Visitante",
-            "match_home": "Norway",
-            "match_away": "Portugal",
-            "home_id": "8492",
-            "away_id": "8361",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 2,
-            "corners_against": 7,
-            "total_corners": 9,
-            "shots_on_target": 4,
-            "total_shots": 12,
-            "yellow_cards": 7,
-            "red_cards": 0,
-            "total_cards": 7,
-            "fouls": 12
-          },
-          {
-            "match_id": "5181865",
-            "date": "01/10/2026",
-            "date_iso": "2026-10-01",
-            "opponent": "Denmark",
-            "venue": "Visitante",
-            "match_home": "Denmark",
-            "match_away": "Portugal",
-            "home_id": "8238",
-            "away_id": "8361",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "home_score": 2,
-            "away_score": 4,
-            "score": "2 - 4",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 7,
-            "corners_against": 3,
-            "total_corners": 10,
-            "shots_on_target": 10,
-            "total_shots": 19,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 12
-          },
-          {
-            "match_id": "5181867",
-            "date": "04/10/2026",
-            "date_iso": "2026-10-04",
-            "opponent": "Norway",
-            "venue": "Local",
-            "match_home": "Portugal",
-            "match_away": "Norway",
-            "home_id": "8361",
-            "away_id": "8492",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 7,
-            "total_shots": 20,
-            "yellow_cards": 3,
-            "red_cards": 1,
-            "total_cards": 4,
-            "fouls": 8
-          },
-          {
-            "match_id": "5181870",
-            "date": "14/11/2026",
-            "date_iso": "2026-11-14",
-            "opponent": "Denmark",
-            "venue": "Local",
-            "match_home": "Portugal",
-            "match_away": "Denmark",
-            "home_id": "8361",
-            "away_id": "8238",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
-            "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "result": "L",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 8,
-            "total_shots": 15,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 19
-          },
-          {
-            "match_id": "5181872",
-            "date": "17/11/2026",
-            "date_iso": "2026-11-17",
-            "opponent": "Wales",
-            "venue": "Visitante",
-            "match_home": "Wales",
-            "match_away": "Portugal",
-            "home_id": "5790",
-            "away_id": "8361",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 1,
-            "corners_against": 6,
-            "total_corners": 7,
-            "shots_on_target": 6,
-            "total_shots": 11,
-            "yellow_cards": 2,
-            "red_cards": 1,
-            "total_cards": 3,
-            "fouls": 11
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "14 May 2024",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Netherlands",
-            "match_away": "Portugal",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Netherlands",
-            "home_team": "Netherlands",
-            "away_team": "Portugal"
-          },
-          {
-            "date": "11 Dic 2023",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Portugal",
-            "match_away": "Netherlands",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Portugal",
-            "home_team": "Portugal",
-            "away_team": "Netherlands"
-          },
-          {
-            "date": "22 Abr 2023",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Netherlands",
-            "match_away": "Portugal",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Netherlands",
-            "home_team": "Netherlands",
-            "away_team": "Portugal"
-          },
-          {
-            "date": "9 Oct 2022",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Portugal",
-            "match_away": "Netherlands",
-            "home_score": 1,
-            "away_score": 3,
-            "score": "1 - 3",
-            "winner": "Netherlands",
-            "home_team": "Portugal",
-            "away_team": "Netherlands"
-          },
-          {
-            "date": "21 Mar 2022",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Netherlands",
-            "match_away": "Portugal",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "winner": "Portugal",
-            "home_team": "Netherlands",
-            "away_team": "Portugal"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 5.5,
-          "corners_avg_away": 4.67,
-          "corners_avg_gen": 5.0,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 4.0,
-          "corners_conceded_gen": 4.0,
-          "shots_on_target_gen": 6.8,
-          "total_shots_gen": 18.4,
-          "yellow_cards_avg_home": 0.5,
-          "yellow_cards_avg_away": 1.0,
-          "yellow_cards_avg": 0.8,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.0,
-          "red_cards_avg": 0.0,
-          "total_cards_avg_home": 0.5,
-          "total_cards_avg_away": 1.0,
-          "total_cards_avg": 0.8,
-          "fouls_avg_home": 9.5,
-          "fouls_avg_away": 10.67,
-          "fouls_avg": 10.2
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 3.33,
-          "corners_avg_gen": 4.4,
-          "corners_conceded_home": 5.5,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 5.4,
-          "shots_on_target_gen": 7.0,
-          "total_shots_gen": 15.4,
-          "yellow_cards_avg_home": 2.5,
-          "yellow_cards_avg_away": 3.67,
-          "yellow_cards_avg": 3.2,
-          "red_cards_avg_home": 0.5,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.4,
-          "total_cards_avg_home": 3.0,
-          "total_cards_avg_away": 4.0,
-          "total_cards_avg": 3.6,
-          "fouls_avg_home": 13.5,
-          "fouls_avg_away": 11.67,
-          "fouls_avg": 12.4
-        },
-        "projected_corners": 9.2,
-        "projected_cards": 4.5,
-        "summary": {
-          "home_wins": 3,
-          "draws": 0,
-          "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "Netherlands 3 victorias • 0 empates • Portugal 2 victorias"
-        }
-      },
-      "referee": null,
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_uefa_nations_league_6694092",
-      "match_id": "6694092",
-      "sport": "football",
-      "league": "UEFA Nations League",
-      "country": "Europa",
-      "country_code": "eu",
-      "league_flag": "🇪🇺",
-      "country_flag": "🇪🇺",
-      "home_team": "Norway",
-      "away_team": "England",
-      "home_id": "8492",
-      "away_id": "8491",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-      "date": "Jue 25 Mar, 13:45",
-      "date_iso": "2027-03-25",
-      "time": "13:45",
-      "timestamp": 1806003900,
-      "timezone": "America/Guatemala",
-      "round": "1/4",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "5181864",
-            "date": "27/09/2026",
-            "date_iso": "2026-09-27",
-            "opponent": "Portugal",
-            "venue": "Local",
-            "match_home": "Norway",
-            "match_away": "Portugal",
-            "home_id": "8492",
-            "away_id": "8361",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "UEFA Nations League",
-            "corners_for": 7,
-            "corners_against": 2,
-            "total_corners": 9,
-            "shots_on_target": 6,
-            "total_shots": 22,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 8
-          },
-          {
-            "match_id": "5181866",
-            "date": "01/10/2026",
-            "date_iso": "2026-10-01",
-            "opponent": "Wales",
-            "venue": "Visitante",
-            "match_home": "Wales",
-            "match_away": "Norway",
-            "home_id": "5790",
-            "away_id": "8492",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "UEFA Nations League",
-            "corners_for": 3,
-            "corners_against": 3,
-            "total_corners": 6,
-            "shots_on_target": 4,
-            "total_shots": 12,
-            "yellow_cards": 1,
-            "red_cards": 1,
-            "total_cards": 2,
-            "fouls": 7
-          },
-          {
-            "match_id": "5181867",
-            "date": "04/10/2026",
-            "date_iso": "2026-10-04",
-            "opponent": "Portugal",
-            "venue": "Visitante",
-            "match_home": "Portugal",
-            "match_away": "Norway",
-            "home_id": "8361",
-            "away_id": "8492",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "L",
-            "competition": "UEFA Nations League",
-            "corners_for": 4,
-            "corners_against": 6,
-            "total_corners": 10,
-            "shots_on_target": 3,
-            "total_shots": 9,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 7
-          },
-          {
-            "match_id": "5181869",
-            "date": "14/11/2026",
-            "date_iso": "2026-11-14",
-            "opponent": "Wales",
-            "venue": "Local",
-            "match_home": "Norway",
-            "match_away": "Wales",
-            "home_id": "8492",
-            "away_id": "5790",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 8,
-            "corners_against": 2,
-            "total_corners": 10,
-            "shots_on_target": 6,
-            "total_shots": 15,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 9
-          },
-          {
-            "match_id": "5181871",
-            "date": "17/11/2026",
-            "date_iso": "2026-11-17",
-            "opponent": "Denmark",
-            "venue": "Visitante",
-            "match_home": "Denmark",
-            "match_away": "Norway",
-            "home_id": "8238",
-            "away_id": "8492",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 7,
-            "corners_against": 1,
-            "total_corners": 8,
-            "shots_on_target": 6,
-            "total_shots": 21,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 12
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "5181851",
-            "date": "29/09/2026",
-            "date_iso": "2026-09-29",
-            "opponent": "Czechia",
-            "venue": "Visitante",
-            "match_home": "Czechia",
-            "match_away": "England",
-            "home_id": "8496",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 1,
-            "total_corners": 7,
-            "shots_on_target": 7,
-            "total_shots": 22,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 12
-          },
-          {
-            "match_id": "5181853",
-            "date": "03/10/2026",
-            "date_iso": "2026-10-03",
-            "opponent": "Croatia",
-            "venue": "Visitante",
-            "match_home": "Croatia",
-            "match_away": "England",
-            "home_id": "10155",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "home_score": 0,
-            "away_score": 7,
-            "score": "0 - 7",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 1,
-            "total_corners": 7,
-            "shots_on_target": 10,
-            "total_shots": 19,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 6
-          },
-          {
-            "match_id": "5181856",
-            "date": "06/10/2026",
-            "date_iso": "2026-10-06",
-            "opponent": "Czechia",
-            "venue": "Local",
-            "match_home": "England",
-            "match_away": "Czechia",
-            "home_id": "8491",
-            "away_id": "8496",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 2,
-            "total_corners": 8,
-            "shots_on_target": 3,
-            "total_shots": 17,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 10
-          },
-          {
-            "match_id": "5181858",
-            "date": "12/11/2026",
-            "date_iso": "2026-11-12",
-            "opponent": "Croatia",
-            "venue": "Local",
-            "match_home": "England",
-            "match_away": "Croatia",
-            "home_id": "8491",
-            "away_id": "10155",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 4,
-            "total_shots": 15,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 9
-          },
-          {
-            "match_id": "5181860",
-            "date": "15/11/2026",
-            "date_iso": "2026-11-15",
-            "opponent": "Spain",
-            "venue": "Visitante",
-            "match_home": "Spain",
-            "match_away": "England",
-            "home_id": "6720",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6720.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 9,
-            "yellow_cards": 2,
-            "red_cards": 1,
-            "total_cards": 3,
-            "fouls": 15
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "16 May 2024",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Norway",
-            "match_away": "England",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate",
-            "home_team": "Norway",
-            "away_team": "England"
-          },
-          {
-            "date": "15 Dic 2023",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "England",
-            "match_away": "Norway",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate",
-            "home_team": "England",
-            "away_team": "Norway"
-          },
-          {
-            "date": "15 Abr 2023",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Norway",
-            "match_away": "England",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate",
-            "home_team": "Norway",
-            "away_team": "England"
-          },
-          {
-            "date": "12 Oct 2022",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "England",
-            "match_away": "Norway",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "England",
-            "home_team": "England",
-            "away_team": "Norway"
-          },
-          {
-            "date": "22 Mar 2022",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "Norway",
-            "match_away": "England",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Norway",
-            "home_team": "Norway",
-            "away_team": "England"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 7.5,
-          "corners_avg_away": 4.67,
-          "corners_avg_gen": 5.8,
-          "corners_conceded_home": 2.0,
-          "corners_conceded_away": 3.33,
-          "corners_conceded_gen": 2.8,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 15.8,
-          "yellow_cards_avg_home": 1.5,
-          "yellow_cards_avg_away": 1.33,
-          "yellow_cards_avg": 1.4,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 1.5,
-          "total_cards_avg_away": 1.67,
-          "total_cards_avg": 1.6,
-          "fouls_avg_home": 8.5,
-          "fouls_avg_away": 8.67,
-          "fouls_avg": 8.6
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 6.0,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.5,
-          "corners_conceded_away": 2.0,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 16.4,
-          "yellow_cards_avg_home": 0.5,
-          "yellow_cards_avg_away": 1.0,
-          "yellow_cards_avg": 0.8,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 0.5,
-          "total_cards_avg_away": 1.33,
-          "total_cards_avg": 1.0,
-          "fouls_avg_home": 9.5,
-          "fouls_avg_away": 11.0,
-          "fouls_avg": 10.4
-        },
-        "projected_corners": 8.8,
-        "projected_cards": 2.7,
-        "summary": {
-          "home_wins": 1,
-          "draws": 3,
-          "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "Norway 1 victorias • 3 empates • England 1 victorias"
-        }
-      },
-      "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4046,7 +3389,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181854",
@@ -4073,7 +3418,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181855",
@@ -4100,7 +3447,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181857",
@@ -4127,7 +3476,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181860",
@@ -4154,7 +3505,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4183,7 +3536,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181793",
@@ -4210,7 +3565,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181794",
@@ -4237,7 +3594,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 4
+            "fouls": 4,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181797",
@@ -4264,7 +3623,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 18
+            "fouls": 18,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181799",
@@ -4291,7 +3652,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4416,168 +3779,475 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
-      "id": "fotmob_uefa_nations_league_6694096",
-      "match_id": "6694096",
+      "id": "fotmob_uefa_nations_league_6694093",
+      "match_id": "6694093",
       "sport": "football",
       "league": "UEFA Nations League",
       "country": "Europa",
       "country_code": "eu",
       "league_flag": "🇪🇺",
       "country_flag": "🇪🇺",
-      "home_team": "England",
-      "away_team": "Norway",
-      "home_id": "8491",
-      "away_id": "8492",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
-      "date": "Dom 28 Mar, 12:45",
-      "date_iso": "2027-03-28",
-      "time": "12:45",
-      "timestamp": 1806259500,
+      "home_team": "Netherlands",
+      "away_team": "Portugal",
+      "home_id": "6708",
+      "away_id": "8361",
+      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+      "date": "Sáb 27 Mar, 13:45",
+      "date_iso": "2027-03-27",
+      "time": "13:45",
+      "timestamp": 1806176700,
       "timezone": "America/Guatemala",
       "round": "1/4",
       "h2h": {
         "home_last_5": [
           {
-            "match_id": "5181851",
-            "date": "29/09/2026",
-            "date_iso": "2026-09-29",
-            "opponent": "Czechia",
+            "match_id": "5181827",
+            "date": "27/09/2026",
+            "date_iso": "2026-09-27",
+            "opponent": "Serbia",
             "venue": "Visitante",
-            "match_home": "Czechia",
-            "match_away": "England",
-            "home_id": "8496",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "home_score": 0,
+            "match_home": "Serbia",
+            "match_away": "Netherlands",
+            "home_id": "8205",
+            "away_id": "6708",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8205.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+            "home_score": 1,
             "away_score": 2,
-            "score": "0 - 2",
+            "score": "1 - 2",
             "result": "W",
             "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 1,
+            "corners_for": 4,
+            "corners_against": 3,
             "total_corners": 7,
-            "shots_on_target": 7,
-            "total_shots": 22,
+            "shots_on_target": 8,
+            "total_shots": 25,
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
-            "match_id": "5181853",
-            "date": "03/10/2026",
-            "date_iso": "2026-10-03",
-            "opponent": "Croatia",
+            "match_id": "5181830",
+            "date": "01/10/2026",
+            "date_iso": "2026-10-01",
+            "opponent": "Greece",
             "venue": "Visitante",
-            "match_home": "Croatia",
-            "match_away": "England",
-            "home_id": "10155",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "home_score": 0,
-            "away_score": 7,
-            "score": "0 - 7",
-            "result": "W",
+            "match_home": "Greece",
+            "match_away": "Netherlands",
+            "home_id": "6383",
+            "away_id": "6708",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6383.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+            "home_score": 2,
+            "away_score": 2,
+            "score": "2 - 2",
+            "result": "D",
             "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 1,
-            "total_corners": 7,
-            "shots_on_target": 10,
+            "corners_for": 8,
+            "corners_against": 6,
+            "total_corners": 14,
+            "shots_on_target": 5,
             "total_shots": 19,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 6
-          },
-          {
-            "match_id": "5181856",
-            "date": "06/10/2026",
-            "date_iso": "2026-10-06",
-            "opponent": "Czechia",
-            "venue": "Local",
-            "match_home": "England",
-            "match_away": "Czechia",
-            "home_id": "8491",
-            "away_id": "8496",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
-            "home_score": 3,
-            "away_score": 0,
-            "score": "3 - 0",
-            "result": "W",
-            "competition": "UEFA Nations League",
-            "corners_for": 6,
-            "corners_against": 2,
-            "total_corners": 8,
-            "shots_on_target": 3,
-            "total_shots": 17,
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
           },
           {
-            "match_id": "5181858",
-            "date": "12/11/2026",
-            "date_iso": "2026-11-12",
-            "opponent": "Croatia",
+            "match_id": "5181832",
+            "date": "04/10/2026",
+            "date_iso": "2026-10-04",
+            "opponent": "Serbia",
             "venue": "Local",
-            "match_home": "England",
-            "match_away": "Croatia",
-            "home_id": "8491",
-            "away_id": "10155",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
+            "match_home": "Netherlands",
+            "match_away": "Serbia",
+            "home_id": "6708",
+            "away_id": "8205",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8205.png",
             "home_score": 2,
             "away_score": 1,
             "score": "2 - 1",
             "result": "W",
             "competition": "UEFA Nations League",
             "corners_for": 6,
-            "corners_against": 7,
-            "total_corners": 13,
-            "shots_on_target": 4,
-            "total_shots": 15,
+            "corners_against": 4,
+            "total_corners": 10,
+            "shots_on_target": 7,
+            "total_shots": 22,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181833",
+            "date": "13/11/2026",
+            "date_iso": "2026-11-13",
+            "opponent": "Greece",
+            "venue": "Local",
+            "match_home": "Netherlands",
+            "match_away": "Greece",
+            "home_id": "6708",
+            "away_id": "6383",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6383.png",
+            "home_score": 7,
+            "away_score": 0,
+            "score": "7 - 0",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 5,
+            "corners_against": 4,
+            "total_corners": 9,
+            "shots_on_target": 13,
+            "total_shots": 17,
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 5,
+            "xg_for": null,
+            "xg_against": null
           },
           {
-            "match_id": "5181860",
-            "date": "15/11/2026",
-            "date_iso": "2026-11-15",
-            "opponent": "Spain",
+            "match_id": "5181835",
+            "date": "16/11/2026",
+            "date_iso": "2026-11-16",
+            "opponent": "Germany",
             "venue": "Visitante",
-            "match_home": "Spain",
-            "match_away": "England",
-            "home_id": "6720",
-            "away_id": "8491",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6720.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "match_home": "Germany",
+            "match_away": "Netherlands",
+            "home_id": "8570",
+            "away_id": "6708",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8570.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
+            "home_score": 5,
+            "away_score": 0,
+            "score": "5 - 0",
+            "result": "L",
+            "competition": "UEFA Nations League",
+            "corners_for": 2,
+            "corners_against": 3,
+            "total_corners": 5,
+            "shots_on_target": 1,
+            "total_shots": 9,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5181864",
+            "date": "27/09/2026",
+            "date_iso": "2026-09-27",
+            "opponent": "Norway",
+            "venue": "Visitante",
+            "match_home": "Norway",
+            "match_away": "Portugal",
+            "home_id": "8492",
+            "away_id": "8361",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 2,
+            "corners_against": 7,
+            "total_corners": 9,
+            "shots_on_target": 4,
+            "total_shots": 12,
+            "yellow_cards": 7,
+            "red_cards": 0,
+            "total_cards": 7,
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181865",
+            "date": "01/10/2026",
+            "date_iso": "2026-10-01",
+            "opponent": "Denmark",
+            "venue": "Visitante",
+            "match_home": "Denmark",
+            "match_away": "Portugal",
+            "home_id": "8238",
+            "away_id": "8361",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
             "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
+            "away_score": 4,
+            "score": "2 - 4",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 7,
+            "corners_against": 3,
+            "total_corners": 10,
+            "shots_on_target": 10,
+            "total_shots": 19,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181867",
+            "date": "04/10/2026",
+            "date_iso": "2026-10-04",
+            "opponent": "Norway",
+            "venue": "Local",
+            "match_home": "Portugal",
+            "match_away": "Norway",
+            "home_id": "8361",
+            "away_id": "8492",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
             "result": "W",
             "competition": "UEFA Nations League",
             "corners_for": 6,
             "corners_against": 4,
             "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 9,
+            "shots_on_target": 7,
+            "total_shots": 20,
+            "yellow_cards": 3,
+            "red_cards": 1,
+            "total_cards": 4,
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181870",
+            "date": "14/11/2026",
+            "date_iso": "2026-11-14",
+            "opponent": "Denmark",
+            "venue": "Local",
+            "match_home": "Portugal",
+            "match_away": "Denmark",
+            "home_id": "8361",
+            "away_id": "8238",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
+            "home_score": 1,
+            "away_score": 4,
+            "score": "1 - 4",
+            "result": "L",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 7,
+            "total_corners": 13,
+            "shots_on_target": 8,
+            "total_shots": 15,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 19,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181872",
+            "date": "17/11/2026",
+            "date_iso": "2026-11-17",
+            "opponent": "Wales",
+            "venue": "Visitante",
+            "match_home": "Wales",
+            "match_away": "Portugal",
+            "home_id": "5790",
+            "away_id": "8361",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 1,
+            "corners_against": 6,
+            "total_corners": 7,
+            "shots_on_target": 6,
+            "total_shots": 11,
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 15
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
-        "away_last_5": [
+        "head_to_head": [
+          {
+            "date": "14 May 2024",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Netherlands",
+            "match_away": "Portugal",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Netherlands",
+            "home_team": "Netherlands",
+            "away_team": "Portugal"
+          },
+          {
+            "date": "11 Dic 2023",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Portugal",
+            "match_away": "Netherlands",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Portugal",
+            "home_team": "Portugal",
+            "away_team": "Netherlands"
+          },
+          {
+            "date": "22 Abr 2023",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Netherlands",
+            "match_away": "Portugal",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Netherlands",
+            "home_team": "Netherlands",
+            "away_team": "Portugal"
+          },
+          {
+            "date": "9 Oct 2022",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Portugal",
+            "match_away": "Netherlands",
+            "home_score": 1,
+            "away_score": 3,
+            "score": "1 - 3",
+            "winner": "Netherlands",
+            "home_team": "Portugal",
+            "away_team": "Netherlands"
+          },
+          {
+            "date": "21 Mar 2022",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Netherlands",
+            "match_away": "Portugal",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "winner": "Portugal",
+            "home_team": "Netherlands",
+            "away_team": "Portugal"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 5.5,
+          "corners_avg_away": 4.67,
+          "corners_avg_gen": 5.0,
+          "corners_conceded_home": 4.0,
+          "corners_conceded_away": 4.0,
+          "corners_conceded_gen": 4.0,
+          "shots_on_target_gen": 6.8,
+          "total_shots_gen": 18.4,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.0,
+          "red_cards_avg": 0.0,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 1.0,
+          "total_cards_avg": 0.8,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 10.67,
+          "fouls_avg": 10.2
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 3.33,
+          "corners_avg_gen": 4.4,
+          "corners_conceded_home": 5.5,
+          "corners_conceded_away": 5.33,
+          "corners_conceded_gen": 5.4,
+          "shots_on_target_gen": 7.0,
+          "total_shots_gen": 15.4,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 3.67,
+          "yellow_cards_avg": 3.2,
+          "red_cards_avg_home": 0.5,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.4,
+          "total_cards_avg_home": 3.0,
+          "total_cards_avg_away": 4.0,
+          "total_cards_avg": 3.6,
+          "fouls_avg_home": 13.5,
+          "fouls_avg_away": 11.67,
+          "fouls_avg": 12.4
+        },
+        "projected_corners": 9.2,
+        "projected_cards": 4.5,
+        "summary": {
+          "home_wins": 3,
+          "draws": 0,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "Netherlands 3 victorias • 0 empates • Portugal 2 victorias"
+        }
+      },
+      "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
+      "source_api": "FotMob (Scraping Oficial)"
+    },
+    {
+      "id": "fotmob_uefa_nations_league_6694092",
+      "match_id": "6694092",
+      "sport": "football",
+      "league": "UEFA Nations League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🇪🇺",
+      "country_flag": "🇪🇺",
+      "home_team": "Norway",
+      "away_team": "England",
+      "home_id": "8492",
+      "away_id": "8491",
+      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+      "date": "Sáb 27 Mar, 13:45",
+      "date_iso": "2027-03-27",
+      "time": "13:45",
+      "timestamp": 1806176700,
+      "timezone": "America/Guatemala",
+      "round": "1/4",
+      "h2h": {
+        "home_last_5": [
           {
             "match_id": "5181864",
             "date": "27/09/2026",
@@ -4603,7 +4273,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181866",
@@ -4630,7 +4302,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 7
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181867",
@@ -4657,7 +4331,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 7
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181869",
@@ -4684,7 +4360,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181871",
@@ -4711,12 +4389,174 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5181851",
+            "date": "29/09/2026",
+            "date_iso": "2026-09-29",
+            "opponent": "Czechia",
+            "venue": "Visitante",
+            "match_home": "Czechia",
+            "match_away": "England",
+            "home_id": "8496",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 1,
+            "total_corners": 7,
+            "shots_on_target": 7,
+            "total_shots": 22,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181853",
+            "date": "03/10/2026",
+            "date_iso": "2026-10-03",
+            "opponent": "Croatia",
+            "venue": "Visitante",
+            "match_home": "Croatia",
+            "match_away": "England",
+            "home_id": "10155",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 0,
+            "away_score": 7,
+            "score": "0 - 7",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 1,
+            "total_corners": 7,
+            "shots_on_target": 10,
+            "total_shots": 19,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181856",
+            "date": "06/10/2026",
+            "date_iso": "2026-10-06",
+            "opponent": "Czechia",
+            "venue": "Local",
+            "match_home": "England",
+            "match_away": "Czechia",
+            "home_id": "8491",
+            "away_id": "8496",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 2,
+            "total_corners": 8,
+            "shots_on_target": 3,
+            "total_shots": 17,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181858",
+            "date": "12/11/2026",
+            "date_iso": "2026-11-12",
+            "opponent": "Croatia",
+            "venue": "Local",
+            "match_home": "England",
+            "match_away": "Croatia",
+            "home_id": "8491",
+            "away_id": "10155",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 7,
+            "total_corners": 13,
+            "shots_on_target": 4,
+            "total_shots": 15,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181860",
+            "date": "15/11/2026",
+            "date_iso": "2026-11-15",
+            "opponent": "Spain",
+            "venue": "Visitante",
+            "match_home": "Spain",
+            "match_away": "England",
+            "home_id": "6720",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6720.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 4,
+            "total_corners": 10,
+            "shots_on_target": 5,
+            "total_shots": 9,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
           {
-            "date": "24 May 2024",
+            "date": "16 May 2024",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Norway",
+            "match_away": "England",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "Norway",
+            "away_team": "England"
+          },
+          {
+            "date": "15 Dic 2023",
             "competition": "UEFA Nations League",
             "tournament": "UEFA Nations League",
             "match_home": "England",
@@ -4729,81 +4569,46 @@
             "away_team": "Norway"
           },
           {
-            "date": "6 Dic 2023",
+            "date": "15 Abr 2023",
             "competition": "UEFA Nations League",
             "tournament": "UEFA Nations League",
             "match_home": "Norway",
             "match_away": "England",
-            "home_score": 3,
+            "home_score": 1,
             "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Norway",
+            "score": "1 - 1",
+            "winner": "Empate",
             "home_team": "Norway",
             "away_team": "England"
           },
           {
-            "date": "22 Abr 2023",
+            "date": "12 Oct 2022",
             "competition": "UEFA Nations League",
             "tournament": "UEFA Nations League",
             "match_home": "England",
             "match_away": "Norway",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
             "winner": "England",
             "home_team": "England",
             "away_team": "Norway"
           },
           {
-            "date": "17 Oct 2022",
+            "date": "22 Mar 2022",
             "competition": "UEFA Nations League",
             "tournament": "UEFA Nations League",
             "match_home": "Norway",
             "match_away": "England",
-            "home_score": 3,
-            "away_score": 1,
-            "score": "3 - 1",
-            "winner": "Norway",
-            "home_team": "Norway",
-            "away_team": "England"
-          },
-          {
-            "date": "17 Mar 2022",
-            "competition": "UEFA Nations League",
-            "tournament": "UEFA Nations League",
-            "match_home": "England",
-            "match_away": "Norway",
             "home_score": 2,
             "away_score": 0,
             "score": "2 - 0",
-            "winner": "England",
-            "home_team": "England",
-            "away_team": "Norway"
+            "winner": "Norway",
+            "home_team": "Norway",
+            "away_team": "England"
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 6.0,
-          "corners_avg_away": 6.0,
-          "corners_avg_gen": 6.0,
-          "corners_conceded_home": 4.5,
-          "corners_conceded_away": 2.0,
-          "corners_conceded_gen": 3.0,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 16.4,
-          "yellow_cards_avg_home": 0.5,
-          "yellow_cards_avg_away": 1.0,
-          "yellow_cards_avg": 0.8,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.33,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 0.5,
-          "total_cards_avg_away": 1.33,
-          "total_cards_avg": 1.0,
-          "fouls_avg_home": 9.5,
-          "fouls_avg_away": 11.0,
-          "fouls_avg": 10.4
-        },
-        "away_corner_stats": {
           "corners_avg_home": 7.5,
           "corners_avg_away": 4.67,
           "corners_avg_gen": 5.8,
@@ -4825,17 +4630,41 @@
           "fouls_avg_away": 8.67,
           "fouls_avg": 8.6
         },
-        "projected_corners": 9.1,
-        "projected_cards": 2.4,
+        "away_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 6.0,
+          "corners_avg_gen": 6.0,
+          "corners_conceded_home": 4.5,
+          "corners_conceded_away": 2.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 5.8,
+          "total_shots_gen": 16.4,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 1.33,
+          "total_cards_avg": 1.0,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 11.0,
+          "fouls_avg": 10.4
+        },
+        "projected_corners": 8.8,
+        "projected_cards": 2.7,
         "summary": {
-          "home_wins": 2,
-          "draws": 1,
-          "away_wins": 2,
-          "avg_goals": 2.8,
-          "text": "England 2 victorias • 1 empates • Norway 2 victorias"
+          "home_wins": 1,
+          "draws": 3,
+          "away_wins": 1,
+          "avg_goals": 2.4,
+          "text": "Norway 1 victorias • 3 empates • England 1 victorias"
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4886,7 +4715,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181793",
@@ -4913,7 +4744,9 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181794",
@@ -4940,7 +4773,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 4
+            "fouls": 4,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181797",
@@ -4967,7 +4802,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 18
+            "fouls": 18,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181799",
@@ -4994,7 +4831,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5023,7 +4862,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181854",
@@ -5050,7 +4891,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181855",
@@ -5077,7 +4920,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181857",
@@ -5104,7 +4949,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181860",
@@ -5131,7 +4978,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -5256,6 +5105,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5306,7 +5157,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181829",
@@ -5333,7 +5186,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181831",
@@ -5360,7 +5215,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181834",
@@ -5387,7 +5244,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181835",
@@ -5414,7 +5273,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5443,7 +5304,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181792",
@@ -5470,7 +5333,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181794",
@@ -5497,7 +5362,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181796",
@@ -5524,7 +5391,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181798",
@@ -5551,7 +5420,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -5676,6 +5547,450 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
+      "source_api": "FotMob (Scraping Oficial)"
+    },
+    {
+      "id": "fotmob_uefa_nations_league_6694096",
+      "match_id": "6694096",
+      "sport": "football",
+      "league": "UEFA Nations League",
+      "country": "Europa",
+      "country_code": "eu",
+      "league_flag": "🇪🇺",
+      "country_flag": "🇪🇺",
+      "home_team": "England",
+      "away_team": "Norway",
+      "home_id": "8491",
+      "away_id": "8492",
+      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+      "date": "Mar 30 Mar, 12:45",
+      "date_iso": "2027-03-30",
+      "time": "12:45",
+      "timestamp": 1806432300,
+      "timezone": "America/Guatemala",
+      "round": "1/4",
+      "h2h": {
+        "home_last_5": [
+          {
+            "match_id": "5181851",
+            "date": "29/09/2026",
+            "date_iso": "2026-09-29",
+            "opponent": "Czechia",
+            "venue": "Visitante",
+            "match_home": "Czechia",
+            "match_away": "England",
+            "home_id": "8496",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 0,
+            "away_score": 2,
+            "score": "0 - 2",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 1,
+            "total_corners": 7,
+            "shots_on_target": 7,
+            "total_shots": 22,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181853",
+            "date": "03/10/2026",
+            "date_iso": "2026-10-03",
+            "opponent": "Croatia",
+            "venue": "Visitante",
+            "match_home": "Croatia",
+            "match_away": "England",
+            "home_id": "10155",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 0,
+            "away_score": 7,
+            "score": "0 - 7",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 1,
+            "total_corners": 7,
+            "shots_on_target": 10,
+            "total_shots": 19,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181856",
+            "date": "06/10/2026",
+            "date_iso": "2026-10-06",
+            "opponent": "Czechia",
+            "venue": "Local",
+            "match_home": "England",
+            "match_away": "Czechia",
+            "home_id": "8491",
+            "away_id": "8496",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8496.png",
+            "home_score": 3,
+            "away_score": 0,
+            "score": "3 - 0",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 2,
+            "total_corners": 8,
+            "shots_on_target": 3,
+            "total_shots": 17,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181858",
+            "date": "12/11/2026",
+            "date_iso": "2026-11-12",
+            "opponent": "Croatia",
+            "venue": "Local",
+            "match_home": "England",
+            "match_away": "Croatia",
+            "home_id": "8491",
+            "away_id": "10155",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/10155.png",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 7,
+            "total_corners": 13,
+            "shots_on_target": 4,
+            "total_shots": 15,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181860",
+            "date": "15/11/2026",
+            "date_iso": "2026-11-15",
+            "opponent": "Spain",
+            "venue": "Visitante",
+            "match_home": "Spain",
+            "match_away": "England",
+            "home_id": "6720",
+            "away_id": "8491",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6720.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8491.png",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 6,
+            "corners_against": 4,
+            "total_corners": 10,
+            "shots_on_target": 5,
+            "total_shots": 9,
+            "yellow_cards": 2,
+            "red_cards": 1,
+            "total_cards": 3,
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "away_last_5": [
+          {
+            "match_id": "5181864",
+            "date": "27/09/2026",
+            "date_iso": "2026-09-27",
+            "opponent": "Portugal",
+            "venue": "Local",
+            "match_home": "Norway",
+            "match_away": "Portugal",
+            "home_id": "8492",
+            "away_id": "8361",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "home_score": 1,
+            "away_score": 2,
+            "score": "1 - 2",
+            "result": "L",
+            "competition": "UEFA Nations League",
+            "corners_for": 7,
+            "corners_against": 2,
+            "total_corners": 9,
+            "shots_on_target": 6,
+            "total_shots": 22,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181866",
+            "date": "01/10/2026",
+            "date_iso": "2026-10-01",
+            "opponent": "Wales",
+            "venue": "Visitante",
+            "match_home": "Wales",
+            "match_away": "Norway",
+            "home_id": "5790",
+            "away_id": "8492",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "UEFA Nations League",
+            "corners_for": 3,
+            "corners_against": 3,
+            "total_corners": 6,
+            "shots_on_target": 4,
+            "total_shots": 12,
+            "yellow_cards": 1,
+            "red_cards": 1,
+            "total_cards": 2,
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181867",
+            "date": "04/10/2026",
+            "date_iso": "2026-10-04",
+            "opponent": "Portugal",
+            "venue": "Visitante",
+            "match_home": "Portugal",
+            "match_away": "Norway",
+            "home_id": "8361",
+            "away_id": "8492",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "home_score": 2,
+            "away_score": 1,
+            "score": "2 - 1",
+            "result": "L",
+            "competition": "UEFA Nations League",
+            "corners_for": 4,
+            "corners_against": 6,
+            "total_corners": 10,
+            "shots_on_target": 3,
+            "total_shots": 9,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181869",
+            "date": "14/11/2026",
+            "date_iso": "2026-11-14",
+            "opponent": "Wales",
+            "venue": "Local",
+            "match_home": "Norway",
+            "match_away": "Wales",
+            "home_id": "8492",
+            "away_id": "5790",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/5790.png",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 8,
+            "corners_against": 2,
+            "total_corners": 10,
+            "shots_on_target": 6,
+            "total_shots": 15,
+            "yellow_cards": 0,
+            "red_cards": 0,
+            "total_cards": 0,
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "5181871",
+            "date": "17/11/2026",
+            "date_iso": "2026-11-17",
+            "opponent": "Denmark",
+            "venue": "Visitante",
+            "match_home": "Denmark",
+            "match_away": "Norway",
+            "home_id": "8238",
+            "away_id": "8492",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8238.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8492.png",
+            "home_score": 2,
+            "away_score": 3,
+            "score": "2 - 3",
+            "result": "W",
+            "competition": "UEFA Nations League",
+            "corners_for": 7,
+            "corners_against": 1,
+            "total_corners": 8,
+            "shots_on_target": 6,
+            "total_shots": 21,
+            "yellow_cards": 3,
+            "red_cards": 0,
+            "total_cards": 3,
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
+          }
+        ],
+        "head_to_head": [
+          {
+            "date": "24 May 2024",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "England",
+            "match_away": "Norway",
+            "home_score": 1,
+            "away_score": 1,
+            "score": "1 - 1",
+            "winner": "Empate",
+            "home_team": "England",
+            "away_team": "Norway"
+          },
+          {
+            "date": "6 Dic 2023",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Norway",
+            "match_away": "England",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Norway",
+            "home_team": "Norway",
+            "away_team": "England"
+          },
+          {
+            "date": "22 Abr 2023",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "England",
+            "match_away": "Norway",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "England",
+            "home_team": "England",
+            "away_team": "Norway"
+          },
+          {
+            "date": "17 Oct 2022",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "Norway",
+            "match_away": "England",
+            "home_score": 3,
+            "away_score": 1,
+            "score": "3 - 1",
+            "winner": "Norway",
+            "home_team": "Norway",
+            "away_team": "England"
+          },
+          {
+            "date": "17 Mar 2022",
+            "competition": "UEFA Nations League",
+            "tournament": "UEFA Nations League",
+            "match_home": "England",
+            "match_away": "Norway",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "England",
+            "home_team": "England",
+            "away_team": "Norway"
+          }
+        ],
+        "home_corner_stats": {
+          "corners_avg_home": 6.0,
+          "corners_avg_away": 6.0,
+          "corners_avg_gen": 6.0,
+          "corners_conceded_home": 4.5,
+          "corners_conceded_away": 2.0,
+          "corners_conceded_gen": 3.0,
+          "shots_on_target_gen": 5.8,
+          "total_shots_gen": 16.4,
+          "yellow_cards_avg_home": 0.5,
+          "yellow_cards_avg_away": 1.0,
+          "yellow_cards_avg": 0.8,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 0.5,
+          "total_cards_avg_away": 1.33,
+          "total_cards_avg": 1.0,
+          "fouls_avg_home": 9.5,
+          "fouls_avg_away": 11.0,
+          "fouls_avg": 10.4
+        },
+        "away_corner_stats": {
+          "corners_avg_home": 7.5,
+          "corners_avg_away": 4.67,
+          "corners_avg_gen": 5.8,
+          "corners_conceded_home": 2.0,
+          "corners_conceded_away": 3.33,
+          "corners_conceded_gen": 2.8,
+          "shots_on_target_gen": 5.0,
+          "total_shots_gen": 15.8,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 1.33,
+          "yellow_cards_avg": 1.4,
+          "red_cards_avg_home": 0.0,
+          "red_cards_avg_away": 0.33,
+          "red_cards_avg": 0.2,
+          "total_cards_avg_home": 1.5,
+          "total_cards_avg_away": 1.67,
+          "total_cards_avg": 1.6,
+          "fouls_avg_home": 8.5,
+          "fouls_avg_away": 8.67,
+          "fouls_avg": 8.6
+        },
+        "projected_corners": 9.1,
+        "projected_cards": 2.4,
+        "summary": {
+          "home_wins": 2,
+          "draws": 1,
+          "away_wins": 2,
+          "avg_goals": 2.8,
+          "text": "England 2 victorias • 1 empates • Norway 2 victorias"
+        }
+      },
+      "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5693,10 +6008,10 @@
       "away_id": "6708",
       "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8361.png",
       "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6708.png",
-      "date": "Dom 28 Mar, 12:45",
-      "date_iso": "2027-03-28",
+      "date": "Mar 30 Mar, 12:45",
+      "date_iso": "2027-03-30",
       "time": "12:45",
-      "timestamp": 1806259500,
+      "timestamp": 1806432300,
       "timezone": "America/Guatemala",
       "round": "1/4",
       "h2h": {
@@ -5726,7 +6041,9 @@
             "yellow_cards": 7,
             "red_cards": 0,
             "total_cards": 7,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181865",
@@ -5753,7 +6070,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181867",
@@ -5780,7 +6099,9 @@
             "yellow_cards": 3,
             "red_cards": 1,
             "total_cards": 4,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181870",
@@ -5807,7 +6128,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 19
+            "fouls": 19,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181872",
@@ -5834,7 +6157,9 @@
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5863,7 +6188,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181830",
@@ -5890,7 +6217,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 7
+            "fouls": 7,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181832",
@@ -5917,7 +6246,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181833",
@@ -5944,7 +6275,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 5
+            "fouls": 5,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "5181835",
@@ -5971,7 +6304,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -6096,6 +6431,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6244,6 +6581,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6392,6 +6731,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6540,6 +6881,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]

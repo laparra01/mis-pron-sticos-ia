@@ -3,8 +3,8 @@
   "league_id": 230,
   "country": "México",
   "country_code": "mx",
-  "last_updated": "2026-11-25T22:04:15.778762",
-  "total_fixtures": 12,
+  "last_updated": "2026-11-26T22:02:16.650458",
+  "total_fixtures": 10,
   "team_histories": {
     "1st ranked": [],
     "2nd ranked": [],
@@ -36,7 +36,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 22
+        "fouls": 22,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014617",
@@ -63,7 +65,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 19
+        "fouls": 19,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014629",
@@ -90,7 +94,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014636",
@@ -117,7 +123,9 @@
         "yellow_cards": 0,
         "red_cards": 2,
         "total_cards": 2,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014645",
@@ -144,37 +152,12 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 18
+        "fouls": 18,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Atlas": [
-      {
-        "match_id": "1000014612",
-        "date": "22/10/2026",
-        "date_iso": "2026-10-22",
-        "opponent": "CF América",
-        "venue": "Local",
-        "match_home": "Atlas",
-        "match_away": "CF América",
-        "home_id": "6577",
-        "away_id": "6576",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-        "home_score": 2,
-        "away_score": 5,
-        "score": "2 - 5",
-        "result": "L",
-        "competition": "Liga MX",
-        "corners_for": 9,
-        "corners_against": 4,
-        "total_corners": 13,
-        "shots_on_target": 6,
-        "total_shots": 24,
-        "yellow_cards": 2,
-        "red_cards": 0,
-        "total_cards": 2,
-        "fouls": 8
-      },
       {
         "match_id": "1000014621",
         "date": "25/10/2026",
@@ -200,7 +183,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014625",
@@ -227,7 +212,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 23
+        "fouls": 23,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014637",
@@ -254,7 +241,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014644",
@@ -281,7 +270,38 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "1000022854",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "Toluca",
+        "venue": "Visitante",
+        "match_home": "Toluca",
+        "match_away": "Atlas",
+        "home_id": "6618",
+        "away_id": "6577",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
+        "home_score": 2,
+        "away_score": 0,
+        "score": "2 - 0",
+        "result": "L",
+        "competition": "Liga MX",
+        "corners_for": 5,
+        "corners_against": 7,
+        "total_corners": 12,
+        "shots_on_target": 5,
+        "total_shots": 11,
+        "yellow_cards": 1,
+        "red_cards": 0,
+        "total_cards": 1,
+        "fouls": 7,
+        "xg_for": 0.8,
+        "xg_against": 2.03
       }
     ],
     "Atlético de San Luis": [
@@ -310,7 +330,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014617",
@@ -337,7 +359,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014625",
@@ -364,7 +388,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014634",
@@ -391,7 +417,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014643",
@@ -418,37 +446,12 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 4
+        "fouls": 4,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "CF América": [
-      {
-        "match_id": "1000014622",
-        "date": "26/10/2026",
-        "date_iso": "2026-10-26",
-        "opponent": "Pachuca",
-        "venue": "Local",
-        "match_home": "CF América",
-        "match_away": "Pachuca",
-        "home_id": "6576",
-        "away_id": "7848",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png",
-        "home_score": 1,
-        "away_score": 2,
-        "score": "1 - 2",
-        "result": "L",
-        "competition": "Liga MX",
-        "corners_for": 6,
-        "corners_against": 5,
-        "total_corners": 11,
-        "shots_on_target": 8,
-        "total_shots": 21,
-        "yellow_cards": 3,
-        "red_cards": 0,
-        "total_cards": 3,
-        "fouls": 17
-      },
       {
         "match_id": "1000014558",
         "date": "29/10/2026",
@@ -474,7 +477,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014631",
@@ -501,7 +506,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014640",
@@ -528,7 +535,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014649",
@@ -555,7 +564,38 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "1000022853",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "Monterrey",
+        "venue": "Visitante",
+        "match_home": "Monterrey",
+        "match_away": "CF América",
+        "home_id": "7849",
+        "away_id": "6576",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
+        "home_score": 0,
+        "away_score": 0,
+        "score": "0 - 0",
+        "result": "D",
+        "competition": "Liga MX",
+        "corners_for": 12,
+        "corners_against": 3,
+        "total_corners": 15,
+        "shots_on_target": 8,
+        "total_shots": 19,
+        "yellow_cards": 6,
+        "red_cards": 0,
+        "total_cards": 6,
+        "fouls": 21,
+        "xg_for": 1.37,
+        "xg_against": 0.51
       }
     ],
     "Chivas": [
@@ -584,7 +624,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014619",
@@ -611,7 +653,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014629",
@@ -638,7 +682,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014642",
@@ -665,7 +711,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014650",
@@ -692,7 +740,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Cruz Azul": [
@@ -721,7 +771,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014623",
@@ -748,7 +800,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014633",
@@ -775,7 +829,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014638",
@@ -802,7 +858,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014650",
@@ -829,7 +887,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "FC Juárez": [
@@ -858,7 +918,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 18
+        "fouls": 18,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014616",
@@ -885,7 +947,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014626",
@@ -912,7 +976,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014634",
@@ -939,7 +1005,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 22
+        "fouls": 22,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014644",
@@ -966,7 +1034,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "León": [
@@ -995,7 +1065,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 18
+        "fouls": 18,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014618",
@@ -1022,7 +1094,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014633",
@@ -1049,7 +1123,9 @@
         "yellow_cards": 5,
         "red_cards": 0,
         "total_cards": 5,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014642",
@@ -1076,7 +1152,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014646",
@@ -1103,37 +1181,12 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Monterrey": [
-      {
-        "match_id": "1000014619",
-        "date": "25/10/2026",
-        "date_iso": "2026-10-25",
-        "opponent": "Chivas",
-        "venue": "Local",
-        "match_home": "Monterrey",
-        "match_away": "Chivas",
-        "home_id": "7849",
-        "away_id": "7807",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7807.png",
-        "home_score": 0,
-        "away_score": 1,
-        "score": "0 - 1",
-        "result": "L",
-        "competition": "Liga MX",
-        "corners_for": 8,
-        "corners_against": 3,
-        "total_corners": 11,
-        "shots_on_target": 5,
-        "total_shots": 11,
-        "yellow_cards": 2,
-        "red_cards": 2,
-        "total_cards": 4,
-        "fouls": 16
-      },
       {
         "match_id": "1000014630",
         "date": "01/11/2026",
@@ -1159,7 +1212,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014639",
@@ -1186,7 +1241,9 @@
         "yellow_cards": 5,
         "red_cards": 1,
         "total_cards": 6,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014556",
@@ -1213,7 +1270,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014648",
@@ -1240,7 +1299,38 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "1000022853",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "CF América",
+        "venue": "Local",
+        "match_home": "Monterrey",
+        "match_away": "CF América",
+        "home_id": "7849",
+        "away_id": "6576",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
+        "home_score": 0,
+        "away_score": 0,
+        "score": "0 - 0",
+        "result": "D",
+        "competition": "Liga MX",
+        "corners_for": 3,
+        "corners_against": 12,
+        "total_corners": 15,
+        "shots_on_target": 1,
+        "total_shots": 8,
+        "yellow_cards": 0,
+        "red_cards": 1,
+        "total_cards": 1,
+        "fouls": 5,
+        "xg_for": 0.51,
+        "xg_against": 1.37
       }
     ],
     "Necaxa": [
@@ -1269,7 +1359,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014616",
@@ -1296,7 +1388,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014632",
@@ -1323,7 +1417,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014635",
@@ -1350,7 +1446,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 7
+        "fouls": 7,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014651",
@@ -1377,7 +1475,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Pachuca": [
@@ -1406,7 +1506,9 @@
         "yellow_cards": 5,
         "red_cards": 0,
         "total_cards": 5,
-        "fouls": 20
+        "fouls": 20,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014622",
@@ -1433,7 +1535,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 16
+        "fouls": 16,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014628",
@@ -1460,7 +1564,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014637",
@@ -1487,7 +1593,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014647",
@@ -1514,7 +1622,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Puebla": [
@@ -1543,7 +1653,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 5
+        "fouls": 5,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014621",
@@ -1570,7 +1682,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014627",
@@ -1597,7 +1711,9 @@
         "yellow_cards": 0,
         "red_cards": 0,
         "total_cards": 0,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014641",
@@ -1624,7 +1740,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014643",
@@ -1651,7 +1769,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 19
+        "fouls": 19,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Pumas": [
@@ -1680,7 +1800,9 @@
         "yellow_cards": 3,
         "red_cards": 1,
         "total_cards": 4,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014620",
@@ -1707,7 +1829,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 17
+        "fouls": 17,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014627",
@@ -1734,7 +1858,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 5
+        "fouls": 5,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014640",
@@ -1761,7 +1887,9 @@
         "yellow_cards": 7,
         "red_cards": 0,
         "total_cards": 7,
-        "fouls": 18
+        "fouls": 18,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014648",
@@ -1788,7 +1916,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 21
+        "fouls": 21,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Querétaro FC": [
@@ -1817,7 +1947,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014626",
@@ -1844,7 +1976,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014641",
@@ -1871,7 +2005,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014556",
@@ -1898,7 +2034,9 @@
         "yellow_cards": 4,
         "red_cards": 2,
         "total_cards": 6,
-        "fouls": 19
+        "fouls": 19,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014651",
@@ -1925,7 +2063,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Santos Laguna": [
@@ -1954,7 +2094,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014624",
@@ -1981,7 +2123,9 @@
         "yellow_cards": 4,
         "red_cards": 0,
         "total_cards": 4,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014632",
@@ -2008,7 +2152,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014636",
@@ -2035,7 +2181,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014646",
@@ -2062,7 +2210,9 @@
         "yellow_cards": 0,
         "red_cards": 1,
         "total_cards": 1,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Tigres": [
@@ -2091,7 +2241,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 5
+        "fouls": 5,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014620",
@@ -2118,7 +2270,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 11
+        "fouls": 11,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014628",
@@ -2145,7 +2299,9 @@
         "yellow_cards": 1,
         "red_cards": 1,
         "total_cards": 2,
-        "fouls": 6
+        "fouls": 6,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014638",
@@ -2172,7 +2328,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 13
+        "fouls": 13,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014649",
@@ -2199,7 +2357,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 10
+        "fouls": 10,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Tijuana": [
@@ -2228,7 +2388,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 15
+        "fouls": 15,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014558",
@@ -2255,7 +2417,9 @@
         "yellow_cards": 4,
         "red_cards": 1,
         "total_cards": 5,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014630",
@@ -2282,7 +2446,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014635",
@@ -2309,7 +2475,9 @@
         "yellow_cards": 2,
         "red_cards": 0,
         "total_cards": 2,
-        "fouls": 8
+        "fouls": 8,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014645",
@@ -2336,37 +2504,12 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 12
+        "fouls": 12,
+        "xg_for": null,
+        "xg_against": null
       }
     ],
     "Toluca": [
-      {
-        "match_id": "1000014613",
-        "date": "22/10/2026",
-        "date_iso": "2026-10-22",
-        "opponent": "Tijuana",
-        "venue": "Local",
-        "match_home": "Toluca",
-        "match_away": "Tijuana",
-        "home_id": "6618",
-        "away_id": "162418",
-        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png",
-        "home_score": 2,
-        "away_score": 2,
-        "score": "2 - 2",
-        "result": "D",
-        "competition": "Liga MX",
-        "corners_for": 17,
-        "corners_against": 5,
-        "total_corners": 22,
-        "shots_on_target": 6,
-        "total_shots": 32,
-        "yellow_cards": 0,
-        "red_cards": 0,
-        "total_cards": 0,
-        "fouls": 12
-      },
       {
         "match_id": "1000014618",
         "date": "24/10/2026",
@@ -2392,7 +2535,9 @@
         "yellow_cards": 3,
         "red_cards": 0,
         "total_cards": 3,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014631",
@@ -2419,7 +2564,9 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 14
+        "fouls": 14,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014639",
@@ -2446,7 +2593,9 @@
         "yellow_cards": 1,
         "red_cards": 0,
         "total_cards": 1,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
       },
       {
         "match_id": "1000014647",
@@ -2473,7 +2622,38 @@
         "yellow_cards": 2,
         "red_cards": 1,
         "total_cards": 3,
-        "fouls": 9
+        "fouls": 9,
+        "xg_for": null,
+        "xg_against": null
+      },
+      {
+        "match_id": "1000022854",
+        "date": "26/11/2026",
+        "date_iso": "2026-11-26",
+        "opponent": "Atlas",
+        "venue": "Local",
+        "match_home": "Toluca",
+        "match_away": "Atlas",
+        "home_id": "6618",
+        "away_id": "6577",
+        "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
+        "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
+        "home_score": 2,
+        "away_score": 0,
+        "score": "2 - 0",
+        "result": "W",
+        "competition": "Liga MX",
+        "corners_for": 7,
+        "corners_against": 5,
+        "total_corners": 12,
+        "shots_on_target": 6,
+        "total_shots": 19,
+        "yellow_cards": 2,
+        "red_cards": 0,
+        "total_cards": 2,
+        "fouls": 7,
+        "xg_for": 2.03,
+        "xg_against": 0.8
       }
     ]
   },
@@ -2589,26 +2769,26 @@
       "fouls_avg": 16.4
     },
     "Atlas": {
-      "corners_avg_home": 7.67,
-      "corners_avg_away": 6.5,
-      "corners_avg_gen": 7.2,
+      "corners_avg_home": 7.0,
+      "corners_avg_away": 6.0,
+      "corners_avg_gen": 6.4,
       "corners_conceded_home": 4.0,
-      "corners_conceded_away": 8.0,
-      "corners_conceded_gen": 5.6,
-      "shots_on_target_gen": 5.8,
-      "total_shots_gen": 15.6,
-      "yellow_cards_avg_home": 1.67,
-      "yellow_cards_avg_away": 2.5,
-      "yellow_cards_avg": 2.0,
-      "red_cards_avg_home": 0.33,
+      "corners_conceded_away": 7.67,
+      "corners_conceded_gen": 6.2,
+      "shots_on_target_gen": 5.6,
+      "total_shots_gen": 13.0,
+      "yellow_cards_avg_home": 1.5,
+      "yellow_cards_avg_away": 2.0,
+      "yellow_cards_avg": 1.8,
+      "red_cards_avg_home": 0.5,
       "red_cards_avg_away": 0.0,
       "red_cards_avg": 0.2,
       "total_cards_avg_home": 2.0,
-      "total_cards_avg_away": 2.5,
-      "total_cards_avg": 2.2,
-      "fouls_avg_home": 9.67,
-      "fouls_avg_away": 18.0,
-      "fouls_avg": 13.0
+      "total_cards_avg_away": 2.0,
+      "total_cards_avg": 2.0,
+      "fouls_avg_home": 10.5,
+      "fouls_avg_away": 14.33,
+      "fouls_avg": 12.8
     },
     "Atlético de San Luis": {
       "corners_avg_home": 6.67,
@@ -2633,26 +2813,26 @@
       "fouls_avg": 7.6
     },
     "CF América": {
-      "corners_avg_home": 7.0,
-      "corners_avg_away": 3.5,
-      "corners_avg_gen": 5.6,
-      "corners_conceded_home": 4.0,
-      "corners_conceded_away": 5.5,
-      "corners_conceded_gen": 4.6,
+      "corners_avg_home": 7.5,
+      "corners_avg_away": 6.33,
+      "corners_avg_gen": 6.8,
+      "corners_conceded_home": 3.5,
+      "corners_conceded_away": 4.67,
+      "corners_conceded_gen": 4.2,
       "shots_on_target_gen": 5.6,
-      "total_shots_gen": 17.2,
-      "yellow_cards_avg_home": 2.67,
-      "yellow_cards_avg_away": 4.0,
-      "yellow_cards_avg": 3.2,
-      "red_cards_avg_home": 0.33,
+      "total_shots_gen": 16.8,
+      "yellow_cards_avg_home": 2.5,
+      "yellow_cards_avg_away": 4.67,
+      "yellow_cards_avg": 3.8,
+      "red_cards_avg_home": 0.5,
       "red_cards_avg_away": 0.0,
       "red_cards_avg": 0.2,
       "total_cards_avg_home": 3.0,
-      "total_cards_avg_away": 4.0,
-      "total_cards_avg": 3.4,
-      "fouls_avg_home": 14.33,
-      "fouls_avg_away": 15.0,
-      "fouls_avg": 14.6
+      "total_cards_avg_away": 4.67,
+      "total_cards_avg": 4.0,
+      "fouls_avg_home": 13.0,
+      "fouls_avg_away": 17.0,
+      "fouls_avg": 15.4
     },
     "Chivas": {
       "corners_avg_home": 6.0,
@@ -2743,26 +2923,26 @@
       "fouls_avg": 13.6
     },
     "Monterrey": {
-      "corners_avg_home": 8.5,
+      "corners_avg_home": 6.0,
       "corners_avg_away": 4.67,
-      "corners_avg_gen": 6.2,
-      "corners_conceded_home": 2.5,
+      "corners_avg_gen": 5.2,
+      "corners_conceded_home": 7.0,
       "corners_conceded_away": 5.33,
-      "corners_conceded_gen": 4.2,
-      "shots_on_target_gen": 5.0,
-      "total_shots_gen": 12.6,
-      "yellow_cards_avg_home": 2.5,
+      "corners_conceded_gen": 6.0,
+      "shots_on_target_gen": 4.2,
+      "total_shots_gen": 12.0,
+      "yellow_cards_avg_home": 1.5,
       "yellow_cards_avg_away": 3.0,
-      "yellow_cards_avg": 2.8,
-      "red_cards_avg_home": 1.0,
+      "yellow_cards_avg": 2.4,
+      "red_cards_avg_home": 0.5,
       "red_cards_avg_away": 0.67,
-      "red_cards_avg": 0.8,
-      "total_cards_avg_home": 3.5,
+      "red_cards_avg": 0.6,
+      "total_cards_avg_home": 2.0,
       "total_cards_avg_away": 3.67,
-      "total_cards_avg": 3.6,
-      "fouls_avg_home": 11.0,
+      "total_cards_avg": 3.0,
+      "fouls_avg_home": 5.5,
       "fouls_avg_away": 12.33,
-      "fouls_avg": 11.8
+      "fouls_avg": 9.6
     },
     "Necaxa": {
       "corners_avg_home": 6.0,
@@ -2941,889 +3121,30 @@
       "fouls_avg": 11.8
     },
     "Toluca": {
-      "corners_avg_home": 11.5,
+      "corners_avg_home": 6.5,
       "corners_avg_away": 4.33,
-      "corners_avg_gen": 7.2,
+      "corners_avg_gen": 5.2,
       "corners_conceded_home": 5.5,
       "corners_conceded_away": 4.67,
       "corners_conceded_gen": 5.0,
       "shots_on_target_gen": 5.6,
-      "total_shots_gen": 16.6,
-      "yellow_cards_avg_home": 0.5,
+      "total_shots_gen": 14.0,
+      "yellow_cards_avg_home": 1.5,
       "yellow_cards_avg_away": 2.33,
-      "yellow_cards_avg": 1.6,
+      "yellow_cards_avg": 2.0,
       "red_cards_avg_home": 0.0,
       "red_cards_avg_away": 0.67,
       "red_cards_avg": 0.4,
-      "total_cards_avg_home": 0.5,
+      "total_cards_avg_home": 1.5,
       "total_cards_avg_away": 3.0,
-      "total_cards_avg": 2.0,
-      "fouls_avg_home": 10.5,
+      "total_cards_avg": 2.4,
+      "fouls_avg_home": 8.0,
       "fouls_avg_away": 12.33,
-      "fouls_avg": 11.6
+      "fouls_avg": 10.6
     }
   },
+  "team_season_stats": {},
   "upcoming_matches": [
-    {
-      "id": "fotmob_liga_mx_1000022854",
-      "match_id": "1000022854",
-      "sport": "football",
-      "league": "Liga MX",
-      "country": "México",
-      "country_code": "mx",
-      "league_flag": "🇲🇽",
-      "country_flag": "🇲🇽",
-      "home_team": "Toluca",
-      "away_team": "Atlas",
-      "home_id": "6618",
-      "away_id": "6577",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-      "date": "Mié 25 Nov, 19:00",
-      "date_iso": "2026-11-25",
-      "time": "19:00",
-      "timestamp": 1795654800,
-      "timezone": "America/Guatemala",
-      "round": "Apertura - Quarter-finals",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "1000014613",
-            "date": "22/10/2026",
-            "date_iso": "2026-10-22",
-            "opponent": "Tijuana",
-            "venue": "Local",
-            "match_home": "Toluca",
-            "match_away": "Tijuana",
-            "home_id": "6618",
-            "away_id": "162418",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 17,
-            "corners_against": 5,
-            "total_corners": 22,
-            "shots_on_target": 6,
-            "total_shots": 32,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 12
-          },
-          {
-            "match_id": "1000014618",
-            "date": "24/10/2026",
-            "date_iso": "2026-10-24",
-            "opponent": "León",
-            "venue": "Visitante",
-            "match_home": "León",
-            "match_away": "Toluca",
-            "home_id": "1841",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1841.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 3,
-            "total_corners": 9,
-            "shots_on_target": 5,
-            "total_shots": 14,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 14
-          },
-          {
-            "match_id": "1000014631",
-            "date": "01/11/2026",
-            "date_iso": "2026-11-01",
-            "opponent": "CF América",
-            "venue": "Visitante",
-            "match_home": "CF América",
-            "match_away": "Toluca",
-            "home_id": "6576",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 5,
-            "corners_against": 6,
-            "total_corners": 11,
-            "shots_on_target": 7,
-            "total_shots": 18,
-            "yellow_cards": 2,
-            "red_cards": 1,
-            "total_cards": 3,
-            "fouls": 14
-          },
-          {
-            "match_id": "1000014639",
-            "date": "08/11/2026",
-            "date_iso": "2026-11-08",
-            "opponent": "Monterrey",
-            "venue": "Local",
-            "match_home": "Toluca",
-            "match_away": "Monterrey",
-            "home_id": "6618",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "result": "W",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 7,
-            "total_shots": 10,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 9
-          },
-          {
-            "match_id": "1000014647",
-            "date": "21/11/2026",
-            "date_iso": "2026-11-21",
-            "opponent": "Pachuca",
-            "venue": "Visitante",
-            "match_home": "Pachuca",
-            "match_away": "Toluca",
-            "home_id": "7848",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 2,
-            "corners_against": 5,
-            "total_corners": 7,
-            "shots_on_target": 3,
-            "total_shots": 9,
-            "yellow_cards": 2,
-            "red_cards": 1,
-            "total_cards": 3,
-            "fouls": 9
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "1000014612",
-            "date": "22/10/2026",
-            "date_iso": "2026-10-22",
-            "opponent": "CF América",
-            "venue": "Local",
-            "match_home": "Atlas",
-            "match_away": "CF América",
-            "home_id": "6577",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 2,
-            "away_score": 5,
-            "score": "2 - 5",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 9,
-            "corners_against": 4,
-            "total_corners": 13,
-            "shots_on_target": 6,
-            "total_shots": 24,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 8
-          },
-          {
-            "match_id": "1000014621",
-            "date": "25/10/2026",
-            "date_iso": "2026-10-25",
-            "opponent": "Puebla",
-            "venue": "Local",
-            "match_home": "Atlas",
-            "match_away": "Puebla",
-            "home_id": "6577",
-            "away_id": "7847",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7847.png",
-            "home_score": 4,
-            "away_score": 3,
-            "score": "4 - 3",
-            "result": "W",
-            "competition": "Liga MX",
-            "corners_for": 7,
-            "corners_against": 3,
-            "total_corners": 10,
-            "shots_on_target": 6,
-            "total_shots": 16,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 9
-          },
-          {
-            "match_id": "1000014625",
-            "date": "31/10/2026",
-            "date_iso": "2026-10-31",
-            "opponent": "Atlético de San Luis",
-            "venue": "Visitante",
-            "match_home": "Atlético de San Luis",
-            "match_away": "Atlas",
-            "home_id": "6358",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6358.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "W",
-            "competition": "Liga MX",
-            "corners_for": 4,
-            "corners_against": 7,
-            "total_corners": 11,
-            "shots_on_target": 1,
-            "total_shots": 8,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 23
-          },
-          {
-            "match_id": "1000014637",
-            "date": "07/11/2026",
-            "date_iso": "2026-11-07",
-            "opponent": "Pachuca",
-            "venue": "Local",
-            "match_home": "Atlas",
-            "match_away": "Pachuca",
-            "home_id": "6577",
-            "away_id": "7848",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png",
-            "home_score": 1,
-            "away_score": 4,
-            "score": "1 - 4",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 7,
-            "corners_against": 5,
-            "total_corners": 12,
-            "shots_on_target": 6,
-            "total_shots": 11,
-            "yellow_cards": 3,
-            "red_cards": 1,
-            "total_cards": 4,
-            "fouls": 12
-          },
-          {
-            "match_id": "1000014644",
-            "date": "21/11/2026",
-            "date_iso": "2026-11-21",
-            "opponent": "FC Juárez",
-            "venue": "Visitante",
-            "match_home": "FC Juárez",
-            "match_away": "Atlas",
-            "home_id": "649424",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/649424.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 9,
-            "corners_against": 9,
-            "total_corners": 18,
-            "shots_on_target": 10,
-            "total_shots": 19,
-            "yellow_cards": 1,
-            "red_cards": 0,
-            "total_cards": 1,
-            "fouls": 13
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "12/09/2026",
-            "competition": "Liga MX",
-            "tournament": "Liga MX",
-            "match_home": "Toluca",
-            "match_away": "Atlas",
-            "home_id": "6618",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 5,
-            "away_score": 2,
-            "score": "5 - 2",
-            "winner": "Toluca"
-          },
-          {
-            "date": "15/03/2026",
-            "competition": "Liga MX Clausura",
-            "tournament": "Liga MX Clausura",
-            "match_home": "Toluca",
-            "match_away": "Atlas",
-            "home_id": "6618",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "01/11/2025",
-            "competition": "Liga MX Apertura",
-            "tournament": "Liga MX Apertura",
-            "match_home": "Atlas",
-            "match_away": "Toluca",
-            "home_id": "6577",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 0,
-            "away_score": 0,
-            "score": "0 - 0",
-            "winner": "Empate"
-          },
-          {
-            "date": "13/04/2025",
-            "competition": "Liga MX Clausura",
-            "tournament": "Liga MX Clausura",
-            "match_home": "Atlas",
-            "match_away": "Toluca",
-            "home_id": "6577",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 2,
-            "away_score": 3,
-            "score": "2 - 3",
-            "winner": "Toluca"
-          },
-          {
-            "date": "28/09/2024",
-            "competition": "Liga MX Apertura",
-            "tournament": "Liga MX Apertura",
-            "match_home": "Toluca",
-            "match_away": "Atlas",
-            "home_id": "6618",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Toluca"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 11.5,
-          "corners_avg_away": 4.33,
-          "corners_avg_gen": 7.2,
-          "corners_conceded_home": 5.5,
-          "corners_conceded_away": 4.67,
-          "corners_conceded_gen": 5.0,
-          "shots_on_target_gen": 5.6,
-          "total_shots_gen": 16.6,
-          "yellow_cards_avg_home": 0.5,
-          "yellow_cards_avg_away": 2.33,
-          "yellow_cards_avg": 1.6,
-          "red_cards_avg_home": 0.0,
-          "red_cards_avg_away": 0.67,
-          "red_cards_avg": 0.4,
-          "total_cards_avg_home": 0.5,
-          "total_cards_avg_away": 3.0,
-          "total_cards_avg": 2.0,
-          "fouls_avg_home": 10.5,
-          "fouls_avg_away": 12.33,
-          "fouls_avg": 11.6
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 7.67,
-          "corners_avg_away": 6.5,
-          "corners_avg_gen": 7.2,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 8.0,
-          "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 15.6,
-          "yellow_cards_avg_home": 1.67,
-          "yellow_cards_avg_away": 2.5,
-          "yellow_cards_avg": 2.0,
-          "red_cards_avg_home": 0.33,
-          "red_cards_avg_away": 0.0,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 2.0,
-          "total_cards_avg_away": 2.5,
-          "total_cards_avg": 2.2,
-          "fouls_avg_home": 9.67,
-          "fouls_avg_away": 18.0,
-          "fouls_avg": 13.0
-        },
-        "projected_corners": 14.4,
-        "projected_cards": 3.6,
-        "summary": {
-          "home_wins": 3,
-          "draws": 2,
-          "away_wins": 0,
-          "avg_goals": 3.8,
-          "text": "Toluca 3 victorias • 2 empates • Atlas 0 victorias"
-        }
-      },
-      "referee": null,
-      "source_api": "FotMob (Scraping Oficial)"
-    },
-    {
-      "id": "fotmob_liga_mx_1000022853",
-      "match_id": "1000022853",
-      "sport": "football",
-      "league": "Liga MX",
-      "country": "México",
-      "country_code": "mx",
-      "league_flag": "🇲🇽",
-      "country_flag": "🇲🇽",
-      "home_team": "Monterrey",
-      "away_team": "CF América",
-      "home_id": "7849",
-      "away_id": "6576",
-      "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-      "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-      "date": "Mié 25 Nov, 21:10",
-      "date_iso": "2026-11-25",
-      "time": "21:10",
-      "timestamp": 1795662600,
-      "timezone": "America/Guatemala",
-      "round": "Apertura - Quarter-finals",
-      "h2h": {
-        "home_last_5": [
-          {
-            "match_id": "1000014619",
-            "date": "25/10/2026",
-            "date_iso": "2026-10-25",
-            "opponent": "Chivas",
-            "venue": "Local",
-            "match_home": "Monterrey",
-            "match_away": "Chivas",
-            "home_id": "7849",
-            "away_id": "7807",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7807.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 8,
-            "corners_against": 3,
-            "total_corners": 11,
-            "shots_on_target": 5,
-            "total_shots": 11,
-            "yellow_cards": 2,
-            "red_cards": 2,
-            "total_cards": 4,
-            "fouls": 16
-          },
-          {
-            "match_id": "1000014630",
-            "date": "01/11/2026",
-            "date_iso": "2026-11-01",
-            "opponent": "Tijuana",
-            "venue": "Local",
-            "match_home": "Monterrey",
-            "match_away": "Tijuana",
-            "home_id": "7849",
-            "away_id": "162418",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png",
-            "home_score": 3,
-            "away_score": 3,
-            "score": "3 - 3",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 7,
-            "total_shots": 18,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 6
-          },
-          {
-            "match_id": "1000014639",
-            "date": "08/11/2026",
-            "date_iso": "2026-11-08",
-            "opponent": "Toluca",
-            "venue": "Visitante",
-            "match_home": "Toluca",
-            "match_away": "Monterrey",
-            "home_id": "6618",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 4,
-            "away_score": 0,
-            "score": "4 - 0",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 6,
-            "total_corners": 12,
-            "shots_on_target": 2,
-            "total_shots": 7,
-            "yellow_cards": 5,
-            "red_cards": 1,
-            "total_cards": 6,
-            "fouls": 12
-          },
-          {
-            "match_id": "1000014556",
-            "date": "14/11/2026",
-            "date_iso": "2026-11-14",
-            "opponent": "Querétaro FC",
-            "venue": "Visitante",
-            "match_home": "Querétaro FC",
-            "match_away": "Monterrey",
-            "home_id": "1943",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1943.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "W",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 4,
-            "total_corners": 10,
-            "shots_on_target": 5,
-            "total_shots": 16,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 14
-          },
-          {
-            "match_id": "1000014648",
-            "date": "22/11/2026",
-            "date_iso": "2026-11-22",
-            "opponent": "Pumas",
-            "venue": "Visitante",
-            "match_home": "Pumas",
-            "match_away": "Monterrey",
-            "home_id": "1946",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1946.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 0,
-            "away_score": 2,
-            "score": "0 - 2",
-            "result": "W",
-            "competition": "Liga MX",
-            "corners_for": 2,
-            "corners_against": 6,
-            "total_corners": 8,
-            "shots_on_target": 6,
-            "total_shots": 11,
-            "yellow_cards": 1,
-            "red_cards": 1,
-            "total_cards": 2,
-            "fouls": 11
-          }
-        ],
-        "away_last_5": [
-          {
-            "match_id": "1000014622",
-            "date": "26/10/2026",
-            "date_iso": "2026-10-26",
-            "opponent": "Pachuca",
-            "venue": "Local",
-            "match_home": "CF América",
-            "match_away": "Pachuca",
-            "home_id": "6576",
-            "away_id": "7848",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 5,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 21,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 17
-          },
-          {
-            "match_id": "1000014558",
-            "date": "29/10/2026",
-            "date_iso": "2026-10-29",
-            "opponent": "Tijuana",
-            "venue": "Local",
-            "match_home": "CF América",
-            "match_away": "Tijuana",
-            "home_id": "6576",
-            "away_id": "162418",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 9,
-            "corners_against": 2,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 28,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 12
-          },
-          {
-            "match_id": "1000014631",
-            "date": "01/11/2026",
-            "date_iso": "2026-11-01",
-            "opponent": "Toluca",
-            "venue": "Local",
-            "match_home": "CF América",
-            "match_away": "Toluca",
-            "home_id": "6576",
-            "away_id": "6618",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 5,
-            "total_corners": 11,
-            "shots_on_target": 6,
-            "total_shots": 15,
-            "yellow_cards": 3,
-            "red_cards": 1,
-            "total_cards": 4,
-            "fouls": 14
-          },
-          {
-            "match_id": "1000014640",
-            "date": "08/11/2026",
-            "date_iso": "2026-11-08",
-            "opponent": "Pumas",
-            "venue": "Visitante",
-            "match_home": "Pumas",
-            "match_away": "CF América",
-            "home_id": "1946",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/1946.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 2,
-            "corners_against": 4,
-            "total_corners": 6,
-            "shots_on_target": 2,
-            "total_shots": 12,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 14
-          },
-          {
-            "match_id": "1000014649",
-            "date": "22/11/2026",
-            "date_iso": "2026-11-22",
-            "opponent": "Tigres",
-            "venue": "Visitante",
-            "match_home": "Tigres",
-            "match_away": "CF América",
-            "home_id": "8561",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/8561.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 5,
-            "corners_against": 7,
-            "total_corners": 12,
-            "shots_on_target": 4,
-            "total_shots": 10,
-            "yellow_cards": 4,
-            "red_cards": 0,
-            "total_cards": 4,
-            "fouls": 16
-          }
-        ],
-        "head_to_head": [
-          {
-            "date": "11/10/2026",
-            "competition": "Liga MX",
-            "tournament": "Liga MX",
-            "match_home": "CF América",
-            "match_away": "Monterrey",
-            "home_id": "6576",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 1,
-            "away_score": 1,
-            "score": "1 - 1",
-            "winner": "Empate"
-          },
-          {
-            "date": "03/09/2026",
-            "competition": "Leagues Cup",
-            "tournament": "Leagues Cup",
-            "match_home": "CF América",
-            "match_away": "Monterrey",
-            "home_id": "6576",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "winner": "Empate"
-          },
-          {
-            "date": "08/02/2026",
-            "competition": "Liga MX Clausura",
-            "tournament": "Liga MX Clausura",
-            "match_home": "CF América",
-            "match_away": "Monterrey",
-            "home_id": "6576",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 1,
-            "away_score": 0,
-            "score": "1 - 0",
-            "winner": "CF América"
-          },
-          {
-            "date": "29/11/2025",
-            "competition": "Liga MX Apertura Playoff",
-            "tournament": "Liga MX Apertura Playoff",
-            "match_home": "CF América",
-            "match_away": "Monterrey",
-            "home_id": "6576",
-            "away_id": "7849",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "home_score": 2,
-            "away_score": 1,
-            "score": "2 - 1",
-            "winner": "CF América"
-          },
-          {
-            "date": "27/11/2025",
-            "competition": "Liga MX Apertura Playoff",
-            "tournament": "Liga MX Apertura Playoff",
-            "match_home": "Monterrey",
-            "match_away": "CF América",
-            "home_id": "7849",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Monterrey"
-          }
-        ],
-        "home_corner_stats": {
-          "corners_avg_home": 8.5,
-          "corners_avg_away": 4.67,
-          "corners_avg_gen": 6.2,
-          "corners_conceded_home": 2.5,
-          "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 12.6,
-          "yellow_cards_avg_home": 2.5,
-          "yellow_cards_avg_away": 3.0,
-          "yellow_cards_avg": 2.8,
-          "red_cards_avg_home": 1.0,
-          "red_cards_avg_away": 0.67,
-          "red_cards_avg": 0.8,
-          "total_cards_avg_home": 3.5,
-          "total_cards_avg_away": 3.67,
-          "total_cards_avg": 3.6,
-          "fouls_avg_home": 11.0,
-          "fouls_avg_away": 12.33,
-          "fouls_avg": 11.8
-        },
-        "away_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 3.5,
-          "corners_avg_gen": 5.6,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 5.5,
-          "corners_conceded_gen": 4.6,
-          "shots_on_target_gen": 5.6,
-          "total_shots_gen": 17.2,
-          "yellow_cards_avg_home": 2.67,
-          "yellow_cards_avg_away": 4.0,
-          "yellow_cards_avg": 3.2,
-          "red_cards_avg_home": 0.33,
-          "red_cards_avg_away": 0.0,
-          "red_cards_avg": 0.2,
-          "total_cards_avg_home": 3.0,
-          "total_cards_avg_away": 4.0,
-          "total_cards_avg": 3.4,
-          "fouls_avg_home": 14.33,
-          "fouls_avg_away": 15.0,
-          "fouls_avg": 14.6
-        },
-        "projected_corners": 10.1,
-        "projected_cards": 7.2,
-        "summary": {
-          "home_wins": 1,
-          "draws": 2,
-          "away_wins": 2,
-          "avg_goals": 2.4,
-          "text": "Monterrey 1 victorias • 2 empates • CF América 2 victorias"
-        }
-      },
-      "referee": null,
-      "source_api": "FotMob (Scraping Oficial)"
-    },
     {
       "id": "fotmob_liga_mx_1000022851",
       "match_id": "1000022851",
@@ -3872,7 +3193,9 @@
             "yellow_cards": 5,
             "red_cards": 0,
             "total_cards": 5,
-            "fouls": 20
+            "fouls": 20,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014622",
@@ -3899,7 +3222,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014628",
@@ -3926,7 +3251,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014637",
@@ -3953,7 +3280,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014647",
@@ -3980,7 +3309,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4009,7 +3340,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014619",
@@ -4036,7 +3369,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014629",
@@ -4063,7 +3398,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014642",
@@ -4090,7 +3427,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014650",
@@ -4117,7 +3456,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4252,6 +3593,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4302,7 +3645,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 18
+            "fouls": 18,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014618",
@@ -4329,7 +3674,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014633",
@@ -4356,7 +3703,9 @@
             "yellow_cards": 5,
             "red_cards": 0,
             "total_cards": 5,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014642",
@@ -4383,7 +3732,9 @@
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014646",
@@ -4410,7 +3761,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -4439,7 +3792,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014623",
@@ -4466,7 +3821,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014633",
@@ -4493,7 +3850,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014638",
@@ -4520,7 +3879,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014650",
@@ -4547,7 +3908,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -4682,6 +4045,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -4708,33 +4073,6 @@
       "h2h": {
         "home_last_5": [
           {
-            "match_id": "1000014612",
-            "date": "22/10/2026",
-            "date_iso": "2026-10-22",
-            "opponent": "CF América",
-            "venue": "Local",
-            "match_home": "Atlas",
-            "match_away": "CF América",
-            "home_id": "6577",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 2,
-            "away_score": 5,
-            "score": "2 - 5",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 9,
-            "corners_against": 4,
-            "total_corners": 13,
-            "shots_on_target": 6,
-            "total_shots": 24,
-            "yellow_cards": 2,
-            "red_cards": 0,
-            "total_cards": 2,
-            "fouls": 8
-          },
-          {
             "match_id": "1000014621",
             "date": "25/10/2026",
             "date_iso": "2026-10-25",
@@ -4759,7 +4097,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014625",
@@ -4786,7 +4126,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 23
+            "fouls": 23,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014637",
@@ -4813,7 +4155,9 @@
             "yellow_cards": 3,
             "red_cards": 1,
             "total_cards": 4,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014644",
@@ -4840,37 +4184,41 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "1000022854",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "Toluca",
+            "venue": "Visitante",
+            "match_home": "Toluca",
+            "match_away": "Atlas",
+            "home_id": "6618",
+            "away_id": "6577",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "L",
+            "competition": "Liga MX",
+            "corners_for": 5,
+            "corners_against": 7,
+            "total_corners": 12,
+            "shots_on_target": 5,
+            "total_shots": 11,
+            "yellow_cards": 1,
+            "red_cards": 0,
+            "total_cards": 1,
+            "fouls": 7,
+            "xg_for": 0.8,
+            "xg_against": 2.03
           }
         ],
         "away_last_5": [
-          {
-            "match_id": "1000014613",
-            "date": "22/10/2026",
-            "date_iso": "2026-10-22",
-            "opponent": "Tijuana",
-            "venue": "Local",
-            "match_home": "Toluca",
-            "match_away": "Tijuana",
-            "home_id": "6618",
-            "away_id": "162418",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/162418.png",
-            "home_score": 2,
-            "away_score": 2,
-            "score": "2 - 2",
-            "result": "D",
-            "competition": "Liga MX",
-            "corners_for": 17,
-            "corners_against": 5,
-            "total_corners": 22,
-            "shots_on_target": 6,
-            "total_shots": 32,
-            "yellow_cards": 0,
-            "red_cards": 0,
-            "total_cards": 0,
-            "fouls": 12
-          },
           {
             "match_id": "1000014618",
             "date": "24/10/2026",
@@ -4896,7 +4244,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014631",
@@ -4923,7 +4273,9 @@
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014639",
@@ -4950,7 +4302,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014647",
@@ -4977,10 +4331,56 @@
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "1000022854",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "Atlas",
+            "venue": "Local",
+            "match_home": "Toluca",
+            "match_away": "Atlas",
+            "home_id": "6618",
+            "away_id": "6577",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "result": "W",
+            "competition": "Liga MX",
+            "corners_for": 7,
+            "corners_against": 5,
+            "total_corners": 12,
+            "shots_on_target": 6,
+            "total_shots": 19,
+            "yellow_cards": 2,
+            "red_cards": 0,
+            "total_cards": 2,
+            "fouls": 7,
+            "xg_for": 2.03,
+            "xg_against": 0.8
           }
         ],
         "head_to_head": [
+          {
+            "date": "26/11/2026",
+            "competition": "Liga MX",
+            "tournament": "Liga MX",
+            "match_home": "Toluca",
+            "match_away": "Atlas",
+            "home_id": "6618",
+            "away_id": "6577",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
+            "home_score": 2,
+            "away_score": 0,
+            "score": "2 - 0",
+            "winner": "Toluca"
+          },
           {
             "date": "12/09/2026",
             "competition": "Liga MX",
@@ -5040,78 +4440,65 @@
             "away_score": 3,
             "score": "2 - 3",
             "winner": "Toluca"
-          },
-          {
-            "date": "28/09/2024",
-            "competition": "Liga MX Apertura",
-            "tournament": "Liga MX Apertura",
-            "match_home": "Toluca",
-            "match_away": "Atlas",
-            "home_id": "6618",
-            "away_id": "6577",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6618.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6577.png",
-            "home_score": 4,
-            "away_score": 1,
-            "score": "4 - 1",
-            "winner": "Toluca"
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 7.67,
-          "corners_avg_away": 6.5,
-          "corners_avg_gen": 7.2,
+          "corners_avg_home": 7.0,
+          "corners_avg_away": 6.0,
+          "corners_avg_gen": 6.4,
           "corners_conceded_home": 4.0,
-          "corners_conceded_away": 8.0,
-          "corners_conceded_gen": 5.6,
-          "shots_on_target_gen": 5.8,
-          "total_shots_gen": 15.6,
-          "yellow_cards_avg_home": 1.67,
-          "yellow_cards_avg_away": 2.5,
-          "yellow_cards_avg": 2.0,
-          "red_cards_avg_home": 0.33,
+          "corners_conceded_away": 7.67,
+          "corners_conceded_gen": 6.2,
+          "shots_on_target_gen": 5.6,
+          "total_shots_gen": 13.0,
+          "yellow_cards_avg_home": 1.5,
+          "yellow_cards_avg_away": 2.0,
+          "yellow_cards_avg": 1.8,
+          "red_cards_avg_home": 0.5,
           "red_cards_avg_away": 0.0,
           "red_cards_avg": 0.2,
           "total_cards_avg_home": 2.0,
-          "total_cards_avg_away": 2.5,
-          "total_cards_avg": 2.2,
-          "fouls_avg_home": 9.67,
-          "fouls_avg_away": 18.0,
-          "fouls_avg": 13.0
+          "total_cards_avg_away": 2.0,
+          "total_cards_avg": 2.0,
+          "fouls_avg_home": 10.5,
+          "fouls_avg_away": 14.33,
+          "fouls_avg": 12.8
         },
         "away_corner_stats": {
-          "corners_avg_home": 11.5,
+          "corners_avg_home": 6.5,
           "corners_avg_away": 4.33,
-          "corners_avg_gen": 7.2,
+          "corners_avg_gen": 5.2,
           "corners_conceded_home": 5.5,
           "corners_conceded_away": 4.67,
           "corners_conceded_gen": 5.0,
           "shots_on_target_gen": 5.6,
-          "total_shots_gen": 16.6,
-          "yellow_cards_avg_home": 0.5,
+          "total_shots_gen": 14.0,
+          "yellow_cards_avg_home": 1.5,
           "yellow_cards_avg_away": 2.33,
-          "yellow_cards_avg": 1.6,
+          "yellow_cards_avg": 2.0,
           "red_cards_avg_home": 0.0,
           "red_cards_avg_away": 0.67,
           "red_cards_avg": 0.4,
-          "total_cards_avg_home": 0.5,
+          "total_cards_avg_home": 1.5,
           "total_cards_avg_away": 3.0,
-          "total_cards_avg": 2.0,
-          "fouls_avg_home": 10.5,
+          "total_cards_avg": 2.4,
+          "fouls_avg_home": 8.0,
           "fouls_avg_away": 12.33,
-          "fouls_avg": 11.6
+          "fouls_avg": 10.6
         },
-        "projected_corners": 11.2,
-        "projected_cards": 4.6,
+        "projected_corners": 10.6,
+        "projected_cards": 4.7,
         "summary": {
           "home_wins": 0,
           "draws": 2,
           "away_wins": 3,
-          "avg_goals": 3.8,
+          "avg_goals": 3.2,
           "text": "Atlas 0 victorias • 2 empates • Toluca 3 victorias"
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5138,33 +4525,6 @@
       "h2h": {
         "home_last_5": [
           {
-            "match_id": "1000014622",
-            "date": "26/10/2026",
-            "date_iso": "2026-10-26",
-            "opponent": "Pachuca",
-            "venue": "Local",
-            "match_home": "CF América",
-            "match_away": "Pachuca",
-            "home_id": "6576",
-            "away_id": "7848",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7848.png",
-            "home_score": 1,
-            "away_score": 2,
-            "score": "1 - 2",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 6,
-            "corners_against": 5,
-            "total_corners": 11,
-            "shots_on_target": 8,
-            "total_shots": 21,
-            "yellow_cards": 3,
-            "red_cards": 0,
-            "total_cards": 3,
-            "fouls": 17
-          },
-          {
             "match_id": "1000014558",
             "date": "29/10/2026",
             "date_iso": "2026-10-29",
@@ -5189,7 +4549,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014631",
@@ -5216,7 +4578,9 @@
             "yellow_cards": 3,
             "red_cards": 1,
             "total_cards": 4,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014640",
@@ -5243,7 +4607,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014649",
@@ -5270,37 +4636,41 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "1000022853",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "Monterrey",
+            "venue": "Visitante",
+            "match_home": "Monterrey",
+            "match_away": "CF América",
+            "home_id": "7849",
+            "away_id": "6576",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Liga MX",
+            "corners_for": 12,
+            "corners_against": 3,
+            "total_corners": 15,
+            "shots_on_target": 8,
+            "total_shots": 19,
+            "yellow_cards": 6,
+            "red_cards": 0,
+            "total_cards": 6,
+            "fouls": 21,
+            "xg_for": 1.37,
+            "xg_against": 0.51
           }
         ],
         "away_last_5": [
-          {
-            "match_id": "1000014619",
-            "date": "25/10/2026",
-            "date_iso": "2026-10-25",
-            "opponent": "Chivas",
-            "venue": "Local",
-            "match_home": "Monterrey",
-            "match_away": "Chivas",
-            "home_id": "7849",
-            "away_id": "7807",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7807.png",
-            "home_score": 0,
-            "away_score": 1,
-            "score": "0 - 1",
-            "result": "L",
-            "competition": "Liga MX",
-            "corners_for": 8,
-            "corners_against": 3,
-            "total_corners": 11,
-            "shots_on_target": 5,
-            "total_shots": 11,
-            "yellow_cards": 2,
-            "red_cards": 2,
-            "total_cards": 4,
-            "fouls": 16
-          },
           {
             "match_id": "1000014630",
             "date": "01/11/2026",
@@ -5326,7 +4696,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014639",
@@ -5353,7 +4725,9 @@
             "yellow_cards": 5,
             "red_cards": 1,
             "total_cards": 6,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014556",
@@ -5380,7 +4754,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014648",
@@ -5407,10 +4783,56 @@
             "yellow_cards": 1,
             "red_cards": 1,
             "total_cards": 2,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
+          },
+          {
+            "match_id": "1000022853",
+            "date": "26/11/2026",
+            "date_iso": "2026-11-26",
+            "opponent": "CF América",
+            "venue": "Local",
+            "match_home": "Monterrey",
+            "match_away": "CF América",
+            "home_id": "7849",
+            "away_id": "6576",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "result": "D",
+            "competition": "Liga MX",
+            "corners_for": 3,
+            "corners_against": 12,
+            "total_corners": 15,
+            "shots_on_target": 1,
+            "total_shots": 8,
+            "yellow_cards": 0,
+            "red_cards": 1,
+            "total_cards": 1,
+            "fouls": 5,
+            "xg_for": 0.51,
+            "xg_against": 1.37
           }
         ],
         "head_to_head": [
+          {
+            "date": "26/11/2026",
+            "competition": "Liga MX",
+            "tournament": "Liga MX",
+            "match_home": "Monterrey",
+            "match_away": "CF América",
+            "home_id": "7849",
+            "away_id": "6576",
+            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
+            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
+            "home_score": 0,
+            "away_score": 0,
+            "score": "0 - 0",
+            "winner": "Empate"
+          },
           {
             "date": "11/10/2026",
             "competition": "Liga MX",
@@ -5470,78 +4892,65 @@
             "away_score": 1,
             "score": "2 - 1",
             "winner": "CF América"
-          },
-          {
-            "date": "27/11/2025",
-            "competition": "Liga MX Apertura Playoff",
-            "tournament": "Liga MX Apertura Playoff",
-            "match_home": "Monterrey",
-            "match_away": "CF América",
-            "home_id": "7849",
-            "away_id": "6576",
-            "home_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/7849.png",
-            "away_logo": "https://images.fotmob.com/image_resources/logo/teamlogo/6576.png",
-            "home_score": 2,
-            "away_score": 0,
-            "score": "2 - 0",
-            "winner": "Monterrey"
           }
         ],
         "home_corner_stats": {
-          "corners_avg_home": 7.0,
-          "corners_avg_away": 3.5,
-          "corners_avg_gen": 5.6,
-          "corners_conceded_home": 4.0,
-          "corners_conceded_away": 5.5,
-          "corners_conceded_gen": 4.6,
+          "corners_avg_home": 7.5,
+          "corners_avg_away": 6.33,
+          "corners_avg_gen": 6.8,
+          "corners_conceded_home": 3.5,
+          "corners_conceded_away": 4.67,
+          "corners_conceded_gen": 4.2,
           "shots_on_target_gen": 5.6,
-          "total_shots_gen": 17.2,
-          "yellow_cards_avg_home": 2.67,
-          "yellow_cards_avg_away": 4.0,
-          "yellow_cards_avg": 3.2,
-          "red_cards_avg_home": 0.33,
+          "total_shots_gen": 16.8,
+          "yellow_cards_avg_home": 2.5,
+          "yellow_cards_avg_away": 4.67,
+          "yellow_cards_avg": 3.8,
+          "red_cards_avg_home": 0.5,
           "red_cards_avg_away": 0.0,
           "red_cards_avg": 0.2,
           "total_cards_avg_home": 3.0,
-          "total_cards_avg_away": 4.0,
-          "total_cards_avg": 3.4,
-          "fouls_avg_home": 14.33,
-          "fouls_avg_away": 15.0,
-          "fouls_avg": 14.6
+          "total_cards_avg_away": 4.67,
+          "total_cards_avg": 4.0,
+          "fouls_avg_home": 13.0,
+          "fouls_avg_away": 17.0,
+          "fouls_avg": 15.4
         },
         "away_corner_stats": {
-          "corners_avg_home": 8.5,
+          "corners_avg_home": 6.0,
           "corners_avg_away": 4.67,
-          "corners_avg_gen": 6.2,
-          "corners_conceded_home": 2.5,
+          "corners_avg_gen": 5.2,
+          "corners_conceded_home": 7.0,
           "corners_conceded_away": 5.33,
-          "corners_conceded_gen": 4.2,
-          "shots_on_target_gen": 5.0,
-          "total_shots_gen": 12.6,
-          "yellow_cards_avg_home": 2.5,
+          "corners_conceded_gen": 6.0,
+          "shots_on_target_gen": 4.2,
+          "total_shots_gen": 12.0,
+          "yellow_cards_avg_home": 1.5,
           "yellow_cards_avg_away": 3.0,
-          "yellow_cards_avg": 2.8,
-          "red_cards_avg_home": 1.0,
+          "yellow_cards_avg": 2.4,
+          "red_cards_avg_home": 0.5,
           "red_cards_avg_away": 0.67,
-          "red_cards_avg": 0.8,
-          "total_cards_avg_home": 3.5,
+          "red_cards_avg": 0.6,
+          "total_cards_avg_home": 2.0,
           "total_cards_avg_away": 3.67,
-          "total_cards_avg": 3.6,
-          "fouls_avg_home": 11.0,
+          "total_cards_avg": 3.0,
+          "fouls_avg_home": 5.5,
           "fouls_avg_away": 12.33,
-          "fouls_avg": 11.8
+          "fouls_avg": 9.6
         },
-        "projected_corners": 10.4,
+        "projected_corners": 10.7,
         "projected_cards": 6.8,
         "summary": {
           "home_wins": 2,
-          "draws": 2,
-          "away_wins": 1,
-          "avg_goals": 2.4,
-          "text": "CF América 2 victorias • 2 empates • Monterrey 1 victorias"
+          "draws": 3,
+          "away_wins": 0,
+          "avg_goals": 2.0,
+          "text": "CF América 2 victorias • 3 empates • Monterrey 0 victorias"
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -5592,7 +5001,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 14
+            "fouls": 14,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014619",
@@ -5619,7 +5030,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 9
+            "fouls": 9,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014629",
@@ -5646,7 +5059,9 @@
             "yellow_cards": 0,
             "red_cards": 0,
             "total_cards": 0,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014642",
@@ -5673,7 +5088,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014650",
@@ -5700,7 +5117,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 6
+            "fouls": 6,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -5729,7 +5148,9 @@
             "yellow_cards": 5,
             "red_cards": 0,
             "total_cards": 5,
-            "fouls": 20
+            "fouls": 20,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014622",
@@ -5756,7 +5177,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014628",
@@ -5783,7 +5206,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014637",
@@ -5810,7 +5235,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 15
+            "fouls": 15,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014647",
@@ -5837,7 +5264,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -5972,6 +5401,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6022,7 +5453,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014623",
@@ -6049,7 +5482,9 @@
             "yellow_cards": 1,
             "red_cards": 0,
             "total_cards": 1,
-            "fouls": 8
+            "fouls": 8,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014633",
@@ -6076,7 +5511,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014638",
@@ -6103,7 +5540,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 13
+            "fouls": 13,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014650",
@@ -6130,7 +5569,9 @@
             "yellow_cards": 4,
             "red_cards": 0,
             "total_cards": 4,
-            "fouls": 16
+            "fouls": 16,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "away_last_5": [
@@ -6159,7 +5600,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 18
+            "fouls": 18,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014618",
@@ -6186,7 +5629,9 @@
             "yellow_cards": 3,
             "red_cards": 0,
             "total_cards": 3,
-            "fouls": 17
+            "fouls": 17,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014633",
@@ -6213,7 +5658,9 @@
             "yellow_cards": 5,
             "red_cards": 0,
             "total_cards": 5,
-            "fouls": 11
+            "fouls": 11,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014642",
@@ -6240,7 +5687,9 @@
             "yellow_cards": 2,
             "red_cards": 1,
             "total_cards": 3,
-            "fouls": 10
+            "fouls": 10,
+            "xg_for": null,
+            "xg_against": null
           },
           {
             "match_id": "1000014646",
@@ -6267,7 +5716,9 @@
             "yellow_cards": 2,
             "red_cards": 0,
             "total_cards": 2,
-            "fouls": 12
+            "fouls": 12,
+            "xg_for": null,
+            "xg_against": null
           }
         ],
         "head_to_head": [
@@ -6402,6 +5853,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6550,6 +6003,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6698,6 +6153,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6846,6 +6303,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     },
     {
@@ -6994,6 +6453,8 @@
         }
       },
       "referee": null,
+      "home_season_stats": null,
+      "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
     }
   ]
