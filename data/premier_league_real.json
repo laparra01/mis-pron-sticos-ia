@@ -3,7 +3,7 @@
   "league_id": 47,
   "country": "Inglaterra",
   "country_code": "gb-eng",
-  "last_updated": "2026-11-26T22:02:47.210074",
+  "last_updated": "2026-11-27T21:45:22.650739",
   "total_fixtures": 12,
   "team_histories": {
     "AFC Bournemouth": [
@@ -3475,16 +3475,16 @@
       "season_xga_pg": 1.2
     },
     "Chelsea": {
-      "season_played": 11,
+      "season_played": 12,
       "season_pts": 16,
-      "season_gf_pg": 1.82,
-      "season_ga_pg": 1.82,
+      "season_gf_pg": 1.75,
+      "season_ga_pg": 1.92,
       "season_home_gf_pg": 2.33,
       "season_home_ga_pg": 2.0,
-      "season_away_gf_pg": 1.2,
-      "season_away_ga_pg": 1.6,
-      "season_xg_pg": 1.33,
-      "season_xga_pg": 1.61
+      "season_away_gf_pg": 1.17,
+      "season_away_ga_pg": 1.83,
+      "season_xg_pg": 1.31,
+      "season_xga_pg": 1.6
     },
     "Everton": {
       "season_played": 11,
@@ -3546,6 +3546,18 @@
       "season_xg_pg": 1.2,
       "season_xga_pg": 1.66
     },
+    "Nottingham Forest": {
+      "season_played": 12,
+      "season_pts": 12,
+      "season_gf_pg": 1.0,
+      "season_ga_pg": 1.33,
+      "season_home_gf_pg": 1.0,
+      "season_home_ga_pg": 0.83,
+      "season_away_gf_pg": 1.0,
+      "season_away_ga_pg": 1.83,
+      "season_xg_pg": 1.59,
+      "season_xga_pg": 1.24
+    },
     "Coventry City": {
       "season_played": 11,
       "season_pts": 12,
@@ -3581,18 +3593,6 @@
       "season_away_ga_pg": 2.5,
       "season_xg_pg": 1.27,
       "season_xga_pg": 2.01
-    },
-    "Nottingham Forest": {
-      "season_played": 11,
-      "season_pts": 9,
-      "season_gf_pg": 0.82,
-      "season_ga_pg": 1.36,
-      "season_home_gf_pg": 0.6,
-      "season_home_ga_pg": 0.8,
-      "season_away_gf_pg": 1.0,
-      "season_away_ga_pg": 1.83,
-      "season_xg_pg": 1.61,
-      "season_xga_pg": 1.26
     },
     "Sunderland": {
       "season_played": 11,
@@ -4099,28 +4099,28 @@
         "over_cards_favorable": false
       },
       "home_season_stats": {
-        "season_played": 11,
-        "season_pts": 9,
-        "season_gf_pg": 0.82,
-        "season_ga_pg": 1.36,
-        "season_home_gf_pg": 0.6,
-        "season_home_ga_pg": 0.8,
+        "season_played": 12,
+        "season_pts": 12,
+        "season_gf_pg": 1.0,
+        "season_ga_pg": 1.33,
+        "season_home_gf_pg": 1.0,
+        "season_home_ga_pg": 0.83,
         "season_away_gf_pg": 1.0,
         "season_away_ga_pg": 1.83,
-        "season_xg_pg": 1.61,
-        "season_xga_pg": 1.26
+        "season_xg_pg": 1.59,
+        "season_xga_pg": 1.24
       },
       "away_season_stats": {
-        "season_played": 11,
+        "season_played": 12,
         "season_pts": 16,
-        "season_gf_pg": 1.82,
-        "season_ga_pg": 1.82,
+        "season_gf_pg": 1.75,
+        "season_ga_pg": 1.92,
         "season_home_gf_pg": 2.33,
         "season_home_ga_pg": 2.0,
-        "season_away_gf_pg": 1.2,
-        "season_away_ga_pg": 1.6,
-        "season_xg_pg": 1.33,
-        "season_xga_pg": 1.61
+        "season_away_gf_pg": 1.17,
+        "season_away_ga_pg": 1.83,
+        "season_xg_pg": 1.31,
+        "season_xga_pg": 1.6
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -9007,12 +9007,12 @@
         "matches": 52,
         "yellow_cards_per_match": 3.06,
         "yellow_cards_total": 159,
-        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_avg_league": 3.8,
         "yellow_cards_tendency": "below",
         "red_cards_total": 4,
         "penalties_total": 8,
         "fouls_per_match": 22.9,
-        "fouls_avg_league": 21.9,
+        "fouls_avg_league": 22.0,
         "rigor_level": "Permisivo / Dejar Jugar",
         "rigor_color": "emerald",
         "verdict": "Árbitro dialogante y permisivo (3.06 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
@@ -9499,28 +9499,28 @@
         "matches": 33,
         "yellow_cards_per_match": 4.39,
         "yellow_cards_total": 145,
-        "yellow_cards_avg_league": 3.79,
+        "yellow_cards_avg_league": 3.8,
         "yellow_cards_tendency": "above",
         "red_cards_total": 1,
         "penalties_total": 6,
         "fouls_per_match": 21.9,
-        "fouls_avg_league": 21.9,
+        "fouls_avg_league": 22.0,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
         "verdict": "Colegiado equilibrado con 4.39 amarillas y 21.88 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "home_season_stats": {
-        "season_played": 11,
+        "season_played": 12,
         "season_pts": 16,
-        "season_gf_pg": 1.82,
-        "season_ga_pg": 1.82,
+        "season_gf_pg": 1.75,
+        "season_ga_pg": 1.92,
         "season_home_gf_pg": 2.33,
         "season_home_ga_pg": 2.0,
-        "season_away_gf_pg": 1.2,
-        "season_away_ga_pg": 1.6,
-        "season_xg_pg": 1.33,
-        "season_xga_pg": 1.61
+        "season_away_gf_pg": 1.17,
+        "season_away_ga_pg": 1.83,
+        "season_xg_pg": 1.31,
+        "season_xga_pg": 1.6
       },
       "away_season_stats": {
         "season_played": 11,

@@ -3,7 +3,7 @@
   "league_id": 87,
   "country": "España",
   "country_code": "es",
-  "last_updated": "2026-11-26T22:02:54.499935",
+  "last_updated": "2026-11-27T21:45:26.445386",
   "total_fixtures": 12,
   "team_histories": {
     "Athletic Club": [
@@ -3450,6 +3450,18 @@
       "season_xg_pg": 1.62,
       "season_xga_pg": 1.77
     },
+    "Racing Santander": {
+      "season_played": 14,
+      "season_pts": 20,
+      "season_gf_pg": 1.57,
+      "season_ga_pg": 2.36,
+      "season_home_gf_pg": 2.0,
+      "season_home_ga_pg": 1.86,
+      "season_away_gf_pg": 1.14,
+      "season_away_ga_pg": 2.86,
+      "season_xg_pg": 1.5,
+      "season_xga_pg": 2.26
+    },
     "Sevilla": {
       "season_played": 13,
       "season_pts": 19,
@@ -3461,18 +3473,6 @@
       "season_away_ga_pg": 2.0,
       "season_xg_pg": 1.21,
       "season_xga_pg": 1.28
-    },
-    "Racing Santander": {
-      "season_played": 13,
-      "season_pts": 17,
-      "season_gf_pg": 1.54,
-      "season_ga_pg": 2.46,
-      "season_home_gf_pg": 2.0,
-      "season_home_ga_pg": 1.86,
-      "season_away_gf_pg": 1.0,
-      "season_away_ga_pg": 3.17,
-      "season_xg_pg": 1.56,
-      "season_xga_pg": 2.34
     },
     "Athletic Club": {
       "season_played": 12,
@@ -3559,16 +3559,16 @@
       "season_xga_pg": 1.31
     },
     "Levante": {
-      "season_played": 13,
+      "season_played": 14,
       "season_pts": 12,
-      "season_gf_pg": 1.31,
-      "season_ga_pg": 1.69,
-      "season_home_gf_pg": 2.33,
-      "season_home_ga_pg": 2.17,
+      "season_gf_pg": 1.29,
+      "season_ga_pg": 1.71,
+      "season_home_gf_pg": 2.14,
+      "season_home_ga_pg": 2.14,
       "season_away_gf_pg": 0.43,
       "season_away_ga_pg": 1.29,
       "season_xg_pg": 1.19,
-      "season_xga_pg": 1.87
+      "season_xga_pg": 1.79
     },
     "Rayo Vallecano": {
       "season_played": 12,
@@ -4099,28 +4099,28 @@
         "over_cards_favorable": false
       },
       "home_season_stats": {
-        "season_played": 13,
+        "season_played": 14,
         "season_pts": 12,
-        "season_gf_pg": 1.31,
-        "season_ga_pg": 1.69,
-        "season_home_gf_pg": 2.33,
-        "season_home_ga_pg": 2.17,
+        "season_gf_pg": 1.29,
+        "season_ga_pg": 1.71,
+        "season_home_gf_pg": 2.14,
+        "season_home_ga_pg": 2.14,
         "season_away_gf_pg": 0.43,
         "season_away_ga_pg": 1.29,
         "season_xg_pg": 1.19,
-        "season_xga_pg": 1.87
+        "season_xga_pg": 1.79
       },
       "away_season_stats": {
-        "season_played": 13,
-        "season_pts": 17,
-        "season_gf_pg": 1.54,
-        "season_ga_pg": 2.46,
+        "season_played": 14,
+        "season_pts": 20,
+        "season_gf_pg": 1.57,
+        "season_ga_pg": 2.36,
         "season_home_gf_pg": 2.0,
         "season_home_ga_pg": 1.86,
-        "season_away_gf_pg": 1.0,
-        "season_away_ga_pg": 3.17,
-        "season_xg_pg": 1.56,
-        "season_xga_pg": 2.34
+        "season_away_gf_pg": 1.14,
+        "season_away_ga_pg": 2.86,
+        "season_xg_pg": 1.5,
+        "season_xga_pg": 2.26
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4571,7 +4571,25 @@
           "text": "Real Betis 0 victorias • 4 empates • Rayo Vallecano 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luis Bestard Servera",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 6,
+        "yellow_cards_per_match": 4.83,
+        "yellow_cards_total": 29,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 25.8,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (4.83 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": {
         "season_played": 13,
         "season_pts": 27,
@@ -5045,7 +5063,25 @@
           "text": "Málaga 1 victorias • 1 empates • Athletic Club 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Miguel Ángel Ortiz Arias",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 39,
+        "yellow_cards_per_match": 3.95,
+        "yellow_cards_total": 154,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 8,
+        "penalties_total": 8,
+        "fouls_per_match": 21.6,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (3.95 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 13,
         "season_pts": 5,
@@ -5519,7 +5555,25 @@
           "text": "Elche 2 victorias • 1 empates • Atlético Madrid 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Alejandro Quintero González",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 37,
+        "yellow_cards_per_match": 4.41,
+        "yellow_cards_total": 163,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 17,
+        "penalties_total": 20,
+        "fouls_per_match": 26.4,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.41 amarillas y 26.36 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 13,
         "season_pts": 11,
@@ -5993,7 +6047,25 @@
           "text": "Real Madrid 5 victorias • 0 empates • Deportivo Alavés 0 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "César Soto Grado",
+        "country": "Spain",
+        "country_code": "ESP",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/esp.png",
+        "matches": 38,
+        "yellow_cards_per_match": 4.58,
+        "yellow_cards_total": 174,
+        "yellow_cards_avg_league": 4.44,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 10,
+        "penalties_total": 11,
+        "fouls_per_match": 23.4,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.58 amarillas y 23.35 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 13,
         "season_pts": 33,

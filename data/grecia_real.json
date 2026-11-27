@@ -3,7 +3,7 @@
   "league_id": 135,
   "country": "Grecia",
   "country_code": "gr",
-  "last_updated": "2026-11-26T22:03:43.600846",
+  "last_updated": "2026-11-27T21:45:57.566124",
   "total_fixtures": 12,
   "team_histories": {
     "AEK Athens": [
@@ -5950,18 +5950,18 @@
         "country": "Bosnia-Herzegovina",
         "country_code": "BIH",
         "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/bih.png",
-        "matches": 11,
-        "yellow_cards_per_match": 3.91,
-        "yellow_cards_total": 43,
+        "matches": 10,
+        "yellow_cards_per_match": 3.9,
+        "yellow_cards_total": 39,
         "yellow_cards_avg_league": 3.78,
         "yellow_cards_tendency": "average",
         "red_cards_total": 3,
-        "penalties_total": 7,
-        "fouls_per_match": 21.0,
+        "penalties_total": 6,
+        "fouls_per_match": 20.3,
         "fouls_avg_league": 22.4,
         "rigor_level": "Estándar / Moderado",
         "rigor_color": "amber",
-        "verdict": "Colegiado equilibrado con 3.91 amarillas y 21.0 faltas por encuentro.",
+        "verdict": "Colegiado equilibrado con 3.9 amarillas y 20.33 faltas por encuentro.",
         "over_cards_favorable": false
       },
       "home_season_stats": {

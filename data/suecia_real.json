@@ -3,7 +3,7 @@
   "league_id": 67,
   "country": "Suecia",
   "country_code": "se",
-  "last_updated": "2026-11-26T22:03:39.567970",
+  "last_updated": "2026-11-27T21:45:55.487877",
   "total_fixtures": 8,
   "team_histories": {
     "AIK": [
@@ -2843,8 +2843,8 @@
       "season_home_ga_pg": 1.2,
       "season_away_gf_pg": 1.71,
       "season_away_ga_pg": 2.07,
-      "season_xg_pg": 1.4,
-      "season_xga_pg": 1.38
+      "season_xg_pg": 1.41,
+      "season_xga_pg": 1.41
     },
     "Mjällby": {
       "season_played": 29,
@@ -2867,7 +2867,7 @@
       "season_home_ga_pg": 1.5,
       "season_away_gf_pg": 0.73,
       "season_away_ga_pg": 1.6,
-      "season_xg_pg": 1.35,
+      "season_xg_pg": 1.36,
       "season_xga_pg": 1.24
     },
     "Örgryte": {
@@ -2880,7 +2880,7 @@
       "season_away_gf_pg": 0.79,
       "season_away_ga_pg": 2.57,
       "season_xg_pg": 1.11,
-      "season_xga_pg": 2.14
+      "season_xga_pg": 2.15
     },
     "Halmstads BK": {
       "season_played": 29,
@@ -2891,8 +2891,8 @@
       "season_home_ga_pg": 1.64,
       "season_away_gf_pg": 0.8,
       "season_away_ga_pg": 1.93,
-      "season_xg_pg": 1.05,
-      "season_xga_pg": 2.07
+      "season_xg_pg": 1.08,
+      "season_xga_pg": 2.08
     },
     "Degerfors": {
       "season_played": 29,
@@ -3396,7 +3396,7 @@
         "season_away_gf_pg": 0.79,
         "season_away_ga_pg": 2.57,
         "season_xg_pg": 1.11,
-        "season_xga_pg": 2.14
+        "season_xga_pg": 2.15
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -4859,8 +4859,8 @@
         "season_home_ga_pg": 1.64,
         "season_away_gf_pg": 0.8,
         "season_away_ga_pg": 1.93,
-        "season_xg_pg": 1.05,
-        "season_xga_pg": 2.07
+        "season_xg_pg": 1.08,
+        "season_xga_pg": 2.08
       },
       "away_season_stats": {
         "season_played": 29,
@@ -5843,7 +5843,7 @@
         "season_home_ga_pg": 1.5,
         "season_away_gf_pg": 0.73,
         "season_away_ga_pg": 1.6,
-        "season_xg_pg": 1.35,
+        "season_xg_pg": 1.36,
         "season_xga_pg": 1.24
       },
       "away_season_stats": {
@@ -6347,8 +6347,8 @@
         "season_home_ga_pg": 1.2,
         "season_away_gf_pg": 1.71,
         "season_away_ga_pg": 2.07,
-        "season_xg_pg": 1.4,
-        "season_xga_pg": 1.38
+        "season_xg_pg": 1.41,
+        "season_xga_pg": 1.41
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -6799,7 +6799,25 @@
           "text": "Västerås SK 2 victorias • 0 empates • Hammarby 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Fredrik Klitte",
+        "country": "Sweden",
+        "country_code": "SWE",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/swe.png",
+        "matches": 41,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 164,
+        "yellow_cards_avg_league": 3.59,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 2,
+        "penalties_total": 7,
+        "fouls_per_match": 27.2,
+        "fouls_avg_league": 24.9,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.0 amarillas y 27.17 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 29,
         "season_pts": 45,

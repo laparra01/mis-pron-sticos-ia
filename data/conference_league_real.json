@@ -3,7 +3,7 @@
   "league_id": 10216,
   "country": "Europa",
   "country_code": "eu",
-  "last_updated": "2026-11-26T22:04:31.381704",
+  "last_updated": "2026-11-27T21:46:21.261858",
   "total_fixtures": 18,
   "team_histories": {
     "AGF": [
@@ -5059,7 +5059,7 @@
       "season_home_ga_pg": 0.0,
       "season_away_gf_pg": 2.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 1.78,
+      "season_xg_pg": 1.79,
       "season_xga_pg": 0.81
     },
     "Brighton & Hove Albion": {
@@ -5071,7 +5071,7 @@
       "season_home_ga_pg": 0.0,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 0.0,
-      "season_xg_pg": 2.59,
+      "season_xg_pg": 2.85,
       "season_xga_pg": 0.39
     },
     "St.Truiden": {
@@ -5095,8 +5095,8 @@
       "season_home_ga_pg": 0.0,
       "season_away_gf_pg": 3.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 2.32,
-      "season_xga_pg": 1.36
+      "season_xg_pg": 2.41,
+      "season_xga_pg": 1.42
     },
     "Panathinaikos": {
       "season_played": 4,
@@ -5107,8 +5107,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 3.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 2.85,
-      "season_xga_pg": 0.86
+      "season_xg_pg": 2.81,
+      "season_xga_pg": 0.84
     },
     "Lugano": {
       "season_played": 4,
@@ -5119,8 +5119,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 2.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.68,
-      "season_xga_pg": 1.87
+      "season_xg_pg": 1.7,
+      "season_xga_pg": 1.91
     },
     "FC Twente": {
       "season_played": 4,
@@ -5131,8 +5131,8 @@
       "season_home_ga_pg": 0.5,
       "season_away_gf_pg": 2.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 3.25,
-      "season_xga_pg": 1.08
+      "season_xg_pg": 3.26,
+      "season_xga_pg": 0.92
     },
     "Trabzonspor": {
       "season_played": 4,
@@ -5144,7 +5144,7 @@
       "season_away_gf_pg": 3.0,
       "season_away_ga_pg": 1.5,
       "season_xg_pg": 2.2,
-      "season_xga_pg": 1.3
+      "season_xga_pg": 1.34
     },
     "Freiburg": {
       "season_played": 4,
@@ -5155,8 +5155,8 @@
       "season_home_ga_pg": 1.5,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 1.79,
-      "season_xga_pg": 1.26
+      "season_xg_pg": 1.63,
+      "season_xga_pg": 1.27
     },
     "Braga": {
       "season_played": 4,
@@ -5179,8 +5179,8 @@
       "season_home_ga_pg": 0.0,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.0,
-      "season_xg_pg": 1.86,
-      "season_xga_pg": 0.93
+      "season_xg_pg": 1.85,
+      "season_xga_pg": 0.92
     },
     "FC København": {
       "season_played": 4,
@@ -5191,8 +5191,8 @@
       "season_home_ga_pg": 0.5,
       "season_away_gf_pg": 1.0,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.21,
-      "season_xga_pg": 0.6
+      "season_xg_pg": 1.22,
+      "season_xga_pg": 0.61
     },
     "Brann": {
       "season_played": 4,
@@ -5203,8 +5203,8 @@
       "season_home_ga_pg": 2.5,
       "season_away_gf_pg": 2.5,
       "season_away_ga_pg": 1.0,
-      "season_xg_pg": 2.03,
-      "season_xga_pg": 1.68
+      "season_xg_pg": 2.01,
+      "season_xga_pg": 1.52
     },
     "Atalanta": {
       "season_played": 4,
@@ -5215,8 +5215,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 2.09,
-      "season_xga_pg": 1.34
+      "season_xg_pg": 2.27,
+      "season_xga_pg": 1.4
     },
     "Universitatea Craiova": {
       "season_played": 4,
@@ -5228,7 +5228,7 @@
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 2.5,
       "season_xg_pg": 1.44,
-      "season_xga_pg": 1.37
+      "season_xga_pg": 1.64
     },
     "Hajduk Split": {
       "season_played": 4,
@@ -5251,8 +5251,8 @@
       "season_home_ga_pg": 0.5,
       "season_away_gf_pg": 2.0,
       "season_away_ga_pg": 1.0,
-      "season_xg_pg": 1.47,
-      "season_xga_pg": 1.81
+      "season_xg_pg": 1.31,
+      "season_xga_pg": 1.8
     },
     "Jablonec": {
       "season_played": 4,
@@ -5263,8 +5263,8 @@
       "season_home_ga_pg": 0.0,
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.59,
-      "season_xga_pg": 1.31
+      "season_xg_pg": 1.63,
+      "season_xga_pg": 1.34
     },
     "FK Crvena Zvezda": {
       "season_played": 4,
@@ -5275,8 +5275,8 @@
       "season_home_ga_pg": 1.5,
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.63,
-      "season_xga_pg": 1.19
+      "season_xg_pg": 1.66,
+      "season_xga_pg": 1.18
     },
     "Nordsjælland": {
       "season_played": 4,
@@ -5287,8 +5287,8 @@
       "season_home_ga_pg": 2.0,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 0.93,
-      "season_xga_pg": 2.16
+      "season_xg_pg": 0.9,
+      "season_xga_pg": 2.13
     },
     "Egnatia": {
       "season_played": 4,
@@ -5299,8 +5299,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 1.26,
-      "season_xga_pg": 1.49
+      "season_xg_pg": 1.33,
+      "season_xga_pg": 1.5
     },
     "Gent": {
       "season_played": 4,
@@ -5312,7 +5312,7 @@
       "season_away_gf_pg": 0.0,
       "season_away_ga_pg": 1.0,
       "season_xg_pg": 1.32,
-      "season_xga_pg": 1.12
+      "season_xga_pg": 1.15
     },
     "Kairat Almaty": {
       "season_played": 4,
@@ -5323,8 +5323,8 @@
       "season_home_ga_pg": 2.5,
       "season_away_gf_pg": 1.0,
       "season_away_ga_pg": 1.0,
-      "season_xg_pg": 0.89,
-      "season_xga_pg": 2.17
+      "season_xg_pg": 0.88,
+      "season_xga_pg": 2.16
     },
     "Iberia 1999": {
       "season_played": 4,
@@ -5335,7 +5335,7 @@
       "season_home_ga_pg": 0.5,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 0.72,
+      "season_xg_pg": 0.75,
       "season_xga_pg": 1.94
     },
     "FC Midtjylland": {
@@ -5347,8 +5347,8 @@
       "season_home_ga_pg": 3.5,
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 0.5,
-      "season_xg_pg": 2.1,
-      "season_xga_pg": 1.82
+      "season_xg_pg": 2.27,
+      "season_xga_pg": 1.83
     },
     "Borac Banja Luka": {
       "season_played": 4,
@@ -5359,8 +5359,8 @@
       "season_home_ga_pg": 1.5,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.33,
-      "season_xga_pg": 2.31
+      "season_xg_pg": 1.38,
+      "season_xga_pg": 2.49
     },
     "Riga FC": {
       "season_played": 4,
@@ -5371,8 +5371,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.5,
-      "season_xg_pg": 1.61,
-      "season_xga_pg": 1.43
+      "season_xg_pg": 1.62,
+      "season_xga_pg": 1.37
     },
     "Inter Club d'Escaldes": {
       "season_played": 4,
@@ -5383,8 +5383,8 @@
       "season_home_ga_pg": 1.5,
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 0.98,
-      "season_xga_pg": 1.77
+      "season_xg_pg": 0.99,
+      "season_xga_pg": 1.78
     },
     "Lincoln Red Imps FC": {
       "season_played": 4,
@@ -5395,8 +5395,8 @@
       "season_home_ga_pg": 2.0,
       "season_away_gf_pg": 1.0,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 0.37,
-      "season_xga_pg": 2.94
+      "season_xg_pg": 0.39,
+      "season_xga_pg": 3.01
     },
     "Thun": {
       "season_played": 4,
@@ -5407,8 +5407,8 @@
       "season_home_ga_pg": 1.0,
       "season_away_gf_pg": 0.0,
       "season_away_ga_pg": 2.5,
-      "season_xg_pg": 1.15,
-      "season_xga_pg": 1.81
+      "season_xg_pg": 1.21,
+      "season_xga_pg": 1.9
     },
     "FK Kauno Žalgiris": {
       "season_played": 4,
@@ -5419,8 +5419,8 @@
       "season_home_ga_pg": 2.0,
       "season_away_gf_pg": 0.0,
       "season_away_ga_pg": 3.5,
-      "season_xg_pg": 1.17,
-      "season_xga_pg": 2.47
+      "season_xg_pg": 1.11,
+      "season_xga_pg": 2.48
     },
     "CSKA Sofia": {
       "season_played": 4,
@@ -5431,7 +5431,7 @@
       "season_home_ga_pg": 2.0,
       "season_away_gf_pg": 1.5,
       "season_away_ga_pg": 2.0,
-      "season_xg_pg": 1.36,
+      "season_xg_pg": 1.4,
       "season_xga_pg": 1.78
     },
     "Heart of Midlothian": {
@@ -5444,7 +5444,7 @@
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 2.5,
       "season_xg_pg": 1.06,
-      "season_xga_pg": 1.63
+      "season_xga_pg": 1.65
     },
     "Getafe": {
       "season_played": 4,
@@ -5456,7 +5456,7 @@
       "season_away_gf_pg": 0.5,
       "season_away_ga_pg": 1.0,
       "season_xg_pg": 1.56,
-      "season_xga_pg": 1.66
+      "season_xga_pg": 1.69
     },
     "Pafos FC": {
       "season_played": 4,
@@ -5468,7 +5468,7 @@
       "season_away_gf_pg": 1.0,
       "season_away_ga_pg": 3.0,
       "season_xg_pg": 0.92,
-      "season_xga_pg": 2.92
+      "season_xga_pg": 3.08
     },
     "KuPS": {
       "season_played": 4,
@@ -5873,8 +5873,8 @@
         "season_home_ga_pg": 2.5,
         "season_away_gf_pg": 1.0,
         "season_away_ga_pg": 1.0,
-        "season_xg_pg": 0.89,
-        "season_xga_pg": 2.17
+        "season_xg_pg": 0.88,
+        "season_xga_pg": 2.16
       },
       "away_season_stats": {
         "season_played": 4,
@@ -5886,7 +5886,7 @@
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 2.5,
         "season_xg_pg": 1.44,
-        "season_xga_pg": 1.37
+        "season_xga_pg": 1.64
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -6279,8 +6279,8 @@
         "season_home_ga_pg": 2.5,
         "season_away_gf_pg": 2.5,
         "season_away_ga_pg": 1.0,
-        "season_xg_pg": 2.03,
-        "season_xga_pg": 1.68
+        "season_xg_pg": 2.01,
+        "season_xga_pg": 1.52
       },
       "away_season_stats": {
         "season_played": 4,
@@ -6650,8 +6650,8 @@
         "season_home_ga_pg": 0.5,
         "season_away_gf_pg": 1.0,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.21,
-        "season_xga_pg": 0.6
+        "season_xg_pg": 1.22,
+        "season_xga_pg": 0.61
       },
       "away_season_stats": {
         "season_played": 4,
@@ -6662,8 +6662,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 2.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.68,
-        "season_xga_pg": 1.87
+        "season_xg_pg": 1.7,
+        "season_xga_pg": 1.91
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -7056,8 +7056,8 @@
         "season_home_ga_pg": 1.5,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 1.79,
-        "season_xga_pg": 1.26
+        "season_xg_pg": 1.63,
+        "season_xga_pg": 1.27
       },
       "away_season_stats": {
         "season_played": 4,
@@ -7068,8 +7068,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 3.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 2.85,
-        "season_xga_pg": 0.86
+        "season_xg_pg": 2.81,
+        "season_xga_pg": 0.84
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -7463,7 +7463,7 @@
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.0,
         "season_xg_pg": 1.56,
-        "season_xga_pg": 1.66
+        "season_xga_pg": 1.69
       },
       "away_season_stats": {
         "season_played": 4,
@@ -7474,8 +7474,8 @@
         "season_home_ga_pg": 1.5,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 0.98,
-        "season_xga_pg": 1.77
+        "season_xg_pg": 0.99,
+        "season_xga_pg": 1.78
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -7868,7 +7868,7 @@
         "season_home_ga_pg": 0.5,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 0.72,
+        "season_xg_pg": 0.75,
         "season_xga_pg": 1.94
       },
       "away_season_stats": {
@@ -7880,8 +7880,8 @@
         "season_home_ga_pg": 1.5,
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.63,
-        "season_xga_pg": 1.19
+        "season_xg_pg": 1.66,
+        "season_xga_pg": 1.18
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -8286,7 +8286,7 @@
         "season_home_ga_pg": 2.0,
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.36,
+        "season_xg_pg": 1.4,
         "season_xga_pg": 1.78
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -8645,8 +8645,8 @@
         "season_home_ga_pg": 2.0,
         "season_away_gf_pg": 1.0,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 0.37,
-        "season_xga_pg": 2.94
+        "season_xg_pg": 0.39,
+        "season_xga_pg": 3.01
       },
       "away_season_stats": {
         "season_played": 4,
@@ -8657,8 +8657,8 @@
         "season_home_ga_pg": 3.5,
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 0.5,
-        "season_xg_pg": 2.1,
-        "season_xga_pg": 1.82
+        "season_xg_pg": 2.27,
+        "season_xga_pg": 1.83
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -9051,8 +9051,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 1.61,
-        "season_xga_pg": 1.43
+        "season_xg_pg": 1.62,
+        "season_xga_pg": 1.37
       },
       "away_season_stats": {
         "season_played": 4,
@@ -9063,8 +9063,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 2.09,
-        "season_xga_pg": 1.34
+        "season_xg_pg": 2.27,
+        "season_xga_pg": 1.4
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -9458,7 +9458,7 @@
         "season_away_gf_pg": 3.0,
         "season_away_ga_pg": 1.5,
         "season_xg_pg": 2.2,
-        "season_xga_pg": 1.3
+        "season_xga_pg": 1.34
       },
       "away_season_stats": {
         "season_played": 4,
@@ -9469,8 +9469,8 @@
         "season_home_ga_pg": 0.0,
         "season_away_gf_pg": 1.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.59,
-        "season_xga_pg": 1.31
+        "season_xg_pg": 1.63,
+        "season_xga_pg": 1.34
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -9863,8 +9863,8 @@
         "season_home_ga_pg": 0.5,
         "season_away_gf_pg": 2.0,
         "season_away_ga_pg": 1.0,
-        "season_xg_pg": 1.47,
-        "season_xga_pg": 1.81
+        "season_xg_pg": 1.31,
+        "season_xga_pg": 1.8
       },
       "away_season_stats": {
         "season_played": 4,
@@ -9875,8 +9875,8 @@
         "season_home_ga_pg": 0.5,
         "season_away_gf_pg": 2.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 3.25,
-        "season_xga_pg": 1.08
+        "season_xg_pg": 3.26,
+        "season_xga_pg": 0.92
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -10269,7 +10269,7 @@
         "season_home_ga_pg": 0.0,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 0.0,
-        "season_xg_pg": 2.59,
+        "season_xg_pg": 2.85,
         "season_xga_pg": 0.39
       },
       "away_season_stats": {
@@ -10281,7 +10281,7 @@
         "season_home_ga_pg": 0.0,
         "season_away_gf_pg": 2.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 1.78,
+        "season_xg_pg": 1.79,
         "season_xga_pg": 0.81
       },
       "source_api": "FotMob (Scraping Oficial)"
@@ -10675,8 +10675,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 1.26,
-        "season_xga_pg": 1.49
+        "season_xg_pg": 1.33,
+        "season_xga_pg": 1.5
       },
       "away_season_stats": {
         "season_played": 4,
@@ -10687,8 +10687,8 @@
         "season_home_ga_pg": 2.0,
         "season_away_gf_pg": 0.0,
         "season_away_ga_pg": 3.5,
-        "season_xg_pg": 1.17,
-        "season_xga_pg": 2.47
+        "season_xg_pg": 1.11,
+        "season_xga_pg": 2.48
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -11093,8 +11093,8 @@
         "season_home_ga_pg": 2.0,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 0.93,
-        "season_xga_pg": 2.16
+        "season_xg_pg": 0.9,
+        "season_xga_pg": 2.13
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -11488,7 +11488,7 @@
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 2.5,
         "season_xg_pg": 1.06,
-        "season_xga_pg": 1.63
+        "season_xga_pg": 1.65
       },
       "away_season_stats": {
         "season_played": 4,
@@ -11499,8 +11499,8 @@
         "season_home_ga_pg": 1.5,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 2.0,
-        "season_xg_pg": 1.33,
-        "season_xga_pg": 2.31
+        "season_xg_pg": 1.38,
+        "season_xga_pg": 2.49
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -11893,8 +11893,8 @@
         "season_home_ga_pg": 0.0,
         "season_away_gf_pg": 0.5,
         "season_away_ga_pg": 1.0,
-        "season_xg_pg": 1.86,
-        "season_xga_pg": 0.93
+        "season_xg_pg": 1.85,
+        "season_xga_pg": 0.92
       },
       "away_season_stats": {
         "season_played": 4,
@@ -11906,7 +11906,7 @@
         "season_away_gf_pg": 1.0,
         "season_away_ga_pg": 3.0,
         "season_xg_pg": 0.92,
-        "season_xga_pg": 2.92
+        "season_xga_pg": 3.08
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -12311,8 +12311,8 @@
         "season_home_ga_pg": 0.0,
         "season_away_gf_pg": 3.5,
         "season_away_ga_pg": 1.5,
-        "season_xg_pg": 2.32,
-        "season_xga_pg": 1.36
+        "season_xg_pg": 2.41,
+        "season_xga_pg": 1.42
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -12705,8 +12705,8 @@
         "season_home_ga_pg": 1.0,
         "season_away_gf_pg": 0.0,
         "season_away_ga_pg": 2.5,
-        "season_xg_pg": 1.15,
-        "season_xga_pg": 1.81
+        "season_xg_pg": 1.21,
+        "season_xga_pg": 1.9
       },
       "away_season_stats": {
         "season_played": 4,
@@ -12718,7 +12718,7 @@
         "season_away_gf_pg": 0.0,
         "season_away_ga_pg": 1.0,
         "season_xg_pg": 1.32,
-        "season_xga_pg": 1.12
+        "season_xga_pg": 1.15
       },
       "source_api": "FotMob (Scraping Oficial)"
     }

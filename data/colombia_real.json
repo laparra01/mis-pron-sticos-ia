@@ -3,7 +3,7 @@
   "league_id": 274,
   "country": "Colombia",
   "country_code": "co",
-  "last_updated": "2026-11-26T22:02:32.825436",
+  "last_updated": "2026-11-27T21:45:16.538009",
   "total_fixtures": 8,
   "team_histories": {
     "Alianza FC": [
@@ -3838,7 +3838,25 @@
           "text": "Deportivo Cali 2 victorias • 2 empates • Bucaramanga 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "José Alexander Ortiz Novoa",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 52,
+        "yellow_cards_per_match": 6.06,
+        "yellow_cards_total": 315,
+        "yellow_cards_avg_league": 5.74,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 29,
+        "penalties_total": 18,
+        "fouls_per_match": 23.6,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (6.06 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": null,
       "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
@@ -4290,7 +4308,25 @@
           "text": "Millonarios 1 victorias • 2 empates • América de Cali 2 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Carlos Ortega",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 51,
+        "yellow_cards_per_match": 5.55,
+        "yellow_cards_total": 283,
+        "yellow_cards_avg_league": 5.74,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 17,
+        "penalties_total": 25,
+        "fouls_per_match": 22.5,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.55 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": null,
       "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
@@ -4742,7 +4778,25 @@
           "text": "Santa Fe 1 victorias • 1 empates • Atlético Nacional 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Bismarks Elias Santiago Pitalua",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 36,
+        "yellow_cards_per_match": 5.61,
+        "yellow_cards_total": 202,
+        "yellow_cards_avg_league": 5.74,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 9,
+        "penalties_total": 3,
+        "fouls_per_match": 23.7,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.61 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": null,
       "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"
@@ -5194,7 +5248,25 @@
           "text": "Independiente Medellín 3 victorias • 1 empates • Once Caldas 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Diego Ulloa",
+        "country": "Colombia",
+        "country_code": "COL",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/col.png",
+        "matches": 48,
+        "yellow_cards_per_match": 5.46,
+        "yellow_cards_total": 262,
+        "yellow_cards_avg_league": 5.74,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 14,
+        "penalties_total": 11,
+        "fouls_per_match": 23.1,
+        "fouls_avg_league": 23.4,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.46 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": null,
       "away_season_stats": null,
       "source_api": "FotMob (Scraping Oficial)"

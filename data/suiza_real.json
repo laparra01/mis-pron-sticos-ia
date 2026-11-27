@@ -3,7 +3,7 @@
   "league_id": 69,
   "country": "Suiza",
   "country_code": "ch",
-  "last_updated": "2026-11-26T22:03:24.415282",
+  "last_updated": "2026-11-27T21:45:45.403819",
   "total_fixtures": 12,
   "team_histories": {
     "Basel": [
@@ -2631,7 +2631,25 @@
           "text": "FC Vaduz 2 victorias • 0 empates • FC Zürich 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Hüseyin Sanli",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 6,
+        "yellow_cards_per_match": 4.0,
+        "yellow_cards_total": 24,
+        "yellow_cards_avg_league": 4.47,
+        "yellow_cards_tendency": "below",
+        "red_cards_total": 0,
+        "penalties_total": 2,
+        "fouls_per_match": 24.0,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Permisivo / Dejar Jugar",
+        "rigor_color": "emerald",
+        "verdict": "Árbitro dialogante y permisivo (4.0 🟨/p). Favorece el ritmo y mercado Under de tarjetas.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 11,
@@ -3105,7 +3123,25 @@
           "text": "Grasshopper 0 victorias • 2 empates • Basel 3 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Luca Piccolo",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 29,
+        "yellow_cards_per_match": 5.28,
+        "yellow_cards_total": 153,
+        "yellow_cards_avg_league": 4.47,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 6,
+        "penalties_total": 18,
+        "fouls_per_match": 28.2,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.28 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 11,
@@ -3579,7 +3615,25 @@
           "text": "Servette 3 victorias • 1 empates • Lausanne 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Anojen Kanagasingam",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 30,
+        "yellow_cards_per_match": 4.6,
+        "yellow_cards_total": 138,
+        "yellow_cards_avg_league": 4.47,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 7,
+        "penalties_total": 15,
+        "fouls_per_match": 23.8,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.6 amarillas y 23.83 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 17,
@@ -4053,7 +4107,25 @@
           "text": "Luzern 1 victorias • 0 empates • Lugano 4 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Hajrim Qovanaj",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 33,
+        "yellow_cards_per_match": 5.39,
+        "yellow_cards_total": 178,
+        "yellow_cards_avg_league": 4.8,
+        "yellow_cards_tendency": "above",
+        "red_cards_total": 3,
+        "penalties_total": 17,
+        "fouls_per_match": 26.1,
+        "fouls_avg_league": 26.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.39 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 16,
@@ -4527,7 +4599,25 @@
           "text": "Sion 2 victorias • 2 empates • Young Boys 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Sven Wolfensberger",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 36,
+        "yellow_cards_per_match": 4.75,
+        "yellow_cards_total": 171,
+        "yellow_cards_avg_league": 4.47,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 5,
+        "penalties_total": 15,
+        "fouls_per_match": 28.5,
+        "fouls_avg_league": 25.6,
+        "rigor_level": "Estándar / Moderado",
+        "rigor_color": "amber",
+        "verdict": "Colegiado equilibrado con 4.75 amarillas y 28.51 faltas por encuentro.",
+        "over_cards_favorable": false
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 29,
@@ -5001,7 +5091,25 @@
           "text": "Thun 2 victorias • 2 empates • St. Gallen 1 victorias"
         }
       },
-      "referee": null,
+      "referee": {
+        "name": "Zrinko Prskalo",
+        "country": "Switzerland",
+        "country_code": "SUI",
+        "flag_url": "https://images.fotmob.com/image_resources/logo/teamlogo/sui.png",
+        "matches": 27,
+        "yellow_cards_per_match": 5.15,
+        "yellow_cards_total": 139,
+        "yellow_cards_avg_league": 4.8,
+        "yellow_cards_tendency": "average",
+        "red_cards_total": 4,
+        "penalties_total": 13,
+        "fouls_per_match": 27.1,
+        "fouls_avg_league": 26.8,
+        "rigor_level": "Riguroso / Tarjetero",
+        "rigor_color": "rose",
+        "verdict": "Colegiado tarjetero (5.15 🟨/p). Alta probabilidad para superar líneas de tarjetas (+4.5).",
+        "over_cards_favorable": true
+      },
       "home_season_stats": {
         "season_played": 14,
         "season_pts": 14,

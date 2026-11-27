@@ -3,7 +3,7 @@
   "league_id": 223,
   "country": "Japón",
   "country_code": "jp",
-  "last_updated": "2026-11-26T22:04:37.559162",
+  "last_updated": "2026-11-27T21:46:25.546979",
   "total_fixtures": 15,
   "team_histories": {
     "Avispa Fukuoka": [
@@ -3435,7 +3435,7 @@
       "season_home_ga_pg": 0.88,
       "season_away_gf_pg": 2.71,
       "season_away_ga_pg": 0.43,
-      "season_xg_pg": 1.65,
+      "season_xg_pg": 1.7,
       "season_xga_pg": 1.07
     },
     "Kawasaki Frontale": {
@@ -3604,7 +3604,7 @@
       "season_away_gf_pg": 0.62,
       "season_away_ga_pg": 1.62,
       "season_xg_pg": 1.16,
-      "season_xga_pg": 1.52
+      "season_xga_pg": 1.57
     },
     "Gamba Osaka": {
       "season_played": 15,
@@ -6397,7 +6397,7 @@
         "season_away_gf_pg": 0.62,
         "season_away_ga_pg": 1.62,
         "season_xg_pg": 1.16,
-        "season_xga_pg": 1.52
+        "season_xga_pg": 1.57
       },
       "source_api": "FotMob (Scraping Oficial)"
     },
@@ -8280,7 +8280,7 @@
         "season_home_ga_pg": 0.88,
         "season_away_gf_pg": 2.71,
         "season_away_ga_pg": 0.43,
-        "season_xg_pg": 1.65,
+        "season_xg_pg": 1.7,
         "season_xga_pg": 1.07
       },
       "away_season_stats": {
